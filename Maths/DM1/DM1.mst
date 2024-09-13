@@ -1,5 +1,0 @@
-delim_0 "\\IndexDotfill " % Filler between section heading and page number
-delim_1 "\\IndexDotfill " % Filler between subsection heading and page number
-headings_flag 1
-heading_prefix "\\IndexHeading{"
-heading_suffix "}\n"
