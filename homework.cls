@@ -35,7 +35,6 @@
 \RequirePackage{keyval} % to process package options
 \RequirePackage{amsmath, amssymb}
 \RequirePackage{amsthm}
-\RequirePackage[french]{babel}
 \newtheorem*{lemma}{Lemme}
 \RequirePackage[
 % showframe,
@@ -114,6 +113,13 @@ right=1in
 % mark paragraphs with empty line instead of indented first line
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
+
+% -----------------------------------------------------------------------------
+% Raccourcis
+\newcommand{\R}{\mathbb R}
+
+
+
 
 % -----------------------------------------------------------------------------
 % format for header

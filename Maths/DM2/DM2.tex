@@ -1,0 +1,40 @@
+% to change the appearance of the header, questions, problems or subproblems, see the homework.cls file or
+% override the \Problem, \Subproblem, \question or \printtitle commands.
+
+% The hidequestions option hides the questions. Remove it to print the questions in the text.
+
+% CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
+\documentclass[]{../../homework}
+\usepackage[french]{babel}
+\homeworksetup{
+	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
+	course={Matière},
+	setnumber=2}
+\begin{document}
+	\problem*{2}{Nombres Échangeables}
+	\subproblem
+	En prenant $a = 3, b=-2$, on a bien $f_{a,b}(2) = 3$ et $f_{a,b} = 3-1 = 2$.
+	\subproblem
+	
+	Supposons que $(x,y) \in \mathbb R^2$ est échangeable. On exclut le cas trivial $(x,x)$ qui est évidemment échangeable, et pour lequel $|x-x| = 0 \leq 1$. Sans perte de généralité, ordonnons donc par la suite $x < y$. Montrons que $|x-y| \leq 1$. On a le système :
+	\begin{equation*}
+		\begin{cases}
+			a - \sqrt{x+b} = y \\
+			a - \sqrt{y+b} = x
+		\end{cases}
+	\end{equation*}
+	
+	En faisant la différence des deux lignes, on trouve que $\sqrt{y+b} - \sqrt{x+b} = y-x = |x-y|$. De plus, on a :
+	\begin{equation*}
+		\begin{split}
+		(\sqrt{y+b} - \sqrt{x+b})(\sqrt{y+b} + \sqrt{x+b}) &= y + b - x - b  = y-x \\
+		 &= |x-y| \\
+		 \iff \sqrt{y+b} - \sqrt{x+b} &= \frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} 
+		 \end{split}
+	\end{equation*}
+	
+	Donc : $$\frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} = |x-y|$$
+	Et $\sqrt{y+b} + \sqrt{x+b} = 1$.
+	
+	Considérons la fonction
+\end{document}
