@@ -23,8 +23,8 @@ On suppose qu'il existe une telle fonction $g$.
 Comme $n$ et $m$ appartiennent à $\mathbb{N}$, l'unique manière d'avoir $n + m = 0$ est que $n = 0$ et $m = 0$.
 On a donc :
 \begin{align}
-	g(m + n) &= g(m) \times g(n) \notag \\
-	g(0) &= g(0) \times g(0) \label{eq:g0=g0xg0}
+	g(m + n) & = g(m) \times g(n) \notag              \\
+	g(0)     & = g(0) \times g(0) \label{eq:g0=g0xg0}
 \end{align}
 Nous divisons deux cas :
 
@@ -38,48 +38,48 @@ Nous avons prouvé que $g(0) = 0$ ou $g(0) = 1$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\problem*{2}{Nombres Échangeables}
-	\subproblem
-	En prenant $a = 3, b=-2$, on a bien $f_{a,b}(2) = 3$ et $f_{a,b} = 3-1 = 2$.
-	\subproblem
-	
-	Supposons que $(x,y) \in \mathbb R^2$ est échangeable. On exclut le cas trivial $(x,x)$ qui est évidemment échangeable, et pour lequel $|x-x| = 0 \leq 1$. Sans perte de généralité, ordonnons donc par la suite $x < y$. On a le système :
-	\begin{equation*}
-		\begin{cases}
-			a - \sqrt{x+b} = y \\
-			a - \sqrt{y+b} = x
-		\end{cases}
-	\end{equation*}
-	
-	En faisant la différence des deux lignes, on trouve que $\sqrt{y+b} - \sqrt{x+b} = y-x = |x-y|$. De plus, on a :
-	\begin{equation*}
-		\begin{split}
-		(\sqrt{y+b} - \sqrt{x+b})(\sqrt{y+b} + \sqrt{x+b}) &=y-x = |x-y| \\
-		 \iff \sqrt{y+b} - \sqrt{x+b} &= \frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} 
-		 \end{split}
-	\end{equation*}
-	
-	Donc : $$\frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} = |x-y|$$
-	Et $\sqrt{y+b} + \sqrt{x+b} = 1$.
-	
-	Donc si $(x,y)$ est échangeable, alors il existe $b\in\R$ tel que $\sqrt{y+b} + \sqrt{x+b} = 1$.
-	
-	Avant de prouver l'énoncé de la question, considérons la fonction $F: [-x;+\infty[$ définie par $F(b) = \sqrt{y+b} + \sqrt{x+b}$. Celle-ci est croissante comme somme de deux fonctions croissantes (par croissance de $x\mapsto \sqrt x$). De plus, elle est continue sur son intervalle de définition, comme la somme de deux fonctions continues sur cet intervalle.
+\problem*{2}{Nombres Échangeables}
+\subproblem
+En prenant $a = 3, b=-2$, on a bien $f_{a,b}(2) = 3$ et $f_{a,b} = 3-1 = 2$.
+\subproblem
 
-	Pour prouver maintenant que si $(x,y)$ est échangeable, alors $|x-y| \leq 1$, prouvons sa contraposée : si $|x-y| > 1$, alors $(x,y)$ n'est pas échangeable. On procède par l'absurde.
-	
-	Supposons que $(x,y)$ est échangable. Alors il existe $b\in\R$ tel que $F(b) = 1$. Le minimum de $F$ sur son intervalle de définition est atteint en $b=-x$, avec $F(-x) = \sqrt{y-x} = \sqrt{|x-y|}$. Mais $|x-y| > 1$ et $\sqrt{|x-y|} > 1$. Donc $F(b) > 1$ pour tout $b\in \mathcal D_F$ et $b$ n'existe pas, ce qui est une contradiction.
-	
-	\subproblem
-	Prouvons que si $|x-y| \leq 1$, alors $(x,y)$ est échangeable.
-	
-	Dans ce cas, on peut trouver $b\in\R$ tels que $F(b) \leq 1$ et $F(b) > 1$. En effet, si $b=-x$, alors $F(-x) = \sqrt{y-x} \leq 1$ par hypothèse, et $F(2-x) = \sqrt{2+(y-x)} + \sqrt(2) > 1$ car $\sqrt{2} > 1$.
-	
-	Par le théorème des valeurs intermédiaires, comme $F$ est continue sur $\mathcal D_F$, il existe $b_0 \in \mathcal D_F$ tel que $F(b_0) = 1$. Donc on a:
-	\begin{equation*}
-		\sqrt{y+b_0} - \sqrt{x+b_0} = \frac{|x-y|}{F(b_0)} = |x-y| = y-x
-	\end{equation*}
-	En particulier, en posant $a_0 = \sqrt{x+b_0} + y$, on a : $$a_0 - \sqrt{x+b_0} = y$$
-	Et :$$a_0 - \sqrt{y+b_0} = y - (\sqrt{y+b_0} - \sqrt{x+b_0}) = y - (y-x) = x$$
-	Donc $(x,y)$ sont échangeables avec $a_0, b_0$.
+Supposons que $(x,y) \in \mathbb R^2$ est échangeable. On exclut le cas trivial $(x,x)$ qui est évidemment échangeable, et pour lequel $|x-x| = 0 \leq 1$. Sans perte de généralité, ordonnons donc par la suite $x < y$. On a le système :
+\begin{equation*}
+	\begin{cases}
+		a - \sqrt{x+b} = y \\
+		a - \sqrt{y+b} = x
+	\end{cases}
+\end{equation*}
+
+En faisant la différence des deux lignes, on trouve que $\sqrt{y+b} - \sqrt{x+b} = y-x = |x-y|$. De plus, on a :
+\begin{equation*}
+	\begin{split}
+		(\sqrt{y+b} - \sqrt{x+b})(\sqrt{y+b} + \sqrt{x+b}) & =y-x = |x-y|                             \\
+		\iff \sqrt{y+b} - \sqrt{x+b}                       & = \frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}}
+	\end{split}
+\end{equation*}
+
+Donc : $$\frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} = |x-y|$$
+Et $\sqrt{y+b} + \sqrt{x+b} = 1$.
+
+Donc si $(x,y)$ est échangeable, alors il existe $b\in\R$ tel que $\sqrt{y+b} + \sqrt{x+b} = 1$.
+
+Avant de prouver l'énoncé de la question, considérons la fonction $F: [-x;+\infty[$ définie par $F(b) = \sqrt{y+b} + \sqrt{x+b}$. Celle-ci est croissante comme somme de deux fonctions croissantes (par croissance de $x\mapsto \sqrt x$). De plus, elle est continue sur son intervalle de définition, comme la somme de deux fonctions continues sur cet intervalle.
+
+Pour prouver maintenant que si $(x,y)$ est échangeable, alors $|x-y| \leq 1$, prouvons sa contraposée : si $|x-y| > 1$, alors $(x,y)$ n'est pas échangeable. On procède par l'absurde.
+
+Supposons que $(x,y)$ est échangable. Alors il existe $b\in\R$ tel que $F(b) = 1$. Le minimum de $F$ sur son intervalle de définition est atteint en $b=-x$, avec $F(-x) = \sqrt{y-x} = \sqrt{|x-y|}$. Mais $|x-y| > 1$ et $\sqrt{|x-y|} > 1$. Donc $F(b) > 1$ pour tout $b\in \mathcal D_F$ et $b$ n'existe pas, ce qui est une contradiction.
+
+\subproblem
+Prouvons que si $|x-y| \leq 1$, alors $(x,y)$ est échangeable.
+
+Dans ce cas, on peut trouver $b\in\R$ tels que $F(b) \leq 1$ et $F(b) > 1$. En effet, si $b=-x$, alors $F(-x) = \sqrt{y-x} \leq 1$ par hypothèse, et $F(2-x) = \sqrt{2+(y-x)} + \sqrt(2) > 1$ car $\sqrt{2} > 1$.
+
+Par le théorème des valeurs intermédiaires, comme $F$ est continue sur $\mathcal D_F$, il existe $b_0 \in \mathcal D_F$ tel que $F(b_0) = 1$. Donc on a:
+\begin{equation*}
+	\sqrt{y+b_0} - \sqrt{x+b_0} = \frac{|x-y|}{F(b_0)} = |x-y| = y-x
+\end{equation*}
+En particulier, en posant $a_0 = \sqrt{x+b_0} + y$, on a : $$a_0 - \sqrt{x+b_0} = y$$
+Et :$$a_0 - \sqrt{y+b_0} = y - (\sqrt{y+b_0} - \sqrt{x+b_0}) = y - (y-x) = x$$
+Donc $(x,y)$ sont échangeables avec $a_0, b_0$.
 \end{document}
