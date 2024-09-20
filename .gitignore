@@ -306,5 +306,6 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # Custom stuff
+output
 template.pdf
 *.mst
