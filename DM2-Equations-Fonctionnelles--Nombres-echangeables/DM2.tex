@@ -16,7 +16,25 @@
 \problem*{1}{Équations fonctionnelles}
 \textbf{Partie A.}
 
+$\forall m, n \in \mathbb{N}, g(m + n) = g(m) \times g(n)$
 \subproblem
+On suppose qu'il existe une telle fonction $g$.
+\question
+Comme $n$ et $m$ appartiennent à $\mathbb{N}$, l'unique manière d'avoir $n + m = 0$ est que $n = 0$ et $m = 0$.
+On a donc :
+\begin{align}
+	g(m + n) &= g(m) \times g(n) \notag \\
+	g(0) &= g(0) \times g(0) \label{eq:g0=g0xg0}
+\end{align}
+Nous divisons deux cas :
+
+\textit{Si} $g(0) = 0$ :
+Alors nous avons bien $g(0) = 0$.
+
+\textit{Si} $g(0) > 0$ :
+Nous pouvons diviser \eqref{eq:g0=g0xg0} par $g(0)$ ce qui donne $g(0) = 1$.
+
+Nous avons prouvé que $g(0) = 0$ ou $g(0) = 1$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%

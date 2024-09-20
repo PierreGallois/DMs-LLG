@@ -1,3 +1,4 @@
 {
-    "latex-workshop.latex.outDir": "./../output"
+    "latex-workshop.latex.outDir": "./../output",
+    "latex-workshop.formatting.latex": "latexindent"
 }
