@@ -55,6 +55,38 @@ Nous sommes entrain de tester le cas où $g(0) = 1$.
 
 Nous avons prouvé par récurrence que pour tout $n \in \mathbb{N^*}$, $g(n) = a^n$ où $a=g(1)$.
 
+\subproblem
+\textit{Synthèse.}
+
+Nous avons deux candidats :
+\begin{itemize}
+	\item La fonction nulle : $\forall n \in \mathbb{N}, g(n) = 0$
+	\item Une fonction puissance : $\forall n \in \mathbb{N}, g(n) = g(1)^n$
+\end{itemize}
+Nous devons vérifier la condition : $\forall m, n \in \mathbb{N}, g(m + n) = g(m) \times g(n)$.
+
+Vérifions pour la fonction nulle :
+
+Pour tout $m, n \in \mathbb{N}$ :
+\begin{align*}
+	\forall m, n \in \mathbb{N}, \\
+	g(m + n) &= 0 \\
+	&= 0 \times 0 \\
+	&= g(m) \times g(n)
+\end{align*}
+La condition est bien vérifiée.
+
+Vérifions pour la fonction puissance :
+Pour tout $m, n \in \mathbb{N}$ :
+\begin{align*}
+	\forall m, n \in \mathbb{N}, \\
+	g(m + n) &= g(1)^{(m + n)} \\
+	&= g(1)^m \times g(1)^n \\
+	&= g(m) \times g(n)
+\end{align*}
+La condition est bien vérifiée.
+
+La fonction nulle et $g(n) = g(1)^n$ sont donc les deux seules fonctions qui respectent $\forall m, n \in \mathbb{N}, g(m + n) = g(m) \times g(n)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \problem*{2}{Nombres Échangeables}
 \subproblem
