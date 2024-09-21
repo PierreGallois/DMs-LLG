@@ -71,11 +71,11 @@ Pour prouver maintenant que si $(x,y)$ est échangeable, alors $|x-y| \leq 1$, p
 Supposons que $(x,y)$ est échangable. Alors il existe $b\in\R$ tel que $F(b) = 1$. Le minimum de $F$ sur son intervalle de définition est atteint en $b=-x$, avec $F(-x) = \sqrt{y-x} = \sqrt{|x-y|}$. Mais $|x-y| > 1$ et $\sqrt{|x-y|} > 1$. Donc $F(b) > 1$ pour tout $b\in \mathcal D_F$ et $b$ n'existe pas, ce qui est une contradiction.
 
 \subproblem
-Prouvons que si $|x-y| \leq 1$, alors $(x,y)$ est échangeable.
+Prouvons que si $|x-y| \leq 1$, alors $(x,y)$ est échangeable. On suppose toujours que $x \leq y$.
 
 Dans ce cas, on peut trouver $b\in\R$ tels que $F(b) \leq 1$ et $F(b) > 1$. En effet, si $b=-x$, alors $F(-x) = \sqrt{y-x} \leq 1$ par hypothèse, et $F(2-x) = \sqrt{2+(y-x)} + \sqrt(2) > 1$ car $\sqrt{2} > 1$.
 
-Par le théorème des valeurs intermédiaires, comme $F$ est continue sur $\mathcal D_F$, il existe $b_0 \in \mathcal D_F$ tel que $F(b_0) = 1$. Donc on a:
+Par le théorème des valeurs intermédiaires, comme $F$ est continue sur $\mathcal D_F$, il existe $b_0 \in \mathcal D_F$ tel que $F(b_0) = 1$. Ainsi, won a:
 \begin{equation*}
 	\sqrt{y+b_0} - \sqrt{x+b_0} = \frac{|x-y|}{F(b_0)} = |x-y| = y-x
 \end{equation*}
