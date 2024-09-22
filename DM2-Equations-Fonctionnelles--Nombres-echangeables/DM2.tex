@@ -43,7 +43,7 @@ Si $g(0) = 0$, alors $g$ est la fonction nulle.
 Nous résonnons par récurrence. On suppose que $g(n) = g(1)^n$.
 
 \textit{Initialisation :}
-Nous sommes entrain de tester le cas où $g(0)w = 1$.
+Nous sommes entrain de tester le cas où $g(0) = 1$.
 
 \textit{Hérédité :}
 \begin{align*}
@@ -66,9 +66,8 @@ Nous devons vérifier la condition : $\forall m, n \in \mathbb{N}, g(m + n) = g(
 
 Vérifions pour la fonction nulle :
 
-Pour tout $m, n \in \mathbb{N}$ :
+Pour tous $m, n \in \mathbb{N}$ :
 \begin{align*}
-	\forall m, n \in \mathbb{N}, \\
 	g(m + n) &= 0 \\
 	&= 0 \times 0 \\
 	&= g(m) \times g(n)
@@ -76,9 +75,8 @@ Pour tout $m, n \in \mathbb{N}$ :
 La condition est bien vérifiée.
 
 Vérifions pour la fonction puissance :
-Pour tout $m, n \in \mathbb{N}$ :
+Pour tous $m, n \in \mathbb{N}$ :
 \begin{align*}
-	\forall m, n \in \mathbb{N}, \\
 	g(m + n) &= g(1)^{(m + n)} \\
 	&= g(1)^m \times g(1)^n \\
 	&= g(m) \times g(n)
