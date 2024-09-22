@@ -32,18 +32,19 @@ Les solutions de cette équation sont $\{0, 1\}$.
 Nous avons prouvé que $g(0) = 0$ ou $g(0) = 1$.
 
 \question \\
-Pour que $g(m + n) = g(0)$, il faut déjà que $m = 0$.
+Soit $n$ dans $\mathbb{N}$,
 \begin{align*}
-	g(n) & = g(n) \cdot 0 \\
-	g(n) & = 0
+	g(n) & = g(n + 0) \\
+	& = g(n) \times g(0) \\
+	& = 0 \quad \text{Puisque on est dans le cas où $g(0) = 0$}
 \end{align*}
 Si $g(0) = 0$, alors $g$ est la fonction nulle.
 
 \question \\
-Nous résonnons par récurrence. On suppose que $g(n) = g(1)^n$.
+Nous raisonnons par récurrence. On suppose que $g(0) = 1$ et $g(n) = g(1)^n$.
 
 \textit{Initialisation :}
-Nous sommes entrain de tester le cas où $g(0) = 1$.
+Par hypothèse, $g(0) = 1$.
 
 \textit{Hérédité :}
 \begin{align*}
