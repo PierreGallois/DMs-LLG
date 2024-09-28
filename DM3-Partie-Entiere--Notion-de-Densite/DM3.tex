@@ -6,11 +6,122 @@
 % CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
 \documentclass[]{../templates/homework}
 \usepackage[french]{babel}
+
+% Pour le thème des scripts
+\usepackage[scaled]{inconsolata}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\definecolor{vscode-bg}{HTML}{1E1E1E} 
+\definecolor{vscode-keyword}{HTML}{569CD6}
+\definecolor{vscode-comment}{HTML}{6A9955}
+\definecolor{vscode-string}{HTML}{CE9178}
+\definecolor{vscode-function}{HTML}{DCDCAA}
+\lstset{
+    language=Python,
+    backgroundcolor=\color{vscode-bg},
+    basicstyle=\ttfamily\color{white}\selectfont,
+    keywordstyle=\color{vscode-keyword}\bfseries,
+    commentstyle=\color{vscode-comment}\itshape,
+    stringstyle=\color{vscode-string},
+    identifierstyle=\color{vscode-function},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\ttfamily\tiny\color{gray},
+    frame=none,
+    breaklines=true,
+    tabsize=4,
+    columns=fullflexible,
+    keepspaces=false,
+	numbersep=10pt,
+}
+\newtcolorbox{vscodebox}{
+    sharp corners=southwest,
+    colback=vscode-bg!5!vscode-bg,
+    colframe=vscode-bg,
+    boxrule=2mm,
+    rounded corners=southwest,
+    left=17pt,
+    right=17pt
+}
+
+
+
 \homeworksetup{
 	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
 	course={Mathématiques},
-	setnumber=3}
+	setnumber=3
+}
+
+	
 \begin{document}
-	Contenu du devoir...
-$$pi = 4$$
+
+\problem*{1}{Partie entière}
+
+\subproblem
+
+$\lfloor\frac{5}{2}\rfloor = 2$
+
+$\lfloor-\pi\rfloor = -4$
+
+$\lfloor\frac{2\pi}{7}\rfloor = 0$
+
+\hfill
+
+Version originale :
+\begin{vscodebox}
+\begin{lstlisting}
+def partent(x):
+	n = 0
+	# Quand x est negatif, cette condition est fausse des le depart
+	while n+1 <= x:
+		n += 1
+	return n
+
+from math import pi
+print(partent(5/2)) # 2
+print(partent(-pi)) # 0 FAUX
+print(partent(2*pi/7)) # 0
+\end{lstlisting}
+\end{vscodebox}
+
+\hfill
+
+Version corrigée :
+
+\begin{vscodebox}
+\begin{lstlisting}
+def partent(x):
+	n = 0
+	while n+1 <= abs(x):
+		n += 1
+	if x >= 0:
+		return n
+	else:
+		return -n-1
+
+from math import pi
+print(partent(5/2)) # 2
+print(partent(-pi)) # -4
+print(partent(2*pi/7)) # 0
+\end{lstlisting}
+\end{vscodebox}
+
+\hfill
+
+Versions optimisées :
+
+\begin{vscodebox}
+\begin{lstlisting}
+def partent1(x):
+	n = 0
+	abs_x = abs(x)
+	while (n := n+1) <= abs_x: pass
+	return n-1 if x >= 0 else -n
+
+def partent2(x):
+	return int(x) - (1 if x <= 0 else 0)
+\end{lstlisting}
+\end{vscodebox}
+
 \end{document}
