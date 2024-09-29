@@ -143,7 +143,6 @@ right=1in
 		\arabic{page}
 	\fi
 }
->>>>>>> Stashed changes
 
 % -----------------------------------------------------------------------------
 % format for header
