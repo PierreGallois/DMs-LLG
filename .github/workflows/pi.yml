@@ -29,6 +29,12 @@ jobs:
             echo "contains_banned_word=false" >> $GITHUB_ENV
           fi
 
+      - name: Set Git user info
+        if: env.contains_banned_word == 'true'
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
       - name: Revert commit if it contains banned word
         if: env.contains_banned_word == 'true'
         run: |
