@@ -125,22 +125,7 @@ right=1in
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\N}{\mathbb N}
 
-% Troll pages
-\renewcommand*{\thepage}{%
-	\ifcase \value{page}
-		0
-	\or
-		1
-	\or
-		2
-	\or % Page 3
-		$e = 3$
-	\or % Page 4
-		$\pi = 4$
-	\else
-		\arabic{page}
-	\fi
-}
+
 
 % -----------------------------------------------------------------------------
 % format for header
