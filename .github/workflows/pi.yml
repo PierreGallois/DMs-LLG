@@ -23,14 +23,14 @@ jobs:
           
           if echo "$commits" | grep -i "$banned_word"; then
             echo "Found banned word in commit message: $banned_word"
-            echo "::set-output name=contains_banned_word::true"
+            echo "contains_banned_word=true" >> $GITHUB_ENV
           else
             echo "No banned word found."
-            echo "::set-output name=contains_banned_word::false"
+            echo "contains_banned_word=false" >> $GITHUB_ENV
 
       - name: Revert commit if it contains banned word
-        if: steps.commit_message.outputs.contains_banned_word == 'true'
+        if: env.contains_banned_word == 'true'
         run: |
           echo "Reverting the last commit due to banned word"
-          git revert -m"pi != 4" --no-edit HEAD
+          git revert --no-edit HEAD
           git push origin main
