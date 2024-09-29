@@ -122,10 +122,28 @@ right=1in
 % Raccourcis
 \newcommand{\R}{\mathbb R}
 \newcommand{\Q}{\mathbb Q}
+\newcommand{\D}{\mathbb D}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\N}{\mathbb N}
 
 
+% Troll pages
+\renewcommand*{\thepage}{%
+	\ifcase \value{page}
+		0
+	\or
+		1
+	\or
+		2
+	\or
+		3
+	\or % Page 4
+		$\pi = 4$
+	\else
+		\arabic{page}
+	\fi
+}
+>>>>>>> Stashed changes
 
 % -----------------------------------------------------------------------------
 % format for header

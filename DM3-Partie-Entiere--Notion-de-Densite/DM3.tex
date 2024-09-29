@@ -146,7 +146,7 @@ def partent2(x):
 
 \question Si $0 \leq x <y$, alors $n\delta > x$ est équivalent à ce que $n> \frac x \delta$. En particulier, si $n$ est le plus petit tel entier, alors $n\delta \in \ ]x;y[$. En effet, si $n\delta \geq y$, alors $m\geq n$ implique que $m\delta \geq y$ et $m < n$ implique par hypothèse que $m\delta \leq x$, et $m\delta \not\in\ ]x;y[$ pour tout $m\in\Z$, ce qui contredit le théorème de la Grenouille.
 
-Donc $n = \floor {\frac x \delta} + 1$ est le plus petit entier tel que $n\delta > x$, et $n\delta \in\ ]x;y[$. Donc la grenouille tombe dans la mare après $\floor {\frac x \delta} + 1$ sauts.
+Or, $n = \floor {\frac x \delta} + 1$ est le plus petit entier tel que $n\delta > x$, et $n\delta \in\ ]x;y[$. Donc la grenouille tombe dans la mare après $\floor {\frac x \delta} + 1$ sauts.
 
 \subproblem
 \question $\frac 1 n < y-x$ si et seulement si $\frac 1 {y-x} < n$. Donc $n=\floor {\frac 1 {y-x}} + 1$ fonctionne.
@@ -156,7 +156,76 @@ Par la question précédente, il existe $q\in \N^*$ tel que $\frac 1 q < y-x$. P
 
 \question Soient $x,y \in \R$, $x<y$. Par densité de $\Q$ dans $\R$, il existe $\frac p q \in\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. On peut choisir $\frac p q \neq 0$, soit si $0\not \in\ ]x;y[$, soit en prenant $\frac p q$ dans $]0;\frac y {\sqrt 2}[\ \subseteq\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. Dans ces deux cas, $\frac p q \sqrt 2 \in\ ]x;y[$.
 
-Montrons maintenant par l'absurde que $\frac p q \sqrt 2$ est irrationel. Supposons que $\frac p q \sqrt 2 = \frac a b$, avec $\frac a b \in \Q$. Alors $\sqrt 2 = \frac {aq} {bp} \in \Q$, ce qui est impossible car $\sqrt \not \in \Q$.
+Montrons maintenant par l'absurde que $\frac p q \sqrt 2$ est irrationel. Supposons que $\frac p q \sqrt 2 = \frac a b$, avec $\frac a b \in \Q$. Alors $\sqrt 2 = \frac {aq} {bp} \in \Q$, ce qui est impossible car $\sqrt 2 \not \in \Q$.
 
 Donc $\R \setminus \Q$ est dense dans $\R$.
+<<<<<<< Updated upstream
+=======
+
+\subproblem
+\question Prouvons par récurrence que $(1+a)^n \geq 1+an$ pour tout $n \in \N^*$. Posons $P(n)$ l'assertion $(1+a)^n\geq 1+an$.
+
+\underline{Initialisation :} $P(1) \iff (1+a)^1 = 1+a \geq 1+ 1a = 1+a$. Donc $P(1)$ est vraie.
+
+\underline{Hérédité :} Supposons que $P(n)$ est vraie pour $n\in\N$. Prouvons $P(n+1)$.
+
+\begin{align*}
+	(1+a)^{n+1} = (1+a)(1+a)^n & \geq (1+a)(1+an) = 1 + a(n+1) + a^2n \\
+	& \geq 1 + a(n+1)
+\end{align*}
+
+Donc si $P(n)$, alors $P(n+1)$. Par le principe de récurrence, $P(n)$ est vraie pour tout $n\in\N^*$.
+
+\question TODO : Quelqu'un trouve la preuve avec déduction de l'exo d'avant ?
+
+Trouver $C\in\R_+^*$ tel que $b^n \leq \frac C n$ pour tout $n\in\N^*$ revient à trouver un majorant de la fonction $f : n\mapsto nb^n$. On dit que $f$ est croissante en $n \in \N^*$ si $f(n+1) \geq f(n)$. Montrons donc qu'il existe $p\in\N^*$ tel que $f$ est croissante avant $p$ et strictement décroissante après $p$, de manière à ce que $f$ soit au moins majorée par $f(p)$.
+
+On procède par équivalence :
+\begin{align*}
+	f \text{ strictement décroissante en } p & \iff f(p) > f(p+1) \\
+		& \iff pb^p > (p+1)b^{p+1} \\
+		& \iff \frac p {p+1} > b \\
+		& \iff 1 - \frac 1 {p+1} > b \\
+		& \iff 1 - b > \frac 1 {p+1} \\
+		& \iff p +1 > \frac 1 {1-b} \\
+		& \iff p + 1 \geq \floor {\frac 1 {1-b}} + 1 \\
+		& \iff p \geq \floor {\frac 1 {1-b}}
+\end{align*}
+Donc $f$ est croissante avant $\floor {\frac 1 {1-b}}$ et strictement décroissante après $\floor {\frac 1 {1-b}}$. Donc $f$ est majorée (en particulier, par $f\left(\floor {\frac 1 {1-b}}\right ) \in \R_+^*$).
+
+\subproblem
+\question On prouve l'assertion suivante, plus générale : si $x < y$, alors il existe $n\in\N^*$ tel que $\frac 1 {10^n} < |y-x|$. 
+
+Par la question précédente, il existe $C\in\R_+^*$ tel que $\left(\frac 1 {10}\right)^n \leq \frac C n$ pour tout $n\in\N^*$. En prenant $n > \frac C {|y-x|}$ (celui-ci existe par existence des parties entières), on a : $$\frac 1 {10^n} < \frac C {\frac C {|y-x|}} = |y-x|$$
+
+Donc il existe bien $n \in \N^*$ tel que $\frac 1 {10^n} < |y-x|$.
+
+\question Soit $x,y\in\R$, $x<y$. Par définition $\D = \{\frac m {10^n}\ |\ m\in\Z, n\in\N\}$. On choisit $n\in\N^*$ de manière à ce que $\frac 1 {10^n} < |x-y|$. Par le théorème de la Grenouille, il existe $m\in\Z$ tel que $\frac m {10^n} \in\ ]x;y[$. Comme $\frac m {10^n} \in \D$, $\D$ est dense dans $\R$.
+
+
+\subproblem
+\newcommand{\Ztwo}{\mathbb Z[\sqrt 2]}
+\question On pose $x,y \in \Ztwo$ avec $x = a + b\sqrt2$ et $y = c+\sqrt 2$. Alors :
+\begin{equation*}
+	x+y = (a+c) + (b+d)\sqrt 2 \in \Ztwo
+\end{equation*}
+Et :
+\begin{equation*}
+	xy = (ac+2bd) + (ad + bc)\sqrt 2 \in \Ztwo
+\end{equation*}
+
+Donc $\Ztwo$ est stable par addition et multiplication.
+
+\question On prouve encore l'assertion suivante, plus générale : si $x < y$, alors il existe $p\in\N^*$ tel que $u^p < |y-x|$. 
+
+ Soit $u = \sqrt 2 -1$. Montrons que $0<u<1$. Comme $\sqrt 2 > 1$, $u>0$. Si $u \geq 1$, alors $\sqrt 2 \geq 2$ et $2 \geq 4$, ce qui est absurde. Donc $u\in\ ]0;1[$.
+
+Donc il existe $C \in \R_+^*$ tel que pour tout $p\in\N^*$, $u^p \leq \frac C p$. En prenant $p > \frac C {|x-y|}$, $u^p < |x-y|$.
+
+Donc il existe bien $p\in\N^*$, $u^p < |x-y|$.
+
+\question Soient $x,y\in\R$, $x<y$. Choisissons $p\in\N^*$ tel que $u^p < |x-y|$. Par le théorème de la Grenouille, il existe $n\in\Z$ tel que $nu^p \in\ ]x;y[$. Comme $n,u\in\Ztwo$, $nu^p\in\Ztwo$. 
+
+Donc $\Ztwo$ est dense dans $\R$.
+>>>>>>> Stashed changes
 \end{document}
