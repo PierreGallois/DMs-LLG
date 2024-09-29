@@ -7,6 +7,9 @@
 \documentclass[]{../templates/homework}
 \usepackage[french]{babel}
 
+% Pour les fonctions floor
+\providecommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
+
 % Pour le thème des scripts
 \usepackage[scaled]{inconsolata}
 \usepackage{listings}
@@ -124,4 +127,36 @@ def partent2(x):
 \end{lstlisting}
 \end{vscodebox}
 
+\problem*{2}{Notion de densité}
+\subproblem
+\question
+\begin{thm}[Grenouille généralisée]
+	Soient $x,y\in\mathbb R$, $x<y$. Soit $l = |x-y|$ et $0 < \delta < l$. Alors il existe $n\in \Z$ tel que $n\delta \in\ ]x;y[$.
+\end{thm}
+\begin{proof}
+	On procède par l'absurde en supposant que $n\delta \not\in\ ]x;y[$ pour tout $n\in\Z$.
+	
+	Soit $p\in\Z$ le plus petit entier tel que $p\delta > y$. Son existence est assurée par l'existence de parties entières, en prenant $p = \floor {\frac y \delta} + 1$, ou par la propriété archimédienne de $\R$.
+	Par hypothèse, $(p-1) \delta \not \in\ ]x;y[$. Par minimalité de $p$, $(p-1)\delta \leq y$. Donc $(p-1)\delta < x$.
+	
+	Ainsi, on trouve que $(p-1)\delta < x < y < p\delta$. Donc $]x;y[\ \subseteq \  ](p-1)\delta; p\delta[$, et $|p\delta - (p-1)\delta| = \delta \geq |x-y| = l$, ce qui est une contradiction.
+	
+	Donc il existe $n\in\Z$ tel que $n\delta \in \ ]x;y[$.
+\end{proof}
+
+\question Si $0 \leq x <y$, alors $n\delta > x$ est équivalent à ce que $n> \frac x \delta$. En particulier, si $n$ est le plus petit tel entier, alors $n\delta \in \ ]x;y[$. En effet, si $n\delta \geq y$, alors $m\geq n$ implique que $m\delta \geq y$ et $m < n$ implique par hypothèse que $m\delta \leq x$, et $m\delta \not\in\ ]x;y[$ pour tout $m\in\Z$, ce qui contredit le théorème de la Grenouille.
+
+Donc $n = \floor {\frac x \delta} + 1$ est le plus petit entier tel que $n\delta > x$, et $n\delta \in\ ]x;y[$. Donc la grenouille tombe dans la mare après $\floor {\frac x \delta} + 1$ sauts.
+
+\subproblem
+\question $\frac 1 n < y-x$ si et seulement si $\frac 1 {y-x} < n$. Donc $n=\floor {\frac 1 {y-x}} + 1$ fonctionne.
+
+\question Soient $x,y \in \R$, $x<y$. Prouvons qu'il existe $a\in\Q$, $a\in\ ]x;y[$.
+Par la question précédente, il existe $q\in \N^*$ tel que $\frac 1 q < y-x$. Par le théorème de la Grenouille, il existe $p \in \Z$ tel que $p \frac 1 q = \frac p q \in \ ]x;y[$. Comme $\frac p q \in \Q$, $\Q$ est dense dans $\R$.
+
+\question Soient $x,y \in \R$, $x<y$. Par densité de $\Q$ dans $\R$, il existe $\frac p q \in\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. On peut choisir $\frac p q \neq 0$, soit si $0\not \in\ ]x;y[$, soit en prenant $\frac p q$ dans $]0;\frac y {\sqrt 2}[\ \subseteq\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. Dans ces deux cas, $\frac p q \sqrt 2 \in\ ]x;y[$.
+
+Montrons maintenant par l'absurde que $\frac p q \sqrt 2$ est irrationel. Supposons que $\frac p q \sqrt 2 = \frac a b$, avec $\frac a b \in \Q$. Alors $\sqrt 2 = \frac {aq} {bp} \in \Q$, ce qui est impossible car $\sqrt \not \in \Q$.
+
+Donc $\R \setminus \Q$ est dense dans $\R$.
 \end{document}

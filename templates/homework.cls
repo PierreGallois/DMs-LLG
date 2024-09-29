@@ -36,6 +36,10 @@
 \RequirePackage{amsmath, amssymb}
 \RequirePackage{amsthm}
 \newtheorem*{lemma}{Lemme}
+
+
+\theoremstyle{definition}
+\newtheorem*{thm}{Théorème}
 \RequirePackage[
 % showframe,
 nomarginpar,
@@ -117,7 +121,9 @@ right=1in
 % -----------------------------------------------------------------------------
 % Raccourcis
 \newcommand{\R}{\mathbb R}
-
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
 
 
 
