@@ -27,6 +27,7 @@ jobs:
           else
             echo "No banned word found."
             echo "contains_banned_word=false" >> $GITHUB_ENV
+          fi
 
       - name: Revert commit if it contains banned word
         if: env.contains_banned_word == 'true'
