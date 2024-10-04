@@ -71,7 +71,7 @@ $\lfloor\frac{2\pi}{7}\rfloor = 0$
 Version originale :
 \begin{vscodebox}
 \begin{lstlisting}
-def partent(x):
+def part_ent(x):
 	n = 0
 	# Quand x est negatif, cette condition est fausse des le depart
 	while n+1 <= x:
@@ -91,7 +91,7 @@ Version corrigée :
 
 \begin{vscodebox}
 \begin{lstlisting}
-def partent(x):
+def part_ent(x):
 	n = 0
 	while n+1 <= abs(x):
 		n += 1
@@ -108,18 +108,18 @@ print(partent(2*pi/7)) # 0
 \end{vscodebox}
 
 \hfill
-
+\newpage
 Versions optimisées :
 
 \begin{vscodebox}
 \begin{lstlisting}
-def partent1(x):
+def part_ent1(x):
 	n = 0
 	abs_x = abs(x)
 	while (n := n+1) <= abs_x: pass
 	return n-1 if x >= 0 else -n
 
-def partent2(x):
+def part_ent2(x):
 	return int(x) - (1 if x <= 0 else 0)
 \end{lstlisting}
 \end{vscodebox}
