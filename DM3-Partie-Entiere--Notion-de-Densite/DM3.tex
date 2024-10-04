@@ -124,6 +124,41 @@ def partent2(x):
 \end{lstlisting}
 \end{vscodebox}
 
+\subproblem
+\question
+Soit $x$ un réel et $p$ un entier naturel.
+
+Un nombre décimal s'écrit sous la forme $\frac{a}{10^b}$ avec $a \in \mathbb{Z}$ et $b \in \mathbb{N}$.
+
+Par définition, $\floor{10^px}$ est un entier relatif et $p \in \mathbb{N}$ donc:
+
+\begin{equation*}
+	\frac{\floor{10^px}}{10^p} \in \mathbb{D}
+\end{equation*}
+
+Par définition,
+
+\begin{equation*}
+\forall c \in \mathbb{R}, c-1 < \floor{c} \leqslant c < \floor{c} + 1
+\end{equation*}
+
+Donc avec $c = 10^px$ :
+
+\begin{equation*}
+	\floor{10^px} \leqslant 10^px < \floor{10^px} + 1
+\end{equation*}
+
+Or $10^p > 0$ donc
+
+\begin{equation*}
+	\frac{\floor{10^px}}{10^p} \leqslant x < \frac{\floor{10^px}}{10^p} + \frac{1}{10^p}
+\end{equation*}
+
+Nous avons prouvé que $\frac{\floor{10^px}}{10^p}$ est un nombre décimal et que $\frac{\floor{10^px}}{10^p} \leqslant x < \frac{\floor{10^px}}{10^p} + \frac{1}{10^p}$ pour tous $x \in \mathbb{R}$ et $p \in \mathbb{N}$.
+
+\question
+\vspace{10cm}
+
 \problem*{2}{Notion de densité}
 \subproblem
 \question
