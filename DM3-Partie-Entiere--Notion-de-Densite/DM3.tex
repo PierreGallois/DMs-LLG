@@ -157,7 +157,19 @@ Or $10^p > 0$ donc
 Nous avons prouvé que $\frac{\floor{10^px}}{10^p}$ est un nombre décimal et que $\frac{\floor{10^px}}{10^p} \leqslant x < \frac{\floor{10^px}}{10^p} + \frac{1}{10^p}$ pour tous $x \in \mathbb{R}$ et $p \in \mathbb{N}$.
 
 \question
-\vspace{10cm}
+Le chiffre des unités de $10^x$ est la $p$-e décimale de $x$. Un arrondi à $10^{-p}$ près de $x$ revient donc à diviser par $10^p$ un arrondi à l'unité de $x$.
+
+Notons $\alpha: \R \rightarrow \Z$ la fonction qui à $x \in \R$ associe son arrondi à l'unité.
+
+\underline{Si $x\in\R^+$ :} Notons $d$ la première décimale de $x$. Si $d\in [\![0;4]\!]$, alors par définition $\alpha(x) = \floor{x}$. Mais $\floor{x + \frac 1 2} = \floor{x}$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+Si $d\in [\![5;9]\!$, par définition, $\alpha(x) = \floor x + 1$. Mais $\floor{x + \frac 1 2} = \floor{x} +1$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+\underline{Si $x\in\R^-$ :} Si $d\in [\![0;4]\!]$, alors par définition $\alpha(x) = \floor{x}+1$. Mais $\floor{x + \frac 1 2} = \floor{x}+1$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+Si $d\in [\![5;9]\!$, par définition, $\alpha(x) = \floor x +$. Mais $\floor{x + \frac 1 2} = \floor{x}$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+\underline{Synthèse :} Pour tout $x \in \R$, $\alpha(x) = \floor {x + \frac 1 2}$. Un arrondi à $10^-p$ près de $x$ est donc donné par $\frac {\alpha(10^px)}{10^p} = \frac {\floor {10^px + \frac 1 2}}{10^p}$, ce qu'il fallait démontrer.
 
 \problem*{2}{Notion de densité}
 \subproblem
@@ -191,8 +203,6 @@ Par la question précédente, il existe $q\in \N^*$ tel que $\frac 1 q < y-x$. P
 Montrons maintenant par l'absurde que $\frac p q \sqrt 2$ est irrationel. Supposons que $\frac p q \sqrt 2 = \frac a b$, avec $\frac a b \in \Q$. Alors $\sqrt 2 = \frac {aq} {bp} \in \Q$, ce qui est impossible car $\sqrt 2 \not \in \Q$.
 
 Donc $\R \setminus \Q$ est dense dans $\R$.
-<<<<<<< Updated upstream
-=======
 
 \subproblem
 \question Prouvons par récurrence que $(1+a)^n \geq 1+an$ pour tout $n \in \N^*$. Posons $P(n)$ l'assertion $(1+a)^n\geq 1+an$.
@@ -208,9 +218,7 @@ Donc $\R \setminus \Q$ est dense dans $\R$.
 
 Donc si $P(n)$, alors $P(n+1)$. Par le principe de récurrence, $P(n)$ est vraie pour tout $n\in\N^*$.
 
-\question TODO : Quelqu'un trouve la preuve avec déduction de l'exo d'avant ?
-
-Trouver $C\in\R_+^*$ tel que $b^n \leq \frac C n$ pour tout $n\in\N^*$ revient à trouver un majorant de la fonction $f : n\mapsto nb^n$. On dit que $f$ est croissante en $n \in \N^*$ si $f(n+1) \geq f(n)$. Montrons donc qu'il existe $p\in\N^*$ tel que $f$ est croissante avant $p$ et strictement décroissante après $p$, de manière à ce que $f$ soit au moins majorée par $f(p)$.
+\question Trouver $C\in\R_+^*$ tel que $b^n \leq \frac C n$ pour tout $n\in\N^*$ revient à trouver un majorant de la fonction $f : n\mapsto nb^n$. On dit que $f$ est croissante en $n \in \N^*$ si $f(n+1) \geq f(n)$. Montrons donc qu'il existe $p\in\N^*$ tel que $f$ est croissante avant $p$ et strictement décroissante après $p$, de manière à ce que $f$ soit au moins majorée par $f(p)$.
 
 On procède par équivalence :
 \begin{align*}
