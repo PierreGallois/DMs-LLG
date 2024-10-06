@@ -4,12 +4,38 @@
 % The hidequestions option hides the questions. Remove it to print the questions in the text.
 
 % CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
-\documentclass[]{homework}
+\documentclass[]{../templates/homework}
 \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
 \homeworksetup{
 	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
-	course={Matière},
-	setnumber=$n$}
+	course={Mathématiques},
+	setnumber=4}
 \begin{document}
-	Contenu du devoir...
+\newcommand{\E}{\mathcal E}
+\newcommand{\F}{\mathcal F}
+
+\partie {A} {Définitions}
+\subproblem
+
+$f: \E \rightarrow \F$ est injective sur $\E$ si et seulement si :
+$$\forall x,y \in \E, f(x) = f(y) \implies x = y$$
+
+On en conclut que $f$ n'est pas injective si et seulement si :
+$$\exists x,y \in \E, x \neq y \land f(x) = f(y)$$
+
+\subproblem
+$f: \E \rightarrow \F$ est surjective de $\E$ sur $\F$ si et seulement si :
+$$\forall y \in \F, \exists x \in \E, y = f(x)$$
+
+On en déduit que $f$ n'est pas surjective de $\E$ sur $\F$ si et seulement si :
+$$\exists y \in \F, \forall x\in\E, y \neq f(x)$$
+
+\subproblem
+$f: \E \rightarrow \F$ est bijective de $\E$ sur $\F$ si et seulement si :
+$$\forall y \in \F, \exists ! x \in \E, y = f(x)$$
+
+On en déduit que $f$ n'est pas bijective de $\E$ sur $\F$ si et seulement si :
+$$\exists y \in \F,\Bigl(\forall x\in\E, y \neq f(x)\Bigr) \lor \Bigl(\exists a,b\in\E, a\neq b \land f(a) = f(b)\Bigr)$$
+
 \end{document}
