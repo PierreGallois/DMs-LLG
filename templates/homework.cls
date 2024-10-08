@@ -95,7 +95,7 @@ right=1in
 % hidequestions class option definition
 \newcommand\question[0]{
 	\stepcounter{questioncount}
-	\par{\questioncounter) }
+	\par{\textbf{\questioncounter)} }
 }
 
 % -----------------------------------------------------------------------------
