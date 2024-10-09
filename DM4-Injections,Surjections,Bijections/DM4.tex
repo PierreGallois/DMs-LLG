@@ -14,6 +14,7 @@
 \begin{document}
 \newcommand{\E}{\mathcal E}
 \newcommand{\F}{\mathcal F}
+\newcommand{\G}{\mathcal G}
 
 \partie {A} {Définitions}
 \subproblem
@@ -39,6 +40,7 @@ On en déduit que $f$ n'est pas bijective de $\E$ sur $\F$ si et seulement si :
 $$\exists y \in \F,\Bigl(\forall x\in\E, y \neq f(x)\Bigr) \lor \Bigl(\exists a,b\in\E, a\neq b \land f(a) = f(b)\Bigr)$$
 
 \partie {B} {Exemples}
+\setcounter{subproblem}{0}
 \subproblem
 
 \subproblem
@@ -101,5 +103,49 @@ Par le principe de récurrence, $f(n) = n$ pour tout $n\in\N$.
 
 \underline{Synthèse :} La fonction $f:n\mapsto n$ satisfait bien l'énoncé car elle est injective et $f(n) = n \leq n$. La fonction $f:n \mapsto n$ est donc la seule solution injective de cet énoncé.
 
+
+\partie {C} {Propriétés}
+\setcounter{subproblem}{0}
+\subproblem
+\question
+
+\underline{$f$ et $g$ injectives :} Soient $x,y\in\E$. Si $g\circ f(x) = g\circ f(y)$, alors par injectivité de $g$, $f(x) = f(y)$. Encore par injectivité de $f$, $x = y$. Donc $g\circ f$ est injective si $f$ et $g$ sont injectives.
+
+\underline{$f$ et $g$ surjectives :} Soit $x \in \G$. Alors $x$ a un antécédant $y\in\F$ par $g$ car $g$ est surjective. De même, $y$ a un antécédant $z\in\E$ par $f$. Donc $x$ a un antécédant, $z$, par la fontion $g\circ f$ : celle-ci est donc surjective si $f$ et $g$ sont surjectives.
+
+\question
+
+\underline{$g\circ f$ injective :} On procède par contraposée en montrant que si $f$ n'est pas injective, alors $g\circ f$ ne l'est pas non plus. A REFAIRE
+
+\underline{$g\circ f$ surjective :} On procède encore par contraposée en supposant que $g$ n'est pas surjective. Alors il existe $x\in\G$ qui n'a pas d'antécédant par $g$. Alors $x$ ne peut pas avoir d'antécédant par $g\circ f$. Donc $g\circ f$ n'est pas surjective.
+
+\subproblem
+
+\question
+\underline{1e implication :} Supposons que $g$ est injective. Soient $f_{1},f_{2}:\E\rightarrow\F$ telles que $g\circ f_{1} = g\circ f_{2}$. Si $x\in\E$ par injectivité de $g$, $f_{1}(x) = f_{2}(x)$ pour tout $x\in\E$. Ainsi, si $g\circ f_{1} = g\circ f_{2}$, alors $f_{1} = f_{2}$.
+
+\underline{2e implication :} On procède par contraposée en supposant que $g$ n'est pas injective.
+
+$G$ ne peut être vide : sinon, $g$ est immédiatement injective. Donc $F$ n'est pas vide non plus, et contient au moins deux éléments, sinon quoi $g$ est injective.
+
+Donc il existe $x\in\G$ qui a deux antécédants distincts $a,b\in\F$ par $g$ ($\F$ contient au moins deux éléments car une fonction définie sur un ensemble d'un élément ne peut qu'être injective). Posons $f_{1}(e) = a$ et $f_{2}(e) = b$ pour tout $e\in\E$. Alors $g\circ f_{1} = g\circ f_{2}$, mais $f_{1}(e) \neq f_{2}(e)$ pour tout $e\in\E$ - donc pour au moins un $e\in\E$ car $\E$ n'est pas vide.
+
+\question
+\underline{1e implication :} Supposons que $f$ est surjective. Soient $g_{1},g_{2}: \F\rightarrow \G$ telles que $g_{1}\circ f = g_{2}\circ f$. Soit $x \in \F$. Alors il existe $y\in\E$ tel que $f(y) = x$. Comme $g_{1}\circ f(y) = g_{2}\circ f(y)$, on a $g_{1}(x) = g_{2}(x)$ pour tout $x\in\F$. Donc $g_{1} = g_{2}$.
+
+\underline{2e implication :} On procède de nouveau par contraposée en supposant que $f$ n'est pas surjective. Alors il existe $x_{0}\in\F$ qui n'a pas d'antécédant par $f$. Posons
+\begin{eqnarray}
+  g_{1}(x) =
+  \begin{cases}
+    a \text{ si } x\neq x_{0} \\
+    b \text{ si } x = x_{0}
+  \end{cases}
+  &\text{  et  }& g_{2}(x) = a
+\end{eqnarray}
+Où $a,b \in\G$ sont distincts (existent par hypothèse). Alors $g_{1}$ et $g_{2}$ diffèrent en $x=x_{0}$, mais $g_{1}\circ f = g_{2}\circ f$.
+
+CONCLUSION ?
+\subproblem
+Soient $x,y \in \E$ tels que $f(x) = f(y)$. Si $x>y$, alors $f(x) > f(y)$ si $f$ est strictement croissante, $f(x) < f(y)$ si $f$ est décroissante, c'est une contradiction. Similairement, si $y>x$, $f(y) > f(x)$ ou $f(y) < f(x)$ qui est une contradiction. Donc $x=y$ et $f$ est injective.
 
 \end{document}
