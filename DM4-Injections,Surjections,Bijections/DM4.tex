@@ -43,7 +43,12 @@ $$\exists y \in \F,\Bigl(\forall x\in\E, y \neq f(x)\Bigr) \lor \Bigl(\exists a,
 \setcounter{subproblem}{0}
 \subproblem
 
+\newpage
+\vspace{5cm}
+
 \subproblem
+
+\vspace{12cm}
 
 \subproblem
 \question Prouvons que pour tout $n\in\N^{*}$, il existe un unique couple $(p,q) \in \N^{2}$ tel que $f(p,q)= n$.
@@ -91,6 +96,7 @@ En particulier, on obtient que $\varphi: \N^{4} \rightarrow \N$ définie par $\v
 
 \subproblem
 On procède par analyse-synthèse.
+
 \underline{Analyse :} Soit $f$ une fonction qui satisait l'énoncé. Prouvons par récurrence sur $n\in\N$ que $f(n) = n$.
 
 \textbf{Initialisation :} $f(0) \leq 0$, et $f(0) \geq 0$ car $f(0) \in \N$. Donc $f(0) = 0$.
@@ -115,7 +121,9 @@ Par le principe de récurrence, $f(n) = n$ pour tout $n\in\N$.
 
 \question
 
-\underline{$g\circ f$ injective :} On procède par contraposée en montrant que si $f$ n'est pas injective, alors $g\circ f$ ne l'est pas non plus. A REFAIRE
+\underline{$g\circ f$ injective :} On procède par contraposée en montrant que si $f$ n'est pas injective, alors $g\circ f$ ne l'est pas non plus.
+
+\vspace{2cm}
 
 \underline{$g\circ f$ surjective :} On procède encore par contraposée en supposant que $g$ n'est pas surjective. Alors il existe $x\in\G$ qui n'a pas d'antécédant par $g$. Alors $x$ ne peut pas avoir d'antécédant par $g\circ f$. Donc $g\circ f$ n'est pas surjective.
 
@@ -144,7 +152,10 @@ Donc il existe $x\in\G$ qui a deux antécédants distincts $a,b\in\F$ par $g$ ($
 \end{eqnarray}
 Où $a,b \in\G$ sont distincts (existent par hypothèse). Alors $g_{1}$ et $g_{2}$ diffèrent en $x=x_{0}$, mais $g_{1}\circ f = g_{2}\circ f$.
 
-On en déduit que si $f$ n'est pas surjective, alors l'assertion $g_1 \circ f = g_2 \circ f \imply g_1 = g_2$ est fausse.
+On en déduit que si $f$ n'est pas surjective, alors l'assertion $g_1 \circ f = g_2 \circ f \hspace{1cm} g_1 = g_2$ est fausse.
+
+\newpage
+
 \subproblem
 Soient $x,y \in \E$ tels que $f(x) = f(y)$. Si $x>y$, alors $f(x) > f(y)$ si $f$ est strictement croissante, $f(x) < f(y)$ si $f$ est décroissante, c'est une contradiction. Similairement, si $y>x$, $f(y) > f(x)$ ou $f(y) < f(x)$ qui est une contradiction. Donc $x=y$ et $f$ est injective.
 
