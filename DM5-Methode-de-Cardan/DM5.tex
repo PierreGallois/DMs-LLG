@@ -21,7 +21,7 @@
 	course={Mathématiques},
 	setnumber=5}
 \begin{document}
-	
+
 \partie {A} {Méthode de Cardan}
 
 \begin{equation}
@@ -37,11 +37,11 @@
 \end{equation*}
 On remplace $x$ dans \eqref{replace_x_by_X}.
 \begin{align*}
-	&& \left(X-\frac{a}{3}\right)^3 + a\left(X-\frac{a}{3}\right)^2 + b\left(X-\frac{a}{3}\right) + c &= 0 \\
-	&\Leftrightarrow &\dmpoly{X}{\left(\frac{a}{3}\right)} + a\left(\dmpolytwo{X}{\left(\frac{a}{3}\right)}\right) + bX - \frac{ab}{3} + c &= 0 \\
-	&\Leftrightarrow &X^3 - aX^2 + aX^2 + bX +\frac{a^2}{3}X - 2\left(\frac{a^2}{3}X\right) - \frac{a^3}{3^3} + \frac{a^3}{3^2} - \frac{ab}{3} + c &= 0 \\
-	&\Leftrightarrow &X^3 + \left(b - \frac{a^2}{3}\right)X + \frac{2a^3}{3^3} - \frac{ab}{3} + c &= 0 \\
-	&\Leftrightarrow &X^3 + pX + q &= 0 \tag{$E_1$} \label{equation_with_pq}
+	 &                 & \left(X-\frac{a}{3}\right)^3 + a\left(X-\frac{a}{3}\right)^2 + b\left(X-\frac{a}{3}\right) + c                               & = 0                                      \\
+	 & \Leftrightarrow & \dmpoly{X}{\left(\frac{a}{3}\right)} + a\left(\dmpolytwo{X}{\left(\frac{a}{3}\right)}\right) + bX - \frac{ab}{3} + c         & = 0                                      \\
+	 & \Leftrightarrow & X^3 - aX^2 + aX^2 + bX +\frac{a^2}{3}X - 2\left(\frac{a^2}{3}X\right) - \frac{a^3}{3^3} + \frac{a^3}{3^2} - \frac{ab}{3} + c & = 0                                      \\
+	 & \Leftrightarrow & X^3 + \left(b - \frac{a^2}{3}\right)X + \frac{2a^3}{3^3} - \frac{ab}{3} + c                                                  & = 0                                      \\
+	 & \Leftrightarrow & X^3 + pX + q                                                                                                                 & = 0 \tag{$E_1$} \label{equation_with_pq}
 \end{align*}
 avec $p, q \in \mathbb{R}$ tel que
 $\left\{
@@ -49,7 +49,7 @@ $\left\{
 		p = b - \frac{a^2}{3} \\
 		q = \frac{2a^3}{3^3} - \frac{ab}{3} + c
 	\end{array}
-\right.$
+	\right.$
 
 \subproblem
 \question
@@ -60,10 +60,10 @@ $\left\{
 
 On remplace $X$ dans \eqref{equation_with_pq}.
 \begin{align*}
-	&& (u + v)^3 + p(u + v) + q &= 0 \\
-	&\Leftrightarrow &\dppoly{u}{v} + pu + pv + q &= 0 \\
-	&\Leftrightarrow &u^3 + v^3 + v(3uv + p) + u(3uv + p) + q &= 0 \\
-	&\Leftrightarrow &u^3 + v^3 + (u + v)(3uv + p) + q &= 0 \tag{$E_2$} \label{equation_with_uv}
+	 &                 & (u + v)^3 + p(u + v) + q                & = 0                                      \\
+	 & \Leftrightarrow & \dppoly{u}{v} + pu + pv + q             & = 0                                      \\
+	 & \Leftrightarrow & u^3 + v^3 + v(3uv + p) + u(3uv + p) + q & = 0                                      \\
+	 & \Leftrightarrow & u^3 + v^3 + (u + v)(3uv + p) + q        & = 0 \tag{$E_2$} \label{equation_with_uv}
 \end{align*}
 
 \question
@@ -77,18 +77,18 @@ On impose $3uv + p = 0$ donc \eqref{equation_with_uv} devient :
 \question
 
 \begin{align*}
-	&& 3uv + p &= 0 &\text{(relation imposée)}\\
-	&\Leftrightarrow &uv &= \frac{-p}{3} & \\
-	&\Leftrightarrow &u^3v^3 &= \frac{-p^3}{3^3} &\text{(on élève au cube)} \tag{$E_4$} \label{equation_with_uv_cube}
+	 &                 & 3uv + p & = 0                & \text{(relation imposée)}                                           \\
+	 & \Leftrightarrow & uv      & = \frac{-p}{3}     &                                                                     \\
+	 & \Leftrightarrow & u^3v^3  & = \frac{-p^3}{3^3} & \text{(on élève au cube)} \tag{$E_4$} \label{equation_with_uv_cube}
 \end{align*}
 
 \question
 
 \begin{align*}
-	&& u^3 + v^3 + q &= 0 &\text{d'après \eqref{equation_with_uv_required}} \\
-	&\Leftrightarrow &u^3 + \frac{u^3v^3}{u^3} + q &= 0 & \tag{$\ast$} \label{multiply_u_cube_to_fraction}\\
-	&\Leftrightarrow &u^3 + \frac{-p^3}{3^3u^3} + q &= 0 &\text{d'après \eqref{equation_with_uv_cube}} \\
-	&\Leftrightarrow &u^6 - \frac{p^3}{3^3} + qu^3 &= 0 &\text{(on multiplie par $u^3$)}
+	 &                 & u^3 + v^3 + q                 & = 0 & \text{d'après \eqref{equation_with_uv_required}} \\
+	 & \Leftrightarrow & u^3 + \frac{u^3v^3}{u^3} + q  & = 0 & \tag{$\ast$} \label{multiply_u_cube_to_fraction} \\
+	 & \Leftrightarrow & u^3 + \frac{-p^3}{3^3u^3} + q & = 0 & \text{d'après \eqref{equation_with_uv_cube}}     \\
+	 & \Leftrightarrow & u^6 - \frac{p^3}{3^3} + qu^3  & = 0 & \text{(on multiplie par $u^3$)}
 \end{align*}
 
 Avec $U = u^3$ on a :
