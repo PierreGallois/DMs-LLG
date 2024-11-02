@@ -11,6 +11,7 @@
 % Définitions de fonctions latex :
 
 \newcommand{\poly}[4]{\ensuremath{#1x^3 + #2x^2 + #3x + #4}}
+\newcommand{\dppoly}[2]{\ensuremath{#1^3 + 3#1^2#2 + 3#1#2^2 + #2^3}}
 \newcommand{\dmpoly}[2]{\ensuremath{#1^3 - 3#1^2#2 + 3#1#2^2 - #2^3}}
 
 \newcommand{\dmpolytwo}[2]{\ensuremath{#1^2 - 2#1#2 + #2^2}}
@@ -40,7 +41,7 @@ On remplace $x$ dans \eqref{replace_x_by_X}.
 	&\Leftrightarrow &\dmpoly{X}{(\frac{a}{3})} + a(\dmpolytwo{X}{(\frac{a}{3})}) + bX - \frac{ab}{3} + c &= 0 \\
 	&\Leftrightarrow &X^3 - aX^2 + aX^2 + bX +\frac{a^2}{3}X - 2(\frac{a^2}{3}X) - \frac{a^3}{3^3} + \frac{a^3}{3^2} - \frac{ab}{3} + c &= 0 \\
 	&\Leftrightarrow &X^3 + (b - \frac{a^2}{3})X + \frac{2a^3}{3^3} - \frac{ab}{3} + c &= 0 \\
-	&\Leftrightarrow &X^3 + pX + q &= 0
+	&\Leftrightarrow &X^3 + pX + q &= 0 \tag{$E_1$} \label{equation_with_pq}
 \end{align*}
 avec $p, q \in \mathbb{R}$ tel que
 $\left\{
@@ -51,6 +52,55 @@ $\left\{
 \right.$
 
 \subproblem
+\question
 
+\begin{equation*}
+	X = u + v \quad \text{avec} \quad u, v \in \mathbb{R}
+\end{equation*}
 
+On remplace $X$ dans \eqref{equation_with_pq}.
+\begin{align*}
+	&& (u + v)^3 + p(u + v) + q &= 0 \\
+	&\Leftrightarrow &\dppoly{u}{v} + pu + pv + q &= 0 \\
+	&\Leftrightarrow &u^3 + v^3 + v(3uv + p) + u(3uv + p) + q &= 0 \\
+	&\Leftrightarrow &u^3 + v^3 + (u + v)(3uv + p) + q &= 0 \tag{$E_2$} \label{equation_with_uv}
+\end{align*}
+
+\question
+
+On impose $3uv + p = 0$ donc \eqref{equation_with_uv} devient :
+
+\begin{equation*}
+	u^3 + v^3 + q = 0 \tag{$E_3$} \label{equation_with_uv_required}
+\end{equation*}
+
+\question
+
+\begin{align*}
+	&& 3uv + p &= 0 &\text{(relation imposée)}\\
+	&\Leftrightarrow &uv &= \frac{-p}{3} & \\
+	&\Leftrightarrow &u^3v^3 &= \frac{-p^3}{3^3} &\text{(on élève au cube)} \tag{$E_4$} \label{equation_with_uv_cube}
+\end{align*}
+
+\question
+
+\begin{align*}
+	&& u^3 + v^3 + q &= 0 &\text{d'après \eqref{equation_with_uv_required}} \\
+	&\Leftrightarrow &u^3 + \frac{u^3v^3}{u^3} + q &= 0 & \tag{$\ast$} \label{multiply_u_cube_to_fraction}\\
+	&\Leftrightarrow &u^3 + \frac{-p^3}{3^3u^3} + q &= 0 &\text{d'après \eqref{equation_with_uv_cube}} \\
+	&\Leftrightarrow &u^6 - \frac{p^3}{3^3} + qu^3 &= 0 &\text{(on multiplie par $u^3$)}
+\end{align*}
+
+Avec $U = u^3$ on a :
+\begin{equation}
+	\tag{$E_5$}
+	U^2 + qU - \left(\frac{p}{3}\right)^3 = 0
+	\label{equation_second_degree_with_U}
+\end{equation}
+
+qui est une équation du second degré, $u^3$ est donc solution d'une équation du second degré.
+
+À l'étape \eqref{multiply_u_cube_to_fraction} nous aurions pu multipler et diviser par $v^3$ sur $u^3$, nous aurions alors obtenu une équation similaire à \eqref{equation_second_degree_with_U} mais avec $v$ à la place de $u$.
+
+$u^3$ et $v^3$ sont donc solution d'une fonction du second degré.
 \end{document}
