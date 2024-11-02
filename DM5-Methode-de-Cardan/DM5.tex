@@ -6,10 +6,51 @@
 % CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
 \documentclass[]{../templates/homework}
 \usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+% Définitions de fonctions latex :
+
+\newcommand{\poly}[4]{\ensuremath{#1x^3 + #2x^2 + #3x + #4}}
+\newcommand{\dmpoly}[2]{\ensuremath{#1^3 - 3#1^2#2 + 3#1#2^2 - #2^3}}
+
+\newcommand{\dmpolytwo}[2]{\ensuremath{#1^2 - 2#1#2 + #2^2}}
+
 \homeworksetup{
 	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
 	course={Mathématiques},
-	setnumber=$n$}
+	setnumber=5}
 \begin{document}
-	Contenu du devoir...
+	
+\partie {A} {Méthode de Cardan}
+
+\begin{equation}
+	\tag{$E_0$}
+	\poly{}{a}{b}{c} = 0
+	\label{replace_x_by_X}
+\end{equation}
+
+\subproblem
+
+\begin{equation*}
+	X = x + \frac{a}{3} \quad \Leftrightarrow \quad x = X - \frac{a}{3}
+\end{equation*}
+On remplace $x$ dans \eqref{replace_x_by_X}.
+\begin{align*}
+	&& (X-\frac{a}{3})^3 + a(X-\frac{a}{3})^2 + b(X-\frac{a}{3}) + c &= 0 \\
+	&\Leftrightarrow &\dmpoly{X}{(\frac{a}{3})} + a(\dmpolytwo{X}{(\frac{a}{3})}) + bX - \frac{ab}{3} + c &= 0 \\
+	&\Leftrightarrow &X^3 - aX^2 + aX^2 + bX +\frac{a^2}{3}X - 2(\frac{a^2}{3}X) - \frac{a^3}{3^3} + \frac{a^3}{3^2} - \frac{ab}{3} + c &= 0 \\
+	&\Leftrightarrow &X^3 + (b - \frac{a^2}{3})X + \frac{2a^3}{3^3} - \frac{ab}{3} + c &= 0 \\
+	&\Leftrightarrow &X^3 + pX + q &= 0
+\end{align*}
+avec $p, q \in \mathbb{R}$ tel que
+$\left\{
+	\begin{array}{ll}
+		p = (b - \frac{a^2}{3})\\
+		q = \frac{2a^3}{3^3} - \frac{ab}{3} + c
+	\end{array}
+\right.$
+
+\subproblem
+
+
 \end{document}
