@@ -52,9 +52,7 @@ $\left\{
 	\right.$
 
 \subproblem
-\question
-
-\begin{equation*}
+\question\begin{equation*}
 	X = u + v \quad \text{avec} \quad u, v \in \mathbb{R}
 \end{equation*}
 
@@ -66,9 +64,7 @@ On remplace $X$ dans \eqref{equation_with_pq}.
 	 & \Leftrightarrow & u^3 + v^3 + (u + v)(3uv + p) + q        & = 0 \tag{$E_2$} \label{equation_with_uv}
 \end{align*}
 
-\question
-
-On impose $3uv + p = 0$ donc \eqref{equation_with_uv} devient :
+\question On impose $3uv + p = 0$ donc \eqref{equation_with_uv} devient :
 
 \begin{equation*}
 	u^3 + v^3 + q = 0 \tag{$E_3$} \label{equation_with_uv_required}
@@ -100,7 +96,45 @@ Avec $U = u^3$ on a :
 
 qui est une équation du second degré, $u^3$ est donc solution d'une équation du second degré.
 
-À l'étape \eqref{multiply_u_cube_to_fraction} nous aurions pu multipler et diviser par $v^3$ sur $u^3$, nous aurions alors obtenu une équation similaire à \eqref{equation_second_degree_with_U} mais avec $v$ à la place de $u$.
+À l'étape \eqref{multiply_u_cube_to_fraction} nous aurions pu multiplier et diviser par $v^3$ sur $u^3$, nous aurions alors obtenu une équation similaire à \eqref{equation_second_degree_with_U} mais avec $v$ à la place de $u$.
 
-$u^3$ et $v^3$ sont donc solution d'une fonction du second degré.
+$u^3$ et $v^3$ sont donc racines d'un polynôme du second degré.
+
+\partie{B}{Exemples}
+\partie C {Formules}
+\subproblem Notons $P$ le polynôme de l'équation $(E_1)$. On sait qu'il existe une racine $X_0 \in \R$ de $P$ si et seulement si il existe $u,v$ tels que $u^3,v^3$ sont les racines du polynôme $D(x) = x^2 + qx - \left(\frac p 3\right)^3$.
+Ce polynôme a pour discriminant :
+\begin{align*}
+	\Delta &= q^2 + 4\left(\frac p 3\right)^3 \\
+	&=  \frac {27q^2 + 4p^3}{27}
+\end{align*}
+
+
+Ainsi, si $\Delta > 0$, le polynôme a deux racines distinctes $U,V = \frac {-q}{2} \pm \frac {\sqrt \Delta} {2}$, qui donnent le choix unique de :
+$$u,v = \sqrt[3]{\frac {-q}{2} \pm \frac {\sqrt \Delta} {2}}$$
+
+Et enfin le choix unique de :
+$$X_0 = \sqrt[3]{-\frac {q}{2} + \sqrt {\frac {27q^2 + 4p^3}{108}} } + \sqrt[3]{-\frac {q}{2} - \sqrt {\frac {27q^2 + 4p^3}{108}} }$$
+
+Qui est donc la seule racine réelle de $P$. \footnote{Nous avons conscience que cet argument n'est pas très rigoureux, mais la méthode de l'exercice suivant n'a pas porté ses fruits sur celui-ci pour prouver l'unicité de $X_1$...}
+
+\subproblem Si $\Delta = 0$, $D$ a une racine double $U = -\frac q {2}$. On doit donc poser $u = v = \sqrt[3]{-\frac q 2}$. Donc $X_1 = 2u$ est une racine de $(E_1)$.
+
+
+En faisant la division euclidienne de $P$ par $x-X_1$, on trouve $P(x) = (x-X_1)Q(x)$ avec un deuxième facteur quadratique $Q(x) = x^2 + X_1x + (X_1^2 + p)$ dont le discriminant $\Delta'$ est :
+$$\Delta' = -3X_0^2 - 4p$$
+
+On trouve enfin que :
+\begin{align*}
+	\Delta' = 0 &\iff -12u^2 = 4p \\
+	&\iff -u^2 = \frac p 3\\
+	&\iff -(\sqrt[3]{-\frac q 2})^2 = \frac p3\\
+	&\iff -\frac {q^2} 4 = (\frac p 3)^3\\
+	&\iff \Delta = 0
+\end{align*}
+Comme $\Delta = 0$, $\Delta' = 0$ et $Q$ a une racine double $X_2 = -\frac {X_1} 2$.
+Ainsi, si $\Delta = 0$, les seules racines de $P$ sont :
+\begin{equation*}
+	X_1 = 2\sqrt[3]{-\frac q 2} \qquad X_2 = \sqrt[3]{\frac q 2}
+\end{equation*}
 \end{document}
