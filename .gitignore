@@ -307,5 +307,6 @@ TSWLatexianTemp*
 
 # Custom stuff
 output
+.local-prog
 template.pdf
 *.mst
