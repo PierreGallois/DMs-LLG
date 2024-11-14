@@ -1,5 +1,4 @@
-// AJOUTER PI = 4 EN PAGES
-#import "lib.typ": dm // FIXME les histoires de path
+#import "./../templates/homework.typ": dm
 
 #show: dm.with(
   numero: 6,
