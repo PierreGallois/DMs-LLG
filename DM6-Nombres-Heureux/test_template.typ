@@ -1,15 +1,14 @@
+// AJOUTER PI = 4 EN PAGES
 #import "lib.typ": dm // FIXME les histoires de path
 
 #show: dm.with(
   numero: 6,
   titre: [Nombres Heureux],
-  sections: [Partie],
+  sections: [Problème],
   alpha: true
 )
 
-= Introduction
-Bonjour
-
-== aaa
-
-=== a
+= Bonjour
+== Sous pb 1
+=== 
+===
