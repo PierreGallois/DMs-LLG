@@ -172,7 +172,11 @@ $$ x^3 + 3x - 4 = 0$$
 \question Une solution évidente est 1 : $$1^3 + 3\times1 - 4 = 0$$
 \question Nous n'avons pas de terme en $x^2$, donc posons directement $x = u+v$, avec $u, v \in \R$.
 On obtient : $$x^3 + px + q = 0 \text{ avec } p=3, q=-4$$
-
+On obtient : $$x^3 + px + q = 0 \text{ avec } p=3, q=-4$$
+En posant $3uv + 3 = 0$, on obtient : $$uv = -\frac{p}{3} \iff u^3v^3 = -1$$
+D'où avec $U = u^3$, on obtient : $$U^2 -4U -1 =0$$
+On trouve ainsi $U = 2 - \sqrt{5}$ ou $U = 2 + \sqrt{5}$
+Or $u^3 + v^3 = -q$, on trouve finalement $x = 2 + \sqrt{5} + \sqrt[3]{2 - \sqrt{5}}$ ou $x = 2 - \sqrt{5} + \sqrt[3]{2 + \sqrt{5}}$
 \partie C {Formules}
 \subproblem*{1} Notons $P$ le polynôme de l'équation $(E_1)$. On sait qu'il existe une racine $X_0 \in \R$ de $P$ si et seulement si il existe $u,v$ tels que $u^3,v^3$ sont les racines du polynôme $D(x) = x^2 + qx - \left(\frac p 3\right)^3$.
 Ce polynôme a pour discriminant :
