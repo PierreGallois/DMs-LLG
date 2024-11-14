@@ -7,8 +7,3 @@
   sections: [Problème],
   alpha: true
 )
-
-= Bonjour
-== Sous pb 1
-=== 
-===

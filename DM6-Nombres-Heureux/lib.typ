@@ -10,6 +10,13 @@
 
   set text(lang: "fr")
   set page("a4", margin: auto)
+  set page(footer: context {
+    set align(center)
+    set text(8pt)
+    if counter(page).get().first() == 4 [
+      $pi = 4$
+    ] else { counter(page).display() }
+  })
 
   // Titre
   {
@@ -19,7 +26,11 @@
     text(12pt, author + "\n")
     text(12pt, "1E1")
   }
+  
+  // Pagination
 
+
+  // Gestion des sections
   let nmbring(..nums) = {
     let number = if alpha {str.from-unicode("A".to-unicode() - 1 + nums.at(0))} else {str(nums.at(0))}
     sections + " " + number + " -"
