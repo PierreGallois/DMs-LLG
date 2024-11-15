@@ -47,10 +47,7 @@
   }
 
 
-  show heading.where(level: 1): it => {
-    set heading(numbering: nmbring);
-    // Mettre un bloc autour !!
-  }
+  show heading.where(level: 1): set heading(numbering: nmbring);
   
   show heading.where(level: 2): set heading(numbering:(..nums) => str(nums.at(1)) + ")")
 
