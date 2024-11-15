@@ -77,11 +77,19 @@
 
   // cache tout le code après le `if __name__ ...` pour permettre l'execution du programme sans que cela soit affiché dans typst
   if hide-calls {
-    code_file = code_file.trim(
-      regex(`if __name__ == "__main__":[\S\s]*`.text),
-      at: end,
-      repeat: false
-    )
+    if lang == "python" {
+      code_file = code_file.trim(
+        regex(`if __name__ == "__main__":[\S\s]*`.text),
+        at: end,
+        repeat: false
+      )
+    }
+    if lang == "typst" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^#import.*`.text),
+        repeat: true
+      )
+    }
   }
 
   // enlève les espaces de début et fin
