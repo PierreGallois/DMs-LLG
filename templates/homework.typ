@@ -57,10 +57,14 @@
 }
 
 #let code-from-file(
-    path,
+    folder-name,
+    file-name,
     lang:none,
     hide-calls:true,
   ) = {
+  // Astuce à cause de la gestion des paths relatives de typst :
+  let path = "./../" + folder-name + "/" + file-name
+
   let code_file = read(path)
   if lang == none {
     if path.ends-with(".py") {

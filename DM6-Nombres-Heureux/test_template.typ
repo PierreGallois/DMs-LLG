@@ -1,5 +1,6 @@
 #import "./../templates/homework.typ": dm, code-from-file
 
+#let folder-name = "DM6-Nombres-Heureux"
 #show: dm.with(
   numero: 6,
   titre: [Nombres Heureux],
@@ -7,6 +8,5 @@
   alpha: true
 )
 
-start
-#code-from-file("./code.py")
+#code-from-file(folder-name, "code.py")
 end
