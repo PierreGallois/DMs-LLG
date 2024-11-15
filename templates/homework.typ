@@ -15,7 +15,9 @@
     set text(8pt)
     if counter(page).get().first() == 4 [
       $pi = 4$
-    ] else { counter(page).display() }
+    ] else {
+      counter(page).display()
+    }
   })
 
   // Titre
