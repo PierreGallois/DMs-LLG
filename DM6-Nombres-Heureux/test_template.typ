@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm
+#import "./../templates/homework.typ": dm, code-from-file
 
 #show: dm.with(
   numero: 6,
@@ -7,4 +7,6 @@
   alpha: true
 )
 
-= Test
+start
+#code-from-file("./code.py")
+end

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Dark Modern (VSCode) - Python</string>
+        <key>settings</key>
+        <array>
+            <!-- Paramètres de base -->
+            <dict>
+                <key>scope</key>
+                <string>source.python</string>
+                <key>settings</key>
+                <dict>
+                    <key>background</key>
+                    <string>#1E1E1E</string> <!-- Fond sombre -->
+                    <key>foreground</key>
+                    <string>#D4D4D4</string> <!-- Texte normal -->
+                </dict>
+            </dict>
+
+            <!-- Mots-clés -->
+            <dict>
+                <key>scope</key>
+                <string>keyword, keyword.control, keyword.operator</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#C586C0</string> <!-- Mots-clés en rose-lavande -->
+                </dict>
+            </dict>
+
+            <!-- Noms de fonctions -->
+            <dict>
+                <key>scope</key>
+                <string>entity.name.function, meta.function.python</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#DCDCAA</string> <!-- Nom de fonction en jaune clair -->
+                </dict>
+            </dict>
+
+            <!-- Variables (ajout de scopes plus spécifiques) -->
+            <dict>
+                <key>scope</key>
+                <string>variable, variable.other, variable.language.python, variable.parameter.python, variable.other.local.python, </string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#9CDCFE</string> <!-- Variables en bleu clair -->
+                </dict>
+            </dict>
+
+            <!-- Chaînes de caractères -->
+            <dict>
+                <key>scope</key>
+                <string>string, string.quoted, string.escaped</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#CE9178</string> <!-- Chaînes en orange clair -->
+                </dict>
+            </dict>
+
+            <!-- Commentaires -->
+            <dict>
+                <key>scope</key>
+                <string>comment, comment.block.documentation, comment.line</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#6A9955</string> <!-- Commentaires en vert -->
+                    <key>fontStyle</key>
+                    <string>italic</string> <!-- Italique pour les commentaires -->
+                </dict>
+            </dict>
+
+            <!-- Chiffres -->
+            <dict>
+                <key>scope</key>
+                <string>constant.numeric, constant.language</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#B5CEA8</string> <!-- Chiffres en vert clair -->
+                </dict>
+            </dict>
+
+            <!-- Parenthèses, accolades, crochets -->
+            <dict>
+                <key>scope</key>
+                <string>punctuation.definition.string, punctuation.definition.comment, punctuation.section, punctuation.bracket</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#808080</string> <!-- Parenthèses en gris -->
+                </dict>
+            </dict>
+
+            <!-- Délimiteurs -->
+            <dict>
+                <key>scope</key>
+                <string>punctuation.definition, punctuation.separator</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#808080</string> <!-- Délimiteurs en gris -->
+                </dict>
+            </dict>
+
+            <!-- Clés de dictionnaire -->
+            <dict>
+                <key>scope</key>
+                <string>entity.name.type, entity.name.class</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#4EC9B0</string> <!-- Classes et types en cyan -->
+                </dict>
+            </dict>
+
+            <!-- Autres éléments non reconnus -->
+            <dict>
+                <key>scope</key>
+                <string>text</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#FFFFFF</string> <!-- Caractères non reconnus en blanc -->
+                </dict>
+            </dict>
+        </array>
+    </dict>
+</plist>

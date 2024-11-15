@@ -23,3 +23,10 @@ def heureux(n):
 # Compte la probabilite qu'un nombre inferieur à Nmax soit heureux
 def probabilite(Nmax):
     return ([heureux(n) for n in range(1,Nmax+1)].count(True) / Nmax)
+
+
+
+if __name__ == "__main__":
+    print("a")
+
+    print("aaaa")

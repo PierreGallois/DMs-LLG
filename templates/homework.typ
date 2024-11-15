@@ -55,3 +55,42 @@
 
   body
 }
+
+#let code-from-file(
+    path,
+    lang:none,
+    hide-calls:true,
+  ) = {
+  let code_file = read(path)
+  if lang == none {
+    if path.ends-with(".py") {
+      lang = "python"
+    }
+  }
+
+  // cache tout le code après le `if __name__ ...` pour permettre l'execution du programme sans que cela soit affiché dans typst
+  if hide-calls {
+    code_file = code_file.trim(
+      regex(`if __name__ == "__main__":[\S\s]*`.text),
+      at: end,
+      repeat: false
+    )
+  }
+
+  // enlève les espaces de début et fin
+  code_file = code_file.trim()
+
+  block(
+    fill: rgb("#1d2433"),
+    inset: 20pt,
+    radius: 15pt,
+    text(
+      fill: rgb("#a2aabc"),
+      raw(
+        code_file,
+        lang: lang,
+        theme: "vscode_dark_modern_unofficial.tmTheme",
+      )
+    )
+  )
+}
