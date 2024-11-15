@@ -70,6 +70,9 @@
     if path.ends-with(".py") {
       lang = "python"
     }
+    if path.ends-with(".typ") {
+      lang = "typst"
+    }
   }
 
   // cache tout le code après le `if __name__ ...` pour permettre l'execution du programme sans que cela soit affiché dans typst
