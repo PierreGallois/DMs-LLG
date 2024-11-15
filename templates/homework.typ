@@ -21,10 +21,14 @@
   // Titre
   {
     set align(center)
-    text(17pt, weight: "bold", "Devoir maison n° " + str(numero) + " : " + titre + "\n\n")
-
-    text(12pt, author + "\n")
-    text(12pt, "1E1")
+    text(17pt, weight: "bold")[
+      Devoir maison n$degree$#numero : #titre
+    ]
+    v(-5pt)
+    text(12pt)[
+      #author \
+      1E1
+    ]
   }
   
   // Pagination
