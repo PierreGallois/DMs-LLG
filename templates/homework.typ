@@ -63,6 +63,7 @@
     ) + [\ ]
   }
 
+  // FIXME : retirer la ligne si le nombre est 1
   show heading.where(level: 2): it => {
     line(length: 100%)
     box(it)

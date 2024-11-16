@@ -11,24 +11,24 @@
   alpha: true
 )
 
+= Description de l'algorithme
+==
+L'image de ... est ...
+==
+===
 
+===
+==
+
+= Trajectoire des nombrse inférieurs à 100
+==
+Voici les programmes :
+#code-from-file(folder-name, "/code/karma.typ")
 #code-from-file(folder-name, "/code/heureux.py")
 
-```python
-print(True)
-```
+// #code-from-file(folder-name, "/code/heureux.typ")
 
-```python
-print(True)
-print(False)
-```
-
-#pagebreak()
-
-#code-from-file(folder-name, "/code/karma.typ")
-
-#code-from-file(folder-name, "/code/heureux.typ")
-
+Et le tableau :
 #table(
   align: center,
   columns: 10,
@@ -38,9 +38,12 @@ print(False)
       if heureux(n) [*H*] else [m]
     )
 )
+==
+La proba est de ...
 
-= Nombres Heureux
+= Trajectoires des nombres de chiffres
+==
 
 ==
-===
-Le nombre est heureux comme Sisyphe 
+
+==
