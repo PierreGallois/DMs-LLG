@@ -51,7 +51,6 @@
   
   show heading.where(level: 2): set heading(numbering:(..nums) => str(nums.at(1)) + ")")
 
-
   show heading.where(level: 3): set heading(numbering: (..nums) => str.from-unicode("a".to-unicode() - 1 + nums.at(2)) + ")")
 
   show heading.where(level: 1): it => {
@@ -59,6 +58,7 @@
   }
 
   show heading.where(level: 2): it2 => {
+    line(length: 100%)
     box(it2)
   }
 
