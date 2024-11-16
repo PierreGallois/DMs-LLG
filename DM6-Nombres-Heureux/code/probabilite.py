@@ -1,7 +1,9 @@
 from heureux import heureux
 
 def probabilite(Nmax):
-    """Compte la probabilite qu'un nombre inferieur à Nmax soit heureux"""
+    """
+    Compte la probabilite qu'un nombre inferieur à Nmax soit heureux
+    """
     return (
         [
             heureux(n) for n in range(1, Nmax+1)

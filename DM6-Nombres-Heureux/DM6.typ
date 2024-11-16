@@ -22,13 +22,36 @@ L'image de ... est ...
 
 = Trajectoire des nombres inférieurs à 100
 ==
-Voici les programmes :
-#code-from-file(folder-name, "/code/karma.py")
-#code-from-file(folder-name, "/code/heureux.py")
 
-// #code-from-file(folder-name, "/code/heureux.typ")
+#block(breakable: false)[
+  Réimplémentation de la fonction `karma` en python et en typst. 
 
-Et le tableau :
+  #grid(
+    columns: (50% - 5pt, 10pt, 50% - 5pt),
+    rows: (auto),
+    code-from-file(folder-name, "/code/karma.py"),
+    none,
+    code-from-file(folder-name, "/code/karma.typ"),
+  )
+]
+
+#block(breakable: false)[
+  Création de la fonction `heureux` permettant de déterminer si un nombre `n` est heureux ou non :
+
+  #grid(
+    columns: (59% - 5pt, 10pt, 41% - 5pt),
+    rows: (auto),
+    code-from-file(folder-name, "/code/heureux.py"),
+    none,
+    code-from-file(folder-name, "/code/heureux.typ"),
+  )
+
+  Seul un nombre de la boucle (89) est testé pour simplifier le programme, la perte de vitesse engendrée est négligeable.
+]
+
+Pour obtenir la liste des nombreux heureux strictement inférieurs à 100, il suffit d'éxecuter le code python ```python [n for n in range(1, 101) if heureux(n)]```.
+
+On récapitule le résultat dans le tableau suivant :
 #table(
   align: center,
   columns: 10,
@@ -38,8 +61,13 @@ Et le tableau :
       if heureux(n) [*H*] else [m]
     )
 )
+
 ==
-La proba est de ...
+On utilise l'algorithme suivant pour calculer la probabilité qu'un nombre choisit au hasard entre 1 et 100 soit heureux :
+
+#code-from-file(folder-name, "/code/probabilite.py")
+
+On obtient une probabilité de $20%$.
 
 = Trajectoires des nombres de chiffres
 ==
