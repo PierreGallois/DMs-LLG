@@ -57,13 +57,13 @@
     it + [\ ]
   }
 
-  show heading.where(level: 2): it2 => {
+  show heading.where(level: 2): it => {
     line(length: 100%)
-    box(it2)
+    box(it)
   }
 
-  show heading.where(level: 3): it3 => {
-    box(it3)
+  show heading.where(level: 3): it => {
+    box(it)
   }
 
   // Code
