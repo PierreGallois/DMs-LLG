@@ -54,21 +54,34 @@
   show heading.where(level: 3): set heading(numbering: (..nums) => str.from-unicode("a".to-unicode() - 1 + nums.at(2)) + ")")
 
   // Code
-  
-  show raw: set raw(
-    theme: "vscode_dark_modern_unofficial.tmTheme"
-  )
 
+  let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
   show raw: it => {
-    block(
-      fill: rgb("#1d2433"),
-      inset: 20pt,
-      radius: 15pt,
-        text(
-          fill: rgb("#a2aabc"),
-          it
-        )
-    )
+    // évite une boucle infinie (oui c'est moche)
+    if it.theme == code-theme-path {
+      return it
+    }
+    if it.text.contains("\n") {
+      block(
+        fill: rgb("#1d2433"),
+        inset: 20pt,
+        radius: 15pt,
+          text(
+            fill: rgb("#a2aabc"),
+            raw(
+              theme: code-theme-path,
+              block: it.block,
+              lang: it.lang,
+              align: it.align,
+              syntaxes: it.syntaxes,
+              tab-size: it.tab-size,
+              it.text,
+            )
+          )
+      )
+    } else {
+      it
+    }
   }
 
   body
