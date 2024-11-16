@@ -9,6 +9,7 @@
   set document(author: author, title: "Mathématiques : Devoir maison n° " + str(numero))
 
   set text(lang: "fr", size: 12pt)
+  set par(justify: true)
   set page("a4", margin: auto)
   set page(footer: context {
     set align(center)
@@ -33,7 +34,6 @@
   }
   
   // Pagination
-
 
   // Gestion des sections
   let nmbring(..nums) = {
