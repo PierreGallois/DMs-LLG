@@ -20,10 +20,10 @@ L'image de ... est ...
 ===
 ==
 
-= Trajectoire des nombrse inférieurs à 100
+= Trajectoire des nombres inférieurs à 100
 ==
 Voici les programmes :
-#code-from-file(folder-name, "/code/karma.typ")
+#code-from-file(folder-name, "/code/karma.py")
 #code-from-file(folder-name, "/code/heureux.py")
 
 // #code-from-file(folder-name, "/code/heureux.typ")

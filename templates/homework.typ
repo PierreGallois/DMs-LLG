@@ -47,7 +47,7 @@
   }
 
 
-  show heading.where(level: 1): set heading(numbering: nmbring);
+  show heading.where(level: 1): set heading(numbering: nmbring)
   
   show heading.where(level: 2): set heading(numbering:(..nums) => str(nums.at(1)) + ")")
 
@@ -60,12 +60,14 @@
       width: 100%,
       radius: 4pt,
       it,
-    ) + [\ ]
+    )
   }
 
   // FIXME : retirer la ligne si le nombre est 1
   show heading.where(level: 2): it => {
-    line(length: 100%)
+    if counter(heading).get().at(1) != 1 {
+      line(length: 100%)
+    }
     box(it)
   }
 
