@@ -57,7 +57,7 @@
       fill: luma(230),
       inset: 8pt,
       width: 100%,
-      radius: 4pt,
+      radius: 8pt,
       it,
     )
   }
