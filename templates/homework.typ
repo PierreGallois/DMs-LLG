@@ -57,12 +57,12 @@
       fill: luma(230),
       inset: 8pt,
       width: 100%,
-      radius: 4pt,
+      radius: 7pt,
       it,
     )
+    v(5pt)
   }
 
-  // FIXME : retirer la ligne si le nombre est 1
   show heading.where(level: 2): it => {
     if counter(heading).get().at(1) != 1 {
       line(length: 100%)
