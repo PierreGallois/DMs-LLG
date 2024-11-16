@@ -53,6 +53,24 @@
 
   show heading.where(level: 3): set heading(numbering: (..nums) => str.from-unicode("a".to-unicode() - 1 + nums.at(2)) + ")")
 
+  // Code
+  
+  show raw: set raw(
+    theme: "vscode_dark_modern_unofficial.tmTheme"
+  )
+
+  show raw: it => {
+    block(
+      fill: rgb("#1d2433"),
+      inset: 20pt,
+      radius: 15pt,
+        text(
+          fill: rgb("#a2aabc"),
+          it
+        )
+    )
+  }
+
   body
 }
 
@@ -105,17 +123,8 @@
   // enlève les espaces de début et fin
   code_file = code_file.trim()
 
-  block(
-    fill: rgb("#1d2433"),
-    inset: 20pt,
-    radius: 15pt,
-    text(
-      fill: rgb("#a2aabc"),
-      raw(
-        code_file,
-        lang: lang,
-        theme: "vscode_dark_modern_unofficial.tmTheme",
-      )
-    )
+  raw(
+    code_file,
+    lang: lang,
   )
 }
