@@ -305,6 +305,9 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
+#Python
+__pycache__/
+
 # Custom stuff
 output
 .local-prog

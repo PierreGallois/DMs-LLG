@@ -61,6 +61,7 @@
     file-name,
     lang:none,
     hide-calls:true,
+    hide-imports: true,
   ) = {
   // Astuce à cause de la gestion des paths relatives de typst :
   let path = "./../" + folder-name + "/" + file-name
@@ -84,9 +85,18 @@
         repeat: false
       )
     }
+  }
+
+  if hide-imports {
     if lang == "typst" { // TODO en enlève qu'un seul pour une raison inconnue
       code_file = code_file.trim(
         regex(`^#import.*`.text),
+        repeat: true
+      )
+    }
+    if lang == "python" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^[from|import].*`.text),
         repeat: true
       )
     }
