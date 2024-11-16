@@ -53,6 +53,19 @@
 
   show heading.where(level: 3): set heading(numbering: (..nums) => str.from-unicode("a".to-unicode() - 1 + nums.at(2)) + ")")
 
+  show heading.where(level: 1): it => {
+    it + [\ ]
+  }
+
+  show heading.where(level: 2): it2 => {
+    line(length: 100%)
+    box(it2)
+  }
+
+  show heading.where(level: 3): it3 => {
+    box(it3)
+  }
+
   // Code
 
   let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
