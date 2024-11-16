@@ -87,6 +87,7 @@
         fill: rgb("#1d2433"),
         inset: 20pt,
         radius: 15pt,
+        width: 100%,
           text(
             fill: rgb("#a2aabc"),
             size: 12pt,
