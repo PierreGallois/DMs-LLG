@@ -8,11 +8,10 @@
   let author = "Jules Charlier, Thomas Diot, Pierre Gallois, Jim Garnier" 
   set document(author: author, title: "Mathématiques : Devoir maison n° " + str(numero))
 
-  set text(lang: "fr")
+  set text(lang: "fr", size: 12pt)
   set page("a4", margin: auto)
   set page(footer: context {
     set align(center)
-    set text(8pt)
     if counter(page).get().first() == 4 [
       $pi = 4$
     ] else {
@@ -23,11 +22,11 @@
   // Titre
   {
     set align(center)
-    text(17pt, weight: "bold")[
+    text(19pt, weight: "bold")[
       Devoir maison n$degree$#numero : #titre
     ]
     v(-5pt)
-    text(12pt)[
+    text(13pt)[
       #author \
       1E1
     ]
@@ -90,6 +89,7 @@
         radius: 15pt,
           text(
             fill: rgb("#a2aabc"),
+            size: 12pt,
             raw(
               theme: code-theme-path,
               block: it.block,
