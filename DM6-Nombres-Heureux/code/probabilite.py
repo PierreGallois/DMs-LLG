@@ -2,7 +2,7 @@ from heureux import heureux
 
 def probabilite(Nmax):
     """
-    Compte la probabilite qu'un nombre inferieur à Nmax soit heureux
+    Calcule la probabilite qu'un nombre inferieur à Nmax soit heureux
     """
     return (
         [
