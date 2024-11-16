@@ -1,14 +1,4 @@
-# python 3
-
-def karma(n):
-    """Calcule la somme des chiffres de n"""
-    d = n
-    p = 0
-    while d != 0:
-        r = d%10
-        d //= 10
-        p += r**2
-    return p
+from karma import karma
 
 def heureux(n):
     """
@@ -24,16 +14,6 @@ def heureux(n):
         image = karma(image)
     return True
 
-def probabilite(Nmax):
-    """Compte la probabilite qu'un nombre inferieur à Nmax soit heureux"""
-    return (
-        [
-            heureux(n) for n in range(1, Nmax+1)
-        ].count(True)
-        / Nmax
-    )
-
-
 
 if __name__ == "__main__":
-    print(probabilite(100))
+    print(heureux(10))
