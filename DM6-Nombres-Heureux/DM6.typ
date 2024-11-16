@@ -20,10 +20,10 @@ L'image de ... est ...
 ===
 ==
 
+#block(breakable: false)[
 = Trajectoire des nombres inférieurs à 100
 ==
 
-#block(breakable: false)[
   Réimplémentation de la fonction `karma` en python et en typst. 
 
   #grid(
@@ -104,12 +104,15 @@ Pour obtenir la liste des nombreux heureux strictement inférieurs à 100, il su
 
 Il n'existe pas de nombre strictement inférieur à 100 qui soit ni heureux ni malheureux.
 
+#block(breakable: false)[
 ==
-On utilise l'algorithme suivant pour calculer la probabilité qu'un nombre choisit au hasard entre 1 et 100 soit heureux :
 
-#code-from-file(folder-name, "/code/probabilite.py")
+  On utilise l'algorithme suivant pour calculer la probabilité qu'un nombre choisit au hasard entre 1 et 100 soit heureux :
 
-On obtient une probabilité de $20%$.
+  #code-from-file(folder-name, "/code/probabilite.py")
+
+  On obtient une probabilité de $20%$.
+]
 
 = Trajectoires des nombres de chiffres
 ==
