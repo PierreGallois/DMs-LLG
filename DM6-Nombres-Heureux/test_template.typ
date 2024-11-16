@@ -14,6 +14,15 @@
 
 #code-from-file(folder-name, "/code/heureux.py")
 
+```python
+print(True)
+```
+
+```python
+print(True)
+print(False)
+```
+
 #pagebreak()
 
 #code-from-file(folder-name, "/code/karma.typ")

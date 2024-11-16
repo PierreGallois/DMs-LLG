@@ -62,13 +62,44 @@
     ) + [\ ]
   }
 
-  show heading.where(level: 2): it2 => {
+  show heading.where(level: 2): it => {
     line(length: 100%)
-    box(it2)
+    box(it)
   }
 
-  show heading.where(level: 3): it3 => {
-    box(it3)
+  show heading.where(level: 3): it => {
+    box(it)
+  }
+
+  // Code
+
+  let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
+  show raw: it => {
+    // évite une boucle infinie (oui c'est moche)
+    if it.theme == code-theme-path {
+      return it
+    }
+    if it.text.contains("\n") {
+      block(
+        fill: rgb("#1d2433"),
+        inset: 20pt,
+        radius: 15pt,
+          text(
+            fill: rgb("#a2aabc"),
+            raw(
+              theme: code-theme-path,
+              block: it.block,
+              lang: it.lang,
+              align: it.align,
+              syntaxes: it.syntaxes,
+              tab-size: it.tab-size,
+              it.text,
+            )
+          )
+      )
+    } else {
+      it
+    }
   }
 
   body
@@ -123,17 +154,8 @@
   // enlève les espaces de début et fin
   code_file = code_file.trim()
 
-  block(
-    fill: rgb("#1d2433"),
-    inset: 20pt,
-    radius: 15pt,
-    text(
-      fill: rgb("#a2aabc"),
-      raw(
-        code_file,
-        lang: lang,
-        theme: "vscode_dark_modern_unofficial.tmTheme",
-      )
-    )
+  raw(
+    code_file,
+    lang: lang,
   )
 }
