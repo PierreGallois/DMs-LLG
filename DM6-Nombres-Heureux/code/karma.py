@@ -1,7 +1,7 @@
 
 
 def karma(n):
-    """Calcule la somme des chiffres de n"""
+    """Calcule la somme des carrés des chiffres de n"""
     d = n
     p = 0
     while d != 0:
@@ -12,4 +12,4 @@ def karma(n):
 
 
 if __name__ == "__main__":
-    print(karma(10))
+    print(karma(12345))
