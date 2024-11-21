@@ -31,6 +31,50 @@ Donc $p$ a une infinité d'antécédants par la fonction karma.
 
 ===
 Montrons par l'absurde que $157$ n'a pas d'antécédant à 3 chiffres par la fonction karma, en supposant que $overline(a b c)$ soit un antécédant de $157$.
+Comme $3 dot 7^2 = 147 < 157$, au moins l'un des chiffres de $overline(a b c)$ est supérieur ou égal à 8. Comme l'image par la fonction karma de $overline(a b c)$ est indépendant de l'ordre, supposons sans perte de généralité que $a >= 8$.
+
+Si $overline(a b c)$ est un antécédant de $157$, alors $a^2 + b^2 + c^2 equiv 7$ modulo $10$. Un carré vaut $0,1,4,5,6$ ou $9$ modulo $10$, et les sommes de deux carrés modulo 10 sont reportées dans le tableau ci-dessous.
+
+#{
+  let squares = (0,1,4,5,6,9)
+
+  let entry(n) = {
+    let column = calc.rem(n, 7);
+    let row = calc.div-euclid(n, 7);
+    if column == 0 {
+      str(squares.at(row))
+    } else{
+      str(calc.rem(squares.at(row) + squares.at(column - 1),10))
+    }
+  }
+
+  show table.cell: it => {
+    if it.body == [3] {
+      set text(blue)
+      strong(it)
+    } else if it.body == [6] and it.x != 0 and it.y != 0 {
+      set text(red)
+      strong(it)
+    } else {
+      it
+    }
+  }
+
+  set align(center)
+  table(
+    align: center,
+    columns:  array.range(7).map(_ => 20pt),
+    rows:  array.range(7).map(_ => 20pt),
+    [$+$], ..squares.map(str),
+    ..array.range(0,42).map(entry)
+  )
+}
+
+Si $a=8$, alors $a^2 equiv 4$ modulo 10. Il faut donc que $b^2 + c^2 equiv 3 mod 10$ et que $b$ et $c$ soient $9$ et $4$ (l'ordre n'importe pas). Mais $8^2 + 9^2 + 4^2 = 161 eq.not 157$. Donc $a eq.not 8$
+
+Si $a=9$, $a^2 equiv 1 mod 10$, et $b^2 + c^2 equiv 6 mod 10$. Donc $b$ et $c$ sont $0$ et $6$, ou $1$ et $5$. Mais $9^2 + 0^2 + 6^2 = 117 eq.not 157$ et $9^2 + 1^2 + 5^2 = 107 eq.not 157$. Donc $a eq.not 9$.
+
+Donc $overline(a b c)$ n'est pas un antécédant de $157$, ce qui est une contradiction.
 
 Donc $157$ n'a pas d'antécédant à 3 chiffres. Cependant, $8852$ est un antécédant à 4 chiffres de $157$.
 
