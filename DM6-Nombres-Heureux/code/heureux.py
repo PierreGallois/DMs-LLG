@@ -2,7 +2,7 @@ from karma import karma
 
 def heureux(n):
     """
-    Renvoie True si le nombre converge dans le puit 1,
+    Renvoie True si le nombre converge dans le puits 1,
     sinon False
     """
     image = karma(n)
