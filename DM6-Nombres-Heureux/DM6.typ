@@ -145,12 +145,15 @@ Montrons par récurrence que pour tout entier $n gt.eq.slant 4$, on a $n times 9
   $4 times 9^2 = 324$ et $10^3 - 1 = 999$. L'inégalité est donc vérifiée pour $n = 4$.
 
 - Hérédité : Soit $n in NN, "avec" n gt.eq.slant 4$. On suppose que :
+
 $ n times 9^2 lt.eq.slant 10^(n-1) - 1 <==> 10^(n-1) - 81n - 1 gt.eq.slant 0 $
+
 Montrons que $(n+1) times 9^2 lt.eq.slant 10^n - 1$.
-$ (n+1) times 9^2 lt.eq.slant 10^n - 1 \
-<==> 9 times 10^(n-1) + 10^(n-1) - 1 - 81n - 81 gt.eq.slant 0 \
-<==> 10^(n-1) - 81n - 1 + 9(10^(n-1) - 9) gt.eq.slant 0 \
-<==> 10^(n-1) - 81n - 1 gt.eq.slant - 9(10^(n-1) - 9)
+
+$ &     & (n+1) times 9^2                            & lt.eq.slant 10^n - 1 \
+  &<==> & 9 times 10^(n-1) + 10^(n-1) - 1 - 81n - 81 & gt.eq.slant 0 \
+  &<==> & 10^(n-1) - 81n - 1 + 9(10^(n-1) - 9)       & gt.eq.slant 0 \
+  &<==> & 10^(n-1) - 81n - 1                         & gt.eq.slant - 9(10^(n-1) - 9)
 $
 
 Or $n gt.eq.slant 4$, donc $10^(n-1) gt.eq.slant 1000$. Alors $10^(n-1) gt.eq.slant 9$, i.e. $10^(n-1) - 9 gt.eq.slant 0$.
