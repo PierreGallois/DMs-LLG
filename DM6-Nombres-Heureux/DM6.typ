@@ -131,8 +131,29 @@ Il n'existe pas de nombre strictement inférieur à 100 qui ne soit ni heureux n
 = Trajectoires des nombres de $n$ chiffres
 ==
 ===
+Pour un nombre à $n$ chiffres, le nombre ayant la plus grande image est celui composé de $n$ neufs. Soit, pour un nombre $N$ à 3 chiffres, 999.
+L'image de 999 par la fonction karma étant 243, l'image de $N$ est majorée par 243.
+
+L'image de l'image de $N$ sera quant à elle majorée par l'image du nombre inférieur ou égal à $N$ ayant la plus grande image.
 
 ==
+===
+Montrons par récurrence que pour tout entier $n gt.eq.slant 4$, on a $n times 9^2 lt.eq.slant 10^(n-1) - 1$.
+
+- Initialisation, pour $n = 4$ :
+
+  $4 times 9^2 = 324$ et $10^3 - 1 = 999$. L'inégalité est donc vérifiée pour $n = 4$.
+
+- Hérédité : Soit $n in NN, "avec" n gt.eq.slant 4$. On suppose que :
+$ n times 9^2 lt.eq.slant 10^(n-1) - 1 <==> 10^(n-1) - 81n - 1 gt.eq.slant 0 $
+Montrons que $(n+1) times 9^2 lt.eq.slant 10^n - 1$.
+$ (n+1) times 9^2 lt.eq.slant 10^n - 1 \
+<==> 9 times 10^(n-1) + 10^(n-1) - 1 - 81n - 81 gt.eq.slant 0 \
+<==> 10^(n-1) - 81n - 1 + 9(10^(n-1) - 9) gt.eq.slant 0 \
+<==> 10^(n-1) - 81n - 1 gt.eq.slant - 9(10^(n-1) - 9)
+$
+
+Or $n gt.eq.slant 4$
 
 ==
 
@@ -185,7 +206,7 @@ Enfin lorsque Typst ne possède pas nativement une fonctionnalité (le support d
 
 #v(1fr)
 #figure(
-  qr-code("https://github.com/PierreGallois/DMs-LLG", width: 3cm),
+  qr-code("https://www.youtube.com/watch?v=dQw4w9WgXcQ", width: 3cm),
   caption: [
     Tous nos DMs, code et PDF, sont disponibles sur \
     github.com/PierreGallois/DMs-LLG
