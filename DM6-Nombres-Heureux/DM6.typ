@@ -153,7 +153,11 @@ $ (n+1) times 9^2 lt.eq.slant 10^n - 1 \
 <==> 10^(n-1) - 81n - 1 gt.eq.slant - 9(10^(n-1) - 9)
 $
 
-Or $n gt.eq.slant 4$
+Or $n gt.eq.slant 4$, donc $10^(n-1) gt.eq.slant 1000$. Alors $10^(n-1) gt.eq.slant 9$, i.e. $10^(n-1) - 9 gt.eq.slant 0$.
+
+Donc $-9(10^(n-1) - 9) lt.eq.slant 0$. Or d'après l'hypothèse de récurrence, $10^(n-1) - 81n - 1 gt.eq.slant 0$. Donc l'inégalité $10^(n-1) - 81n - 1 gt.eq.slant - 9(10^(n-1) - 9)$ est vérifiée, et par équivalence, l'inégalité $(n+1) times 9^2 lt.eq.slant 10^n - 1$ l'est aussi.
+
+On a donc montré par récurrence que pour tout entier $n gt.eq.slant 4$, on a $n times 9^2 lt.eq.slant 10^(n-1) - 1$.
 
 ==
 
