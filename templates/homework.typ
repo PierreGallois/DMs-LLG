@@ -19,6 +19,19 @@
       counter(page).display()
     }
   })
+  
+  set page(background: {
+    // Logo classe
+    place(
+      top + right,
+      dx: -35pt,
+      dy: 20pt,
+      image(
+        "logo_classe.svg",
+        width: 15pt
+      )
+    )
+  })
 
   // Titre
   {
