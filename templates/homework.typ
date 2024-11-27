@@ -20,17 +20,19 @@
     }
   })
   
-  set page(background: {
+  set page(background: context {
     // Logo classe
-    place(
-      top + right,
-      dx: -35pt,
-      dy: 20pt,
-      image(
-        "logo_classe.svg",
-        width: 15pt
+    if counter(page).get().first() != 1 {
+        place(
+        top + right,
+        dx: 15pt,
+        dy: 10pt,
+        image(
+          "logo_classe_gris.svg",
+          width: 100pt
+        )
       )
-    )
+    }
   })
 
   // Titre
