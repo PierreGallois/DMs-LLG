@@ -180,6 +180,14 @@ L'image de 999 par la fonction karma étant 243, l'image de $N$ est majorée par
 
 L'image de l'image de $N$ sera quant à elle majorée par l'image du nombre inférieur ou égal à $N$ ayant la plus grande image.
 
+Pour $M in bracket.l.double 0, 99 bracket.r.double$, l'image de M est majorée par $2 times 9^2$, soit $162$.
+
+Pour $M in bracket.l.double 100, 199 bracket.r.double$, l'image de M est majorée par $2 times 9^2 + 1$, soit $163$.
+
+Pour $M in bracket.l.double 200, 243 bracket.r.double$, l'image de M est majorée par $2^2 + 3^2 + 9^2$, soit $94$.
+
+L'image de N étant majorée par 243, on en déduit que l'image de l'image de M est majorée par 163.
+
 ==
 ===
 Montrons par récurrence que pour tout entier $n gt.eq.slant 4$, on a $n times 9^2 lt.eq.slant 10^(n-1) - 1$.
