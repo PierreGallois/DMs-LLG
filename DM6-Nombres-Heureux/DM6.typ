@@ -173,20 +173,29 @@ Il n'existe pas de nombre strictement inférieur à 100 qui ne soit ni heureux n
 ]
 
 = Trajectoires des nombres de $n$ chiffres
+Pour des raisons pratiques, nous appelerons par la suite $f(n)$ l'image de $n in NN$ par la fonction karma.
+
 ==
 ===
 Pour un nombre à $n$ chiffres, le nombre ayant la plus grande image est celui composé de $n$ neufs. Soit, pour un nombre $N$ à 3 chiffres, 999.
-L'image de 999 par la fonction karma étant 243, l'image de $N$ est majorée par 243.
+L'image de 999 par la fonction karma étant 243, $f(N)$ est majoré par 243.
 
-L'image de l'image de $N$ sera quant à elle majorée par l'image du nombre inférieur ou égal à $N$ ayant la plus grande image.
+Pour $f(f(N)) in bracket.l.double 100, 199 bracket.r.double$, $f(f(N))$ est majoré par $2 times 9^2 + 1$, soit $163$.
 
-Pour $M in bracket.l.double 0, 99 bracket.r.double$, l'image de M est majorée par $2 times 9^2$, soit $162$.
+Pour $f(f(N)) in bracket.l.double 200, 243 bracket.r.double$, $f(f(N))$ est majoré par $2^2 + 3^2 + 9^2$, soit $94$.
 
-Pour $M in bracket.l.double 100, 199 bracket.r.double$, l'image de M est majorée par $2 times 9^2 + 1$, soit $163$.
+$f(N)$ étant majoré par $243$, on en déduit que $f(f(N))$ est majoré par $163$.
 
-Pour $M in bracket.l.double 200, 243 bracket.r.double$, l'image de M est majorée par $2^2 + 3^2 + 9^2$, soit $94$.
+===
+Soit $n in bracket.l.double 100, 163 bracket.r.double$.
+$f(n)$ est majoré par $107$.
 
-L'image de N étant majorée par 243, on en déduit que l'image de l'image de M est majorée par 163.
+Soit $n in bracket.l.double 100, 107 bracket.r.double$.
+$f(n)$ est majoré par $50$.
+
+On a donc montré que tout nombre à trois chiffres, lorsqu'on lui applique la fonction karma suffisamment de fois, finit par donner un nombre à deux chiffres.
+
+Tout nombre à deux chiffres étant toujours soit heureux soit malheureux, et tout nombre à trois chiffres retombant toujours à un nombre à deux chiffres, on en déduit que tout nombre à trois chiffres est ou bien heureux, ou bien malheureux, c'est-à-dire, $P(3)$ est vraie.
 
 ==
 ===
