@@ -273,7 +273,7 @@ Typst a une très bonne intégration avec les logiciels d'écriture du code (VS 
 
 Enfin lorsque Typst ne possède pas nativement une fonctionnalité (le support du français et les encadrés sont natifs par exemple), des packages de base existent déjà. Par exemple, il a suffi d'une ligne d'import (pas d'installation compliquée) pour créer ce QR-code.
 
-
+#pagebreak()
 #v(1fr)
 #figure(
   qr-code("https://www.youtube.com/watch?v=dQw4w9WgXcQ", width: 3cm),
