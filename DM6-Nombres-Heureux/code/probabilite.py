@@ -13,4 +13,4 @@ def probabilite(Nmax):
 
 
 if __name__ == "__main__":
-    print(probabilite(100))
+    print(probabilite(10000))

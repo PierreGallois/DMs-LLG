@@ -224,6 +224,7 @@ Donc $-9(10^(n-1) - 9) lt.eq.slant 0$. Or d'après l'hypothèse de récurrence, 
 On a donc montré par récurrence que pour tout entier $n gt.eq.slant 4$, on a $n times 9^2 lt.eq.slant 10^(n-1) - 1$.
 
 ==
+On réutilise l'agorithme ci-dessus, et on trouve une probabilité de 14.42% pour qu'un nombre entre 1 et $10000$ soit heureux.
 
 = Typst
 
