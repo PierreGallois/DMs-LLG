@@ -21,6 +21,19 @@ $
 
 $x plus.circle y = y plus.circle x$ donc l'opération est commutative.
 
+==
+D'une part :
+$
+  (x plus.circle y) plus.circle z = ((a+c)/(b+d)) plus.circle e/f = (a+c+e)/(b+d+f)
+$
+
+Et d'autre part :
+$
+  x plus.circle (y plus.circle z) = a/b plus.circle ((c+e)/(d+f)) = (a+c+e)/(b+d+f)
+$
+
+$(x plus.circle y) plus.circle z = x plus.circle (y plus.circle z)$ donc l'opération est associative.
+
 #pagebreak()
 = B
 
