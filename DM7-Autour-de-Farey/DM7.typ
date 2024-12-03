@@ -97,6 +97,18 @@ $
 
 Donc $delta(y, x) = - delta(x, y)$.
 
+#pagebreak()
+
+==
+$
+  x < y &<==> a/b < c/d \
+  &<==> a d < b c " car" b, d > 0\
+  &<==> a d - b c < 0 \
+  &<==> delta(x, y) < 0 \
+  &<==> delta(x, y) lt.eq.slant -1 "  car" delta(x, y) in ZZ.
+$
+Donc $x < y <==> delta(x, y) lt.eq.slant -1$.
+
 = Ensembles de Farey.
 ==
 Bah non en fait, Thomas python please
