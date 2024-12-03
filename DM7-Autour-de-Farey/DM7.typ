@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm
+#import "figure.typ": fig
 
 #show: dm.with(
   numero: 7,
@@ -111,10 +112,37 @@ Soit $a/b$ une fraction irréductible. Son cercle de Ford associé est de centre
 
 == Tangents entre eux quand consécutifs.
 
+Nous allons raisonner par équivalence.
+
 Soient $alpha$ et $beta$ deux fractions consécutives de $F_n$ tel que
 $
   alpha = m/a " et " beta = n/b 
 $
 avec $m, n in NN$, $a, b in NN^*$ et $alpha < beta$.
 
-Les deux cercles de Ford associés à $alpha$ et $beta$ sont tangents à l'axe des abscisses d'après la propriété 
+Les deux cercles de Ford $C_alpha$ et $C_beta$ associés à $alpha$ et $beta$ sont tangents à l'axe des abscisses d'après la propriété ci-dessus.
+On nomme $r_alpha$ et $r_beta$ les rayons respectifs des cercles, et $D$ la distance entre leur centre.
+
+#align(
+  center,
+  pad(top: 2em, fig),
+)
+
+Le triangle rectangle vert existe avec les longeurs indiquées si et seulement si les deux cercles sont tangents.
+
+$C_alpha$ et $C_beta$ sont tangents ssi
+$
+  &&D^2 &= (r_alpha + r_beta)^2 - (y_alpha - y_beta)^2 \
+  &<==> &D^2 &= (1/(2a^2) + 1/(2b^2))^2 - (1/(2a^2) - 1/(2b^2))^2 \
+  &<==> &D^2 &= (2(1/(2a^2)))(2(1/(2b^2))) \
+  &<==> &D^2 &= (1/(a b))^2 quad quad "Or" D > 0 "et" a, b in NN^* \
+  &<==> &D &= 1/(d f) \
+  &<==> &n/b - m/a &= 1/(d f) quad quad "car" alpha < beta \
+  &<==> quad quad &(a n - m b -1)/(d f) &= 0 \
+  &<==> &m b - a n &= -1 \
+  &<==> &delta(alpha, beta) &= -1
+$
+
+Or $delta(alpha, beta)$ est bien égal à -1 car TODO donc par équivalence, $alpha$ et $beta$ sont tangeants.
+
+Nous avons prouvé que les cercles Ford associés à deux fractions consécutives de $F_n$ sont tangeants entre eux.
