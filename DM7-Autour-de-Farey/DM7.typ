@@ -191,7 +191,7 @@ $
 avec $m, n in NN$, $a, b in NN^*$ et $alpha < beta$.
 
 Les deux cercles de Ford $C_alpha$ et $C_beta$ associés à $alpha$ et $beta$ sont tangents à l'axe des abscisses d'après la propriété ci-dessus.
-On nomme $r_alpha$ et $r_beta$ les rayons respectifs des cercles, et $D$ la distance entre leur centre.
+On nomme $r_alpha$ et $r_beta$ les rayons respectifs des cercles, et $D$ la distance entre leurs centres.
 
 #align(
   center,
@@ -200,6 +200,9 @@ On nomme $r_alpha$ et $r_beta$ les rayons respectifs des cercles, et $D$ la dist
 
 Le triangle rectangle vert existe avec les longeurs indiquées si et seulement si les deux cercles sont tangents.
 
+#block(
+  breakable: false,
+[
 $C_alpha$ et $C_beta$ sont tangents ssi
 $
   &&D^2 &= (r_alpha + r_beta)^2 - (y_alpha - y_beta)^2 \
@@ -212,6 +215,7 @@ $
   &<==> &m b - a n &= -1 \
   &<==> &delta(alpha, beta) &= -1
 $
+])
 
 Or $delta(alpha, beta)$ est bien égal à -1 car TODO donc par équivalence, $alpha$ et $beta$ sont tangeants.
 
