@@ -102,7 +102,6 @@ Si $delta(t,x) eq.not 1$ ou $delta (t,y) eq.not 1$, alors la fraction $t' = x op
 
 *3#super[e] cas :* TODO
 
-= C
 = Cercles de Ford
 
 == Tangents à l'axe des abscisses. <tangeant_abscisse>
