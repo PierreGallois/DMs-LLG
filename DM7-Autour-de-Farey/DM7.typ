@@ -36,5 +36,20 @@ $(x plus.circle y) plus.circle z = x plus.circle (y plus.circle z)$ donc l'opér
 
 #pagebreak()
 = B
+= C
+= Cercles de Ford
 
+== Tangents à l'axe des abscisses. <tangeant_abscisse>
 
+Prouvons que tout cercle de Ford est tangent à l'axe des abscisses.
+Soit $a/b$ une fraction irréductible. Son cercle de Ford associé est de centre $(a/b, 1/(2b^2))$ et de rayon $1/(2b^2)$. Comme le rayon du cercle et son ordonnée sont égaux, tout cercle Ford est bien tangent à l'axe des abscisses.
+
+== Tangents entre eux quand consécutifs.
+
+Soient $alpha$ et $beta$ deux fractions consécutives de $F_n$ tel que
+$
+  alpha = m/a " et " beta = n/b 
+$
+avec $m, n in NN$, $a, b in NN^*$ et $alpha < beta$.
+
+Les deux cercles de Ford associés à $alpha$ et $beta$ sont tangents à l'axe des abscisses d'après la propriété 
