@@ -13,33 +13,79 @@
 Soient $x = a/b, y = c/d, z = e/f, " avec" a, c, e in NN, " et" b, d, f in NN^*$.
 
 ==
-$ x plus.circle x = a/b plus.circle a/b = (2a)/(2b) = a/b $
-Donc $x plus.circle x = x$.
+$ x oplus x = a/b oplus a/b = (2a)/(2b) = a/b $
+Donc $x oplus x = x$.
 
 ==
 $
-  x plus.circle y = (a+c)/(b+d) " et " y plus.circle x = (c+a)/(d+b) = (a+c)/(b+d)
+  x oplus y = (a+c)/(b+d) " et " y oplus x = (c+a)/(d+b) = (a+c)/(b+d)
 $
 
-$x plus.circle y = y plus.circle x$ donc l'opération est commutative.
+$x oplus y = y oplus x$ donc l'opération est commutative.
 
 ==
 D'une part :
 $
-  (x plus.circle y) plus.circle z = ((a+c)/(b+d)) plus.circle e/f = (a+c+e)/(b+d+f)
+  (x oplus y) oplus z = ((a+c)/(b+d)) oplus e/f = (a+c+e)/(b+d+f)
 $
 
 Et d'autre part :
 $
-  x plus.circle (y plus.circle z) = a/b plus.circle ((c+e)/(d+f)) = (a+c+e)/(b+d+f)
+  x oplus (y oplus z) = a/b oplus ((c+e)/(d+f)) = (a+c+e)/(b+d+f)
 $
 
-$(x plus.circle y) plus.circle z = x plus.circle (y plus.circle z)$ donc l'opération est associative.
+$(x oplus y) oplus z = x oplus (y oplus z)$ donc l'opération est associative.
+
+==
+On raisonne par contraposée :
+Montrons que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$.
+
+- Supposons $x gt.eq.slant x oplus y$ :
+$
+  x gt.eq.slant x oplus y &==> a/b gt.eq.slant (a+c)/(b+d) \
+  &==> (a b + a d - a b - b c)/(b(b+d)) gt.eq.slant 0 \
+  &==> a d - b c gt.eq.slant 0 "  car" b(b+d) in NN\
+  &==> a/b gt.eq.slant c/d \
+  &==> x gt.eq.slant y
+$
+
+- Supposons $x oplus y gt.eq.slant y$ :
+$
+  x oplus y gt.eq.slant y &==> (a+c)/(b+d) gt.eq.slant c/d \
+  &==> (a d + c d - b c - c d)/(d(b+d)) gt.eq.slant 0 \
+  &==> a d - b c gt.eq.slant 0 "  car" d(b+d) in NN\
+  &==> a/b gt.eq.slant c/d \
+  &==> x gt.eq.slant y
+$
+
+On a donc montré que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$,
+et donc, par contraposée, que $x < y ==> x < x oplus y < y$.
 
 #pagebreak()
-= B
+= Déterminant de deux nombres de $QQ_+$.
+On reprend $x, y$ tels que dans la partie précédente.
 
-= Ensembles de Farey
+==
+Montrons que : $x = y <==> delta(x, y) = 0$.
+
+- Supposons que $x = y$. Alors :
+$
+  delta(x, y) &= delta(x, x) \
+  &= a b - b a \
+  &= 0
+$
+
+- Supposons que $delta(x, y) = 0$. Alors :
+$
+  a d - b c = 0 \
+  a d = b c \
+  a/b = c/d \
+  x = y
+$
+
+On a donc montré que : $x = y <==> delta(x, y) = 0$.
+
+= Ensembles de Farey.
 ==
 Bah non en fait, Thomas python please
 ==
@@ -102,7 +148,7 @@ Si $delta(t,x) eq.not 1$ ou $delta (t,y) eq.not 1$, alors la fraction $t' = x op
 
 *3#super[e] cas :* TODO
 
-= Cercles de Ford
+= Cercles de Ford.
 
 == Tangents à l'axe des abscisses. <tangeant_abscisse>
 
