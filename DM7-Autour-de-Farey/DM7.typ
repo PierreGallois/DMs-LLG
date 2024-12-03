@@ -61,7 +61,6 @@ $
 On a donc montré que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$,
 et donc, par contraposée, que $x < y ==> x < x oplus y < y$.
 
-#pagebreak()
 = Déterminant de deux nombres de $QQ_+$.
 On reprend $x, y$ tels que dans la partie précédente.
 
@@ -84,6 +83,19 @@ $
 $
 
 On a donc montré que : $x = y <==> delta(x, y) = 0$.
+
+==
+D'une part :
+$
+  delta(y, x) = mat(delim: "|", c, a; d, b) = b c - a d
+$
+
+D'autre part :
+$
+  - delta(x, y) = - mat(delim: "|", a, c; b, d) = - a d + b c
+$
+
+Donc $delta(y, x) = - delta(x, y)$.
 
 = Ensembles de Farey.
 ==
