@@ -8,6 +8,29 @@
   alpha: true
 )
 
+#let _F_fracs_unsorted(max) = {
+  for denominateur in array.range(1, max+1) {
+    for numerateur in array.range(denominateur+1) {
+      if calc.gcd(numerateur, denominateur) == 1 {
+        // Si la fraction est irréductible
+        // car si la fraction est réductible c'est qu'elle a déjà été rajoutée
+        ((numerateur, denominateur),)
+      }
+    }
+  }
+}
+
+#let _F_frac_inside(max) = {
+  for (numerator, denominator) in _F_fracs_unsorted(max)
+    .sorted(key: e => e.at(0)/e.at(1)) {
+      ($#str(numerator)/#str(denominator)$,)
+  }
+}
+
+#let F_frac(max) = [
+  ${#_F_frac_inside(max).join("; ")}$
+]
+
 #let oplus = $plus.circle$
 
 = Somme des cancres dans $QQ_+.$
@@ -112,7 +135,14 @@ Donc $x < y <==> delta(x, y) lt.eq.slant -1$.
 
 = Ensembles de Farey.
 ==
-Bah non en fait, Thomas python please
+
+$
+  &F_5 = #F_frac(5) \
+  &F_6 = #F_frac(6) \
+  &F_7 = #F_frac(7) \
+  &F_8 = #F_frac(8) \
+$
+#strike[Tapé à la main par nos soins.] Généré automatiquement par un algorithme, voir le code du devoir sur Github.
 ==
 Si $m/n in F_n$, alors $0 <= m <= n$ et $n >= n-m >= 0$. Donc $(n-m) / n in F_n$.
 
