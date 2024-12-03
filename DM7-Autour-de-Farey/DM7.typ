@@ -37,7 +37,7 @@ $
 $(x oplus y) oplus z = x oplus (y oplus z)$ donc l'opération est associative.
 
 ==
-On raisonne par contraposée :
+Raisonnons par contraposée :
 Montrons que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$.
 
 - Supposons $x gt.eq.slant x oplus y$ :
@@ -58,11 +58,11 @@ $
   &==> x gt.eq.slant y
 $
 
-On a donc montré que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$,
-et donc, par contraposée, que $x < y ==> x < x oplus y < y$.
+Nous avons montré que $(x gt.eq.slant x oplus y or x oplus y gt.eq.slant y) ==> x gt.eq.slant y$,
+et donc, par contraposée, que \ $x < y ==> x < x oplus y < y$.
 
 = Déterminant de deux nombres de $QQ_+$.
-On reprend $x, y$ tels que dans la partie précédente.
+Nous reprenons $x, y$ tels que dans la partie précédente.
 
 ==
 Montrons que : $x = y <==> delta(x, y) = 0$.
@@ -82,7 +82,7 @@ $
   x = y
 $
 
-On a donc montré que : $x = y <==> delta(x, y) = 0$.
+Nous avons donc montré que $x = y <==> delta(x, y) = 0$.
 
 ==
 D'une part :
