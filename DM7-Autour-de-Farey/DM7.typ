@@ -33,6 +33,7 @@
 
 #let oplus = $plus.circle$
 
+
 = Somme des cancres dans $QQ_+.$
 Soient $x = a/b, y = c/d, z = e/f, " avec" a, c, e in NN, " et" b, d, f in NN^*$.
 
@@ -258,3 +259,28 @@ Or $delta(alpha, beta)$ est bien égal à -1 car $alpha$ et $beta$ sont consécu
 Nous avons prouvé que les cercles Ford associés à deux fractions consécutives de $F_n$ sont tangeants entre eux.
 
 Accessoirement nous avons aussi prouvé que deux cercles tangeants entre eux et à l'abscisse sont des cercles de Ford associés à deux fractions consécutives de $F_n$.
+
+
+= Approximation
+
+== 
+
+===  Encadrement du nombre $alpha = 1/sqrt(2)$
+
+#show table.cell.where(x: 0): strong
+#show table.cell.where(y: 0): strong
+
+#set align(center)
+
+#table(
+  columns: 6,
+  [Etape], [$2$], [$3$], [$4$], [$5$], [$6$],
+  [Valeur par défaut], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
+  [Valeur par excès], [$1/1$],  [$3/4$], [$5/7$], [$5/7$], [$5/7$],
+)
+
+#set align(left)
+
+=== Meilleur encadrement 
+
+En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obtenir un encadrement de $alpha$ sur un dénominateur allant jusqu'à $100$ :
