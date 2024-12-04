@@ -284,3 +284,13 @@ Accessoirement nous avons aussi prouvé que deux cercles tangeants entre eux et 
 === Meilleur encadrement 
 
 En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obtenir un encadrement de $alpha$ sur un dénominateur allant jusqu'à $100$ :
+
+#set align(center)
+
+
+#table(
+  columns: 6,
+  [Etape], [$5$], [$6$], [$dots$], [$5$], [$6$],
+  [Valeur par défaut], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
+  [Valeur par excès], [$1/1$],  [$3/4$], [$5/7$], [$5/7$], [$5/7$],
+)
