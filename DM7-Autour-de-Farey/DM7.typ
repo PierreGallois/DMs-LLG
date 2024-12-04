@@ -291,6 +291,6 @@ En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obt
 #table(
   columns: 6,
   [Etape], [$5$], [$6$], [$dots$], [$5$], [$6$],
-  [Valeur par défaut], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
-  [Valeur par excès], [$1/1$],  [$3/4$], [$5/7$], [$5/7$], [$5/7$],
+  [Valeur par défaut], [$2/3$], [$2/3$], [$dots$], [$7/10$], [$12/17$],
+  [Valeur par excès], [$1/1$],  [$3/4$], [$dots$], [$5/7$], [$5/7$],
 )
