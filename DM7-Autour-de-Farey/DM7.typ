@@ -212,7 +212,7 @@ Soit $a/b$ une fraction irréductible. Son cercle de Ford associé est de centre
 
 == Tangents entre eux quand consécutifs.
 
-Nous allons raisonner par équivalence.
+Nous allons raisonner par équivalence dans un repère orthonormé.
 
 Soient $alpha$ et $beta$ deux fractions consécutives de $F_n$ tel que
 $
@@ -221,15 +221,20 @@ $
 avec $m, n in NN$, $a, b in NN^*$ et $alpha < beta$.
 
 D'après la propriété ci-dessus, les deux cercles de Ford $C_alpha$ et $C_beta$ associés à $alpha$ et $beta$, de rayon respectif $r_alpha$ et $r_beta$, sont tangents à l'axe des abscisses.
-Seule la distance en abscisse $D$ entre $C_alpha$ et $C_beta$ pourrait donc encore changer.
-Comme $alpha < beta$, $D = x_beta - x_alpha$.
+Les ordonnées $y_alpha$ et $y_beta$ des centres de $C_alpha$ et $C_beta$ est donc fixée, seules leurs abscisses $x_alpha$ et $x_beta$ pourraient encore varier.
+La distance entre elles est notée $D$ et comme $alpha < beta$, $D = x_beta - x_alpha$.
+
+Soit le triangle vert tel que son hypothénuse relie les centres de $C_alpha$ et $C_beta$, et que ses côtés soient respectivement parallèle à l'abscisse et à l'ordonnée.
+Le triangle vert est donc un triangle rectangle.
 
 #align(
   center,
   pad(top: 1em, bottom: 1em, fig),
 )
 
-Le triangle rectangle vert existe avec les longeurs indiquées si et seulement si les deux cercles sont tangents.
+Deux cercles sont tangents ssi il existe un unique point appartenant aux deux cercles, ssi la distance entre les deux centres est égale à la somme des deux rayons.
+L'hypothénuse du triangle rectangle vert relie justement les centres de $C_alpha$ et $C_beta$. 
+Nous pouvons vérifier si l'hypothénuse mesure bien la somme des deux rayons en déterminant si le triangle ainsi formé est bien rectangle.
 
 #block(
   breakable: false,
@@ -248,6 +253,8 @@ $
 $
 ])
 
-Or $delta(alpha, beta)$ est bien égal à -1 car TODO donc par équivalence, $alpha$ et $beta$ sont tangeants.
+Or $delta(alpha, beta)$ est bien égal à -1 car $alpha$ et $beta$ sont consécutives dans $F_n$. Par équivalence, $C_alpha$ et $C_beta$ sont tangeants.
 
 Nous avons prouvé que les cercles Ford associés à deux fractions consécutives de $F_n$ sont tangeants entre eux.
+
+Accessoirement nous avons aussi prouvé que deux cercles tangeants entre eux et à l'abscisse sont des cercles de Ford associés à deux fractions consécutives de $F_n$.
