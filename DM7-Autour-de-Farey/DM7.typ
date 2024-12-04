@@ -220,12 +220,13 @@ $
 $
 avec $m, n in NN$, $a, b in NN^*$ et $alpha < beta$.
 
-Les deux cercles de Ford $C_alpha$ et $C_beta$ associés à $alpha$ et $beta$ sont tangents à l'axe des abscisses d'après la propriété ci-dessus.
-On nomme $r_alpha$ et $r_beta$ les rayons respectifs des cercles, et $D$ la distance entre leurs centres.
+D'après la propriété ci-dessus, les deux cercles de Ford $C_alpha$ et $C_beta$ associés à $alpha$ et $beta$, de rayon respectif $r_alpha$ et $r_beta$, sont tangents à l'axe des abscisses.
+Seule la distance en abscisse $D$ entre $C_alpha$ et $C_beta$ pourrait donc encore changer.
+Comme $alpha < beta$, $D = x_beta - x_alpha$.
 
 #align(
   center,
-  pad(top: 2em, fig),
+  pad(top: 1em, bottom: 1em, fig),
 )
 
 Le triangle rectangle vert existe avec les longeurs indiquées si et seulement si les deux cercles sont tangents.
@@ -239,9 +240,9 @@ $
   &<==> &D^2 &= (1/(2a^2) + 1/(2b^2))^2 - (1/(2a^2) - 1/(2b^2))^2 \
   &<==> &D^2 &= (2(1/(2a^2)))(2(1/(2b^2))) \
   &<==> &D^2 &= (1/(a b))^2 quad quad "Or" D > 0 "et" a, b in NN^* \
-  &<==> &D &= 1/(d f) \
-  &<==> &n/b - m/a &= 1/(d f) quad quad "car" alpha < beta \
-  &<==> quad quad &(a n - m b -1)/(d f) &= 0 \
+  &<==> &D &= 1/(a b) \
+  &<==> &n/b - m/a &= 1/(a b) quad quad "car" alpha < beta \
+  &<==> quad quad &(a n - m b -1)/(a b) &= 0 \
   &<==> &m b - a n &= -1 \
   &<==> &delta(alpha, beta) &= -1
 $
