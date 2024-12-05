@@ -377,6 +377,7 @@ Accessoirement nous avons aussi prouvé que deux cercles tangents entre eux et �
 #create_table_approx(1 / calc.sqrt(2), 20)
 Nous sommes paresseux donc ce tableau et les suivants sont bien entendu générés automatiquement par un algorithme de notre création fonctionnant pour n'importe quel nombre entre 0 et 1. Il est disponible dans le DM sur Github.
 
+#pagebreak()
 === Meilleur encadrement 
 
 En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obtenir un encadrement de $alpha$ sur un dénominateur allant jusqu'à $100$ :
