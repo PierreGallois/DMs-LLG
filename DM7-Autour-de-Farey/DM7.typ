@@ -90,6 +90,9 @@
 
 // CONTENU DU DM
 
+==== Remarque :
+L'addition des cancres et les déterminants de fractions sont dépendantes de l'écriture des fractions : par la suite, on suppose donc par défaut que toutes les fractions sont irréductibles.
+
 = Somme des cancres dans $QQ_+.$
 Soient $x = a/b, y = c/d, z = e/f, " avec" a, c, e in NN, " et" b, d, f in NN^*$.
 
@@ -258,7 +261,16 @@ $ b delta(y,t) + d delta(t,x) &= b(c s - d r) + d(b r - a s) \
 
 Si $delta(t,x) eq.not 1$ ou $delta (t,y) eq.not 1$, alors la fraction $t' = x oplus y$ a un dénominateur $s' = b + d < s$. De plus, comme $delta(x,y) = -1$, $t'$ est irréductible. Donc $t'$ s'intercale entre $x$ et $y$ strictement avant $t$, ce qui contredit la minimalité de $t$. Donc $delta(x,t) = delta(y,t) = 1$, et $t = x oplus y$, ce qui conclut la preuve de la deuxième condition de $P(n+1)$ dans ce cas.
 
-*3#super[e] cas :* TODO
+*3#super[e] et dernier cas :* $x in F_(n+1) \\ F_n$ et $y in F_n$. Posons $x' = (n+1 - a)/b$ et $y' = (n+1 - c)/d$. Alors $y' in F_n$ et $x' in F_(n+1) \\ F_n$ sont consécutives dans $F_(n+1)$. Donc, par le deuxième cas, on a :
+- $delta(y', x') = -1$
+- la première fraction à apparaître entre $y'$ et $x'$ dans un $F_m, m > n+1$ est $y' oplus x'$.
+
+D'une part :
+$ delta(y', x') &= mat(delim: "|", n+1-c, n+1-a; d, b) \
+&= b(n+1) - b c - d(n+1) + a d \
+&= a d - b c + (b - d)(n+1) \
+&= delta(x,y) + (b-d)(n+1) $
+NON : FAIRE LE MEME ARG
 
 = Cercles de Ford.
 
@@ -330,3 +342,5 @@ Nous sommes paresseux donc ce tableau et les suivants sont bien entendu génér�
 En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obtenir un encadrement de $alpha$ sur un dénominateur allant jusqu'à $100$ :
 
 #create_table_approx(1 / calc.sqrt(2), 100)
+
+== Pas trouvé :/
