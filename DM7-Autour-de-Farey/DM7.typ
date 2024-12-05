@@ -199,7 +199,7 @@ $
   &F_7 = #F_frac(7) \
   &F_8 = #F_frac(8) \
 $
-#strike[Tapé à la main par nos soins.] Généré automatiquement par un algorithme, voir le code du devoir sur Github.
+#strike[Tapé à la main par nos soins.] Généré automatiquement par un algorithme qui est disponible dans le code du DM sur Github.
 ==
 Si $m/n in F_n$, alors $0 <= m <= n$ et $n >= n-m >= 0$. Donc $(n-m) / n in F_n$.
 
@@ -320,21 +320,13 @@ Accessoirement nous avons aussi prouvé que deux cercles tangents entre eux et �
 = Approximation
 
 == 
-
 ===  Encadrement du nombre $alpha = 1/sqrt(2)$
 
-#create_table_approx(1 / calc.sqrt(2), 100)
+#create_table_approx(1 / calc.sqrt(2), 20)
+Nous sommes paresseux donc ce tableau et les suivants sont bien entendu générés automatiquement par un algorithme de notre création fonctionnant pour n'importe quel nombre entre 0 et 1. Il est disponible dans le DM sur Github.
 
 === Meilleur encadrement 
 
 En poursuivant la méthode utilisée dans le tableau ci-dessus, nous pouvons obtenir un encadrement de $alpha$ sur un dénominateur allant jusqu'à $100$ :
 
-#set align(center)
-
-
-#table(
-  columns: 6,
-  [Etape], [$5$], [$6$], [$dots$], [$5$], [$6$],
-  [Valeur par défaut], [$7/10$], [$12/17$], [$dots$], [$7/10$], [$12/17$],
-  [Valeur par excès], [$5/7$],  [$5/7$], [$dots$], [$5/7$], [$5/7$],
-)
+#create_table_approx(1 / calc.sqrt(2), 100)
