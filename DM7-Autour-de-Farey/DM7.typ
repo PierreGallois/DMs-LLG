@@ -168,6 +168,8 @@ $
 
 Nous avons donc montré que $x = y <==> delta(x, y) = 0$.
 
+#pagebreak()
+
 ==
 D'une part :
 $
@@ -181,8 +183,6 @@ $
 
 Donc $delta(y, x) = - delta(x, y)$.
 
-#pagebreak()
-
 ==
 $
   x < y &<==> a/b < c/d \
@@ -192,6 +192,27 @@ $
   &<==> delta(x, y) lt.eq.slant -1 "  car" delta(x, y) in ZZ.
 $
 Donc $x < y <==> delta(x, y) lt.eq.slant -1$.
+
+==
+D'une part :
+$
+  delta(x, x oplus y) &= mat(delim: "|", a, a+c; b, b+d) \
+  &= a(b + d) - b(a + c) \
+  &= a b + a d - a b - b c \
+  &= a d - b c \
+  &= delta(x, y)
+$
+
+D'autre part :
+$
+  delta(x oplus y, y) &= mat(delim: "|", a+c, c; b+d, d) \
+  &= d(a + c) - c(b + d) \
+  &= a d + d c - c b - c d \
+  &= a d - b c \
+  &= delta(x, y)
+$
+
+Donc $delta(x, x oplus y) = delta(x oplus y, y) = delta(x, y)$.
 
 = Ensembles de Farey.
 ==
