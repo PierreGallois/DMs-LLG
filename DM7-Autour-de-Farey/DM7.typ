@@ -8,6 +8,8 @@
   alpha: true
 )
 
+// DEFINITION DES FONCTIONS
+
 #let _F_fracs_unsorted(max) = {
   for denominateur in array.range(1, max+1) {
     for numerateur in array.range(denominateur+1) {
@@ -33,6 +35,60 @@
 
 #let oplus = $plus.circle$
 
+#let approx(number, max_approx) = {
+  assert(0 <= number and number <= 1)
+  let defaut = ()
+  let exces = ()
+  if number < 1/2 {
+    defaut.push((0, 1))
+    exces.push((1, 2))
+  } else {
+    defaut.push((1, 2))
+    exces.push((1, 1))
+  }
+  if number != 1/2 and number != 1 and number != 0 {
+    // Cas très particuliers sinon
+    while true {
+      let cancre = (defaut.last().at(0) + exces.last().at(0),
+        defaut.last().at(1) + exces.last().at(1))
+      if cancre.at(1) > max_approx {
+        // On va dépasser le dénominateur limite
+        break
+      }
+      let cancre_value = cancre.at(0) / cancre.at(1)
+      if cancre_value < number {
+        defaut.push(cancre)
+        exces.push(exces.last())
+      } else if cancre_value > number {
+        defaut.push(defaut.last())
+        exces.push(cancre)
+      } else {
+        defaut.push(cancre)
+        exces.push(cancre)
+        break
+      }
+    }
+  }
+  (defaut.len(), defaut, exces)
+}
+
+#let create_table_approx(number, max_approx) = {
+  let (long, defaut, exces) = approx(number, max_approx)
+  {
+    show table.cell.where(x: 0): strong
+    show table.cell.where(y: 0): strong
+    align(center, {
+      table(
+        columns: long + 1,
+        [Etape], ..array.range(1, long + 1).map(e => [#e]),
+        [Valeur par défaut], ..defaut.map(e => [$#e.at(0) / #e.at(1)$]),
+        [Valeur par excès], ..exces.map(e => [$#e.at(0) / #e.at(1)$]),
+      )
+    })
+  }
+}
+
+// CONTENU DU DM
 
 = Somme des cancres dans $QQ_+.$
 Soient $x = a/b, y = c/d, z = e/f, " avec" a, c, e in NN, " et" b, d, f in NN^*$.
@@ -267,66 +323,7 @@ Accessoirement nous avons aussi prouvé que deux cercles tangents entre eux et �
 
 ===  Encadrement du nombre $alpha = 1/sqrt(2)$
 
-#show table.cell.where(x: 0): strong
-#show table.cell.where(y: 0): strong
-
-#set align(center)
-
-#let number = calc.pi - 3
-
-#let approx(number, max_approx) = {
-  assert(0 <= number and number <= 1)
-  let defaut = ()
-  let exces = ()
-  if number < 1/2 {
-    defaut.push((0, 1))
-    exces.push((1, 2))
-  } else {
-    defaut.push((1, 2))
-    exces.push((1, 1))
-  }
-  if number != 1/2 and number != 1 and number != 0 {
-    // Cas très particuliers sinon
-    while true {
-      let cancre = (defaut.last().at(0) + exces.last().at(0),
-        defaut.last().at(1) + exces.last().at(1))
-      if cancre.at(1) > max_approx {
-        // On va dépasser le dénominateur limite
-        break
-      }
-      let cancre_value = cancre.at(0) / cancre.at(1)
-      if cancre_value < number {
-        defaut.push(cancre)
-        exces.push(exces.last())
-      } else if cancre_value > number {
-        defaut.push(defaut.last())
-        exces.push(cancre)
-      } else {
-        defaut.push(cancre)
-        exces.push(cancre)
-        break
-      }
-    }
-  }
-  (defaut.len(), defaut, exces)
-}
-
-#let approx_for_number = approx(number, 20)
-#table(
-  columns: approx_for_number.at(0) + 1,
-  [Etape], ..array.range(1, approx_for_number.at(0)+1).map(e => [#e]),
-  [Valeur par défaut], ..approx_for_number.at(1).map(e => [$#e.at(0) / #e.at(1)$]),
-  [Valeur par excès], ..approx_for_number.at(2).map(e => [$#e.at(0) / #e.at(1)$]),
-)
-
-#table(
-  columns: 6,
-  [Etape], [$2$], [$3$], [$4$], [$5$], [$6$],
-  [Valeur par défaut], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
-  [Valeur par excès], [$1/1$],  [$3/4$], [$5/7$], [$5/7$], [$5/7$],
-)
-
-#set align(left)
+#create_table_approx(1 / calc.sqrt(2), 100)
 
 === Meilleur encadrement 
 
