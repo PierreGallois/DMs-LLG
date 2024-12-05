@@ -214,6 +214,24 @@ $
 
 Donc $delta(x, x oplus y) = delta(x oplus y, y) = delta(x, y)$.
 
+#pagebreak()
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
 = Ensembles de Farey.
 ==
 
