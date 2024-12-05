@@ -261,16 +261,17 @@ $ b delta(y,t) + d delta(t,x) &= b(c s - d r) + d(b r - a s) \
 
 Si $delta(t,x) eq.not 1$ ou $delta (t,y) eq.not 1$, alors la fraction $t' = x oplus y$ a un dénominateur $s' = b + d < s$. De plus, comme $delta(x,y) = -1$, $t'$ est irréductible. Donc $t'$ s'intercale entre $x$ et $y$ strictement avant $t$, ce qui contredit la minimalité de $t$. Donc $delta(x,t) = delta(y,t) = 1$, et $t = x oplus y$, ce qui conclut la preuve de la deuxième condition de $P(n+1)$ dans ce cas.
 
-*3#super[e] et dernier cas :* $x in F_(n+1) \\ F_n$ et $y in F_n$. Posons $x' = (n+1 - a)/b$ et $y' = (n+1 - c)/d$. Alors $y' in F_n$ et $x' in F_(n+1) \\ F_n$ sont consécutives dans $F_(n+1)$. Donc, par le deuxième cas, on a :
-- $delta(y', x') = -1$
-- la première fraction à apparaître entre $y'$ et $x'$ dans un $F_m, m > n+1$ est $y' oplus x'$.
+*3#super[e] et dernier cas :* $x in F_(n+1) \\ F_n$ et $y in F_n$.
+//- $delta(y', x') = -1$
+//- la première fraction à apparaître entre $y'$ et $x'$ dans un $F_m, m > n+1$ est $y' oplus x'$.
 
-D'une part :
-$ delta(y', x') &= mat(delim: "|", n+1-c, n+1-a; d, b) \
-&= b(n+1) - b c - d(n+1) + a d \
-&= a d - b c + (b - d)(n+1) \
-&= delta(x,y) + (b-d)(n+1) $
-NON : FAIRE LE MEME ARG
+D'une part, posons $z in F_n$ la fraction précédant $y$ dans $F_n$ (qui existe bien car $y>0$). Par $P(n)$, $x = z oplus y$. Donc $delta(x,y) = delta(y oplus z, y) = delta(z,y) = -1$, où la dernière égalité vient de $P(n)$.
+
+D'autre part, $F_(n+1)$ est symétrique par rapport à $1/2$. On pose donc $x' = (b - a)/b$ et $y' = (d - c)/d$. Alors $y' in F_n$ et $x' in F_(n+1) \\ F_n$ sont consécutives dans $F_(n+1)$. La première fraction à apparaître entre $y'$ et $x'$ dans un $F_m, m>n+1$ est :
+$ y' oplus x' = (b + d - (a+c))/(b + d) $
+Qui est le symétrique par rapport à $1/2$ de $(a+c)/(b+d) = x oplus y$. Comme $y' oplus x'$ est la première fraction à apparaître entre $y'$ et $x'$, par symétrie, $x oplus y$ est nécessairement également la première à apparaître entre $x$ et $y$, ce qui conclut ce cas.
+
+#underline[Conclusion :] Par récurrence, $P(n)$ est vraie pour tout $n in NN^*$.
 
 = Cercles de Ford.
 
