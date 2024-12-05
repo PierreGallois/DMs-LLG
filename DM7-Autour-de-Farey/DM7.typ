@@ -258,7 +258,7 @@ Or $delta(alpha, beta)$ est bien égal à -1 car $alpha$ et $beta$ sont consécu
 
 Nous avons prouvé que les cercles Ford associés à deux fractions consécutives de $F_n$ sont tangeants entre eux.
 
-Accessoirement nous avons aussi prouvé que deux cercles tangeants entre eux et à l'abscisse sont des cercles de Ford associés à deux fractions consécutives de $F_n$.
+Accessoirement nous avons aussi prouvé que deux cercles tangents entre eux et à l'abscisse sont des cercles de Ford associés à deux fractions consécutives de $F_n$.
 
 
 = Approximation
@@ -271,6 +271,53 @@ Accessoirement nous avons aussi prouvé que deux cercles tangeants entre eux et 
 #show table.cell.where(y: 0): strong
 
 #set align(center)
+
+#let number = calc.pi - 3
+
+#let approx(number, max_approx) = {
+  assert(0 <= number and number <= 1)
+  let defaut = ()
+  let exces = ()
+  if number < 1/2 {
+    defaut.push((0, 1))
+    exces.push((1, 2))
+  } else {
+    defaut.push((1, 2))
+    exces.push((1, 1))
+  }
+  if number != 1/2 and number != 1 and number != 0 {
+    // Cas très particuliers sinon
+    while true {
+      let cancre = (defaut.last().at(0) + exces.last().at(0),
+        defaut.last().at(1) + exces.last().at(1))
+      if cancre.at(1) > max_approx {
+        // On va dépasser le dénominateur limite
+        break
+      }
+      let cancre_value = cancre.at(0) / cancre.at(1)
+      if cancre_value < number {
+        defaut.push(cancre)
+        exces.push(exces.last())
+      } else if cancre_value > number {
+        defaut.push(defaut.last())
+        exces.push(cancre)
+      } else {
+        defaut.push(cancre)
+        exces.push(cancre)
+        break
+      }
+    }
+  }
+  (defaut.len(), defaut, exces)
+}
+
+#let approx_for_number = approx(number, 20)
+#table(
+  columns: approx_for_number.at(0) + 1,
+  [Etape], ..array.range(1, approx_for_number.at(0)+1).map(e => [#e]),
+  [Valeur par défaut], ..approx_for_number.at(1).map(e => [$#e.at(0) / #e.at(1)$]),
+  [Valeur par excès], ..approx_for_number.at(2).map(e => [$#e.at(0) / #e.at(1)$]),
+)
 
 #table(
   columns: 6,
