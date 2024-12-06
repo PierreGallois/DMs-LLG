@@ -214,23 +214,18 @@ $
 
 Donc $delta(x, x oplus y) = delta(x oplus y, y) = delta(x, y)$.
 
-#pagebreak()
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+
+Supposons qu'il existe $k >= 2$, tel que $k | (a+c)$ et $k bar.v (b +d)$.
+
+Alors 
+$
+  delta(x, x oplus y) &= mat(delim: "|", a, a+c; b, b+d) \
+  &= (b + d)a - (a+c)b
+$
+
+Donc $k | delta(x, x oplus y) = delta(x, y) = -1$.
+
+Contradiction car $k >= 2$.
 
 = Ensembles de Farey.
 ==
