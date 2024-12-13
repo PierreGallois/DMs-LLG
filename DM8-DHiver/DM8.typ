@@ -32,6 +32,28 @@
   ]
 }
 
+#let intercale(nombres) = {
+  let sortie = (1,)
+  for (before, now) in array.zip(nombres, nombres.slice(1)) {
+    sortie.push(before + now)
+  }
+  sortie.push(1)
+  sortie
+}
+
+#let pascal(n) = {
+  assert(n > 0, message: "la suite commence à 1")
+  let sortie = (1, 1)
+  for _ in array.range(n - 1) {
+    sortie = intercale(sortie)
+  }
+  sortie
+}
+
+#let pretty_pascal(n) = [
+  $(#pascal(n).map(str).join(", "))$
+]
+
 // DM
 
 = La couleur des nombres
@@ -116,3 +138,14 @@ Après implémentation de l'algorithme en typst, celui-ci donne :
 $
  #couleur(1515, 1789)
 $
+
+= Intercaler la somme
+
+==
+
+$E_4 = #pretty_pascal(4)$
+
+$E_5 = #pretty_pascal(5)$
+
+
+(bien entendu généré automatiquement, le script est dans le DM sur Github)
