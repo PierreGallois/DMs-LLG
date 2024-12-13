@@ -149,3 +149,14 @@ $E_5 = #pretty_pascal(5)$
 
 
 (bien entendu généré automatiquement, le script est dans le DM sur Github)
+
+==
+
+===
+#pascal(11).len()
+
+===
+#pascal(11).sum()
+
+===
+#pascal(11).reduce((a, b) => {if a < b {b} else {a}})
