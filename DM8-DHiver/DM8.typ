@@ -58,70 +58,58 @@
 
 = La couleur des nombres
 
-Pour alléger la syntaxe, nous établissons les notations suivantes : #r[nombre rouge], #b[nombre bleu].
+#let rel = sym.tilde.op
+#let notrel = sym.tilde.not
 
-Rappelons les règles sous une forme dévelloppée avec $x in QP$ :
+Notons $x rel y$ la relation d'équivalence sur $QP$ : "$x$ et $y$ sont de même couleur". Les propriétés d'équivalence sont évidentes. On colore enfin en #b[bleu] les nombres bleus et en #r[rouge] les nombres rouges.
+
+Les deux premières règles deviennent :
 
 #color-rule[#r[1]]
 #color-rule[
-  $cases(
-    #r[x] <=> #r(math.frac("1", "x")),
-    #b[x] <=> #b(math.frac("1", "x"))
-  )$
+  $x rel 1/x$
 ]
+
+Enfin, comme il n'y a que deux couleurs, si $x$ et $y$ sont de couleurs différentes, alors $x$ et $y$ sont de couleurs opposées. La 3e règle devient donc :
 #color-rule[
-  $cases(
-    #r[x] <=> #b("x + 1"),
-    #b[x] <=> #r("x + 1")
-  )$
+  $x+1 notrel x$
 ]
 
 ==
 
-D'après (a), 1 est rouge et d'après (c), la couleur s'inverse à chaque ajout de 1. Par récurrence évidente, tous les nombres pairs sont donc bleus et tous les nombres impaires rouges.
+D'après (a), 1 est rouge et d'après (c), la couleur s'inverse à chaque ajout de 1. Par récurrence évidente, tous les nombres pairs sont donc bleus et tous les nombres impairs rouges.
 
-Avec $x in QP$ et $k in NN$ nous avons donc :
-
-#color-rule($
-  cases(
-    x = 2k &=> #b[x],
-    x = 2k + 1 &=> #r[x]
-  )
-$)
-
-Comme 2016 est pair, 2016 est #b[bleu].
+Ainsi, comme 2016 est pair, 2016 est #b[bleu].
 
 ==
-Soit $x in QP$ et $k in NN$, d'après (c) la couleur s'inverse à chaque ajout de 1. Nous avons donc par récurrence évidente :
+Soit $x in QP$ et $k in NN$. D'après (c) appliquée deux fois, $x+2 rel x$. Par une récurrence évidente, $x+2k rel x$.
 
-#color-rule($
-  cases(
-    #r[x] + 2k &=> #r[x + 2k],
-    #r[x] + 2k + 1 &=> #b[x + 2k + 1],
-    #b[x] + 2k &=> #b[x + 2k],
-    #b[x] + 2k + 1 &=> #r[x + 2k + 1],
-  )
-$)
+Ainsi, si $n in NN$ est pair, alors $x + n rel x$, et si $n$ est impair :
+$ 
+  x + n &rel x + (n-1) + 1 \
+  &rel x + 1 #h(2cm) "par (b)"\
+  &notrel x #h(2cm) "par (c)"
+$
 
-Selon la couleur de $x$, si $n$ est pair, $x + n$ aura la même couleur que $x$ et si $n$ est impaire $x + n$ sera de couleur opposée à $x$.
+Ainsi, selon la couleur de $x$, si $n$ est pair, $x + n$ aura la même couleur que $x$ et si $n$ est impair $x + n$ sera de couleur opposée à $x$.
 
 ==
 
 $
-  2016/2015 &= #r[1] + 1/#r[2015]   &"d'après (a) et (d)" \
-            &= #r[1] + #r[$1/2015$] &"d'après (b)" \
-            &= #b[$2016/2015$]      &"d'après (c)"
+  2016/2015 &rel #r[1] + 1/2015 \
+  &rel #r[1] + #r[2015] \
+  &rel #b[2016]
 $
+Donc $2016/2015$ est #b[bleu].
 
 D'autre part,
-
 $
-  4/13 &= 1/(13/4)              & \
-       &= 1/(#r[3] + 1/#b[4])   &"d'après (d)" \
-       &= 1/(#r[3] + #b[$1/4$]) &"d'après (b)" \
-       &= 1/#r[$13 / 4$]        &"d'après (e)" \
-       &= #r[$4/13$]            &"d'après (b)"
+  4/13 &rel 13/4 \
+  &rel #r[3] + 1/4 \
+  &rel #r[3] + #b[4] \
+  &rel #r[7]
 $
+Donc $4/13$ est #r[rouge].
 
 ==
 
