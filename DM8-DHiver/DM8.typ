@@ -36,8 +36,8 @@
   let sortie = (1,)
   for (before, now) in array.zip(nombres, nombres.slice(1)) {
     sortie.push(before + now)
+    sortie.push(now)
   }
-  sortie.push(1)
   sortie
 }
 
@@ -140,10 +140,11 @@ $E_5 = #pretty_pascal(5)$
 
 ==
 ===
-$E_11$ a #pascal(11).len() éléments.
+Les réponses suivantes sont calculées automatiquement :
+#let E_11 = pascal(11)
 
 ===
-La somme #pascal(11).sum()
+$E_11$ contient #E_11.len() éléments.
 
 ===
 #pascal(11).reduce((a, b) => {if a < b {b} else {a}})
