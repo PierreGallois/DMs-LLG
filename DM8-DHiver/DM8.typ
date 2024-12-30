@@ -149,7 +149,7 @@ $E_11$ contient #E_11.len() éléments.
 La somme des éléments de $E_11$ est #E_11.sum().
 
 ===
-Le plus grand élément de $E_11$ est #pascal(11).reduce((a, b) => {if a < b {b} else {a}}).
+Le plus grand élément de $E_11$ est #E_11.reduce((a, b) => {if a < b {b} else {a}}).
 
 ==
 ===
