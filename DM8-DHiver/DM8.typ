@@ -139,7 +139,6 @@ $E_5 = #pretty_pascal(5)$
 (bien entendu généré automatiquement, le script est dans le DM sur Github)
 
 ==
-===
 Les réponses suivantes sont calculées automatiquement :
 #let E_11 = pascal(11)
 
@@ -147,7 +146,10 @@ Les réponses suivantes sont calculées automatiquement :
 $E_11$ contient #E_11.len() éléments.
 
 ===
-#pascal(11).reduce((a, b) => {if a < b {b} else {a}})
+La somme des éléments de $E_11$ est #E_11.sum().
+
+===
+Le plus grand élément de $E_11$ est #pascal(11).reduce((a, b) => {if a < b {b} else {a}}).
 
 ==
 ===
@@ -162,3 +164,6 @@ $ |E'_(n+1)| = |E'_n| + |E'_n| \
 <==> u_(n+1) = 2u_n $
 
 Par une récurrence immédiate, on a bien $u_n = 2^(n-1)$.
+
+===
+Notons pour $n in NN^*$ $S_n$ la somme des éléments de $E_n$ et $$
