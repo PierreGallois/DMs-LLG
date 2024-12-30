@@ -139,15 +139,17 @@ $E_5 = #pretty_pascal(5)$
 (bien entendu généré automatiquement, le script est dans le DM sur Github)
 
 ==
-===
-Les réponses suivantes sont calculées automatiquement :
+Les réponses suivantes sont calculés automatiquement :
 #let E_11 = pascal(11)
 
 ===
 $E_11$ contient #E_11.len() éléments.
 
 ===
-#pascal(11).reduce((a, b) => {if a < b {b} else {a}})
+La somme de tous les élèments de $E_11$ est #E_11.sum().
+
+===
+Le plus grand nombre de $E_11$ est #E_11.reduce((a, b) => {if a < b {b} else {a}}).
 
 ==
 ===
