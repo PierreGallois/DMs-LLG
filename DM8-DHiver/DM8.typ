@@ -163,7 +163,18 @@ Pour construire $E'_(n+1)$ à partir de $E'_n$, on rajoute un nombre à droite d
 $ |E'_(n+1)| = |E'_n| + |E'_n| \
 <==> u_(n+1) = 2u_n $
 
-Par une récurrence immédiate, on a bien $u_n = 2^(n-1)$.
+Par une récurrence immédiate, on a bien $u_n = 2^(n-1)$. Donc le nombre d'éléments de $E_n$ est $N_n = 2^(n-1) + 1$.
 
 ===
-Notons pour $n in NN^*$ $S_n$ la somme des éléments de $E_n$ et $$
+Notons pour $n in NN^*$, $S_n$ la somme des éléments de $E_n$ et $v_n = S_n - 1$ que l'on interprète comme la somme des éléments de $E'_n$. Les premiers termes de la suite $(v_n)_(n in NN^*)$ sont :
+$ v_1 = 1 #h(1cm) v_2 = 3 #h(1cm) v_3 = 9 #h(1cm) v_4 = 27 $
+
+On conjecture que $v_n = 3^(n-1)$ pour tout $n in NN^*$.
+
+#underline[Preuve :] Notons $x_i$ pour $1 <= i <= N_n$ le $i$-ème élément de la liste $E_n$. $E'_(n+1)$ est composé d'une copie de la liste $E'_n$, ainsi que des sommes d'éléments consécutifs de $E_n$. On a donc :
+$ v_(n+1) &= v_n + sum_(i=1)^(N_n - 1) (x_i + x_(i+1)) \
+&= v_n + sum_(i=1)^(N_n -1) x_i + sum_(i=2)^(N_n) x_i \
+&= v_n + 2 sum_(i=1)^(N_n-1) x_i#h(1cm) #text[car $x_1$ = $x_(N_n)$] \
+&= 3v_n $
+
+Par récurrence immédiate, $v_n = 3^(n-1)$ et la somme des éléments de $E_n$ est donc $3^(n-1) + 1$ pour tout $n in NN^*$.
