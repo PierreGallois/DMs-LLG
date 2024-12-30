@@ -33,7 +33,7 @@
 }
 
 #let intercale(nombres) = {
-  let sortie = (1,)
+  let sortie = (nombres.at(0),)
   for (before, now) in array.zip(nombres, nombres.slice(1)) {
     sortie.push(before + now)
     sortie.push(now)
