@@ -36,8 +36,8 @@
   let sortie = (1,)
   for (before, now) in array.zip(nombres, nombres.slice(1)) {
     sortie.push(before + now)
+    sortie.push(now)
   }
-  sortie.push(1)
   sortie
 }
 
@@ -139,11 +139,14 @@ $E_5 = #pretty_pascal(5)$
 (bien entendu généré automatiquement, le script est dans le DM sur Github)
 
 ==
-===
-$E_n$ a #pascal(11).len() éléments.
+Les réponses suivantes sont calculés automatiquement :
+#let E_11 = pascal(11)
 
 ===
-La somme #pascal(11).sum()
+$E_11$ contient #E_11.len() éléments.
 
 ===
-#pascal(11).reduce((a, b) => {if a < b {b} else {a}})
+La somme de tous les élèments de $E_11$ est #E_11.sum().
+
+===
+Le plus grand nombre de $E_11$ est #E_11.reduce((a, b) => {if a < b {b} else {a}}).
