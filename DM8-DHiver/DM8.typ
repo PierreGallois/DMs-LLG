@@ -139,14 +139,26 @@ $E_5 = #pretty_pascal(5)$
 (bien entendu généré automatiquement, le script est dans le DM sur Github)
 
 ==
-Les réponses suivantes sont calculés automatiquement :
+===
+Les réponses suivantes sont calculées automatiquement :
 #let E_11 = pascal(11)
 
 ===
 $E_11$ contient #E_11.len() éléments.
 
 ===
-La somme de tous les élèments de $E_11$ est #E_11.sum().
+#pascal(11).reduce((a, b) => {if a < b {b} else {a}})
 
+==
 ===
-Le plus grand nombre de $E_11$ est #E_11.reduce((a, b) => {if a < b {b} else {a}}).
+Notons pour $n in NN^*$, $u_n = N_n - 1$. Les premiers termes de la suite $(u_n)_(n in NN^*)$ sont :
+$ u_1 = 1 #h(1cm) u_2 = 2 #h(1cm) u_3 = 4 #h(1cm) u_4 = 8 $
+
+On conjecture que pour tout $n in NN^*, u_n = 2^(n-1)$.
+
+#underline[Preuve :] Notons $E'_n$ la liste $E_n$ dans laquelle on omet le dernier 1, et on considère $u_n$ comme le nombre d'éléments de $E'_n$.
+Pour construire $E'_(n+1)$ à partir de $E'_n$, on rajoute un nombre à droite de chaque élément de $E'_n$. On a donc :
+$ |E'_(n+1)| = |E'_n| + |E'_n| \
+<==> u_(n+1) = 2u_n $
+
+Par une récurrence immédiate, on a bien $u_n = 2^(n-1)$.
