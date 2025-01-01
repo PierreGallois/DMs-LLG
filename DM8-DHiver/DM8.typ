@@ -172,7 +172,7 @@ $ u_1 = 1 #h(1cm) u_2 = 2 #h(1cm) u_3 = 4 #h(1cm) u_4 = 8 $
 
 On conjecture que pour tout $n in NN^*, u_n = 2^(n-1)$.
 
-#underline[Preuve :] Notons $E'_n$ la liste $E_n$ dans laquelle on omet le dernier 1, et on considère $u_n$ comme le nombre d'éléments de $E'_n$.
+*Preuve :* Notons $E'_n$ la liste $E_n$ dans laquelle on omet le dernier 1, et on considère $u_n$ comme le nombre d'éléments de $E'_n$.
 Pour construire $E'_(n+1)$ à partir de $E'_n$, on rajoute un nombre à droite de chaque élément de $E'_n$. On a donc :
 $ |E'_(n+1)| = |E'_n| + |E'_n| \
 <==> u_(n+1) = 2u_n $
@@ -185,10 +185,13 @@ $ v_1 = 1 #h(1cm) v_2 = 3 #h(1cm) v_3 = 9 #h(1cm) v_4 = 27 $
 
 On conjecture que $v_n = 3^(n-1)$ pour tout $n in NN^*$.
 
-#underline[Preuve :] Notons $x_i$ pour $1 <= i <= N_n$ le $i$-ème élément de la liste $E_n$. $E'_(n+1)$ est composé d'une copie de la liste $E'_n$, ainsi que des sommes d'éléments consécutifs de $E_n$. On a donc :
+*Preuve :* Notons $x_i$ pour $1 <= i <= N_n$ le $i$-ème élément de la liste $E_n$. $E'_(n+1)$ est composé d'une copie de la liste $E'_n$, ainsi que des sommes d'éléments consécutifs de $E_n$. On a donc :
 $ v_(n+1) &= v_n + sum_(i=1)^(N_n - 1) (x_i + x_(i+1)) \
 &= v_n + sum_(i=1)^(N_n -1) x_i + sum_(i=2)^(N_n) x_i \
 &= v_n + 2 sum_(i=1)^(N_n-1) x_i#h(1cm) #text[car $x_1$ = $x_(N_n)$] \
 &= 3v_n $
 
 Par récurrence immédiate, $v_n = 3^(n-1)$ et la somme des éléments de $E_n$ est donc $3^(n-1) + 1$ pour tout $n in NN^*$.
+
+= Mon beau sapin !
+
