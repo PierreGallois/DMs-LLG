@@ -15,7 +15,6 @@
   let beta_r = 1 / (2 * calc.pow(b, 2))
   let alpha_center = (alpha_v, alpha_r)
   let beta_center = (beta_v, beta_r)
-
   let line_style = (paint: green, thickness: 2pt)
   let point_size = 1.5pt
   line(

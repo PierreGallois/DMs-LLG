@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
+#import "figures.typ": sapin
 
 #show: dm.with(
   numero: 8,
