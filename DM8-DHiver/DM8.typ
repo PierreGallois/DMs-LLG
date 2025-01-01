@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
-#import "figures.typ": sapin, sapin-transformation
+#import "figures.typ": sapin, sapin-exemple, base-exemple, sapin-transformation, base-triangles
 
 #show: dm.with(
   numero: 8,
@@ -196,11 +196,46 @@ Par récurrence immédiate, $v_n = 3^(n-1)$ et la somme des éléments de $E_n$ 
 
 = Mon beau sapin !
 
+== Division des sapins en formes plus simples
+
 Comme les données de l'exercice sont des schémas, nous continuons pour le moment de raisonner avec des schémas.
 
-On nomme "Sapin $n$" la figure de chaque étape $n$. 
+On nomme "Sapin $n$" la figure de chaque étape $n in NN^*$. Par exemple :
 
-On remarque que la forme complexe de chaque Sapin peut être transformé en deux formes plus simples sans que la surface foncée ne change de taille:
+#sapin-exemple(1)
+
+On nomme "Base $n$" avec $n in NN^*$ les figures suivantes :
+
+#base-exemple(1)
+
+Sapin 1 et Base 1 sont identiques.
+
+On remarque que la forme complexe de chaque Sapin peut être transformé en deux formes plus simples, qui sont des figures Bases, sans que la surface bleue foncée ne change de taille :
 
 #sapin-transformation(3)
-zzz
+
+== Aire bleue de $B_n$
+
+Tentons maintenant de déterminer l'aire bleue foncée $A_n$ de toute Base $n$.
+
+$A_1$ est fixé.
+
+Toute Base est composée de triangles de différentes tailles :
+#figure(
+  base-triangles(5),
+  caption: $B_4$,
+  numbering: none
+)
+
+On nomme $C_1$ le triangle bleu, $C_2$ le triangle vert, $C_3$ le triangle rouge et ainsi de suite.
+Soit $n in NN^*$. On note $A_C_n$, l'aire d'un triangle $C_n$ et $l_C_n$ la longeure de son côté.
+
+Dû à la disposition des triangles équilatéraux, il est clair que $l_C_(n+1) = l_C_n / 2$.
+
+Or, 
+$
+  A_C_n &= sqrt(3) / 4 (l_C_n)^2 \
+  A_C_(n+1) &= sqrt(3) / 4 (l_C_(n+1))^2 \
+  A_C_(n+1) &= sqrt(3) / 4 (l_C_n / 2)^2 \
+  A_C_(n+1) &= (sqrt(3) (l_C_n)^2)/ 16 \
+$
