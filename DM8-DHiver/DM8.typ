@@ -88,7 +88,7 @@ Soit $x in QP$ et $k in NN$. D'après (c) appliquée deux fois, $x+2 rel x$. Par
 Ainsi, si $n in NN$ est pair, alors $x + n rel x$, et si $n$ est impair :
 $ 
   x + n &rel x + (n-1) + 1 \
-  &rel x + 1 #h(2cm) "par (b)"\
+  &rel x + 1 #h(1.25cm) "car" n-1 "est pair"\
   &notrel x #h(2cm) "par (c)"
 $
 
@@ -133,9 +133,9 @@ On est donc amené à répéter l'algorithme avec $b'/a$, c'est à dire calculer
 
 Autrement dit, on peut déterminer la couleur d'une fraction $a/b$ en calculant la couleur de la somme des quotients donnés par l'algorithme d'Euclide pour calculer le pgcd de $a$ et $b$ (cela permet également d'assurer que l'algorithme se termine). C'est ce que fait l'algorithme en python ci-dessous :
 
-#code-from-file(folder-name, "/code/programme.py")
+#code-from-file(folder-name, "/code/couleur.py")
 
-Quand éxécuté avec $a=235, b=68$, l'algorithme renvoie que $#couleur(235,68)$, comme escompté.
+Quand éxécuté avec $a=235, b=68$, l'algorithme renvoie que $#couleur(235, 68)$, comme escompté.
 ==
 Après implémentation de l'algorithme en typst et en python, celui-ci donne :
 $
