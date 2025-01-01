@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
-#import "figures.typ": sapin, sapin-exemple, base-exemple, sapin-transformation, base-triangles
+#import "figures.typ": sapin, sapin-exemple, base-exemple, sapin-transformation, base-triangles, simple-triangle, limite-surface1, limite-surface2
 
 #show: dm.with(
   numero: 8,
@@ -218,6 +218,8 @@ On remarque que la forme complexe de chaque Sapin peut être transformé en deux
 
 Tentons maintenant de déterminer l'aire bleue foncée $A_n$ de toute Base $n$.
 
+$A_0 = 0$ cela correspond à la situation où il n'y a pas de triangle, donc l'aire est nulle.
+
 $A_1$ est fixé.
 
 Toute Base est composée de triangles de différentes tailles :
@@ -227,15 +229,111 @@ Toute Base est composée de triangles de différentes tailles :
   numbering: none
 )
 
-On nomme $C_1$ le triangle bleu, $C_2$ le triangle vert, $C_3$ le triangle rouge et ainsi de suite.
-Soit $n in NN^*$. On note $A_C_n$, l'aire d'un triangle $C_n$ et $l_C_n$ la longeure de son côté.
+On nomme $T_1$ le triangle bleu, $T_2$ le triangle vert, $T_3$ le triangle rouge et ainsi de suite.
+Soit $n in NN^*$. On note $A_T_n$, l'aire d'un triangle $T_n$.
 
-Dû à la disposition des triangles équilatéraux, il est clair que $l_C_(n+1) = l_C_n / 2$.
+On remarque que $A_T_1 = A_1$.
 
-Or, 
+Dû à la disposition des triangles équilatéraux, il est clair que $A_T_(n+1) = A_T_n / 4$, donc par récurrence immédiate, $A_T_n = 4^(-(n-1)) A_T_1 = 4^(-(n-1)) A_1$
+
+#base-exemple(1)
+
+On remarque qu'à chaque fois des triangles bleus sont rajoutés mais aucun n'est supprimé. Donc  on peut exprimer l'aire d'une Base $B_n$ en fonction des précédentes :
+
 $
-  A_C_n &= sqrt(3) / 4 (l_C_n)^2 \
-  A_C_(n+1) &= sqrt(3) / 4 (l_C_(n+1))^2 \
-  A_C_(n+1) &= sqrt(3) / 4 (l_C_n / 2)^2 \
-  A_C_(n+1) &= (sqrt(3) (l_C_n)^2)/ 16 \
+  A_(n+1) = A_n + k_(n+1)
 $
+
+Avec $k_(n+1) in RR_+$ qui représente l'aire totale des petits triangles $T_n$ ajoutés à cette étape.
+
+On recherche maintenant combien de triangles $T_n$ sont rajoutés lors d'une étape $n$. On remarque que lors d'une étape, chaque triangle $T_(n-1)$ existant rajoute $3$ triangles $T_n$, un sur chacun de ses côtés. On a donc pour $n in NN^*$ et $n >= 2$ :
+$
+  N_T_n = 3 N_T_(n-1)
+$
+Lorsque $n = 1$, il n'y a qu'un seul triangle donc $N_T_1 = 1$.
+Par récurrence immédiate on a pour $n in NN^*$ :
+$
+  N_T_n = 3^(n-1)
+$
+
+Donc comme $k_(n+1) = N_T_(n+1) times A_T_(n+1)$,
+
+$
+  A_(n+1) &= A_n + 3^n times 4^(-n) A_1 \
+  A_(n+1) &= A_n + (3/4)^n A_1 \
+  A_n &= A_1 sum^(n-1)_(k=0) (3/4)^k
+$
+
+On rappelle l'identité géométrique :
+Soit $a in RR without {1}$ et $n in NN$.
+$
+  sum^n_(k=0) a^k = (a^(n+1) - 1) / (a - 1)
+$
+
+Par identification :
+
+$
+  A_n &= A_1 sum^(n-1)_(k=0) (3/4)^k \
+  A_n &= A_1 ((3/4)^n - 1) / (3/4 - 1) \
+  A_n &= A_1 ((4^n - 3^n)/(4^(n-1)))
+$
+
+== Aire des sapins.
+
+On note $A_S_n$ l'aire des petits triangles bleus d'un sapin $S_n$, pour $n in NN^*$.
+
+On remarque que $A_S_1 = A_1$.
+
+Comme nous l'avons vu, un sapin peut être divisié de telle manière que,
+
+$
+  A_S_n &= A_n + A_(n - 1) \
+  A_S_n &= A_1 (sum^(n-1)_(k=0) (3/4)^k + sum^(n-2)_(k=0) (3/4)^k) \
+  A_S_n &= A_1 (2 sum^(n-2)_(k=0) (3/4)^k + (3/4)^(n-1)) \
+  A_S_n &= A_1 (2 ((3/4)^(n-1) - 1)/(3/4 - 1) + (3/4)^(n-1)) \
+  A_S_n &= A_1 (8 - 7 (3/4)^(n-1))
+$
+
+== Application numérique
+
+#simple-triangle(3)
+
+On donne le côté $c = 10$ cm du triangle _clair_. On note $A_1$ l'aire du triangle _foncé_ et $A_c$ l'aire du triangle _clair_.
+$
+  A_1 &= 1/4 A_c \
+  A_1 &= 1/4 times sqrt(3)/4 c^2 \
+  A_1 &= sqrt(3)/16 c^2 
+$
+On a donc :
+
+$
+  A_S_n &= sqrt(3)/16 (8 - 7 (3/4)^(n-1)) c^2 \
+  A_(S 10)_n &= sqrt(3)/16 (8 - 7 (3/4)^(n-1)) 10^2 
+$
+
+== Limite. 
+
+Lorsque $n$ tend vers $+oo$, $a^n$ tend vers $0$ si $abs(a) < 1$ avec $a in RR$.
+
+Donc $(3/4)^(n-1)$ tend vers $0$ quand $n$ tend vers $+oo$.
+
+Donc l'aire tend vers
+$
+  sqrt(3)/16 times 8 times c^2 = sqrt(3)/2 c times c
+$
+Or, $sqrt(3)/2 c$ est la hauteur d'un triangle équilatéral de base $c$.
+
+La surface tend donc vers le rectangle suivant :
+
+#align(
+  center,
+  table(
+    columns: 3,
+    column-gutter: 15pt,
+    stroke: none,
+    align: bottom,
+    limite-surface1(4),
+    limite-surface2(4, 4),
+    limite-surface2(4, 6)
+  )
+)

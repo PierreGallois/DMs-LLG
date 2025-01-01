@@ -47,8 +47,8 @@
       column-gutter: 10pt,
       align: center + horizon,
       stroke: none,
-      cetz.canvas({a-triangle(p, size/2, cad.at(1))
-      b-triangle(p, size/2, cbd.at(1))}),
+      cetz.canvas({a-triangle(p, size, cad.at(1))
+      b-triangle(p, size, cbd.at(1))}),
       cetz.canvas(c-triangle(p, size, 1, cad, cbd)),
       cetz.canvas(c-triangle(p, size, 2, cad, cbd)),
       cetz.canvas(c-triangle(p, size, 3, cad, cbd)),
@@ -71,3 +71,29 @@
     b-triangle(p, size, blue)
   })
 }
+
+#let simple-triangle(size) = {
+  cetz.canvas({
+    a-triangle(p, size, cad.at(1))
+    b-triangle(p, size, cbd.at(1))
+  })
+}
+
+#let limite-surface1(size) = cetz.canvas({
+  a-triangle(p, size, cad.at(1))
+  b-triangle(p, size, cbd.at(1))
+  rect(
+    stroke: (dash: "dashed", ),
+    (0, 0),
+    (size, (size * sqrt(3) / 2))
+  )
+})
+
+#let limite-surface2(size, depth) = cetz.canvas({
+  sapin(p, size, depth, cad, cbd)
+  rect(
+    stroke: (dash: "dashed", ),
+    (0, 0),
+    (size, (size * sqrt(3) / 2))
+  )
+})
