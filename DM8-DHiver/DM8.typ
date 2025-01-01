@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
-#import "figures.typ": sapin
+#import "figures.typ": sapin, sapin-transformation
 
 #show: dm.with(
   numero: 8,
@@ -196,3 +196,11 @@ Par récurrence immédiate, $v_n = 3^(n-1)$ et la somme des éléments de $E_n$ 
 
 = Mon beau sapin !
 
+Comme les données de l'exercice sont des schémas, nous continuons pour le moment de raisonner avec des schémas.
+
+On nomme "Sapin $n$" la figure de chaque étape $n$. 
+
+On remarque que la forme complexe de chaque Sapin peut être transformé en deux formes plus simples sans que la surface foncée ne change de taille:
+
+#sapin-transformation(3)
+zzz

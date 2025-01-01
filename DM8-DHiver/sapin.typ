@@ -41,6 +41,7 @@
 }
 
 #let c-triangle(padding, size, depth) = {
+  a-triangle(padding, size)
   b-triangle(padding, size)
   c-triangle-inside(padding, size, depth)
 }
