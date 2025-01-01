@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm
+#import "./../templates/homework.typ": dm, code-from-file
 
 #show: dm.with(
   numero: 8,
@@ -6,6 +6,7 @@
   sections: [Exercice],
   alpha: false
 )
+#let folder-name = "DM8-DHiver"
 
 // FUNCTIONS
 
@@ -61,7 +62,7 @@
 #let rel = sym.tilde.op
 #let notrel = sym.tilde.not
 
-Notons $x rel y$ la relation d'équivalence sur $QP$ : "$x$ et $y$ sont de même couleur". Les propriétés d'équivalence sont évidentes. On colore enfin en #b[bleu] les nombres bleus et en #r[rouge] les nombres rouges.
+Notons $x rel y$ la relation d'équivalence sur $QP$ : "$x$ et $y$ sont de même couleur"#footnote[Bien que $rel$ soit une relation d'équivalence, ce n'est pas une relation de congruence sur l'addition, i.e on n'a pas que si $a rel b$ et $c rel d$ alors $a + c rel b + d$ : par exemple, $2 rel 1/2$ mais $2 + 2 = #b[4] notrel 1/2 + 1/2 rel #r[1]$. On utilisera donc $rel$ avec attention et uniquement pour simplifier les notations.]. Les propriétés d'équivalence sont évidentes. On colore enfin en #b[bleu] les nombres bleus et en #r[rouge] les nombres rouges.
 
 Les deux premières règles deviennent :
 
@@ -112,17 +113,31 @@ $
 Donc $4/13$ est #r[rouge].
 
 ==
+Ces deux règles sont fausses. 
 
-TODO
+La première est fausse car $1/3 rel #r[3]$ est rouge et $2/3 rel 1 + 1/2 notrel #b[$1/2$]$ est rouge, mais $#r[$1/3$] + #r[$2/3$] rel #r[1]$.
 
+La seconde est fausse avec l'interprétation de la couleur sur les entiers : si un entier pair est bleu, alors la somme de deux entiers pairs est aussi paire et donc bleue : $#b[2] + #b[2] rel #b[4]$.
 ==
+On peut faire les calculs suivants :
+$ 235/68 & rel 3 + 1/(2+1/(5+1/6)) \
+& notrel 2 + 1/(5+1/6) \
+& notrel 5 + 1/6 \
+& rel #b[6] $
 
-TODO
-
+Donc $#b[$235/68$]$ est bleu.
 ==
+Prenons une fraction $a/b$. On peut toujours écrire $b$ sous la forme $b' + n a$ avec $n in NN$. Alors on a :
+$ a/b rel a/(b'+n a) rel (b' + n a)/a rel n + b'/a $
+On est donc amené à répéter l'algorithme avec $b'/a$, c'est à dire calculer le quotient et le reste de la division euclidienne de $a$ par $b'$, jusqu'à ce que la fraction obtenue soit un entier, dans quel cas on peut facilement déterminer la couleur de la fraction initiale avec la parité de la somme des quotients.
 
+Autrement dit, on peut déterminer la couleur d'une fraction $a/b$ en calculant la couleur de la somme des quotients donnés par l'algorithme d'Euclide pour calculer le pgcd de $a$ et $b$ (cela permet également d'assurer que l'algorithme se termine). C'est ce que fait l'algorithme en python ci-dessous :
+
+#code-from-file(folder-name, "/code/programme.py")
+
+Quand éxécuté avec $a=235, b=68$, l'algorithme renvoie que $#couleur(235,68)$, comme escompté.
 ==
-Après implémentation de l'algorithme en typst, celui-ci donne :
+Après implémentation de l'algorithme en typst et en python, celui-ci donne :
 $
  #couleur(1515, 1789)
 $
@@ -130,7 +145,6 @@ $
 = Intercaler la somme
 
 ==
-
 $E_4 = #pretty_pascal(4)$
 
 $E_5 = #pretty_pascal(5)$
