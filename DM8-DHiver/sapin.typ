@@ -28,7 +28,7 @@
 
 #let c-triangle-inside(padding, size, depth, colors-a, colors-b) = {
   assert(depth > 0)
-  assert(depth < 8, message: "trop long sinon")
+  assert(depth < 9, message: "trop long sinon")
   let (px, py) = padding
   b-triangle((px, py), size/2, colors-b.at(depth - 1))
   b-triangle((px + size/2, py), size/2, colors-b.at(depth - 1))

@@ -1,8 +1,8 @@
 #import "sapin.typ": *
 
 #let p = (0, 0)
-#let cad = (blue.lighten(50%),) * 6
-#let cbd = (blue.darken(30%),) * 6
+#let cad = (blue.lighten(50%),) * 9
+#let cbd = (blue.darken(30%),) * 9
 
 #let sapin-transformation(size) = [
   #let ca = (red.lighten(30%), green.lighten(30%),)*3
@@ -15,6 +15,13 @@
     #cetz.canvas(sapin((0, 0), 3, 5, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 4, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 3, ca, cbd)) \
   $
 ]
+
+#let sapin-transformation-seul-example(size) = {
+  let ca = (red.lighten(30%), green.lighten(30%),)*3
+  $
+    #cetz.canvas(sapin((0, 0), 3, 4, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 3, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 2, ca, cbd))
+  $
+}
 
 #let sapin-exemple(size) = {
   align(
@@ -79,21 +86,70 @@
   })
 }
 
-#let limite-surface1(size) = cetz.canvas({
-  a-triangle(p, size, cad.at(1))
-  b-triangle(p, size, cbd.at(1))
-  rect(
-    stroke: (dash: "dashed", ),
-    (0, 0),
-    (size, (size * sqrt(3) / 2))
+#let limite-surface-v1(size) = {
+  let limite-surface1(size, depth) = cetz.canvas({
+    sapin(p, size, depth, cad, cbd)
+    rect(
+      stroke: (dash: "dashed", ),
+      (0, 0),
+      (size, (size * sqrt(3) / 2 * 5/8))
+    )
+  })
+  align(
+  center,
+  table(
+    columns: 3,
+    column-gutter: 15pt,
+    stroke: none,
+    align: bottom,
+    cetz.canvas({
+      a-triangle(p, size, cad.at(1))
+      b-triangle(p, size, cbd.at(1))
+      rect(
+        stroke: (dash: "dashed", ),
+        (0, 0),
+        (size, (size * sqrt(3) / 2 * 5/8))
+      )
+    }),
+    limite-surface1(4, 4),
+    limite-surface1(4, 6)
   )
-})
+)
+}
 
-#let limite-surface2(size, depth) = cetz.canvas({
-  sapin(p, size, depth, cad, cbd)
-  rect(
-    stroke: (dash: "dashed", ),
-    (0, 0),
-    (size, (size * sqrt(3) / 2))
+#let limite-surface-v2(size) = {
+  let limite-surface2(size, depth) = cetz.canvas({
+    sapin(p, size, depth, cad, cbd)
+    rect(
+      stroke: (dash: "dashed", ),
+      (size*3/16, 0),
+      (size * 5/8 + size*3/16, (size * sqrt(3) / 2))
+    )
+  })
+  align(
+  center,
+  table(
+    columns: 3,
+    column-gutter: 15pt,
+    stroke: none,
+    align: bottom,
+    cetz.canvas({
+      a-triangle(p, size, cad.at(1))
+      b-triangle(p, size, cbd.at(1))
+      rect(
+        stroke: (dash: "dashed", ),
+        (size*3/16, 0),
+        (size * 5/8 + size*3/16, (size * sqrt(3) / 2))
+      )
+    }),
+    limite-surface2(4, 4),
+    limite-surface2(4, 6)
   )
-})
+)
+}
+
+#let grand-sapin(size, depth) = {
+  cetz.canvas(
+    sapin(p, size, depth, cad, cbd)
+  )
+}

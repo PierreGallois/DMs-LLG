@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
-#import "figures.typ": sapin, sapin-exemple, base-exemple, sapin-transformation, base-triangles, simple-triangle, limite-surface1, limite-surface2
+#import "figures.typ": sapin, sapin-exemple, base-exemple, sapin-transformation, base-triangles, simple-triangle, sapin-transformation-seul-example, limite-surface-v1, limite-surface-v2, grand-sapin
 
 #show: dm.with(
   numero: 8,
@@ -280,35 +280,39 @@ $
 
 == Aire des sapins.
 
-On note $A_S_n$ l'aire des petits triangles bleus d'un sapin $S_n$, pour $n in NN^*$.
+On note $A_S_n$ l'aire des petits triangles bleus d'un Sapin $S_n$, pour $n in NN^*$.
 
-On remarque que $A_S_1 = A_1$.
+Comme nous l'avons vu, tout Sapin $S_n$ avec $n >= 2$ peut être divisié de la manière suivante :
 
-Comme nous l'avons vu, un sapin peut être divisié de telle manière que,
+#sapin-transformation-seul-example(3)
+
+L'aire bleue d'un Sapin $S_n$ dont l'aire du plus grand triangle bleu est $A_S_1$, est égale à l'aire bleue d'une Base $B 1_n$ dont le plus grand triangle bleu est d'aire $A 1_1 = A_S_1$ plus l'aire bleue d'une Base $B 2_(n-1)$ dont le plus grand triangle bleu est d'aire $A 2_1 = 1/4 A_S_1$
+
+On résume cette phrase par les formules :
 
 $
-  A_S_n &= A_n + A_(n - 1) \
-  A_S_n &= A_1 (sum^(n-1)_(k=0) (3/4)^k + sum^(n-2)_(k=0) (3/4)^k) \
-  A_S_n &= A_1 (2 sum^(n-2)_(k=0) (3/4)^k + (3/4)^(n-1)) \
-  A_S_n &= A_1 (2 ((3/4)^(n-1) - 1)/(3/4 - 1) + (3/4)^(n-1)) \
-  A_S_n &= A_1 (8 - 7 (3/4)^(n-1))
+  A_S_n &= A 1_n + A 2_(n-1) \
+  A_S_n &= A_S_1 (sum^(n-1)_(k=0) (3/4)^k + 1/4 sum^(n-2)_(k=0) (3/4)^k) \
+  A_S_n &= A_S_1 (5/4 sum^(n-2)_(k=0) (3/4)^k + (3/4)^(n-1)) \
+  A_S_n &= A_S_1 (5/4 times ((3/4)^(n-1) - 1)/(3/4 - 1) + (3/4)^(n-1)) \
+  A_S_n &= A_S_1 (5 - 4 (3/4)^(n-1))
 $
 
 == Application numérique
 
 #simple-triangle(3)
 
-On donne le côté $c = 10$ cm du triangle _clair_. On note $A_1$ l'aire du triangle _foncé_ et $A_c$ l'aire du triangle _clair_.
+On donne le côté $c = 10$ cm du triangle _clair_. On note $A_S_1$ l'aire du triangle _foncé_ et $A_S_c$ l'aire du triangle _clair_.
 $
-  A_1 &= 1/4 A_c \
-  A_1 &= 1/4 times sqrt(3)/4 c^2 \
-  A_1 &= sqrt(3)/16 c^2 
+  A_S_1 &= 1/4 A_S_c \
+  A_S_1 &= 1/4 times sqrt(3)/4 c^2 \
+  A_S_1 &= sqrt(3)/16 c^2 
 $
 On a donc :
 
 $
-  A_S_n &= sqrt(3)/16 (8 - 7 (3/4)^(n-1)) c^2 \
-  A_(S 10)_n &= sqrt(3)/16 (8 - 7 (3/4)^(n-1)) 10^2 
+  A_S_n &= sqrt(3)/16 c^2 (5 - 4 (3/4)^(n-1)) \
+  A_(S 10)_n &= sqrt(3)/16 10^2 (5 - 4 (3/4)^(n-1))
 $
 
 == Limite. 
@@ -319,21 +323,24 @@ Donc $(3/4)^(n-1)$ tend vers $0$ quand $n$ tend vers $+oo$.
 
 Donc l'aire tend vers
 $
-  sqrt(3)/16 times 8 times c^2 = sqrt(3)/2 c times c
+  sqrt(3)/16 times 5 times c^2 = 5/8 sqrt(3)/2 c times c
 $
 Or, $sqrt(3)/2 c$ est la hauteur d'un triangle équilatéral de base $c$.
 
+#pagebreak()
 La surface tend donc vers le rectangle suivant :
 
+#limite-surface-v1(4)
+
+Ou encore :
+
+#limite-surface-v2(4)
+
+On peut visuellement se convaincre en "rabattant" les morceaux extérieurs vers l'intérieur du rectangle que la surface claire va tendre vers celle du rectangle. Et comme la surface foncée va tendre vers la surface claire, la surface foncée va tendre également vers l'aire du rectangle.
+
+#pagebreak()
+
 #align(
-  center,
-  table(
-    columns: 3,
-    column-gutter: 15pt,
-    stroke: none,
-    align: bottom,
-    limite-surface1(4),
-    limite-surface2(4, 4),
-    limite-surface2(4, 6)
-  )
+  center + horizon,
+  grand-sapin(20, 8)
 )
