@@ -196,57 +196,63 @@ Par récurrence immédiate, $v_n = 3^(n-1)$ et la somme des éléments de $E_n$ 
 
 = Mon beau sapin !
 
-== Division des sapins en formes plus simples
+// == Division des sapins en formes plus simples
 
-Comme les données de l'exercice sont des schémas, nous continuons pour le moment de raisonner avec des schémas.
+// Comme les données de l'exercice sont des schémas, nous continuons pour le moment de raisonner avec des schémas.
 
-On nomme "Sapin $n$" la figure de chaque étape $n in NN^*$. Par exemple :
+// On nomme "Sapin $n$" la figure de chaque étape $n in NN^*$. Par exemple :
 
-#sapin-exemple(1)
+// #sapin-exemple(1)
 
-On nomme "Base $n$" avec $n in NN^*$ les figures suivantes :
+// On nomme "Base $n$" avec $n in NN^*$ les figures suivantes :
 
-#base-exemple(1)
+// #base-exemple(1)
 
-Sapin 1 et Base 1 sont identiques.
+// Sapin 1 et Base 1 sont identiques.
 
-On remarque que la forme complexe de chaque Sapin peut être transformé en deux formes plus simples, qui sont des figures Bases, sans que la surface bleue foncée ne change de taille :
+// On remarque que la forme complexe de chaque Sapin peut être transformé en deux formes plus simples, qui sont des figures Bases, sans que la surface bleue foncée ne change de taille :
 
-#sapin-transformation(3)
+// #sapin-transformation(3)
 
-== Aire bleue de $B_n$
+== Aire foncée de $#math.bold[B]_n$
 
-Tentons maintenant de déterminer l'aire bleue foncée $A_n$ de toute Base $n$.
+===
+Considérons les figures suivantes :
 
-$A_0 = 0$ cela correspond à la situation où il n'y a pas de triangle, donc l'aire est nulle.
+#base-exemple(1.5)
 
-$A_1$ est fixé.
+On nomme $#math.bold[B]_(n, a)$ avec $n in NN^*$ et $a in RR_+$, chacune de ces figures. $n$ représente la complexité de la figure c'est à dire combien de fois le rajout de triangles est répété, et $a$ représente l'aire _foncée_ initiale, c'est à dire l'aire du plus grand triangle _foncé_ présent sur la Base.
+
+Remarquons que les deux valeurs $n$ et $a$ suffisent à définir complètement une unique Base.
+
+On nomme $#math.cal[B]_(n, a)$ l'aire totale formée par les triangles _foncés_ d'une Base $#math.bold[B]_(n, a)$.
+
+Ainsi, $#math.cal[B]_(1,a) = a$.
+Nous rajoutons que $#math.cal[B]_(0, a) = 0$ pour tout $a in RR_+$, cela correspond à la situation où aucun triangle n'est créé donc l'aire est nulle.
+
+===
+Tentons maintenant de déterminer l'aire $#math.cal[B]_(n, a)$ de toute Base $#math.bold[B]_(n, a)$ en fonction de l'aire $a$.
+Dans la suite de cette partie, nous écrirons $#math.cal[B]_n$ pour $#math.cal[B]_(n, a)$ car nous travaillons toujours pour une aire $a = #math.cal[B]_1$.
 
 Toute Base est composée de triangles de différentes tailles :
 #figure(
   base-triangles(5),
-  caption: $B_4$,
+  caption: $#math.bold[B]_4$,
   numbering: none
 )
 
-On nomme $T_1$ le triangle bleu, $T_2$ le triangle vert, $T_3$ le triangle rouge et ainsi de suite.
-Soit $n in NN^*$. On note $A_T_n$, l'aire d'un triangle $T_n$.
 
-On remarque que $A_T_1 = A_1$.
 
-Dû à la disposition des triangles équilatéraux, il est clair que $A_T_(n+1) = A_T_n / 4$, donc par récurrence immédiate, $A_T_n = 4^(-(n-1)) A_T_1 = 4^(-(n-1)) A_1$
+On nomme $#math.bold[T]_1$ le triangle bleu, $#math.bold[T]_2$ le triangle vert, $#math.bold[T]_3$ le triangle rouge et ainsi de suite.
+Soit $n in NN^*$. On note $#math.cal[T]_n$, l'aire d'un _unique_ triangle $#math.bold[T]_n$.
 
-#base-exemple(1)
+On remarque que $#math.cal[T]_1 = #math.cal[B]_1$.
 
-On remarque qu'à chaque fois des triangles bleus sont rajoutés mais aucun n'est supprimé. Donc  on peut exprimer l'aire d'une Base $B_n$ en fonction des précédentes :
+/ Surface pour un triangle : Quelle surface foncée est rajoutée par un unique triangle $#math.bold[T]_(n+1)$ par rapport à la surface de son prédécesseur $#math.bold[T]_n$ ?
+Dû à la disposition des triangles équilatéraux, il est clair que $#math.cal[T]_(n+1) = #math.cal[T]_n / 4$, donc par récurrence immédiate, $#math.cal[T]_n = 4^(-(n-1)) #math.cal[T]_1 = 4^(-(n-1)) #math.cal[B]_1$
 
-$
-  A_(n+1) = A_n + k_(n+1)
-$
-
-Avec $k_(n+1) in RR_+$ qui représente l'aire totale des petits triangles $T_n$ ajoutés à cette étape.
-
-On recherche maintenant combien de triangles $T_n$ sont rajoutés lors d'une étape $n$. On remarque que lors d'une étape, chaque triangle $T_(n-1)$ existant rajoute $3$ triangles $T_n$, un sur chacun de ses côtés. On a donc pour $n in NN^*$ et $n >= 2$ :
+/ Nombre de triangle : Combien de triangles $#math.bold[T]_(n+1)$ sont rajoutés lors de l'étape $n + 1$ ?
+On remarque que lors d'une étape, chaque triangle $#math.bold[T]_n$ existant rajoute $3$ triangles $#math.bold[T]_(n+1)$, un sur chacun de ses côtés. On a donc pour $n in NN^*$ :
 $
   N_T_n = 3 N_T_(n-1)
 $
@@ -255,6 +261,18 @@ Par récurrence immédiate on a pour $n in NN^*$ :
 $
   N_T_n = 3^(n-1)
 $
+
+===
+
+#base-exemple(1.25)
+
+On remarque qu'à chaque fois des triangles bleus sont rajoutés mais aucun n'est supprimé. Donc  on peut exprimer l'aire d'une Base $B_n$ en fonction des précédentes :
+
+$
+  A_(n+1) = A_n + k_(n+1)
+$
+
+Avec $k_(n+1) in RR_+$ qui représente l'aire totale des petits triangles $T_n$ ajoutés à cette étape.
 
 Donc comme $k_(n+1) = N_T_(n+1) times A_T_(n+1)$,
 
@@ -340,7 +358,7 @@ On peut visuellement se convaincre en "rabattant" les morceaux extérieurs vers 
 
 #pagebreak()
 
-#align(
-  center + horizon,
-  grand-sapin(20, 8)
-)
+// #align(
+//   center + horizon,
+//   grand-sapin(20, 8)
+// )

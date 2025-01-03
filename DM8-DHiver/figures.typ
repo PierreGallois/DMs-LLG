@@ -51,7 +51,7 @@
     center,
     table(
       columns: 5,
-      column-gutter: 10pt,
+      column-gutter: 30pt,
       align: center + horizon,
       stroke: none,
       cetz.canvas({a-triangle(p, size, cad.at(1))
@@ -60,11 +60,11 @@
       cetz.canvas(c-triangle(p, size, 2, cad, cbd)),
       cetz.canvas(c-triangle(p, size, 3, cad, cbd)),
       [...],
-      [Base 1 ($B_1$)],
-      [Base 2 ($B_2$)],
-      [Base 3 ($B_3$)],
-      [Base 4 ($B_4$)],
-      [Base $n$ ($B_n$)],
+      [$#math.bold[B]_1$],
+      [$#math.bold[B]_2$],
+      [$#math.bold[B]_3$],
+      [$#math.bold[B]_4$],
+      [$#math.bold[B]_n$],
     )
   )
 }
