@@ -326,13 +326,13 @@ $
 #pagebreak()
 == Limite. 
 
-Lorsque $n$ tend vers $+oo$, $a^n 0$ si $abs(a) < 1$ avec $a in RR$.
+Lorsque $n$ tend vers $+oo$, $a^n -> 0$ si $abs(a) < 1$ avec $a in RR$.
 
-Donc $(3/4)^(n-1)$ tend vers $0$ quand $n$ tend vers $+oo$.
+Donc $(3/4)^(n-1) -> 0$ quand $n -> +oo$.
 
-Donc l'aire tend vers
+Donc :
 $
-  sqrt(3)/16 times 5 times c^2 = 5/8 sqrt(3)/2 c times c
+  lim_(n -> +oo) #math.cal[S]_(n, a) = 5 times sqrt(3)/16 times c^2 = 5/8 sqrt(3)/2 c^2
 $
 Or, $sqrt(3)/2 c$ est la hauteur d'un triangle équilatéral de base $c$.
 
