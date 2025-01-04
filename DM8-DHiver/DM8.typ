@@ -332,7 +332,7 @@ Donc $(3/4)^(n-1) -> 0$ quand $n -> +oo$.
 
 Donc :
 $
-  lim_(n -> +oo) #math.cal[S]_(n, a) = 5 times sqrt(3)/16 times c^2 = 5/8 sqrt(3)/2 c^2
+  lim_(n -> +oo) #math.cal[S]_((n,sqrt(3)/16 c^2)) = 5 times sqrt(3)/16 times c^2 = 5/8 sqrt(3)/2 c^2
 $
 Or, $sqrt(3)/2 c$ est la hauteur d'un triangle équilatéral de base $c$.
 
