@@ -274,7 +274,7 @@ On nomme $#math.bold[S]_(n, a)$ avec $n in NN^*$ et $a in RR_+$, chacune de ces 
 
 Remarquons que les deux valeurs $n$ et $a$ suffisent à définir complètement un unique Sapin.
 
-On nomme $#math.cal[S]_(n, a)$ l'aire totale formée par les triangles _foncés_ d'une Base $#math.bold[S]_(n, a)$.
+On nomme $#math.cal[S]_(n, a)$ l'aire totale formée par les triangles _foncés_ d'un Sapin $#math.bold[S]_(n, a)$.
 
 On remarque que $#math.bold[S]_(1,a) = #math.bold[B]_(1,a)$.
 Ainsi, $#math.cal[S]_(1,a) = a = #math.cal[B]_(1, a)$.
