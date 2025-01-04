@@ -1,27 +1,21 @@
 #import "sapin.typ": *
 
 #let p = (0, 0)
-#let cad = (blue.lighten(50%),) * 9
-#let cbd = (blue.darken(30%),) * 9
+#let cad = (aqua,) * 5
+#let cbd = (eastern.darken(30%),) * 5
 
 #let sapin-transformation(size) = [
   #let ca = (red.lighten(30%), green.lighten(30%),)*3
+  #let cb = (blue.darken(30%),) * 4
   $
-    #cetz.canvas(sapin(p, 3, 2, ca, cbd)) &= #cetz.canvas(c-triangle(p, size, 1, ca, cbd)) &+ #cetz.canvas({
+    #cetz.canvas(sapin(p, 3, 2, ca, cb)) &= #cetz.canvas(c-triangle(p, size, 1, ca, cb)) &+ #cetz.canvas({
       a-triangle(p, size/2, ca.at(1))
-      b-triangle(p, size/2, cbd.at(1))}) \
-    #cetz.canvas(sapin((0, 0), 3, 3, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 2, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 1, ca, cbd)) \
-    #cetz.canvas(sapin((0, 0), 3, 4, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 3, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 2, ca, cbd)) \
-    #cetz.canvas(sapin((0, 0), 3, 5, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 4, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 3, ca, cbd)) \
+      b-triangle(p, size/2, cb.at(1))}) \
+    #cetz.canvas(sapin((0, 0), 3, 3, ca, cb)) &= #cetz.canvas(c-triangle((0, 0), size, 2, ca, cb)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 1, ca, cb)) \
+    #cetz.canvas(sapin((0, 0), 3, 4, ca, cb)) &= #cetz.canvas(c-triangle((0, 0), size, 3, ca, cb)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 2, ca, cb)) \
+    #cetz.canvas(sapin((0, 0), 3, 5, ca, cb)) &= #cetz.canvas(c-triangle((0, 0), size, 4, ca, cb)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 3, ca, cb)) \
   $
 ]
-
-#let sapin-transformation-seul-example(size) = {
-  let ca = (red.lighten(30%), green.lighten(30%),)*3
-  $
-    #cetz.canvas(sapin((0, 0), 3, 4, ca, cbd)) &= #cetz.canvas(c-triangle((0, 0), size, 3, ca, cbd)) &+ #cetz.canvas(c-triangle((0, 0), size/2, 2, ca, cbd))
-  $
-}
 
 #let sapin-exemple(size) = {
   align(
@@ -31,8 +25,8 @@
       column-gutter: 10pt,
       align: center + horizon,
       stroke: none,
-      cetz.canvas({a-triangle(p, size/2, cad.at(1))
-      b-triangle(p, size/2, cbd.at(1))}),
+      cetz.canvas({a-triangle(p, size, cad.at(1))
+      b-triangle(p, size, cbd.at(1))}),
       cetz.canvas(sapin(p, size, 2, cad, cbd)),
       cetz.canvas(sapin(p, size, 3, cad, cbd)),
       cetz.canvas(sapin(p, size, 4, cad, cbd)),
@@ -149,7 +143,9 @@
 }
 
 #let grand-sapin(size, depth) = {
+  let ca = (white, olive.lighten(80%), olive.lighten(60%), olive.lighten(40%), olive.lighten(20%), olive, olive.darken(20%), black)
+  let cb = (black, purple, yellow, green, teal, eastern, olive)
   cetz.canvas(
-    sapin(p, size, depth, cad, cbd)
+    sapin(p, size, depth, ca, cb)
   )
 }

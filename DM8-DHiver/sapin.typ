@@ -49,7 +49,6 @@
 #let sapin(padding, size, depth, colors-a, colors-b) = {
   assert(depth > 1)
   let (px, py) = padding
-  a-triangle(padding, size, colors-a.at(depth - 1))
   c-triangle(padding, size, depth - 1, colors-a, colors-b)
   let decal = (px + size/4, py + (3 * sqrt(3)*size/8))
   if depth == 2 {
