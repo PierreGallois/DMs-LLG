@@ -326,7 +326,7 @@ $
 #pagebreak()
 == Limite. 
 
-Lorsque $n$ tend vers $+oo$, $a^n$ tend vers $0$ si $abs(a) < 1$ avec $a in RR$.
+Lorsque $n$ tend vers $+oo$, $a^n 0$ si $abs(a) < 1$ avec $a in RR$.
 
 Donc $(3/4)^(n-1)$ tend vers $0$ quand $n$ tend vers $+oo$.
 
