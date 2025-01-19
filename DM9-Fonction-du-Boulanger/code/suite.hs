@@ -9,4 +9,4 @@ suite a p = suite (a ++ [f (last a)]) (p-1)
 
 -- Ignore after
 main :: IO()
-main = print (suite [0.9] 10)
+main = print (suite [0.33] 25)

@@ -29,7 +29,7 @@
       1/2 < x <= 1 \
       <=> 0 <= 1-x < 1/2 \
       <=> 0 <= 2(1-x) < 1 \
-      <=> f(]1/2, 1]) = [0, 1[
+      <=> f(lr(]1/2, 1])) = [0, 1[
     $
   ]
 )
@@ -69,3 +69,63 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
 
   #code-from-file(folder-name, "/code/suite.hs")
 ]
+
+==
+===
+- Si $a = 1/3$, #h(1fr) $u_0 = a = 1/3$ #h(1fr) $u_1 = f(u_0) = 2/3$ car $u_0 < 1/2$ #h(1fr) $u_2 = 2(1-2/3) = 2/3$ car $u_1 > 1/2$
+On remarque que $u_1 = u_2 = 2/3$ puisque $f(2/3) = 2/3$, donc la suite $(u_n)_(n in NN)$ sera constante pour $n >= 1$.
+
+Avec $a = 1/3$:
+$
+  u_n = cases(delim: "{",
+    1/3 "si" n = 0,
+    2/3 "si" n>=1
+  )
+$
+
+- Si $a = 0.33$, On obtient : $(0.33, 0.66, 0.68, 0.64, 0.72, 0.56, 0.88, 0.24, 0.48)$
+On remarque que, bien que $1/3 approx 0.33$, la suite ne devient pas constante pendant les 9 premiers termes.
+
+===
+
+Soit $k in NN^*$ et $a = 1/2^k$.
+$forall k in NN^*, 1/2^k <= 1/2$, donc
+
+$u_0 = 1/2^k$ #h(1fr) $u_1 = 2(1/2^k) = 1/2^(k-1)$ #h(1fr) $u_2 = 1/2^(k-2)$
+
+Cela ne varie pas tant que $n < k$.
+
+$u_k = 1/2^(k-k) = 1$ #h(1fr) $u_(k+1) = 0$ #h(1fr) $u_(k+2) = 0$
+
+Or, $f(0) = 0$, donc
+
+Avec $a = 1/2^k$ :
+$
+  u_n = cases(delim: "{",
+    1/2^(k-n) &"si" n in bracket.l.double 0 "," k bracket.r.double,
+    0 &"si" n > k
+  )
+$
+
+===
+
+Soit $k in NN^*$ et $a = 1/(3 times 2^k)$.
+$forall k in NN^*, 1/(3 times 2^k) <= 1/(3 times 2) < 1/2$, donc
+
+$u_0 = 1/(3 times 2^k)$ #h(1fr) $u_1 = 2(1/(3 times 2^k)) = 1/(3 times 2^(k-1))$ #h(1fr) $u_2 = 1/(3 times 2^(k-2))$
+
+Cela ne varie pas tant que $n < k$.
+
+$u_k = 1/(3 times 2^(k-k)) = 1/3$ #h(1fr) $u_(k+1) = 2/3$ #h(1fr) $u_(k+2) = 2/3$
+
+Or, $f(2/3) = 2/3$, nous l'avions déjà observé à la question 3) a).
+
+Avec $a = 1/(3 times 2^k)$ :
+$
+  u_n = cases(delim: "{",
+    1/(3 times 2^(k-n)) &"si" n in bracket.l.double 0 "," k bracket.r.double,
+    2/3 &"si" n > k
+  )
+$
+
+==
