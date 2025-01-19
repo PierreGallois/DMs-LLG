@@ -64,6 +64,8 @@ Donc nous avons bien $f([0, 1]) = [0, 1]$
 ==
 La fonction `suite` repose naturellement sur de la récursivité. Nous allons donc la programmer dans un language qui supporte de manière optimale les fonctions récursives.
 
-Voici `suite a p` en Haskell.
+#block(breakable: false)[
+  Voici `suite a p` en Haskell.
 
-#code-from-file(folder-name, "/code/suite.hs")
+  #code-from-file(folder-name, "/code/suite.hs")
+]
