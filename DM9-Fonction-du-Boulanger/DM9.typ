@@ -13,6 +13,31 @@
 
 ==
 
+#columns(
+  2,
+  gutter: 0pt,
+  align(center)[
+    Si $x in [0, 1/2]$, $f(x) = 2x$ donc
+    $
+      0 <= &x <= 1/2 \
+      <=> 0 <= &2x <= 1 \
+      <=> f([0, 1/2]) &= [0, 1]
+    $
+    #colbreak()
+    Si $x in #h(0.5em) ]1/2, 1]$, $f(x) = 2(1-x)$ donc
+    $
+      1/2 < x <= 1 \
+      <=> 0 <= 1-x < 1/2 \
+      <=> 0 <= 2(1-x) < 1 \
+      <=> f(]1/2, 1]) = [0, 1[
+    $
+  ]
+)
+
+Donc nous avons bien $f([0, 1]) = [0, 1]$
+
+#v(2em)
+
 #let f(x) = {
   if 0 <= x and x <= 1/2 {
     2 * x
