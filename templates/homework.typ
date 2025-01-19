@@ -143,6 +143,9 @@
     if path.ends-with(".typ") {
       lang = "typst"
     }
+    if path.ends-with(".hs") {
+      lang = "haskell"
+    }
   }
 
   // cache tout le code après le `if __name__ ...` pour permettre l'execution du programme sans que cela soit affiché dans typst
@@ -150,6 +153,13 @@
     if lang == "python" {
       code_file = code_file.trim(
         regex(`if __name__ == "__main__":[\S\s]*`.text),
+        at: end,
+        repeat: false
+      )
+    }
+    if lang == "haskell" {
+      code_file = code_file.trim(
+        regex(`-- Ignore after[\S\s]*`.text),
         at: end,
         repeat: false
       )
@@ -166,6 +176,12 @@
     if lang == "python" { // TODO en enlève qu'un seul pour une raison inconnue
       code_file = code_file.trim(
         regex(`^[from|import].*`.text),
+        repeat: true
+      )
+    }
+    if lang == "haskell" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^#!.*`.text), // On enlève le shebang
         repeat: true
       )
     }
