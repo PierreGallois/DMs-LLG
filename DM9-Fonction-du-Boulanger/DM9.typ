@@ -280,7 +280,7 @@ Pour chaque couple $(a,b)$, il existe donc un unique couple $(x,y)$ respectant l
 ===
 
 
-
+test
 TODO : implémenter phi(x,f(x)) et phi(x, phi(x,f(x)))
 
 
