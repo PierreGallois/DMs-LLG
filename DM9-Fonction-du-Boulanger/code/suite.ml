@@ -1,6 +1,6 @@
 let f x =
-  if x >= 0.0 && x <= 0.5 then 2.0 *. x
-  else if x <= 1.0 then 2.0 *. (1.0 -. x)
+  if       0.0 <= x && x <= 0.5  then  2.0 *. x
+  else if  0.5 <  x && x <= 1.0  then  2.0 *. (1.0 -. x)
   else failwith "x doit être dans l'intervalle [0, 1]"
 
 let rec suite x p =
