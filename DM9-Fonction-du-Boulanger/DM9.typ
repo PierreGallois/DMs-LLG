@@ -71,7 +71,7 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
 ]
 
 #block(breakable: false)[
-  Voici `suite a p` en OCaml 🔥.
+  Voici `suite a p` en OCaml.
 
   #code-from-file(folder-name, "/code/suite.ml", lang: "ocaml")
 ]
