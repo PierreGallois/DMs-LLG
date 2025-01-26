@@ -172,7 +172,77 @@ On a :
 $ u_(k-1) = 2(1 - 2^(k-1)/(2^k - 1)) = 2 - 2^k/(2^k - 1) = 1 - 1/(2^k - 1) > 1/2 $ 
 $ u_k = 2(1 - (1 - 1/(2^k - 1))) = 2 - 2 - 2/(2^k - 1) = a $
 
-Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$.
+
+Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$. 🐔
+
+==
+
+Attention grooosse douille 💥
+
+Supposons $a$ rationnel, i.e $a = p/q$, $p, q in NN$, $q != 0$ et $p <= q$
+
+Toutes les images de $a$ par $f$ peuvent être écrites sous la forme $m/q$, $m in NN$ :
+
+- si $a <= 1/2$, on a $f(a) = 2 dot a = (2 dot p) / q = m/q$ avec $m = 2 dot p$
+
+- si $a > 1/2$, on a $f(a) = 2 dot (1 - a) = 2 - (2 dot p)/q = m/q$ avec $m = 2 dot (q-p)$
+
+Or, il existe un nombre fini de fractions possibles $m/q$, $m < q$, conditions satisfaites par les propriétés de la fonction $f$, qui ne change pas le dénominateur et renvoie toujours un nombre positif inférieur à $1$ (cf question 1).
+
+Ce qui implique indubitablement que la suite finira par "revisiter" un de ses termes précédants, formant ainsi un cycle périodique. 🐧
+
+== 
+On dit que "$a$ atteint sa cible" si la suite $(u_n)_(n in NN)$ est nulle à partir d'un certain rang.
+
+Soit $a = 0$ et la suite $(u_n)_(n in NN)$ est nulle par récurrence immédiate : "$a$ atteint sa cible".
+
+Sinon, supposons que $a != 0$, $u_(n-1) != 0$ et $u_n = 0$, on n'a que deux cas :
+
+- $u_n = 2 dot u_(n-1) != 0$ : contradiction car on suppose que $u_n = 0$
+- $u_n = 2(1-u_(n-1)) = 2- 2 dot u_(n-1)$, si et seulement si $u_(n-1) = 1$
+
+Donc "$a$ atteint sa cible" si l'un des termes de la suite $(u_n)_(n in NN)$ est égal à 1.
+
+En poursuivant ce raisonnement, nous pouvons conjecturer le fait que "a atteint sa cible" si et seulement si $a = p/2^m$, avec $p, m in NN$ et $p <= 2^m$.
+
+En effet, à partir d'un certain rang, $a$ aura "subi" une série de modifications au niveau de son numérateur : des multiplications par $2$ et/ou des "renversements". 
+
+Ce terme pourra alors être réécrit sous forme d'entier, son dénominateur ayant été "anihilé" par les multiplications par $2$.
+
+Enfin, on peut exprimer celui-ci comme $p$, avec $p in NN$ tel que $p <= 1$ (propriétés de la fonction $f$, d'où $u_n = 0$ ou $u_n = 1$, ce qui conclut.
+
+
+===
+
+Si l'on pose $a = 1789/2^1789$, $a$ devrait atteindre sa cible.
+
+En effet, comme $a < 1/2$, au rang $1778$ : $u_1778 = 2^1778 dot 1789/2^1789 = 1789/2^11 < 1$, $u_1778$ étant le premier terme de la suite supérieur à $1/2$ car $2^10 < 1789 < 2^11$.
+
+Puis on a : $u_1789 = 1$ d'où, pour tout $N in NN$ tel que $N >= 1790$ : $u_N = 0$, ce qui implique que $1789/2^1789$ atteint bien sa cible.
+
+===
+
+Comme vu ci-dessus, tous les nombres de la forme $p/2^m$, avec $p, m in NN$ et $p <= 2^m$ atteignent leur cible.
+
+==
+
+===
+
+On remarque graphiquement qu'il existe deux cas, déterminés par $x$ :
+
+- si $0<= x <= 1/2$, $y$ est "contracté" par un facteur $2$ tandis que $x$ est "dilaté" par un facteur 2
+- si $1/2 < x <= 1$, $x$ est d'abord "dilaté" par un facteur $2$ avant de se voir soustraire à $2$ (on cherche sa distance au bord droit après élongation de la pâte), tandis que $y$ est d'abord "contracté" par un facteur $2$ avant de se faire soustraire à $1$ (on cherche sa distance au bord inférieur après élongation de la pâte).
+
+
+$
+  phi(x, y) = cases(delim: "{",
+    (2 dot x, y/2) &"si" 0 <= x <= 1/2,
+    (2(1-x), (y+1)/2) &"si" 1/2 < x <= 1
+  )
+$
+
+===
+
 
 #pagebreak()
 = Galette des rois
