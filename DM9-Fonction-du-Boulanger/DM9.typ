@@ -243,6 +243,39 @@ $
 
 ===
 
+Nous devons montrer qu'il existe un unique couple $(x,y)$ pour tout couple $(a,b)$ donné.
+
+==== Cas 1) $0 <= x <= 1/2$
+
+On a : 
+$ a = 2 dot x, b = y/2 $
+
+D'où:
+$ x=a/2, y=2 dot b $
+
+Valide car:
+$ 0 <= x <= 1/2 => 0 <= a/2 <= 1/2 => 0 <= a <= 1 $ 
+$ 0 <= y <= 1 => 0 <= 2 dot b <= 1 => 0 <= b <= 1/2 $
+
+Donc cette solution est valide pour $0 <= b <= 1/2$
+
+
+==== Cas 2) $1/2 < x <= 1$
+
+On a:
+$ a=2(1-x), b=(y+1)/2 $
+
+D'où:
+$ x=1-a/2, y=2 dot b - 1$
+
+Valide car:
+- $ 1/2 < x <= 1 => 1/2 < 1 - a/2 <= 1$ 
+- $ 0 <= y <= 1 => 0 <= 2 dot b - 1 <= 1 => 1/2 < b <= 1 $
+
+Donc cette solution est valide pour $1/2 < b <= 1$
+
+
+Pour chaque couple $(a,b)$, il existe donc un unique couple $(x,y)$ respectant les conditions de base.
 
 #pagebreak()
 = Galette des rois
