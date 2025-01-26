@@ -282,7 +282,12 @@ Pour chaque couple $(a,b)$, il existe donc un unique couple $(x,y)$ respectant l
 
 
 TODO : implémenter phi(x,f(x)) et phi(x, phi(x,f(x)))
-
+avec $
+  phi(x, y) = cases(delim: "{",
+    (2 dot x, y/2) &"si" 0 <= x <= 1/2,
+    (2(1-x), (y+1)/2) &"si" 1/2 < x <= 1
+  )
+$
 
 
 
