@@ -70,6 +70,11 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
   #code-from-file(folder-name, "/code/suite.hs")
 ]
 
+#block(breakable: false)[
+  Voici `suite a p` en OCaml 🔥.
+
+  #code-from-file(folder-name, "/code/suite.ml")
+]
 ==
 ===
 - Si $a = 1/3$, #h(1fr) $u_0 = a = 1/3$ #h(1fr) $u_1 = f(u_0) = 2/3$ car $u_0 < 1/2$ #h(1fr) $u_2 = 2(1-2/3) = 2/3$ car $u_1 > 1/2$
