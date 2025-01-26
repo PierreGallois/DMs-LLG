@@ -73,14 +73,13 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
 #block(breakable: false)[
   Voici `suite a p` en OCaml 🔥.
 
-  #code-from-file(folder-name, "/code/suite.ml")
+  #code-from-file(folder-name, "/code/suite.ml", lang: "ocaml")
 ]
 
-#block(breakable: false)[
-  Voici `suite(a, p)` en Python.
-
-  #code-from-file(folder-name, "/code/suite.py")
-]
+#block(breakable: false)[ 
+  Voici `suite(a, p)` en Python. 
+  
+  #code-from-file(folder-name, "/code/suite.py") ]
 ==
 ===
 - Si $a = 1/3$, #h(1fr) $u_0 = a = 1/3$ #h(1fr) $u_1 = f(u_0) = 2/3$ car $u_0 < 1/2$ #h(1fr) $u_2 = 2(1-2/3) = 2/3$ car $u_1 > 1/2$
@@ -148,3 +147,26 @@ Choisissons $a = 2/5$, comme $f(2/5) = 4/5$, $f(4/5) = 2/5$, la suite $(u_n)_(n 
 
 ===
 Choisissons $a = 2/7$, comme $f(2/7) = 4/7$, $f(4/7) = 6/7$ et $f(6/7) = 2/7$, la suite $(u_n)_(n in NN)$ sera bien périodique de période 3. Nous aurions bien-sûr aussi pu choisir $a = 4/7$ ou $a = 6/7$.
+
+==
+
+Si $k = 2$, comme vu auparavant, la suite $(u_n)_(n in NN)$ est constante, nous n'étudierons donc pas ce cas afin de simplifier le raisonnement.
+
+Soit un entier $k$ tel que $k> 2$. 
+
+On a $2^k - 1 >= 7$, donc : $0 < 2/(2^k - 1)<1/2$. Ainsi, $a in [0, 1/2]$, ce qui garantit que la suite $(u_n)_(n in NN)$ est bien définie par $f$.
+
+On remarque de manière évidente que si tous les termes de la suite $u_n$ sont inférieurs à $1/2$ jusqu'à un rang $n$, $n in NN$, on a : $ u_n = 2^n dot a =2^(n+1)/(2^k - 1) $
+
+Or, $2^n dot a$ tend vers $+infinity$ lorsque $n$ tend vers $+infinity$,
+donc il adviendra un moment où $2^n dot a > 1/2$
+
+D'où, au rang $k-1$, car 
+
+$u_(k-3) = 2^(k-2)/(2^k - 1) < 1/2$ #h(20%) et #h(20%) $u_(k-2) = 2^(k-1)/(2^k - 1) > 1/2$ 
+
+On a :
+$ u_(k-1) = 2(1 - 2^(k-1)/(2^k - 1)) = 2 - 2^k/(2^k - 1) = 1 - 1/(2^k - 1) > 1/2 $ 
+$ u_k = 2(1 - (1 - 1/(2^k - 1))) = 2 - 2 - 2/(2^k - 1) = a $
+
+Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$.
