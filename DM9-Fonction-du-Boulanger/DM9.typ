@@ -82,7 +82,10 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
   #code-from-file(folder-name, "/code/suite.py") ]
 ==
 ===
-- Si $a = 1/3$, #h(1fr) $u_0 = a = 1/3$ #h(1fr) $u_1 = f(u_0) = 2/3$ car $u_0 < 1/2$ #h(1fr) $u_2 = 2(1-2/3) = 2/3$ car $u_1 > 1/2$
+- Si $a = 1/3$: 
+  - $u_0 = 1/3$
+  - $u_1 = f(u_0) = 2/3$ car $u_0 < 1/2$
+  - $u_2 = 2(1-2/3) = 2/3$ car $u_1 > 1/2$
 On remarque que $u_1 = u_2 = 2/3$ puisque $f(2/3) = 2/3$, donc la suite $(u_n)_(n in NN)$ sera constante pour $n >= 1$.
 
 Avec $a = 1/3$:
@@ -170,3 +173,20 @@ $ u_(k-1) = 2(1 - 2^(k-1)/(2^k - 1)) = 2 - 2^k/(2^k - 1) = 1 - 1/(2^k - 1) > 1/2
 $ u_k = 2(1 - (1 - 1/(2^k - 1))) = 2 - 2 - 2/(2^k - 1) = a $
 
 Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$.
+
+#pagebreak()
+= Galette des rois
+
+#figure(
+  image("code/galette.png", width: 100%),
+  caption: [
+    Bon appétit !#footnote[L'aire de cette galette est $4r^2$.]
+  ],
+)
+
+#figure(
+  image("code/feve.jpg", width: 55%),
+  caption: [
+    Avec une jolie fève :)
+  ],
+)
