@@ -277,6 +277,15 @@ Donc cette solution est valide pour $1/2 < b <= 1$
 
 Pour chaque couple $(a,b)$, il existe donc un unique couple $(x,y)$ respectant les conditions de base.
 
+===
+
+
+
+TODO : implémenter phi(x,f(x)) et phi(x, phi(x,f(x)))
+
+
+
+
 #pagebreak()
 = Galette des rois
 
