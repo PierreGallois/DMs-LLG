@@ -34,7 +34,7 @@
   ]
 )
 
-Donc nous avons bien $f([0, 1]) = [0, 1]$
+Donc nous avons bien $f([0, 1]) = [0, 1]$.
 
 #v(2em)
 
@@ -71,7 +71,7 @@ La fonction `suite` repose naturellement sur de la récursivité. Nous allons do
 ]
 
 #block(breakable: false)[
-  Voici `suite a p` en OCaml 🔥.
+  Voici `suite a p` en OCaml.
 
   #code-from-file(folder-name, "/code/suite.ml", lang: "ocaml")
 ]
@@ -143,13 +143,13 @@ $
 
 ==
 ===
-Choisissons $a = 0$, comme $f(0) = 0$, la suite $(u_n)_(n in NN)$ sera bien constante. Nous aurions aussi pu choisir $a = 2/3$.
+Choisissons $a = 0$. Comme $f(0) = 0$, la suite $(u_n)_(n in NN)$ sera bien constante. Nous aurions aussi pu choisir $a = 2/3$.
 
 ===
-Choisissons $a = 2/5$, comme $f(2/5) = 4/5$, $f(4/5) = 2/5$, la suite $(u_n)_(n in NN)$ est bien périodique de période 2. Nous aurions bien-sûr aussi pu choisir $a = 4/5$.
+Choisissons $a = 2/5$. Comme $f(2/5) = 4/5$, $f(4/5) = 2/5$, la suite $(u_n)_(n in NN)$ est bien périodique de période 2. Nous aurions aussi pu choisir $a = 4/5$.
 
 ===
-Choisissons $a = 2/7$, comme $f(2/7) = 4/7$, $f(4/7) = 6/7$ et $f(6/7) = 2/7$, la suite $(u_n)_(n in NN)$ sera bien périodique de période 3. Nous aurions bien-sûr aussi pu choisir $a = 4/7$ ou $a = 6/7$.
+Choisissons $a = 2/7$. Comme $f(2/7) = 4/7$, $f(4/7) = 6/7$ et $f(6/7) = 2/7$, la suite $(u_n)_(n in NN)$ sera bien périodique de période 3. Nous aurions aussi pu choisir $a = 4/7$ ou $a = 6/7$.
 
 ==
 
@@ -157,7 +157,7 @@ Si $k = 2$, comme vu auparavant, la suite $(u_n)_(n in NN)$ est constante, nous 
 
 Soit un entier $k$ tel que $k> 2$. 
 
-On a $2^k - 1 >= 7$, donc : $0 < 2/(2^k - 1)<1/2$. Ainsi, $a in [0, 1/2]$, ce qui garantit que la suite $(u_n)_(n in NN)$ est bien définie par $f$.
+On a $2^k - 1 >= 7$, donc $0 < 2/(2^k - 1)<1/2$. Ainsi, $a in [0, 1/2]$, ce qui garantit que la suite $(u_n)_(n in NN)$ est bien définie par $f$.
 
 On remarque de manière évidente que si tous les termes de la suite $u_n$ sont inférieurs à $1/2$ jusqu'à un rang $n$, $n in NN$, on a : $ u_n = 2^n dot a =2^(n+1)/(2^k - 1) $
 
@@ -173,11 +173,9 @@ $ u_(k-1) = 2(1 - 2^(k-1)/(2^k - 1)) = 2 - 2^k/(2^k - 1) = 1 - 1/(2^k - 1) > 1/2
 $ u_k = 2(1 - (1 - 1/(2^k - 1))) = 2 - 2 - 2/(2^k - 1) = a $
 
 
-Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$. 🐔
+Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$.
 
 ==
-
-Attention grooosse douille 💥
 
 Supposons $a$ rationnel, i.e $a = p/q$, $p, q in NN$, $q != 0$ et $p <= q$
 
@@ -189,7 +187,7 @@ Toutes les images de $a$ par $f$ peuvent être écrites sous la forme $m/q$, $m 
 
 Or, il existe un nombre fini de fractions possibles $m/q$, $m < q$, conditions satisfaites par les propriétés de la fonction $f$, qui ne change pas le dénominateur et renvoie toujours un nombre positif inférieur à $1$ (cf question 1).
 
-Ce qui implique indubitablement que la suite finira par "revisiter" un de ses termes précédants, formant ainsi un cycle périodique. 🐧
+Ce qui implique indubitablement que la suite finira par "revisiter" un de ses termes précédants, formant ainsi un cycle périodique.
 
 == 
 On dit que "$a$ atteint sa cible" si la suite $(u_n)_(n in NN)$ est nulle à partir d'un certain rang.
@@ -286,7 +284,7 @@ $
   )
 $
 
-#let phi(a) = {
+#let fphi(a) = {
   let (x, y) = a
   if 0 <= x and x <= 1/2 {
     (2 * x, y / 2)
@@ -297,9 +295,9 @@ $
   }
 }
 
-#let data_phi1 = data.map(a => phi(a))
+#let data_phi1 = data.map(a => fphi(a))
 #let pl_phi1 = plot(data: data_phi1, axes: (x_axis, y_axis))
-#let data_phi2 = data_phi1.map(a => phi(a))
+#let data_phi2 = data_phi1.map(a => fphi(a))
 #let pl_phi2 = plot(data: data_phi2, axes: (x_axis, y_axis))
 
 #colbreak() // corrige un bug
@@ -313,7 +311,7 @@ $
         (200pt, 150pt),
         caption: none),
       supplement: none,
-      caption: [TODO Représentation graphique de $f$ sur $[0, 1]$],
+      caption: [Représentation graphique de $phi$ sur $[0, 1]$],
     )
     #colbreak()
     #figure(
@@ -322,7 +320,7 @@ $
         (200pt, 150pt),
         caption: none),
       supplement: none,
-      caption: [TODO Représentation graphique de $f$ sur $[0, 1]$],
+      caption: [Représentation graphique de $phi compose phi$ sur $[0, 1]$],
     )
   ]
 )
