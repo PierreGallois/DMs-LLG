@@ -279,31 +279,75 @@ Pour chaque couple $(a,b)$, il existe donc un unique couple $(x,y)$ respectant l
 
 ===
 
-
-
-TODO : implémenter phi(x,f(x)) et phi(x, phi(x,f(x)))
-avec $
+$
   phi(x, y) = cases(delim: "{",
     (2 dot x, y/2) &"si" 0 <= x <= 1/2,
     (2(1-x), (y+1)/2) &"si" 1/2 < x <= 1
   )
 $
 
+#let phi(a) = {
+  let (x, y) = a
+  if 0 <= x and x <= 1/2 {
+    (2 * x, y / 2)
+  } else if 1/2 < x and x <= 1 {
+    (2 * (1 - x), (y+1) / 2)
+  } else {
+    assert(false)
+  }
+}
+
+#let data_phi1 = data.map(a => phi(a))
+#let pl_phi1 = plot(data: data_phi1, axes: (x_axis, y_axis))
+#let data_phi2 = data_phi1.map(a => phi(a))
+#let pl_phi2 = plot(data: data_phi2, axes: (x_axis, y_axis))
+
+#colbreak() // corrige un bug
+#columns(
+  2,
+  gutter: 0pt,
+  align(center)[
+    #figure(
+    graph_plot(
+        pl_phi1,
+        (200pt, 150pt),
+        caption: none),
+      supplement: none,
+      caption: [TODO Représentation graphique de $f$ sur $[0, 1]$],
+    )
+    #colbreak()
+    #figure(
+      graph_plot(
+        pl_phi2,
+        (200pt, 150pt),
+        caption: none),
+      supplement: none,
+      caption: [TODO Représentation graphique de $f$ sur $[0, 1]$],
+    )
+  ]
+)
 
 
-#pagebreak()
 = Galette des rois
 
+#v(1fr)
+
 #figure(
-  image("code/galette.png", width: 100%),
+  image("code/galette.png", width: 40%),
+  supplement: none,
   caption: [
     Bon appétit !#footnote[L'aire de cette galette est $4r^2$.]
   ],
 )
 
+#v(1fr)
+
 #figure(
-  image("code/feve.jpg", width: 55%),
+  image("code/feve.jpg", width: 25%),
+  supplement: none,
   caption: [
     Avec une jolie fève :)
   ],
 )
+
+#v(1fr)
