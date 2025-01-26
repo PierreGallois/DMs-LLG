@@ -133,6 +133,7 @@ $
 Choisissons $a = 0$, comme $f(0) = 0$, la suite $(u_n)_(n in NN)$ sera bien constante. Nous aurions aussi pu choisir $a = 2/3$.
 
 ===
+Choisissons $a = 2/5$, comme $f(2/5) = 4/5$, $f(4/5) = 2/5$, la suite $(u_n)_(n in NN)$ est bien périodique de période 2. Nous aurions bien-sûr aussi pu choisir $a = 4/5$.
 
 ===
 Choisissons $a = 2/7$, comme $f(2/7) = 4/7$, $f(4/7) = 6/7$ et $f(6/7) = 2/7$, la suite $(u_n)_(n in NN)$ sera bien périodique de période 3. Nous aurions bien-sûr aussi pu choisir $a = 4/7$ ou $a = 6/7$.
