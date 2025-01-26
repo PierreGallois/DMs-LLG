@@ -176,8 +176,8 @@ $ u_k = 2(1 - (1 - 1/(2^k - 1))) = 2 - 2 - 2/(2^k - 1) = a $
 Et la suite $(u_n)_(n in NN)$ est donc périodique de période $k$.
 
 ==
-
-Supposons $a$ rationnel, i.e $a = p/q$, $p, q in NN$, $q != 0$ et $p <= q$
+===
+Supposons $a$ rationnel, i.e $a = p/q$, $p, q in NN$, $q != 0$ et $p <= q$.
 
 Toutes les images de $a$ par $f$ peuvent être écrites sous la forme $m/q$, $m in NN$ :
 
@@ -187,7 +187,16 @@ Toutes les images de $a$ par $f$ peuvent être écrites sous la forme $m/q$, $m 
 
 Or, il existe un nombre fini de fractions possibles $m/q$, $m < q$, conditions satisfaites par les propriétés de la fonction $f$, qui ne change pas le dénominateur et renvoie toujours un nombre positif inférieur à $1$ (cf question 1).
 
-Ce qui implique indubitablement que la suite finira par "revisiter" un de ses termes précédants, formant ainsi un cycle périodique.
+Ce qui implique que la suite finira par "revisiter" un de ses termes précédants, formant ainsi un cycle périodique.
+
+===
+Supposons que $(u_n)$ est périodique de période $k$.
+
+On remarque que pour tout $n$, $f compose f compose ... compose f(x)$ ($n$ fois) est de la forme $a + b x$, avec $a, b in ZZ$.
+Or, comme $u_n = u_(n+k)$, $u_n$ est un point fixe de $f^k$ ($f$ composée $k$ fois avec elle-même),
+et puisque $a + b u_n = u_n$, alors $u_n in QQ$.
+
+Enfin, puisque $u_n in QQ$, $a in QQ$ car $u_n = m + n a$ pour $m, n in ZZ$.
 
 == 
 On dit que "$a$ atteint sa cible" si la suite $(u_n)_(n in NN)$ est nulle à partir d'un certain rang.
