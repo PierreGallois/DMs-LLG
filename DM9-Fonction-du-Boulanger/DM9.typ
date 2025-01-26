@@ -333,7 +333,7 @@ $
 #v(1fr)
 
 #figure(
-  image("code/galette.png", width: 40%),
+  image("img/galette.png", width: 40%),
   supplement: none,
   caption: [
     Bon appétit !#footnote[L'aire de cette galette est $4r^2$.]
@@ -343,7 +343,7 @@ $
 #v(1fr)
 
 #figure(
-  image("code/feve.jpg", width: 25%),
+  image("img/feve.jpg", width: 25%),
   supplement: none,
   caption: [
     Avec une jolie fève :)
