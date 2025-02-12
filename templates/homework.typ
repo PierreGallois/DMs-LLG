@@ -5,7 +5,7 @@
   alpha: true, // Valeur par défaut de si la numérotation devrait se faire en lettres ou en nombres
   body
 ) = {
-  let author = "Jules Charlier, Thomas Diot, Pierre Gallois, Jim Garnier, Pigeon no 4" 
+  let author = "Jules Charlier, Thomas Diot, Pierre Gallois, Jim Garnier" 
   set document(author: author, title: "Mathématiques : Devoir maison n° " + str(numero))
 
   set text(lang: "fr", size: 12pt)
