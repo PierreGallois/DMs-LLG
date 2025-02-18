@@ -65,35 +65,41 @@
   #move(dx: 50%, line(start: (0%, 100%), end: (100%, 0%), stroke: 0.5pt + color))
 ]
 
-#let illustration-square-squares(size) = cetz.canvas({
+#let illustration(size, call-fun) = cetz.canvas({
   import cetz.draw: *
   let env = (-2, -2, 2, 2)
+  call-fun(env)
+  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
+  point(0, 0, "", black)
+}, length: size)
+
+#let ill-squares(env) = {
+  import cetz.draw: *
   rect((0, 0), (env.at(0), env.at(3)), fill: pattern-line(blue), stroke: none)
   rect((0, 0), (env.at(2), env.at(1)), fill: pattern-line(blue), stroke: none)
-  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
-  point(0, 0, "", black)
-}, length: size)
+}
 
-#let illustration-square-triangle-up(size) = cetz.canvas({
+#let ill-triangles-up(env) = {
   import cetz.draw: *
-  let env = (-2, -2, 2, 2)
   line((0, 0), env.slice(2, 4), (0, env.at(3)), close: true, fill: pattern-line(green), stroke: none)
   line((0, 0), env.slice(0, 2), (0, env.at(1)), close: true, fill: pattern-line(green), stroke: none)
-  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
   line(env.slice(0, 2), env.slice(2, 4))
-  point(0, 0, "", black)
-}, length: size)
+}
 
-#let illustration-square-triangle-down(size) = cetz.canvas({
+#let ill-triangles-down(env) = {
   import cetz.draw: *
-  let env = (-2, -2, 2, 2)
   line((0, 0), env.slice(2, 4), (env.at(2), 0), close: true, fill: pattern-line(orange), stroke: none)
   line((0, 0), env.slice(0, 2), (env.at(0), 0), close: true, fill: pattern-line(orange), stroke: none)
-  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
   line(env.slice(0, 2), env.slice(2, 4))
-  point(0, 0, "", black)
-}, length: size)
+}
 
-#illustration-square-squares(15pt)
-#illustration-square-triangle-up(15pt)
-#illustration-square-triangle-down(15pt)
+#illustration(15pt, ill-squares)
+#illustration(15pt, ill-triangles-up)
+#illustration(15pt, ill-triangles-down)
+#illustration(15pt,
+  (env) => {
+    ill-squares(env)
+    ill-triangles-up(env)
+    ill-triangles-down(env)  
+  }
+)
