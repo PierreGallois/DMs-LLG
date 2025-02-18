@@ -15,6 +15,10 @@
   show regex("^A$") : math.cal("A")
   show regex("^B$") : math.cal("B")
   show regex("^C$") : math.cal("C")
+  show regex("^H$") : math.cal("H")
+  show regex("^V$") : math.cal("V")
+  show regex("^i$") : math.accent("i", math.arrow)
+  show regex("^j$") : math.accent("j", math.arrow)
   it
 }
 
@@ -30,8 +34,32 @@
 #exemples()
 
 ===
+On cherche à prouver $(A')$.
+Soient $A$ et $B$ deux points quelconques du plan. Par une translation $T$ on se ramène au cas où :
+$
+  A(0, 0) "et" B(x, y) "avec" x in RR "et" y in RR
+$
 
+Etudions d'abord des cas particuliers :
 
+/ Si $y = 0$ : alors la droite tropicale de centre $C(max(0, x), 0)$ convient.
+/ Si $x = 0$ : alors la droite tropicale de centre $C(0, max(0, y))$ convient.
+/ Si $x = y$ : alors la droite tropicale de centre $C(min(0, x), min(0, y))$ convient.
+
+Attaquons nous désormais aux cas généraux :
+
+==== Si $x < 0$ et $y > 0$
+
+Il existe $C(0, y)$.
+Soient les demi-droites :
+$
+  H &: [C, B) "par construction," H "est parallèle à l'axe des abcisses." \
+  V &: [C, A) "par construction," V "est parallèle à l'axe des ordonnées."
+$
+
+Comme $x < 0$, $H$ est de direction $-i$ et comme $y > 0$, $V$ est de direction $-j$.
+Donc $A$ et $B$ appartiennent à la droite tropicale de centre $C$.
+En inversant les rôles de $A$ et $B$, on obtient la deuxième partie grillée.
 
 = Addition et Multiplication tropicales
 
@@ -102,13 +130,13 @@ $ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   [
     D'un côté :
     #align(center)[
-      //#second-degre(green.saturate(50%), 1)
+      #second-degre(green.saturate(50%), 1)
     ]
   ],
   [
     De l'autre en prenant l'opposé pour l'axe $x$ :
     #align(center)[
-      //#second-degre(lime.lighten(50%), -1)
+      #second-degre(lime.lighten(50%), -1)
     ]
   ]
 )
