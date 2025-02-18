@@ -1,5 +1,6 @@
 #import "./../templates/homework.typ": dm, code-from-file
 #import "tropiques.typ": *
+#import "polynomes.typ": *
 
 #show: dm.with(
   numero: 10,
@@ -58,3 +59,28 @@ $tadd$ est associatif et commutatif car $max$ est associatif et commutatif.
 TODO : Il y a t il une preuve plus joli que par disjonction a < b < c / b < a < c / b < c < a ? (car b et c interchangeables car max)
 
 ==
+
+Voici à quoi ressemble une fonction tropicale de degré 1 : $a tmul x tadd b tmul y tadd c$ :
+
+#align(center)[
+  $1 tmul x tadd 1 tmul y tadd 1$ \
+  #premier-degre(20, teal, 1, 1, 1)
+]
+
+
+#table(
+  columns: 3,
+  stroke: none,
+  align(center)[
+    $1 tmul x tadd 5 tmul y tadd 1$ \
+    #premier-degre(6, purple.lighten(30%), 1, 4, 1)
+  ],
+  align(center)[
+    $5 tmul x tadd 1 tmul y tadd 1$ \
+    #premier-degre(6, olive, 4, 1, 1)
+  ],
+  align(center)[
+    $1 tmul x tadd 1 tmul y tadd 5$ \
+    #premier-degre(6, yellow.darken(10%), 1, 1, 4)
+  ]
+)

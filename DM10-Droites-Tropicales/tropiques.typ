@@ -2,7 +2,7 @@
 
 #let vector(x0, y0, x1, y1, color, size) = {
   import cetz.draw: *
-  line((x0, y0), (x1, y1), mark: (end: ">"), fill: color, stroke: (paint: color, thickness: size))
+  line((x0, y0), (x1, y1), mark: (end: ">", length: 3pt, width: 3pt), fill: color, stroke: (paint: color, thickness: size))
 }
 
 #let repere(env, o-legend: "to-be-set") = {
