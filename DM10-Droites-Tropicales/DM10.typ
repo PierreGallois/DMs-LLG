@@ -60,7 +60,10 @@ TODO : Il y a t il une preuve plus joli que par disjonction a < b < c / b < a < 
 
 ==
 
-Voici à quoi ressemble une fonction tropicale de degré 1 : $a tmul x tadd b tmul y tadd c$ :
+Voici à quoi ressemble une fonction tropicale
+#footnote[Pour des raisons esthétiques, nous utilisons dans les graphiques l'opposé des valeurs de $x$ et $y$.]
+de degré 1 :
+$a tmul x tadd b tmul y tadd c$ :
 
 #align(center)[
   $1 tmul x tadd 1 tmul y tadd 1$ \
@@ -84,3 +87,30 @@ Voici à quoi ressemble une fonction tropicale de degré 1 : $a tmul x tadd b tm
     #premier-degre(6, yellow.darken(10%), 1, 1, 4)
   ]
 )
+
+On remarque que modifier les valeurs $a$, $b$ et $c$ "décale" l'un des "bords".
+
+#pagebreak()
+==
+Voici à quoi ressemble la fonction tropicale du second degré
+#footnote[On prend l'opposé pour l'axe $y$] :
+$ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
+
+#table(
+  columns: 2,
+  stroke: none,
+  [
+    D'un côté :
+    #align(center)[
+      #second-degre(green.saturate(50%), 1)
+    ]
+  ],
+  [
+    De l'autre en prenant l'opposé pour l'axe $x$ :
+    #align(center)[
+      #second-degre(lime.lighten(50%), -1)
+    ]
+  ]
+)
+
+
