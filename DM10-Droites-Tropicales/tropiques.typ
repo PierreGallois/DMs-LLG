@@ -1,11 +1,12 @@
 #import "@preview/cetz:0.3.2"
+#import "@preview/modpattern:0.1.0": modpattern
 
 #let vector(x0, y0, x1, y1, color, size) = {
   import cetz.draw: *
   line((x0, y0), (x1, y1), mark: (end: ">", length: 3pt, width: 3pt), fill: color, stroke: (paint: color, thickness: size))
 }
 
-#let repere(env, o-legend: "to-be-set") = {
+#let repere(env, o-legend: "to-be-set", vectors: true) = {
   import cetz.draw: *
   if o-legend == "to-be-set" {
     o-legend = text([(0, 0)], size: 0.75em)
@@ -13,14 +14,16 @@
   grid(env.slice(0, 2), env.slice(2, 4), help-lines: true)
   line((0, env.at(1)), (0, env.at(3)))
   line((env.at(0), 0), (env.at(2), 0))
-  vector(0, 0, 1, 0, black, 1.5pt)
-  vector(0, 0, 0, 1, black, 1.5pt)
-  content((0.05, -0.4), o-legend, anchor: "west")
+  if vectors {
+    vector(0, 0, 1, 0, black, 1.5pt)
+    vector(0, 0, 0, 1, black, 1.5pt)
+  }
+  content((0.2em, -0.7em), o-legend, anchor: "west")
 }
 
 #let point(x, y, name, color) = {
   import cetz.draw: *
-  circle((x, y), radius: (0.1, 0.1), fill: color, stroke: none)
+  circle((x, y), radius: (0.17em, 0.17em), fill: color, stroke: none)
   content((x + 0.1, y - 0.4), name, anchor: "west")
 }
 
@@ -57,3 +60,40 @@
     }, length: 20pt)
   ]
 }
+
+#let pattern-line(color) = modpattern((5pt, 10pt))[
+  #move(dx: 50%, line(start: (0%, 100%), end: (100%, 0%), stroke: 0.5pt + color))
+]
+
+#let illustration-square-squares(size) = cetz.canvas({
+  import cetz.draw: *
+  let env = (-2, -2, 2, 2)
+  rect((0, 0), (env.at(0), env.at(3)), fill: pattern-line(blue), stroke: none)
+  rect((0, 0), (env.at(2), env.at(1)), fill: pattern-line(blue), stroke: none)
+  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
+  point(0, 0, "", black)
+}, length: size)
+
+#let illustration-square-triangle-up(size) = cetz.canvas({
+  import cetz.draw: *
+  let env = (-2, -2, 2, 2)
+  line((0, 0), env.slice(2, 4), (0, env.at(3)), close: true, fill: pattern-line(green), stroke: none)
+  line((0, 0), env.slice(0, 2), (0, env.at(1)), close: true, fill: pattern-line(green), stroke: none)
+  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
+  line(env.slice(0, 2), env.slice(2, 4))
+  point(0, 0, "", black)
+}, length: size)
+
+#let illustration-square-triangle-down(size) = cetz.canvas({
+  import cetz.draw: *
+  let env = (-2, -2, 2, 2)
+  line((0, 0), env.slice(2, 4), (env.at(2), 0), close: true, fill: pattern-line(orange), stroke: none)
+  line((0, 0), env.slice(0, 2), (env.at(0), 0), close: true, fill: pattern-line(orange), stroke: none)
+  repere(env, o-legend: text([$A$], size: 0.75em), vectors: false)
+  line(env.slice(0, 2), env.slice(2, 4))
+  point(0, 0, "", black)
+}, length: size)
+
+#illustration-square-squares(15pt)
+#illustration-square-triangle-up(15pt)
+#illustration-square-triangle-down(15pt)

@@ -102,13 +102,13 @@ $ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   [
     D'un côté :
     #align(center)[
-      #second-degre(green.saturate(50%), 1)
+      //#second-degre(green.saturate(50%), 1)
     ]
   ],
   [
     De l'autre en prenant l'opposé pour l'axe $x$ :
     #align(center)[
-      #second-degre(lime.lighten(50%), -1)
+      //#second-degre(lime.lighten(50%), -1)
     ]
   ]
 )
