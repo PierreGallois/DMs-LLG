@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, code-from-file
-#import "@preview/plotst:0.2.0": *
+#import "tropiques.typ": *
 
 #show: dm.with(
   numero: 10,
@@ -9,8 +9,26 @@
 )
 #let folder-name = "DM10-Droites-Tropicales"
 
+// Auto-transform style of letters :
+#show math.equation: it => {
+  show regex("^A$") : math.cal("A")
+  show regex("^B$") : math.cal("B")
+  show regex("^C$") : math.cal("C")
+  it
+}
+
+
 = Les droites tropicales
 
+/ $(A')$ : par deux points du plan passe une droite tropicale
+/ $(B')$ : par deux points quelconques indépendants du plan passe une et une seule droite tropicale
+/ $(C')$ : deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point.
+
+==
+===
+#exemples()
+
+===
 
 
 
