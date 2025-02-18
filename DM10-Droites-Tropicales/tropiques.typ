@@ -103,3 +103,28 @@
     ill-triangles-down(env)  
   }
 )
+
+#let style-square(size) = cetz.canvas({
+  import cetz.draw: *
+  line((-1, 0), (0, 0))
+  line((0, -1), (0, 0))
+  line((calc.sqrt(0.5), calc.sqrt(0.5)), (0, 0), stroke: (dash: "dashed", cap: "round", thickness: 0.75pt))
+}, length: size)
+
+#let style-triangle-up(size) = cetz.canvas({
+  import cetz.draw: *
+  line((-1, 0), (0, 0), stroke: (dash: "dashed", cap: "round", thickness: 0.75pt))
+  line((0, -1), (0, 0))
+  line((calc.sqrt(0.5), calc.sqrt(0.5)), (0, 0))
+}, length: size)
+
+#let style-triangle-down(size) = cetz.canvas({
+  import cetz.draw: *
+  line((-1, 0), (0, 0))
+  line((0, -1), (0, 0), stroke: (dash: "dashed", cap: "round", thickness: 0.75pt))
+  line((calc.sqrt(0.5), calc.sqrt(0.5)), (0, 0))
+}, length: size)
+
+#style-square(15pt)
+#style-triangle-up(15pt)
+#style-triangle-down(15pt)
