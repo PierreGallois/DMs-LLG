@@ -17,6 +17,7 @@
   show regex("^C$") : math.cal("C")
   show regex("^H$") : math.cal("H")
   show regex("^V$") : math.cal("V")
+  show regex("^D$") : math.cal("D")
   show regex("^i$") : math.accent("i", math.arrow)
   show regex("^j$") : math.accent("j", math.arrow)
   it
@@ -42,6 +43,7 @@ $
 
 Etudions d'abord des cas particuliers :
 
+/ Si $x = 0$ et $y = 0$ : alors $A = B$, la droite tropicale de centre $A$ convient.
 / Si $y = 0$ : alors la droite tropicale de centre $C(max(0, x), 0)$ convient.
 / Si $x = 0$ : alors la droite tropicale de centre $C(0, max(0, y))$ convient.
 / Si $x = y$ : alors la droite tropicale de centre $C(min(0, x), min(0, y))$ convient.
@@ -49,6 +51,14 @@ Etudions d'abord des cas particuliers :
 Attaquons nous désormais aux cas généraux :
 
 ==== Si $x < 0$ et $y > 0$
+
+#table(
+  columns: 2,
+  column-gutter: 1em,
+  stroke: none,
+  align(center + horizon, illustration(15pt, ill-squares)),
+  align(center + horizon, figure(style-square(25pt), caption: [style], supplement: none))
+)
 
 Il existe $C(0, y)$.
 Soient les demi-droites :
@@ -59,7 +69,69 @@ $
 
 Comme $x < 0$, $H$ est de direction $-i$ et comme $y > 0$, $V$ est de direction $-j$.
 Donc $A$ et $B$ appartiennent à la droite tropicale de centre $C$.
-En inversant les rôles de $A$ et $B$, on obtient la deuxième partie grillée.
+
+En inversant les rôles de $A$ et $B$, on obtient la deuxième partie rayée.
+
+==== Si $x > 0$ et $y > 0$ et $y > x$
+
+#table(
+  columns: 2,
+  column-gutter: 1em,
+  stroke: none,
+  align(center + horizon, illustration(15pt, ill-triangles-up)),
+  align(center + horizon, figure(style-triangle-up(25pt), caption: [style], supplement: none))
+)
+
+Soit $D'$ la droite parallèle à $y = x$ et passant par $B$.
+On nomme $C$ l'intersection entre $D'$ et l'axe des ordonnées.
+Comme $y > x$, $y_C > 0$.
+Soient les demi-droites :
+$
+  D &: [C, B) "par construction," D "est de direction" i + j \
+  V &: [C, A) "par construction," V "est de direction" -j
+$
+Donc $A$ et $B$ appartiennent à la droite tropicale de centre $C$.
+
+En inversant les rôles de $A$ et $B$, on obtient que pour $0 > x$ et $0 > y$ et $x > y$, $A$ et $B$ appartiennent à la droite tropicale de centre $C$, soit la deuxième zone rayée.
+
+==== Si $x > 0$ et $y > 0$ et $y < x$
+
+#table(
+  columns: 2,
+  column-gutter: 1em,
+  stroke: none,
+  align(center + horizon, illustration(15pt, ill-triangles-down)),
+  align(center + horizon, figure(style-triangle-down(25pt), caption: [style], supplement: none))
+)
+
+Doit $D'$ la droite parallèle à $y = x$ et passant par $B$.
+On nomme $C$ l'intersection entre $D'$ et l'axe des abcisses.
+Comme $y < x$, $x_C > 0$.
+Soient les demi-droites :
+$
+  D &: [C, B) "par construction," D "est de direction" i + j \
+  H &: [C, A) "par construction," H "est de direction" -i
+$
+Donc $A$ et $B$ appartiennent à la droite tropicale de centre $C$.
+
+En inversant les rôles de $A$ et $B$, on obtient que pour $0 > x$ et $0 > y$ et $x < y$, $A$ et $B$ appartiennent à la droite tropicale de centre $C$, soit la deuxième zone rayée.
+
+==== Conclusion
+
+En combinant les différentes disjonctions de cas démontrées plus haut on obtient :
+
+#illustration(20pt,
+  (env) => {
+    ill-squares(env)
+    ill-triangles-up(env)
+    ill-triangles-down(env)  
+  }
+)
+
+Le cas des lignes noires est couvert par les cas particuliers.
+Nous avons donc prouvé que pour tout point quelconque $B$, il existe une droite tropicale passant par $B$ et par l'origine $A$. Nous pouvons revenir au cas général avec deux points quelconques par la translation inverse de $T$.
+
+Nous avons donc démontré $(A')$ : par deux points du plan passe une droite tropicale.
 
 = Addition et Multiplication tropicales
 
