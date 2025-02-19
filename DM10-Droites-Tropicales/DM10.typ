@@ -156,7 +156,9 @@ On a donc : #h(1fr) $3 tadd 7 = 7$ #h(1fr) $-5 tadd 2 = 2$ #h(1fr) $3 tmul 7 = 1
 == 
 $tadd$ est associatif et commutatif car $max$ est associatif et commutatif.
 
-TODO : Il y a t il une preuve plus joli que par disjonction a < b < c / b < a < c / b < c < a ? (car b et c interchangeables car max)
+Soient $a, b, c in RR$. Supposons sans perte de généralité que $b <= c$ car $tadd$ est commutatif.
+
+On a $a tmul (b tadd c) = a tmul c = a tmul b tadd a tmul c "puisque" a tmul b <= a tmul c$.
 
 ==
 
