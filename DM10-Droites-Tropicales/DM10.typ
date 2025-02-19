@@ -26,9 +26,11 @@
 
 = Les droites tropicales
 
-/ $(A')$ : par deux points du plan passe une droite tropicale
-/ $(B')$ : par deux points quelconques indépendants du plan passe une et une seule droite tropicale
-/ $(C')$ : deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point.
+/ $(A')$ : "Par deux points du plan passe une droite tropicale."
+
+/ $(B')$ : "Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+
+/ $(C')$ : "Deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point."
 
 ==
 ===
@@ -63,7 +65,7 @@ Attaquons nous désormais aux cas généraux :
 Il existe $C(0, y)$.
 Soient les demi-droites :
 $
-  H &: [C, B) "par construction," H "est parallèle à l'axe des abcisses." \
+  H &: [C, B) "par construction," H "est parallèle à l'axe des abscisses." \
   V &: [C, A) "par construction," V "est parallèle à l'axe des ordonnées."
 $
 
@@ -105,7 +107,7 @@ En inversant les rôles de $A$ et $B$, on obtient que pour $0 > x$ et $0 > y$ et
 )
 
 Doit $D'$ la droite parallèle à $y = x$ et passant par $B$.
-On nomme $C$ l'intersection entre $D'$ et l'axe des abcisses.
+On nomme $C$ l'intersection entre $D'$ et l'axe des abscisses.
 Comme $y < x$, $x_C > 0$.
 Soient les demi-droites :
 $
@@ -132,6 +134,12 @@ Le cas des lignes noires est couvert par les cas particuliers.
 Nous avons donc prouvé que pour tout point quelconque $B$, il existe une droite tropicale passant par $B$ et par l'origine $A$. Nous pouvons revenir au cas général avec deux points quelconques par la translation inverse de $T$.
 
 Nous avons donc démontré $(A')$ : par deux points du plan passe une droite tropicale.
+
+==
+===
+La propriété $(B)$ n'est pas vraie pour les droites tropicales dans le cas de deux points dépendants.
+
+Contre-exemple : Prenons les points $A(0, 0) "et" B(1, 0)$, qui sont dépendants. La droite tropicale de point central $C_1 (2, 0)$ passe par $A$ et par $B$, mais celle de point central $C_2 (3, 0)$ aussi. Il y a même une infinité de droites tropicales passant par ces deux points : toutes celles dont le point central est d'ordonnée nulle et d'abscisse supérieure à 1.
 
 = Addition et Multiplication tropicales
 
