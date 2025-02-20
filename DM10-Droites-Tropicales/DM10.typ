@@ -28,8 +28,8 @@
 
 / $(A')$ : par deux points du plan passe une droite tropicale
 / $(B')$ : par deux points quelconques indépendants du plan passe une et une seule droite tropicale
-/ $(C')$ : deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point.
-
+/ $(#strong($cal(D)$)')$ : deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point.
+// Voir https://github.com/typst/typst/issues/5913 pour comprendre la ligne d'au-dessus
 ==
 ===
 #exemples()
