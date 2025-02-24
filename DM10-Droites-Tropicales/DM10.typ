@@ -141,6 +141,34 @@ La propriété $(B)$ n'est pas vraie pour les droites tropicales dans le cas de 
 
 Contre-exemple : Prenons les points $A(0, 0) "et" B(1, 0)$, qui sont dépendants. La droite tropicale de point central $C_1 (2, 0)$ passe par $A$ et par $B$, mais celle de point central $C_2 (3, 0)$ aussi. Il y a même une infinité de droites tropicales passant par ces deux points : toutes celles dont le point central est d'ordonnée nulle et d'abscisse supérieure à 1.
 
+#strike[
+===
+On chercher à prouver $(B')$ : "Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+
+Soient $A$ et $B$ deux points indépendants du plan.
+Par une translation $T$ on fait en sorte que $A(0, 0)$ et $B(x, y)$ avec $x in RR$ et $y in RR$. Comme $A$ et $B$ sont indépendants, $x != 0$, $y != 0$ et $x != y$.
+
+D'après $(A')$, il existe une droite tropicale de centre $C(alpha, beta)$ avec $alpha in RR$ et $beta in RR$ passant par $A$ et $B$. On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i + j$ formant cette droite tropicale.
+
+On considère toutes les combinaisons de demi-droites auxquelles pourraient appartenir $A$ et $B$ afin de déterminer $C(alpha, beta)$.
+
+==== Cas impossibles :
+Si $A$ et $B$ appartiennent à la même demi-droite, alors ils sont dépendants ce qui n'est pas possible donc on peut éliminer les cas $(A in H "et" B in H)$, $(A in V "et" B in V)$ et $(A in D "et" B in D)$.
+
+==== Cas génériques :
+
+/ Si $A in V "et" B in H$ : alors les contraintes sur $C$ sont $A in V => alpha = 0$ et $B in H => beta = y$. Cela donne $C(0, y)$.
+/ Si $A in D "et" B in H$ : alors les contraintes sur $C$ sont $A in D => alpha = beta$ et $B in H => beta = y$. Cela donne $C(y, y)$.
+/ Si $A in D "et" B in V$ : alors les contraintes sur $C$ sont $A in D => alpha = beta$ et $B in V => alpha = x$. Cela donne $C(x, x)$.
+
+En inversant les roles de $A$ et $B$ on obtient également les contraintes suivantes : TODO
+
+On remarque qu'à moins que $x = 0$, $y = 0$ ou $x = y$ ce qui n'est pas possible puisque $A$ et $B$ sont indépendants, il n'est pas possible que plusieurs droites donne le même centre.
+
+(ce qui n'est pas ce que l'on cherche à démontrer)
+
+]
+
 = Addition et Multiplication tropicales
 
 #let tadd = math.class(
@@ -212,13 +240,13 @@ $ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   [
     D'un côté :
     #align(center)[
-      #second-degre(green.saturate(50%), 1)
+      //#second-degre(green.saturate(50%), 1)
     ]
   ],
   [
     De l'autre en prenant l'opposé pour l'axe $x$ :
     #align(center)[
-      #second-degre(lime.lighten(50%), -1)
+      //#second-degre(lime.lighten(50%), -1)
     ]
   ]
 )

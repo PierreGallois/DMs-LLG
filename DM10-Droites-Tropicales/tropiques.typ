@@ -128,3 +128,12 @@
 #style-square(15pt)
 #style-triangle-up(15pt)
 #style-triangle-down(15pt)
+
+// #cetz.canvas({
+//   import cetz.draw: *
+//   let env = (-5, -5, 5, 5)
+//   repere(env, vectors: false)
+//   droite-tropicale(env, -1, 1, [$T_1$], blue)
+//   droite-tropicale(env, 1, -1, [$T_2$], red)
+//   droite-tropicale(env, 2,· 3, [$T_3$], green)
+// }, length: 25pt)
