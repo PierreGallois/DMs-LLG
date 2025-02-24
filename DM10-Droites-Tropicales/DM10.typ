@@ -186,6 +186,42 @@ On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$
 
 Il n'y a aucune intersection autre que $I$ entre les demi-droites pour chacun des cas, donc $I$ est bien l'unique intersection de deux droites tropicales.
 
+==
+Voici l'exemple donné de triangle tropical :
+
+#align(center, triangle-exemple(30pt))
+
+Il est spécifié que dans cet exemple, $hat(A) + hat(B) + hat(C) = 360 degree$.
+
+===
+On considère le triangle tropicale suivant :
+
+#align(center, triangle-exemple-modifie(30pt))
+
+On a repris la figure de l'exemple, sur laquelle on a rajouté $2$ à l'abscisse de $C_2$.
+
+$C^*$ représente l'emplacement de $C$ sur l'ancienne figure. $hat(A)$ et $hat(B)$ ne sont pas impactés par le changement, par contre alors que $hat(C^*)$ était obtus, $hat(C)$ est droit. Donc $hat(A) + hat(B) + hat(C) < 360$.
+
+L'égalité $hat(A) + hat(B) + hat(C) = 360$ n'est pas vrai pour tous les triangles tropicaux.
+
+===
+
+Soient $C_1$, $C_2$, $C_3$ trois points indépendants du plan, centres de trois droites tropicales et sommets d'un triangle tropical.
+
+D'après $(C')$, les trois intersections $A$, $B$, $C$ des trois droites tropicales doivent exister.
+
+Il existe deux intersections sur une demi-droite de direction $-i$, $-j$ ou $i + j$ *si et seulement si* les deux intersections sont dépendantes.
+
+Or on suppose $A$, $B$, $C$ indépendants donc chaque demi-droite possède _au plus_ une intersection.
+
+Nous savons donc que chaque droite tropicale possède deux intersections qui sont répartis entre ses trois demi-droites.
+Donc l'unique cas de figure possible est que chacune des trois intersections soit entre deux demi-droites dont la combinaisons de leur direction est inédite.
+#footnote[En effet, soient deux directions, pour avoir deux fois une intersection entre des demi-droites ayant ces directions, comme cela arrive à la figure de la question 4) a), il est necessaire que la troisième demi-droite formant les intersections (appartenant à $C_2$ dans l'exemple) possède deux intersections, ce qui est contraire à la conclusion que chaque demi-droite possède _au plus_ une intersection.]
+
+Or, l'intersection entre une demi-droite de direction $-i$ et $-j$ donne un angle de $90 degree$. $i + j$ et $-i$ donne $90 degree + 45 degree$. $i + j$ et $-j$ donne $90 degree + 45 degree$.
+
+La somme des angles d'un triangle tropical dont les sommets sont indépendants donne donc $4 times 90 degree = 360 degree$.
+
 = Addition et Multiplication tropicales
 
 #let tadd = math.class(

@@ -129,11 +129,30 @@
 #style-triangle-up(15pt)
 #style-triangle-down(15pt)
 
-// #cetz.canvas({
-//   import cetz.draw: *
-//   let env = (-5, -5, 5, 5)
-//   repere(env, vectors: false)
-//   droite-tropicale(env, -1, 1, [$T_1$], blue)
-//   droite-tropicale(env, 1, -1, [$T_2$], red)
-//   droite-tropicale(env, 2,· 3, [$T_3$], green)
-// }, length: 25pt)
+#let triangle-exemple(size) = cetz.canvas({
+  import cetz.draw: *
+  let env = (-2, -2, 3, 4)
+  repere(env)
+  droite-tropicale(env, -1, 1, [$C_1$], eastern)
+  droite-tropicale(env, 1, -1, [$C_2$], orange)
+  droite-tropicale(env, 2, 3, [$C_3$], green.darken(10%))
+  point(-1, -1, [$A$], black)
+  point(1, 3, [$B$], black)
+  point(2, 0, [$C$], black)
+}, length: size)
+
+
+#triangle-exemple(15pt)
+
+#let triangle-exemple-modifie(size) = cetz.canvas({
+  import cetz.draw: *
+  let env = (-2, -2, 4, 4)
+  repere(env)
+  droite-tropicale(env, -1, 1, [$C_1$], eastern)
+  droite-tropicale(env, 3, -1, [$C_2$], orange)
+  droite-tropicale(env, 2, 3, [$C_3$], green.darken(10%))
+  point(-1, -1, [$A$], black)
+  point(1, 3, [$B$], black)
+  point(2, 0, [$C^*$], black)
+  point(2, -1, [$C$], black)
+}, length: size)
