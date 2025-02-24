@@ -169,6 +169,23 @@ On remarque qu'à moins que $x = 0$, $y = 0$ ou $x = y$ ce qui n'est pas possibl
 
 ]
 
+==
+On chercher à prouver $(C')$ : "Deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point."
+
+Soient $C$ et $C'$ deux centres de droites tropicales, indépendants.
+Par une translation $T$, on se ramène à $C(0, 0)$ et $C'(x, y)$ avec $x in RR$ et $y in RR$. Comme $C$ et $C'$ sont indépendants, $x != 0$, $y != 0$, $x != y$.
+
+On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i+j$ contituant la droite tropicale $C$. On fait de même pour $C'$ avec $H'$, $V'$ et $D'$.
+
+/ Si $y > 0$ et $x < 0$ : alors $V'$ coupe $H$ en $I$.
+/ Si $y > 0$ et $x > 0$ et $y > x$ : alors $V'$ coupe $D$ en $I$.
+/ Si $y < 0$ et $x < 0$ et $y > x$ : alors $D'$ coupe $H$ en $I$.
+/ Si $y < 0$ et $x < 0$ et $y < x$ : alors $D'$ coupe $V$ en $I$.
+/ Si $y > 0$ et $x > 0$ et $y < x$ : alors $H'$ coupe $D$ en $I$.
+/ Si $y < 0$ et $x > 0$ : alors $H'$ coupe $V$ en $I$.
+
+Il n'y a aucune intersection autre que $I$ entre les demi-droites pour chacun des cas, donc $I$ est bien l'unique intersection de deux droites tropicales.
+
 = Addition et Multiplication tropicales
 
 #let tadd = math.class(
@@ -240,13 +257,13 @@ $ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   [
     D'un côté :
     #align(center)[
-      //#second-degre(green.saturate(50%), 1)
+      #second-degre(green.saturate(50%), 1)
     ]
   ],
   [
     De l'autre en prenant l'opposé pour l'axe $x$ :
     #align(center)[
-      //#second-degre(lime.lighten(50%), -1)
+      #second-degre(lime.lighten(50%), -1)
     ]
   ]
 )
