@@ -320,6 +320,7 @@ $ Q_T (x, y) = 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   stroke: none,
   [
     D'un côté :
+    #footnote[Il est interessant de remarquer que les deux lignes montantes ne sont pas des droites contrairement à ce que l'on pourrait penser. Ce sont des des polynômes du second degré étirés.]
     #align(center)[
      #second-degre(green.saturate(50%), 1)
     ]

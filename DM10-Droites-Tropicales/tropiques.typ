@@ -156,3 +156,30 @@
   point(2, 0, [$C^*$], black)
   point(2, -1, [$C$], black)
 }, length: size)
+
+#let droite-x(env, y, color: black, size: 1pt) = {
+  cetz.draw.line((env.at(0), y), (env.at(2), y), fill: color, stroke: (paint: color, thickness: size))
+}
+
+#let droite-y(env, x, color: black, size: 1pt) = {
+  cetz.draw.line((x, env.at(1)), (x, env.at(3)), fill: color, stroke: (paint: color, thickness: size))
+}
+
+// #let droite-xy(env, xy, color: black, size: 1pt) = {
+//   import calc.min
+//   import calc.max
+//   let v_min = min(env.at(2) - xy, env.at(3) - xy)
+//   let v_max = max(env.at(0) - xy, env.at(1) - xy)
+//   cetz.draw.line((xy + v_max, xy + v_max), (xy + v_min, xy + v_min), fill: color, stroke: (paint: color, thickness: size))
+// }
+
+// #let poly-deg2-projete(size) = cetz.canvas({
+//   import cetz.draw: *
+//   let env = (-2, -2, 4, 4)
+//   repere(env)
+//   droite-x(env, 2)
+//   droite-y(env, 3)
+  
+// }, length: size)
+
+// #poly-deg2-projete(15pt)
