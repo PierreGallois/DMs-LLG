@@ -23,6 +23,8 @@
   it
 }
 
+#let equiv = $#h(1em)&<=>#h(1em)$
+#let arrow = $#h(1em)&->&#h(1em)$
 
 = Les droites tropicales
 
@@ -250,6 +252,9 @@ Soient $a, b, c in RR$. Supposons sans perte de généralité que $b <= c$ car $
 On a $a tmul (b tadd c) = a tmul c = a tmul b tadd a tmul c "puisque" a tmul b <= a tmul c$.
 
 ==
+Soient $a, b, c in RR$ les paramètres du polynome de premier degré et $(x, y) in RR^2$ représentant les points du plan.
+
+==== Visualisation graphique
 
 Voici à quoi ressemble une fonction tropicale
 #footnote[Pour des raisons esthétiques, nous utilisons dans les graphiques l'opposé des valeurs de $x$ et $y$.]
@@ -281,19 +286,42 @@ $a tmul x tadd b tmul y tadd c$ :
 
 On remarque que modifier les valeurs $a$, $b$ et $c$ "décale" l'un des "bords".
 
-#pagebreak()
+==== Démonstration
+
+On recherche le lieu (les droites) qui permettent d'atteindre deux fois le maximum dans $P_T = max(a + x, b + y, c)$, ce qui est vrai si et seulement si :
+$
+  a + x = c     #equiv x = c - a      #arrow "parallèle à l'ordonnée" \
+  b + y = c     #equiv y = c - b      #arrow "parallèle à l'abscisse" \
+  a + x = b + y #equiv x - y = b - a  #arrow "parrallèle à" x = y \
+$
+
+Nous avons donc bien trois droites habituelles avec les bonnes directions qui permettraient de former une droite tropicale si ces trois droites se coupaient au même point.
+#footnote[En effet, trois droites parallèles à l'abscisse, l'ordonnée et $x = y$ qui se croisent en un point $cal(C)$ permettent de former trois demi-droites partant de $cal(C)$ dans les direction $-accent(i, #math.arrow)$, $-accent(j, #math.arrow)$ et $accent(i, #math.arrow) + accent(j, #math.arrow)$ et donc de former une droite tropicale de centre $cal(C)$.]
+// Les regex n'ont pas l'air de marcher dans les footnotes
+
+Or $x - y = (c-a) - (c-b) = b - a$, donc le point $C(c-a, c-b)$ appartient aux trois droites et est le centre de la droite tropicale.
+#footnote[Dans l'espace, le point $cal(C)(c-a, c-b, c)$ est bien l'intersection des trois droites.]
+
+Par ailleurs, remplacer $x$ et $y$ par $c-a$ et $c-b$ dans $max(a + x, b + y, c)$ permet bien d'atteindre trois fois le maximum.
+
+Le lieu des coins de $P_T$ est une droite tropicale de centre $C(c-a, c-b)$.
+
 ==
+Soient $(x, y) in RR^2$ représentant les points du plan.
+
+==== Visualisation graphique
 Voici à quoi ressemble la fonction tropicale du second degré
 #footnote[On prend l'opposé pour l'axe $y$] :
-$ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
+$ Q_T (x, y) = 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
 
+#block(breakable: false)[
 #table(
   columns: 2,
   stroke: none,
   [
     D'un côté :
     #align(center)[
-      #second-degre(green.saturate(50%), 1)
+     #second-degre(green.saturate(50%), 1)
     ]
   ],
   [
@@ -302,6 +330,21 @@ $ 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
       #second-degre(lime.lighten(50%), -1)
     ]
   ]
-)
+)]
 
+==== Démonstration
+De manière similaire à ce que nous avons réalisé pour le polynôme de premier degré, recherchons les ensembles de points permettant d'atteindre deux fois le maximum $Q_T (x, y) = max(1, x-1, y, x^2-5)$ :
+$
+  1 = x-1     #equiv x = 2                           #arrow "parallèle à l'ordonnée" \
+  x-1 = y     #equiv x - y = 1                       #arrow "parallèle à" x = y \
+  y = 1       #equiv y = 1                           #arrow "parallèle à l'abscisse" \
+  x^2-5 = 1   #equiv x = plus.minus sqrt(6)          #arrow "parallèle à l'ordonnée" \
+  x^2-5 = x-1 #equiv x = (1 plus.minus sqrt(17)) / 2 #arrow "parallèle à l'ordonnée" \
+  x^2-5 = y   #equiv x^2 - y = 5                     #arrow "n'est pas une droite" \
+$
+
+Pour réaliser une droite tropicale, nous avons besoin d'une droite parallèle à l'abscisse et d'une parallèle à $x = y$, nous devons donc necessairement utiliser $y = 1$ et $x - y = 1$ et nous ne pourrons construire qu'une seule droite tropicale.
+En combinant ces deux équations nous obtenons $x = 2$ comme point de croisement. La droite $x = 2$ que nous avons précedement déterminée passe par ce point et convient donc.
+
+Le lieu des coins de $Q_T$ est la droite tropicale de centre $C(2, 1)$
 
