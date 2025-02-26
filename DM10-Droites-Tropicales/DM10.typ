@@ -292,7 +292,7 @@ On recherche le lieu (les droites) qui permettent d'atteindre deux fois le maxim
 $
   a + x = c     #equiv x = c - a      #arrow "parallèle à l'ordonnée" \
   b + y = c     #equiv y = c - b      #arrow "parallèle à l'abscisse" \
-  a + x = b + y #equiv x - y = b - a  #arrow "parrallèle à" x = y \
+  a + x = b + y #equiv x - y = b - a  #arrow "parallèle à" x = y \
 $
 
 Nous avons donc bien trois droites habituelles avec les bonnes directions qui permettraient de former une droite tropicale si ces trois droites se coupaient au même point.
