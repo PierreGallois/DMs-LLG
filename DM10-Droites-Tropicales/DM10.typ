@@ -208,7 +208,7 @@ Voici l'exemple donné de triangle tropical :
 Il est spécifié que dans cet exemple, $hat(A) + hat(B) + hat(C) = 360 degree$.
 
 ===
-On considère le triangle tropicale suivant :
+On considère le triangle tropical suivant :
 
 #align(center, triangle-exemple-modifie(30pt))
 
@@ -365,7 +365,7 @@ $
 $
 
 Pour réaliser une droite tropicale, nous avons besoin d'une droite parallèle à l'abscisse et d'une parallèle à $x = y$, nous devons donc nécessairement utiliser $y = 1$ et $x - y = 1$ et nous ne pourrons construire qu'une seule droite tropicale.
-En combinant ces deux équations nous obtenons $x = 2$ comme point de croisement. La droite $x = 2$ que nous avons précedement déterminée passe par ce point et convient donc.
+En combinant ces deux équations nous obtenons $x = 2$ comme point de croisement. La droite $x = 2$ que nous avons précédemment déterminée passe par ce point et convient donc.
 
 Le lieu des coins de $Q_T$ est la droite tropicale de centre $C(2, 1)$.
 #h(1fr) $qed$
