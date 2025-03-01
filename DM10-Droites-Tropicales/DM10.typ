@@ -52,6 +52,7 @@ Etudions d'abord des cas particuliers :
 / Si $x = 0$ : alors la droite tropicale de centre $C(0, max(0, y))$ convient.
 / Si $x = y$ : alors la droite tropicale de centre $C(min(0, x), min(0, y))$ convient.
 
+#pagebreak()
 Attaquons nous désormais aux cas généraux :
 
 ==== Si $x < 0$ et $y > 0$
@@ -144,7 +145,7 @@ La propriété $(B)$ n'est pas vraie pour les droites tropicales dans le cas de 
 Contre-exemple : Prenons les points $A(0, 0)$ et $B(1, 0)$, qui sont dépendants. La droite tropicale de point central $C(2, 0)$ passe par $A$ et par $B$, mais celle de point central $C'(3, 0)$ aussi. Il y a même une infinité de droites tropicales passant par ces deux points : toutes celles dont le point central est d'ordonnée nulle et d'abscisse supérieure à 1.
 
 ===
-Prouvons tout d'abord $(B'')$ : TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODO
+Prouvons tout d'abord $(B'')$ : "Si deux droites tropicales se coupent en plus d'un point alors ces points sont dépendants."
 
 Soient $C$ et $C'$ deux centres non confondus de droite tropicale. On réalise une translation $T$ pour se ramener au cas où $C(0, 0)$ et $C'(x, y)$ avec $x, y in RR$.
 
@@ -153,7 +154,7 @@ Soient $C$ et $C'$ deux centres non confondus de droite tropicale. On réalise u
 / Si $y = 0$ : alors les droites tropicales de centre $C$ et $C'$ se coupent dans l'infinité de points dont l'ordonnée est nulle et l'abscisse inférieure à 0.
 / Si $x = y$ : alors les droites tropicales de centre $C$ et $C'$ se coupent dans l'infinité de points dont l'abscisse et l'ordonnée sont égales, positives et supérieures ou égales à $x$.
 
-Nous avons prouvé que si $C$ et $C'$ sont dépendants alors les droites tropicales leur correspondant se coupent en une infinité de points qui sont tous dépendants les uns des autres.
+Nous avons prouvé que si $C$ et $C'$ sont dépendants alors les droites tropicales leur correspondant se coupent en une infinité de points _qui sont tous dépendants les uns des autres_.
 
 ==== Si $C$ et $C'$ sont indépendants
 On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i+j$ contituant la droite tropicale $C$. On fait de même pour $C'$ avec $H'$, $V'$ et $D'$.
@@ -169,34 +170,19 @@ De manière similaire :
 / Si $y > 0$ et $x > 0$ et $y < x$ : alors $H'$ coupe $D$ en $I$. etc$...$
 / Si $y < 0$ et $x > 0$ : alors $H'$ coupe $V$ en $I$. etc$...$
 
-Il n'y a aucune intersection autre que $I$ entre les demi-droites pour chacun des cas, donc deux droites tropicales indépendantes se croisent en un unique point.
+Il n'y a aucune intersection autre que $I$ entre les demi-droites pour chacun des cas, donc deux droites tropicales dont les centres sont indépendants se croisent en un unique point.
 
 ==== Conclusion
-Nous avons démontré $(B'')$, que deux droites tropicales se croisent en un unique point _si et seulement si_ les centres de ces droites tropicales sont indépendants.
-Deux droites tropicales se coupent en plus d'un point si et seulement si ces points sont dépendants.
-Donc si deux droites tropicales se coupent en un point :
-    alors un point
-si deux droites tropicales se coupent en plus d'un point :
-    alors ces points sont dépendants
-
-
-"Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
-
+Nous avons démontré $(B'')$, que si deux droites tropicales se coupent en plus d'un point alors ces points sont dépendants.
 
 On cherche maintenant à prouver $(B')$ : "Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+
 Nous savons d'après $(A')$ qu'il existe au minimum une droite tropicale passant par deux points quelconques du plan.
 
-Raisonnons par l'absurde, supposons qu'il existe plus qu'une droite tropicale passant par deux points indépendants. Il est alors _nécessaire_ qu'il existe deux droites tropicales qui se coupent en ces deux points indépendants. Or deux droites se coupent en plus d'un point _si et seulement si_ ces deux points sont dépendants, ce qui est en contradiction avec l'hypothèse de départ.
+Raisonnons par l'absurde, supposons qu'il existe plus qu'une droite tropicale passant par deux points indépendants. Il est alors _nécessaire_ qu'il existe deux droites tropicales qui se coupent en ces deux points indépendants. Or deux droites tropicales se coupent en plus d'un point _implique_ que ces points soient dépendants, ce qui est en contradiction avec l'hypothèse de départ.
 
-Pour qu'il existe plus qu'une droite tropicale passant par deux points, il est _nécessaire_ qu'il existe deux droites tropicales se coupant en ces deux points au minimum.
-Or ces deux points sont alors nécessairement dépendants. Ce qui est 
-
-deux droites tropicales se coupent en deux points au minimum
-      <=> les centres de ces droites tropicales sont dépendants
-      <=> ces points sont dépendants
-
-"Il existe deux droites tropicales se coupant en deux point au minimum" est une condition nécessaire pour 
-
+Nous avons démontré $(B')$.
+#h(1fr) $qed$
 ==
 On chercher à prouver $(C')$ : "Deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point."
 
@@ -204,7 +190,7 @@ Soient $C$ et $C'$ deux centres de droites tropicales, indépendants.
 Par une translation $T$, on se ramène à $C(0, 0)$ et $C'(x, y)$ avec $x in RR$ et $y in RR$. Comme $C$ et $C'$ sont indépendants, $x != 0$, $y != 0$, $x != y$.
 
 On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i+j$ contituant la droite tropicale $C$. On fait de même pour $C'$ avec $H'$, $V'$ et $D'$.
-
+#pagebreak()
 / Si $y > 0$ et $x < 0$ : alors $V'$ coupe $H$ en $I$.
 / Si $y > 0$ et $x > 0$ et $y > x$ : alors $V'$ coupe $D$ en $I$.
 / Si $y < 0$ et $x < 0$ et $y > x$ : alors $D'$ coupe $H$ en $I$.
@@ -233,7 +219,6 @@ $C^*$ représente l'emplacement de $C$ sur l'ancienne figure. $hat(A)$ et $hat(B
 L'égalité $hat(A) + hat(B) + hat(C) = 360$ n'est pas vrai pour tous les triangles tropicaux.
 
 ===
-
 Soient $C_1$, $C_2$, $C_3$ trois points indépendants du plan, centres de trois droites tropicales et sommets d'un triangle tropical.
 
 D'après $(C')$, les trois intersections $A$, $B$, $C$ des trois droites tropicales doivent exister.
@@ -249,6 +234,8 @@ Donc l'unique cas de figure possible est que chacune des trois intersections soi
 Or, l'intersection entre une demi-droite de direction $-i$ et $-j$ donne un angle de $90 degree$. $i + j$ et $-i$ donne $90 degree + 45 degree$. $i + j$ et $-j$ donne $90 degree + 45 degree$.
 
 La somme des angles d'un triangle tropical dont les sommets sont indépendants donne donc $4 times 90 degree = 360 degree$.
+
+#v(1fr)
 
 = Addition et Multiplication tropicales
 
@@ -280,6 +267,9 @@ On a $a tmul (b tadd c) = a tmul c = a tmul b tadd a tmul c "puisque" a tmul b <
 ==
 Soient $a, b, c in RR$ les paramètres du polynome de premier degré et $(x, y) in RR^2$ représentant les points du plan.
 
+#v(1fr)
+
+#pagebreak()
 ==== Visualisation graphique
 
 Voici à quoi ressemble une fonction tropicale
@@ -332,6 +322,8 @@ Par ailleurs, remplacer $x$ et $y$ par $c-a$ et $c-b$ dans $max(a + x, b + y, c)
 
 Le lieu des coins de $P_T$ est une droite tropicale de centre $C(c-a, c-b)$.
 
+#v(1fr)
+
 ==
 Soient $(x, y) in RR^2$ représentant les points du plan.
 
@@ -359,6 +351,8 @@ $ Q_T (x, y) = 1 tadd (-1) tmul x tadd 0 tmul y tadd (-5) tmul x^2 $
   ]
 )]
 
+#v(1fr)
+#pagebreak()
 ==== Démonstration
 De manière similaire à ce que nous avons réalisé pour le polynôme de premier degré, recherchons les ensembles de points permettant d'atteindre deux fois le maximum $Q_T (x, y) = max(1, x-1, y, x^2-5)$ :
 $
@@ -374,4 +368,4 @@ Pour réaliser une droite tropicale, nous avons besoin d'une droite parallèle �
 En combinant ces deux équations nous obtenons $x = 2$ comme point de croisement. La droite $x = 2$ que nous avons précedement déterminée passe par ce point et convient donc.
 
 Le lieu des coins de $Q_T$ est la droite tropicale de centre $C(2, 1)$.
-
+#h(1fr) $qed$
