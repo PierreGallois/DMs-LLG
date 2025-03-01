@@ -141,35 +141,61 @@ Nous avons donc démontré $(A')$ : par deux points du plan passe une droite tro
 ===
 La propriété $(B)$ n'est pas vraie pour les droites tropicales dans le cas de deux points dépendants.
 
-Contre-exemple : Prenons les points $A(0, 0) "et" B(1, 0)$, qui sont dépendants. La droite tropicale de point central $C_1 (2, 0)$ passe par $A$ et par $B$, mais celle de point central $C_2 (3, 0)$ aussi. Il y a même une infinité de droites tropicales passant par ces deux points : toutes celles dont le point central est d'ordonnée nulle et d'abscisse supérieure à 1.
+Contre-exemple : Prenons les points $A(0, 0)$ et $B(1, 0)$, qui sont dépendants. La droite tropicale de point central $C(2, 0)$ passe par $A$ et par $B$, mais celle de point central $C'(3, 0)$ aussi. Il y a même une infinité de droites tropicales passant par ces deux points : toutes celles dont le point central est d'ordonnée nulle et d'abscisse supérieure à 1.
 
-#strike[
 ===
-On chercher à prouver $(B')$ : "Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+Prouvons tout d'abord $(B'')$ : TODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODOTODO
 
-Soient $A$ et $B$ deux points indépendants du plan.
-Par une translation $T$ on fait en sorte que $A(0, 0)$ et $B(x, y)$ avec $x in RR$ et $y in RR$. Comme $A$ et $B$ sont indépendants, $x != 0$, $y != 0$ et $x != y$.
+Soient $C$ et $C'$ deux centres non confondus de droite tropicale. On réalise une translation $T$ pour se ramener au cas où $C(0, 0)$ et $C'(x, y)$ avec $x, y in RR$.
 
-D'après $(A')$, il existe une droite tropicale de centre $C(alpha, beta)$ avec $alpha in RR$ et $beta in RR$ passant par $A$ et $B$. On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i + j$ formant cette droite tropicale.
+==== Si $C$ et $C'$ sont dépendants
+/ Si $x = 0$ : alors les droites tropicales de centre $C$ et $C'$ se coupent dans l'infinité de points dont l'abscisse est nulle et l'ordonnée inférieure à 0.
+/ Si $y = 0$ : alors les droites tropicales de centre $C$ et $C'$ se coupent dans l'infinité de points dont l'ordonnée est nulle et l'abscisse inférieure à 0.
+/ Si $x = y$ : alors les droites tropicales de centre $C$ et $C'$ se coupent dans l'infinité de points dont l'abscisse et l'ordonnée sont égales, positives et supérieures ou égales à $x$.
 
-On considère toutes les combinaisons de demi-droites auxquelles pourraient appartenir $A$ et $B$ afin de déterminer $C(alpha, beta)$.
+Nous avons prouvé que si $C$ et $C'$ sont dépendants alors les droites tropicales leur correspondant se coupent en une infinité de points qui sont tous dépendants les uns des autres.
 
-==== Cas impossibles :
-Si $A$ et $B$ appartiennent à la même demi-droite, alors ils sont dépendants ce qui n'est pas possible donc on peut éliminer les cas $(A in H "et" B in H)$, $(A in V "et" B in V)$ et $(A in D "et" B in D)$.
+==== Si $C$ et $C'$ sont indépendants
+On nomme respectivement $H$, $V$ et $D$ les demi-droites de direction $-i$, $-j$ et $i+j$ contituant la droite tropicale $C$. On fait de même pour $C'$ avec $H'$, $V'$ et $D'$.
 
-==== Cas génériques :
+Par définition, ($H$ et $H'$), ($V$ et $V'$) et ($D$ et $D'$) sont respectivement parallèles non confondus puisque qu'elles sont de même direction et que $C != C'$.
 
-/ Si $A in V "et" B in H$ : alors les contraintes sur $C$ sont $A in V => alpha = 0$ et $B in H => beta = y$. Cela donne $C(0, y)$.
-/ Si $A in D "et" B in H$ : alors les contraintes sur $C$ sont $A in D => alpha = beta$ et $B in H => beta = y$. Cela donne $C(y, y)$.
-/ Si $A in D "et" B in V$ : alors les contraintes sur $C$ sont $A in D => alpha = beta$ et $B in V => alpha = x$. Cela donne $C(x, x)$.
+/ Si $y > 0$ et $x < 0$ : alors $V'$ coupe $H$ en $I$. $H'$ et $V'$ ne peuvent pas couper $D$ puisque tous les points de $D$ sont d'ordonnée positive et ceux de $H'$ et $V'$ d'ordonnée strictement négative. $H'$ ne peut pas couper $V$ puisque tous les points de $H'$ sont d'ordonnée strictement positive. $D'$ ne peut pas couper $H$ ou $V$ puisque tous les points de $D'$ sont d'ordonnée strictement positives.
+De manière similaire :
+#footnote[Il s'agit des mêmes disjonctions qu'à la question 1b sur $(A')$]
+/ Si $y > 0$ et $x > 0$ et $y > x$ : alors $V'$ coupe $D$ en $I$. etc$...$
+/ Si $y < 0$ et $x < 0$ et $y > x$ : alors $D'$ coupe $H$ en $I$. etc$...$
+/ Si $y < 0$ et $x < 0$ et $y < x$ : alors $D'$ coupe $V$ en $I$. etc$...$
+/ Si $y > 0$ et $x > 0$ et $y < x$ : alors $H'$ coupe $D$ en $I$. etc$...$
+/ Si $y < 0$ et $x > 0$ : alors $H'$ coupe $V$ en $I$. etc$...$
 
-En inversant les roles de $A$ et $B$ on obtient également les contraintes suivantes : TODO
+Il n'y a aucune intersection autre que $I$ entre les demi-droites pour chacun des cas, donc deux droites tropicales indépendantes se croisent en un unique point.
 
-On remarque qu'à moins que $x = 0$, $y = 0$ ou $x = y$ ce qui n'est pas possible puisque $A$ et $B$ sont indépendants, il n'est pas possible que plusieurs droites donne le même centre.
+==== Conclusion
+Nous avons démontré $(B'')$, que deux droites tropicales se croisent en un unique point _si et seulement si_ les centres de ces droites tropicales sont indépendants.
+Deux droites tropicales se coupent en plus d'un point si et seulement si ces points sont dépendants.
+Donc si deux droites tropicales se coupent en un point :
+    alors un point
+si deux droites tropicales se coupent en plus d'un point :
+    alors ces points sont dépendants
 
-(ce qui n'est pas ce que l'on cherche à démontrer)
 
-]
+"Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+
+
+On cherche maintenant à prouver $(B')$ : "Par deux points quelconques indépendants du plan passe une et une seule droite tropicale."
+Nous savons d'après $(A')$ qu'il existe au minimum une droite tropicale passant par deux points quelconques du plan.
+
+Raisonnons par l'absurde, supposons qu'il existe plus qu'une droite tropicale passant par deux points indépendants. Il est alors _nécessaire_ qu'il existe deux droites tropicales qui se coupent en ces deux points indépendants. Or deux droites se coupent en plus d'un point _si et seulement si_ ces deux points sont dépendants, ce qui est en contradiction avec l'hypothèse de départ.
+
+Pour qu'il existe plus qu'une droite tropicale passant par deux points, il est _nécessaire_ qu'il existe deux droites tropicales se coupant en ces deux points au minimum.
+Or ces deux points sont alors nécessairement dépendants. Ce qui est 
+
+deux droites tropicales se coupent en deux points au minimum
+      <=> les centres de ces droites tropicales sont dépendants
+      <=> ces points sont dépendants
+
+"Il existe deux droites tropicales se coupant en deux point au minimum" est une condition nécessaire pour 
 
 ==
 On chercher à prouver $(C')$ : "Deux droites tropicales dont les points centraux sont indépendants se coupent toujours en un unique point."
@@ -218,7 +244,7 @@ Or on suppose $A$, $B$, $C$ indépendants donc chaque demi-droite possède _au p
 
 Nous savons donc que chaque droite tropicale possède deux intersections qui sont répartis entre ses trois demi-droites.
 Donc l'unique cas de figure possible est que chacune des trois intersections soit entre deux demi-droites dont la combinaisons de leur direction est inédite.
-#footnote[En effet, soient deux directions, pour avoir deux fois une intersection entre des demi-droites ayant ces directions, comme cela arrive à la figure de la question 4) a), il est necessaire que la troisième demi-droite formant les intersections (appartenant à $C_2$ dans l'exemple) possède deux intersections, ce qui est contraire à la conclusion que chaque demi-droite possède _au plus_ une intersection.]
+#footnote[En effet, soient deux directions, pour avoir deux fois une intersection entre des demi-droites ayant ces directions, comme cela arrive à la figure de la question 4) a), il est nécessaire que la troisième demi-droite formant les intersections (appartenant à $C_2$ dans l'exemple) possède deux intersections, ce qui est contraire à la conclusion que chaque demi-droite possède _au plus_ une intersection.]
 
 Or, l'intersection entre une demi-droite de direction $-i$ et $-j$ donne un angle de $90 degree$. $i + j$ et $-i$ donne $90 degree + 45 degree$. $i + j$ et $-j$ donne $90 degree + 45 degree$.
 
@@ -344,8 +370,8 @@ $
   x^2-5 = y   #equiv x^2 - y = 5                     #arrow "n'est pas une droite" \
 $
 
-Pour réaliser une droite tropicale, nous avons besoin d'une droite parallèle à l'abscisse et d'une parallèle à $x = y$, nous devons donc necessairement utiliser $y = 1$ et $x - y = 1$ et nous ne pourrons construire qu'une seule droite tropicale.
+Pour réaliser une droite tropicale, nous avons besoin d'une droite parallèle à l'abscisse et d'une parallèle à $x = y$, nous devons donc nécessairement utiliser $y = 1$ et $x - y = 1$ et nous ne pourrons construire qu'une seule droite tropicale.
 En combinant ces deux équations nous obtenons $x = 2$ comme point de croisement. La droite $x = 2$ que nous avons précedement déterminée passe par ce point et convient donc.
 
-Le lieu des coins de $Q_T$ est la droite tropicale de centre $C(2, 1)$
+Le lieu des coins de $Q_T$ est la droite tropicale de centre $C(2, 1)$.
 
