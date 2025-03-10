@@ -50,35 +50,19 @@ Autrement dit, $(a^2 + 5b^2, 2a b)$ est également une solution de $(E)$. Comme 
 ===
 $(a,b) in NN^2$ est solution de $(E)$ si et seulement si $a^2 = 1 + 5b^2$. Comme $b^2 >=0$ et $a >= 0$, on trouve que $(a,b)$ est solution si et seulement si $a = sqrt(1 + 5b^2)$. On pose donc $f(b) = sqrt(1 + 5b^2)$.
 
-TODO : script
-
-===
-Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un 'couple minimal' comme le couple avec le $b$ minimal.
-
-===
-Soit $(a, b)$ une solution de $(E)$ avec $a, b in NN^*$.
-On a donc :
-$
-  &(E) : a^2 - 5 b^2 = 1 \
-  &<=> a^2 = 1 + 5b^2 \
-  &<=> a = sqrt(1 + 5b^2)
-$
-car $a in NN$, $b in NN$ donc $a >= 0$, $1 + 5b^2 >= 0$.
-
-Une telle fonction est donc
-$
-  f: NN &-> RR_+ \
-  b &|-> sqrt(1 + 5b^2)
-$
 La solution est valide si et seulement si $f(b) in NN$.
 
-Voici un script Haskell qui détermine des couples solution :
-#code-from-file(folder-name, "calc_sol.hs")
+#block(breakable: false)[
+  Voici un script Haskell qui détermine des couples solution :
+  #code-from-file(folder-name, "calc_sol.hs")
+]
 
 On obtient :
 ```
 [4, 72, 1292, 23184, 416020, 7465176, 16692641, 24157817, 31622993, 48315634, 55780810, 63245986, 79938627, 87403803, 94868979, 111561620, 119026796, 126491972, 133957148, ..., 3077073806,3077489826, 3078836095, ...]
 ```
+===
+Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un "couple minimal" comme le couple avec le $b$ minimal.
 
 = L'ensemble #text($ZZ5 = {a + b sqrt(5) | a, b in ZZ}$, size: 0.8em)
 ==
