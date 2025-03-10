@@ -313,3 +313,4 @@ output
 .local-prog
 template.pdf
 *.mst
+**/local_lib
