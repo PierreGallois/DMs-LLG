@@ -7,6 +7,7 @@
   alpha: true
 )
 #let folder-name = "DM11-Equation-de-Pell-Fermat"
+#let ZZ5 = $ZZ[sqrt(5)]$
 
 = Premières propriétés
 
@@ -46,6 +47,23 @@ TODO : script
 Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un 'couple minimal' comme le couple avec le $b$ minimal.
 
 
-= L'ensemble #text($ZZ[sqrt(5)] = {a + b sqrt(5) | a, b in ZZ}$, size: 0.8em)
+= L'ensemble #text($ZZ5 = {a + b sqrt(5) | a, b in ZZ}$, size: 0.8em)
+==
+L'existence de cette écriture est assurée par la définition de $ZZ5$. Supposons que $x = a + b sqrt(5) = c + d sqrt(5)$ pour $(a,b), (c,d) in ZZ^2$. Si $b != d$, alors :
+$ a + b sqrt(5) &= c + d sqrt(5) \
+<==>sqrt(5) &= (c-a)/(b-d) $
+Ce qui contredit l'irrationalité de $sqrt(5)$. Donc $b=d$, et $a + b sqrt(5) = c + b sqrt(5)$, d'où $a=c$. Donc l'écriture $x = a + b sqrt(5)$ de chaque $x in ZZ5$ est unique.
 
+==
+Posons $x = a + b sqrt(5), y = c + d sqrt(5)$. Alors :
+$ overline(x + y) &= overline((a+c) + (b+d)sqrt(5)) \
+&= (a+c) - (b+d)sqrt(5) \
+&= (a - b sqrt(5)) + (c - d sqrt(5)) \
+&= overline(x) + overline(y) $
+Et similairement :
+$ overline(x y) &= overline((a c + 5b d) + (a d + b c) sqrt(5)) \
+&= a c + 5b d - (a d + b c) sqrt(5) \
+overline(x) dot overline(y) &= (a - b sqrt(5)) dot (c - d sqrt(5)) \
+&= (a c + 5 b d) - (a d + b c) sqrt(5) $
+D'où $overline(x y) = overline(x) dot overline(y)$.
 = Détermination d'un élément générateur de $UU$.
