@@ -22,26 +22,28 @@ Il suffit donc de chercher toutes les solutions $(x, y)$ positives qui sont dans
 == Nombre de solutions
 
 ===
-Soient $a,b in NN$.
-$
-  (a^2 - 5b^2)^2
-  &= (a^2 + 5b^2 - 10b^2)^2 \
-  &= (a^2 + 5b^2)^2 + (10b^2)^2 - 2(a^2 + 5b^2)(10b^2) \
-  &= (a^2 + 5b^2)^2 + 100b^4 - 20a^2b^2 - 100b^4 \
-  (a^2 - 5b^2)^2
-  &= (a^2 + 5b^2)^2 - 5(2a b)^2 #h(3em) #text(font:"Libertinus Serif", smallcaps[Brahmagupta])
-$
+Soient $a,b in NN$. L'identité de #smallcaps[Brahmagupta] est équivalente à :
+$ (a^2 + 5b^2)^2 - (a^2 - 5b^2)^2 = 5(2a b)^2 $
+En factorisant le côté gauche de l'équation, on trouve :
+$ (a^2 + 5b^2)^2 - (a^2 - 5b^2)^2 &= (a^2 + a^2 + 5b^2 - 5b^2)(a^2 - a^2 + 5b^2 + 5b^2) \
+&= (2a^2)(2 dot 5b^2) \
+&= 5(2a b)^2 $
+Ce qu'il fallait démontrer.
 
 ===
 Soient $(x, y) in NN^2$, tel que $(x, y) != (1, 0)$ et $(x, y)$ solution de $(E) : x^2 - 5 y^2 = 1.$
 
-D'après #smallcaps[Brahmagupta], on obtient $(E) <=> (x^2 + 5y^2)^2 - 5(2x y)^2 = 1$
+l'identité de #smallcaps[Brahmagupta] assure que :
+$ 1 = (a^2 + 5b^2) - 5(2a b)^2 $
+Autrement dit, $(a^2 + 5b^2, 2a b)$ est également une solution de $(E)$. Comme $a^2 + 5b^2 > a$ et $2 a b >b$, cette solution est également différente de $(a,b)$ et de tout autre solution $(x,y)$ où $x<a$, $y<b$. Il existe donc, en itérant ce procédé, une infinité de solutions de $(E)$ dans $NN^2$.
 
-Or en remplaçant $X := x^2 + 5y^2, Y := 2x y$, on a $X^2 - 5Y^2 = 1$
+===
+$(a,b) in NN^2$ est solution de $(E)$ si et seulement si $a^2 = 1 + 5b^2$. Comme $b^2 >=0$ et $a >= 0$, on trouve que $(a,b)$ est solution si et seulement si $a = sqrt(1 + 5b^2)$. On pose donc $f(b) = sqrt(1 + 5b^2)$.
 
-$(X, Y) in NN^2$ et $(X, Y) != (x, y)$ car $(x, y) != (1, 0)$. Cette nouvelle équation étant équivalente à $(E)$, $(X, Y)$ est donc une nouvelle solution de $(E)$.
+TODO : script
 
-On peut itérer cette opération autant de fois que l'on veut. Pour une solution $(x, y)$ de $(E)$, $(x^2 + 5y^2, 2x y)$ est aussi solution. S'il existe au moins une solution de $(E)$ différente de $(0, 1)$, alors il en existe une infinité.
+===
+Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un 'couple minimal' comme le couple avec le $b$ minimal.
 
 
 = L'ensemble #text($ZZ[sqrt(5)] = {a + b sqrt(5) | a, b in ZZ}$, size: 0.8em)
