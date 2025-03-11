@@ -1,5 +1,14 @@
 #import "./../templates/homework.typ": dm, code-from-file
 
+// On oublie ça marche pas car ils ont merge des trucs faux
+// #import "./local_lib/plotst/lib.typ": *
+// // La version de typst-plotting (plotst) disponible sur typst Universe est incompatible avec typst 3.13
+// // A executer depuis DMs-LLG:
+// // cd DM11-Equation-de-Pell-Fermat && mkdir local_lib && cd local_lib && mkdir plotst && cd plotst && git clone https://github.com/Pegacraft/typst-plotting.git . && rm .git/ -rf
+// // Si vous êtes sous windows, c'est votre faute débrouillez vous (ça peut se faire à la main ou facilement traduit)
+// // PUIS modifier _à la main_ les imports de la librairie pour que le dossier parent pour les liens relatifs soit DMs-LLG :-)
+// // conseil : utiliser la fonctionnalité copier le lien relatif de vscode en sélectionnant le fichier dans l'onglet explorer
+
 #show: dm.with(
   numero: 11,
   titre: [Équation de Pell-Fermat],
@@ -32,7 +41,7 @@ $ (a^2 + 5b^2)^2 - (a^2 - 5b^2)^2 &= (a^2 + a^2 + 5b^2 - 5b^2)(a^2 - a^2 + 5b^2 
 Ce qu'il fallait démontrer.
 
 ===
-Soient $(x, y) in NN^2$, tel que $(x, y) != (1, 0)$ et $(x, y)$ solution de $(E) : x^2 - 5 y^2 = 1.$
+Soit $(x, y) in NN^2$, tel que $(x, y) != (1, 0)$ et $(x, y)$ solution de $(E) : x^2 - 5 y^2 = 1$.
 
 l'identité de #smallcaps[Brahmagupta] assure que :
 $ 1 = (a^2 + 5b^2) - 5(2a b)^2 $
@@ -41,11 +50,19 @@ Autrement dit, $(a^2 + 5b^2, 2a b)$ est également une solution de $(E)$. Comme 
 ===
 $(a,b) in NN^2$ est solution de $(E)$ si et seulement si $a^2 = 1 + 5b^2$. Comme $b^2 >=0$ et $a >= 0$, on trouve que $(a,b)$ est solution si et seulement si $a = sqrt(1 + 5b^2)$. On pose donc $f(b) = sqrt(1 + 5b^2)$.
 
-TODO : script
+La solution est valide si et seulement si $f(b) in NN$.
 
+#block(breakable: false)[
+  Voici un script Haskell qui détermine des couples solution :
+  #code-from-file(folder-name, "calc_sol.hs")
+]
+
+On obtient :
+```
+[4, 72, 1292, 23184, 416020, 7465176, 16692641, 24157817, 31622993, 48315634, 55780810, 63245986, 79938627, 87403803, 94868979, 111561620, 119026796, 126491972, 133957148, ..., 3077073806,3077489826, 3078836095, ...]
+```
 ===
-Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un 'couple minimal' comme le couple avec le $b$ minimal.
-
+Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un "couple minimal" comme le couple avec le $b$ minimal.
 
 = L'ensemble #text($ZZ5 = {a + b sqrt(5) | a, b in ZZ}$, size: 0.8em)
 ==
