@@ -66,4 +66,56 @@ $ overline(x y) &= overline((a c + 5b d) + (a d + b c) sqrt(5)) \
 overline(x) dot overline(y) &= (a - b sqrt(5)) dot (c - d sqrt(5)) \
 &= (a c + 5 b d) - (a d + b c) sqrt(5) $
 D'où $overline(x y) = overline(x) dot overline(y)$.
+
+==
+Soient $x,y in ZZ5$
+
+===
+On a les égalités suivantes :
+$ N(x y) = x y overline(x y)  = x overline(x) y overline(y) = N(x)N(y)$
+
+===
+En développant pour $x = a + b sqrt(5)$:
+$ N(x) &= (a + b sqrt(5))(a - b sqrt(5)) \
+&= a^2 - 5b^2 $
+Ainsi $x$ a pour norme $N(x) = 1$ si et seulement si $(a,b) in ZZ^2$ est solution de l'équation $(E)$.
+
+== Groupe des unités $UU = {x in ZZ5, N(x) = 1}$
+
+===
+Soient $x,y in UU$. Alors $N(x y) = 1 dot 1 = 1$, et $UU$ est clos sous la multiplication héritée de $ZZ5$.
+
+===
+Soit $x = a + b sqrt(5) in UU$. Comme $N(0) = N(0 + 0 sqrt(5)) = 0$, $x != 0$. En passant au conjugué :
+$ 1 / (x) &= N(a + b sqrt(5)) / (a + b sqrt(5)) \
+&= (a^2 - 5b^2)/(a+b sqrt(5)) \
+&= a - b sqrt(5) = overline(x) $
+Comme $N(overline(x)) = N(x) = 1$, $overline(x)$ et donc $1/x in UU$. Donc $UU$ est un groupe sous la multiplication héritée de $ZZ5$ (l'associativité est héritée).
+
 = Détermination d'un élément générateur de $UU$.
+==
+Posons $EE = UU sect ]1; +oo[$. Soit $x = a + b sqrt(5) in EE$. 
+
+===
+D'une part, $x + 1/x > 0$ car $x > 1$. D'autre part, $x + 1/x = x + overline(x) = 2a$. Donc $2a > 0$ et $a >0$.
+
+===
+Comme $x > 1$, $x - 1/x > 0$. De plus $x + 1/x = x + overline(x) = 2b$. Donc $2b > 0$ et $b >0$.
+
+==
+Soit $(a_0, b_0) in NN^2$ la solution fondamentale de $(E)$. Comme $b_0 != 0$, $b_0 > 0$ et $a_0 = f(b_0) > 0$. De plus, comme $b_0$ est minimal et que $f$ est croissante sur $RR^+$, $a_0$ doit aussi être minimal. Donc $x_0 = a_0 + b_0 sqrt(5)$ est bien le plus petit élément de $EE$.
+
+==
+===
+La suite $(x_0^n)_(n in NN^*)$ est strictement croissante et diverge vers $+oo$ car $x_0 > 1$. Ainsi, pour chaque $y in RR^+$, il existe un unique $n in NN^*$ tel que $x_0^n <= y < x_0^(n+1)$ : en particulier, pour tout $x in EE$, il existe $n in NN^*$ tel que $x_0^n <= x < x_0^(n+1)$.
+
+===
+Soit $n in NN^*$ l'unique entier tel que $x_0^n <= x < x_0^(n+1)$. Supposons que $x != x_0$, soit $ x_0^n < x < x_0^(n+1) $
+En divisant par $x_0 ^ n > 0$, on trouve l'inégalité :
+$ 1 < x/(x_0^n) < x_0 $
+Comme $UU$ est un groupe et $x, x_0 in UU$, $x/(x_0^n) in UU$. De plus, le côté gauche assure que $x/(x_0^n) in EE$. Mais le côté droit contredit la minimalité de $x_0$ : on doit donc avoir $x = x_0$.
+
+==
+Par la question $bold(C.1)$, $EE$ est l'ensemble des $x = a + b sqrt(5) in UU$ pour $a,b in NN^*$. Ainsi, comme on peut passer $a$ et $b$ au négatif en restant dans $UU$, déterminer les éléments de $EE$ suffit à déterminer les éléments de $UU$, et donc ensuite les solutions dans $ZZ^2$ de $(E)$. Or tous les éléments de $EE$ sont générés par les puissances de $x_0$. 
+
+On peut donc prendre $x_0 = T O D O$, et calculer les "coordonnées" de ses puissances successives, ce qui permet de trouver toutes les solutions de $(E)$.
