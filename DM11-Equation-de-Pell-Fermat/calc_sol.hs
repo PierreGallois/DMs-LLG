@@ -1,16 +1,13 @@
 #!/usr/bin/env runhaskell
 
-f :: Double -> Double
 f b = sqrt (1 + 5 * b^2)
 
-test_to :: Double -> [(Double, Double)]
 test_to n = [ (a, b) | b <- [1..n]
                      , let a = f b
                      , isNat a
             ]
 
 -- Ignore after
-isNat :: Double -> Bool
 isNat n = n >= 0 && (n - fromIntegral (truncate n)) <= 10^^(-7)
 
 main :: IO()

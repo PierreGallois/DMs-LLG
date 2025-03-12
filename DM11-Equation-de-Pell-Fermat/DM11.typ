@@ -7,7 +7,7 @@
 // // cd DM11-Equation-de-Pell-Fermat && mkdir local_lib && cd local_lib && mkdir plotst && cd plotst && git clone https://github.com/Pegacraft/typst-plotting.git . && rm .git/ -rf
 // // Si vous êtes sous windows, c'est votre faute débrouillez vous (ça peut se faire à la main ou facilement traduit)
 // // PUIS modifier _à la main_ les imports de la librairie pour que le dossier parent pour les liens relatifs soit DMs-LLG :-)
-// // conseil : utiliser la fonctionnalité copier le lien relatif de vscode en sélectionnant le fichier dans l'onglet explorer
+// // conseil : utiliser la fonctionnalité copier le lien relatif de vscode en sélectionnant le fichier dans l'onglet explorer 
 
 #show: dm.with(
   numero: 11,
