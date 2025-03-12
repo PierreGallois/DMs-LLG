@@ -139,6 +139,6 @@ On peut donc prendre $x_0 = T O D O$, et calculer les "coordonnées" de ses puis
 
 = Annexes
 
-Dans l'éventualité où Haskell serait une langue inconnue pour vous :
+Afin de ne pas froisser les fans de python :
 
 #code-from-file(folder-name, "calc_sol.py")
