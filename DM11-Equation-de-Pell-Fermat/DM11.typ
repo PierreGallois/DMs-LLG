@@ -140,7 +140,9 @@ Par la question $bold(C.1)$, $EE$ est l'ensemble des $x = a + b sqrt(5) in UU$ p
 On peut donc prendre $x_0 = 9 + 4 sqrt(5)$ ($(9,4)$ est la solution fondamentale), et calculer les "coordonnées" de ses puissances successives, ce qui permet de trouver toutes les solutions de $(E)$.
 
 = Annexes
-
+==
 Afin de ne pas froisser les fans de python :
 
 #code-from-file(folder-name, "calc_sol.py")
+==
+Plus ($+$) de DMs d'arithmétique svp Madame #footnote[Un fan qui restera anonyme]
