@@ -61,6 +61,8 @@ On obtient :
 ```Haskell
 [(9, 4), (161, 72), (2889, 1292), (51841, 23184), (930249, 416020), (16692641, 7465176), (37325880, 16692641), (54018521, 24157817), (70711162, 31622993), ..., (686478381, 307002465), (703171022, 314467641), (723804261, 323695106), ...]
 ```
+La solution avec le plus petit $b$ est la solution fondamentale $(9,4)$, qui satisfait :
+$9^2 - 5 dot 4^2 = 81 - 80 = 1$
 ===
 Supposons que $(a, b)$ et $(a', b)$ soient solutions. Alors $a = f(b) = a'$ et $a=a'$. On peut donc bien choisir un "couple minimal" comme le couple avec le $b$ minimal.
 
@@ -135,7 +137,7 @@ Comme $UU$ est un groupe et $x, x_0 in UU$, $x/(x_0^n) in UU$. De plus, le côt�
 ==
 Par la question $bold(C.1)$, $EE$ est l'ensemble des $x = a + b sqrt(5) in UU$ pour $a,b in NN^*$. Ainsi, comme on peut passer $a$ et $b$ au négatif en restant dans $UU$, déterminer les éléments de $EE$ suffit à déterminer les éléments de $UU$, et donc ensuite les solutions dans $ZZ^2$ de $(E)$. Or tous les éléments de $EE$ sont générés par les puissances de $x_0$. 
 
-On peut donc prendre $x_0 = T O D O$, et calculer les "coordonnées" de ses puissances successives, ce qui permet de trouver toutes les solutions de $(E)$.
+On peut donc prendre $x_0 = 9 + 4 sqrt(5)$ ($(9,4)$ est la solution fondamentale), et calculer les "coordonnées" de ses puissances successives, ce qui permet de trouver toutes les solutions de $(E)$.
 
 = Annexes
 
