@@ -141,6 +141,6 @@ On peut donc prendre $x_0 = 9 + 4 sqrt(5)$ ($(9,4)$ est la solution fondamentale
 
 = Annexes
 
-Dans l'éventualité où Haskell serait une langue inconnue pour vous :
+Afin de ne pas froisser les fans de python :
 
 #code-from-file(folder-name, "calc_sol.py")
