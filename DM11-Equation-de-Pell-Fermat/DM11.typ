@@ -136,3 +136,9 @@ Comme $UU$ est un groupe et $x, x_0 in UU$, $x/(x_0^n) in UU$. De plus, le côt�
 Par la question $bold(C.1)$, $EE$ est l'ensemble des $x = a + b sqrt(5) in UU$ pour $a,b in NN^*$. Ainsi, comme on peut passer $a$ et $b$ au négatif en restant dans $UU$, déterminer les éléments de $EE$ suffit à déterminer les éléments de $UU$, et donc ensuite les solutions dans $ZZ^2$ de $(E)$. Or tous les éléments de $EE$ sont générés par les puissances de $x_0$. 
 
 On peut donc prendre $x_0 = T O D O$, et calculer les "coordonnées" de ses puissances successives, ce qui permet de trouver toutes les solutions de $(E)$.
+
+= Annexes
+
+Dans l'éventualité où Haskell serait une langue inconnue pour vous :
+
+#code-from-file(folder-name, "calc_sol.py")
