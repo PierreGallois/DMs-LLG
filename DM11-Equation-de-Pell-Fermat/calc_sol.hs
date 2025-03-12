@@ -4,7 +4,8 @@ f :: Double -> Double
 f b = sqrt (1 + 5 * b^2)
 
 test_to :: Double -> [(Double, Double)]
-test_to n = filter (isNat . image) (map (\e -> (e, f e)) [1..n])
+test_to n = filter (isNat . image) couples
+            where couples = map (\e -> (e, f e)) [1..n]
 
 -- Ignore after
 isNat :: Double -> Bool
