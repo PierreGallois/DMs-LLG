@@ -49,14 +49,145 @@ $m q^n p^(m-1) + n p^m q^(n-1) = (p^(m-1) q^(n-1))(m q + n p)$
 ===
 $Delta(10^n) = Delta(2^n times 5^n)$
 Comme 2 et 5 sont premiers et distincts, $n$ supérieur ou égal à 1, on a d'après la question précédente :
-$Delta(2^n times 5^n) = 7n(2^(n-1) times 5^(n-1))$
-$Delta(10^n)$ est donc un multiple de 7 avec $n >= 1$.
+$Delta(2^n times 5^n) = 7n(2^(n-1) times 5^(n-1))$.
+$Delta(10^n)$ est donc un multiple de 7 quand $n >= 1$.
 
 ==
 ===
+On cherche à montrer que si $n >= 2$ alors $Delta(n) = alpha_1 q_1 + alpha_2 q_2 + ... + alpha_k q_k$
+avec $q_(1...k) = n / p_(1...k)$.
 
+Soit $n >= 2$,
+On a donc, $n = p_1^alpha_1 p_2^alpha_2 ... p_k^alpha_k$ avec $p_(1...k)$ premier et $alpha_(1...k) in NN^*$.
+
+*Initialisations :*
+
+On suppose que $k = 1$, que $n = p_1^alpha_1$, alors $Delta(n) = alpha_1 p_1^(alpha_1 - 1)$
+Or $q_1 = n / p_1 = p_1^(alpha_1 - 1)$.
+
+Donc $Delta(n) = alpha_1 q_1$
+
+On suppose que $k = 2$, que $n = p_1^alpha_1 p_2^alpha_2$, alors d'après 2)a), $Delta(n) = p_2^alpha_2 alpha_1 p_1^(alpha_1 - 1) + p_1^alpha_1 alpha_2 p_2^(alpha_2 - 1) = (p_1^alpha_1 p_2^alpha_2)(alpha_1/p_1 + alpha_2/p_2) = alpha_1 q_1 + alpha_2 q_2$.
+
+*Hérédité :*
+
+On suppose que $Delta(m) = alpha'_1 q'_1 + alpha'_2 q'_2 + ... + alpha'_k q'_k$ pour $m$ pouvant s'écrire $m = p'_1^alpha'_1 times p'_2^alpha'_2 times ... times p'_k^alpha'_k$.
+
+On cherche à prouver que $Delta(n) = alpha_1 q_1 + alpha_2 q_2 + ... + alpha_k q_k + alpha_(k+1) q_(k+1)$ pour $n$ pouvant s'écrire sous la forme $n = p_1^alpha_1 times p_2^alpha_2 times ... times p_k^alpha_k times p_(k+1)^alpha_(k+1)$.
+
+$
+  Delta(n) &= Delta(p_1^alpha_1)(n / p_1^alpha_1) + p_1^alpha_1 Delta(n / (p_1^alpha_1)) "d'après 2)a)" \
+           &= alpha_1 (n p_1^(alpha_1 - 1) / p_1^alpha_1) + p_1^alpha_1 Delta(underbrace(p_2^alpha_2 times ... times p_k^alpha_k times p_(k+1)^alpha_(k+1), "est un nombre comme" m))
+$
+
+En faisant correspondre $m = n / p_1^alpha_1$, $p'_1 = p_2$, ..., $p'_k = p_(k+1)$ et $alpha'_1 = alpha_2$, ..., $alpha'_k = alpha_(k+1)$, on a
+
+$
+  Delta(n) &= alpha_1 q_1 + p_1^alpha_1 (alpha_2 m/p_2 + ... + alpha_k m/p_k + alpha_(k+1) m/p_(k+1)) \
+           &= alpha_1 q_1 + alpha_2 q_2 + ... + alpha_k q_k + alpha_(k+1) q_(k+1) 
+$
+
+Par principe de récurrence, nous avons prouvé que quelque soit $k in NN^*$ et par conséquent quelque soit $n in NN$ avec $n >= 2$,
+$Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$.
+
+===
+Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propriétés (2) et (3) :
+
+Pour $p$ premier, $p = p^1$ :
+$Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (1).
+
+Pour $a$ et $b$ des entiers naturels :
+$a = p_1^alpha_1 ... p_k^alpha_k$
+$b = p'_1^alpha'_1 ... p'_k'^alpha'_k'$
+D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' = alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'$
+
+...
+
+// a b (alpha_1/p_1 + ... + alpha_k/p_k + alpha'_1/p'_1 + ... + alpha'_k'/p'_k')
 
 - Partie B : Étude de quelques images d'entiers par la fonction $Delta$.
 
 ==
 ===
+
+#let integer-factorization(n) = {
+  assert(n >= 2)
+  let factorization = ()
+  while calc.rem(n, 2) == 0 {
+    factorization.push(2)
+    n /= 2
+  }
+  for d in range(3, calc.ceil(calc.sqrt(n)) + 1, step: 2) {
+    while calc.rem(n, d) == 0 {
+      factorization.push(int(d))
+      n /= d
+    }
+  }
+  if (n > 1) {
+    factorization.push(int(n))
+  }
+  factorization
+}
+
+#let to-power-form(factorization) = {
+  // les factorisations sont déjà triés
+  let power-fact = ()
+  let current-number = none
+  for number in factorization {
+    if current-number == none {
+      current-number = (number, 1)
+    } else if current-number.first() == number {
+      current-number = (number, current-number.last() + 1)
+    } else {
+      power-fact.push(current-number)
+      current-number = (number, 1)
+    }
+  }
+  power-fact.push(current-number)
+  power-fact
+  // renvoit sous la forme (nombre, puissance)
+}
+
+// (il faut bien que je m'amuse un peu)
+#let auto-generate-proof(n) = {
+  assert(n >= 2, message: "Je pourrais faire les cas 0 et 1 mais ça n'a pas trop d'intérêt")
+  let factorization = integer-factorization(n)
+  let power-fact = to-power-form(factorization)
+  [Calculons $Delta(#str(n))$. ]
+  let facteurs = power-fact.map(
+    ((number, power)) => if power == 1 {
+      $#number$
+    } else {
+      $#number^#power$
+    }).join($times$)
+  [On a $#n = #facteurs$]
+  [
+
+  ]
+  let delta-formule = power-fact.map(
+    ((number, power)) => if power == 1 {
+      $#n/#number$
+    } else {
+      $#power #n/#number$
+    }
+  ).join($+$)
+  let delta-calcule = power-fact.fold(
+    0,
+    (acc, (number, power)) => acc + (power * n / number)
+  )
+  [Donc d'après la formule, $Delta(#str(n)) = #delta-formule = #delta-calcule$]
+}
+
+#auto-generate-proof(12)
+
+#auto-generate-proof(56)
+
+#auto-generate-proof(1001)
+
+Preuves générés automatiquement (le script est sur Github).
+#footnote([Par exemple :
+#auto-generate-proof(987654321) #v(0.5em)])
+#footnote([(Pourquoi écrire les preuves à la main alors qu'on peut passer 5 fois plus de temps à coder le script qui le fait automatiquement ?)])
+
+
+
