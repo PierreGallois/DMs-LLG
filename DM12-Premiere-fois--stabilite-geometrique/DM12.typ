@@ -189,5 +189,47 @@ Preuves générés automatiquement (le script est sur Github).
 #auto-generate-proof(987654321) #v(0.5em)])
 #footnote([(Pourquoi écrire les preuves à la main alors qu'on peut passer 5 fois plus de temps à coder le script qui le fait automatiquement ?)])
 
+===
+Cherchons les solutions de $Delta(x) = 0$ avec $x in NN$.
 
+Si $x = 0$ ou $x = 1$ alors d'après (1), $Delta(x) = 0$.
 
+Si $x >= 2$, $Delta(x) = alpha_1 q_1 + ... + alpha_k q_k$. Or $alpha_(1...k) in NN^*$ et $q_(1...k) = x / p_(1...k)$, comme $x, p_(1...k) in NN^*$ alors $q_(1..k) > 0$. Ainsi comme somme de nombres tous strictements positifs, $Delta(x) > 0$.
+
+Les seules solutions à $forall x in NN, Delta(x) = 0$ sont ${0, 1}$.
+
+Nous avons également prouvé que pour tout $x >= 2$ alors $Delta(x) > 0$.
+
+===
+Cherchons les solutions de $Delta(x) = 1$ avec $x in NN$.
+
+Si $x = 0$ ou $x = 1$ alors d'après (1), $Delta(x) = 0$.
+
+Si $x$ est premier alors d'après (2), $Delta(x) = 1$.
+
+Si $x$ n'est pas premier et différent de 0 et 1, alors on peut écrire $x$ sous la forme $x = p times b$ avec $p$ premier et $b in NN, b >= 2$.
+En effet si $b = 0$ alors $x = 0$ et si $b = 1$ alors $x$ est premier, ce qui n'est pas autorisé. D'après la question précédente, $Delta(b) > 0$.
+On a donc :
+$
+  Delta(x) = Delta(p times b) = b Delta(p) + p Delta(b) = underbrace(b, >=2) + underbrace(p, >= 2) underbrace(Delta(b), >0)
+$
+Par addition d'un nombre supérieur ou égal à 2 avec un nombre strictement supérieur à 0, $Delta(x) > 2$.
+
+Les seules solutions à $forall x in NN, Delta(x) = 1$ sont donc l'ensemble des nombres premiers.
+
+===
+#strike[
+Cherchons à prouver que 2 ne possède pas d'antécédent par $Delta$.
+Soit $x in NN$.
+
+Si $x = 0$ ou $x = 1$ alors $Delta(x) = 0$.
+
+Si $x$ est premier alors $Delta(x) = 1$.
+
+Si $x >= 2$ et n'est pas premier, alors $Delta(x) = alpha_1 q_1 + ... + alpha_k q_k$, avec $alpha_(1...k) in NN^*$ et $q_(1...k) = x / p_(1...k)$. $p_(1...k)$ sont premiers.
+
+$p_(1...k)$ divise $x$ donc $x >= p_(1...k)$. Comme $x$ n'est pas premier, $x > p_(1...k)$ donc $q_(1...k) > 1$ soit $q_(1...k) >= 2$
+
+Toujours dans ce cas, supposons que $k = 1$, alors $Delta(x) = underbrace(alpha_1, >= 1) underbrace(q_1, >= 2)$.
+On a donc $Delta(x) >= 2$.
+Par récurrence immédiate et par somme de nombres strictements positifs on a $Delta(x) >= 2$ quelque soit $k$.]
