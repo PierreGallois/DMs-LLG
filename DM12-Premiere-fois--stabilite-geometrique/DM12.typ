@@ -233,3 +233,9 @@ $p_(1...k)$ divise $x$ donc $x >= p_(1...k)$. Comme $x$ n'est pas premier, $x > 
 Toujours dans ce cas, supposons que $k = 1$, alors $Delta(x) = underbrace(alpha_1, >= 1) underbrace(q_1, >= 2)$.
 On a donc $Delta(x) >= 2$.
 Par récurrence immédiate et par somme de nombres strictements positifs on a $Delta(x) >= 2$ quelque soit $k$.]
+
+===
+// toujours réutiliser le travail précédent :-)
+#auto-generate-proof(8)
+
+Nous avons donc $Delta(8) > 8$. La propriété $forall n in NN, Delta(n) <= n$ est donc fausse.
