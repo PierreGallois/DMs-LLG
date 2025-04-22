@@ -278,3 +278,15 @@ $
 
 - Partie C : Les points fixes de la fonction
 
+==
+===
+Soit $p$ un nombre premier. Soit $m$ un entier naturel multiple de $p^p$. Soit $n$ un entier naturel tel que $m = n p^p$.
+
+Considérons $Delta(p^p)$, d'après la question 1), $Delta(p^p) = p p^(p-1) = p^p$.
+$
+  Delta(m) = Delta(n p^p) = p^p Delta(n) + n Delta(p^p) = p^p (n + Delta(n))
+$
+
+Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
+
+===
