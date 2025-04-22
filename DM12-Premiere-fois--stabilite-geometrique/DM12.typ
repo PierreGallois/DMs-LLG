@@ -149,7 +149,7 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
 }
 
 // (il faut bien que je m'amuse un peu)
-#let auto-generate-proof(n) = {
+#let auto-generate-proof(n, break_line: true) = {
   assert(n >= 2, message: "Je pourrais faire les cas 0 et 1 mais ça n'a pas trop d'intérêt")
   let factorization = integer-factorization(n)
   let power-fact = to-power-form(factorization)
@@ -160,8 +160,8 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
     } else {
       $#number^#power$
     }).join($times$)
-  [On a $#n = #facteurs$]
-  [
+  [On a $#n = #facteurs$. ]
+  if break_line [
 
   ]
   let delta-formule = power-fact.map(
@@ -175,7 +175,7 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
     0,
     (acc, (number, power)) => acc + (power * n / number)
   )
-  [Donc d'après la formule, $Delta(#str(n)) = #delta-formule = #delta-calcule$]
+  [Donc d'après la formule, $Delta(#str(n)) = #delta-formule = #delta-calcule$.]
 }
 
 #auto-generate-proof(12)
@@ -186,7 +186,7 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
 
 Preuves générés automatiquement (le script est sur Github).
 #footnote([Par exemple :
-#auto-generate-proof(987654321) #v(0.5em)])
+#auto-generate-proof(987654321, break_line: false) #v(0.5em)])
 #footnote([(Pourquoi écrire les preuves à la main alors qu'on peut passer 5 fois plus de temps à coder le script qui le fait automatiquement ?)])
 
 ===
@@ -238,4 +238,43 @@ Par récurrence immédiate et par somme de nombres strictements positifs on a $D
 // toujours réutiliser le travail précédent :-)
 #auto-generate-proof(8)
 
-Nous avons donc $Delta(8) > 8$. La propriété $forall n in NN, Delta(n) <= n$ est donc fausse.
+Nous avons donc $Delta(8) > 8$.
+La propriété $forall n in NN, Delta(n) <= n$ est donc fausse.
+
+==
+===
+Montrons que pour deux nombres $p$ et $q$ premiers, $Delta(p times q) = p + q$.
+D'après les propriétés (1) et (2) :
+$
+  Delta(p times q) = q Delta(p) + p Delta(q) = p + q
+$
+===
+On considère les entiers naturels 3 et 4.
+
+#auto-generate-proof(3 * 4, break_line: false)
+
+Or $3 + 4 = 7 != 16$.
+La propriété $forall n, m in NN, Delta(n times m) = n + m$ est donc fausse.
+
+==
+===
+Considérons les nombres 2 et 3.
+Comme 2, 3 et $2 + 3 = 5$ sont premiers, on a :
+$
+  Delta(2 + 3) = 1 != Delta(2) + Delta(3) = 2
+$
+La propriété $forall n, m in NN, Delta(n + m) = Delta(n) + Delta(m)$ est donc fausse.
+
+===
+Soient $a, b in NN$ tel que $Delta(a + b) = Delta(a) + Delta(b)$.
+Soit $k in NN$.
+D'après la propriété (3) :
+$
+  Delta(k a + k b) &= Delta(k(a+b)) = Delta(k)(a+b) + k Delta(a+b) \
+  &= Delta(k) a + Delta(k) b + k Delta(a) + k Delta(b) \
+  &= (a Delta(k) + k Delta(a)) + (b Delta(k) + k Delta(b)) \
+  Delta(k a + k b) &= Delta(k a) + Delta(k b)
+$
+
+- Partie C : Les points fixes de la fonction
+
