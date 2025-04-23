@@ -290,3 +290,33 @@ $
 Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
 
 ===
+
+= Stabilité géométrique
+
+Dans tout le problème, soit $epsilon$ et $q$ deux réels strictements positifs.
+On considère une suite $(x_n)_(n in NN)$ de réels telle que $x_0 > 0$ et pour tout entier naturel $n$, $0 <= x_(n+1) - q x_n <= epsilon$.
+
+==
+Pour tout entier naturel $n$, on pose $b_n = x_(x+1) - q x_n$.
+Montrons que pour tout entier naturel $n >= 1$, on a $x_n = q^n x_0 + q^(n-1) b_0 + q^(n-2) b_1 + ... + q b_(n-2) + b_(n-1)$.
+
+#block(breakable: false, width: 100%)[
+$
+  q^n x_0 + q^(n-1) b_0 + q^(n-2) b_1 + ... + q b_(n-2) + b_(n-1) \
+$
+$
+  
+  &= q^n x_0 + sum_(k=0)^(n-1) q^(n-k-1) b_k \
+  &= q^n x_0 + sum_(k=0)^(n-1) q^(n-k-1) x_(k+1) - sum_(k=0)^(n-1) q^(n-k) x_k \
+  &#h(1.25em) "en posant" l = k +1 \
+  &= q^n x_0 + sum_(l=1)^n q^(n-l) x_l - sum_(k=0)^(n-1) q^(n-k) x_k \
+  &= q^n x_0 + x_n - q^n x_0 + underbrace(sum_(l=1)^n q^(n-l) x_l - sum_(k=1)^(n) q^(n-k) x_k, "s'annule") \
+  &= x_n
+$
+]
+
+Nous avons montré que pour tout entier naturel $n >= 1$, on a :
+$
+  x_n = q^n x_0 + q^(n-1) b_0 + q^(n-2) b_1 + ... + q b_(n-2) + b_(n-1)
+$
+
