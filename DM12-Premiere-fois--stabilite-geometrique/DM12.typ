@@ -2,15 +2,26 @@
 
 #show: dm.with(
   numero: 12,
-  titre: [Première fois. Stabilité géométrique],
+  titre: [
+    Première fois. Stabilité géométrique],
   sections: [Problème],
   alpha: false
 )
 #let folder-name = "DM12-Premiere-fois--stabilite-geometrique"
 
+#let sous-partie(content) = {
+  block(
+    width: 100%,
+    inset: 8pt,
+    radius: 7pt,
+    stroke: (paint: luma(75), thickness: 1pt, cap: "round", dash: "loosely-dashed"),
+    content
+  )
+}
+
 = Première fois.
 
-- Partie A : Une fonction agissant sur les nombres entiers naturels.
+#sous-partie[*Partie A :* Une fonction agissant sur les nombres entiers naturels.]
 
 Soit une fonction $Delta : NN -> NN$ possédant les propriétés :
 / $(1)$ : $Delta(0) = Delta(1) = 0$
@@ -156,7 +167,9 @@ $
 
 
 (Je sais que cette partie n'a quasiment aucune chance de rester dans le DM final mais je me suis bien amusé)
-- Partie B : Étude de quelques images d'entiers par la fonction $Delta$.
+
+
+#sous-partie[*Partie B :* Étude de quelques images d'entiers par la fonction $Delta$.]
 
 ==
 ===
@@ -342,7 +355,8 @@ $
   Delta(k a + k b) &= Delta(k a) + Delta(k b)
 $
 
-- Partie C : Les points fixes de la fonction
+
+#sous-partie[*Partie C :* Les points fixes de la fonction]
 
 ==
 ===
