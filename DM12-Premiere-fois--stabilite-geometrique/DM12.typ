@@ -222,28 +222,39 @@ Par addition d'un nombre supérieur ou égal à 2 avec un nombre strictement sup
 Les seules solutions à $forall x in NN, Delta(x) = 1$ sont donc l'ensemble des nombres premiers.
 
 ===
-#strike[
-Cherchons à prouver que 2 ne possède pas d'antécédent par $Delta$.
-Soit $x in NN$.
+Nous cherchons à prouver que 2 et 3 ne possèdent pas d'antécédent par $Delta$.
 
-Si $x = 0$ ou $x = 1$ alors $Delta(x) = 0$.
+Soit $n in NN$.
+Si $n = 0$ ou $n = 1$ alors $Delta(n) = 0$ et si $n$ est premier alors $Delta(n) = 1$.
+On considère donc tous les $n >=2$ et qui ne sont pas premier.
 
-Si $x$ est premier alors $Delta(x) = 1$.
+On peut alors réécrire $n$ comme le produit de deux entiers naturels différents de 0 et 1 : $n = a times b$.
+On a alors :
 
-Si $x >= 2$ et n'est pas premier, alors $Delta(x) = alpha_1 q_1 + ... + alpha_k q_k$, avec $alpha_(1...k) in NN^*$ et $q_(1...k) = x / p_(1...k)$. $p_(1...k)$ sont premiers.
+$
+  Delta(n) = Delta(a times b) = Delta(a) times underbrace(b, >= 2) + underbrace(a, >= 2) times Delta(b)
+$
 
-$p_(1...k)$ divise $x$ donc $x >= p_(1...k)$. Comme $x$ n'est pas premier, $x > p_(1...k)$ donc $q_(1...k) > 1$ soit $q_(1...k) >= 2$
+Or nous avons prouvé précédement que les seules solutions à l'équation $Delta(x) = 0$ sont 0 et 1.
+Comme $a$ et $b$ sont différents de 0 et 1 on a :
 
-Toujours dans ce cas, supposons que $k = 1$, alors $Delta(x) = underbrace(alpha_1, >= 1) underbrace(q_1, >= 2)$.
-On a donc $Delta(x) >= 2$.
-Par récurrence immédiate et par somme de nombres strictements positifs on a $Delta(x) >= 2$ quelque soit $k$.]
+$
+  Delta(n) = underbrace(Delta(a), >= 1) times underbrace(b, >= 2) + underbrace(a, >= 2) times underbrace(Delta(b), >= 1)
+$
+
+La valeur minimale de $Delta(n)$ est donc 4 quand $n$ est différent de 0 et 1 et n'est pas premier.
+
+Comme 0, 1 et les nombres premiers ne donnent ni 2 ni 3 par $Delta$ nous avons prouvé que 2 et 3 ne possèdent pas d'antécédents par $Delta$.
+
+Tout entier entier naturel $n$ n'a donc pas au moins un antécédent par $Delta$.
+#footnote[$Delta$ n'est pas surjective.]
 
 ===
 // toujours réutiliser le travail précédent :-)
 #auto-generate-proof(8)
 
 Nous avons donc $Delta(8) > 8$.
-La propriété $forall n in NN, Delta(n) <= n$ est donc fausse.
+La propriété $forall n in NN, Delta(n) <= n$ est fausse.
 
 ==
 ===
@@ -329,7 +340,7 @@ On suppose que $0 < q < 1$.
 
 ===
 
-#auto-generate-proof(4)
+// #auto-generate-proof(4)
 // #import "@preview/lilaq:0.2.0" as lq
 
 
