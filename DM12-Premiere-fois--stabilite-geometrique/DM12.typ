@@ -148,6 +148,13 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
   // renvoit sous la forme (nombre, puissance)
 }
 
+#let calculate-from-power-form(n, power-form) = {
+  return power-form.fold(
+    0,
+    (acc, (number, power)) => acc + (power * n / number)
+  )
+}
+
 // (il faut bien que je m'amuse un peu)
 #let auto-generate-proof(n, break_line: true) = {
   assert(n >= 2, message: "Je pourrais faire les cas 0 et 1 mais ça n'a pas trop d'intérêt")
@@ -171,10 +178,7 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
       $#power #n/#number$
     }
   ).join($+$)
-  let delta-calcule = power-fact.fold(
-    0,
-    (acc, (number, power)) => acc + (power * n / number)
-  )
+  let delta-calcule = calculate-from-power-form(n, power-fact)
   [Donc d'après la formule, $Delta(#str(n)) = #delta-formule = #delta-calcule$.]
 }
 
@@ -320,3 +324,20 @@ $
   x_n = q^n x_0 + q^(n-1) b_0 + q^(n-2) b_1 + ... + q b_(n-2) + b_(n-1)
 $
 
+==
+On suppose que $0 < q < 1$.
+
+===
+
+#auto-generate-proof(4)
+// #import "@preview/lilaq:0.2.0" as lq
+
+
+// #let xs = array.range(2, 100000)
+// #lq.diagram(
+//   width: 15cm,
+//   height: 10cm,
+//   ylim: (1, 5),
+//   lq.plot(xs, xs.map(n => calculate-from-power-form(n, to-power-form(integer-factorization(n)))), stroke: none),
+//   //lq.plot(xs, xs.map(x => x/calc.pow(calc.e, 2)))
+// )
