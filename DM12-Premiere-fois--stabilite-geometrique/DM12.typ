@@ -210,7 +210,6 @@ Si $x = 0$ ou $x = 1$ alors d'après (1), $Delta(x) = 0$.
 
 Si $x >= 2$, $Delta(x) = alpha_1 q_1 + ... + alpha_k q_k$. Or $alpha_(1...k) in NN^*$ et $q_(1...k) = x / p_(1...k)$, comme $x, p_(1...k) in NN^*$ alors $q_(1..k) > 0$. Ainsi comme somme de nombres tous strictements positifs, $Delta(x) > 0$.
 
-// "Pour tout" inutile et moyen imo
 Les seules solutions à $forall x in NN, Delta(x) = 0$ sont ${0, 1}$.
 
 Nous avons également prouvé que pour tout $x >= 2$ alors $Delta(x) > 0$.
@@ -329,8 +328,7 @@ $
   &<=> alpha_1 / p_1 + ... + alpha_k / p_k = 1 \
 $
 
-Pour tout $i in [| 1, k |]$ :
-- Si $alpha_i = p_i$ :
+- Si pour tout $i in [| 1, k |]$, $alpha_i = p_i$ :
 
 $
   alpha_1 / p_1 + ... + alpha_k / p_k = 1 <=> underbrace(1 + ... + 1, k "fois") = 1 <=> k = 1
@@ -339,14 +337,14 @@ D'où $alpha_1 / p_1 = 1 <=> alpha_1 = p_1$
 
 Donc sont solution ${p^p | p in NN "et" p "premier"}$.
 
-- Si $alpha_i > p_i$ :
+- S'il existe au moins un $i in [| 1, k |]$ tel que $alpha_i > p_i$ :
 $
-  underbrace(alpha_1 / p_1, > 1) + ... + underbrace(alpha_k / p_k, > 1) = 1
+  alpha_1 / p_1 + ... + underbrace(alpha_i / p_i, > 1) + ... + alpha_k / p_k, > 1 = 1
 $
 
-Par somme de nombres tous strictements supérieurs à 1, cette expression n'est jamais vrai quelque soit la valeur de $alpha_(1...k)$, $p_(1...k)$ y compris si $k = 1$.
+Par somme de nombres tous positifs avec un terme strictement supérieur à 1, cette expression n'est jamais vrai quelque soit la valeur de $alpha_(1...k)$, $p_(1...k)$ y compris si $k = 1$.
 
-- Si $alpha_i < p_i$ :
+- Si pour tout $i in [| 1, k |]$, $alpha_i < p_i$ :
 
 Alors d'après la question précédente on a : $Delta(x) = p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1)$
 D'où
