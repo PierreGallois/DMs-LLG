@@ -315,7 +315,7 @@ $
 
 Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
 
-===
+==
 Résolvons $Delta(x) = x$ avec $x in NN$.
 
 Si $x = 0$ alors $Delta(0) = 0$. 0 est solution.
@@ -325,7 +325,7 @@ On considère maintenant $x >= 2$.
 On a donc :
 $
   Delta(x) = x &<=> alpha_1 x / p_1 + ... + alpha_k x / p_k = x \
-  &<=> alpha_1 / p_1 + ... + alpha_k / p_k = 1 \
+  &<=> alpha_1 / p_1 + ... + alpha_k / p_k = 1 #h(1em) (*)\
 $
 
 - S'il existe au moins un $i in [| 1, k |]$ tel que $alpha_i >= p_i$ :
