@@ -328,26 +328,28 @@ $
   &<=> alpha_1 / p_1 + ... + alpha_k / p_k = 1 \
 $
 
-- Si pour tout $i in [| 1, k |]$, $alpha_i = p_i$ :
-
+- S'il existe au moins un $i in [| 1, k |]$ tel que $alpha_i >= p_i$ :
+Si $k > 1$ alors :
 $
-  alpha_1 / p_1 + ... + alpha_k / p_k = 1 <=> underbrace(1 + ... + 1, k "fois") = 1 <=> k = 1
-$
-D'où $alpha_1 / p_1 = 1 <=> alpha_1 = p_1$
-
-Donc sont solution ${p^p | p in NN "et" p "premier"}$.
-
-- S'il existe au moins un $i in [| 1, k |]$ tel que $alpha_i > p_i$ :
-$
-  alpha_1 / p_1 + ... + underbrace(alpha_i / p_i, > 1) + ... + alpha_k / p_k, > 1 = 1
+  underbrace(alpha_1 / p_1, > 0) + ... + underbrace(alpha_i / p_i, >= 1) + ... + alpha_k / p_k  = 1
 $
 
-Par somme de nombres tous positifs avec un terme strictement supérieur à 1, cette expression n'est jamais vrai quelque soit la valeur de $alpha_(1...k)$, $p_(1...k)$ y compris si $k = 1$.
+Par somme de nombres tous strictements positifs avec un terme supérieur à 1, cette expression n'est jamais vrai quelque soient les valeurs de $alpha_(1...k)$ et $p_(1...k)$ respectant les conditions.
+
+Si $k = 1$ alors $i = 1$ d'où $alpha_1 >= p_1$ et :
+
+$
+  underbrace(alpha_1 / p_1, >= 1) = 1
+$
+
+Si $alpha_1 > p_1 <=> alpha_1 / p_1 > 1$ alors la condition n'est pas remplie.
+
+Sinon on a $alpha_1 = p_1$ donc sont solution ${p^p | p in NN "et" p "premier"}$.
 
 - Si pour tout $i in [| 1, k |]$, $alpha_i < p_i$ :
 
 Alors d'après la question précédente on a : $Delta(x) = p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1)$
-D'où
+d'où
 $
   Delta(x) = alpha_1 x / p_1 + ... + alpha_k x / p_k =  p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1) \
   <=> alpha_1 / p_1 + ... + alpha_k / p_k =  1 / (p_1 times ... times p_k)
