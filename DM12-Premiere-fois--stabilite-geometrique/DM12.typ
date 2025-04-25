@@ -2,15 +2,26 @@
 
 #show: dm.with(
   numero: 12,
-  titre: [Première fois. Stabilité géométrique],
+  titre: [
+    Première fois. Stabilité géométrique],
   sections: [Problème],
   alpha: false
 )
 #let folder-name = "DM12-Premiere-fois--stabilite-geometrique"
 
+#let sous-partie(content) = {
+  block(
+    width: 100%,
+    inset: 8pt,
+    radius: 7pt,
+    stroke: (paint: luma(75), thickness: 1pt, cap: "round", dash: "loosely-dashed"),
+    content
+  )
+}
+
 = Première fois.
 
-- Partie A : Une fonction agissant sur les nombres entiers naturels.
+#sous-partie[*Partie A :* Une fonction agissant sur les nombres entiers naturels.]
 
 Soit une fonction $Delta : NN -> NN$ possédant les propriétés :
 / $(1)$ : $Delta(0) = Delta(1) = 0$
@@ -94,6 +105,7 @@ $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$.
 ===
 Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propriétés (2) et (3) :
 
+(1)
 Pour $p$ premier, $p = p^1$ :
 $Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (1).
 
@@ -101,12 +113,9 @@ Pour $a$ et $b$ des entiers naturels :
 $a = p_1^alpha_1 ... p_k^alpha_k$
 $b = p'_1^alpha'_1 ... p'_k'^alpha'_k'$
 D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' = alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'$
-
 ...
 
-// a b (alpha_1/p_1 + ... + alpha_k/p_k + alpha'_1/p'_1 + ... + alpha'_k'/p'_k')
-
-- Partie B : Étude de quelques images d'entiers par la fonction $Delta$.
+#sous-partie[*Partie B :* Étude de quelques images d'entiers par la fonction $Delta$.]
 
 ==
 ===
@@ -293,7 +302,8 @@ $
   Delta(k a + k b) &= Delta(k a) + Delta(k b)
 $
 
-- Partie C : Les points fixes de la fonction
+
+#sous-partie[*Partie C :* Les points fixes de la fonction]
 
 ==
 ===
