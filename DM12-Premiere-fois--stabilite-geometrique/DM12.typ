@@ -65,6 +65,7 @@ $Delta(10^n)$ est donc un multiple de 7 quand $n >= 1$.
 
 ==
 ===
+// Notation raciste alert
 On cherche à montrer que si $n >= 2$ alors $Delta(n) = alpha_1 q_1 + alpha_2 q_2 + ... + alpha_k q_k$
 avec $q_(1...k) = n / p_(1...k)$.
 
@@ -197,7 +198,7 @@ D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 
 
 #auto-generate-proof(1001)
 
-Preuves générés automatiquement (le script est sur Github).
+Preuves générées automatiquement (le script est sur Github).
 #footnote([Par exemple :
 #auto-generate-proof(987654321, break_line: false) #v(0.5em)])
 #footnote([(Pourquoi écrire les preuves à la main alors qu'on peut passer 5 fois plus de temps à coder le script qui le fait automatiquement ?)])
@@ -209,6 +210,7 @@ Si $x = 0$ ou $x = 1$ alors d'après (1), $Delta(x) = 0$.
 
 Si $x >= 2$, $Delta(x) = alpha_1 q_1 + ... + alpha_k q_k$. Or $alpha_(1...k) in NN^*$ et $q_(1...k) = x / p_(1...k)$, comme $x, p_(1...k) in NN^*$ alors $q_(1..k) > 0$. Ainsi comme somme de nombres tous strictements positifs, $Delta(x) > 0$.
 
+// "Pour tout" inutile et moyen imo
 Les seules solutions à $forall x in NN, Delta(x) = 0$ sont ${0, 1}$.
 
 Nous avons également prouvé que pour tout $x >= 2$ alors $Delta(x) > 0$.
@@ -235,7 +237,7 @@ Nous cherchons à prouver que 2 et 3 ne possèdent pas d'antécédent par $Delta
 
 Soit $n in NN$.
 Si $n = 0$ ou $n = 1$ alors $Delta(n) = 0$ et si $n$ est premier alors $Delta(n) = 1$.
-On considère donc tous les $n >=2$ et qui ne sont pas premier.
+On considère donc tous les $n >=2$ et qui ne sont pas premiers.
 
 On peut alors réécrire $n$ comme le produit de deux entiers naturels différents de 0 et 1 : $n = a times b$.
 On a alors :
