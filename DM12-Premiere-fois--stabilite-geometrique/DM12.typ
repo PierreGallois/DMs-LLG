@@ -108,66 +108,11 @@ Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propri
 Pour $p$ premier, $p = p^1$ :
 $Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (1).
 
-// Pour $a$ et $b$ des entiers naturels :
-// $a = p_1^alpha_1 ... p_k^alpha_k$
-// $b = p'_1^alpha'_1 ... p'_k'^alpha'_k'$
-// D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' = alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'$
-
-// Considérer ceci comme une preuve de mon épuisement avec les notations à rallonge
-// et un essai de formalisation
-(2)
-Introduisons une notation alternative.
-
-Soient $a, b, c in NN$ tel que $c = a times b$.
-
-$
-  II = {(p, alpha) in NN^(*2), p "premier"} "tel que" \
-  forall (p, alpha) in II, forall (p', alpha') in II, p = p' => alpha = alpha'
-$
-
-On prend $II$ tel que
-$
-  c = product_((p, alpha) in II) p^alpha
-$
-
-$
-  AA = {(p, alpha) in NN^(*2), p "premier"} \
-  BB = {(p, alpha) in NN^(*2), p "premier"}
-$
-avec les conditions suivantes :
-$
-  forall (p, alpha) in AA, forall (p', alpha') in AA, p = p' => alpha = alpha' \
-  forall (p, alpha) in BB, forall (p', alpha') in BB, p = p' => alpha = alpha' \
-  (A) : {p in NN | (p, \_) in AA union BB} = {p in NN | (p, \_) in II} \
-  (B) : forall (p, alpha) in II, forall (p_a, alpha_a) in AA, forall (p_b, alpha_b) in BB, p = p_a = p_b => alpha_a + alpha_b = alpha
-$
-$
-  a = product_((p, alpha) in AA) p^alpha \
-  b = product_((p, alpha) in BB) p^alpha
-$
-
-Il est logique par association que :
-$
-  Delta(a) = sum_((p, alpha) in AA) alpha a / p #h(3em)
-  Delta(b) = sum_((p, alpha) in BB) alpha b / p #h(3em)
-  Delta(c) = sum_((p, alpha) in II) alpha c / p \
-$
-
-$
-  Delta(a) times b + a times Delta(b) \
-  = b (sum_((p, alpha) in AA) alpha a / p) + a(sum_((p, alpha) in BB) alpha b / p) \
-  = c (sum_((p, alpha) in AA) alpha / p + sum_((p, alpha) in BB) alpha / p) \
-$
-Nous savons avec $(A)$ que l'union des $p$ de $AA$ et $BB$ donne bien tous les $p$ de $II$. De plus avec $(B)$ nous savons pour les cas qui le demandent que la somme des $alpha$ correspond au $alpha$ de $II$.
-Donc on obtient en developpant les sommes :
-
-$
-  = c sum_((p, alpha) in II) alpha / p = Delta(c)
-$
-
-
-(Je sais que cette partie n'a quasiment aucune chance de rester dans le DM final mais je me suis bien amusé)
-
+Pour $a$ et $b$ des entiers naturels :
+$a = p_1^alpha_1 ... p_k^alpha_k$
+$b = p'_1^alpha'_1 ... p'_k'^alpha'_k'$
+D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' = alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'$
+...
 
 #sous-partie[*Partie B :* Étude de quelques images d'entiers par la fonction $Delta$.]
 
