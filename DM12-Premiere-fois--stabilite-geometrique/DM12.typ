@@ -315,6 +315,55 @@ $
 Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
 
 ===
+Résolvons $Delta(x) = x$ avec $x in NN$.
+
+Si $x = 0$ alors $Delta(0) = 0$. 0 est solution.
+Si $x = 1$ alors $Delta(1) = 0$.
+
+On considère maintenant $x >= 2$.
+On a donc :
+$
+  Delta(x) = x &<=> alpha_1 x / p_1 + ... + alpha_k x / p_k = x \
+  &<=> alpha_1 / p_1 + ... + alpha_k / p_k = 1 \
+$
+
+Pour tout $i in [| 1, k |]$ :
+- Si $alpha_i = p_i$ :
+
+$
+  alpha_1 / p_1 + ... + alpha_k / p_k = 1 <=> underbrace(1 + ... + 1, k "fois") = 1 <=> k = 1
+$
+D'où $alpha_1 / p_1 = 1 <=> alpha_1 = p_1$
+
+Donc sont solution ${p^p | p in NN "et" p "premier"}$.
+
+- Si $alpha_i > p_i$ :
+$
+  underbrace(alpha_1 / p_1, > 1) + ... + underbrace(alpha_k / p_k, > 1) = 1
+$
+
+Par somme de nombres tous strictements supérieurs à 1, cette expression n'est jamais vrai quelque soit la valeur de $alpha_(1...k)$, $p_(1...k)$ y compris si $k = 1$.
+
+- Si $alpha_i < p_i$ :
+
+Alors d'après la question précédente on a : $Delta(x) = p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1)$
+D'où
+$
+  Delta(x) = alpha_1 x / p_1 + ... + alpha_k x / p_k =  p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1) \
+  <=> alpha_1 / p_1 + ... + alpha_k / p_k =  1 / (p_1 times ... times p_k)
+$
+Or nous avons obtenu précédement que $alpha_1 / p_1 + ... + alpha_k / p_k = 1$ donc
+$
+  1 / (p_1 times ... times p_k) = 1 \
+  <=> underbrace(p_1, >= 2) times ... times underbrace(p_k, >= 2) = 1
+$
+
+Ce qui est impossible, y compris si $k = 1$, puisque $p_(1...k)$ est premier donc supérieur ou égal à 2.
+
+Nous avons démontré que les seules solutions à $Delta(x) = x$ sont :
+$
+  cal(S) = {p^p | p in NN "et" p "premier"} union {0}
+$
 
 = Stabilité géométrique
 
@@ -362,3 +411,6 @@ On suppose que $0 < q < 1$.
 //   lq.plot(xs, xs.map(n => calculate-from-power-form(n, to-power-form(integer-factorization(n)))), stroke: none),
 //   //lq.plot(xs, xs.map(x => x/calc.pow(calc.e, 2)))
 // )
+
+// bruteforce 1C8
+//#array.range(2, 10).map( n => (n, calculate-from-power-form(n, to-power-form(integer-factorization(n))))).filter(((n, c)) => n == c)
