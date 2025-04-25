@@ -50,7 +50,7 @@ $
 
 Par principe de récurrence, $Delta(p^n) = n p^(n-1)$.
 
-On remarque par ailleur que $Delta(p^p) = p p^(n-1) = p^p$.
+On remarque par ailleurs que $Delta(p^p) = p p^(n-1) = p^p$.
 
 ==
 ===
