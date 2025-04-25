@@ -315,6 +315,15 @@ $
 
 Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
 
+===
+Proposition : disjoncter sur p^p | m
+Analyse : Soit $m in NN, m >= 2$ tel que $Delta (m) = m$. 
+Supposons d'abord qu'il existe $p$ premier tel que $p^p | m$, et notons $m = n p^p$. Alors $ Delta(m) = m = n p^p = n p^p + p^p Delta(n) $
+
+Donc $p^p Delta(n) = 0$ et $Delta(n) = 0$, d'où $n=0$ soit $m=0$ ou $n=1$, soit $m = p^p$.
+Supposons que pour tout $p | m$, $v_p (m) < p$. Choisissons $p_1$ l'un de ces facteurs premiers, d'exposant $alpha_1$. Par la formule, $ Delta(m) equiv alpha_1 m /p_1  [p_1^alpha_1] $
+Mais comme $alpha_1$ ne peut être divisible par $p_1$, étant plus petit, $Delta(m)$ n'est pas divisible par $p_1^alpha_1$ : ainsi, $Delta(m) != m$.
+
 ==
 Résolvons $Delta(x) = x$ avec $x in NN$.
 
