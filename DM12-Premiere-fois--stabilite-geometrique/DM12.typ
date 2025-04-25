@@ -318,13 +318,12 @@ $
 Nous avons prouvé que $Delta(m)$ est un multiple de $p^p$.
 
 ===
-Proposition : disjoncter sur p^p | m
-Analyse : Soit $m in NN, m >= 2$ tel que $Delta (m) = m$. 
-Supposons d'abord qu'il existe $p$ premier tel que $p^p | m$, et notons $m = n p^p$. Alors $ Delta(m) = m = n p^p = n p^p + p^p Delta(n) $
+Soit $m in NN, m >= 2$. Supposons que $p^alpha | m$ pour $p$ premier et $1 <= alpha < p$ (avec $alpha$ maximal). Notons $m = n p^alpha$ avec $n in NN$ non divisible par $p$. Alors
+$ Delta(m) &= n Delta(p^alpha) + p^(alpha-1) Delta(n) \
+&= n p^(alpha - 1) + p^alpha Delta(n) \
+&= p^(alpha - 1)(n + p Delta(n)) $
 
-Donc $p^p Delta(n) = 0$ et $Delta(n) = 0$, d'où $n=0$ soit $m=0$ ou $n=1$, soit $m = p^p$.
-Supposons que pour tout $p | m$, $v_p (m) < p$. Choisissons $p_1$ l'un de ces facteurs premiers, d'exposant $alpha_1$. Par la formule, $ Delta(m) equiv alpha_1 m /p_1  [p_1^alpha_1] $
-Mais comme $alpha_1$ ne peut être divisible par $p_1$, étant plus petit, $Delta(m)$ n'est pas divisible par $p_1^alpha_1$ : ainsi, $Delta(m) != m$.
+Donc $p^(alpha - 1)$ divise $Delta(m)$. Cependant, comme $n$ n'est pas divisible par $p$, $n + p Delta(n)$ non plus et $Delta(m)$ n'est pas divisible par $p^alpha$. La puissance de $p$ dans la décomposition de $Delta(m)$ est donc bien $alpha - 1$.
 
 ==
 Résolvons $Delta(x) = x$ avec $x in NN$.
@@ -355,25 +354,13 @@ $
 
 Si $alpha_1 > p_1 <=> alpha_1 / p_1 > 1$ alors la condition n'est pas remplie.
 
-Sinon on a $alpha_1 = p_1$. Comme nous avons déjà prouvé que $Delta(p^p) = p^p$ à la question 1), sont solution ${p^p | p in NN "et" p "premier"}$.
+Donc on a $alpha_1 = p_1$. Comme nous avons déjà prouvé que $Delta(p^p) = p^p$ à la question 1), sont solution ${p^p | p in NN "et" p "premier"}$.
 
 - Si pour tout $i in [| 1, k |]$, $alpha_i < p_i$ :
 
-Alors d'après la question précédente on a : $Delta(x) = p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1)$
-d'où
-$
-  Delta(x) = alpha_1 x / p_1 + ... + alpha_k x / p_k =  p_1^(alpha_1 - 1) times ... times p_k^(alpha_k - 1) \
-  <=> alpha_1 / p_1 + ... + alpha_k / p_k =  1 / (p_1 times ... times p_k)
-$
-Or nous avons obtenu précédement que $alpha_1 / p_1 + ... + alpha_k / p_k = 1$ donc
-$
-  1 / (p_1 times ... times p_k) = 1 \
-  <=> underbrace(p_1, >= 2) times ... times underbrace(p_k, >= 2) = 1
-$
+A fortiori, la puissance de $p_1$ dans la décomposition de $m$ est $1 <= alpha_1 < p_1$. Par l'exercice précédent, la puissance de $p_1$ dans $Delta(m)$ est donc de $alpha_1 - 1$ exactement. Mais $Delta(m) = m$, et c'est une contradiction. Ce cas est donc impossible.
 
-Ce qui est impossible, y compris si $k = 1$, puisque $p_(1...k)$ est premier donc supérieur ou égal à 2.
-
-Nous avons démontré que les seules solutions à $Delta(x) = x$ sont :
+Nous avons donc démontré que les seules solutions à $Delta(x) = x$ sont :
 $
   cal(S) = {p^p | p in NN "et" p "premier"} union {0}
 $
