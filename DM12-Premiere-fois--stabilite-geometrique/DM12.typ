@@ -50,6 +50,8 @@ $
 
 Par principe de récurrence, $Delta(p^n) = n p^(n-1)$.
 
+On remarque par ailleur que $Delta(p^p) = p p^(n-1) = p^p$.
+
 ==
 ===
 Soit $p$ et $q$ des nombres premiers distincts, $m$ et $n$ des entiers naturels supérieurs ou égaux à 1.
@@ -353,7 +355,7 @@ $
 
 Si $alpha_1 > p_1 <=> alpha_1 / p_1 > 1$ alors la condition n'est pas remplie.
 
-Sinon on a $alpha_1 = p_1$ donc sont solution ${p^p | p in NN "et" p "premier"}$.
+Sinon on a $alpha_1 = p_1$. Comme nous avons déjà prouvé que $Delta(p^p) = p^p$ à la question 1), sont solution ${p^p | p in NN "et" p "premier"}$.
 
 - Si pour tout $i in [| 1, k |]$, $alpha_i < p_i$ :
 
