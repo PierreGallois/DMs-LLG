@@ -15,12 +15,13 @@ if [ -z "$diffs" ]; then
     exit 0
 fi
 
-echo "Found modified typst files:"
-echo $diffs
+arr=($diffs)
+echo "Found ${#arr[*]} modified typst files."
 
 echo "Building these files..."
 for file in $diffs
 do
+    echo "- building $file..."
     typst compile "$root/$file" --root $root
     git add "$root/${file%.*}.pdf"
 done
