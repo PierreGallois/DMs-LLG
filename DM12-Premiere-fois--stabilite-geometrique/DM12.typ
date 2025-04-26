@@ -3,7 +3,7 @@
 #show: dm.with(
   numero: 12,
   titre: [
-    Première fois. Stabilité géométrique],
+    Première fois. \ Stabilité géométrique.],
   sections: [Problème],
   alpha: false
 )
@@ -80,7 +80,7 @@ On suppose que $k = 1$, que $n = p_1^alpha_1$, alors $Delta(n) = alpha_1 p_1^(al
 Or $q_1 = n / p_1 = p_1^(alpha_1 - 1)$.
 
 Donc $Delta(n) = alpha_1 q_1$
-
+Delta(a times b) &= 
 On suppose que $k = 2$, que $n = p_1^alpha_1 p_2^alpha_2$, alors d'après 2)a), $Delta(n) = p_2^alpha_2 alpha_1 p_1^(alpha_1 - 1) + p_1^alpha_1 alpha_2 p_2^(alpha_2 - 1) = (p_1^alpha_1 p_2^alpha_2)(alpha_1/p_1 + alpha_2/p_2) = alpha_1 q_1 + alpha_2 q_2$.
 
 *Hérédité :*
@@ -107,15 +107,23 @@ $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$.
 ===
 Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propriétés (2) et (3) :
 
-(1)
+(2)
 Pour $p$ premier, $p = p^1$ :
-$Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (1).
+$Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (2).
 
-Pour $a$ et $b$ des entiers naturels :
-$a = p_1^alpha_1 ... p_k^alpha_k$
-$b = p'_1^alpha'_1 ... p'_k'^alpha'_k'$
-D'une part, $Delta(a times b) = Delta(a) times b + a times Delta(b) = b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' = alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'$
-...
+(3)
+Soient $a$ et $b$ des entiers naturels tels que : $a &= p_1^alpha_1 ... p_k^alpha_k, b &= p'_1^alpha'_1 ... p'_k'^alpha'_k'$.
+
+D'une part,
+$
+  Delta(a) times b + a times Delta(b) &= b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' \
+  &= alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'
+$
+
+D'autre part,
+$
+  Delta
+$
 
 #sous-partie[*Partie B :* Étude de quelques images d'entiers par la fonction $Delta$.]
 
