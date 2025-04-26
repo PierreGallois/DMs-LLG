@@ -80,7 +80,6 @@ On suppose que $k = 1$, que $n = p_1^alpha_1$, alors $Delta(n) = alpha_1 p_1^(al
 Or $q_1 = n / p_1 = p_1^(alpha_1 - 1)$.
 
 Donc $Delta(n) = alpha_1 q_1$
-Delta(a times b) &= 
 On suppose que $k = 2$, que $n = p_1^alpha_1 p_2^alpha_2$, alors d'après 2)a), $Delta(n) = p_2^alpha_2 alpha_1 p_1^(alpha_1 - 1) + p_1^alpha_1 alpha_2 p_2^(alpha_2 - 1) = (p_1^alpha_1 p_2^alpha_2)(alpha_1/p_1 + alpha_2/p_2) = alpha_1 q_1 + alpha_2 q_2$.
 
 *Hérédité :*
