@@ -443,6 +443,21 @@ $
   0 <= x_n - q^(n)x_0 < epsilon((1)/(1 - q)) => abs(y_n - x_n) <= epsilon/(1 - q)
 $
 
+===
+Considérons une suite géométrique $(y_n)_(n in N)$ de raison $q$ et de premier terme $y_0$ tel que $x_0 < y_0 < (x_0 + epsilon/(1-q))$.
+
+Pour tout entier naturel $n$ : $y_n = y_0q^n$ et $y_n - x_0q^n = (y_0 - x_0)q^n$, donc : 
+$
+  0 <= y_n - x_0q^n < (epsilon/(1-q))q^n < epsilon/(1-q)
+$
+Puis si $0 <= x_n - x_0q^n < epsilon/(1-q)$ et $0 <= y_n - x_0q^n < epsilon/(1-q)$, alors :
+$
+  -epsilon/(1-q) < x_n - y_n < epsilon/(1-q) "c'est-à-dire" abs(x_n - y_n) < epsilon/(1-q)
+$
+Toute suite géométrique de raison $q$ et de premier terme $y_0$ tel que $x_0 < y_0 < (x_0 + epsilon/(1-q))$ répond ainsi à la question.
+
+Ainsi, il existe une infinité de suites géométriques qui côtoient la suite  $(x_n)_(n in N)$ à moins de $epsilon/(1-q)$ près. Celle de premier terme $y_0 = x_0$ et de raison $q$ convient mais on peut choisir une autre suite de même raison et de premier terme "un petit peu plus grand".
+
 
 
 
