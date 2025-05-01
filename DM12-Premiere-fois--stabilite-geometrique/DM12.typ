@@ -405,6 +405,46 @@ $
 On suppose que $0 < q < 1$.
 
 ===
+Pour tout entier naturel $n$, on pose $y_n = q^(n)x_0$. Montrons que $(y_n)_(n in N)$ est telle que, pour tout $n >= 0$, on a :
+$abs(y_n - x_n) <= epsilon/(1 - q)$.
+
+Pour tout entier naturel $n$, on a 
+$
+x_n - q^(n)x_0 = sum_(k=0)^(n-1) q^(n-k-1) b_k
+$
+et 
+$
+  0 <= q^(n-k-1) b_k <= q^(n-k-1) epsilon
+$
+
+Or
+$
+   sum_(k=0)^(n-1) q^(n-k-1) b_k = (1 - q^n)/(1 - q)
+$
+
+D'où :
+$
+   0 <= sum_(k=0)^(n-1) q^(n-k-1) b_k = b((1 - q^n)/(1 - q)) <=  epsilon((1 - q^n)/(1 - q)) < epsilon((1)/(1 - q))
+$
+car on a $0 < q < 1 => 0 < q^n< 1$
+
+En conséquence, pour tout entier naturel n : 
+$
+  0 <= sum_(k=0)^(n-1) q^(n-k-1) b_k < epsilon((1)/(1 - q))
+$
+
+Autrement dit, quel que soit l’entier naturel n :
+$
+  0 <= x_n - q^(n)x_0 <=  epsilon((1 - q^n)/(1 - q)) < epsilon((1)/(1 - q))
+$
+
+La suite géométrique définie par $y_n = x_n - q^(n)x_0$ et dont le premier terme  $y_0 = x_0$ et de raison $q$ répond donc à la question si pour tout entier naturel $n$:
+$
+  0 <= x_n - q^(n)x_0 < epsilon((1)/(1 - q)) => abs(y_n - x_n) <= epsilon/(1 - q)
+$
+
+
+
 
 // #auto-generate-proof(4)
 // #import "@preview/lilaq:0.2.0" as lq
