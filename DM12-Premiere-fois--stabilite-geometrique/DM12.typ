@@ -104,25 +104,28 @@ Par principe de récurrence, nous avons prouvé que quelque soit $k in NN^*$ et 
 $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$.
 
 ===
-Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propriétés (2) et (3) :
+Vérifions que $Delta(n) = alpha_1 q_1 + ... + alpha_k q_k$ satisfait les propriétés $(2)$ et $(3)$ :
 
-(2)
+$(2)$
 Pour $p$ premier, $p = p^1$ :
-$Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété (2).
+$Delta(p) = 1 times p/p = 1$. Cela correspond bien à la propriété $(2)$.
 
-(3)
-Soient $a$ et $b$ des entiers naturels tels que : $a &= p_1^alpha_1 ... p_k^alpha_k, b &= p'_1^alpha'_1 ... p'_k'^alpha'_k'$.
+$(3)$
+Soient $a$ et $b$ des entiers naturels tels que : $a &= p_1^alpha_1 ... p_k^alpha_k, b &= p'_1^alpha'_1 ... p'_k'^alpha'_k'$ avec les restrictions habituelles sur les variables.
 
-D'une part,
+Donc $a b = p_1^alpha_1 ... p_k^alpha_k times p'_1^alpha'_1 ... p'_k'^alpha'_k'$. Dans le cas où $p_i = p'_i$ on écrit alors $(alpha_i + alpha'_i) p_i$ ce qui permet d'avoir une décomposition unique de produits de facteurs premiers pour $a b$.
+
+On remarque que dans le cas où $p_i = p'_i$ on a $(alpha_i + alpha'_i) (a b) / p_i = alpha_i (a b) / p_i + alpha'_i (a b) / p_i$.
+Nous écrivons directement la forme développée :
 $
-  Delta(a) times b + a times Delta(b) &= b alpha_1 a/p_1 + ... + b alpha_k a/p_k + a alpha'_1 b/p'_1 + ... + a alpha'_k' b/p'_k' \
-  &= alpha_1 (a times b)/p_1 + ... + alpha_k (a times b)/p_k + alpha'_1 (a times b)/p'_1 + ... + alpha'_k' (a times b)/p'_k'
+  Delta(a b) &= alpha_1 (a b) / p_1 + ... + alpha_k (a b) / p_k + alpha'_1 (a b) / p'_1 + ... + alpha'_k (a b) / p'_k \
+             &= b (alpha_1 a/p_1 + ... + alpha_k a/p_k) + a (alpha'_1 b/p'_1 + ... + alpha'_k' b/p'_k') \
+             &= b Delta(a) + a Delta(b)
 $
 
-D'autre part,
-$
-  Delta
-$
+Cela correspond bien à la propriété $(3)$.
+
+#pagebreak()
 
 #sous-partie[*Partie B :* Étude de quelques images d'entiers par la fonction $Delta$.]
 
