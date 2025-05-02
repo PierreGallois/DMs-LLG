@@ -464,11 +464,9 @@ Ainsi, il existe une infinité de suites géométriques qui côtoient la suite  
 Celle de premier terme $y_0 = x_0$ et de raison $q$ convient mais on peut choisir une autre suite de même raison et de premier terme "un petit peu plus grand".
 
 ==
-
 Supposons maintenant que $q > 1$:
 
 ===
-
 La suite $(u_n)_(n in N)$ est définie par : 
 $
   u_n = sum_(k=0)^(n-1) b_k/q^(k+1) = 1/q (sum_(k=0)^(n-1) b_k/q^k)
@@ -478,7 +476,7 @@ Montrons que la suite $(u_n)$ est une suite croissante et majorée.
 
 Pour tout entier $n >= 1$, 
 $
-u_(n+1) - u_n = b_n/q^(n+1) > 0, " donc" (u_n) "croissante"
+u_(n+1) - u_n = b_n/q^(n+1) > 0, " donc" (u_n) "est croissante"
 $
 Soit $n >= 1$. D'autre part, pour tout entier naturel $k$, $b_k <= epsilon$. Nous pouvons ainsi majorer chaque terme de la somme $sum_(k=0)^(n-1) b_k/q^(k+1)$ dans l'expressions de $(u_n)$ par $epsilon/q^k$:
 
@@ -503,6 +501,7 @@ $
 
 La suite $(u_n)$ est donc majorée par le nombre réel $epsilon / (q - 1)$. Celle-ci étant croissante et majorée, cette suite converge, et sa limite $s$ est telle que $0 < s <= epsilon / (q - 1)$.
 
+#pagebreak()
 
 // #auto-generate-proof(4)
 // #import "@preview/lilaq:0.2.0" as lq
