@@ -115,11 +115,32 @@ Donc $0 <= phi'(x) <= 1/10$ sur $[sqrt(5);5/2]$.
 #sous-partie[*Partie C*]
 #counter(heading).update(1)
 ==
+Par le tableau de variations, $phi$ est croissante sur $[sqrt(5), 5/2]$. Ainsi, si pour $n in NN$, $u_n in [sqrt(5); 5/2]$, $u_(n+1)$ est bien défini et :
+$ sqrt(5) <= u_(n+1) = phi(u_n) <= phi(5/2) = 9/4 <= 5/2 $
+Comme $u_0 in [sqrt(5); 5/2]$, par récurrence, la suite $(u_n)$ est bien définie et pour tout $n in NN, sqrt(5) <= u_n <= 5/2$.
 ==
+Soit $n in NN$. Alors : 
+$ u_(n+1) - u_n &= phi(u_n) - u_n\
+&= (5-u_n^2)/(2u_n) #text[par le B)5)] \
+&<= 0  #text[car $u_n >= sqrt(5)$] $
+Donc $u_(n+1) <= u_n$ est la suite $(u_n)$ est décroissante.
 ==
 ===
+Soit $n in NN$. On sait par le B)6) que pour tout $x in [sqrt(5); 5/2]$, $0 <= phi'(x) <= 1/10$. $phi$ est dérivable, en particulier continue, sur cet intervalle, et on peut donc appliquer l'IAF avec $u_n$ et $sqrt(5)$ qui sont dans le bon intervalle, donnant :
+$ 0(u_n-sqrt(5)) &<= phi(u_n) - phi(sqrt(5)) <= 1/10 (u_n - sqrt(5))\
+<==> 0 &<= u_(n+1) - sqrt(5) <= 1/10 (u_n - sqrt(5)) $
+Ce qu'il fallait démontrer.
 
 ===
+On procède par récurrence.
+
+#underline[Initialisation :] $0 <= u_0 - sqrt(5)$ car $5/2 >= sqrt(5)$, et $u_0 - sqrt(5) <= 1/2$ car $sqrt(5) >= 2$.
+
+#underline[Hérédité :] Supposons pour $n in NN$ que $0 <= u_n - sqrt(5) <= 1/2 dot (1/10)^n$. Alors $u_(n+1) - sqrt(5) >= 0$ par le 1), et le 3)a) donne :
+$ u_(n+1) - sqrt(5) &<= 1/10 (u_n - sqrt(5)) \
+&<= 1/2 dot (1/10)^(n+1) $
+
+Par récurrence, l'assertion est vraie pour tout $n in NN$.
 
 ==
 ==
