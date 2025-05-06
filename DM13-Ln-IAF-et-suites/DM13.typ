@@ -104,7 +104,13 @@ $ phi(x) - x &= x/2 + 5/2x - x \
 &= (5-x^2) / (2x) $
 Ce qu'il fallait démontrer.
 ==
-
+Soit $x in [sqrt(5); 5/2]$. Alors $x >= sqrt(5)$, et par le 3), $phi'(x) >= 0$. De plus :
+$ phi'(x) &<= 1/10 \
+<==> 1/2 - 1/10 &<= 5/(2x^2) \
+<==> 4/5 &<= 5/(x^2) \
+<==> x^2 &<= 25 / 4 \
+<==> x &<= 5/2 #text[car $x >= sqrt(5) >= 0$.] $
+Donc $0 <= phi'(x) <= 1/10$ sur $[sqrt(5);5/2]$.
 
 #sous-partie[*Partie C*]
 #counter(heading).update(1)
