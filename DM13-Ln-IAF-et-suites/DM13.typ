@@ -1,6 +1,7 @@
 #import "./../templates/homework.typ": dm, sous-partie, code-from-file
 #import "@preview/cetz:0.3.4":
 #import "tabvar_patched.typ": tabvar
+#import "@preview/lilaq:0.2.0" as lq
 
 #show: dm.with(
   numero: 13,
@@ -73,7 +74,6 @@ $ 1/2 &<= 5 / (2x^2) \
 
 On a donc le tableau de variations suivant :
 
-// TODO: ajuster la taille
 #move(dx:-55pt)[
 #tabvar(
   init: (
@@ -97,7 +97,20 @@ On a donc le tableau de variations suivant :
 )]
 
 ==
-TODO: Thomas ? dis moi si tu ne veux pas le faire :3
+
+#let fun-phi(x) = (1/2) * (x + (5/x))
+#let x1s = array.range(-200, -5)
+#let y1s = x1s.map((x) => fun-phi(x/50))
+#let x2s = array.range(5, 200)
+#let y2s = x2s.map((x) => fun-phi(x/50))
+
+#lq.diagram(
+  width: 15cm,
+  height: 8cm,
+  lq.plot(x1s.map((e) => e/50), y1s.map((e) => e/50), mark: none, stroke: 2pt, color: olive),
+  lq.plot(x2s.map((e) => e/50), y2s.map((e) => e/50), mark: none, stroke: 2pt, color: olive)
+)
+
 ==
 Soit $x in RR_*$ :
 $ phi(x) - x &= x/2 + 5/2x - x \
