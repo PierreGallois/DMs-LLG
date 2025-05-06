@@ -1,5 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie
-#import "@preview/cetz:0.3.4"
+#import "@preview/cetz:0.3.4":
 #import "@preview/vartable:0.2.0": tabvar
 
 #show: dm.with(
@@ -10,7 +10,7 @@
   alpha: false
 )
 
-// #let folder-name = "DM13-Ln-IAF-et-suites"
+#let folder-name = "DM13-Ln-IAF-et-suites/"
 
 = Fonction logarithme népérien
 ==
@@ -52,9 +52,9 @@ On définit sur $RR_*$ :
 $ phi(x) = 1/2(x+ 5/x) $
 
 ==
-$phi$ est paire : soit $x in RR_*$. Alors $-x in RR_*$ et :
+$phi$ est impaire : soit $x in RR_*$. Alors $-x in RR_*$ et :
 $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
-&= phi(x) $
+&= -phi(x) $
 ==
 // TODO: Mettre sur deux colonnes ? 
 - Quand $x -> +oo$ : $5/x -> 0$ et par somme : $ lim_(x -> +oo) phi(x) = +oo $
@@ -63,7 +63,18 @@ $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
 - Quand $x -> 0^-$ : $5/x -> -oo$ et par somme : $ lim_(x -> 0^-) phi(x) = -oo $
 - Quand $x -> 0^+$ : $5/x -> +oo$ et par somme : $ lim_(x -> 0^+) phi(x) = +oo $
 ==
-#vartable.tabvar(
+$phi$ est dérivable sur son intervalle de définition comme somme de deux fonctions dérivables sur $RR_*$. Sa dérivée est pour tout $x in RR_*$ :
+
+$ phi'(x) = 1/2 - 5 / (2x^2) $
+Ainsi, $phi'(x) <= 0$ si et seulement si :
+$ 1/2 &<= 5 / (2x^2) \
+<==> x^2 &<= 5 \
+<==> x &in [-sqrt(5);sqrt(5)] inter RR_* $
+
+On a donc le tableau de variations suivant :
+
+// TODO: ajuster la taille
+#tabvar(
   init: (
     variable: $x$,
     label: (
@@ -71,10 +82,17 @@ $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
       ([Variations de $phi$], "Variation"),
     ),
   ),
-  domain: ($-oo$, $0$, $+oo$),
+  domain: ($-oo$, $ -sqrt(5) $, $ 0 $, $ sqrt(5) $, $ +oo $),
   contents: (
-    ($-$)
-  )
+    ($+$, $-$, ("||", $-$), $+$),
+    (
+      (bottom, $-oo$),
+      (center, $-sqrt(5)$),
+      (bottom, top, "||", $-oo$, $+oo$),
+      (center, $sqrt(5)$),
+      (top, $+oo$),
+    ),
+  ),
 )
 
 ==
@@ -86,6 +104,7 @@ $ phi(x) - x &= x/2 + 5/2x - x \
 &= (5-x^2) / (2x) $
 Ce qu'il fallait démontrer.
 ==
+
 
 #sous-partie[*Partie C*]
 #counter(heading).update(1)
