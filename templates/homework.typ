@@ -195,3 +195,13 @@
     lang: lang,
   )
 }
+
+#let sous-partie(content) = {
+  block(
+    width: 100%,
+    inset: 8pt,
+    radius: 7pt,
+    stroke: (paint: luma(75), thickness: 1pt, cap: "round", dash: "loosely-dashed"),
+    content
+  )
+}
