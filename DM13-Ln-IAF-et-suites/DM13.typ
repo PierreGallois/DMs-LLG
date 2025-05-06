@@ -150,4 +150,4 @@ La suite $(u_n)$ est bornée en bas par $sqrt(5)$ (1) et décroissante $(2)$. El
 ==
 On voit par l'inégalité du 3)b) que $u_6 - sqrt(5) <= 10^(-6)$. Ainsi, $k <= 6$. Le code python (non optimisé) suivant calcule la valeur de $k$ :
 #code-from-file(folder-name, "suite.py")
-Et échoue misérablement en trouvant $k=3$, écrasé par les erreurs de précision de flottants, proférant en se ruant vers sa propre fin des insanités comme $0.0001 = 10^(-10)$, inscrivant pour l'éternité sa place dans le recueil des langages de programmation incapables de faire des calculs scientifiques sans y sacrifier une nuit blanche.
+Trouvant $k=3$. L'absence d'erreur de précision sur les flottant, trop récurrentes, a été vérifiée a posteriori sur calculatrice.
