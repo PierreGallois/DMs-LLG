@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm, sous-partie
+#import "./../templates/homework.typ": dm, sous-partie, code-from-file
 #import "@preview/cetz:0.3.4":
 #import "@preview/vartable:0.2.0": tabvar
 
@@ -140,7 +140,14 @@ On procède par récurrence.
 $ u_(n+1) - sqrt(5) &<= 1/10 (u_n - sqrt(5)) \
 &<= 1/2 dot (1/10)^(n+1) $
 
-Par récurrence, l'assertion est vraie pour tout $n in NN$.
+Par récurrence, pour tout $n in NN$,
+$ 0 <= u_n - sqrt(5) <= 1/2 dot (1/10)^n $
 
 ==
+La suite $(u_n)$ est bornée en bas par $sqrt(5)$ (1) et décroissante $(2)$. Elle est donc convergente. Notons $l = lim u_n$ : on a donc $l >= sqrt(5)$. Par passage à la limite du membre droit du 3)b), $l - sqrt(5) <= 0$. Donc $l = sqrt(5)$ : la suite $(u_n)$ tend vers $sqrt(5)$.
+
+(On aurait pu procédér uniquement avec le 3)b) par gendarmes.)
 ==
+On voit par l'inégalité du 3)b) que $u_6 - sqrt(5) <= 10^(-6)$. Ainsi, $k <= 6$. Le code python (non optimisé) suivant calcule la valeur de $k$ :
+#code-from-file(folder-name, "suite.py")
+Et échoue misérablement en trouvant $k=3$, écrasé par les erreurs de précision de flottants, proférant en se ruant vers sa propre fin des insanités comme $0.0001 = 10^(-10)$, inscrivant pour l'éternité sa place dans le recueil des langages de programmation incapables de faire des calculs scientifiques sans y sacrifier une nuit blanche.
