@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie
+#import "@preview/vartable:0.2.0": tabvar
 
 #show: dm.with(
   numero: 13,
@@ -44,6 +45,7 @@ Ce qu'il fallait démontrer.
 
 
 #sous-partie[*Partie B*]
+#counter(heading).update(1)
 
 On définit sur $RR_*$ :
 $ phi(x) = 1/2(x+ 5/x) $
@@ -59,10 +61,29 @@ $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
 
 - Quand $x -> 0^-$ : $5/x -> -oo$ et par somme : $ lim_(x -> 0^-) phi(x) = -oo $
 - Quand $x -> 0^+$ : $5/x -> +oo$ et par somme : $ lim_(x -> 0^+) phi(x) = +oo $
+==
+#vartable.tabvar(
+  init: (
+    variable: $x$,
+    label: (
+      ([Signe de $phi'(x)$], "Sign"),
+      ([Variations de $phi$], "Variation"),
+    ),
+  ),
+  domain: ($-oo$, $0$, $+oo$),
+  contents: (
+    ($-$)
+  )
+)
 
 ==
 TODO: Thomas ? dis moi si tu ne veux pas le faire :3
 ==
+Soit $x in RR_*$ :
+$ phi(x) - x &= x/2 + 5/2x - x \
+&= - x / 2 + 5/2x \
+&= (5-x^2) / (2x) $
+Ce qu'il fallait démontrer.
 ==
 
 #sous-partie[*Partie C*]
