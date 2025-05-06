@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie
+#import "@preview/cetz:0.3.4"
 #import "@preview/vartable:0.2.0": tabvar
 
 #show: dm.with(
