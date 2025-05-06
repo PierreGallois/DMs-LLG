@@ -1,6 +1,6 @@
 #import "./../templates/homework.typ": dm, sous-partie, code-from-file
 #import "@preview/cetz:0.3.4":
-#import "@preview/vartable:0.2.0": tabvar
+#import "tabvar_patched.typ": tabvar
 
 #show: dm.with(
   numero: 13,
@@ -74,6 +74,7 @@ $ 1/2 &<= 5 / (2x^2) \
 On a donc le tableau de variations suivant :
 
 // TODO: ajuster la taille
+#move(dx:-55pt)[
 #tabvar(
   init: (
     variable: $x$,
@@ -82,7 +83,7 @@ On a donc le tableau de variations suivant :
       ([Variations de $phi$], "Variation"),
     ),
   ),
-  domain: ($-oo$, $ -sqrt(5) $, $ 0 $, $ sqrt(5) $, $ +oo $),
+  domain: ($-oo$, $-sqrt(5)$, $0$, $sqrt(5)$, $+oo$),
   contents: (
     ($+$, $-$, ("||", $-$), $+$),
     (
@@ -93,7 +94,7 @@ On a donc le tableau de variations suivant :
       (top, $+oo$),
     ),
   ),
-)
+)]
 
 ==
 TODO: Thomas ? dis moi si tu ne veux pas le faire :3
