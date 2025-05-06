@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm, code-from-file
+#import "./../templates/homework.typ": dm, code-from-file, sous-partie
 
 #show: dm.with(
   numero: 12,
@@ -8,16 +8,6 @@
   alpha: false
 )
 #let folder-name = "DM12-Premiere-fois--stabilite-geometrique"
-
-#let sous-partie(content) = {
-  block(
-    width: 100%,
-    inset: 8pt,
-    radius: 7pt,
-    stroke: (paint: luma(75), thickness: 1pt, cap: "round", dash: "loosely-dashed"),
-    content
-  )
-}
 
 = Première fois.
 
