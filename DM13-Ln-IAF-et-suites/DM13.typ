@@ -18,6 +18,8 @@
 ==
 ==
 ==
+Pour tout $x>0$, la dérivée de la fonction $ln$ est la fonction inverse, par définition.
+Or la fonction inverse est strictement positive sur $RR_+^*$. Donc la fonction $ln$ est strictement croissante sur $RR_+^*$.
 ==
 ===
 
