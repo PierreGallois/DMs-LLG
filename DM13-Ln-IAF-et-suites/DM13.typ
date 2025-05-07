@@ -12,14 +12,31 @@
 )
 
 #let folder-name = "DM13-Ln-IAF-et-suites/"
+#let RPS = $RR_+^*$
+#let NS = $NN^*$
 
 = Fonction logarithme népérien
 ==
 ==
 ==
+Soient $x in RPS, n in NS$.
+$
+  ln(x^n) &= ln(product_(k=1)^n x) \
+          &= sum_(k=1)^n ln(x) "d'après 2" \
+          &=n ln(x).
+$
+Donc $ln(x^n) = n ln(x)$.
+
+Soit $x in RPS$.
+$
+  ln(1/x) + ln(x) &= ln(1/x times x) "d'après 2" \
+                  &= ln(1) \
+                  &= 0 "par définition."
+$
+Donc $ln(1/x) = - ln(x)$.
 ==
 Pour tout $x>0$, la dérivée de la fonction $ln$ est la fonction inverse, par définition.
-Or la fonction inverse est strictement positive sur $RR_+^*$. Donc la fonction $ln$ est strictement croissante sur $RR_+^*$.
+Or la fonction inverse est strictement positive sur $RPS$. Donc la fonction $ln$ est strictement croissante sur $RPS$.
 ==
 ===
 
