@@ -165,3 +165,39 @@ La suite $(u_n)$ est bornée en bas par $sqrt(5)$ (1) et décroissante $(2)$. El
 On voit par l'inégalité du 3)b) que $u_6 - sqrt(5) <= 10^(-6)$. Ainsi, $k <= 6$. Le code python (non optimisé) suivant calcule la valeur de $k$ :
 #code-from-file(folder-name, "suite.py")
 Trouvant $k=3$. L'absence d'erreur de précision sur les flottant, trop récurrentes, a été vérifiée a posteriori sur calculatrice.
+
+#sous-partie[*Annexes*]
+On peut généraliser la méthode utilisée dans cet exercice, qui est (il me semble) un prétexte pour utiliser l'IAF pour trouver une borne qui permet d'appliquer le théorème du point fixe de Banach. 
+
+Posons#footnote[$a >= 5/4$ pour la méthode présentée ici, la raison est présentée plus tard] $a in RR^+_*$, pour lequel on veut trouver une suite $(u_n)$ de rationnels qui approche $sqrt(a)$. Posons $phi_a$ une bonne fonction qui a pour point fixe $sqrt(a)$ : on reprend ici l'exemple du problème
+$ phi_a (x) = 1/2 (x + a/x)  $
+Que l'on définit uniquement sur $RR^+_*$ par simplicité (on réduira encore l'intervalle après). On cherche, pour un certain $0 <= q < 1$ ($q=1/10$ pour les besoins pratiques des décimales) à borner :
+$ 0 <= phi'_a <= q $
+Sur un intervalle adapté, contenant $sqrt(a)$, de manière a obtenir par l'IAF pour une suite $(u_n)$ contenue dans cet intervalle
+$ |u_(n+1) - sqrt(a)| <= q|u_n - sqrt(a)| $
+Où on aura défini $u_(n+1) = phi(u_n)$.
+
+=== Trouver le bon intervalle :
+La dérivée de $phi$ (dérivable sur son intervalle de définition par somme) est :
+$phi'_a (x) = 1/2 - a/(2x^2)$. Ainsi :
+- $phi'_a (x) >= 0 <==> x^2 >= a <==> x >= sqrt(a)$
+- $phi'_a (x) <= 1/10 <==> 4/5 <= a/x^2 <==> x <= sqrt(5a)/2$.
+On se place donc sur l'intervalle $I = [sqrt(a); sqrt(5a)/2]$ (si besoin, on peut réduire la borne supérieure de l'intervalle à une valeur $u_0$ plus simple à gérer (rationnelle par exemple), la suite convergera toujours correctement sous réserve que $phi_a (u_0) <= u_0$
+
+L'IAF donne donc que pour tout $x,y in I$ :
+$ |phi_a (y) - phi_a (x)| <= 1/10|y-x| $
+
+=== Trouver la suite :
+Posons la suite $(u_n)$ définie pour tout $n in NN$ par :
+$ cases(u_0 = sqrt(5a)/2 #text[(en général $u_0 = sup I$ si celui ci a la bonne propriété)],
+ u_(n+1) = phi_a (u_n)) $
+Cette suite est bien définie : $u_0 in I$ et si $u_n in I$, alors :
+- Par croissance, $u_(n+1) = phi_a (u_n) >= phi_a (sqrt(a)) = sqrt(a)$
+- Par croissance encore, $u_(n+1) = phi_a (u_n) <= phi_a (sup I) <= sup I$
+(Pour $sup I = sqrt(5a)/2$, cette dérnière inégalité est ssi $a >= 5/4$ : un désavantage d'avoir choisi $q = 1/10$)
+
+Donc $u_(n+1) in I$ et la suite est bien définie. Comme le montre le a), $phi_a$ définit une contraction $I -> I subset RR$, qui est complet pour $|.|$. Le théorème du point fixe de Banach donne donc immédiatement l'existence d'un point fixe unique $x^* = sqrt(a)$ sur $I$, et assure que $lim u_n = x^*$.
+
+Enfin, si on arrive à prendre $u_0 in I$ rationnel qui satisfait la bonne propriété, on peut avoir que tout terme de la suite $(u_n)$ est rationnel (en regardant $phi_a$), ce qui est plutot sympa.
+
+Merci d'avoir lu :)
