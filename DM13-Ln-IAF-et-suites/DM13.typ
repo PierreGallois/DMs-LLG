@@ -14,8 +14,9 @@
 #let folder-name = "DM13-Ln-IAF-et-suites/"
 #let RPS = $RR_+^*$
 #let NS = $NN^*$
+#let RS = $RR^*$
 
-= Fonction logarithme népérien
+= Fonction logarithme népérien.
 ==
 ==
 ==
@@ -44,7 +45,7 @@ Or la fonction inverse est strictement positive sur $RPS$. Donc la fonction $ln$
 
 ===
 
-= Inégalité des accroissements finis et suites
+= Inégalité des accroissements finis et suites.
 #sous-partie[*Partie A*]
 ==
 Supposons être dans les conditions de l'énoncé. Posons :
@@ -68,11 +69,11 @@ Ce qu'il fallait démontrer.
 #sous-partie[*Partie B*]
 #counter(heading).update(1)
 
-On définit sur $RR_*$ :
+On définit sur $RR^*$ :
 $ phi(x) = 1/2(x+ 5/x) $
 
 ==
-$phi$ est impaire : soit $x in RR_*$. Alors $-x in RR_*$ et :
+$phi$ est impaire : soit $x in RS$. Alors $-x in RS$ et :
 $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
 &= -phi(x) $
 ==
@@ -83,13 +84,13 @@ $ phi(-x) &= 1/2(-x - 5/x) = -1/2(x + 5/x)\
 - Quand $x -> 0^-$ : $5/x -> -oo$ et par somme : $ lim_(x -> 0^-) phi(x) = -oo $
 - Quand $x -> 0^+$ : $5/x -> +oo$ et par somme : $ lim_(x -> 0^+) phi(x) = +oo $
 ==
-$phi$ est dérivable sur son intervalle de définition comme somme de deux fonctions dérivables sur $RR_*$. Sa dérivée est pour tout $x in RR_*$ :
+$phi$ est dérivable sur son intervalle de définition comme somme de deux fonctions dérivables sur $RS$. Sa dérivée est pour tout $x in RS$ :
 
 $ phi'(x) = 1/2 - 5 / (2x^2) $
 Ainsi, $phi'(x) <= 0$ si et seulement si :
 $ 1/2 &<= 5 / (2x^2) \
 <==> x^2 &<= 5 \
-<==> x &in [-sqrt(5);sqrt(5)] inter RR_* $
+<==> x &in [-sqrt(5);sqrt(5)] inter RS $
 
 On a donc le tableau de variations suivant :
 
@@ -131,7 +132,7 @@ On a donc le tableau de variations suivant :
 )
 
 ==
-Soit $x in RR_*$ :
+Soit $x in RS$ :
 $ phi(x) - x &= x/2 + 5/2x - x \
 &= - x / 2 + 5/2x \
 &= (5-x^2) / (2x) $
