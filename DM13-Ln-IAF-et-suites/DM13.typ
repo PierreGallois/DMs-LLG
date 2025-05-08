@@ -19,6 +19,19 @@
 = Fonction logarithme népérien.
 ==
 ==
+Soit la fonction $f$ définie sur $RPS$ par $f:x mapsto ln(x y) - ln(y)$ où $y$ est un réel (fixé).
+La fonction $f$ est dérivable sur $RPS$ comme différence de fonction dérivables.
+
+Pour tout $x in RPS$,
+$
+  f'(x) &= ln'(x y) times y "par composition" (ln(y) "constante)" \
+        &= 1/(x y) times y = 1/x.
+$
+Aussi, $f(1) = ln(y) - ln(y) = 0$.
+
+Puisque $f'(x) = 1/x$ et que $f(1) = 0$, par unicité de la fonction $ln$, $f = ln$.
+
+Donc pour tout $x in RPS$, $ln(x y) - ln(y) = ln(x)$ i.e. $ln(x y) = ln(x) + ln(y)$.
 ==
 Soient $x in RPS, n in NS$.
 $
