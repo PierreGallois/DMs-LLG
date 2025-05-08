@@ -119,9 +119,9 @@ On a donc le tableau de variations suivant :
 ==
 
 #let fun-phi(x) = (1/2) * (x + (5/x))
-#let x1s = array.range(-200, -5)
+#let x1s = array.range(-500, -5)
 #let y1s = x1s.map((x) => fun-phi(x/50))
-#let x2s = array.range(5, 200)
+#let x2s = array.range(5, 500)
 #let y2s = x2s.map((x) => fun-phi(x/50))
 
 #lq.diagram(
