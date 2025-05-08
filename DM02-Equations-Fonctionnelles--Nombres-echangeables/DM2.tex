@@ -1,0 +1,216 @@
+% to change the appearance of the header, questions, problems or subproblems, see the homework.cls file or
+% override the \Problem, \Subproblem, \question or \printtitle commands.
+
+% The hidequestions option hides the questions. Remove it to print the questions in the text.
+
+% CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
+\documentclass[]{../templates/homework}
+\usepackage[french]{babel}
+
+\homeworksetup{
+	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
+	course={Mathématiques },
+	setnumber=2}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem*{1}{Équations fonctionnelles}
+\textbf{Partie A.}
+
+\subproblem
+\textit{Analyse.}
+
+On suppose qu'il existe une telle fonction $g$.
+\question \\
+Soient $n$ et $m$ appartenant à $\mathbb{N}$. L'unique manière d'obtenir $n + m = 0$ est que $n = 0$ et $m = 0$.
+Cela donne :
+\begin{align*}
+	g(m + n) & = g(m) \times g(n) \\
+	g(0)     & = g(0)^2
+\end{align*}
+Les solutions de cette équation sont $S = \{0, 1\}$.
+
+Nous avons prouvé que $g(0) = 0$ ou $g(0) = 1$.
+
+\question \\
+Soit $n$ dans $\mathbb{N}$,
+\begin{align*}
+	g(n) & = g(n + 0) \\
+	& = g(n) \times g(0) \\
+	& = 0 \quad \text{Puisque on est dans le cas où $g(0) = 0$}
+\end{align*}
+Si $g(0) = 0$, alors $g$ est la fonction nulle.
+
+\question \\
+Nous raisonnons par récurrence. On suppose que $g(0) = 1$ et $g(n) = g(1)^n$.
+
+\textit{Initialisation :}
+Par hypothèse, $g(0) = 1$.
+
+\textit{Hérédité :}
+\begin{align*}
+	g(n + 1) &= g(n) \times g(1) \\
+	&= g(1)^n \times g(1) \quad \text{D'après la supposition de départ.} \\
+	&= g(1)^{(n + 1)}
+\end{align*}
+
+Nous avons prouvé par récurrence que pour tout $n \in \mathbb{N^*}$, $g(n) = a^n$ où $a=g(1)$.
+
+\subproblem
+\textit{Synthèse.}
+
+Nous avons deux candidats :
+\begin{itemize}
+	\item La fonction nulle : $\forall n \in \mathbb{N}, g(n) = 0$
+	\item Une fonction puissance : $\forall n \in \mathbb{N}, g(n) = g(1)^n$
+\end{itemize}
+Nous devons vérifier la condition : $\forall m, n \in \mathbb{N}, g(m + n) = g(m) \times g(n)$.
+
+Vérifions pour la fonction nulle :
+
+Pour tous $m, n \in \mathbb{N}$ :
+\begin{align*}
+	g(m + n) &= 0 \\
+	&= 0 \times 0 \\
+	&= g(m) \times g(n)
+\end{align*}
+La condition est bien vérifiée.
+
+Vérifions pour la fonction puissance :
+Pour tous $m, n \in \mathbb{N}$ :
+\begin{align*}
+	g(m + n) &= g(1)^{(m + n)} \\
+	&= g(1)^m \times g(1)^n \\
+	&= g(m) \times g(n)
+\end{align*}
+La condition est bien vérifiée.
+
+La fonction nulle et $g(n) = g(1)^n$ sont donc les deux seules fonctions qui respectent $\forall m, n \in \mathbb{N}, g(m + n) = g(m) \times g(n)$.
+
+\textbf{Partie B.}
+\subproblem*{1}
+\textit{Analyse.}
+Supposons que :
+\begin{equation*}
+	\exists f:\mathbb{N} \to \mathbb{N}, \forall m, n \in \mathbb{N}, (f(m+n) = f(m) \times f(n) + f(m) + f(n)) \land (f(1) = 1).
+\end{equation*}
+
+\question On a :
+\begin{align*}
+	&f(0) = f(0+0) \\
+	\iff &f(0) = f(0) \times f(0) + f(0) + f(0) \\
+	\iff &f(0) = f(0)^2 + 2f(0) \\
+	\iff &f(0)^2 + f(0) = 0 \\
+	\iff &f(0) = 0 \text{ ou } f(0) = -1.
+\end{align*}
+
+Donc $f(0) = 0$ puisque $f(0) \in \mathbb{N}$ et $-1 \notin \mathbb{N}$.
+
+\question Pour $f(2)$:
+\begin{align*}
+	f(2) &= f(1+1) \\
+	&= f(1) \times f(1) + f(1) + f(1) \\
+	&= 1 + 2 \\
+	&= 3.
+\end{align*}
+
+Pour $f(3)$:
+\begin{align*}
+	f(3) &= f(2+1) \\
+	&= f(2) \times f(1) + f(2) + f(1) \\
+	&= 3 \times 1 + 3 + 1 \\
+	&= 7.
+\end{align*}
+
+Pour $f(6)$:
+\begin{align*}
+	f(6) &= f(3+3) \\
+	&= f(3) \times f(3) + f(3) + f(3) \\
+	&= 7^2 + 14 \\
+	&= 63.
+\end{align*}
+
+\question Soit $n \in \mathbb{N}$. On a :
+\begin{align*}
+	f(n+1) &= f(n) \times f(1) + f(n) + f(1) \\
+	&= f(n) + f(n) + 1 \\
+	&= 2f(n) + 1.
+\end{align*}
+On a montré que pour tout $n \in \mathbb{N}, f(n+1) = 2f(n)+1$.
+
+\question Soit $g:n \mapsto f(n)+1$, avec $n \in \mathbb{N}$.\\
+Soient $m, n \in \mathbb{N}$. On a alors :
+\begin{align*}
+	g(m+n) &= f(m+n) + 1 \\
+	&= f(m) \times f(n) + f(m) + f(n) + 1 \\
+	&= (f(m) + 1)(f(n) + 1) \\
+	&= g(m) \times g(n).
+\end{align*}
+On a montré que pour tous $m, n \in \mathbb{N},$ $g(m+n) = g(m) \times g(n)$.
+
+\question Comme $g(m+n) = g(m)g(n)$ pour tout $m,n \in \N$, $g(n) = g(1)^n = 2^n$. Comme $f(n) = g(n) - 1$ par définition, si $f$ existe, $f(n) = 2^n -1$.
+
+\subproblem*{2}
+\textit{Synthèse.}
+Soit $f:\mathbb{N} \to \mathbb{N}$ telle que $f(n) = 2^n - 1.$ \\
+Soient $m, n \in \mathbb{N}$. On a, d'une part :
+\begin{align*}
+	f(m+n) &= 2^{m+n} - 1
+\end{align*}
+et, d'autre part,
+\begin{align*}
+	f(m) \times f(n) + f(n) + f(m) &= (2^{n} - 1)(2^{m} - 1) + 2^{n} - 1 + 2^{m} - 1 \\
+	&= 2^{m+n} - 2^n - 2^m + 1 + 2^{n} + 2^{m} - 2 \\
+	&= 2^{m+n} - 1.
+\end{align*}
+
+On a donc montré que pour tous $m, n \in \mathbb{N}, f(m+n) = f(m) \times f(n) + f(m) + f(n)$.\\
+Aussi, $f(1) = 2^1 - 1 = 1$.\\
+Cette fonction répond donc bien au problème.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\problem*{2}{Nombres Échangeables}
+\subproblem
+En prenant $a = 3, b=-2$, on a bien $f_{a,b}(2) = 3$ et $f_{a,b} = 3-1 = 2$.
+\subproblem
+
+Supposons que $(x,y) \in \mathbb R^2$ est échangeable. On exclut le cas trivial $(x,x)$ qui est évidemment échangeable, et pour lequel $|x-x| = 0 \leq 1$. Sans perte de généralité, ordonnons donc par la suite $x < y$. On a le système :
+\begin{equation*}
+	\begin{cases}
+		a - \sqrt{x+b} = y \\
+		a - \sqrt{y+b} = x
+	\end{cases}
+\end{equation*}
+
+En faisant la différence des deux lignes, on trouve que $\sqrt{y+b} - \sqrt{x+b} = y-x = |x-y|$. De plus, on a :
+\begin{equation*}
+	\begin{split}
+		(\sqrt{y+b} - \sqrt{x+b})(\sqrt{y+b} + \sqrt{x+b}) & =y-x = |x-y|                             \\
+		\iff \sqrt{y+b} - \sqrt{x+b}                       & = \frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}}
+	\end{split}
+\end{equation*}
+
+Donc : $$\frac {|x-y|}{\sqrt{y+b} + \sqrt{x+b}} = |x-y|$$
+Et $\sqrt{y+b} + \sqrt{x+b} = 1$.
+
+Donc si $(x,y)$ est échangeable, alors il existe $b\in\R$ tel que $\sqrt{y+b} + \sqrt{x+b} = 1$.
+
+Avant de prouver l'énoncé de la question, considérons la fonction $F: [-x;+\infty[$ définie par $F(b) = \sqrt{y+b} + \sqrt{x+b}$. Celle-ci est croissante comme somme de deux fonctions croissantes (par croissance de $x\mapsto \sqrt x$). De plus, elle est continue sur son intervalle de définition, comme la somme de deux fonctions continues sur cet intervalle.
+
+Pour prouver maintenant que si $(x,y)$ est échangeable, alors $|x-y| \leq 1$, prouvons sa contraposée : si $|x-y| > 1$, alors $(x,y)$ n'est pas échangeable. On procède par l'absurde.
+
+Supposons que $(x,y)$ est échangable. Alors il existe $b\in\R$ tel que $F(b) = 1$. Le minimum de $F$ sur son intervalle de définition est atteint en $b=-x$, avec $F(-x) = \sqrt{y-x} = \sqrt{|x-y|}$. Mais $|x-y| > 1$ et $\sqrt{|x-y|} > 1$. Donc $F(b) > 1$ pour tout $b\in \mathcal D_F$ et $b$ n'existe pas, ce qui est une contradiction.
+
+\subproblem
+Prouvons que si $|x-y| \leq 1$, alors $(x,y)$ est échangeable. On suppose toujours que $x \leq y$.
+
+Dans ce cas, on peut trouver $b\in\R$ tels que $F(b) \leq 1$ et $F(b) > 1$. En effet, si $b=-x$, alors $F(-x) = \sqrt{y-x} \leq 1$ par hypothèse, et $F(2-x) = \sqrt{2+(y-x)} + \sqrt(2) > 1$ car $\sqrt{2} > 1$.
+
+Par le théorème des valeurs intermédiaires, comme $F$ est continue sur $\mathcal D_F$, il existe $b_0 \in \mathcal D_F$ tel que $F(b_0) = 1$. Ainsi, on a:
+\begin{equation*}
+	\sqrt{y+b_0} - \sqrt{x+b_0} = \frac{|x-y|}{F(b_0)} = |x-y| = y-x
+\end{equation*}
+En particulier, en posant $a_0 = \sqrt{x+b_0} + y$, on a : $$a_0 - \sqrt{x+b_0} = y$$
+Et :$$a_0 - \sqrt{y+b_0} = y - (\sqrt{y+b_0} - \sqrt{x+b_0}) = y - (y-x) = x$$
+Donc $(x,y)$ sont échangeables avec $a_0, b_0$.
+\end{document}

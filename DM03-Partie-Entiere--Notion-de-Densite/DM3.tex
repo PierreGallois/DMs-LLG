@@ -1,0 +1,270 @@
+% to change the appearance of the header, questions, problems or subproblems, see the homework.cls file or
+% override the \Problem, \Subproblem, \question or \printtitle commands.
+
+% The hidequestions option hides the questions. Remove it to print the questions in the text.
+
+% CHANGER CE PATH S'IL EST DIFFERENT POUR VOUS
+\documentclass[]{../templates/homework}
+\usepackage[french]{babel}
+
+% Pour les fonctions floor
+\providecommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
+
+% Pour le thème des scripts
+\usepackage[scaled]{inconsolata}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\definecolor{vscode-bg}{HTML}{1E1E1E} 
+\definecolor{vscode-keyword}{HTML}{569CD6}
+\definecolor{vscode-comment}{HTML}{6A9955}
+\definecolor{vscode-string}{HTML}{CE9178}
+\definecolor{vscode-function}{HTML}{DCDCAA}
+\lstset{
+    language=Python,
+    backgroundcolor=\color{vscode-bg},
+    basicstyle=\ttfamily\color{white}\selectfont,
+    keywordstyle=\color{vscode-keyword}\bfseries,
+    commentstyle=\color{vscode-comment}\itshape,
+    stringstyle=\color{vscode-string},
+    identifierstyle=\color{vscode-function},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\ttfamily\tiny\color{gray},
+    frame=none,
+    breaklines=true,
+    tabsize=4,
+    columns=fullflexible,
+    keepspaces=false,
+	numbersep=10pt,
+}
+\newtcolorbox{vscodebox}{
+    sharp corners=southwest,
+    colback=vscode-bg!5!vscode-bg,
+    colframe=vscode-bg,
+    boxrule=2mm,
+    rounded corners=southwest,
+    left=17pt,
+    right=17pt
+}
+	
+\homeworksetup{
+	username={Thomas Diot, Jim Garnier, Jules Charlier, Pierre Gallois \\ 1E1},
+	course={Mathématiques},
+	setnumber=3
+}
+
+\begin{document}
+
+\problem*{1}{Partie entière}
+
+\subproblem
+
+$\lfloor\frac{5}{2}\rfloor = 2$
+
+$\lfloor-\pi\rfloor = -4$
+
+$\lfloor\frac{2\pi}{7}\rfloor = 0$
+
+\hfill
+
+Version originale :
+\begin{vscodebox}
+\begin{lstlisting}
+def part_ent(x):
+	n = 0
+	# Quand x est negatif, cette condition est fausse des le depart
+	while n+1 <= x:
+		n += 1
+	return n
+
+from math import pi
+print(partent(5/2)) # 2
+print(partent(-pi)) # 0 FAUX
+print(partent(2*pi/7)) # 0
+\end{lstlisting}
+\end{vscodebox}
+
+\hfill
+
+Version corrigée :
+
+\begin{vscodebox}
+\begin{lstlisting}
+def part_ent(x):
+	n = 0
+	while n+1 <= abs(x):
+		n += 1
+	if x >= 0:
+		return n
+	else:
+		return -n-1
+
+from math import pi
+print(partent(5/2)) # 2
+print(partent(-pi)) # -4
+print(partent(2*pi/7)) # 0
+\end{lstlisting}
+\end{vscodebox}
+
+\hfill
+\newpage
+Versions optimisées :
+
+\begin{vscodebox}
+\begin{lstlisting}
+def part_ent1(x):
+	n = 0
+	abs_x = abs(x)
+	while (n := n+1) <= abs_x: pass
+	return n-1 if x >= 0 else -n
+
+def part_ent2(x):
+	return int(x) - (1 if x <= 0 else 0)
+\end{lstlisting}
+\end{vscodebox}
+
+\subproblem
+\question
+Soit $x$ un réel et $p$ un entier naturel.
+
+Un nombre décimal s'écrit sous la forme $\frac{a}{10^b}$ avec $a \in \mathbb{Z}$ et $b \in \mathbb{N}$.
+
+Par définition, $\floor{10^px}$ est un entier relatif et $p \in \mathbb{N}$ donc:
+
+\begin{equation*}
+	\frac{\floor{10^px}}{10^p} \in \mathbb{D}
+\end{equation*}
+
+Par définition,
+
+\begin{equation*}
+\forall c \in \mathbb{R}, c-1 < \floor{c} \leqslant c < \floor{c} + 1
+\end{equation*}
+
+Donc avec $c = 10^px$ :
+
+\begin{equation*}
+	\floor{10^px} \leqslant 10^px < \floor{10^px} + 1
+\end{equation*}
+
+Or $10^p > 0$ donc
+
+\begin{equation*}
+	\frac{\floor{10^px}}{10^p} \leqslant x < \frac{\floor{10^px}}{10^p} + \frac{1}{10^p}
+\end{equation*}
+
+Nous avons prouvé que $\frac{\floor{10^px}}{10^p}$ est un nombre décimal et que $\frac{\floor{10^px}}{10^p} \leqslant x < \frac{\floor{10^px}}{10^p} + \frac{1}{10^p}$ pour tous $x \in \mathbb{R}$ et $p \in \mathbb{N}$.
+
+\question
+Le chiffre des unités de $10^x$ est la $p$-e décimale de $x$. Un arrondi à $10^{-p}$ près de $x$ revient donc à diviser par $10^p$ un arrondi à l'unité de $x$.
+
+Notons $\alpha: \R \rightarrow \Z$ la fonction qui à $x \in \R$ associe son arrondi à l'unité.
+
+\underline{Si $x\in\R^+$ :} Notons $d$ la première décimale de $x$. Si $d\in [\![0;4]\!]$, alors par définition $\alpha(x) = \floor{x}$. Mais $\floor{x + \frac 1 2} = \floor{x}$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+Si $d\in [\![5;9]\!$, par définition, $\alpha(x) = \floor x + 1$. Mais $\floor{x + \frac 1 2} = \floor{x} +1$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+\underline{Si $x\in\R^-$ :} Si $d\in [\![0;4]\!]$, alors par définition $\alpha(x) = \floor{x}+1$. Mais $\floor{x + \frac 1 2} = \floor{x}+1$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+Si $d\in [\![5;9]\!$, par définition, $\alpha(x) = \floor x +$. Mais $\floor{x + \frac 1 2} = \floor{x}$. Donc $\alpha(x) = \floor{x + \frac 1 2}$.
+
+\underline{Synthèse :} Pour tout $x \in \R$, $\alpha(x) = \floor {x + \frac 1 2}$. Un arrondi à $10^-p$ près de $x$ est donc donné par $\frac {\alpha(10^px)}{10^p} = \frac {\floor {10^px + \frac 1 2}}{10^p}$, ce qu'il fallait démontrer.
+
+\problem*{2}{Notion de densité}
+\subproblem
+\question
+\begin{thm}[Grenouille généralisée]
+	Soient $x,y\in\mathbb R$, $x<y$. Soit $l = |x-y|$ et $0 < \delta < l$. Alors il existe $n\in \Z$ tel que $n\delta \in\ ]x;y[$.
+\end{thm}
+\begin{proof}
+	On procède par l'absurde en supposant que $n\delta \not\in\ ]x;y[$ pour tout $n\in\Z$.
+	
+	Soit $p\in\Z$ le plus petit entier tel que $p\delta > y$. Son existence est assurée par l'existence de parties entières, en prenant $p = \floor {\frac y \delta} + 1$, ou par la propriété archimédienne de $\R$.
+	Par hypothèse, $(p-1) \delta \not \in\ ]x;y[$. Par minimalité de $p$, $(p-1)\delta \leq y$. Donc $(p-1)\delta < x$.
+	
+	Ainsi, on trouve que $(p-1)\delta < x < y < p\delta$. Donc $]x;y[\ \subseteq \  ](p-1)\delta; p\delta[$, et $|p\delta - (p-1)\delta| = \delta \geq |x-y| = l$, ce qui est une contradiction.
+	
+	Donc il existe $n\in\Z$ tel que $n\delta \in \ ]x;y[$.
+\end{proof}
+
+\question Si $0 \leq x <y$, alors $n\delta > x$ est équivalent à ce que $n> \frac x \delta$. En particulier, si $n$ est le plus petit tel entier, alors $n\delta \in \ ]x;y[$. En effet, si $n\delta \geq y$, alors $m\geq n$ implique que $m\delta \geq y$ et $m < n$ implique par hypothèse que $m\delta \leq x$, et $m\delta \not\in\ ]x;y[$ pour tout $m\in\Z$, ce qui contredit le théorème de la Grenouille.
+
+Or, $n = \floor {\frac x \delta} + 1$ est le plus petit entier tel que $n\delta > x$, et $n\delta \in\ ]x;y[$. Donc la grenouille tombe dans la mare après $\floor {\frac x \delta} + 1$ sauts.
+
+\subproblem
+\question $\frac 1 n < y-x$ si et seulement si $\frac 1 {y-x} < n$. Donc $n=\floor {\frac 1 {y-x}} + 1$ fonctionne.
+
+\question Soient $x,y \in \R$, $x<y$. Prouvons qu'il existe $a\in\Q$, $a\in\ ]x;y[$.
+Par la question précédente, il existe $q\in \N^*$ tel que $\frac 1 q < y-x$. Par le théorème de la Grenouille, il existe $p \in \Z$ tel que $p \frac 1 q = \frac p q \in \ ]x;y[$. Comme $\frac p q \in \Q$, $\Q$ est dense dans $\R$.
+
+\question Soient $x,y \in \R$, $x<y$. Par densité de $\Q$ dans $\R$, il existe $\frac p q \in\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. On peut choisir $\frac p q \neq 0$, soit si $0\not \in\ ]x;y[$, soit en prenant $\frac p q$ dans $]0;\frac y {\sqrt 2}[\ \subseteq\ ]\frac x {\sqrt 2}; \frac y {\sqrt 2}[$. Dans ces deux cas, $\frac p q \sqrt 2 \in\ ]x;y[$.
+
+Montrons maintenant par l'absurde que $\frac p q \sqrt 2$ est irrationel. Supposons que $\frac p q \sqrt 2 = \frac a b$, avec $\frac a b \in \Q$. Alors $\sqrt 2 = \frac {aq} {bp} \in \Q$, ce qui est impossible car $\sqrt 2 \not \in \Q$.
+
+Donc $\R \setminus \Q$ est dense dans $\R$.
+
+\subproblem
+\question Prouvons par récurrence que $(1+a)^n \geq 1+an$ pour tout $n \in \N^*$. Posons $P(n)$ l'assertion $(1+a)^n\geq 1+an$.
+
+\underline{Initialisation :} $P(1) \iff (1+a)^1 = 1+a \geq 1+ 1a = 1+a$. Donc $P(1)$ est vraie.
+
+\underline{Hérédité :} Supposons que $P(n)$ est vraie pour $n\in\N$. Prouvons $P(n+1)$.
+
+\begin{align*}
+	(1+a)^{n+1} = (1+a)(1+a)^n & \geq (1+a)(1+an) = 1 + a(n+1) + a^2n \\
+	& \geq 1 + a(n+1)
+\end{align*}
+
+Donc si $P(n)$, alors $P(n+1)$. Par le principe de récurrence, $P(n)$ est vraie pour tout $n\in\N^*$.
+
+\question Trouver $C\in\R_+^*$ tel que $b^n \leq \frac C n$ pour tout $n\in\N^*$ revient à trouver un majorant de la fonction $f : n\mapsto nb^n$. On dit que $f$ est croissante en $n \in \N^*$ si $f(n+1) \geq f(n)$. Montrons donc qu'il existe $p\in\N^*$ tel que $f$ est croissante avant $p$ et strictement décroissante après $p$, de manière à ce que $f$ soit au moins majorée par $f(p)$.
+
+On procède par équivalence :
+\begin{align*}
+	f \text{ strictement décroissante en } p & \iff f(p) > f(p+1) \\
+		& \iff pb^p > (p+1)b^{p+1} \\
+		& \iff \frac p {p+1} > b \\
+		& \iff 1 - \frac 1 {p+1} > b \\
+		& \iff 1 - b > \frac 1 {p+1} \\
+		& \iff p +1 > \frac 1 {1-b} \\
+		& \iff p + 1 \geq \floor {\frac 1 {1-b}} + 1 \\
+		& \iff p \geq \floor {\frac 1 {1-b}}
+\end{align*}
+Donc $f$ est croissante avant $\floor {\frac 1 {1-b}}$ et strictement décroissante après $\floor {\frac 1 {1-b}}$. Donc $f$ est majorée (en particulier, par $f\left(\floor {\frac 1 {1-b}}\right ) \in \R_+^*$).
+
+\subproblem
+\question On prouve l'assertion suivante, plus générale : si $x < y$, alors il existe $n\in\N^*$ tel que $\frac 1 {10^n} < |y-x|$. 
+
+Par la question précédente, il existe $C\in\R_+^*$ tel que $\left(\frac 1 {10}\right)^n \leq \frac C n$ pour tout $n\in\N^*$. En prenant $n > \frac C {|y-x|}$ (celui-ci existe par existence des parties entières), on a : $$\frac 1 {10^n} < \frac C {\frac C {|y-x|}} = |y-x|$$
+
+Donc il existe bien $n \in \N^*$ tel que $\frac 1 {10^n} < |y-x|$.
+
+\question Soit $x,y\in\R$, $x<y$. Par définition $\D = \{\frac m {10^n}\ |\ m\in\Z, n\in\N\}$. On choisit $n\in\N^*$ de manière à ce que $\frac 1 {10^n} < |x-y|$. Par le théorème de la Grenouille, il existe $m\in\Z$ tel que $\frac m {10^n} \in\ ]x;y[$. Comme $\frac m {10^n} \in \D$, $\D$ est dense dans $\R$.
+
+
+\subproblem
+\newcommand{\Ztwo}{\mathbb Z[\sqrt 2]}
+\question On pose $x,y \in \Ztwo$ avec $x = a + b\sqrt2$ et $y = c+\sqrt 2$. Alors :
+\begin{equation*}
+	x+y = (a+c) + (b+d)\sqrt 2 \in \Ztwo
+\end{equation*}
+Et :
+\begin{equation*}
+	xy = (ac+2bd) + (ad + bc)\sqrt 2 \in \Ztwo
+\end{equation*}
+
+Donc $\Ztwo$ est stable par addition et multiplication.
+
+\question On prouve encore l'assertion suivante, plus générale : si $x < y$, alors il existe $p\in\N^*$ tel que $u^p < |y-x|$. 
+
+ Soit $u = \sqrt 2 -1$. Montrons que $0<u<1$. Comme $\sqrt 2 > 1$, $u>0$. Si $u \geq 1$, alors $\sqrt 2 \geq 2$ et $2 \geq 4$, ce qui est absurde. Donc $u\in\ ]0;1[$.
+
+Donc il existe $C \in \R_+^*$ tel que pour tout $p\in\N^*$, $u^p \leq \frac C p$. En prenant $p > \frac C {|x-y|}$, $u^p < |x-y|$.
+
+Donc il existe bien $p\in\N^*$, $u^p < |x-y|$.
+
+\question Soient $x,y\in\R$, $x<y$. Choisissons $p\in\N^*$ tel que $u^p < |x-y|$. Par le théorème de la Grenouille, il existe $n\in\Z$ tel que $nu^p \in\ ]x;y[$. Comme $n,u\in\Ztwo$, $nu^p\in\Ztwo$. 
+
+Donc $\Ztwo$ est dense dans $\R$.
+\end{document}
