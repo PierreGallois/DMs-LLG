@@ -7,7 +7,7 @@
   sections: [Problème],
   alpha: false
 )
-#let folder-name = "DM9-Fonction-du-Boulanger"
+#let folder-name = "DM09-Fonction-du-Boulanger"
 
 =
 

@@ -5,7 +5,7 @@
 
 #import "@preview/cades:0.3.0": qr-code // Pour la note de fin
 
-#let folder-name = "DM6-Nombres-Heureux"
+#let folder-name = "DM06-Nombres-Heureux"
 #show: dm.with(
   numero: 6,
   titre: [Nombres heureux],

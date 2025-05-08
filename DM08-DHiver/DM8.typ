@@ -7,7 +7,7 @@
   sections: [Exercice],
   alpha: false
 )
-#let folder-name = "DM8-DHiver"
+#let folder-name = "DM08-DHiver"
 
 // FUNCTIONS
 
