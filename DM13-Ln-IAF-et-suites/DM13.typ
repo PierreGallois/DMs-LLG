@@ -62,7 +62,7 @@ Soit $A in RPS$. Alors $A/ln(2) in RPS$, et par la propriété archimédienne, i
 Pour tout $A in RR$, il existe $n in NN^*$ tel que :
 $ n >= A / ln(2) &<==> n ln(2) >= A\
 &<==> ln(2^n) >= A $
-Ainsi, pour tout $x in RPS, x >= 2^n$, par croissance de $ln$, $ln(x) >= A$. Par définition de la convergence vers $+oo$ en $+oo$, $ lim_(x -> +oo) ln(x) = +oo $
+Ainsi, pour tout $x in RPS, x > 2^n$, par croissance de $ln$, $ln(x) > A$. Par définition de la convergence vers $+oo$ en $+oo$, $ lim_(x -> +oo) ln(x) = +oo $
 De plus, $ ln(1/x) = -ln(x) $
 d'où $ lim_(x -> 0^+) ln(x) &= lim_(x -> +oo) ln(1/x) \
 &= - lim_(x -> +oo) ln(x)\
