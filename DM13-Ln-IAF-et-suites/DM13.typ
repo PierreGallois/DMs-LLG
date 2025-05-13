@@ -18,6 +18,9 @@
 
 = Fonction logarithme népérien.
 ==
+Existence : magie noire ($f(x) = integral_1^x 1/t d t$)
+
+Unicité : soient $f$ et $g$ deux solutions de l'équation différentielle. Posons sur $RPS$ la fonction $h(x) = f(x) - g(x)$. D'une part, $h(1) = 0 - 0 = 0$. D'autre part, $h$ est dérivable comme somme de fonctions dérivables et $h'(x) = 1/x - 1/x = 0$. Donc $h$ est constante nulle sur $RPS$, et $f=g$.
 ==
 Soit la fonction $f$ définie sur $RPS$ par $f:x mapsto ln(x y) - ln(y)$ où $y$ est un réel (fixé).
 La fonction $f$ est dérivable sur $RPS$ comme différence de fonction dérivables.
@@ -53,10 +56,20 @@ Pour tout $x>0$, la dérivée de la fonction $ln$ est la fonction inverse, par d
 Or la fonction inverse est strictement positive sur $RPS$. Donc la fonction $ln$ est strictement croissante sur $RPS$.
 ==
 ===
+Soit $A in RPS$. Alors $A/ln(2) in RPS$, et par la propriété archimédienne, il existe $n in NN^*$ tel que $n >= A /ln(2)$. (Alternativement, $n = ceil(A / ln(2))$)
 
 ===
+Pour tout $A in RR$, il existe $n in NN^*$ tel que :
+$ n >= A / ln(2) &<==> n ln(2) >= A\
+&<==> ln(2^n) >= A $
+Ainsi, pour tout $x in RPS, x >= 2^n$, par croissance de $ln$, $ln(x) >= A$. Par définition de la convergence vers $+oo$ en $+oo$, $ lim_(x -> +oo) ln(x) = +oo $
+De plus, $ ln(1/x) = -ln(x) $
+d'où $ lim_(x -> 0^+) ln(x) &= lim_(x -> +oo) ln(1/x) \
+&= - lim_(x -> +oo) ln(x)\
+&= -oo $
 
 ===
+D'une part, $ln$ est strictement croissante sur son intervalle de définition : elle est donc injective. De plus, $ln$ est continue, et, au vu de ses limites sur son intervalle de définition, atteint toutes les valeurs de $RR$ (théorème de la bijection). Donc $ln : RPS -->^~ RR$.
 
 = Inégalité des accroissements finis et suites.
 #sous-partie[*Partie A*]
@@ -200,6 +213,13 @@ On voit par l'inégalité du 3)b) que $u_6 - sqrt(5) <= 10^(-6)$. Ainsi, $k <= 6
 Trouvant $k=3$. L'absence d'erreur de précision sur les flottant, trop récurrentes, a été vérifiée a posteriori sur calculatrice.
 
 #sous-partie[*Annexes*]
+#counter(heading).update(1)
+==
+On peut aussi prouver autrement les propriétés de $ln$ : par le théorème de la bijection, $exp: RR -->^~ RPS$ et on définit $ln$ comme sa réciproque. Elle est donc dérivable (j'espère que la preuve est facile) comme réciproque d'une fonction dérivable, et on a
+$ exp(ln(x)) = x $
+d'où en dérivant des deux côtés $ ln'(x)exp(ln(x)) = x ln'(x) = 1 $
+Et $ln'(x) = 1/x$. Comme $ln(1) = ln(exp(0)) = 0$, on retrouve que $ln$ satisfait l'équation différentielle du sujet, et toutes les conséquences qui vont avec. (Je voulais juste montrer cette jolie preuve de la dérivée de $ln$, qui se généralise à n'importe quelle fonction réciproque : par exemple, on a ainsi $arcsin'(x) = 1/cos(arcsin(x))$).
+==
 On peut généraliser la méthode utilisée dans cet exercice, qui est (il me semble) un prétexte pour utiliser l'IAF pour trouver une borne qui permet d'appliquer le théorème du point fixe de Banach. 
 
 Posons#footnote[$a >= 5/4$ pour la méthode présentée ici, la raison est présentée plus tard] $a in RR^+_*$, pour lequel on veut trouver une suite $(u_n)$ de rationnels qui approche $sqrt(a)$. Posons $phi_a$ une bonne fonction qui a pour point fixe $sqrt(a)$ : on reprend ici l'exemple du problème
