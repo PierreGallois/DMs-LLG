@@ -109,12 +109,13 @@ $
   &= -phi(x)
 $
 ==
-// TODO: Mettre sur deux colonnes ?
-- Quand $x -> +oo$ : $5 / x -> 0$ et par somme : $ lim_(x -> +oo) phi(x) = +oo $
-- Quand $x -> -oo$ : $5 / x -> 0$ et par somme : $ lim_(x -> -oo) phi(x) = -oo $
-
-- Quand $x -> 0^-$ : $5 / x -> -oo$ et par somme : $ lim_(x -> 0^-) phi(x) = -oo $
-- Quand $x -> 0^+$ : $5 / x -> +oo$ et par somme : $ lim_(x -> 0^+) phi(x) = +oo $
+#columns(2)[
+  - Quand $x -> +oo$ : $5 / x -> 0$ et par somme : $ lim_(x -> +oo) phi(x) = +oo $
+  - Quand $x -> -oo$ : $5 / x -> 0$ et par somme : $ lim_(x -> -oo) phi(x) = -oo $
+  #colbreak()
+  - Quand $x -> 0^-$ : $5 / x -> -oo$ et par somme : $ lim_(x -> 0^-) phi(x) = -oo $
+  - Quand $x -> 0^+$ : $5 / x -> +oo$ et par somme : $ lim_(x -> 0^+) phi(x) = +oo $
+]
 ==
 $phi$ est dérivable sur son intervalle de définition comme somme de deux fonctions dérivables sur $RS$. Sa dérivée est pour tout $x in RS$ :
 
@@ -206,7 +207,7 @@ $
   <==> 0 &<= u_(n+1) - sqrt(5) <= 1 / 10 (u_n - sqrt(5))
 $
 Ce qu'il fallait démontrer.
-
+#pagebreak()
 ===
 On procède par récurrence.
 
@@ -257,7 +258,7 @@ On se place donc sur l'intervalle $I = [sqrt(a); sqrt(5a) / 2]$ (si besoin, on p
 
 L'IAF donne donc que pour tout $x,y in I$ :
 $ |phi_a (y) - phi_a (x)| <= 1 / 10|y-x| $
-
+#pagebreak()
 === Trouver la suite :
 Posons la suite $(u_n)$ définie pour tout $n in NN$ par :
 $
