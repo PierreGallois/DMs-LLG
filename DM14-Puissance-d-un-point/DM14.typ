@@ -14,8 +14,12 @@
 #sous-partie[Partie A - Définition]
 ==
 ===
+Comme $[A A']$ forme un diamètre de $Gamma$, les vecteurs $arrow(A B)$ et $arrow(A' B)$ sont orthogonaux. Comme $arrow(M A)$ et $arrow(B A)$ sont colinéaires, $arrow(M A) perp arrow(A' B)$ et :
+$ arrow(M A) dot arrow(M B) &= arrow(M A) dot arrow(M A ') + arrow(M A) dot arrow(A'B) \
+&= arrow(M A) dot arrow(M A') $
 
 ===
+Comme $A$ et $A'$ sont deux points du cercle $Gamma$, $ arrow(M A) dot arrow(M B) = arrow(M A) dot arrow(M A') = O M^2 - R^2 $ 
 
 ==
 ===
