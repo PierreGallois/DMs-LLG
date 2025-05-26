@@ -19,13 +19,18 @@ $ arrow(M A) dot arrow(M B) &= arrow(M A) dot arrow(M A ') + arrow(M A) dot arro
 &= arrow(M A) dot arrow(M A') $
 
 ===
-Comme $A$ et $A'$ sont deux points du cercle $Gamma$, $ arrow(M A) dot arrow(M B) = arrow(M A) dot arrow(M A') = O M^2 - R^2 $ 
+Comme $[A A']$ est un diamètre de $Gamma$, en appliquant la formule de la médiane, $ arrow(M A) dot arrow(M B) = arrow(M A) dot arrow(M A') = O M^2 - R^2 $ 
 
 ==
 ===
+TODO
 
 ===
+Notons $H$ l'un des points $T$ ou $S$ : la preuve est la même pour les deux. Par définition des tangentes, le triangle $M H O$ est rectangle en $H$, et par Pythagore :
+$ M H^2 + O H ^2 &= O M^2\
+<==> P_Gamma (M) = O M^2 - O H ^2 = M H ^2 $
 
+Ce qui prouve l'égalité.
 ==
 
 ==
