@@ -32,11 +32,18 @@ $ M H^2 + O H ^2 &= O M^2\
 
 Ce qui prouve l'égalité.
 ==
+- $cal(E)_1$ : Pour un point $M$ n'appartenant pas à $Gamma$, $O M != R$ et $O M^2 != R^2$, d'où $P_Gamma (M) != 0$. Donc $cal(E)_1 = emptyset$. (Alternativement, en étendant la définition de $P_Gamma$, $cal(E)_1 = Gamma$)
+- $cal(E)_2$ et $cal(E)_3$ : Soit $M in cal(P) \\ Gamma$. Alors :
+$ P_Gamma (M) < 0 &<=> O M^2 < R^2 \
+&<=> O M < R $
+Donc $cal(E)_2$ est l'intérieur de $Gamma$ et $cal(E)_3$ est l'extérieur de $Gamma$.
 
 ==
 ===
+C'est un cercle (montrer que comme $P_Gamma$ est cste, $O M$ est constant)
 
 ===
+:3:3
 
 #sous-partie[Partie B - Critère de cocyclicité]
 #counter(heading).update(1)
