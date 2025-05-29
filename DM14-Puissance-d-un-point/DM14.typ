@@ -119,6 +119,15 @@ $ arrow(I M) dot arrow(D B) &= arrow(I M) dot arrow(D M) + arrow(I M) dot arrow(
 Donc $(I M) perp (D B)$ : comme $M in (I M)$, $(I M)$ est bien la hauteur issue de $M$ dans $M D B$.
 ==
 ===
+$ arrow(B H) dot arrow(A C) &= (arrow(B K) + arrow(K H)) dot (arrow(A K) + arrow(K C))\
+&= underbrace(arrow(B K) dot arrow(A K), =0) + arrow(B K) dot arrow(K C) + arrow(K H) dot arrow(A K) + underbrace(arrow(K H)dot arrow(K C), =0) \
+&= arrow(B K) dot arrow(K C) + arrow(K H) dot arrow(A K) $
+
+De plus, $arrow(B K) dot arrow(K C) = - arrow(K B) dot arrow(K C) = -P_Gamma (K)$
+
+Et $arrow(K H) dot arrow(A K) = - arrow(K H) dot arrow(K A) =arrow(K A_1) dot arrow(K A)= P_Gamma (K)$
+
+Donc $arrow(B H) dot arrow(A C) = 0$, et $H$ appartient à la hauteur issue de $B$.
 
 ===
 ==
