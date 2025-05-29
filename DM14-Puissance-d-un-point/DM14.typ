@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie
+#import "@preview/cetz:0.3.4"
 
 #show: dm.with(
   numero: 14,
@@ -12,6 +13,36 @@
 
 =
 #sous-partie[Partie A - Définition]
+
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  let point(coord) = {
+    circle(coord, radius:0.01)
+    content(coord, coord, anchor: "south", padding: "0.1")
+  }
+
+  anchor("O", (0,0))
+  anchor("M", (4,0.5))
+  let deg = 230deg
+  anchor("A", (2*calc.cos(deg),2*calc.sin(deg)))
+  anchor("A'", (-2*calc.cos(deg),-2*calc.sin(deg)))
+  circle(name: "G", "O", radius:2)
+  line(name:"AM", "A", "M")
+
+  intersections("C", "AM", "G")
+  anchor("B","C.1")
+
+  point("M")
+  point("O")
+  point("A")
+  point("A'")
+  point("B")
+})
+
+#set align(left)
+
 ==
 ===
 Comme $[A A']$ forme un diamètre de $Gamma$, les vecteurs $arrow(A B)$ et $arrow(A' B)$ sont orthogonaux. Comme $arrow(M A)$ et $arrow(B A)$ sont colinéaires, $arrow(M A) perp arrow(A' B)$ et :
@@ -48,8 +79,21 @@ C'est un cercle (montrer que comme $P_Gamma$ est cste, $O M$ est constant)
 #sous-partie[Partie B - Critère de cocyclicité]
 #counter(heading).update(1)
 ==
+Notons $Gamma$ le cercle tel que $A,B,C,D in Gamma$. Comme $A,B,C,D$ sont disticts, $M$ n'appartient pas à $Gamma$.
+Ainsi, le résultat du 1)b) d'unicité de la puissance d'un point s'applique et comme $[A B]$ et $[C D]$ sont des cordes de $Gamma$ :
+$ arrow(M A)dot arrow(M B) = P_Gamma (M) = arrow(M C) dot arrow(M D) $
+Ce qui donne l'égalité cherchée.
 
 ==
+Supposons que $ arrow(M A)dot arrow(M B) = arrow(M C) dot arrow(M D) $
+Par définition, $D, E in (M C)$. On a donc dans un premier temps $arrow(D E)$ et $arrow(M C)$ colinéaires.
+De plus, comme $A,B,C,E$ sont sur un même cercle $Gamma$,  par unicité de la puissance d'un point, on obtient :
+$ arrow(M A)dot arrow(M B) = P_Gamma (M) =  arrow(M C) dot arrow(M E) $
+En faisant la différence des deux expressions de $arrow(M A)dot arrow(M B)$, on obtient :
+$ arrow(M C) dot (arrow(M E) - arrow(M D)) &= arrow(M C) dot arrow(D E) \
+&= arrow(0) $
+Donc $arrow(D E) perp arrow(M C)$. Comme $arrow(D E)$ et $arrow(M C)$ sont à la fois perpendiculaires et colinéaires, et que $arrow(M C) != arrow(0)$, $arrow(D E) = arrow(0)$ et $E = D$.
+Donc $A,B,C,D$ sont bien cocycliques.
 
 ==
 
