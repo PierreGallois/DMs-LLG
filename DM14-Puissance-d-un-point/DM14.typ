@@ -1,5 +1,6 @@
 #import "./../templates/homework.typ": dm, sous-partie
 #import "@preview/cetz:0.3.4"
+#import "vectors.typ": *
 
 #show: dm.with(
   numero: 14,
