@@ -108,7 +108,14 @@ Par le théorème de Pythagore, le triangle $O T M$ est rectangle en $T$ et $(M 
 #counter(heading).update(1)
 
 ==
+Notons $I$ le milieu de $[A B]$. Donc $arrow(I M) = 1/2 arrow(C A) + arrow(A M)$. Calculons $arrow(I M) dot arrow(D B)$ pour montrer que $(I M) perp (B D)$.
+$ arrow(I M) dot arrow(D B) &= arrow(I M) dot arrow(D M) + arrow(I M) dot arrow(M B) \
+&= 1/2 arrow(C A) dot arrow(D M) + underbrace((A M) dot arrow(D M), = 0) + 1/2 arrow(C A) dot arrow( M B) + underbrace((A M) dot arrow(M B), = 0)\
+&= 1/2 arrow(C A) dot (arrow(D M) + arrow(M B))\
+&= 1/2 arrow(C A) dot arrow(D M)\ 
+&= 0 $
 
+Donc $(I M) perp (D B)$ : comme $M in (I M)$, $(I M)$ est bien la hauteur issue de $M$ dans $M D B$.
 ==
 ===
 
