@@ -72,6 +72,10 @@ Donc $cal(E)_2$ est l'intérieur de $Gamma$ et $cal(E)_3$ est l'extérieur de $G
 ==
 ===
 C'est un cercle (montrer que comme $P_Gamma$ est cste, $O M$ est constant)
+$ M in cal(F)_k &<==> O M^2 = R^2 + k $
+Comme $R$ et $k$ sont des constantes, $cal(F)_k$ est l'ensemble des points à une certaine distance du centre $O$. Ainsi :
+- Si $k >= -R^2$, $cal(F)_k$ est un cercle de centre $O$ et de rayon $sqrt(R^2 + k)$
+- Si $k < - R^2$, $cal(F)_k = emptyset$
 
 ===
 :3:3
@@ -96,6 +100,9 @@ Donc $arrow(D E) perp arrow(M C)$. Comme $arrow(D E)$ et $arrow(M C)$ sont à la
 Donc $A,B,C,D$ sont bien cocycliques.
 
 ==
+Notons $Gamma$ le cercle circonscrit à $A B T$ et $O$ son centre. Soit $M in (A B)$. Comme $arrow(M A) dot arrow(M B) = P_Gamma (M) = O M^2 - R^2$, on trouve que :
+$ O M^2 - R^2 = M T^2 <==> O M^2 = O T^2 + M T^2 $
+Par le théorème de Pythagore, le triangle $O T M$ est rectangle en $T$ et $(M T)$ est bien tangente à $Gamma$
 
 #sous-partie[Partie C - Quelques applications]
 #counter(heading).update(1)
