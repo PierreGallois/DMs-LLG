@@ -79,7 +79,31 @@ Comme $R$ et $k$ sont des constantes, $cal(F)_k$ est l'ensemble des points à un
 - Si $k < - R^2$, $cal(F)_k = emptyset$
 
 ===
-:3:3
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  let O = (0,0)
+  let R = 1
+  let scale = 2
+
+  circle(O, radius: scale*R)
+  circle(O, radius: scale*calc.sqrt(R*R - 3/4), name:"F34", stroke: blue)
+  circle(O, radius: scale*calc.sqrt(R*R + 1), name:"F1", stroke: green)
+  circle(O, radius: scale*calc.sqrt(R*R + 3), name:"F3", stroke: red)
+
+  circle(O, radius: 0.01, name: "O")
+  content("O", [O], anchor: "south", padding: 0.1)
+  line(O, (R*scale,0), name:"Rad")
+  content("Rad.70%", [1], anchor: "north", padding: 0.1)
+
+  content((name:"F34", anchor: 45deg), [#text(blue)[$cal(F)_(3/4)$]], anchor: "west", padding: 0.1)
+  content((name:"F1", anchor: 45deg), [#text(green)[$cal(F)_(1)$]], anchor: "west", padding: 0.1)
+  content((name:"F3", anchor: 45deg), [#text(red)[$cal(F)_(3)$]], anchor: "west", padding: 0.1)
+})
+
+
+#set align(left)
 
 #sous-partie[Partie B - Critère de cocyclicité]
 #counter(heading).update(1)
@@ -130,4 +154,72 @@ Et $arrow(K H) dot arrow(A K) = - arrow(K H) dot arrow(K A) =arrow(K A_1) dot ar
 Donc $arrow(B H) dot arrow(A C) = 0$, et $H$ appartient à la hauteur issue de $B$.
 
 ===
+Ce calcul est indépendant de l'ordre des sommets : ainsi, en permutant les sommets, on trouve que $H$ appartient aux hauteurs issues de $A,B$ et $C$ : $H$ est donc l'orthocentre du triangle $A B C$.
 ==
+Notons $M$ l'intersection de $(P Q)$ et $(R S)$. Alors :
+$ MP dot MQ =  $
+
+ESSAYE : ABANDONNE
+
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  let point(coord, dir) = {
+    circle(coord, radius:0.01)
+    content(coord, coord, anchor: dir, padding: "0.1")
+  }
+
+  let A = (0,0)
+  let B = (3,3)
+  let C = (4,-2.5)
+  let distance(A,B) = {calc.sqrt(calc.pow(B.at(0) - A.at(0), 2) + calc.pow(B.at(1) - A.at(1), 2))}
+
+  let ortho_proj(B,C) = {
+    let normB = distance(A, B)
+    let norm_proj = (B.at(0) * C.at(0) + B.at(1) * C.at(1)) / normB
+    let unitB = (B.at(0)/normB, B.at(1)/normB)
+
+    return (unitB.at(0)*norm_proj, unitB.at(1)*norm_proj)
+  }
+  
+  anchor("A", A)
+  anchor("B", B)
+  anchor("C", C)
+  line("A", "B", name:"AB")
+  line("A", "C", name:"AC")
+
+  circle(
+    "AB.50%",
+    radius: distance(A,B)/2,
+    name:"Gamma_1"
+  )
+
+  circle(
+    "AC.50%",
+    radius: distance(A,C)/2,
+    name:"Gamma_2"
+  )
+
+  anchor("I1", ortho_proj(B,C))
+  anchor("I2", ortho_proj(C,B))
+
+  line("C", "I1", name:"CI1")
+  line("B", "I2", name:"BI2")
+
+  intersections("P", "Gamma_1", "CI1")
+  intersections("R", "Gamma_2", "BI2")
+  intersections("M", "CI1", "BI2")
+
+  cetz.angle.right-angle("I1", "A", "C", radius: 0.2)
+  cetz.angle.right-angle("I2", "A", "B", radius: 0.2)
+
+  point("A", "east")
+  point("B", "south")
+  point("C", "north-west")
+  point("P.0", "south")
+  point("R.0", "south")
+  point("M.0", "west")
+})
+
+#set align(left)
