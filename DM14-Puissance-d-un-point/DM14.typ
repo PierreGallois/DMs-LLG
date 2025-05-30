@@ -206,7 +206,7 @@ Si $Gamma$ et $Omega$ sont deux cercles différents d'intersection $T$ et $S$ #u
 $ P_Gamma (M) = MT dot MS = P_Omega (M) $
 Donc $M in Pi$.
 
-D'autre part, soit $M in Pi$. Comme $P_Gamma (T) = 0 = Omega (T)$ et idem pour $S$, alors $T,S in Pi$ et on peut supposer $M != T,S$.
+D'autre part, soit $M in Pi$. Comme $P_Gamma (T) = 0 = P_Omega (T)$ et idem pour $S$, alors $T,S in Pi$ et on peut supposer $M != T,S$.
 
 Tout d'abord, la droite $(M T)$ n'est pas tangente aux cercles $Gamma$ ou $Omega$ : si c'était le cas (sans perte de généralité, pour $Gamma$) alors $P_Gamma (M) = M T^2 = P_Omega (M)$ : Donc $(M T)$ serait tangente aux deux cercles en même temps, ce qui est une contradiction car $T in Gamma, Omega$.
 
@@ -230,7 +230,7 @@ Notons maintenant $M$ l'intersection des deux perpendiculaires de l'énoncé. $M
 
 Notons $Gamma$ le cercle de diamètre $[A B]$ et $Omega$ le cercle de diamètre $[A C].$ Ceux-ci sont sécants en $A$, et comme l'angle $hat(B A C)$ ne peut être plat, en un second point $A'$. Comme $A' in Gamma$, le triangle $A A' B$ est rectangle en $A'$, et $A'$ est donc la base de la hauteur issue de $A$. Comme $M$ est l'orthocentre de $A B C$, on a donc enfin que $M in (A A')$.
 
-Par le lemme précédent, $M$ est donc sur l'axe radical des cercle $Gamma$ et $Omega$ : Ainsi, on trouve que :
+Par le lemme précédent, $M$ est donc sur l'axe radical des cercles $Gamma$ et $Omega$ : Ainsi, on trouve que :
 $ P_Gamma (M) = MP dot MQ = P_Omega (M) = MR dot MS $
 Donc $MP dot MQ = MR dot MS$, et $P,Q,R,S$ sont cocycliques par le $B)2)$, ce qu'il fallait démontrer.
 
