@@ -55,7 +55,50 @@ Comme $[A A']$ est un diamètre de $Gamma$, en appliquant la formule de la médi
 
 ==
 ===
-TODO
+On peut tracer $I$ le milieu de $[O M]$ (faisable au compas et à la règle) et tracer le cercle $Omega$ de centre $I$ qui passe par $O$. Alors, si $T,S$ sont les points d'intersection de $Omega$ et $Gamma$, alors $T,S in Gamma$ et le triangle $O T M$ (respectivement $O S M$) est rectangle en $T$ (respectivement $S$) car $[O M]$ forme un diamètre de $Omega$ : $T,S$ sont donc les points de contact des tangentes à $Gamma$ passant par $M$.
+
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  anchor("O", (0,0))
+  anchor("M", (7,0))
+  anchor("I", (3.5, 0))
+
+  let R = 1
+  let scale = 2
+  let point(coord, name) = {
+    circle(coord, radius:0.05, name:name)
+    content(coord, name, anchor: "south-east", padding: 0.1)
+  }
+
+  circle("O", radius: scale*R, name: "Gamma")
+  circle("I", radius: 3.5, name:"Omega")
+
+  content((name:"Gamma", anchor: 130deg), [$Gamma$], anchor: "east", padding: 0.2)
+  content((name:"Omega", anchor: 50deg), [$Omega$], anchor: "west", padding: 0.3)
+
+  intersections("TS", "Omega", "Gamma")
+  for-each-anchor("TS", (name) => {
+    point("TS." + name, {
+      if name == "0" {"T"} else {"S"}
+    })
+  })
+
+  line("O", "M")
+  line("M", "T")
+  line("O", "T")
+  line("M", "S")
+  line("O", "S")
+
+  point("O", "O")
+  point("I", "I")
+  point("M", "M")
+
+  cetz.angle.right-angle("T", "O", "M", radius: 0.3)
+  cetz.angle.right-angle("S", "O", "M", radius: 0.3)
+})
+#set align(left)
 
 ===
 Notons $H$ l'un des points $T$ ou $S$ : la preuve est la même pour les deux. Par définition des tangentes, le triangle $M H O$ est rectangle en $H$, et par Pythagore :
