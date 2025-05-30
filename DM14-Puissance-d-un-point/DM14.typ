@@ -199,70 +199,43 @@ Donc $arrow(B H) dot arrow(A C) = 0$, et $H$ appartient à la hauteur issue de $
 ===
 Ce calcul est indépendant de l'ordre des sommets : ainsi, en permutant les sommets, on trouve que $H$ appartient aux hauteurs issues de $A,B$ et $C$ : $H$ est donc l'orthocentre du triangle $A B C$.
 ==
-Notons $M$ l'intersection de $(P Q)$ et $(R S)$. Alors :
-$ MP dot MQ =  $
+#underline([Lemme (Axe radical) :])
+Si $Gamma$ et $Omega$ sont deux cercles différents d'intersection $T$ et $S$ #underline[distincts], alors le lieu des points $Pi = {M | P_Gamma (M) = P_Omega (M)}$ est la droite $(T S)$.
 
-ESSAYE : ABANDONNE
+#underline[Preuve :] D'une part, si $M in (T S)$, comme $[T S]$ est une corde de $Gamma$ et de $Omega$, alors :
+$ P_Gamma (M) = MT dot MS = P_Omega (M) $
+Donc $M in Pi$.
+
+D'autre part, soit $M in Pi$. Comme $P_Gamma (T) = 0 = Omega (T)$ et idem pour $S$, alors $T,S in Pi$ et on peut supposer $M != T,S$.
+
+Tout d'abord, la droite $(M T)$ n'est pas tangente aux cercles $Gamma$ ou $Omega$ : si c'était le cas (sans perte de généralité, pour $Gamma$) alors $P_Gamma (M) = M T^2 = P_Omega (M)$ : Donc $(M T)$ serait tangente aux deux cercles en même temps, ce qui est une contradiction car $T in Gamma, Omega$.
+
+Ainsi, on peut noter $R$ l'intersection de $(M T)$ et $Gamma$ différente de $T$ et $R'$ l'intersection de $(M T)$ et $Omega$ différente de $T$. On a donc :
+$ P_Gamma (M)  = MR dot MT = P_Omega (M) = MR' dot MT $
+En faisant la différence des équations, on trouve :
+$ MT dot (MR' - MR) &= - MT dot (RM - arrow(R'M))\
+&= -MT dot arrow(R R') = 0 $
+Donc $MT perp arrow(R R')$. Mais $arrow(R R') \/\/ MT$, et on trouve donc que $R = R'$.
+
+Ainsi, $(M T)$ intersecte $Gamma$ et $Omega$ en un même point, qui ne peut que être $S$. Donc $S in (M T)$ et $M in (T S)$, ce qu'il fallait démontrer.
+
 
 #set align(center)
-#cetz.canvas({
-  import cetz.draw: *
+#figure(
+  image("images/schema2.png")
+)
+#set align(left)
 
-  let point(coord, dir) = {
-    circle(coord, radius:0.01)
-    content(coord, coord, anchor: dir, padding: "0.1")
-  }
+Notons maintenant $M$ l'intersection des deux perpendiculaires de l'énoncé. $M$ est l'intersection de deux hauteurs du triangle $A B C$ : c'est donc son orthocentre, qui est de plus dans le triangle car celui-ci n'a que des angles aigus (source: Wikipedia).
 
-  let A = (0,0)
-  let B = (3,3)
-  let C = (4,-2.5)
-  let distance(A,B) = {calc.sqrt(calc.pow(B.at(0) - A.at(0), 2) + calc.pow(B.at(1) - A.at(1), 2))}
+Notons $Gamma$ le cercle de diamètre $[A B]$ et $Omega$ le cercle de diamètre $[A C].$ Ceux-ci sont sécants en $A$, et comme l'angle $hat(B A C)$ ne peut être plat, en un second point $A'$. Comme $A' in Gamma$, le triangle $A A' B$ est rectangle en $A'$, et $A'$ est donc la base de la hauteur issue de $A$. Comme $M$ est l'orthocentre de $A B C$, on a donc enfin que $M in (A A')$.
 
-  let ortho_proj(B,C) = {
-    let normB = distance(A, B)
-    let norm_proj = (B.at(0) * C.at(0) + B.at(1) * C.at(1)) / normB
-    let unitB = (B.at(0)/normB, B.at(1)/normB)
+Par le lemme précédent, $M$ est donc sur l'axe radical des cercle $Gamma$ et $Omega$ : Ainsi, on trouve que :
+$ P_Gamma (M) = MP dot MQ = P_Omega (M) = MR dot MS $
+Donc $MP dot MQ = MR dot MS$, et $P,Q,R,S$ sont cocycliques par le $B)2)$, ce qu'il fallait démontrer.
 
-    return (unitB.at(0)*norm_proj, unitB.at(1)*norm_proj)
-  }
-  
-  anchor("A", A)
-  anchor("B", B)
-  anchor("C", C)
-  line("A", "B", name:"AB")
-  line("A", "C", name:"AC")
-
-  circle(
-    "AB.50%",
-    radius: distance(A,B)/2,
-    name:"Gamma_1"
-  )
-
-  circle(
-    "AC.50%",
-    radius: distance(A,C)/2,
-    name:"Gamma_2"
-  )
-
-  anchor("I1", ortho_proj(B,C))
-  anchor("I2", ortho_proj(C,B))
-
-  line("C", "I1", name:"CI1")
-  line("B", "I2", name:"BI2")
-
-  intersections("P", "Gamma_1", "CI1")
-  intersections("R", "Gamma_2", "BI2")
-  intersections("M", "CI1", "BI2")
-
-  cetz.angle.right-angle("I1", "A", "C", radius: 0.2)
-  cetz.angle.right-angle("I2", "A", "B", radius: 0.2)
-
-  point("A", "east")
-  point("B", "south")
-  point("C", "north-west")
-  point("P.0", "south")
-  point("R.0", "south")
-  point("M.0", "west")
-})
-
+#set align(center)
+#figure(
+  image("images/schema.png")
+)
 #set align(left)
