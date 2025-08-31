@@ -1,6 +1,6 @@
 # DMs-LLG
 
-Ce repo contient les solutions de notre groupe aux devoirs maisons de mathématiques au lycée Louis-Le-Grand en classe de 1E1.
+Ce repo contient les solutions de notre groupe aux devoirs maisons de mathématiques au lycée Louis-Le-Grand en classe de 1E1 puis T1.
 
 Le [template](./templates/homework.cls) des devoirs en LaTeX, largement modifié par nos soins, est basé sur [celui-ci](https://www.overleaf.com/latex/templates/template-for-rapid-homework-typesetting/rycccpxphchn).  
 Ceux écrits en [Typst](https://typst.app/) bénéficient d'un [template entièrement rédigé pour nos besoins](./templates/homework.typ).
