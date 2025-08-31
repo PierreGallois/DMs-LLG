@@ -8,5 +8,7 @@ Ceux écrits en [Typst](https://typst.app/) bénéficient d'un [template entièr
 > [!TIP]
 > Pour activer les hooks git et compiler automatiquement les fichiers Typst à chaque commit, executer : `git config --local core.hooksPath .githooks/`
 
+Pour tenter de recompiler un ancien DM, nous conseillons de checkout la branche au dernier commit effectué sur ce DM et d'utiliser une ancienne version du compilateur Typst.
+
 > [!WARNING]
 > Les documents de ce repo sont fournis sans garantie et contiennent d'ailleurs des fautes.
