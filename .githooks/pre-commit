@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 # execute "git config --local core.hooksPath .githooks/" to enable hooks
 # source : https://gist.github.com/DArtagnant/5e5c89566b280e945f19b200d9642927
