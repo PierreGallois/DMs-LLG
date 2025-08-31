@@ -55,7 +55,50 @@ Comme $[A A']$ est un diamètre de $Gamma$, en appliquant la formule de la médi
 
 ==
 ===
-TODO
+On peut tracer $I$ le milieu de $[O M]$ (faisable au compas et à la règle) et tracer le cercle $Omega$ de centre $I$ qui passe par $O$. Alors, si $T,S$ sont les points d'intersection de $Omega$ et $Gamma$, alors $T,S in Gamma$ et le triangle $O T M$ (respectivement $O S M$) est rectangle en $T$ (respectivement $S$) car $[O M]$ forme un diamètre de $Omega$ : $T,S$ sont donc les points de contact des tangentes à $Gamma$ passant par $M$.
+
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  anchor("O", (0,0))
+  anchor("M", (7,0))
+  anchor("I", (3.5, 0))
+
+  let R = 1
+  let scale = 2
+  let point(coord, name) = {
+    circle(coord, radius:0.05, name:name)
+    content(coord, name, anchor: "south-east", padding: 0.1)
+  }
+
+  circle("O", radius: scale*R, name: "Gamma")
+  circle("I", radius: 3.5, name:"Omega")
+
+  content((name:"Gamma", anchor: 130deg), [$Gamma$], anchor: "east", padding: 0.2)
+  content((name:"Omega", anchor: 50deg), [$Omega$], anchor: "west", padding: 0.3)
+
+  intersections("TS", "Omega", "Gamma")
+  for-each-anchor("TS", (name) => {
+    point("TS." + name, {
+      if name == "0" {"T"} else {"S"}
+    })
+  })
+
+  line("O", "M")
+  line("M", "T")
+  line("O", "T")
+  line("M", "S")
+  line("O", "S")
+
+  point("O", "O")
+  point("I", "I")
+  point("M", "M")
+
+  cetz.angle.right-angle("T", "O", "M", radius: 0.3)
+  cetz.angle.right-angle("S", "O", "M", radius: 0.3)
+})
+#set align(left)
 
 ===
 Notons $H$ l'un des points $T$ ou $S$ : la preuve est la même pour les deux. Par définition des tangentes, le triangle $M H O$ est rectangle en $H$, et par Pythagore :
@@ -79,7 +122,31 @@ Comme $R$ et $k$ sont des constantes, $cal(F)_k$ est l'ensemble des points à un
 - Si $k < - R^2$, $cal(F)_k = emptyset$
 
 ===
-:3:3
+#set align(center)
+#cetz.canvas({
+  import cetz.draw: *
+
+  let O = (0,0)
+  let R = 1
+  let scale = 2
+
+  circle(O, radius: scale*R)
+  circle(O, radius: scale*calc.sqrt(R*R - 3/4), name:"F34", stroke: blue)
+  circle(O, radius: scale*calc.sqrt(R*R + 1), name:"F1", stroke: green)
+  circle(O, radius: scale*calc.sqrt(R*R + 3), name:"F3", stroke: red)
+
+  circle(O, radius: 0.01, name: "O")
+  content("O", [O], anchor: "south", padding: 0.1)
+  line(O, (R*scale,0), name:"Rad")
+  content("Rad.70%", [1], anchor: "north", padding: 0.1)
+
+  content((name:"F34", anchor: 45deg), [#text(blue)[$cal(F)_(3/4)$]], anchor: "west", padding: 0.1)
+  content((name:"F1", anchor: 45deg), [#text(green)[$cal(F)_(1)$]], anchor: "west", padding: 0.1)
+  content((name:"F3", anchor: 45deg), [#text(red)[$cal(F)_(3)$]], anchor: "west", padding: 0.1)
+})
+
+
+#set align(left)
 
 #sous-partie[Partie B - Critère de cocyclicité]
 #counter(heading).update(1)
@@ -130,4 +197,45 @@ Et $arrow(K H) dot arrow(A K) = - arrow(K H) dot arrow(K A) =arrow(K A_1) dot ar
 Donc $arrow(B H) dot arrow(A C) = 0$, et $H$ appartient à la hauteur issue de $B$.
 
 ===
+Ce calcul est indépendant de l'ordre des sommets : ainsi, en permutant les sommets, on trouve que $H$ appartient aux hauteurs issues de $A,B$ et $C$ : $H$ est donc l'orthocentre du triangle $A B C$.
 ==
+#underline([Lemme (Axe radical) :])
+Si $Gamma$ et $Omega$ sont deux cercles différents d'intersection $T$ et $S$ #underline[distincts], alors le lieu des points $Pi = {M | P_Gamma (M) = P_Omega (M)}$ est la droite $(T S)$.
+
+#underline[Preuve :] D'une part, si $M in (T S)$, comme $[T S]$ est une corde de $Gamma$ et de $Omega$, alors :
+$ P_Gamma (M) = MT dot MS = P_Omega (M) $
+Donc $M in Pi$.
+
+D'autre part, soit $M in Pi$. Comme $P_Gamma (T) = 0 = P_Omega (T)$ et idem pour $S$, alors $T,S in Pi$ et on peut supposer $M != T,S$.
+
+Tout d'abord, la droite $(M T)$ n'est pas tangente aux cercles $Gamma$ ou $Omega$ : si c'était le cas (sans perte de généralité, pour $Gamma$) alors $P_Gamma (M) = M T^2 = P_Omega (M)$ : Donc $(M T)$ serait tangente aux deux cercles en même temps, ce qui est une contradiction car $T in Gamma, Omega$.
+
+Ainsi, on peut noter $R$ l'intersection de $(M T)$ et $Gamma$ différente de $T$ et $R'$ l'intersection de $(M T)$ et $Omega$ différente de $T$. On a donc :
+$ P_Gamma (M)  = MR dot MT = P_Omega (M) = MR' dot MT $
+En faisant la différence des équations, on trouve :
+$ MT dot (MR' - MR) &= - MT dot (RM - arrow(R'M))\
+&= -MT dot arrow(R R') = 0 $
+Donc $MT perp arrow(R R')$. Mais $arrow(R R') \/\/ MT$, et on trouve donc que $R = R'$.
+
+Ainsi, $(M T)$ intersecte $Gamma$ et $Omega$ en un même point, qui ne peut que être $S$. Donc $S in (M T)$ et $M in (T S)$, ce qu'il fallait démontrer.
+
+
+#set align(center)
+#figure(
+  image("images/schema2.png")
+)
+#set align(left)
+
+Notons maintenant $M$ l'intersection des deux perpendiculaires de l'énoncé. $M$ est l'intersection de deux hauteurs du triangle $A B C$ : c'est donc son orthocentre, qui est de plus dans le triangle car celui-ci n'a que des angles aigus (source: Wikipedia).
+
+Notons $Gamma$ le cercle de diamètre $[A B]$ et $Omega$ le cercle de diamètre $[A C].$ Ceux-ci sont sécants en $A$, et comme l'angle $hat(B A C)$ ne peut être plat, en un second point $A'$. Comme $A' in Gamma$, le triangle $A A' B$ est rectangle en $A'$, et $A'$ est donc la base de la hauteur issue de $A$. Comme $M$ est l'orthocentre de $A B C$, on a donc enfin que $M in (A A')$.
+
+Par le lemme précédent, $M$ est donc sur l'axe radical des cercles $Gamma$ et $Omega$ : Ainsi, on trouve que :
+$ P_Gamma (M) = MP dot MQ = P_Omega (M) = MR dot MS $
+Donc $MP dot MQ = MR dot MS$, et $P,Q,R,S$ sont cocycliques par le $B)2)$, ce qu'il fallait démontrer.
+
+#set align(center)
+#figure(
+  image("images/schema.png")
+)
+#set align(left)
