@@ -3,14 +3,13 @@
 #show: dm.with(
   numero: 1,
   titre: [
-    Fonctions contractantes, dilatantes et points fixes],
+    Fonctions contractantes,\ dilatantes et points fixes],
   sections: [Problème],
   alpha: false
 )
 
 #let folder-name = "TE1-DM01-Fonctions-Contractantes-Dilatantes-et-Points-Fixes/"
 
-= Problème unique.
 #sous-partie[Partie A - Fonctions contractantes et rétrécissantes.]
 
 ==
