@@ -10,10 +10,22 @@
 
 #let folder-name = "TE1-DM01-Fonctions-Contractantes-Dilatantes-et-Points-Fixes/"
 
+=
+
 #sous-partie[Partie A - Fonctions contractantes et rétrécissantes.]
 
 ==
-Soient $ k in RR_+^*$, et $f$ une fonction définie sur $I$ telle que pour tous $x, y in I, |f(x) - f(y)| lt.eq.slant k|x - y|$.
+Soient $ k in RR_+^*$, et $f$ une fonction lipschitzienne définie sur $I$ qui respecte donc pour tous $x, y in I, abs(f(x) - f(y)) <= k abs(x - y)$.
+Montrons que cette fonction est continue.
+
+Soit $y$ dans $I$. Pour tout $epsilon > 0$, posons $alpha = epsilon / k$. Dans les cas où $abs(x - y) < alpha$, on obtient :
+$
+    abs(x - y) < epsilon / k <==> k abs(x - y) < epsilon
+$
+
+Et comme $f$ est lipschitzienne, $abs(f(x) - f(y)) <= k abs(x - y) < epsilon$ donc $abs(f(x) - f(y)) < epsilon$.
+
+Nous avons prouvé que quelque soit le point $y$ que l'on choisit dans le domaine de définition $I$ de $f$, $forall epsilon > 0, exists alpha > 0, forall x in I, abs(x - y) < alpha => abs(f(x) - f(y)) < epsilon$ ie toute fonction lipschitzienne est continue.
 
 ==
 Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $|f(x) - f(y)| lt.eq.slant k|x - y| (*)$.
