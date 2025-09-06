@@ -130,3 +130,45 @@ Supposons que $f$ ne soit pas strictement monotone, i.e $f$ n'est ni strictement
 
 TODO : l'argument est long
 
+==
+On sait que $f$ est continue et strictement monotone. Quitte à travailler avec $-f$ au lieu de $f$, supposons que $f$ est strictement croissante.
+
+Soit $x >= 0$. Alors $|f(x) - f(0)| >= |x|$, c'est à dire que $f(x) >= x + f(0)$. Comme la fonction $x |-> x + f(0)$ n'est pas majorée sur $RR^+$, a fortiori, $f$ n'est pas majorée sur $RR^+$ et donc sur $RR$.
+
+Similairement, soit $x <= 0$. Alors $|f(x) - f(0)| = f(0) - f(x) >= |x| = -x$, et on obtient $x + f(0) >= f(x)$. On en déduit donc que $f$ n'est pas minorée sur $RR^-$ et donc sur $RR$.
+
+Donc $f$ n'est pas bornée.
+
+==
+===
+Soient $x >= y in RR$. Alors :
+$
+  h(x) - h(y) = f(x)-f(y) + y-x &>= 0\
+  <==> f(x)-f(y) =^(#text[croissance]) abs(f(x)-f(y)) &>= x-y = |x-y|
+$
+Où cette dernière inégalité est vraie car $f$ est dilatante. Donc $h$ est bien croissante.
+
+===
+La fonction $h: x|-> f(x) - x$ est strictement négative, mais est croissante. Par le théorème de la limite monotone, on déduit l'existence de $lim_(x -> +oo)h(x) <= 0$. Ainsi, par quotient de limites :
+$
+  h(x) / x = f(x)/x - 1 -->^(x-> +oo) 0
+$
+D'où $lim_(x->+oo)f(x)/x = 1$.
+
+===
+La fonction $h: x |-> f(x)-x$ est strictement positive et croissante. En particulier, la fonction décroissante $x |-> h(-x)$ est strictement positive et on déduit du théorème de la limite monotone l'existence de
+$
+  lim_(x -> +oo)h(-x) = lim_(x -> -oo)h(x) >= 0
+$
+Ainsi, encore par quotient de limites,
+$
+  h(x)/x = f(x)/x - 1 -->^(x-> -oo) 0
+$
+D'où $lim_(x->-oo)f(x)/x = 1$.
+
+===
+Si $a,b$ sont des points fixes de $f$, alors $h(a) = h(b) = 0$. Comme $h$ est croissante, pour tous $c in [a;b]$,
+$
+  h(a) = 0 <= h(c) <= h(b) = 0 
+$
+D'où $h(c) =0$. Donc $c$ est un point fixe de $f$, et $[a;b] subset.eq F$.
