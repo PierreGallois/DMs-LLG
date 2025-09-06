@@ -48,8 +48,23 @@ $f$ est dérivable sur $I$. Pour tout $x in I$, $f'(x) = 1 - 1/(x-a+1)^2$.
 Or,
 $
   x in I &==> x >= a \
-  &==> x-a >=
+  &==> x-a >= 0 \
+  &==> x-a+1 >= 1 \
+  &==> (x-a+1)^2 >= 1 \
+  &==> 1/((x-a+1)^2) <= 1 \
+  &==> 0 <= f'(x).
 $
+La dérivée de $f$ est positive pour tout $x in I$, donc $f$ est bien croissante sur $I$.
+
+Soit $x in I$.
+$
+  x in I &==> x >= a \
+  &==> x-a >= 0 \
+  &==> x-a+1 > 0 \
+  &==> 1/(x-a+1) > 0.
+$
+
+$x >= a$, donc par somme d'inégalités, $x + 1/(x-a+1) >= a$ i.e. $f(x) in I$.
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
 
