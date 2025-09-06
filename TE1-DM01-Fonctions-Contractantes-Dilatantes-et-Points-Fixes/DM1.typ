@@ -28,7 +28,7 @@ Et comme $f$ est lipschitzienne, $abs(f(x) - f(y)) <= k abs(x - y) < epsilon$ do
 Nous avons prouvé que quelque soit le point $y$ que l'on choisit dans le domaine de définition $I$ de $f$, $forall epsilon > 0, exists alpha > 0, forall x in I, abs(x - y) < alpha => abs(f(x) - f(y)) < epsilon$ ie toute fonction lipschitzienne est continue.
 
 ==
-Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $abs(f(x) - f(y)) <= k abs(x - y) (*)$.
+Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $abs(f(x) - f(y)) <= k abs(x - y) quad (*)$.
 
 Or,
 $
