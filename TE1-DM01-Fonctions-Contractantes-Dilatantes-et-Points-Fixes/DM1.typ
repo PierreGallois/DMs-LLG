@@ -74,6 +74,7 @@ $x >= a$, donc par somme d'inégalités, $x + 1/(x-a+1) >= a$ i.e. $f(x) in I$.
 
 
 #sous-partie[Partie C - Fonctions dilatantes.]
+#counter(heading).update(1)
   On fixe $f :RR -> RR$ continue et dilatante.
 
 ==
@@ -96,7 +97,24 @@ $
 $
 Comme les limites de $g$ (qui existent par continuité avant et après $lambda$) en $lambda$ coïncident avec $g(lambda) = -lambda$, on en déduit que $g$ est continue en $lambda$ et donc sur tout $RR$. Montrons maintenant que $g$ est dilatante. On distingue trois cas :
 
-  - $x, y < lambda$ : $abs(g(x) - g(y)) = abs(y-x) = abs(x-y) >= abs(x-y)$
-  - $x,y >= lambda$ : $abs(g(x) - g(y)) = abs(2y-2x) = 2 abs(x-y) >= abs(x-y)$
-  - $x < lambda$ et $y >= lambda$ : $abs(g(x) - g(y)) = abs(2y - lambda - x) = abs((y-lambda) + (y-x)) >=^(#text[Triangulaire]) abs(x-y)$
+  - $x, y < lambda$ : $|g(x) - g(y)| = |y-x| = |x-y| >= |x-y|$
+  - $x,y >= lambda$ : $|g(x) - g(y)| = |2y-2x| = 2|x-y| >= |x-y|$
+  - $x < lambda$ et $y >= lambda$ : $|g(x) - g(y)| = |2y - lambda - x| = |(y-lambda) + (y-x)| >=^(#text[Triangulaire]) |x-y|$
 Ce qui montre que $g$ est bien dilatante.
+
+==
+===
+Soit $lambda in thin ]f(a_1);f(a_2)[ thin inter thin ]f(a_3);f(a_2)[ thin$. Cette intersection n'est pas vide, car elle contient au moins $]max(f(a_1), f(a_3)); f(a_2)[ thin$. Alors en posant $g: x |-> f(x) - lambda$, qui est continue par somme, comme $g(a_1), g(a_3) < 0$ et $g(a_2) > 0$, on obtient en appliquant TVI un $b in thin ]a_1;a_2$[ et un $c in thin ]a_2;a_3[$ tels que $g(b) = g(c) = 0$, c'est à dire $f(b) = f(c) = lambda$.
+
+===
+Comme $f$ est dilatante,
+$
+  |f(b) - f(c)| = 0 >= |b-c| >= 0
+$
+On en déduit que $|b-c| = 0$, donc $b = c$. Donc $f$ dilatante implique $f$ injective.
+
+===
+Supposons que $f$ ne soit pas strictement monotone, i.e $f$ n'est ni strictement croissante ni strictement décroissante. Comme $f$ n'est pas strictement décroissante, il existe $a_1 < a_2$ tels que $f(a_1) <= f(a_2)$; a fortiori, comme $f$ est injective, $f(a_1) < f(a_2)$.
+
+TODO : l'argument est long
+
