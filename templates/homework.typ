@@ -44,7 +44,7 @@
     v(-5pt)
     text(13pt)[
       #author \
-      1E1
+      TE1
     ]
   }
   
