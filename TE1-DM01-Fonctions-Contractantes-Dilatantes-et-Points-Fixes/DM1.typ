@@ -18,7 +18,11 @@ Soient $ k in RR_+^*$, et $f$ une fonction définie sur $I$ telle que pour tous 
 ==
 Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $|f(x) - f(y)| lt.eq.slant k|x - y| (*)$.
 
-Or : $k < 1 ==> k|x-y| < |x-y| ==> |f(x) - f(y)| < |x-y|$ d'après ($*$)
+Or,
+$
+  k < 1 &==> k|x-y| < |x-y| \
+  &==> |f(x) - f(y)| < |x-y| "d'après" (*)
+$
 
 // D'après la dernière inégalité,
 // $
@@ -36,7 +40,16 @@ $
 
 $f$ est donc 1-lipschitzienne.
 
+==
+Soient $a in RR$, $I = [a,+infinity[$, et $f:x mapsto.long x + 1/(x-a+1)$ pour tous $x in I$.
 
+===
+$f$ est dérivable sur $I$. Pour tout $x in I$, $f'(x) = 1 - 1/(x-a+1)^2$.
+Or,
+$
+  x in I &==> x gt.eq.slant a \
+  &==> x-a gt.eq.slant
+$
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
 
