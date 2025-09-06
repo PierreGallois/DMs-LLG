@@ -13,15 +13,15 @@
 #sous-partie[Partie A - Fonctions contractantes et rétrécissantes.]
 
 ==
-Soient $ k in RR_+^*$, et $f$ une fonction définie sur $I$ telle que pour tous $x, y in I, |f(x) - f(y)| <= k|x - y|$.
+Soient $ k in RR_+^*$, et $f$ une fonction définie sur $I$ telle que pour tous $x, y in I, abs(f(x) - f(y)) <= k abs(x - y)$.
 
 ==
-Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $|f(x) - f(y)| <= k|x - y| (*)$.
+Soit $f$ une fonction contractante définie sur $I$, et $x, y in I$. Il existe donc $k in ]0,1[$ tel que $abs(f(x) - f(y)) <= k abs(x - y) (*)$.
 
 Or,
 $
-  k < 1 &==> k|x-y| < |x-y| \
-  &==> |f(x) - f(y)| < |x-y| "d'après" (*)
+  k < 1 &==> k abs(x-y) < abs(x-y) \
+  &==> abs(f(x) - f(y)) < abs(x-y) "d'après" (*)
 $
 
 // D'après la dernière inégalité,
@@ -35,7 +35,7 @@ $f$ est donc rétrécissante.
 
 De plus,
 $
-  |f(x) - f(y)| < |x-y| &==> |f(x) - f(y)| <= 1 times |x-y|
+  abs(f(x) - f(y)) < abs(x-y) &==> abs(f(x) - f(y)) <= 1 times abs(x-y)
 $
 
 $f$ est donc 1-lipschitzienne.
@@ -66,6 +66,9 @@ $
 
 $x >= a$, donc par somme d'inégalités, $x + 1/(x-a+1) >= a$ i.e. $f(x) in I$.
 
+===
+
+
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
 
 
@@ -77,8 +80,8 @@ $x >= a$, donc par somme d'inégalités, $x + 1/(x-a+1) >= a$ i.e. $f(x) in I$.
 ===
 La fonction $g: x |-> x + e^x$ est continue sur $RR$ comme somme de fonctions continues. De plus, si $x,y in RR$, 
 $
-  |g(x) - g(y)| = |(x-y) + (e^x - e^y)| &>=^(#text[Triangulaire]) |x-y| + |e^x - e^y| \
-  &>= |x-y|
+  abs(g(x) - g(y)) = abs((x-y) + (e^x - e^y)) &>=^(#text[Triangulaire]) abs(x-y) + abs(e^x - e^y) \
+  &>= abs(x-y)
 $
 Donc $g$ est bien dilatante.
 
@@ -93,7 +96,7 @@ $
 $
 Comme les limites de $g$ (qui existent par continuité avant et après $lambda$) en $lambda$ coïncident avec $g(lambda) = -lambda$, on en déduit que $g$ est continue en $lambda$ et donc sur tout $RR$. Montrons maintenant que $g$ est dilatante. On distingue trois cas :
 
-  - $x, y < lambda$ : $|g(x) - g(y)| = |y-x| = |x-y| >= |x-y|$
-  - $x,y >= lambda$ : $|g(x) - g(y)| = |2y-2x| = 2|x-y| >= |x-y|$
-  - $x < lambda$ et $y >= lambda$ : $|g(x) - g(y)| = |2y - lambda - x| = |(y-lambda) + (y-x)| >=^(#text[Triangulaire]) |x-y|$
-Ce qui montre que $g$ est bien dilatante
+  - $x, y < lambda$ : $abs(g(x) - g(y)) = abs(y-x) = abs(x-y) >= abs(x-y)$
+  - $x,y >= lambda$ : $abs(g(x) - g(y)) = abs(2y-2x) = 2 abs(x-y) >= abs(x-y)$
+  - $x < lambda$ et $y >= lambda$ : $abs(g(x) - g(y)) = abs(2y - lambda - x) = abs((y-lambda) + (y-x)) >=^(#text[Triangulaire]) abs(x-y)$
+Ce qui montre que $g$ est bien dilatante.
