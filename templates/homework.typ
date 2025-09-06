@@ -89,6 +89,11 @@
     box(it)
   }
 
+  // Style
+  
+  show math.lt.eq: math.lt.eq.slant
+  show math.gt.eq: math.gt.eq.slant
+
   // Code
 
   let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
