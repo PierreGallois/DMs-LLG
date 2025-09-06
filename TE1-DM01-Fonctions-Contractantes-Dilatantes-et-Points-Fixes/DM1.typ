@@ -15,7 +15,7 @@
 #sous-partie[Partie A - Fonctions contractantes et rétrécissantes.]
 
 ==
-Soient $k in RR_+^*$, et $f$ une fonction lipschitzienne définie sur $I$.
+Soient $k in RR_+^*$, et $f$ une fonction $k$-lipschitzienne définie sur $I$.
 Montrons que cette fonction est continue.
 
 Soit $y$ dans $I$. Pour tout $epsilon > 0$, posons $alpha = epsilon / k$. Supposons $abs(x - y) < alpha$, on obtient :
