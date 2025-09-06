@@ -43,3 +43,29 @@ $f$ est donc 1-lipschitzienne.
 
 
 #sous-partie[Partie C - Fonctions dilatantes.]
+  On fixe $f :RR -> RR$ continue et dilatante.
+
+==
+===
+La fonction $g: x |-> x + e^x$ est continue sur $RR$ comme somme de fonctions continues. De plus, si $x,y in RR$, 
+$
+  |g(x) - g(y)| = |(x-y) + (e^x - e^y)| &>=^(#text[Triangulaire]) |x-y| + |e^x - e^y| \
+  &>= |x-y|
+$
+Donc $g$ est bien dilatante.
+
+===
+La fonction $g_lambda$ est continue sur $]-oo;lambda[$ et sur $]lambda; +oo[$ car ses restrictions à ces intervalles sont continues. Montrons que $g_lambda$ est continue en $lambda$. D'une part,
+$
+lim_(x -> lambda^-) g(x) = lim_(x -> lambda^-) -x = -lambda
+$
+et d'autre part,
+$
+  lim_(x -> lambda^+) g(x) = lim_(x -> lambda^+) lambda - 2x = lambda - 2lambda = -lambda
+$
+Comme les limites de $g$ (qui existent par continuité avant et après $lambda$) en $lambda$ coïncident avec $g(lambda) = -lambda$, on en déduit que $g$ est continue en $lambda$ et donc sur tout $RR$. Montrons maintenant que $g$ est dilatante. On distingue trois cas :
+
+  - $x, y < lambda$ : $|g(x) - g(y)| = |y-x| = |x-y| >= |x-y|$
+  - $x,y >= lambda$ : $|g(x) - g(y)| = |2y-2x| = 2|x-y| >= |x-y|$
+  - $x < lambda$ et $y >= lambda$ : $|g(x) - g(y)| = |2y - lambda - x| = |(y-lambda) + (y-x)| >=^(#text[Triangulaire]) |x-y|$
+Ce qui montre que $g$ est bien dilatante
