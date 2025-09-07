@@ -128,7 +128,7 @@ On en déduit que $|b-c| = 0$, donc $b = c$. Donc $f$ dilatante implique $f$ inj
 ===
 Supposons que $f$ ne soit pas strictement monotone, i.e $f$ n'est ni strictement croissante ni strictement décroissante. Comme $f$ n'est pas strictement décroissante, il existe $a_1 < a_2$ tels que $f(a_1) <= f(a_2)$; a fortiori, comme $f$ est injective, $f(a_1) < f(a_2)$.
 
-TODO : l'argument est long
+TODO : l'argument est long 
 
 ==
 On sait que $f$ est continue et strictement monotone. Quitte à travailler avec $-f$ au lieu de $f$, supposons que $f$ est strictement croissante.
