@@ -142,6 +142,21 @@ $f$ est donc croissante sur $RR$.
 // Or $1 < y <=> 1 - y < 0:$
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
+==
+===
+Posons $g:x|-> f(x) - x$. Comme $I$ est stable par $f$, $f(a), f(b) in I$. Comme $I = [a;b]$, on en déduit que $f(a) >= a$ et $f(b) <= b$, c'est à dire que $g(a) >= 0$ et $g(b) <= 0$.
+
+ Comme $g$ est continue et change de signe, par corollaire du TVI, $g$ s'annule en $x_o in I$, qui est donc un point fixe de $f$.
+ 
+ ===
+ Supposons que $alpha, beta in I$ soient des points fixes distincts de $f$. Alors :
+ $
+   |f(alpha)-f(beta)| = |alpha - beta| <^(#text[rétrécissante]) |alpha-beta|
+ $ 
+ Ce qui est impossible. Donc $alpha = beta$ et le point fixe de $f$ est fixe.
+ 
+ ==
+ Comme $I$ n'est pas borné en haut, on peut prendre $f:x |-> x+1$ qui laisse bien $I$ fixe : si $x in I$ i.e $x >=a$, alors $f(x) = x+1 >= a$, donc $f(x) in I$. Clairement, $f$ n'a pas de point fixe.
 
 
 
