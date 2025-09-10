@@ -158,7 +158,6 @@ $
                                      &<=> 1/y < 1/x \
                                      &<=> x < y
 $
-
 Nous avons prouvé dans les trois cas distincts que $f$ est rétrécissante.
 
 ===
