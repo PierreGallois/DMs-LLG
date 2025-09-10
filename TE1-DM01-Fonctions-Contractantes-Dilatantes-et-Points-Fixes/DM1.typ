@@ -148,7 +148,18 @@ $
   &<=> abs(f(x) - f(y)) &< abs(x - y)
 $
 - Si $1 < x < y$,
+$
+  abs(f(x) - f(y)) < abs(x - y) &<=> abs((x - y) + (1/x - 1/y)) < y - x \
+                                &<=> abs((y - x) + (1/y - 1/x)) < y - x
+$
+Or $y - x > 0$ et par croissance de la fonction inverse sur $RR_+$, $x < y <=> 1/x < 1/y <=> 1/y - 1/x > 0$. L'intérieur de la valeur absolue est donc positif soit :
+$
+  abs((y - x) + (1/y - 1/x)) < y - x &<=> (y - x) + (1/y - 1/x) < y - x \
+                                     &<=> 1/y < 1/x \
+                                     &<=> x < y
+$
 
+Nous avons prouvé dans les trois cas distincts que $f$ est rétrécissante.
 
 ===
 Démontrons par l'absurde que $f$ n'est pas contractante.
