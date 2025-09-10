@@ -112,7 +112,7 @@ Comme les limites de $g$ (qui existent par continuité avant et après $lambda$)
   - $x, y < lambda$ : $|g(x) - g(y)| = |y-x| = |x-y| >= |x-y|$
   - $x,y >= lambda$ : $|g(x) - g(y)| = |2y-2x| = 2|x-y| >= |x-y|$
   - $x < lambda$ et $y >= lambda$ : $|g(x) - g(y)| = |2y - lambda - x| = |(y-lambda) + (y-x)| >=^(#text[Triangulaire]) |x-y|$
-Ce qui montre que $g$ est bien dilatante.
+Ce qui montre que $g$ est bien dilatante. 
 
 ==
 ===
