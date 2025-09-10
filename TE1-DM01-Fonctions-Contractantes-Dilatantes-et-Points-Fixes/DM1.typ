@@ -104,7 +104,7 @@ $
 $
 Or $lim_(t -> +oo) (t+1)(t+2) = +oo thin$ donc $lim_(t -> +oo) abs(1 - 1 / ((t+1)(t+2))) = 1$.
 
-On en conclue que $abs(f(a + t + 1) - f(a + t ))$ tendant vers 1 lorsque $t$ tend vers $+oo$, il n'est pas possible de majorer cette expression dans tous les cas possibles par un réel $k$ compris dans $]0, 1[$.
+On en conclue que $abs(f(a + t + 1) - f(a + t))$ tendant vers 1 lorsque $t$ tend vers $+oo$, il n'est pas possible de majorer cette expression dans tous les cas possibles par un réel $k$ compris dans $]0, 1[$.
 Nous arrivons à une contradiction, $f$ n'est donc pas contractante.
 
 ==
@@ -128,21 +128,49 @@ $
 $f$ est donc croissante sur $RR$.
 
 ===
-// Cherchons à prouver que $f$ est rétrécissante. Soient $x, y in RR$ avec $x != y$.
-// Dans la définition d'une fonction rétrécissante, $x$ et $y$ sont interchangeables, on suppose donc sans perte de généralité que $x < y$.
-// - Si $x < y <= 1$,
-// $
-//   abs(f(x) - f(y)) < abs(x - y) <=> abs(2 - 2) < abs(x - y) <=> 0 < abs(x - y)
-// $
-// Ce qui est toujours vrai puisque $x != y$.
-// - Si $x <= 1 < y$,
-// $
-//   abs(f(x) - f(y)) = abs(2 - y - 1/y) = abs((1-y) + (1-1/y))
-// $
-// Or $1 < y <=> 1 - y < 0:$
+Cherchons à prouver que $f$ est rétrécissante. Soient $x, y in RR$ avec $x != y$.
+Dans la définition d'une fonction rétrécissante, $x$ et $y$ sont interchangeables, on suppose donc sans perte de généralité que $x < y$.
+- Si $x < y <= 1$,
+$
+  abs(f(x) - f(y)) < abs(x - y) <=> abs(2 - 2) < abs(x - y) <=> 0 < abs(x - y)
+$
+Ce qui est toujours vrai puisque $x != y$.
+- Si $x <= 1 < y$,
+
+$
+  x <= 1 <=> y - 1 <= y - x <=> (y - 1)^2 <= (y - 1)(y - x)
+$
+car $y - 1 > 0$. Comme $(y - 1)^2 <= (y - 1)(y - x)$, alors $(y - 1)^2 < y(y - x)$. On a alors :
+$
+  (y - 1)^2 < y(y - x) &<=> abs(- (y - 1)^2 / y) &< abs(x - y) \
+  // &<=> abs((2y - y^2 - 1)/(y)) &< abs(x - y) \
+  &<=> abs(2 - (y + 1/y)) &< abs(x - y) \
+  &<=> abs(f(x) - f(y)) &< abs(x - y)
+$
+- Si $1 < x < y$,
+
+===
+Démontrons par l'absurde que $f$ n'est pas contractante.
+On suppose $f$ contractante ie $f$ est k-lipschitzienne avec $k in ]0,1[$.
+
+On choisit le réel $t$ et son successeur $t + 1$.
+$f$ doit vérifier en particulier :
+$
+  abs(f(t + 1) - f(t)) <= k abs(t + 1 - t)
+  <=> abs(f(t + 1) - f(t)) <= k
+$
+En particulier, on pose $1 < t < t + 1$.
+$
+  abs(f(t + 1) - f(t)) = abs(t + 1 + 1 / (t + 1) - t - 1 / t) = abs(1 - 1 / (t(t + 1)))
+$
+
+Or $lim_(t -> +oo) t(t+1) = +oo thin$ donc $lim_(t -> +oo) abs(1 - 1 / (t(t + 1))) = 1$.
+
+On en conclue que $abs(f(t + 1) - f(t))$ tendant vers 1 lorsque $t$ tend vers $+oo$, il n'est pas possible de majorer cette expression dans tous les cas possibles par un réel $k$ compris dans $]0, 1[$.
+Nous arrivons à une contradiction, $f$ n'est donc pas contractante.
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
-
+#counter(heading).update(1)
 
 
 #sous-partie[Partie C - Fonctions dilatantes.]
