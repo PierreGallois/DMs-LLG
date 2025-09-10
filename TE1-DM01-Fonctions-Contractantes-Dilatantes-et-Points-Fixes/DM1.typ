@@ -149,6 +149,7 @@ $
 $
 - Si $1 < x < y$,
 
+
 ===
 Démontrons par l'absurde que $f$ n'est pas contractante.
 On suppose $f$ contractante ie $f$ est k-lipschitzienne avec $k in ]0,1[$.
