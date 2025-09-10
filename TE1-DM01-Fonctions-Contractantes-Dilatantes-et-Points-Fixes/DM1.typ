@@ -71,15 +71,75 @@ La dérivée de $f$ est positive pour tout $x in I$, donc $f$ est bien croissant
 Soit $x in I$.
 $
   x in I &==> x >= a \
-  &==> x-a >= 0 \
-  &==> x-a+1 > 0 \
-  &==> 1/(x-a+1) > 0.
+         &==> x-a >= 0 \
+         &==> x-a+1 > 0 \
+         &==> 1/(x-a+1) > 0.
 $
 
 $x >= a$, donc par somme d'inégalités, $x + 1/(x-a+1) >= a$ i.e. $f(x) in I$.
 
 ===
+Cherchons désormais à montrer que $f$ est rétrécissante.
+Soient $x, y in I$ tel que $x != y$.
+On suppose sans perte de généralité que $x < y$ et comme $f$ est croissante sur $I$
+$
+  abs(f(x) - f(y)) < abs(x - y) &<=> f(y) - f(x) < y - x \
+                                &<=> y - x + 1 / (y - a + 1) - 1 / (x - a + 1) < y - x \
+                                &<=> y - a + 1 > x - a + 1 \
+                                &<=> x < y
+$
+Nous avons prouvé que $f$ est rétrécissante.
 
+===
+Démontrons par l'absurde que $f$ n'est pas contractante.
+On suppose $f$ contractante ie $f$ est k-lipschitzienne avec $k in ]0,1[$.
+
+On choisit deux réels $a + t$ et $a + t + 1$ dans $I = [a, +oo[$ avec $t in RR$.
+$f$ doit vérifier en particulier :
+$
+  &abs(f(a + t + 1) - f(a + t)) <= k abs(a + t + 1 - a - t) \
+  &<=> abs(((a+t+1-a-t)lr(((a+t+1-a+1)(a+t-a+1)-1), size: #150%))/((a+t+1-a+1)(a+t-a+1))) <= k \
+  &<=> abs(((1)lr(((t+1)(t+2)-1), size: #150%))/((t+1)(t+2))) <= k \
+  &<=> abs(1 - 1/((t+1) (t+2))) <= k
+$
+Or $lim_(t -> +oo) (t+1)(t+2) = +oo thin$ donc $lim_(t -> +oo) abs(1 - 1 / ((t+1)(t+2))) = 1$.
+
+On en conclue que $abs(f(a + t + 1) - f(a + t ))$ tendant vers 1 lorsque $t$ tend vers $+oo$, il n'est pas possible de majorer cette expression dans tous les cas possibles par un réel $k$ compris dans $]0, 1[$.
+Nous arrivons à une contradiction, $f$ n'est donc pas contractante.
+
+==
+Soit la fonction $f |-> cases(
+  2 &"si" x <= 1,
+  x + 1/x &"si" x > 1
+)$ définie sur $RR$.
+
+===
+On cherche à prouver que $f$ est croissante sur $RR$.
+
+- Sur l'intervalle $]-oo, 1]$, $f$ est constante.
+
+- Sur l'intervalle $]1, +oo[$, $f$ est dérivable comme somme de fonctions dérivables.
+On a alors $f'(x) = 1 - 1/x^2$.
+Pour tout $x in ]1, +oo[$,
+$
+  x > 1 <==> x^2 > 1 <==> 1/x^2 < 1 <==> -1/x^2 > -1 <==> 1 -1/x^2 > 0 <==> f'(x) > 0
+$
+
+$f$ est donc croissante sur $RR$.
+
+===
+// Cherchons à prouver que $f$ est rétrécissante. Soient $x, y in RR$ avec $x != y$.
+// Dans la définition d'une fonction rétrécissante, $x$ et $y$ sont interchangeables, on suppose donc sans perte de généralité que $x < y$.
+// - Si $x < y <= 1$,
+// $
+//   abs(f(x) - f(y)) < abs(x - y) <=> abs(2 - 2) < abs(x - y) <=> 0 < abs(x - y)
+// $
+// Ce qui est toujours vrai puisque $x != y$.
+// - Si $x <= 1 < y$,
+// $
+//   abs(f(x) - f(y)) = abs(2 - y - 1/y) = abs((1-y) + (1-1/y))
+// $
+// Or $1 < y <=> 1 - y < 0:$
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
 
