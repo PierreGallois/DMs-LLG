@@ -23,6 +23,11 @@ for file in $diffs
 do
     echo "- building $file..."
     typst compile "$root/$file" --root $root
+    if [ $? -ne 0 ]; then
+        echo "typst command failed"
+        echo "////          !!!!!!"
+        exit 1
+    fi
     git add "$root/${file%.*}.pdf"
 done
 
