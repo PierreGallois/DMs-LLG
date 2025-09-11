@@ -124,6 +124,13 @@ Pour tout $x in ]1, +oo[$,
 $
   x > 1 <==> x^2 > 1 <==> 1/x^2 < 1 <==> -1/x^2 > -1 <==> 1 -1/x^2 > 0 <==> f'(x) > 0
 $
+$f$ est croissante sur $]1, +oo[$
+
+- Prouvons que $f$ est continue en 1.
+$
+  f(1) = 2 #h(3em) lim_(x -> 1^-) f(x) = 2 #h(3em) lim_(x -> 1^+) f(x) = lim_(x -> 1^+) x + 1/x = 2
+$
+Comme $f(1) = lim_(x -> 1^-) f(x) = lim_(x -> 1^+) f(x)$, $f$ est continue en 1.
 
 $f$ est donc croissante sur $RR$.
 
@@ -181,7 +188,8 @@ On en conclue que $abs(f(t + 1) - f(t))$ tendant vers 1 lorsque $t$ tend vers $+
 Nous arrivons à une contradiction, $f$ n'est donc pas contractante.
 
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
-#counter(heading).update(1)==
+#counter(heading).update(1)
+==
 ===
 Posons $g:x|-> f(x) - x$. Comme $I$ est stable par $f$, $f(a), f(b) in I$. Comme $I = [a;b]$, on en déduit que $f(a) >= a$ et $f(b) <= b$, c'est à dire que $g(a) >= 0$ et $g(b) <= 0$.
 
