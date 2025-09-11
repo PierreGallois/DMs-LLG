@@ -132,7 +132,9 @@ $
 $
 Comme $f(1) = lim_(x -> 1^-) f(x) = lim_(x -> 1^+) f(x)$, $f$ est continue en 1.
 
-$f$ est donc croissante sur $RR$.
+Comme $f$ est continue en 1, elle ne peut pas faire un saut au niveau de la disjonction des cas.
+Or à gauche de 1 $f$ est constante et croissante à droite.
+On en conclue que $f$ est donc croissante sur $RR$.
 
 ===
 Cherchons à prouver que $f$ est rétrécissante. Soient $x, y in RR$ avec $x != y$.
