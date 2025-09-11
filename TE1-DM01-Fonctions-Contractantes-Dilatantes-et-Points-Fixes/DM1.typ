@@ -94,7 +94,7 @@ Nous avons prouvé que $f$ est rétrécissante.
 Démontrons par l'absurde que $f$ n'est pas contractante.
 On suppose $f$ contractante ie $f$ est k-lipschitzienne avec $k in ]0,1[$.
 
-On choisit deux réels $a + t$ et $a + t + 1$ dans $I = [a, +oo[$ avec $t in RR$.
+Avec $t in RR_+$, on s'interesse aux réels $a + t$ et $a + t + 1$ qui sont compris dans $I = [a, +oo[$.
 $f$ doit vérifier en particulier :
 $
   &abs(f(a + t + 1) - f(a + t)) <= k abs(a + t + 1 - a - t) \
@@ -132,7 +132,7 @@ $
 $
 Comme $f(1) = lim_(x -> 1^-) f(x) = lim_(x -> 1^+) f(x)$, $f$ est continue en 1.
 
-Comme $f$ est continue en 1, elle ne peut pas faire un saut au niveau de la disjonction des cas.
+$f$ est continue en 1, elle ne peut donc pas faire un saut au niveau de la disjonction des cas.
 Or à gauche de 1 $f$ est constante et croissante à droite.
 On en conclue que $f$ est donc croissante sur $RR$.
 
@@ -173,7 +173,7 @@ Nous avons prouvé dans les trois cas distincts que $f$ est rétrécissante.
 Démontrons par l'absurde que $f$ n'est pas contractante.
 On suppose $f$ contractante ie $f$ est k-lipschitzienne avec $k in ]0,1[$.
 
-On choisit le réel $t$ et son successeur $t + 1$.
+On considère cette propriété pour les réels $t$ et $t + 1$.
 $f$ doit vérifier en particulier :
 $
   abs(f(t + 1) - f(t)) <= k abs(t + 1 - t)
