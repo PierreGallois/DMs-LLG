@@ -162,6 +162,7 @@ $
   &<=> abs(2 - (y + 1/y)) &< abs(x - y) \
   &<=> abs(f(x) - f(y)) &< abs(x - y)
 $
+#pagebreak()
 - Si $1 < x < y$,
 $
   abs(f(x) - f(y)) < abs(x - y) &<=> abs((x - y) + (1/x - 1/y)) < y - x \
@@ -195,6 +196,7 @@ Or $lim_(t -> +oo) t(t+1) = +oo thin$ donc $lim_(t -> +oo) abs(1 - 1 / (t(t + 1)
 On en conclue que $abs(f(t + 1) - f(t))$ tendant vers 1 lorsque $t$ tend vers $+oo$, il n'est pas possible de majorer cette expression dans tous les cas possibles par un réel $k$ compris dans $]0, 1[$.
 Nous arrivons à une contradiction, $f$ n'est donc pas contractante.
 
+#pagebreak()
 #sous-partie[Partie B - Fonctions rétrécissantes et point fixe.]
 #counter(heading).update(1)
 ==
@@ -266,6 +268,7 @@ Si $a_3 > a_2$, supposons d'abord que $f(a_3) > f(a_2)$. Alors le 1) avec $a_1, 
 
 Les autres cas, suivant la position relative de $a_3$ à $a_2$ et $a_1$ ainsi que la position relative de $f(a_3)$ avec $f(a_2)$ se gèrent de manière analogue, en exhibant une configuration de manière à contredire via le 1) l'injectivité de $f$.#footnote[Désolé, mais il y avait trop de cas et je n'ai pas trouvé de manière simple de les unifier...]
 
+#v(1fr)
 ==
 On sait que $f$ est continue et strictement monotone. Quitte à travailler avec $-f$ au lieu de $f$, supposons que $f$ est strictement croissante.
 
@@ -275,6 +278,7 @@ Similairement, soit $x <= 0$. Alors $|f(x) - f(0)| = f(0) - f(x) >= |x| = -x$, e
 
 Donc $f$ n'est pas bornée.
 
+#pagebreak()
 ==
 ===
 Soient $x >= y in RR$. Alors :
