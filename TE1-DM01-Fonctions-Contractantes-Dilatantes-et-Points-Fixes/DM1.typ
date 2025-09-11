@@ -126,14 +126,20 @@ $
 $
 $f$ est croissante sur $]1, +oo[$
 
-- Prouvons que $f$ est continue en 1.
-$
-  f(1) = 2 #h(3em) lim_(x -> 1^-) f(x) = 2 #h(3em) lim_(x -> 1^+) f(x) = lim_(x -> 1^+) x + 1/x = 2
-$
-Comme $f(1) = lim_(x -> 1^-) f(x) = lim_(x -> 1^+) f(x)$, $f$ est continue en 1.
+// - Prouvons que $f$ est continue en 1.
+// $
+//   f(1) = 2 #h(3em) lim_(x -> 1^-) f(x) = 2 #h(3em) lim_(x -> 1^+) f(x) = lim_(x -> 1^+) x + 1/x = 2
+// $
+// Comme $f(1) = lim_(x -> 1^-) f(x) = lim_(x -> 1^+) f(x)$, $f$ est continue en 1.
 
-$f$ est continue en 1, elle ne peut donc pas faire un saut au niveau de la disjonction des cas.
-Or à gauche de 1 $f$ est constante et croissante à droite.
+// $f$ est continue en 1, elle ne peut donc pas faire un saut au niveau de la disjonction des cas.
+// Or à gauche de 1 $f$ est constante et croissante à droite.
+
+- Soient $x, y in RR$ tel que $x <= 1 < y$.
+$
+  f(x) - f(y) = 2 - y - 1/y = -(y-1)^2 / y < 0
+$
+
 On en conclue que $f$ est donc croissante sur $RR$.
 
 ===
