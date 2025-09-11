@@ -252,7 +252,13 @@ On en déduit que $|b-c| = 0$, donc $b = c$. Donc $f$ dilatante implique $f$ inj
 ===
 Supposons que $f$ ne soit pas strictement monotone, i.e $f$ n'est ni strictement croissante ni strictement décroissante. Comme $f$ n'est pas strictement décroissante, il existe $a_1 < a_2$ tels que $f(a_1) <= f(a_2)$; a fortiori, comme $f$ est injective, $f(a_1) < f(a_2)$.
 
-TODO : l'argument est long 
+De même, comme $f$ n'est pas strictement croissante, il existe $a_3 < a_4$ tels que $f(a_3) > f(a_4)$.
+
+Si $a_3 = a_2$, alors appliquer le 1) avec $a_1, a_2$ et $a_4$ contredit l'injectivité de $f$.
+
+Si $a_3 > a_2$, supposons d'abord que $f(a_3) > f(a_2)$. Alors le 1) avec $a_1, a_3, a_4$ contredit l'injectivité de $f$.
+
+Les autres cas, suivant la position relative de $a_3$ à $a_2$ et $a_1$ ainsi que la position relative de $f(a_3)$ avec $f(a_2)$ se gèrent de manière analogue, en exhibant une configuration de manière à contredire via le 1) l'injectivité de $f$.#footnote[Désolé, mais il y avait trop de cas et je n'ai pas trouvé de manière simple de les unifier...]
 
 ==
 On sait que $f$ est continue et strictement monotone. Quitte à travailler avec $-f$ au lieu de $f$, supposons que $f$ est strictement croissante.
