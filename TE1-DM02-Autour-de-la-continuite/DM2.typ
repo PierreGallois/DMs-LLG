@@ -24,8 +24,20 @@ D'autre part, pour tout $x in RR$, $g(x) in [m, M]$. $f$ est continue donc d'apr
 Donc $f(g(x)) in [m', M']$ i.e. $f rond g$ est bornée.#import "./../templates/homework.typ": dm, sous-partie
 
 #sous-partie[Partie B - Injectivité et continuité]
+#counter(heading).update(1)
+
+
+
 #sous-partie[Partie C - Surjectivité et continuité]
+#counter(heading).update(1)
+
+==
+Soit $f: RR^+ ->> RR$ et montrons par l'absurde que tout $k in RR$ a une infinité d'antécédants. Posons $g(x) = f(x) - k$ et supposons que $g$ n'ait qu'un nombre fini de racines - il y a donc une racine maximale $x_0$ parmi elles.
+
+D'une part, $g(x) != 0$ pour $x > x_0$. Comme $g$ est continue, $g$ reste du même signe après $x_0$ : supposons sans perte de généralité que $g$ est négative sur $[x_0;+oo]$. D'autre part, d'après le théorème des bornes atteintes, $m <= g <= M$ sur $[0; x_0]$. Ainsi, pour tout $x in RR$, $g(x) <= max(0, M)$ d'où $f(x) <= max(0, M) + k$. Donc $f$ ne peut être surjective, ce qui est une contradiction.
+
 #sous-partie[Partie D - Equation fonctionnelle]
+#counter(heading).update(1)
 ==
 ===
 Si $f$ est involutive, elle admet une réciproque (elle même) et est donc bijective. A fortiori, elle est donc injective. Enfin, comme $f$ est continue, par le B$.2$, elle doit être strictement monotone.
