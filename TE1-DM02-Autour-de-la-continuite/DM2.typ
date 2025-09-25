@@ -37,19 +37,9 @@ $
 $f$ est une bijection puique $-1 in.not RR_+$ donc $f$ est injective.
 Or $f(1) < f(0) < f(2)$ donc $f$ n'est pas monotone. La réciproque est fausse.
 
-// ==
-// Soit $f$ une fonction continue et injective de l'intervalle $I$ dans $RR$.
-// Prenons deux antécédents de $f$, $a$ et $b$ dans $I$ tel que $a < b$.
-
-// Comme $f$ est injective, deux antécédents ne peuvent pas avoir la même image donc $f(a) != f(b)$. $f$ ne peut pas avoir de palier.
-
-// Prenons $c$ un autre antécédant de $f$ différent de $a$ et $b$.
-// - Si $a < c < b$, alors par le théorème des valeurs intermédiaires, $f(a) <= f(c) <= f(b)$ et comme $f$ n'admet pas de palier, $f(a) < f(c) < f(b)$.
-// - Si $a < b < c$ ou $c < a < b$, alors $f(c)$ a trois options. Soit $f(c)$ 
-
 ==
-Résonnons par l'absurde. On suppose $f$ n'est pas strictement monotone ie $f$ n'est pas strictement croissante et $f$ n'est pas strictement décroissante.
-Cela revient à l'existance des antécédants suivants :
+Raisonnons par l'absurde. On suppose que $f$ n'est pas strictement monotone ie $f$ n'est pas strictement croissante et $f$ n'est pas strictement décroissante.
+Cela revient à l'existence des antécédants suivants :
 #footnote[A partir de ce point, nous pourrions juste réaliser 9 disjonctions de cas en fonction de la position des antécédants et des images pour prouver par le TVI que la fonction ne peut pas être injective.]
 $
   &&(1)& &&exists x, y &&in I, &&x &&< y &&"et" &&f(x) &&>= f(y) \
@@ -61,17 +51,17 @@ $
   &I_("dim") &&= [f(y), f(x)] \
   &I_("aug") &&= [f(x'), f(y')]
 $
-On remarquera que les bornes de ces intervalles sont dans le bon ordre grâce aux relations $(1)$ et $(2)$.
-Comme $f$ est continue, nous sommes garantis par le théorème des valeurs intermédiaires qu'il existe des antécédants par $f$ pour toutes les valeurs de ces intervalles.
+On remarquera que les bornes de ces intervalles sont dans l'ordre correct grâce aux relations $(1)$ et $(2)$.
+Comme $f$ est continue, nous avons la garantie par le théorème des valeurs intermédiaires qu'il existe des antécédants par $f$ pour toutes les valeurs de ces intervalles.
 
 - Si ces deux intervalles possèdent une intersection non vide (typiquement lorsque la fonction est constante sur un intervalle), alors il existe nécessairement par le TVI au moins deux antécédants pour les images dans cette intersection, un dans $[x, y]$ et un dans $[x', y']$. $f$ n'est donc pas injective.
 - Considérons le cas où ces deux intervalles sont disjoints (suivre avec l'illustration ci-dessous).
-On remarque d'après $(1)$ que comme $x < y$, la fonction atteint d'abord $f(x)$ puis "descent" pour atteindre $f(y)$ puisque $f(x) >= f(y)$. Les valeurs de $I_("dim")$ sont donc atteintes du haut vers le bas.
-De manière similaire, d'après $(2)$ comme $x' < y'$, la fonction atteint d'abord $f(x')$ puis "monte" pour atteindre $f(y')$ puisque $f(x') <= f(y')$. Les valeurs de $I_("aug")$ sont donc atteintes du bas vers le haut.
+On remarque d'après $(1)$ que comme $x < y$, la fonction atteint d'abord $f(x)$ puis décroit pour atteindre $f(y)$ puisque $f(x) >= f(y)$. Les valeurs de $I_("dim")$ sont donc atteintes du haut vers le bas.
+De manière similaire, d'après $(2)$ comme $x' < y'$, la fonction atteint d'abord $f(x')$ puis croit pour atteindre $f(y')$ puisque $f(x') <= f(y')$. Les valeurs de $I_("aug")$ sont donc atteintes du bas vers le haut.
 
 $I_("dim")$ et $I_("aug")$ sont disjoints implique que $[x, y]$ et $[x', y']$ sont également disjoints sinon un même antécédant donnerait deux images différentes. Cela veut dire que comme $f$ est continue il existe un intervalle d'antécédants $A_("trou")$ ($[y, x']$ ou $[y', x]$) dont les images $I_("trou")$ remplissent le trou entre $I_("dim")$ et $I_("aug")$.
 
-Comme les intervalles $I_("dim")$ et $I_("aug")$ sont remplis dans des "sens" différents et que $f$ ne peut pas faire de sauts, $f$ doit forcément repasser sur une zone d'images qu'elle a déjà couvert avec $I_("dim")$ ou $I_("aug")$. Autrement dit $I_("dim") subset.eq I_("trou")$ ou $I_("aug") subset.eq I_("trou")$. Il existe donc deux antécédants pour les images dans $I_("trou")$, un dans $I_("dim")$ ou $I_("aug")$ et un dans $A_("trou")$. $f$ n'est pas injective.
+Comme les intervalles $I_("dim")$ et $I_("aug")$ sont remplis dans des "sens" différents et que $f$ ne peut pas faire de sauts, $f$ doit forcément repasser sur une zone d'images qu'elle a déjà couverte avec $I_("dim")$ ou $I_("aug")$. Autrement dit $I_("dim") subset.eq I_("trou")$ ou $I_("aug") subset.eq I_("trou")$. Il existe donc deux antécédants pour les images dans $I_("trou")$, un dans $I_("dim")$ ou $I_("aug")$ et un dans $A_("trou")$. $f$ n'est pas injective.
 
 Dans les deux cas nous arrivons à la contradiction que $f$ n'est pas injective. Nous avons donc prouvé par l'absurde que si $f$ est continue et injective, alors $f$ est strictement croissante.
 
