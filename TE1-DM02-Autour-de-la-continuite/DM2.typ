@@ -21,7 +21,7 @@ D'une part, $f(x) in RR$ donc puisque $g$ est bornée, $m <= g(f(x)) <= M$ i.e. 
 D'autre part, pour tout $x in RR$, $g(x) in [m, M]$. $f$ est continue donc d'après le TVI, l'image du segment $[m, M]$ par $f$ est aussi un segment $[m', M']$ $(m', M' in RR)$. \
 Donc $f(g(x)) in [m', M']$ i.e. $f rond g$ est bornée.
 
-
+#pagebreak()
 = Injectivité et continuité
 ==
 Soit $f$ une fonction strictement monotone d'un intervalle $I$ dans $RR$.
@@ -77,13 +77,14 @@ Dans les deux cas nous arrivons à la contradiction que $f$ n'est pas injective.
 
 _Illustration_ :
 
-
+#v(2em)
 #align(center,
 curve(
   stroke: blue,
   curve.cubic((70pt, 220pt), (180pt, -44pt), (280pt, 128pt)),
 ))
 
+#v(5em)
 
 = Surjectivité et continuité
 
