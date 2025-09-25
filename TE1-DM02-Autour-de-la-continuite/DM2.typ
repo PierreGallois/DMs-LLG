@@ -70,7 +70,7 @@ _Illustration_ :
 #v(2em)
 #align(center,
 curve(
-  stroke: blue,
+  stroke: black,
   curve.cubic((70pt, 220pt), (180pt, -44pt), (280pt, 128pt)),
 ))
 
