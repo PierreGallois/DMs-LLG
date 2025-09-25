@@ -92,6 +92,24 @@ Soit $f: RR^+ ->> RR$ et montrons par l'absurde que tout $k in RR$ a une infinit
 
 D'une part, $g(x) != 0$ pour $x > x_0$. Comme $g$ est continue, $g$ reste du même signe après $x_0$ : supposons sans perte de généralité que $g$ est négative sur $[x_0;+oo]$. D'autre part, d'après le théorème des bornes atteintes, $m <= g <= M$ sur $[0; x_0]$. Ainsi, pour tout $x in RR$, $g(x) <= max(0, M)$ d'où $f(x) <= max(0, M) + k$. Donc $f$ ne peut être surjective, ce qui est une contradiction.
 
+==
+Supposons que $f: [a;b] -> [f(a);f(b)]$ soit croissante et surjective, mais pas continue sur $[a;b]$.
+Soit $z in [a;b]$.
+
+Comme $f$ est croissante, par le théorème de la limite monotone, on a l'existence des limites de $f$ à gauche et à droite en $z$. De plus,
+$
+  ell_g = lim_(x->z^-) f(x) <= f(z) <= lim_(x->x^+)f(x) = ell_d
+$
+(Pour $z = a$ ou $b$, l'une de ces limites est juste $f(z)$). Supposons que l'une de ces inégalités soit stricte.
+
+Si $lim_(x -> z^-) f(x) != f(z)$, par la remarque précédente, $z != a$. D'une part, si $x in [z;b]$, par croissance, $f(x) in.not ]ell_g, f(z)[$. D'autre part, pour tout $x in [a;z[$ :
+$
+  f(a) <= f(x) <= ell_g < f(z)
+$
+Donc $f(x) in.not ]ell_g;f(z)[$. Ainsi, $f$ n'atteint pas les valeurs de $]ell_g;f(z)[ subset [a;b]$, ce qui est une contradiction. Donc $ell_g = f(z)$
+
+On procède similairement pour $ell_d = f(z)$.
+
 = Equation fonctionnelle
 ==
 ===
