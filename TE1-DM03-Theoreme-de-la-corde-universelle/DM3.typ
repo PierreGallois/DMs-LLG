@@ -58,4 +58,4 @@ Or $T != 0$ et comme $sin^2(pi/T) = 0 <=> sin(pi/T) = 0 <=> pi/T = 0 "ou" pi/T =
 ==
 On a que $f(x) - f(x + T) > 0$ ie $f(x) > f(x + T)$ donc $f(x) != f(x + T)$ pour tout $x$ dans $[0, 1 - T]$.
 
-L'équation $f(x + T) = f(x)$ n'est donc pas valable pour les réels ($T in ]0, 1[$).
+Nous avons trouvé un contre-exemple donc l'équation $f(x + T) = f(x)$ n'est pas valable pour les réels $T in ]0, 1[$, $1/T in.not ZZ$.
