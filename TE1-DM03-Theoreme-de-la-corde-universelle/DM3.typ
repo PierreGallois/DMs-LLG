@@ -13,6 +13,62 @@
 = Exemples
 Dans les parties A et B, $n$ désigne un entier supérieur ou égal à 2.
 
+==
+Soient $f : x |-> 1 - abs(2x - 1)$ définie sur $[0, 1]$, et $n in NN without {0, 1}$.
+
+On a $f(x+1/n) = 1 - abs(2x + 2/n - 1)$.
+
+De plus, $n >= 2 ==> 1 >= 2/n ==> 1/2 >= 1/n ==> 1/2 > 1/2 - 1/n >= 0$.
+
+#table(
+  columns: (auto, 0pt, auto, 0pt, auto, 0pt, auto, 0pt),
+  align: (x, y) => if y == 0 { center + bottom } else { center },
+  stroke: (x, y) => (
+    // Dash stroke inside
+    right: if x > 0 and y > 0 { (paint: black, dash: "dotted") },
+    // Left border
+    left: if y > 0 and x <= 1 { black },
+    // Top border
+    top: if y == 1 { black },
+    rest: none),
+  $x$, $0$, [], $1/2-1/n$, [], $1/2$, [], $1$,
+
+  // Right border
+  table.vline(start: 1, stroke: (dash: none)),
+
+  $abs(2x - 1)$, [], $-2x+1$, [], $-2x+1$, [0], $2x-1$, [],
+  $f(x)$, [], $2x$, [], $2x$, [], $-2x+2$, [],
+  $abs(2x - 1 + 2/n)$, [], $-2x + 1 - 2/n$, [0], $2x - 1 + 2/n$, [], $2x - 1 + 2/n$, [],
+  $f(x+1/n)$, [], $2x + 2/n$, [], $-2x +2 - 2/n$, [], $-2x +2 - 2/n$, [],
+  $f(x)-f(x+1/n)$, [], $-2/n$, [], $4x-2+2/n$, [], $2/n$, [],
+
+  // Have to place bottom border manually
+  // to avoid having to somehow fetch the amount of rows
+  table.hline(start: 0, stroke: (dash: none))
+)
+
+L'équation $f(x) = f(x+1/n)$ équivaut à $f(x)-f(x+1/n) = 0$ qui n'a pas de solutions sur $[0, 1/2-1/n [ union ] 1/2, 1]$ d'après les tableau d'expressions.
+
+Pour tout $x in [1/2 - 1/n, 1/2]$,
+$
+  f(x)-f(x+1/n) = 0 &<==> 4x-2+2/n = 0 \
+  &<==> x = 1/2 - 1/(2n)
+$
+
+Et :
+$
+  n>=2 &==> n>0
+  &==> cases(2n > n, 1/(2n) > 0)
+  &==> cases(1/(2n) < 1/n, -1/(2n) < 0)
+  &==> cases(1/2 - 1/(2n) > 1/2 - 1/n, 1/2 - 1/(2n) < 1/2) \
+$
+
+Notre solution est donc acceptable.
+
+$
+  S = {1/2 - 1/(2n)}.
+$
+
 = Généralisation
 Soit $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
 Pour tout $x in [0, 1 - 1/n]$, on pose $g(x) = f(x) - f(x + 1/n)$.
