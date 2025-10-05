@@ -10,7 +10,7 @@
 
 #let folder-name = "TE1-DM03-Theoreme-de-la-corde-universelle/"
 
-= Exemples
+= Exemples.
 Dans les parties A et B, $n$ désigne un entier supérieur ou égal à 2.
 
 ==
@@ -69,7 +69,21 @@ $
   S = {1/2 - 1/(2n)}.
 $
 
-= Généralisation
+==
+Soit $f:x |-> 16x^2(1-x)^2$ définie sur $[0,1]$. Pour tout $x in [0, 1/n]$,
+
+$
+  f(x+1/n) = f(x) &<==> f(x+1/n) - f(x) = 0 \
+  &<==> 16(x+1/n)^2(1-x-1/n)^2 - 16x^2(1-x)^2 = 0 \
+  &<==> ((x+1/n)(1-x-1/n))^2-(x(1-x))^2 = 0 \
+  &<==> (x-x^2-x/n+1/n-x/n-1/n^2)^2 - (x-x^2)^2 = 0 \
+  &<==> (-x^2+(1-2/n)x+(n-1)/n^2)^2 - (x-x^2)^2 = 0 \
+  &<==> (-x^2+(1-2/n)x+(n-1)/n^2 + x-x^2)(-x^2+(1-2/n)x+(n-1)/n^2 - x+x^2) = 0 \
+  &<==> (-2x^2+(2-2/n)x+(n-1)/n^2)(-2/n x+(n-1)/n^2) = 0 \
+  &<==> -2x^2+(2-2/n)x+(n-1)/n^2 = 0 or -2/n x+(n-1)/n^2 = 0 \
+$
+
+= Généralisation.
 Soit $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
 Pour tout $x in [0, 1 - 1/n]$, on pose $g(x) = f(x) - f(x + 1/n)$.
 
