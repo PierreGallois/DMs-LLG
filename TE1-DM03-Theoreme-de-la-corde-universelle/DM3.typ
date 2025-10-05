@@ -81,7 +81,42 @@ $
   &<==> (-x^2+(1-2/n)x+(n-1)/n^2 + x-x^2)(-x^2+(1-2/n)x+(n-1)/n^2 - x+x^2) = 0 \
   &<==> (-2x^2+(2-2/n)x+(n-1)/n^2)(-2/n x+(n-1)/n^2) = 0 \
   &<==> -2x^2+(2-2/n)x+(n-1)/n^2 = 0 or -2/n x+(n-1)/n^2 = 0 \
+  &<==> -2x^2+ (2n-2)/n x+(n-1)/n^2 = 0 or x = (n-1)/(2n) \
 $
+
+Et :
+$
+  0 <= (n-1)/(2n) <= 1 - 1/n &<==> cases(0 <= n-1, n-1 <= 2n - 2) \
+  &<==> cases(1 <= n, 0 <= n-1) \
+  &<==> n>=1
+$
+
+Vrai car $n>=2$, donc par équivalence, $(n-1)/(2n) in [0, 1-1/n]$.
+
+Cette solution est donc acceptable, et ainsi l'équation $f(x+1/n) = f(x)$ admet au moins cette solution sur $[0, 1-1/n]$.
+
+// Vous qui vous apprêtez à lire cela, abandonnez toute espérance
+
+// Or, $0 <= (n-1)/(2n) <= 1/n <==> 1 <= n <= 3$, donc cette solution ne convient pas pour $n >= 4$.
+// 
+// Pour $n>=4$, posons $g : x |-> -2x^2+ (2n-2)/n x+(n-1)/n^2$.
+
+// $
+//   Delta_g = (2n-2)^2/n^2 - 4 (-2) (n-1)/n^2 = (4n^2-4n+4+8n-8)/n^2 = (4n^2+4n-4)/n^2.
+// $
+// 
+// Soit $Delta_n = 4^2-4 times 4 times (-4) = 80$.
+// $
+//   4n^2+4n-4 >= 0 &<==> n <= (-4-sqrt(80))/8 or n >= (-4+sqrt(80))/8 \
+//   &<==> n >= (-1+sqrt(5))/2 "car" n "positif" \
+// $
+// 
+// Or $n >= 2$ donc $n > (-1+sqrt(5))/2$. Ainsi $Delta_g > 0$ et l'équation $g(x) = 0$ admet deux solutions distinctes :
+// $
+//   g(x) = 0 &<==> x = ((2-2n)/n - sqrt((4n^2+4n-4)/n^2))/(-4) or x = ((2-2n)/n + sqrt((4n^2+4n-4)/n^2))/(-4) \
+//   &<==> x = -(2-2n - sqrt(4n^2+4n-4))/(4n) or -(2-2n - sqrt(4n^2+4n-4))/(4n) \
+// $
+
 
 = Généralisation.
 Soit $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
