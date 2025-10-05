@@ -32,7 +32,7 @@ $
 On recherche s'il existe $alpha in [0, 1 - 1/n]$ tel que $g(alpha) = 0$.
 Comme $sum_(k=0)^(n-1) g(k/n) = 0$,
 - soit $g(k/n)$ est égal à 0 pour tous $k in [0, n-1]$ et l'on peut prendre n'importe quel $k$ pour avoir $alpha = k/n$ puisque $k in [|0, n-1|]$ donc $k/n in [0, 1- 1/n]$.
-- soit il existe $k'$ et $k''$ tel que $g(k'/n) > 0$ et $g(k''/n) < 0$. Comme $g$ est continue sur $[0, 1]$, il existe d'après le théorème des valeurs intermédiaires $alpha in [k'/n <-> k''/n]$ tel que $g(alpha) = 0$. Comme $[k'/n <-> k''/n] subset.eq [0, 1-1/n]$, on a bien $alpha in [0, 1-1/n]$.
+- soit il existe $k'$ tel que $g(k'/n) != 0$. Dans ce cas puisque la somme vaut 0, il existe nécessairement au moins un $k''$ tel que $g(k''/n)$ soit de signe opposé à $g(k'/n)$. Comme $g$ est continue sur $[0, 1]$, il existe d'après le théorème des valeurs intermédiaires $alpha in [k'/n <-> k''/n]$ tel que $g(alpha) = 0$. Comme $[k'/n <-> k''/n] subset.eq [0, 1-1/n]$, on a bien $alpha in [0, 1-1/n]$.
 
 = Généraliser encore ?
 Soit $T in ]0, 1[$ tel que $1/T in.not ZZ$, et $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
