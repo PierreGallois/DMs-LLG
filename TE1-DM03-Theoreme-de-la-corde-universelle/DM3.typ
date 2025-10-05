@@ -62,4 +62,4 @@ Or $T != 0$ et comme $sin^2(pi/T) = 0 <=> sin(pi/T) = 0 <=> pi/T = 0 "ou" pi/T =
 ==
 On a que $f(x) - f(x + T) > 0$ ie $f(x) > f(x + T)$ donc $f(x) != f(x + T)$ pour tout $x$ dans $[0, 1 - T]$.
 
-Nous avons trouvé un contre-exemple donc $f(x + T) = f(x)$ est impossible pour tout $x$ dans $[0, 1-T]$.
+$f(x + T) = f(x)$ est impossible pour tout $x$ dans $[0, 1-T]$.
