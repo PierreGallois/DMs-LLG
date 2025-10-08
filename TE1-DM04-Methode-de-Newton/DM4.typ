@@ -20,5 +20,10 @@
 ==
 ==
 
+Tentons maintenant de simplifier et d'optimiser ce code :
 
-#code-from-file(folder-name, "newton.py")
+#code-from-file(folder-name, "newton_simplifie.py")
+
+Pour aller encore plus loin dans la simplification, changeons de language pour Haskell :
+
+#code-from-file(folder-name, "newton.hs")
