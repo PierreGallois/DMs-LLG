@@ -21,24 +21,29 @@ On a $f(x+1/n) = 1 - abs(2x + 2/n - 1)$.
 De plus, $n >= 2 ==> 1 >= 2/n ==> 1/2 >= 1/n ==> 1/2 > 1/2 - 1/n >= 0$.
 
 #table(
-  columns: (auto, 0pt, auto, 0pt, auto, 0pt, auto, 0pt),
+  columns: (1fr, 0pt, 1fr, 0pt, 1fr, 0pt, 1fr, 0pt),
   align: (x, y) => if y == 0 { center + bottom } else { center },
+  inset: 0.6em,
   stroke: (x, y) => (
     // Dash stroke inside
-    right: if x > 0 and y > 0 { (paint: black, dash: "dotted") },
+    right: if x > 1 and y > 0 { (paint: black, dash: "dotted") },
     // Left border
     left: if y > 0 and x <= 1 { black },
     // Top border
     top: if y == 1 { black },
     rest: none),
-  $x$, $0$, [], $1/2-1/n$, [], $1/2$, [], $1$,
+  $x$, $0/2$, none,
+  move(dy: 4.5pt)[$ // Hacky workaround
+   inline(1/2 - 1/n)
+   $],
+  none, $1/2$, none, $1$,
 
   // Right border
   table.vline(start: 1, stroke: (dash: none)),
 
-  $abs(2x - 1)$, [], $-2x+1$, [], $-2x+1$, [0], $2x-1$, [],
+  $abs(2x - 1)$, [], $-2x+1$, [], $-2x+1$, box(fill: white)[0], $2x-1$, [],
   $f(x)$, [], $2x$, [], $2x$, [], $-2x+2$, [],
-  $abs(2x - 1 + 2/n)$, [], $-2x + 1 - 2/n$, [0], $2x - 1 + 2/n$, [], $2x - 1 + 2/n$, [],
+  $abs(2x - 1 + 2/n)$, [], $-2x + 1 - 2/n$, box(fill: white)[0], $2x - 1 + 2/n$, [], $2x - 1 + 2/n$, [],
   $f(x+1/n)$, [], $2x + 2/n$, [], $-2x +2 - 2/n$, [], $-2x +2 - 2/n$, [],
   $f(x)-f(x+1/n)$, [], $-2/n$, [], $4x-2+2/n$, [], $2/n$, [],
 
