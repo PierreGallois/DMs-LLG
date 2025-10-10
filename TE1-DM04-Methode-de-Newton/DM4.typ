@@ -33,7 +33,7 @@ Or $y = 0 <=> x = u - (f(u)) / (f'(u))$.
 Par conséquent, $tau_u$ coupe donc l'axe des abscisses au point d'abscisse $u - (f(u)) / (f'(u))$.
 
 ===
-Considérons maintenant la fonction $g$ définie sur $[a,b]$ par $g : x arrow.r.long.bar x - (f(x)) / (f'(x))$ et la suite $(x_n)_(n in N)$ par $x_0 = a$ et $x_(n+1) = g(x_n)$.
+Considérons maintenant la fonction $g$ définie sur $[a,b]$ par $g : x arrow.r.long.bar x - (f(x)) / (f'(x))$ et la suite $(x_n)_(n in NN)$ par $x_0 = a$ et $x_(n+1) = g(x_n)$.
 
 Cette suite se construit donc de la manière suivante : on part du point d'abscisse $x_n$ sur la #highlight(fill: red.lighten(70%).saturate(20%))[courbe représentative] de $f$, on trace la #highlight(fill: eastern.lighten(70%).saturate(50%))[tangente] à cette courbe en ce point, puis on #box(outset: 2pt, stroke: (dash: "dotted", join: "round", cap: "round"))[reporte] l'intersection de cette tangente avec l'axe des abscisses pour obtenir le point d'abscisse $x_(n+1)$.
 #footnote[Schémas générés automatiquement pour n'importe quelle fonction. (programme dans le code source du DM, cf Github).]
@@ -71,6 +71,35 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 #align(center, tengeante-graph(x => calc.pow(x, 4) + 2*calc.pow(x, 3) - calc.sqrt(2)*x - 2/5, x => 4*calc.pow(x, 3) + 6*calc.pow(x, 2) - calc.sqrt(2), (-0.5877,), (6,), (-1.8, 0.9), (-1, 3/4)))
 //#tengeante-graph(x => calc.exp(x))
 // tester : -0.584
+
+==
+
+===
+
+La fonction $g$ est dérivable sur $[a,b]$ par composition de fonctions dérivables, dont $f'$ qui ne s'y annule pas, et pour tout $x in [a,b]$, on a : $g'(x) = (f(x)f''(x))/((f'(x))^2)$
+
+Ainsi, $g'$ de même signe que $f$ sur $[a,b]$ et donc $g$ est strictement croissante sur $[a,alpha]$ et strictement décroissante sur $[alpha,b]$.
+
+TODO : tableau de variations de g ? ou pas ?
+
+===
+
+Montrons que pour tout $n in NN$, $a <= x_n <= b$ en procédant par récurrence :
+
+- Initialisation : $x_0 = a$ donc $a <= x_0 <= b$.
+- Hérédité : Soit $n in NN$, supposons que $a <= x_n <= b$.
+  - Si $x_n = alpha$, alors $x_(n+1) = g(x_n) = g(alpha) = alpha$ donc $a <= x_(n+1) <= b$.
+  - Si $x_n < alpha$, alors par croissance de $g$ sur $[a,alpha]$, on a $g(a) <= g(x_n) <= g(alpha) = alpha$. Or $a  <= g(a) <= alpha$ par l'hypothèse de récurrence, donc $a <= x_(n+1) <= b$.
+  - Si $x_n > alpha$, alors par décroissance de $g$ sur $[alpha,b]$, on a $g(b) >= g(x_n) >= g(alpha) = alpha$. Or $b >= g(b) >= alpha$ par l'hypothèse de récurrence, donc $a <= x_(n+1) <= b$.
+
+Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= b$.
+
+==
+
+===
+
+===
+
 
 = Algorithmes
 
