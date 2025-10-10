@@ -36,7 +36,7 @@ Par conséquent, $tau_u$ coupe donc l'axe des abscisses au point d'abscisse $u -
 Considérons maintenant la fonction $g$ définie sur $[a,b]$ par $g : x arrow.r.long.bar x - (f(x)) / (f'(x))$ et la suite $(x_n)_(n in N)$ par $x_0 = a$ et $x_(n+1) = g(x_n)$.
 
 Cette suite se construit donc de la manière suivante : on part du point d'abscisse $x_n$ sur la #highlight(fill: red.lighten(70%).saturate(20%))[courbe représentative] de $f$, on trace la #highlight(fill: eastern.lighten(70%).saturate(50%))[tangente] à cette courbe en ce point, puis on #box(outset: 2pt, stroke: (dash: "dotted", join: "round", cap: "round"))[reporte] l'intersection de cette tangente avec l'axe des abscisses pour obtenir le point d'abscisse $x_(n+1)$.
-
+#footnote[Schémas générés automatiquement pour n'importe quelle fonction. (programme dans le code source du DM, cf Github).]
 
 #show: lq.set-tick(inset: 0pt, outset: 0pt)
 
