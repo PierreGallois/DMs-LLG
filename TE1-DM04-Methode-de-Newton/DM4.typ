@@ -33,12 +33,13 @@ Or $y = 0 <=> x = u - (f(u)) / (f'(u))$.
 
 Par conséquent, $tau_u$ coupe donc l'axe des abscisses au point d'abscisse $u - (f(u)) / (f'(u))$.
 
-
-
 ===
 
+Considérons maintenant la fonction $g$ définie sur $[a,b]$ par $g : x arrow.r.long.bar x - (f(x)) / (f'(x))$ et la suite $(x_n)_(n in N)$ par $x_0 = a$ et $x_(n+1) = g(x_n)$.
 
+Cette suite se construit donc de la manière suivante : on part du point d'abscisse $x_n$ sur la courbe représentative de $f$, on trace la tangente à cette courbe en ce point, puis on reporte l'intersection de cette tangente avec l'axe des abscisses pour obtenir le point d'abscisse $x_(n+1)$.
 
+GRAPHIQUE TODOOOOOOOOOOO
 
 
 = Algorithmes
