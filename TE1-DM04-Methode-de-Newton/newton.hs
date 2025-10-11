@@ -1,7 +1,7 @@
 f :: (Num r) => r -> r
 f x = x^3 - 2
 
-derivee f x h = (f (x + h) - f (x - h)) / 2*h
+derivee f x h = (f (x + h) - f (x - h)) / (2*h)
 
 newton f h e x =
     if (abs . f) x > e
@@ -9,6 +9,10 @@ newton f h e x =
     else x
 
 
+main :: IO ()
 main = do
-    let result = newton f 1e-4 1e-6 1
-    (putStrLn . show) result
+    let initialGuess = 1.0  -- Initial guess for the root
+        h = 1e-4            -- Small step for derivative approximation
+        e = 1e-6            -- Tolerance level for convergence
+        root = newton f h e initialGuess
+    putStrLn $ "Root found: " ++ show root

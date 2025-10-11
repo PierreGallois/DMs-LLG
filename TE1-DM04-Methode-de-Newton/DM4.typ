@@ -21,7 +21,6 @@ D'autre part, on dispose de $f(a) > 0$ et de $f(b) < 0$.
 Ainsi, d'après le corollaire du Théorème des Valeurs Intermédiaires, il existe un unique $alpha in [a,b]$ tel que $f(alpha) = 0$.
 
 == 
-
 === 
 Soit $u in [a,b]$. On note $tau_u$ la tangente à la courbe représentative de $f$ au point d'abscisse $u$. 
 
@@ -72,9 +71,21 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 //#tengeante-graph(x => calc.exp(x))
 // tester : -0.584
 
-= Algorithmes
-
 ==
+===
+$f$ est deux fois dérivable sur $[a, b]$ donc $f'$ est dérivable sur $[a, b]$. $g$ est donc dérivable sur $[a, b]$ par opérations et $g'(x) = 1 - ((f'(x))^2 - f''(x)f(x)) / (f'(x))^2 = - (f''(x)f(x)) / (f'(x))^2$. Comme $f''$ est strictement positive sur $[a, b]$, $g'$ a le signe opposé de $f$.
+
+===
+
+
+
+= Vitesse de convergeance
+
+
+
+= Algorithmes
+==
+
 ==
 ==
 
