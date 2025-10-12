@@ -106,19 +106,19 @@ Cette solution est donc acceptable, et ainsi l'équation $f(x+1/n) = f(x)$ admet
 // Vous qui vous apprêtez à lire cela, abandonnez toute espérance
 
 // Or, $0 <= (n-1)/(2n) <= 1/n <==> 1 <= n <= 3$, donc cette solution ne convient pas pour $n >= 4$.
-// 
+
 // Pour $n>=4$, posons $g : x |-> -2x^2+ (2n-2)/n x+(n-1)/n^2$.
 
 // $
 //   Delta_g = (2n-2)^2/n^2 - 4 (-2) (n-1)/n^2 = (4n^2-4n+4+8n-8)/n^2 = (4n^2+4n-4)/n^2.
 // $
-// 
+
 // Soit $Delta_n = 4^2-4 times 4 times (-4) = 80$.
 // $
 //   4n^2+4n-4 >= 0 &<==> n <= (-4-sqrt(80))/8 or n >= (-4+sqrt(80))/8 \
 //   &<==> n >= (-1+sqrt(5))/2 "car" n "positif" \
 // $
-// 
+
 // Or $n >= 2$ donc $n > (-1+sqrt(5))/2$. Ainsi $Delta_g > 0$ et l'équation $g(x) = 0$ admet deux solutions distinctes :
 // $
 //   g(x) = 0 &<==> x = ((2-2n)/n - sqrt((4n^2+4n-4)/n^2))/(-4) or x = ((2-2n)/n + sqrt((4n^2+4n-4)/n^2))/(-4) \
@@ -167,6 +167,33 @@ domain: ($ 0 $,
   ),
 ))
 
+===
+On recherche les solutions de l'équation $f(x+1/n) = f(x)$ pour tout $x in [0, 1 - 1/n]$.
+
+On pose 
+$
+g(x) &= f(x+1/n) - f(x) \
+&= 1/n (e - e^(x + 1/n)) + x(e-e^(x+1/n)) - x(e-e^x) \
+&= 1/n (e-e^(x+1/n)) + x(e^x - e^(x+1/n))
+$
+
+Déterminons le signe de $g$ en 0 et $1 - 1/n$.
+- $g(0) = 1/n (e - e^(1/n))$
+Or $2 <= n <=> 1/2 >= 1/n <=> e^(1/2) <= -e^(1/n)$ par stricte croissance de l'exponentielle sur $RR$.
+Donc
+$
+0 < e-e^(1/2) <= e - e^(1/n)
+$
+et comme $1/n > 0$, on a $g(0) > 0.$
+
+- $g(1 - 1/n) = - (1-1/n)(e-e^(1-1/n))$
+Or d'une part $2 <= n <=> -1/2 <= -1/n <=> 0 < 1/2 <= 1 - 1/n$.
+
+De plus, $0 < 1/n <=> 1 > 1 - 1/n <=> -e < -e^(1-1/n) <=> 0 < e - e^(1-1/n)$ par stricte croissance de l'exponentielle sur $RR$.
+
+On a donc $g(1 - 1/n) < 0$.
+
+Comme $g$ est continue par opérations et compositions de fonctions continues, d'après le théorème des valeures intermédaires, il existe $c in [0, 1 - 1/n]$ tel que $g(c) = 0$ ie il existe au moins une solution à l'équation $f(x+1/n) = f(x)$ dans $[0, 1 - 1/n]$.
 
 = Généralisation.
 Soit $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
@@ -189,6 +216,7 @@ Comme $sum_(k=0)^(n-1) g(k/n) = 0$,
 - soit $g(k/n)$ est égal à 0 pour tous $k in [0, n-1]$ et l'on peut prendre n'importe quel $k$ pour avoir $alpha = k/n$ puisque $k in [|0, n-1|]$ donc $k/n in [0, 1- 1/n]$.
 - soit il existe $k'$ tel que $g(k'/n) != 0$. Dans ce cas puisque la somme vaut 0, il existe nécessairement au moins un $k''$ tel que $g(k''/n)$ soit de signe opposé à $g(k'/n)$. Comme $g$ est continue sur $[0, 1]$, il existe d'après le théorème des valeurs intermédiaires #footnote[Soit $a, b in RR$, $[a <-> b] = cases([a, b] &"si" a <= b, [b, a] &"si" b < a)$] $alpha in [k'/n <-> k''/n]$ tel que $g(alpha) = 0$. Comme $[k'/n <-> k''/n] subset.eq [0, 1-1/n]$, on a bien $alpha in [0, 1-1/n]$.
 
+#pagebreak()
 = Généraliser encore ?
 Soit $T in ]0, 1[$ tel que $1/T in.not ZZ$, et $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
 On considére $f: x |-> sin^2((pi x) / T) - x sin^2(pi / T)$ d'inconnue $x in [0, 1 - T]$.
