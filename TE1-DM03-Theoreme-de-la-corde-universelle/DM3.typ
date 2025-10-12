@@ -75,11 +75,13 @@ $
   S = {1/2 - 1/(2n)}.
 $
 
+#pagebreak()
 ==
 Soit $f:x |-> 16x^2(1-x)^2$ définie sur $[0,1]$. Pour tout $x in [0, 1/n]$,
 
 $
-  f(x+1/n) = f(x) &<==> f(x+1/n) - f(x) = 0 \
+  &f(x+1/n) = f(x) \
+  &<==> f(x+1/n) - f(x) = 0 \
   &<==> 16(x+1/n)^2(1-x-1/n)^2 - 16x^2(1-x)^2 = 0 \
   &<==> ((x+1/n)(1-x-1/n))^2-(x(1-x))^2 = 0 \
   &<==> (x-x^2-x/n+1/n-x/n-1/n^2)^2 - (x-x^2)^2 = 0 \
@@ -137,7 +139,8 @@ Ainsi $f''(x) < 0$ pour tout $x in [0,1]$, et $f'$ est donc strictement décrois
 
 $f'(0) = e-1 > 0$ et $f'(1) = e-e-e = -e < 0$ donc d'après le théorème de la bijection, il existe un unique $alpha in [0,1]$ tel que $f'(alpha) = 0$.
 
-#tabvar(
+#align(center,
+tabvar(
   variable: $x$,
   label: (
     ([$f''(x)$], "s"),
@@ -145,7 +148,9 @@ $f'(0) = e-1 > 0$ et $f'(1) = e-e-e = -e < 0$ donc d'après le théorème de la 
     ([$f'(x)$], "s"),
     ([$f$], "v"),
   ),
-  domain: ($ 0 $, $ alpha $, $ 1 $),
+domain: ($ 0 $,
+  [#h(6em) $alpha$ #h(6em)], // dirty hack
+  $ 1 $),
   contents: (
     ($-$, ()),
     (
@@ -160,7 +165,7 @@ $f'(0) = e-1 > 0$ et $f'(1) = e-e-e = -e < 0$ donc d'après le théorème de la 
       (bottom, $0$),
     ),
   ),
-)
+))
 
 
 = Généralisation.
