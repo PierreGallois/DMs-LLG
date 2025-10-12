@@ -74,15 +74,11 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 ==
 
 ===
-
 La fonction $g$ est dérivable sur $[a,b]$ par composition de fonctions dérivables, dont $f'$ qui ne s'y annule pas, et pour tout $x in [a,b]$, on a : $g'(x) = (f(x)f''(x))/((f'(x))^2)$
 
 Ainsi, $g'$ de même signe que $f$ sur $[a,b]$ et donc $g$ est strictement croissante sur $[a,alpha]$ et strictement décroissante sur $[alpha,b]$.
 
-TODO : tableau de variations de g ? ou pas ?
-
 ===
-
 Montrons que pour tout $n in NN$, $a <= x_n <= b$ en procédant par récurrence :
 
 - Initialisation : $x_0 = a$ donc $a <= x_0 <= b$.
@@ -98,9 +94,6 @@ Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= b$.
 ===
 
 ===
-
-
-= Algorithmes
 
 
 = Vitesse de convergeance
