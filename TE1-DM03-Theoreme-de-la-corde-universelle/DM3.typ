@@ -193,7 +193,7 @@ De plus, $0 < 1/n <=> 1 > 1 - 1/n <=> -e < -e^(1-1/n) <=> 0 < e - e^(1-1/n)$ par
 
 On a donc $g(1 - 1/n) < 0$.
 
-Comme $g$ est continue par opérations et compositions de fonctions continues, d'après le théorème des valeures intermédaires, il existe $c in [0, 1 - 1/n]$ tel que $g(c) = 0$ ie il existe au moins une solution à l'équation $f(x+1/n) = f(x)$ dans $[0, 1 - 1/n]$.
+Comme $g$ est continue par opérations et compositions de fonctions continues et que $g(0)$ et $g(1 - 1/n)$ sont de signes opposés, d'après le théorème des valeures intermédaires, il existe $c in [0, 1 - 1/n]$ tel que $g(c) = 0$ ie il existe au moins une solution à l'équation $f(x+1/n) = f(x)$ dans $[0, 1 - 1/n]$.
 
 = Généralisation.
 Soit $f$ une fonction continue sur $[0, 1]$ telle que $f(0) = f(1)$.
