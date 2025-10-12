@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie
+#import "@preview/vartable:0.2.2": tabvar
 
 #show: dm.with(
   numero: 3,
@@ -121,6 +122,45 @@ Cette solution est donc acceptable, et ainsi l'équation $f(x+1/n) = f(x)$ admet
 //   g(x) = 0 &<==> x = ((2-2n)/n - sqrt((4n^2+4n-4)/n^2))/(-4) or x = ((2-2n)/n + sqrt((4n^2+4n-4)/n^2))/(-4) \
 //   &<==> x = -(2-2n - sqrt(4n^2+4n-4))/(4n) or -(2-2n - sqrt(4n^2+4n-4))/(4n) \
 // $
+
+==
+Soit $f:x |-> x(e-e^x)$ définie et dérivable 2 fois sur $[0,1]$.
+
+===
+$
+  forall x in [0,1], &f'(x) = e - e^x + x(-e^x) = e - e^x - x e^x \
+  &f''(x) = -e^x -e^x -x e^x = -e^x (2 + x)
+$
+
+Or d'une part, $e^x > 0$, et d'autre part, $x>=0$ donc $x+2>0$.
+Ainsi $f''(x) < 0$ pour tout $x in [0,1]$, et $f'$ est donc strictement décroissante sur ce même intervalle.
+
+$f'(0) = e-1 > 0$ et $f'(1) = e-e-e = -e < 0$ donc d'après le théorème de la bijection, il existe un unique $alpha in [0,1]$ tel que $f'(alpha) = 0$.
+
+#tabvar(
+  variable: $x$,
+  label: (
+    ([$f''(x)$], "s"),
+    ([$f'$], "v"),
+    ([$f'(x)$], "s"),
+    ([$f$], "v"),
+  ),
+  domain: ($ 0 $, $ alpha $, $ 1 $),
+  contents: (
+    ($-$, ()),
+    (
+      (top, $e-1$),
+      (center, $0$),
+      (bottom, $-e$),
+    ),
+    ($+$, ("0", $-$)),
+    (
+      (bottom, $0$),
+      (top, $f(alpha)$),
+      (bottom, $0$),
+    ),
+  ),
+)
 
 
 = Généralisation.
