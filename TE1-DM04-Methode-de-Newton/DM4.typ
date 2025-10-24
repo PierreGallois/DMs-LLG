@@ -131,7 +131,23 @@ $
 ==
 Posons pour tout $n in NN, u_n = M/(2m)|x_n-alpha|$. D'après le $4)b)$ de la partie A, on sait que $(x_n) -> alpha$. Donc $(u_n) -> 0$ par continuité de $|dot|$ et produit, et il existe donc par définition un $N in NN$ tel que $u_n = M/(2m)|x_N-alpha| < 1$.
 
+==
+D'après le $3)$, $u_(n+1) <= u_n^2$. Montrons d'abord par récurrence que pour tout $n >= N, u_n <= u_N^(2^(n-N))$.
 
+Initialisation : $u_N <= u_N^1$.
+
+Hérédité : Si pour $n >= N, u_n <= u_N^(2^(n-N))$, alors :
+$
+  u_(n+1) <= u_n^2 <= u_N^(2 dot 2^(n-N)) = u_N^(2^((n+1)-N))
+$
+Ce qui conclut la récurrence.
+
+Ainsi, pour tout $n >= N$ :
+$
+  u_n <= u_N^(2^(n-N)) <=> M/(2m)|x_n-alpha| <= (u_N^(2^(-N)))^(2^n) \
+  <=> |x_n - alpha| <= (2m)/M (u_N^(2^(-N)))^2^n
+$
+On obtient le résultat voulu avec $C = (2m)/M > 0$ et $k = u_N^2^(-N)$, où $k < 1$ car $u_N < 1$ et $x^a < 1$ pour tout $a in RR^+_*$ quand $x < 1$.
 
 
 = Algorithmes
