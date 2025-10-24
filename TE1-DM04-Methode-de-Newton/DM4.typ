@@ -96,8 +96,18 @@ Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= b$.
 ===
 
 
-= Vitesse de convergeance
-
+= Vitesse de convergence
+==
+$phi: x mapsto f(b) - f(x)  -(b-x)f'(x) - (b-x)^2/(b-a)^2 (f(b)-f(a)-(b-a)f'(a))$, définie sur $[a;b]$, est dérivable sur $[a;b]$ par opérations. Sa dérivée est pour tout $x in [a;b]$ :
+$
+  phi'(x) = (b - x) ((2 ((a - b) f'(a) - f(a) + f(b)))/(b - a)^2 - f''(x))
+$
+ De plus, on vérifie que $phi(a) = phi(b) = 0$. Le théorème de Rolle donne l'existence de $c in ]a:b[$ tel que $phi'(c) = 0$, c'est à dire :
+ $
+   f''(c) = (2(f(b)-f(a)-(b-a)f'(a)))/(b-a)^2\
+   <=> f(b)-f(a) = (b-a)f'(a) + (b-a)^2/2f''(c)
+ $
+ Ce qu'il fallait démontrer.
 
 
 = Algorithmes
