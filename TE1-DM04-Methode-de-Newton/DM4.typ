@@ -121,7 +121,12 @@ $
 $
 En passant à la valeur absolue et en utilisant $f'' <= M$, on obtient :
 $
-  |f(alpha)-f(x)-(alpha-x)f'(x)| <= (alpha-x)^2/2M
+  |f(alpha)-f(x)-(alpha-x)f'(x)| <= (alpha-x)^2/2M \
+  <=> abs(x - f(x)/(f'(x)) - (f(alpha) - f(alpha)/(f'(x)))) <= ((alpha-x)^2M)/(2f'(x))
+$
+En remarquant que $f(alpha) = 0$, on a $f(alpha) / (f'(x)) = f(alpha) / (f'(alpha))$. En utilisant cette réécriture et le fait que $f' >= m$, on a enfin :
+$
+  |g(x) - alpha| = |g(x) - g(alpha)| <= ((alpha-x)^2 M)/(2m)
 $
 
 = Algorithmes
