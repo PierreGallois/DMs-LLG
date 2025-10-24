@@ -128,6 +128,11 @@ En remarquant que $f(alpha) = 0$, on a $f(alpha) / (f'(x)) = f(alpha) / (f'(alph
 $
   |g(x) - alpha| = |g(x) - g(alpha)| <= ((alpha-x)^2 M)/(2m)
 $
+==
+Posons pour tout $n in NN, u_n = M/(2m)|x_n-alpha|$. D'après le $4)b)$ de la partie A, on sait que $(x_n) -> alpha$. Donc $(u_n) -> 0$ par continuité de $|dot|$ et produit, et il existe donc par définition un $N in NN$ tel que $u_n = M/(2m)|x_N-alpha| < 1$.
+
+
+
 
 = Algorithmes
 ==
