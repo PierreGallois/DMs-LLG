@@ -109,6 +109,10 @@ $
  $
  Ce qu'il fallait démontrer.
 
+==
+$f'$ est dérivable donc continue sur $[a;b]$. Le théorème des bornes atteintes donne donc un $m in RR$ tel que $f' <= m$. De plus, $f'$ atteint $m$ : comme $f' < 0$, $m < 0$ et pour tout $x in [a;b], |f'(x)| >= |m| > 0$.
+
+De même, $f''$ est continue sur $[a;b]$, donc bornée sur $[a;b]$ : il existe donc $M >= 0$ tel que $|f''(x)| <= M$. Comme $f'' > 0$, $M > 0$ et on a ce que l'on voulait démontrer.
 
 = Algorithmes
 ==
