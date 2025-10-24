@@ -114,6 +114,16 @@ $f'$ est dérivable donc continue sur $[a;b]$. Le théorème des bornes atteinte
 
 De même, $f''$ est continue sur $[a;b]$, donc bornée sur $[a;b]$ : il existe donc $M >= 0$ tel que $|f''(x)| <= M$. Comme $f'' > 0$, $M > 0$ et on a ce que l'on voulait démontrer.
 
+==
+La formule de Taylor-Lagrange appliquée à $f$ sur $[x;alpha]$ donne $c in ]x;alpha[$ tel que :
+$
+  f(alpha)-f(x)-(alpha-x)f'(x) = (alpha-x)^2/2f''(c)
+$
+En passant à la valeur absolue et en utilisant $f'' <= M$, on obtient :
+$
+  |f(alpha)-f(x)-(alpha-x)f'(x)| <= (alpha-x)^2/2M
+$
+
 = Algorithmes
 ==
 
