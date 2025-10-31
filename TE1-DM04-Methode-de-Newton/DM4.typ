@@ -66,7 +66,7 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
     lq.plot(xs, xs.map(x => f(x)), mark: none, color: red, stroke: (thickness: 1.5pt)),
   )
 }
-#align(center, tengeante-graph(x => calc.exp(x), x => calc.exp(x), (3,), (10,), (-5, 10), (-2, 10)))
+#align(center, tengeante-graph(x => calc.exp(-x)-1, x => -calc.exp(-x), (-2.3,), (4,), (-5, 10), (-2, 10)))
 #align(center, tengeante-graph(x => calc.pow(x, 4) + 2*calc.pow(x, 3) - calc.sqrt(2)*x - 2/5, x => 4*calc.pow(x, 3) + 6*calc.pow(x, 2) - calc.sqrt(2), (-0.5877,), (6,), (-1.8, 0.9), (-1, 3/4)))
 //#tengeante-graph(x => calc.exp(x))
 // tester : -0.584
@@ -152,8 +152,19 @@ On obtient le résultat voulu avec $C = (2m)/M > 0$ et $k = u_N^2^(-N)$, où $k 
 
 = Algorithmes
 ==
+Pour $f(x) = x^2 - a$, $f'(x) = 2x$ et on a donc pour tout $n in NN$ :
+$
+  u_(n+1) = u_n - (u_n^2-a)/(2u_n) = (u_n^2+a)/(2u_n)
+$
+Qui tend pour tout $a in RR^+_*$ vers $sqrt(a)$, car $f$ satisfait les conditions de l'énoncé sur $[0; X]$ pour tout $X > sqrt(a)$ : pour $a > 1$, on peut prendre $X=a$ sans avoir à calculer $sqrt(a)$.
 
 ==
+Pour $f(x) = x^3 - 2$, $f'(x) = 3x$ et pour tout $n in NN$ :
+$
+  u_(n+1) = u_n - (u_n^3 -2)/(3u_n)  = (3u_n^2 - u_n^3 + 2)/(3u_n)
+$
+Qui tend vers $root(3,2)$ car $f$ satisfait les conditions de l'énoncé sur $[0; 3]$, car $3 > root(3,2)$ et $f$ est strictement croissante.
+
 ==
 
 Tentons maintenant de simplifier et d'optimiser ce code :
