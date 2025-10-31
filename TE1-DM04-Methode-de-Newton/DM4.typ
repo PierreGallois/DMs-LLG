@@ -70,6 +70,7 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 #align(center, tengeante-graph(x => calc.pow(x, 4) + 2*calc.pow(x, 3) - calc.sqrt(2)*x - 2/5, x => 4*calc.pow(x, 3) + 6*calc.pow(x, 2) - calc.sqrt(2), (-0.5877,), (6,), (-1.8, 0.9), (-1, 3/4)))
 //#tengeante-graph(x => calc.exp(x))
 // tester : -0.584
+(Exemple de fonction ne satisfaisant pas l'énoncé, pour lequel la suite $(x_n)$ a un comportement erratique jusqu'à atteindre un intervalle sur lequel l'énoncé est satisfait, où elle converge bien vers une racine).
 
 ==
 ===
@@ -171,6 +172,7 @@ $
 Qui tend vers $root(3,2)$ car $f$ satisfait les conditions de l'énoncé sur $[0; 3]$, car $3 > root(3,2)$ et $f$ est strictement croissante.
 
 ==
+Ce script calcule (dans la boucle) les termes de la suite $(x_n)$ jusqu'à avoir atteint une précision suffisante $epsilon$ en image, et renvoie le dernier terme calculé comme valeur de $alpha$.
 
 Tentons maintenant de simplifier et d'optimiser ce code :
 
