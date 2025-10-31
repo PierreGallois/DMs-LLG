@@ -78,15 +78,12 @@ La fonction $g$ est dérivable sur $[a,b]$ par composition de fonctions dérivab
 Ainsi, $g'$ de même signe que $f$ sur $[a,b]$ et donc $g$ est strictement croissante sur $[a,alpha]$ et strictement décroissante sur $[alpha,b]$.
 
 ===
-Montrons que pour tout $n in NN$, $a <= x_n <= b$ en procédant par récurrence :
+Montrons que pour tout $n in NN$, $a <= x_n <= alpha$ en procédant par récurrence :
 
-- Initialisation : $x_0 = a$ donc $a <= x_0 <= b$.
-- Hérédité : Soit $n in NN$, supposons que $a <= x_n <= b$.
-  - Si $x_n = alpha$, alors $x_(n+1) = g(x_n) = g(alpha) = alpha$ donc $a <= x_(n+1) <= b$.
-  - Si $x_n < alpha$, alors par croissance de $g$ sur $[a,alpha]$, on a $g(a) <= g(x_n) <= g(alpha) = alpha$. Or $a  <= g(a) <= alpha$ par l'hypothèse de récurrence, donc $a <= x_(n+1) <= b$.
-  - Si $x_n > alpha$, alors par décroissance de $g$ sur $[alpha,b]$, on a $g(b) >= g(x_n) >= g(alpha) = alpha$. Or $b >= g(b) >= alpha$ par l'hypothèse de récurrence, donc $a <= x_(n+1) <= b$.
+- Initialisation : $x_0 = a$ donc $a <= x_0 <= alpha$.
+- Hérédité : Soit $n in NN$, supposons que $a <= x_n <= alpha$. Comme $alpha <= b$, $x_n in [a;b]$ et $g(x_n)$ est bien défini. Par croissance de $g$ sur $[a,alpha]$, on a $g(a) <= g(x_n) <= g(alpha) = alpha$. Or $a  <= g(a)$, donc $a <= x_(n+1) <= alpha$.
 
-Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= b$.
+Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= alpha$.
 
 ==
 ===
@@ -97,6 +94,11 @@ $
 Comme $x_n in [a;alpha]$, $f(x_n) >= 0$. De plus, $f'$ est strictement négative sur $[a;b]$. Ainsi, on a $x_(n+1) - x_n >= 0$ et $(x_n)$ est bien croissante.
 
 ===
+La suite $(x_n)$ est croissante et bornée par $alpha$ : par le théorème de la limite monotone, la suite $(x_n)$ tend vers une limite $ell in [a;alpha]$; $g(ell)$ est donc bien définie. De plus, par continuité de $g$ et unicité de la limite :
+$
+  g(ell) = g(lim_(n-> oo) x_n) = lim_(n-> oo) g(x_n) = lim_(n -> +oo) x_(n+1) = ell
+$
+Donc $ell$ est un point fixe de $g$ : le seul point fixe de $g$ sur $[a;alpha]$ étant $alpha$, on déduit que $(x_n) -> alpha$.
 
 
 = Vitesse de convergence
