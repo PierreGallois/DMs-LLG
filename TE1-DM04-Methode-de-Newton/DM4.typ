@@ -70,7 +70,7 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 #align(center, tengeante-graph(x => calc.pow(x, 4) + 2*calc.pow(x, 3) - calc.sqrt(2)*x - 2/5, x => 4*calc.pow(x, 3) + 6*calc.pow(x, 2) - calc.sqrt(2), (-0.5877,), (6,), (-1.8, 0.9), (-1, 3/4)))
 //#tengeante-graph(x => calc.exp(x))
 // tester : -0.584
-(Exemple de fonction ne satisfaisant pas l'énoncé, pour lequel la suite $(x_n)$ a un comportement erratique jusqu'à atteindre un intervalle sur lequel l'énoncé est satisfait, où elle converge bien vers une racine).
+Exemple de fonction ne satisfaisant pas l'énoncé, pour lequel la suite $(x_n)$ a un comportement erratique jusqu'à atteindre un intervalle sur lequel l'énoncé est satisfait, où elle converge bien vers une racine.
 
 ==
 ===
@@ -174,10 +174,31 @@ Qui tend vers $root(3,2)$ car $f$ satisfait les conditions de l'énoncé sur $[0
 ==
 Ce script calcule (dans la boucle) les termes de la suite $(x_n)$ jusqu'à avoir atteint une précision suffisante $epsilon$ en image, et renvoie le dernier terme calculé comme valeur de $alpha$.
 
-Tentons maintenant de simplifier et d'optimiser ce code :
+#pagebreak()
+
+Expliquons pas à pas ce script (légèrement simplifié) :
 
 #code-from-file(folder-name, "newton_simplifie.py")
 
-Pour aller encore plus loin dans la simplification, changeons de language pour Haskell :
+```python f = lambda x: x**3 - 2```
+
+Définition de la fonction `f` ; la notation `lambda` se prête bien à cet usage car `f` est constituée d'une unique expression
+
+```python def newton(f, x, h=1e-4, epsilon=1e-6):```
+
+Définition de la fonction `newton`. Notons l'usage d'une minuscule en première lettre du nom de fonction (`snake_case`). En effet en python tout nom commençant par une majuscule (`upper CamelCase`) implique par convention que sa valeur soit une définition de Classe. Ne pas respecter cette convention entraine un choc du même ordre qu'appeler un vecteur $f$.
+Les variables `h` et `epsilon` sont déplacées comme paramètres optionels de la fonction afin de permettre de les modifier lors de l'appel.
+
+```python while abs(y := f(x)) > epsilon:```
+
+Boucle `while` permettant de continuer le calcul des termes de la suite $(x_n)$ jusqu'à avoir une précision suffisante. Notons l'utilisation de l'opérateur d'assignation Walrus (`:=`) qui permet d'economiser une ligne tout en évitant d'appeler deux fois la fonction `f`.
+
+```python derivee = (f(x + h) - f(x - h)) / (2 * h)```
+
+```python x -= (y / derivee)```
+
+Calculs du `x` pour prochaine boucle, scindé en deux lignes pour des questions de lisibilité.
+
+Voici également l'implémentation en Haskell afin de montrer une méthode se basant sur de la récurrence.
 
 #code-from-file(folder-name, "newton.hs")
