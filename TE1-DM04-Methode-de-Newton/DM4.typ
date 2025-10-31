@@ -72,7 +72,6 @@ Cette suite se construit donc de la manière suivante : on part du point d'absci
 // tester : -0.584
 
 ==
-
 ===
 La fonction $g$ est dérivable sur $[a,b]$ par composition de fonctions dérivables, dont $f'$ qui ne s'y annule pas, et pour tout $x in [a,b]$, on a : $g'(x) = (f(x)f''(x))/((f'(x))^2)$
 
@@ -90,8 +89,12 @@ Montrons que pour tout $n in NN$, $a <= x_n <= b$ en procédant par récurrence 
 Par conséquent, on en déduit que pour tout $n in NN$, $a <= x_n <= b$.
 
 ==
-
 ===
+Montrons que $(x_n)$ est croissante. Pour tout $n in NN$:
+$
+  x_(n+1) - x_n = g(x_n) - x_n = -(f(x_n))/(f'(x_n))
+$
+Comme $x_n in [a;alpha]$, $f(x_n) >= 0$. De plus, $f'$ est strictement négative sur $[a;b]$. Ainsi, on a $x_(n+1) - x_n >= 0$ et $(x_n)$ est bien croissante.
 
 ===
 
