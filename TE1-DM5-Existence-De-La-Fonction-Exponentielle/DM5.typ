@@ -110,3 +110,14 @@ En particulier, $abs(-h) < 1$ quand $abs(h) < 1$ et en appliquant l'inégalité 
 $
   f(x+h - h) = f(x) >= f(x+h)(1-h) <==> f(x)/(1-h) >= f(x+h)
 $
+
+===
+Fixons $x in RR$ et $abs(h) < 1$ non nul. On a donc les inégalités suivantes :
+$
+  f(x)(1+h) <= f(x+h) <= f(x)/(1-h) <==> h f(x) <= f(x+h) - f(x) <= (h f(x))/(1-h)
+$
+
+Ainsi, en fonction du signe de $h$ :
+$
+  f(x) <= (f(x+h) - f(x))/h <= f(x)/(1-h) #text[ou] f(x) >= (f(x+h) - f(x))/h >= f(x)/(1-h)
+$
