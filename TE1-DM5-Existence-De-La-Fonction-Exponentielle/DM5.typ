@@ -102,7 +102,11 @@ $
 $
 
 ===
-En passant à la limite l'inégalité précédente, comme $lim_(n-> +oo) 1+ x/n = 1$,
+En passant à la limite l'inégalité précédente, comme $lim_(n-> +oo) 1+ x/n = 1$, pour tout $abs(h) < 1$ :
 $
   f(x + h) >= f(x)(1+h)
+$
+En particulier, $abs(-h) < 1$ quand $abs(h) < 1$ et en appliquant l'inégalité précédente à $x <- x+h$ :
+$
+  f(x+h - h) = f(x) >= f(x+h)(1-h) <==> f(x)/(1-h) >= f(x+h)
 $
