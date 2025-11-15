@@ -121,3 +121,11 @@ Ainsi, en fonction du signe de $h$ :
 $
   f(x) <= (f(x+h) - f(x))/h <= f(x)/(1-h) #text[ou] f(x) >= (f(x+h) - f(x))/h >= f(x)/(1-h)
 $
+
+===
+En passant à la limite l'inégalité quand $h --> 0$, on obtient par le théorème d'encadrement que :
+$
+  f(x) = lim_(h->0) (f(x+h) - f(x))/h
+$
+
+Ainsi, pour tout $x in RR$, $f$ est dérivable en $x$ et $f'(x) = f(x)$. Donc la fonction $f$ satisfait bien l'équation différentielle définissant la fonction exponentielle.
