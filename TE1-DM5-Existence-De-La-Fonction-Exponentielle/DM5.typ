@@ -33,6 +33,15 @@ $
 $
 
 Similairement, $1+x/n -->^(n->+oo) 1$ et on obtient un rang $n_1$ de la même manière.
+
+===
+Posons $n_2 = max(n_0, n_1)$. Ainsi, pour tout $n >= n_2$, $n >= n_0$ permet d'appliquer l'inégalité de Bernoulli à $(1-x/((n+1)(n+x)))^(n+1)$ et $n >= n_1$ permet d'avoir $n+x != 0$. On a donc :
+$
+  u_(n+1)(x) &>=^(#text[Bernoulli])(1+x/n)^(n+1)(1-x/(n+x)) \
+  &>= u_n (x)(1+x/n)(1-x/(n+x)) = u_n (x)(n+x)/n n/(n+x) \
+  &>= u_n (x)
+$
+Donc la suite $(u_n (x))_(n in NN)$ est croissante au moins à partir du rang $n_2$.
 = Convergence de deux suites  
 
 = Existence
