@@ -10,6 +10,8 @@
 #let folder-name = "TE1-DM05-Existence-De-La-Fonction-Exponentielle/"
 
 = Inégalité de Bernoulli
+
+= Convergence de deux suites  
 ==
 ===
 On calcule :
@@ -54,7 +56,7 @@ Soit $n > abs(x)$. Alors $v_n != 0$ et :
 $
   u_n/v_n = ((1+x/n)/(1-x/n)^(-1))^n = (1-x^2/n^2)^n
 $
-Or, $x^2/n^2 < 1$. Donc $1 >= u_n/v_n$, et on peut également appliquer l'inégalité de Bernoulli pour obtenir :
+Or, $x^2/n^2 < 1$. Donc $1 >= u_n/v_n$#footnote[On note temporairement $u_n = u_n (x)$ et $v_n = v_n (x)$, tant que $x$ est fixé.], et on peut également appliquer l'inégalité de Bernoulli pour obtenir :
 $
   u_n/v_n >= 1-x^2/n
 $
@@ -68,6 +70,12 @@ Or, la suite $(v_n)$ est strictement positive à partir d'un certain rang $N$ et
 $
   v_k x^2/n >= v_n x^2/n >= v_n-u_n >= 0
 $
-= Convergence de deux suites  
+
+===
+Comme $x^2$ et $v_k (x)$ sont fixés, $lim_(n -> +oo) v_k x^2/n = 0$. D'après le théorème d'encadrement, on a donc :
+$
+  lim_(n-> +oo)v_n (x) - u_n (x) = 0
+$
+Ainsi, pour tout $x in RR$, les suites $(u_n (x))$ et $(v_n (x))$ sont adjacentes, en compilant les résultats du 1)c), du 2), et du 3)b). Ces deux suites admettent donc une limite finie commune.
 
 = Existence
