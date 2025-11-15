@@ -14,7 +14,17 @@
 }
 
 = Inégalité de Bernoulli
+Soit $alpha > -1$. On prouve l'inégalité de Bernoulli par récurrence sur $n$.
 
+#underline[Initialisation :] $(1+alpha)^0 = 1 >= 1 + 0dot alpha = 1$. (On remarque que la convention $0^0 = 1$ n'est pas nécessaire car $alpha != -1$)
+
+#underline[Hérédité :] Supposons que pour $n in NN$, $(1+alpha)^n >= 1 = n alpha$. Alors :
+$
+  (1+alpha)^(n+1) &>= (1+alpha)(1+n alpha) = 1 + alpha + n alpha + n alpha^2\
+  &>= 1+ (n+1)alpha #text[#h(1em) car $n>= 0$ et $alpha^2 >= 0$]
+$
+
+D'après le principe de récurrence, l'inégalité de Bernoulli est bien vraie pour tout $alpha > -1$ et tout $n in NN$.
 = Convergence de deux suites  
 ==
 ===
