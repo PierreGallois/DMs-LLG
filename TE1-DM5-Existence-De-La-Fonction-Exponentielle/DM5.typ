@@ -79,3 +79,7 @@ $
 Ainsi, pour tout $x in RR$, les suites $(u_n (x))$ et $(v_n (x))$ sont adjacentes, en compilant les résultats du 1)c), du 2), et du 3)b). Ces deux suites admettent donc une limite finie commune.
 
 = Existence
+==
+La suite $(u_n (0))$ est constante, égale à $1$ et tend donc vers $1$. Donc $f(0) = 1$.
+
+==
