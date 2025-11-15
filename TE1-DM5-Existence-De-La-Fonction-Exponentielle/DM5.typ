@@ -41,7 +41,12 @@ $
   &>= u_n (x)(1+x/n)(1-x/(n+x)) = u_n (x)(n+x)/n n/(n+x) \
   &>= u_n (x)
 $
-Donc la suite $(u_n (x))_(n in NN)$ est croissante au moins à partir du rang $n_2$.
+Donc la suite $(u_n (x))_(n in NN^*)$ est croissante au moins à partir du rang $n_2$.
+
+==
+On remarque que $w_n (x) = u_n (-x)$ pour tout $n in NN^*$. Or, la suite $(u_n (a))_(n in NN^*)$ est croisante à partir d'un certain rang pour tout $a in RR$. Donc $(w_n)_(n in NN^*)$ est croissante à partir d'un certain rang.
+
+De plus, $w_n$ n'est nul que pour au plus un rang, et est non nul pour tous les autres termes. On a donc $v_n = w_n^(-1)$ au moins à partir d'un certain rang, et, par croissance de $(w_n)$ et décroissance de la fonction inverse, la suite $(v_n)_(n in NN^*)$ est décroissante à partir d'un certain rang.
 = Convergence de deux suites  
 
 = Existence
