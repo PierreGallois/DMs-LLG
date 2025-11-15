@@ -9,6 +9,10 @@
 
 #let folder-name = "TE1-DM05-Existence-De-La-Fonction-Exponentielle/"
 
+#if sys.version.minor != 14 {
+  panic("Please compile with Typst 0.14")
+}
+
 = Inégalité de Bernoulli
 
 = Convergence de deux suites  
