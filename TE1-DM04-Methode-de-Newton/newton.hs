@@ -3,11 +3,11 @@ f x = x^3 - 2
 
 derivee f x h = (f (x + h) - f (x - h)) / (2*h)
 
-newton f h e x =
-    if (abs . f) x > e
-    then newton f h e (x - (f(x) / (derivee f x h)))
-    else x
+newton f h e x
+    | abs (f x) > e = newton f h e (x - (f(x) / (derivee f x h)))
+    | otherwise     = x
 
+-- Ignore after
 
 main :: IO ()
 main = do
