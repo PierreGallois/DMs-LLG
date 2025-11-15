@@ -44,7 +44,7 @@ $
 Donc la suite $(u_n (x))_(n in NN^*)$ est croissante au moins à partir du rang $n_2$.
 
 ==
-On remarque que $w_n (x) = u_n (-x)$ pour tout $n in NN^*$. Or, la suite $(u_n (a))_(n in NN^*)$ est croisante à partir d'un certain rang pour tout $a in RR$. Donc $(w_n)_(n in NN^*)$ est croissante à partir d'un certain rang.
+On remarque que $w_n (x) = u_n (-x)$ pour tout $n in NN^*$. Or, la suite $(u_n (a))_(n in NN^*)$ est croissante à partir d'un certain rang pour tout $a in RR$. Donc $(w_n)_(n in NN^*)$ est croissante à partir d'un certain rang.
 
 De plus, $w_n$ n'est nul que pour au plus un rang, et est non nul pour tous les autres termes. On a donc $v_n = w_n^(-1)$ au moins à partir d'un certain rang, et, par croissance de $(w_n)$ et décroissance de la fonction inverse, la suite $(v_n)_(n in NN^*)$ est décroissante à partir d'un certain rang.
 
@@ -57,6 +57,16 @@ $
 Or, $x^2/n^2 < 1$. Donc $1 >= u_n/v_n$, et on peut également appliquer l'inégalité de Bernoulli pour obtenir :
 $
   u_n/v_n >= 1-x^2/n
+$
+
+===
+On obtient l'inégalité suivante :
+$
+  x^2/n >= (v_n - u_n)/v_n >= 0
+$
+Or, la suite $(v_n)$ est strictement positive à partir d'un certain rang $N$ et décroissante à partir d'un certain rang $M$. Ainsi, pour tout $n >= k := max(N,M,floor(abs(x)) + 1) > abs(x)$, on a :
+$
+  v_k x^2/n >= v_n x^2/n >= v_n-u_n >= 0
 $
 = Convergence de deux suites  
 
