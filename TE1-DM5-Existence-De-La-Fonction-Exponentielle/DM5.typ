@@ -94,3 +94,9 @@ $
   &= (n+x+h)/n = (1+(x+h)/n)
 $
 D'où l'égalité recherchée en passant à la puissance $n$.
+
+===
+Soient $abs(h) < 1$ et $n > abs(x) + 1$. On a donc $n+x >= 1$ et $abs(h/(n+x)) < 1$, et l'inégalité de Bernoulli s'applique car on a au moins $h/(n+x) > -1$. On a :
+$
+  (1+(x+h)/n)^n >= (1+x/n)^n (1+(n h)/(n+x)) = (1+x/n)^n (1+h/(1+x/n))
+$
