@@ -83,3 +83,10 @@ Ainsi, pour tout $x in RR$, les suites $(u_n (x))$ et $(v_n (x))$ sont adjacente
 La suite $(u_n (0))$ est constante, égale à $1$ et tend donc vers $1$. Donc $f(0) = 1$.
 
 ==
+===
+On a :
+$
+  (1+(x)/n)(1+h/(n+x)) &= (n+x)/n dot (n+x+h)/(n+x) \
+  &= (n+x+h)/n = (1+(x+h)/n)
+$
+D'où l'égalité recherchée en passant à la puissance $n$.
