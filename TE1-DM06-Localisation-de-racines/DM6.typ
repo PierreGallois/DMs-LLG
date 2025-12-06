@@ -104,7 +104,8 @@ Le même raisonnemt (en échangeant les rôles de $z_1$ et de $z_2$) donne $|z_2
 
 Ainsi, toutes les racines de l'équation $(E_3)$ ont un module strictement inférieur à 2.
 
-== Cas général. Soit un entier $n >= 2$.
+== Cas général. 
+Soit un entier $n >= 2$.
 
 ===
 
@@ -161,10 +162,20 @@ Ainsi, pour tout $z in CC$, $ (z^n + z + 1 = 0) ==> (|z| < 2). $
 
 =
 
-== Soit $z$ une racine complexe de P de partie réelle positive
+== 
+Soit $z$ une racine complexe de $P$ de partie réelle positive
 
 ===
 
 Puisque $ Re(1/z) = Re((Re(z) - Im(z))/(Re(z)² + Im(z)²)) = Re(z)/underbrace(Re(z)² + Im(z)²,   > 0) $
 et que $Re(z) > 0$, alors $Re(1/z) > 0$.
+
+===
+Supposons que $|z| > 1$.
+
+Pour tout $n in NN$, avec $a_n >= 1$ et $a_(n-1) > 0$ deux réels, il vient : 
+
+$ Re(a_n) = a_n >= 1 "et" Re(a_(n-1) 1/z) = a_(n-1)Re(1/z) > 0 $
+
+d'où $ Re(a_n + a_(n-1) 1/z) = Re(a_n) + Re(a_(n-1) 1/z) >= 1 $
 
