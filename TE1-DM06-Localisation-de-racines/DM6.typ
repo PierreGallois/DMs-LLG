@@ -74,7 +74,9 @@ Par conséquent, les racines $z_1$ et $z_2$ sont les solutions de l'équation qu
 $ z² + r z + (r² + 1) = 0. $
 
 Enfin, par les propriétés des racines d'un polynôme du second degré, on obtient avec $r != 0$ : 
-$ z_1 + z_2 = -r "et" z_1 z_2 = -1/r $
+$ z_1 + z_2 = -r "et" z_1 z_2 = r² + 1 $
+
+Or $r³ + r + 1 = 0$ avec $r != 0$, d'où $r² + 1 = -1/r$, soit $z_1 z_2 = -1/r$.
 
 ===
 
