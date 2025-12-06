@@ -14,6 +14,8 @@
   panic("Please compile with Typst 0.14")
 }
 
+#let Re(val) = $op("Re")(#val)$
+
 =
 
 Considérons, pour tout entier $n >= 2$, l'équation $(E_n)$ d'inconnue $z in CC$ :
@@ -158,7 +160,55 @@ Ainsi, pour tout $z in CC$, $ (z^n + z + 1 = 0) ==> (|z| < 2). $
 
 
 =
+Soit $n without {0, 1}$. On considère le polynôme
+$
+  P(X) = sum^n_(k=0) a_k X^k = a_n X^n + a_(n-1) X^(n-1) + ...+ a_1 X + a_0
+$
+- $a_n$ et $a_(n-1)$ sont des réels avec $a_n >= 1$ et $a_(n-1) > 0$
+- Pour tout $k in [|0, n-2|], a_k in CC$
+On note $M = max lr(size: #1.5em, {abs(a_0), abs(a_1), ..., abs(a_(n-2))})$
 
-TO DOOO DO.. TO DO DO DOO DO... TO DO DO TO TO TO !
+==
+Soit $z$ une racine complexe de $P$ de partie réelle strictement positive.
 
-https://www.youtube.com/watch?v=zb47CstE7R4
+===
+Soient $x, y in RR$ tel que $z = x + i y$.
+$
+  1/z = 1/(x + i y) = (x - y i) / (x^2 + y^2) = underbrace(x / (x^2 + y^2)) + i y / (x^2 + y^2)
+$
+D'où, $Re(1/z) = x / (x^2 + y^2)$. Lorsque $Re(z) = x > 0$, on obtient bien $Re(1/x) > 0$.
+
+===
+On suppose que $abs(z) > 1$, prouvons les unes après les autres les inégalités suivantes :
+$
+  1 <= Re(a_n + a_(n-1) 1/z) <= M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))
+$
+
+====
+Montrons que $1 <= Re(a_n + a_(n-1) 1/z)$.
+
+Comme $a_n >= 1$ et $a_(n-1) > 0$, il vient grâce au résultat de la question précédente $Re(1/z) > 0$
+
+$
+  Re(a_n) = a_n >= 1 "et" Re(a_(n-1) 1/z) = a_(n-1)Re(1/z) > 0
+$
+
+d'où par addition membre à membre,
+$
+  Re(a_n + a_(n-1) 1/z) = Re(a_n) + Re(a_(n-1) 1/z) >= 1
+$
+
+====
+TODO
+
+====
+Montrons que $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
+$
+  M sum^(n-2)_(k=0) abs(z)^(k-n) = M sum^(n-2)_(k=0) (abs(z)^k) / (abs(z)^n) = M / (abs(z)^n) sum^(n-2)_(k=0) abs(z)^k = M / abs(z)^n dot.c (abs(z)^(n-3) - 1) / (abs(z) - 1) = (abs(z)^(n-3) - 1) / (abs(z)^(n-1)) dot.c M / (abs(z)^2 - abs(z))
+$
+
+Or,
+$
+  (abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1 <=> abs(z)^(n-3) -1 <= abs(z)^(n-1) <=> underbrace(abs(z)^(n-3), > 1) (1 - underbrace(abs(z)^2, > 1)) <= 1
+$
+Grâce aux 
