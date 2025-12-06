@@ -161,6 +161,3 @@ Ainsi, pour tout $z in CC$, $ (z^n + z + 1 = 0) ==> (|z| < 2). $
 
 =
 
-TO DOOO DO.. TO DO DO DOO DO... TO DO DO TO TO TO !
-
-https://www.youtube.com/watch?v=zb47CstE7R4
