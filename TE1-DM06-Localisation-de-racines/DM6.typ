@@ -163,7 +163,7 @@ Ainsi, pour tout $z in CC$, $ (z^n + z + 1 = 0) ==> (|z| < 2). $
 
 
 =
-Soit $n without {0, 1}$. On considère le polynôme
+Soit $n in NN without {0, 1}$. On considère le polynôme
 $
   P(X) = sum^n_(k=0) a_k X^k = a_n X^n + a_(n-1) X^(n-1) + ...+ a_1 X + a_0
 $
@@ -177,7 +177,7 @@ Soit $z$ une racine complexe de $P$ de partie réelle strictement positive.
 ===
 Soient $x, y in RR$ tel que $z = x + i y$.
 $
-  1/z = 1/(x + i y) = (x - y i) / (x^2 + y^2) = underbrace(x / (x^2 + y^2)) + i y / (x^2 + y^2)
+  1/z = 1/(x + i y) = (x - y i) / (x^2 + y^2) = underparen(x / (x^2 + y^2)) + i y / (x^2 + y^2)
 $
 D'où, $Re(1/z) = x / (x^2 + y^2)$. Lorsque $Re(z) = x > 0$, on obtient bien $Re(1/x) > 0$.
 
@@ -207,11 +207,24 @@ TODO
 ====
 Montrons que $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
 $
-  M sum^(n-2)_(k=0) abs(z)^(k-n) = M sum^(n-2)_(k=0) (abs(z)^k) / (abs(z)^n) = M / (abs(z)^n) sum^(n-2)_(k=0) abs(z)^k = M / abs(z)^n dot.c (abs(z)^(n-3) - 1) / (abs(z) - 1) = (abs(z)^(n-3) - 1) / (abs(z)^(n-1)) dot.c M / (abs(z)^2 - abs(z))
+  M sum^(n-2)_(k=0) abs(z)^(k-n) = M sum^(n-2)_(k=0) (abs(z)^k) / (abs(z)^n) = M / (abs(z)^n) sum^(n-2)_(k=0) abs(z)^k = M / abs(z)^n dot.c (abs(z)^(n-3) - 1) / (abs(z) - 1) = underparen((abs(z)^(n-3) - 1) / (abs(z)^(n-1))) dot.c M / (abs(z)^2 - abs(z))
 $
 
 Or,
 $
   (abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1 <=> abs(z)^(n-3) -1 <= abs(z)^(n-1) <=> underbrace(abs(z)^(n-3), > 1) (1 - underbrace(abs(z)^2, > 1)) <= 1
 $
-Grâce aux 
+Grâce à la supposition $abs(z) > 1$, on a que $abs(z)^(n-3) (1 - abs(z)^2) < 0 <= 1$. Par successions d'équivalences $(abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1$. Ce qui donne finalement $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
+
+===
+Grâce à l'inégalité de la question précédente, $1 <= M / (abs(z)^2 - abs(z))$.
+Comme $abs(z) > 1$, $abs(z)^2 - abs(z) > 0$.
+
+$
+  1 <= M / (abs(z)^2 - abs(z)) &<=> 4 abs(z)^2 - 4 abs(z) <= 4 M \ &<=> 4 (abs(z) - 1/2)^2 <= 1 + 4M \ &<=> 4 abs(abs(z) - 1/2)^2 <= 1 + 4M  \ &<=>^"tout est"_"positif"  abs(abs(z) - 1/2) <= sqrt(1 + 4M) / 2
+$
+
+D'autre part,
+$
+  abs(abs(z) - 1/2) <= sqrt(1 + 4M) / 2 => abs(z) - 1/2 <= sqrt(1 + 4M) / 2 <=> abs(z) <= (1 + sqrt(1 + 4M)) / 2
+$
