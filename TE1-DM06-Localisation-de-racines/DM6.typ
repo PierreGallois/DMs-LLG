@@ -132,7 +132,7 @@ On en déduit le tableau suivant :
     ([variation de $phi$],  "v"),
     ([signe de $phi$], "s"),
   ),
-  domain: ($2$, $pi=4$, $+infinity$),
+  domain: ($2$, $pi(=4)$, $+infinity$),
   contents: (
     ($+$,()),
     ((bottom, $2^n - 3$), (), (top, $+infinity$)),
@@ -179,3 +179,4 @@ $ Re(a_n) = a_n >= 1 "et" Re(a_(n-1) 1/z) = a_(n-1)Re(1/z) > 0 $
 
 d'où $ Re(a_n + a_(n-1) 1/z) = Re(a_n) + Re(a_(n-1) 1/z) >= 1 $
 
+// FEURRRRRRRR
