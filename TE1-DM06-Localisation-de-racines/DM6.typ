@@ -76,7 +76,9 @@ Par conséquent, les racines $z_1$ et $z_2$ sont les solutions de l'équation qu
 $ z² + r z + (r² + 1) = 0. $
 
 Enfin, par les propriétés des racines d'un polynôme du second degré, on obtient avec $r != 0$ : 
-$ z_1 + z_2 = -r "et" z_1 z_2 = -1/r $
+$ z_1 + z_2 = -r "et" z_1 z_2 = r² + 1 $
+
+Or $r³ + r + 1 = 0$ avec $r != 0$, d'où $r² + 1 = -1/r$, soit $z_1 z_2 = -1/r$.
 
 ===
 
@@ -104,7 +106,8 @@ Le même raisonnemt (en échangeant les rôles de $z_1$ et de $z_2$) donne $|z_2
 
 Ainsi, toutes les racines de l'équation $(E_3)$ ont un module strictement inférieur à 2.
 
-== Cas général. Soit un entier $n >= 2$.
+== Cas général. 
+Soit un entier $n >= 2$.
 
 ===
 
@@ -131,7 +134,7 @@ On en déduit le tableau suivant :
     ([variation de $phi$],  "v"),
     ([signe de $phi$], "s"),
   ),
-  domain: ($2$, $pi=4$, $+infinity$),
+  domain: ($2$, $pi(=4)$, $+infinity$),
   contents: (
     ($+$,()),
     ((bottom, $2^n - 3$), (), (top, $+infinity$)),
