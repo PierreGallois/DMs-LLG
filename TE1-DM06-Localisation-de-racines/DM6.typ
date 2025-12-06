@@ -165,5 +165,6 @@ Ainsi, pour tout $z in CC$, $ (z^n + z + 1 = 0) ==> (|z| < 2). $
 
 ===
 
-Puisque $Re(1/z) = Re((Re(z) - Im(z))/(Re(z)² + Im(z)²)) = Re(z)/underbrace(Re(z)² + Im(z)²,   > 0)$
+Puisque $ Re(1/z) = Re((Re(z) - Im(z))/(Re(z)² + Im(z)²)) = Re(z)/underbrace(Re(z)² + Im(z)²,   > 0) $
 et que $Re(z) > 0$, alors $Re(1/z) > 0$.
+
