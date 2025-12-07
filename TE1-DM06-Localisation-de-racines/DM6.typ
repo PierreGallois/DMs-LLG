@@ -227,15 +227,30 @@ $
 Grâce à la supposition $abs(z) > 1$, on a que $abs(z)^(n-3) (1 - abs(z)^2) < 0 <= 1$. Par successions d'équivalences $(abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1$. Ce qui donne finalement $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
 
 ===
-Grâce à l'inégalité de la question précédente, $1 <= M / (abs(z)^2 - abs(z))$.
+====
+Si $abs(z) <= 1$
+$
+  abs(abs(z) - 1/2) <= abs(1 - 1/2) = 1/2 <=^((*)) sqrt(1 + 4M) / 2
+$
+$(*)$ Par croissance de la fonction racine carré sur $RR_+$ comme $M >= 0$.
+
+====
+Si $abs(z) > 1$, grâce à l'inégalité de la question précédente, $1 <= M / (abs(z)^2 - abs(z))$.
 Comme $abs(z) > 1$, $abs(z)^2 - abs(z) > 0$.
 
 $
   1 <= M / (abs(z)^2 - abs(z)) &<=> 4 abs(z)^2 - 4 abs(z) <= 4 M \ &<=> 4 (abs(z) - 1/2)^2 <= 1 + 4M \ &<=> 4 abs(abs(z) - 1/2)^2 <= 1 + 4M  \ &<=>^"tout est"_"positif"  abs(abs(z) - 1/2) <= sqrt(1 + 4M) / 2
 $
 
+====
 D'autre part,
 $
   abs(abs(z) - 1/2) <= sqrt(1 + 4M) / 2 => abs(z) - 1/2 <= sqrt(1 + 4M) / 2 <=> abs(z) <= (1 + sqrt(1 + 4M)) / 2
 $
+Notons que grâce à la disjonction de cas précédente, ce dernier résultat ne dépend plus de $abs(z) > 1$ ou $abs(z) <= 1$.
+==
+Prenons $z$ une racine complexe de $P$.
+- Ou bien $Re(z) <= 0$
+- Ou bien $Re(z) > 0 =>^(Q 1a) Re(1/z) > 0$. On peut alors utiliser le résultat de la question $Q 1b$ puis $Q 1c$ ce qui donne $abs(z) <= (1 + sqrt(1 + 4M)) / 2$.
 
+==
