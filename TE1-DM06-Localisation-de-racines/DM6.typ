@@ -281,7 +281,7 @@ $
 #let col2 = olive.transparentize(30%)
 #let racine = box(pad(left: 1pt, right: 4pt, place(dy: -5pt, circle(radius: 2pt, fill: navy))))
 
-D'après les propriétés des polynômes $P$ (question $Q 2$) les racines #racine de $Q$ vérifient #box($Re(z) <= 0$, fill: col1, radius: 5pt, outset: 2.5pt) ou #box($abs(z) <= (1 + sqrt(1 + 4M)) / 2 = (1 + sqrt(1 + 4 sqrt(125))) / 2$, fill: col2, radius: 5pt, outset: (x: 2.5pt, y:6pt)).
+D'après les propriétés des polynômes $P$ (question $Q 2$) les racines #racine de $Q$ vérifient #box($Re(z) <= 0$, fill: col1, radius: 5pt, outset: 2.5pt) ou #box($abs(z) <= (1 + sqrt(1 + 4M)) / 2 = (1 + sqrt(1 + 4 sqrt(125))) / 2$, fill: col2, radius: 5pt, outset: (x: 2.5pt, y:6pt)) (les bordures comprises puisqu'il s'agit d'inégalités larges).
 
 #let xs = lq.linspace(-5, 5)
 
