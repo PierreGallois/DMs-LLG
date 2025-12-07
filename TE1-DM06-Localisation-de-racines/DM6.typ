@@ -202,7 +202,17 @@ $
 $
 
 ====
-TODO
+Montrons que $Re(a_n + a_(n-1) 1/z) <= M sum^(n-2)_(k=0) abs(z)^(k-n)$.
+
+$z$ est une racine complexe de $P$ donc $P(z) = 0$.
+$
+  (*) #h(1em) P(z) = 0 <=> P(n) / z^n = 0 <=> underparen(a_n + a_(n-1) 1/z)  = - sum^(n-2)_(k=0) a_k z^k/z^n
+$
+$
+  underbrace(Re(a_n + a_(n-1) 1/z), >0) <= abs(underparen(a_n + a_(n-1) 1/z)) =^((*)) abs(- sum^(n-2)_(k=0) a_k z^k/z^n) <= sum^(n-2)_(k=0) abs(a_k) abs(z)^(k-n) <= M sum^(n-2)_(k=0) abs(z)^(k-n)
+$
+
+On trouve que $Re(a_n + a_(n-1) 1/z) <= M sum^(n-2)_(k=0) abs(z)^(k-n)$.
 
 ====
 Montrons que $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
@@ -228,3 +238,4 @@ D'autre part,
 $
   abs(abs(z) - 1/2) <= sqrt(1 + 4M) / 2 => abs(z) - 1/2 <= sqrt(1 + 4M) / 2 <=> abs(z) <= (1 + sqrt(1 + 4M)) / 2
 $
+
