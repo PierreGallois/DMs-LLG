@@ -212,14 +212,14 @@ On trouve que $Re(a_n + a_(n-1) 1/z) <= M sum^(n-2)_(k=0) abs(z)^(k-n)$.
 ====
 Montrons que $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
 $
-  M sum^(n-2)_(k=0) abs(z)^(k-n) = M sum^(n-2)_(k=0) (abs(z)^k) / (abs(z)^n) = M / (abs(z)^n) sum^(n-2)_(k=0) abs(z)^k = M / abs(z)^n dot.c (abs(z)^(n-3) - 1) / (abs(z) - 1) = underparen((abs(z)^(n-3) - 1) / (abs(z)^(n-1))) dot.c M / (abs(z)^2 - abs(z))
+  M sum^(n-2)_(k=0) abs(z)^(k-n) = M sum^(n-2)_(k=0) (abs(z)^k) / (abs(z)^n) = M / (abs(z)^n) sum^(n-2)_(k=0) abs(z)^k = M / abs(z)^n dot.c (abs(z)^(n-1) - 1) / (abs(z) - 1) = underparen((abs(z)^(n-1) - 1) / (abs(z)^(n-1))) dot.c M / (abs(z)^2 - abs(z))
 $
 
 Or,
 $
-  (abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1 <=> abs(z)^(n-3) -1 <= abs(z)^(n-1) <=> underbrace(abs(z)^(n-3), > 1) (1 - underbrace(abs(z)^2, > 1)) <= 1
+  (abs(z)^(n-1) - 1) / abs(z)^(n-1) <= 1 <=> abs(z)^(n-1) -1 <= abs(z)^(n-1) <=> underbrace(-1 <= 0, "vrai")
 $
-Grâce à la supposition $abs(z) > 1$, on a que $abs(z)^(n-3) (1 - abs(z)^2) < 0 <= 1$. Par successions d'équivalences $(abs(z)^(n-3) - 1) / abs(z)^(n-1) <= 1$. Ce qui donne finalement $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
+Par successions d'équivalences $(abs(z)^(n-1) - 1) / abs(z)^(n-1) <= 1$, cela donne finalement $M sum^(n-2)_(k=0) abs(z)^(k-n) <= M / (abs(z)^2 - abs(z))$.
 
 ===
 ====
@@ -271,14 +271,14 @@ $
   &&a_0 = - (5 + 10i)
 $
 $
-  M = max lr(size: #1.5em, {abs(a_0), abs(a_1), ..., abs(a_(n-2))}) = abs(a_0) = sqrt(125)
+  M = max lr(size: #1.5em, {abs(a_0), abs(a_1), ..., abs(a_(n-2))}) = abs(a_0) = sqrt(125) = 5sqrt(5)
 $
 
 #let col1 = teal.transparentize(30%)
 #let col2 = olive.transparentize(30%)
 #let racine = box(pad(left: 1pt, right: 4pt, place(dy: -5pt, circle(radius: 2pt, fill: navy))))
 
-D'après les propriétés des polynômes $P$ (question $Q 2$) les racines #racine de $Q$ vérifient #box($Re(z) <= 0$, fill: col1, radius: 5pt, outset: 2.5pt) ou #box($abs(z) <= (1 + sqrt(1 + 4M)) / 2 = (1 + sqrt(1 + 4 sqrt(125))) / 2$, fill: col2, radius: 5pt, outset: (x: 2.5pt, y:6pt)) (les bordures comprises puisqu'il s'agit d'inégalités larges).
+D'après les propriétés des polynômes $P$ (question $Q 2$) les racines #racine de $Q$ vérifient #box($Re(z) <= 0$, fill: col1, radius: 5pt, outset: 2.5pt) ou #box($abs(z) <= (1 + sqrt(1 + 4M)) / 2 = (1 + sqrt(1 + 20 sqrt(5))) / 2$, fill: col2, radius: 5pt, outset: (x: 2.5pt, y:6pt)) (les bordures comprises puisqu'il s'agit d'inégalités larges).
 
 #let xs = lq.linspace(-5, 5)
 
