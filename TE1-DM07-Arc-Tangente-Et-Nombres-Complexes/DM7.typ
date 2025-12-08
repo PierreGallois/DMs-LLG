@@ -12,7 +12,7 @@
   alpha: false
 )
 
-#let folder-name = "TE1-DM07-Arc--de-racines/"
+#let folder-name = "TE1-DM07-Arc-Tangente-Et-Nombres-Complexes/"
 
 #if sys.version.minor != 14 {
   panic("Please compile with Typst 0.14")
