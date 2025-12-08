@@ -172,11 +172,8 @@ On note $M = max lr(size: #1.5em, {abs(a_0), abs(a_1), ..., abs(a_(n-2))})$
 Soit $z$ une racine complexe de $P$ de partie réelle strictement positive.
 
 ===
-Soient $x, y in RR$ tel que $z = x + i y$.
-$
-  1/z = 1/(x + i y) = (x - y i) / (x^2 + y^2) = underparen(x / (x^2 + y^2)) + i y / (x^2 + y^2)
-$
-D'où, $Re(1/z) = x / (x^2 + y^2)$. Lorsque $Re(z) = x > 0$, on obtient bien $Re(1/x) > 0$.
+Sachant que d'une part $Re(z) > 0$, et que : $ Re(1/z) = Re((Re(z) - Im(z))/(Re(z)² + Im(z)²)) = Re(z)/underbrace(Re(z)² + Im(z)²,   > 0) $
+Alors on obtient bien $Re(1/z) > 0$.
 
 ===
 On suppose que $abs(z) > 1$, prouvons les unes après les autres les inégalités suivantes :
