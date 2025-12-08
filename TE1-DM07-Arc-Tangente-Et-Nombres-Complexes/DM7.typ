@@ -6,8 +6,8 @@
 #import "@preview/lilaq:0.5.0" as lq
 
 #show: dm.with(
-  numero: 6,
-  titre: [Localisation de racines],
+  numero: 7,
+  titre: [Arc Tangente et nombres complexes],
   sections: [Problème],
   alpha: false
 )
