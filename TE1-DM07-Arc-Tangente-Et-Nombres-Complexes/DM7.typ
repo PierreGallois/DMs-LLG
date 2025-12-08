@@ -18,4 +18,3 @@
   panic("Please compile with Typst 0.14")
 }
 
-#let Re(val) = $op("Re")(#val)$

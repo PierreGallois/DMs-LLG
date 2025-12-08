@@ -15,7 +15,11 @@
     set align(center)
     if counter(page).get().first() == 4 [
       $pi = 4$
-    ] else {
+    ] 
+    else if counter(page).get().first() == 8 [
+      $2 pi = 8$
+    ]
+    else {
       counter(page).display()
     }
   })
