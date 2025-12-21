@@ -41,3 +41,9 @@ On double compte les chemins de $O$ à $B_n (n,n)$. D'une part, ceux-ci sont au 
 $
   sum_(k=0)^n binom(n,k)^2 = binom(2n,n)
 $
+
+= Chemins de Dyck et nombres de Catalan
+
+==
+===
+TODO : Thomas stp :3
