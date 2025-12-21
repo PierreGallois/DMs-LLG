@@ -69,3 +69,11 @@ Par disjonction, on obtient :
 $
   C_n = C_0 C_(n-0-1) + sum_(k=1)^(n-1) C_k C_(n-k-1) = sum_(k=0)^(n-1) C_k C_(n-k-1)
 $
+
+===
+En appliquant la formule précédente, on obtient :
+$
+  C_4 &= C_0 C_3 + C_1 C_2 + C_2 C_1 + C_3 C_0 \
+  &= 2(C_0 C_3 + C_1 C_2) \
+  &= #text[TODO]
+$
