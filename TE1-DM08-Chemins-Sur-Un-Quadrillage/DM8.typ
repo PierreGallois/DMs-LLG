@@ -77,3 +77,5 @@ $
   &= 2(C_0 C_3 + C_1 C_2) \
   &= #text[TODO]
 $
+
+== THOMAS
