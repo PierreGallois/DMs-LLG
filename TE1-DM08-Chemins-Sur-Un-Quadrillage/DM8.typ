@@ -80,8 +80,19 @@ $
 
 == THOMAS
 ==
+===
 Un chemin entre $O$ et $M_n (n,n)$ est soit toujours au dessus de la diagonale, soit franchit la diagonale en un point. Par disjonction, on obtient :
 $
   C_n + F_n = 2^n
 $
 
+===
+Supposons que le chemin franchissant $scr(C)$ prenne la forme :
+$
+  underbrace(arrow(j) + dots + arrow(i), (k+1) arrow(i) + k arrow(j)= arrow(O A(k+1,k))) + underbrace(dots, (n-k-1)arrow(i) + (n-k)arrow(j)) = arrow(O M_n)
+$
+Le chemin $scr(C')$ prend alors la forme :
+$
+  (k+1)arrow(i) +k arrow(j) + (n-k-1)arrow(j) + (n-k)arrow(i) &= (n+1)arrow(i) + (n-1) arrow(j) \
+  &= arrow(O B(n+1,n-1))
+$
