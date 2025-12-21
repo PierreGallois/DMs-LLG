@@ -54,3 +54,10 @@ Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n
 De plus, le chemin induit entre $P$ et $P'$, de longueur $2(n-1)$, doit forcément être de Dyck relativement à la diagonale entre $P$ et $P'$ : sinon, il rencontrerait la diagonale entre $O$ et $A_n$. Ainsi, ces chemin sont au nombre de $C_(n-1)$.
 
 TODO : Figure
+
+===
+Un tel chemin passe forcément par $M_k (k,k)$, et est de Dyck jusqu'à avoir atteit $M_k$, et strictement au dessus de la diagonale $Delta$ (qui est aussi la diagonale entre $M_k$ et $M_n$) entre $M_k$ et $M_n$, à la manière du b).
+
+Ainsi, la donnée d'un tel chemin équivaut à celle d'un chemin de Dyck entre $O$ et $M_k$, de longueur $2k$, au nombre de $C_k$, et d'un chemin, comme dans le b), de longueur $2n - 2k = 2(n-k)$, qui sont donc au nombre de $C_(n-k-1)$.
+
+Par le principe du et, ces chemins sont au nombre de $C_k C_(n-k-1)$
