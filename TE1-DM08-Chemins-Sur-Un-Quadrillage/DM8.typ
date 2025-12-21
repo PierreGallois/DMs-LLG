@@ -109,3 +109,13 @@ $
 $
 
 D'où $C_n = binom(2n,n) - F_n = binom(2n,n)-binom(2n,n+1)$
+
+===
+Par l'expression des coefficients binomiaux :
+$
+  binom(2n, n+1) = (2n)!/((n+1)!(n-1)!) = (2n)!/((n+1)/n n!n!) = n/(n+1) (2n!)/(n!n!) = n/(n+1)binom(2n,n)
+$
+Ainsi, on obtient :
+$
+  C_n = binom(2n,n) - n/(n+1)binom(2n,n) = 1/(n+1)binom(2n,n)
+$
