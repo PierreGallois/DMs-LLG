@@ -37,7 +37,7 @@ $
 Où l'on a dénombré les chemin de $B_k$ à $B_n$ par translation de vecteur $arrow(B_k O)$.
 
 ===
-On double compte les chemins de $O$ à $B_n (n,n)$. D'une part, ceux-ci sont au nombre de $binom(n+n,n) = binom(2n,n)$. D'autre part, chaque tel chemin, après $n$ étapes, se trouve sur un unique point de la forme $B_k (n-k, k)$ avec $k in {0, dots, n}$, car ceux-ci forment l'ensemble des points atteignables depuis $O$ par un chemin de longueur $n$. Ainsi, par disjonction et le dénombrement de la question précédente, on déduit :
+On double compte les chemins de $O$ à $B_n (n,n)$. D'une part, ceux-ci sont au nombre de $binom(n+n,n) = binom(2n,n)$. D'autre part, chaque tel chemin, après $n$ étapes, se trouve sur un unique point de la forme $B_k (n-k, k)$ avec $k in [|0;n|]$, car ceux-ci forment l'ensemble des points atteignables depuis $O$ par un chemin de longueur $n$. Ainsi, par disjonction et le dénombrement de la question précédente, on déduit :
 $
   sum_(k=0)^n binom(n,k)^2 = binom(2n,n)
 $
@@ -56,8 +56,16 @@ De plus, le chemin induit entre $P$ et $P'$, de longueur $2(n-1)$, doit forcéme
 TODO : Figure
 
 ===
-Un tel chemin passe forcément par $M_k (k,k)$, et est de Dyck jusqu'à avoir atteit $M_k$, et strictement au dessus de la diagonale $Delta$ (qui est aussi la diagonale entre $M_k$ et $M_n$) entre $M_k$ et $M_n$, à la manière du b).
+Soit $k in [|1;n-1|]$. Un tel chemin passe forcément par $M_k (k,k)$, et est de Dyck jusqu'à avoir atteit $M_k$, et strictement au dessus de la diagonale $Delta$ (qui est aussi la diagonale entre $M_k$ et $M_n$) entre $M_k$ et $M_n$, à la manière du b).
 
 Ainsi, la donnée d'un tel chemin équivaut à celle d'un chemin de Dyck entre $O$ et $M_k$, de longueur $2k$, au nombre de $C_k$, et d'un chemin, comme dans le b), de longueur $2n - 2k = 2(n-k)$, qui sont donc au nombre de $C_(n-k-1)$.
 
-Par le principe du et, ces chemins sont au nombre de $C_k C_(n-k-1)$
+Par le principe du et, ces chemins sont au nombre de $C_k C_(n-k-1)$.
+
+===
+On double compte les chemins de Dyck entre $O$ et $M_n$. D'une part, par définition, ceux-ci sont au nombre de $C_n$. D'autre part, tout chemin de Dyck atteint la diagonale pour la dernière fois avant son arrivée en un point $M_k (k,k), k in [|0;n-1|]$. Pour chaque $k in [|1;n-1|]$, ces chemins sont au nombre de $C_k C_(n-k-1)$, et pour $k = 0$, les chemins sont ceux de la question b), qui sont au nombre de $C_(n-1) = C_0 C_(n-0-1)$, où l'on utilise la convention $C_0 = 1$.
+
+Par disjonction, on obtient :
+$
+  C_n = C_0 C_(n-0-1) + sum_(k=1)^(n-1) C_k C_(n-k-1) = sum_(k=0)^(n-1) C_k C_(n-k-1)
+$
