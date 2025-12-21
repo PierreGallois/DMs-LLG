@@ -79,3 +79,9 @@ $
 $
 
 == THOMAS
+==
+Un chemin entre $O$ et $M_n (n,n)$ est soit toujours au dessus de la diagonale, soit franchit la diagonale en un point. Par disjonction, on obtient :
+$
+  C_n + F_n = 2^n
+$
+
