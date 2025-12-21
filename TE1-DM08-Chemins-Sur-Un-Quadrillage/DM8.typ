@@ -83,7 +83,7 @@ $
 ===
 Un chemin entre $O$ et $M_n (n,n)$ est soit toujours au dessus de la diagonale, soit franchit la diagonale en un point. Par disjonction, on obtient :
 $
-  C_n + F_n = 2^n
+  C_n + F_n = binom(2n,n)
 $
 
 ===
@@ -96,3 +96,16 @@ $
   (k+1)arrow(i) +k arrow(j) + (n-k-1)arrow(j) + (n-k)arrow(i) &= (n+1)arrow(i) + (n-1) arrow(j) \
   &= arrow(O B(n+1,n-1))
 $
+
+===
+Tout chemin de $O$ à $B(n+1, n-1)$ franchit la diagonale $Delta$ au moins une fois, au plus tard en passant de $P(n-1,n-1)$ à $Q(n,n-1)$. Montrons que pour tout $k in [|0;n-1|]$, les chemins de $O$ à $M_n$ franchissant pour la première fois en $A_k (k+1,k)$ sont en même nombre que les chemins de $O$ à $B$ passant par $A_k$.
+
+A MIEUX FAIRE
+
+===
+Les chemins joigant $O$ et $B(n+1,n-1)$ sont au nombre de $binom(n+1 + n - 1, n+1)$. Par la question précédente, on déduit que :
+$
+  F_n = binom(2n,n+1)
+$
+
+D'où $C_n = binom(2n,n) - F_n = binom(2n,n)-binom(2n,n+1)$
