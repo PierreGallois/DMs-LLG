@@ -29,3 +29,9 @@ On double compte les chemins de $O$ à $B_k$. D'une part, ceux-ci sont au nombre
 $
   binom(n,k) = binom(n-1,k) + binom(n-1,k-1)
 $
+===
+Un chemin de $O$ à $B_n (n,n)$ passant par $B_k (n-k, k)$ équivaut à la donnée de deux chemins, l'un de $O$ à $B_k$, et l'autre de $B_k$ à $B_n$. Ainsi, ces chemins sont au nombre de :
+$
+  binom(n-k+k,k) dot binom(n - (n-k) + (n-k),n-k) = binom(n,k) binom(n,n-k) = binom(n,k)^2
+$
+Où l'on a dénombré les chemin de $B_k$ à $B_n$ par translation de vecteur $arrow(B_k O)$.
