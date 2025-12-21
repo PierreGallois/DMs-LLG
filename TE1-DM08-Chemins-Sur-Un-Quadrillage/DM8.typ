@@ -35,3 +35,9 @@ $
   binom(n-k+k,k) dot binom(n - (n-k) + (n-k),n-k) = binom(n,k) binom(n,n-k) = binom(n,k)^2
 $
 Où l'on a dénombré les chemin de $B_k$ à $B_n$ par translation de vecteur $arrow(B_k O)$.
+
+===
+On double compte les chemins de $O$ à $B_n (n,n)$. D'une part, ceux-ci sont au nombre de $binom(n+n,n) = binom(2n,n)$. D'autre part, chaque tel chemin, après $n$ étapes, se trouve sur un unique point de la forme $B_k (n-k, k)$ avec $k in {0, dots, n}$, car ceux-ci forment l'ensemble des points atteignables depuis $O$ par un chemin de longueur $n$. Ainsi, par disjonction et le dénombrement de la question précédente, on déduit :
+$
+  sum_(k=0)^n binom(n,k)^2 = binom(2n,n)
+$
