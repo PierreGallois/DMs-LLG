@@ -23,3 +23,9 @@ Un chemin de longueur $n$ partant d'un point consiste en une somme ordonnée de 
 Par translation de vecteur $arrow(P O) = vec(0,-1)$, un chemin joignant $P(0,1)$ à $B_k (n-k, k)$ équivaut à un chemin joignant l'origine et $B'_k (n-k,k-1)$. Ceux ci sont donc au nombre de $binom(n-k+k-1,k-1) = binom(n-1,k-1)$.
 
 Similairement, un chemin entre $Q$ et $B_k (n-k, k)$ équivaut à un chemin entre l'origine et $B''_k (n-k-1,k)$. Ils sont donc au nombre de $binom(n-k-1 + k, k) = binom(n-1,k)$.
+
+===
+On double compte les chemins de $O$ à $B_k$. D'une part, ceux-ci sont au nombre de $binom(n,k)$ par le 1). D'autre part, un tel chemin doit passer soit par $Q(1,0)$, soit par $P(0,1)$ en fonction du premier vecteur du chemin. Ainsi, un chemin entre $O$ et $B_k$ est soit un chemin de $Q$ à $B_k$, soit un chemin de $P$ à $B_k$. On en déduit :
+$
+  binom(n,k) = binom(n-1,k) + binom(n-1,k-1)
+$
