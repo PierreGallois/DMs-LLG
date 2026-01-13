@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm
+#import "@preview/cetz:0.4.2"
 
 #show: dm.with(
   numero: 8,
@@ -46,7 +47,100 @@ $
 
 ==
 ===
-TODO : Thomas stp :3
+
+#let sub_divide(path) = {
+  let full = (path.at(0),)
+  for n in range(path.len() - 1) {
+    let start = path.at(n)
+    let end = path.at(n + 1)
+    let (sx, sy) = start
+    let (ex, ey) = end
+    // start is always smaller than end
+    if sx <= ex and sy == ey {
+      for i in range(1, ex - sx) {
+        full.push((sx + i, sy))
+      }
+    } else if sx == ex and sy <= ey {
+      for i in range(1, ey - sy) {
+        full.push((sx, sy + i))
+      }
+    } else {
+      panic("wrong inputs")
+    }
+    full.push(end)
+  }
+  full
+}
+
+#let hash(tuple) = {
+  str(tuple.at(0).at(0)) + "," + str(tuple.at(0).at(1)) + "," + str(tuple.at(1).at(0)) + "," +str(tuple.at(1).at(1))
+}
+
+#let draw-table(n, style-pt) = {
+  import cetz.draw: *
+  let style-table = (:)
+  for (style, points) in style-pt {
+    let full_points = sub_divide(points)
+    for i in range(full_points.len() - 1) {
+      let start = full_points.at(i)
+      let end = full_points.at(i + 1)
+      let already-here = style-table.at(hash((start, end)), default: ())
+      already-here.push(style)
+      style-table.insert(hash((start, end)), already-here)
+    }
+  }
+  let style_line(a, b) = {
+    let style = style-table.at(hash((a, b)), default: ())
+    if style.len() == 0 {
+      line(a, b, stroke: (thickness: 2pt))
+    } else {
+      for (n, style_elem) in style.enumerate() {
+        let (ax, ay) = a
+        let (bx, by) = b
+        let e = 0.1
+        let full_size = (style.len() - 1) * e
+        if ax != bx {
+          // vertical
+          line((ax, ay + e * n - full_size / 2), (bx, by + e * n - full_size / 2), ..style_elem)
+        } else {
+          line((ax + e * n - full_size / 2, ay), (bx + e * n - full_size / 2, by), ..style_elem)
+        }
+    }
+    }
+    
+  }
+  for c in range(n) {
+    for l in range(n) {
+      style_line((c, l), (c + 1, l)) // horizontal
+      style_line((c, l), (c, l + 1)) // vertical
+    }
+  }
+  // closing
+  for c in range(n) {
+    style_line((c, n), (c + 1, n))
+  }
+  for l in range(n) {
+    style_line((n, l), (n, l + 1))
+  }
+  // circles for points
+  for (_, points) in style-pt {
+    // all direction changes
+    for point in points {
+      circle(point, radius: 5pt, stroke: (paint: black, thickness: 2pt), fill: white)
+    }
+  }
+}
+
+
+
+#cetz.canvas({
+  import cetz.draw: *
+  draw-table(3, (((stroke: (paint: red, thickness: 3pt)), ((0, 0), (2, 0), (2, 3))),
+  ((stroke: (paint: blue, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
+  ((stroke: (paint: green, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
+  ))
+}, length: 1.5cm)
+
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
