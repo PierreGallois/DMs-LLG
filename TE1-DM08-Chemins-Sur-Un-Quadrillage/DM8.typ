@@ -10,6 +10,9 @@
 
 #let folder-name = "TE1-DM08-Chemins-Sur-Un-Quadrillage/"
 
+#show "Dyck": smallcaps
+#show "Catalan": smallcaps
+
 = Retrouver des formules bien connues
 ==
 Un chemin entre $O$ et $M(p,q)$ équivaut à une somme ordonnée de $p$ vecteurs $arrow(i)$ et de $q$ vecteurs $arrow(j)$. Une telle somme est composée de $p+q$ termes, et est déterminée uniquement par la position des $p$ vecteurs $arrow(i)$ parmi les $p+q$ termes, en complétant tous les autres termes par des $arrow(j)$. Ainsi, comme l'ordre des $arrow(i)$ n'importe pas, il y a $binom(p+q,p)$ telles sommes. 
@@ -44,7 +47,6 @@ $
 $
 
 = Chemins de Dyck et nombres de Catalan
-
 ==
 ===
 
@@ -76,7 +78,7 @@ $
   str(tuple.at(0).at(0)) + "," + str(tuple.at(0).at(1)) + "," + str(tuple.at(1).at(0)) + "," +str(tuple.at(1).at(1))
 }
 
-#let draw-table(n, style-pt) = {
+#let draw-table(n, style-pt, e: 0.1) = {
   import cetz.draw: *
   let style-table = (:)
   for (style, points) in style-pt {
@@ -97,11 +99,10 @@ $
       for (n, style_elem) in style.enumerate() {
         let (ax, ay) = a
         let (bx, by) = b
-        let e = 0.1
         let full_size = (style.len() - 1) * e
         if ax != bx {
           // vertical
-          line((ax, ay + e * n - full_size / 2), (bx, by + e * n - full_size / 2), ..style_elem)
+          line((ax, ay - e * n + full_size / 2), (bx, by - e * n + full_size / 2), ..style_elem)
         } else {
           line((ax + e * n - full_size / 2, ay), (bx + e * n - full_size / 2, by), ..style_elem)
         }
@@ -131,16 +132,68 @@ $
   }
 }
 
+// #cetz.canvas({
+//   import cetz.draw: *
+//   draw-table(3, (((stroke: (paint: red, thickness: 3pt)), ((0, 0), (2, 0), (2, 3))),
+//   ((stroke: (paint: blue, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
+//   ((stroke: (paint: green, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
+//   ))
+// }, length: 1.5cm)
 
+#align(center, grid(
+  columns: 2,
+  align: center,
+  inset: 20pt,
+align(center, figure(
+  cetz.canvas({
+    import cetz.draw: *
+    draw-table(1, (
+      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 1), (1, 1))),
+    ))
+  }, length: 1.5cm),
+  caption: [chemins de Dyck #footnote[Schémas générés automatiquement] de longueur 2],
+  numbering: none
+)),
 
-#cetz.canvas({
-  import cetz.draw: *
-  draw-table(3, (((stroke: (paint: red, thickness: 3pt)), ((0, 0), (2, 0), (2, 3))),
-  ((stroke: (paint: blue, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
-  ((stroke: (paint: green, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
-  ))
-}, length: 1.5cm)
+align(center, figure(
+  cetz.canvas({
+    import cetz.draw: *
+    draw-table(2, (
+      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 2), (2, 2))),
+      // ((stroke: (paint: orange, thickness: 3pt)), ((0, 0), (0, 1), (1, 1), (1, 2), (2, 2))),
+    ))
+  }, length: 1.5cm),
+  caption: [chemins de Dyck de longueur 3],
+  numbering: none
+)),
 
+align(center, figure(
+  cetz.canvas({
+    import cetz.draw: *
+    draw-table(3, (
+      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 3), (3, 3))),
+      ((stroke: (paint: orange, thickness: 3pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (3, 3))),
+      // ((stroke: (paint: purple, thickness: 3pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (3, 3))),
+    ))
+  }, length: 1.5cm),
+  caption: [chemins de Dyck de longueur 6],
+  numbering: none
+)),
+
+align(center, figure(
+  cetz.canvas({
+    import cetz.draw: *
+    draw-table(4, (
+      ((stroke: (paint: teal, thickness: 2pt)), ((0, 0), (0, 4), (4, 4))),
+      ((stroke: (paint: orange, thickness: 2pt)), ((0, 0), (0, 3), (1, 3), (1, 4), (4, 4))),
+      ((stroke: (paint: purple, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 4), (4, 4))),
+      ((stroke: (paint: olive, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (2, 3), (2, 4), (4, 4))),
+      ((stroke: (paint: yellow, thickness: 2pt)), ((0, 0), (0, 2), (0, 3), (1, 3), (2, 3), (2, 4), (4, 4))),
+    ), e:0.07)
+  }, length: 1.5cm),
+  caption: [chemins de Dyck de longueur 8],
+  numbering: none
+))))
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
