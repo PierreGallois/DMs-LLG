@@ -43,3 +43,4 @@ Toujours avec cette méthode, avec $z = 1 - i sqrt(3)$, il vient $arctan(-sqrt(3
 ===
 
 Soit $z = (2+i)(3+i)$.
+

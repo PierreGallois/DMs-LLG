@@ -27,17 +27,18 @@
   set page(background: context {
     // Logo classe
     if counter(page).get().first() != 1 {
-        place(
-        top + right,
-        dx: 15pt,
-        dy: 10pt,
-        image(
-          "logo_classe_gris.svg",
-          width: 100pt
+         place(
+          top + right,
+          dx: -7pt,
+          dy: 7pt,
+          image(
+            "logo_classe_gris.svg",
+            width: 75pt
+          )
         )
-      )
+      }
     }
-  })
+  )
 
   // Titre
   {
