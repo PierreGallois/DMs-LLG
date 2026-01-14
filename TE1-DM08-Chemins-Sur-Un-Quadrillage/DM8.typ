@@ -127,7 +127,7 @@ $
   for (_, points) in style-pt {
     // all direction changes
     for point in points {
-      circle(point, radius: 5pt, stroke: (paint: black, thickness: 2pt), fill: white)
+      circle(point, radius: 6pt, stroke: (paint: black, thickness: 2pt), fill: white)
     }
   }
 }
@@ -195,7 +195,7 @@ align(center, figure(
   numbering: none
 ))))
 
-#let generate-paths(n) = {
+#let anc_generate-paths(n) = {
   // let's go through the graph, dfs
   let paths = ()
   let head = (0, 0)
@@ -220,16 +220,70 @@ align(center, figure(
   }
 }
 
-#cetz.canvas({
+#let explore(n, p: (0, 0), last-move: "any", half: true) = {
+  let (px, py) = p
+  if not (px <= n and py <= n) {
+    return ()
+  }
+  if half and px > py {
+    return ()
+  }
+  let up-tree = explore(n, p: (px, py + 1), last-move: "up")
+  let right-tree = explore(n, p: (px + 1, py), last-move: "right")
+  // flatten the tree
+  if p == (n, n) {
+    return ((p,),)
+  }
+  let r = ()
+  for sub-tree in up-tree {
+    if sub-tree.last() == (n, n) {
+      if last-move != "up" {
+        r.push((p,) + sub-tree)
+      } else {
+        r.push(sub-tree)
+      }
+    }
+  }
+  for sub-tree in right-tree {
+    if sub-tree.last() == (n, n) {
+      if last-move != "right" {
+        r.push((p,) + sub-tree)
+      } else {
+        r.push(sub-tree)
+      }
+    }
+  }
+  r
+}
+
+#let zip-color(tuple, color-map) = {
+  let lin = gradient.linear(..color-map)
+  let len = tuple.len()
+  tuple.zip(lin.samples(..range(len).map(n => n / calc.max(len - 1, 1) * 100%)))
+}
+
+#let dyck-graph(n) = {
+  figure(cetz.canvas({
     import cetz.draw: *
-    draw-table(4, (
-      ((stroke: (paint: teal, thickness: 2pt)), ((0, 0), (0, 4), (4, 4))),
-      ((stroke: (paint: orange, thickness: 2pt)), ((0, 0), (0, 3), (1, 3), (1, 4), (4, 4))),
-      ((stroke: (paint: purple, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 4), (4, 4))),
-      ((stroke: (paint: olive, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (2, 3), (2, 4), (4, 4))),
-      ((stroke: (paint: yellow, thickness: 2pt)), ((0, 0), (0, 2), (0, 3), (1, 3), (2, 3), (2, 4), (4, 4))),
-    ), e:0.07)
-  }, length: 1.5cm)
+    draw-table(n, zip-color(explore(n), color.map.rainbow).map(a => ((stroke: (paint: a.at(1), thickness: 2pt)), a.at(0))), e:0.07)
+  }, length: 1.5cm),
+  caption: [chemins de Dyck de longueur #n],
+  numbering: none
+)
+}
+
+
+#align(center, grid(
+  columns: 2,
+  align: center,
+  inset: 20pt,
+  ..for n in range(1, 4) {
+    (dyck-graph(n),)
+  }
+))
+
+#dyck-graph(2)
+#explore(2)
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
