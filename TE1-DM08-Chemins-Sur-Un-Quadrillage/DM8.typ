@@ -132,94 +132,6 @@ $
   }
 }
 
-// #cetz.canvas({
-//   import cetz.draw: *
-//   draw-table(3, (((stroke: (paint: red, thickness: 3pt)), ((0, 0), (2, 0), (2, 3))),
-//   ((stroke: (paint: blue, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
-//   ((stroke: (paint: green, thickness: 3pt)), ((0, 0), (1, 0), (1, 3))),
-//   ))
-// }, length: 1.5cm)
-
-#align(center, grid(
-  columns: 2,
-  align: center,
-  inset: 20pt,
-align(center, figure(
-  cetz.canvas({
-    import cetz.draw: *
-    draw-table(1, (
-      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 1), (1, 1))),
-    ))
-  }, length: 1.5cm),
-  caption: [chemins de Dyck #footnote[Schémas générés automatiquement] de longueur 2],
-  numbering: none
-)),
-
-align(center, figure(
-  cetz.canvas({
-    import cetz.draw: *
-    draw-table(2, (
-      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 2), (2, 2))),
-      // ((stroke: (paint: orange, thickness: 3pt)), ((0, 0), (0, 1), (1, 1), (1, 2), (2, 2))),
-    ))
-  }, length: 1.5cm),
-  caption: [chemins de Dyck de longueur 3],
-  numbering: none
-)),
-
-align(center, figure(
-  cetz.canvas({
-    import cetz.draw: *
-    draw-table(3, (
-      ((stroke: (paint: teal, thickness: 3pt)), ((0, 0), (0, 3), (3, 3))),
-      ((stroke: (paint: orange, thickness: 3pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (3, 3))),
-      // ((stroke: (paint: purple, thickness: 3pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (3, 3))),
-    ))
-  }, length: 1.5cm),
-  caption: [chemins de Dyck de longueur 6],
-  numbering: none
-)),
-
-align(center, figure(
-  cetz.canvas({
-    import cetz.draw: *
-    draw-table(4, (
-      ((stroke: (paint: teal, thickness: 2pt)), ((0, 0), (0, 4), (4, 4))),
-      ((stroke: (paint: orange, thickness: 2pt)), ((0, 0), (0, 3), (1, 3), (1, 4), (4, 4))),
-      ((stroke: (paint: purple, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 4), (4, 4))),
-      ((stroke: (paint: olive, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (2, 3), (2, 4), (4, 4))),
-      ((stroke: (paint: yellow, thickness: 2pt)), ((0, 0), (0, 2), (0, 3), (1, 3), (2, 3), (2, 4), (4, 4))),
-    ), e:0.07)
-  }, length: 1.5cm),
-  caption: [chemins de Dyck de longueur 8],
-  numbering: none
-))))
-
-#let anc_generate-paths(n) = {
-  // let's go through the graph, dfs
-  let paths = ()
-  let head = (0, 0)
-  let head_dir = "up"
-  let (hx, hy) = head
-  if hx + 1 < n {
-    // we go up
-    if head_dir != "up" {
-      head_dir = "up"
-      paths.last().push(head)
-    }
-    head = (hx + 1, hy)
-  } else if hy + 1 < n {
-    // we go right
-    if head_dir != "right" {
-      head_dir = "right"
-      paths.last().push(head)
-    }
-    head = (hx, hy + 1)
-  } else {
-    
-  }
-}
-
 #let explore(n, p: (0, 0), last-move: "any", half: true) = {
   let (px, py) = p
   if not (px <= n and py <= n) {
@@ -259,31 +171,42 @@ align(center, figure(
 #let zip-color(tuple, color-map) = {
   let lin = gradient.linear(..color-map)
   let len = tuple.len()
-  tuple.zip(lin.samples(..range(len).map(n => n / calc.max(len - 1, 1) * 100%)))
+  // On triche pour les premiers
+  let manuel = ("1": (teal,), "2": (eastern, orange))
+  if str(len) in manuel {
+    tuple.zip(manuel.at(str(len)))
+  } else {
+    tuple.zip(lin.samples(..range(len).map(n => n / (len - 1) * 100%)))
+  }
 }
 
 #let dyck-graph(n) = {
+  let (thickness, e) = if n <= 2 {
+    (3pt, 0.1)
+  } else if n == 3{
+    (2pt, 0.07)
+  } else {
+    (0.9pt, 0.02)
+  }
   figure(cetz.canvas({
     import cetz.draw: *
-    draw-table(n, zip-color(explore(n), color.map.rainbow).map(a => ((stroke: (paint: a.at(1), thickness: 2pt)), a.at(0))), e:0.07)
+    draw-table(n, zip-color(explore(n), color.map.rainbow).map(a => ((stroke: (paint: a.at(1), thickness: thickness)), a.at(0))), e: e)
   }, length: 1.5cm),
-  caption: [chemins de Dyck de longueur #n],
+  caption: [chemins de Dyck de longueur #(2*n)],
   numbering: none
 )
 }
-
 
 #align(center, grid(
   columns: 2,
   align: center,
   inset: 20pt,
-  ..for n in range(1, 4) {
+  ..for n in range(1, 5) {
     (dyck-graph(n),)
   }
 ))
 
-#dyck-graph(2)
-#explore(2)
+Chemins de Dyck générés automatiquement. 
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
