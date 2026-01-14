@@ -94,7 +94,7 @@ $
   let style_line(a, b) = {
     let style = style-table.at(hash((a, b)), default: ())
     if style.len() == 0 {
-      line(a, b, stroke: (thickness: 2pt))
+      line(a, b, stroke: (thickness: 2pt, paint: black))
     } else {
       for (n, style_elem) in style.enumerate() {
         let (ax, ay) = a
@@ -194,6 +194,42 @@ align(center, figure(
   caption: [chemins de Dyck de longueur 8],
   numbering: none
 ))))
+
+#let generate-paths(n) = {
+  // let's go through the graph, dfs
+  let paths = ()
+  let head = (0, 0)
+  let head_dir = "up"
+  let (hx, hy) = head
+  if hx + 1 < n {
+    // we go up
+    if head_dir != "up" {
+      head_dir = "up"
+      paths.last().push(head)
+    }
+    head = (hx + 1, hy)
+  } else if hy + 1 < n {
+    // we go right
+    if head_dir != "right" {
+      head_dir = "right"
+      paths.last().push(head)
+    }
+    head = (hx, hy + 1)
+  } else {
+    
+  }
+}
+
+#cetz.canvas({
+    import cetz.draw: *
+    draw-table(4, (
+      ((stroke: (paint: teal, thickness: 2pt)), ((0, 0), (0, 4), (4, 4))),
+      ((stroke: (paint: orange, thickness: 2pt)), ((0, 0), (0, 3), (1, 3), (1, 4), (4, 4))),
+      ((stroke: (paint: purple, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 4), (4, 4))),
+      ((stroke: (paint: olive, thickness: 2pt)), ((0, 0), (0, 2), (1, 2), (1, 3), (2, 3), (2, 4), (4, 4))),
+      ((stroke: (paint: yellow, thickness: 2pt)), ((0, 0), (0, 2), (0, 3), (1, 3), (2, 3), (2, 4), (4, 4))),
+    ), e:0.07)
+  }, length: 1.5cm)
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
