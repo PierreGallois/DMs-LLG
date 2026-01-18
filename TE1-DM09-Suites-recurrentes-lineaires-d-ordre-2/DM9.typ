@@ -64,3 +64,18 @@ $
   v_n = v_0 beta^n = (u_1 - alpha u_0) beta^n \
   w_n = w_0 alpha^n = (u_1 - beta u_0) alpha^n
 $
+
+===
+D'après la question ci-dessus et d'après les définitions respectives de $(v_n) "et" (w_n)$,
+$
+  u_(n+1) - alpha u_n = (u_1 - alpha u_0) beta^n \
+  u_(n+1) - beta u_n = (u_1 - beta u_0) alpha^n
+$
+En soustrayant ces deux égalités, on obtient :
+$(alpha - beta) u_n = (u_1 - beta u_0) alpha^n - (u_1 - alpha u_0) beta^n$.
+Puisque $Delta > 0$, $alpha != beta$ et $alpha - beta != 0$. Ce qui permet d'écrire :
+$
+  u_n &= (u_1 - beta u_0)/(alpha - beta) alpha^n - (u_1 - alpha u_0)/(alpha - beta) beta^n \
+  "ou encore" u_n &= A alpha^n - B beta^n \
+  "avec" A = (u_1 - beta u_0)/(alpha - beta) &"et" B = (u_1 - alpha u_0)/(alpha - beta).
+$
