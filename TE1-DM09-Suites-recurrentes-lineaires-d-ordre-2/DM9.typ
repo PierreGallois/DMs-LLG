@@ -79,3 +79,13 @@ $
   "ou encore" u_n &= A alpha^n - B beta^n \
   "avec" A = (u_1 - beta u_0)/(alpha - beta) &"et" B = (u_1 - alpha u_0)/(alpha - beta).
 $
+
+==
+On suppose $Delta = 0$. On note $alpha$ la solution de l'équation caractéristique.
+
+===
+En reprenant la question 2.a. en remplaçant $beta$ par $alpha$,
+dans la mesure où $alpha$ est ici une racine double, on trouve :
+$u_(n+2) - alpha u_(n+1) = alpha (u_(n+1) - alpha u_n)$.
+
+===
