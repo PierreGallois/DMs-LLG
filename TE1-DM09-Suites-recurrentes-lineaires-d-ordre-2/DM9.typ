@@ -42,3 +42,18 @@ $
   u_(n+2) = (alpha + beta) u_(n+1) - alpha beta u_n \
   "i.e." u_(n+2) - alpha u_(n+1) = beta (u_(n+1) - alpha u_n).
 $
+
+===
+On pose pour tout $n in NN$, $v_n = u_(n+1) - alpha u_n$ et $w_n = u_(n+1) - beta u_n$.
+
+Soit $n in NN$. D'une part, $v_(n+1) = u_(n+2) - alpha u_(n+1)$ soit d'après la relation précédente,
+$v_(n+1) = beta (u_(n+1) - alpha u_n) = beta v_n$. La suite $(v_n)_(n in NN)$ est donc géométrique de raison $beta$.
+
+D'autre part,
+$
+  w_(n+1) &= u_(n+2) - beta u_(n+1) \
+  &= (alpha + beta) u_(n+1) - alpha beta u_n - beta u_(n+1) \
+  &= alpha u_(n+1) - alpha beta u_n \
+  &= alpha w_n.
+$
+La suite $(w_n)_(n in NN)$ est donc géométrique de raison $alpha$.
