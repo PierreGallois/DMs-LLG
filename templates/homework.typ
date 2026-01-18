@@ -9,7 +9,7 @@
   set document(author: author, title: "Mathématiques : Devoir maison n° " + str(numero))
 
   set text(lang: "fr", size: 12pt)
-  set par(justify: true, first-line-indent: 1em)
+  set par(justify: false, first-line-indent: 1em)
   set page("a4", margin: auto)
   set page(footer: context {
     set align(center)
