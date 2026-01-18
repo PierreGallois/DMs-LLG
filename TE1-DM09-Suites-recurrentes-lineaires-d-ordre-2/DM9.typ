@@ -57,3 +57,10 @@ $
   &= alpha w_n.
 $
 La suite $(w_n)_(n in NN)$ est donc géométrique de raison $alpha$.
+
+===
+Pour tout $n in NN$,
+$
+  v_n = v_0 beta^n = (u_2 - alpha u_1) beta^n \
+  w_n = w_0 alpha^n = (u_2 - beta u_1) alpha^n
+$
