@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm
+#import "./../templates/homework.typ": dm, code-from-file
 #import "@preview/cetz:0.4.2"
 
 #show: dm.with(
@@ -238,7 +238,8 @@ $
   &= 14
 $
 
-== THOMAS
+== 
+#code-from-file(folder-name, "catalan.py")
 ==
 ===
 Un chemin entre $O$ et $M_n (n,n)$ est soit toujours au dessus de la diagonale, soit franchit la diagonale en un point. Par disjonction, on obtient :
