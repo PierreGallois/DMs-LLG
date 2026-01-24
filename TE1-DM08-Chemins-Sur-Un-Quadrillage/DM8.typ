@@ -40,6 +40,7 @@ $
 $
 Où l'on a dénombré les chemin de $B_k$ à $B_n$ par translation de vecteur $arrow(B_k O)$.
 
+#pagebreak()
 ===
 On double compte les chemins de $O$ à $B_n (n,n)$. D'une part, ceux-ci sont au nombre de $binom(n+n,n) = binom(2n,n)$. D'autre part, chaque tel chemin, après $n$ étapes, se trouve sur un unique point de la forme $B_k (n-k, k)$ avec $k in [|0;n|]$, car ceux-ci forment l'ensemble des points atteignables depuis $O$ par un chemin de longueur $n$. Ainsi, par disjonction et le dénombrement de la question précédente, on déduit :
 $
@@ -309,6 +310,7 @@ $
 
 D'où $C_n = binom(2n,n) - F_n = binom(2n,n)-binom(2n,n+1)$
 
+#pagebreak()
 ===
 Par l'expression des coefficients binomiaux :
 $
