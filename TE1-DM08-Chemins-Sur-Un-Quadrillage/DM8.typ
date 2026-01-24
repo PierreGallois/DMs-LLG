@@ -78,7 +78,7 @@ $
   str(tuple.at(0).at(0)) + "," + str(tuple.at(0).at(1)) + "," + str(tuple.at(1).at(0)) + "," +str(tuple.at(1).at(1))
 }
 
-#let draw-table(n, style-pt, e: 0.1) = {
+#let draw-table(n, style-pt, e: 0.1, draw-grid: true) = {
   import cetz.draw: *
   let style-table = (:)
   for (style, points) in style-pt {
@@ -94,7 +94,9 @@ $
   let style_line(a, b) = {
     let style = style-table.at(hash((a, b)), default: ())
     if style.len() == 0 {
-      line(a, b, stroke: (thickness: 2pt, paint: black))
+      if draw-grid {
+        line(a, b, stroke: (thickness: 2pt, paint: black))
+      }
     } else {
       for (n, style_elem) in style.enumerate() {
         let (ax, ay) = a
@@ -192,8 +194,7 @@ $
     import cetz.draw: *
     draw-table(n, zip-color(explore(n), color.map.rainbow).map(a => ((stroke: (paint: a.at(1), thickness: thickness)), a.at(0))), e: e)
   }, length: 1.5cm),
-  caption: [chemins de Dyck de longueur #(2*n)],
-  numbering: none
+  caption: [chemins de Dyck de longueur #(2*n)]
 )
 }
 
@@ -209,11 +210,46 @@ $
 Chemins de Dyck générés automatiquement. 
 
 ===
-Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
+Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale. (voir _Schéma 1_ ci-dessous)
 
-De plus, le chemin induit entre $P$ et $P'$, de longueur $2(n-1)$, doit forcément être de Dyck relativement à la diagonale entre $P$ et $P'$ : sinon, il rencontrerait la diagonale entre $O$ et $A_n$. Ainsi, ces chemin sont au nombre de $C_(n-1)$.
+De plus, le chemin induit entre $P$ et $P'$, de longueur $2(n-1)$, doit forcément être de Dyck relativement à la diagonale entre $P$ et $P'$ : sinon, il rencontrerait la diagonale entre $O$ et $A_n$. Ainsi, ces chemin sont au nombre de $C_(n-1)$. (voir _Schéma 2_)
 
-TODO : Figure
+#align(center, grid(
+  columns: 2,
+  align: center,
+  inset: 20pt,
+  figure(cetz.canvas({
+    import cetz.draw: *
+    line((-0.5, -0.5), (3.5, 3.5), (3.5, -0.5), stroke: none, fill: gray.lighten(70%))
+    draw-table(3, (((stroke: (paint: olive, thickness: 3pt)), ((0, 0), (0, 1))),
+                  ((stroke: (paint: olive, thickness: 3pt)), ((2, 3), (3, 3))),
+                  ((stroke: (paint: black, thickness: 3pt, dash: "dashed")), ((3, 2), (3, 3))),
+                  ((stroke: (paint: black, thickness: 3pt, dash: "dashed")), ((0, 0), (1, 0)))), e: 0.1)
+    content((-0.32, -0.05), [$O$])
+    content((3.1, 3.32), [$A_n$])
+    content((-0.32, 1 - 0.05), [$P$])
+    content((2.2, 3.32), [$P'$])
+    content((3.3, 2.1), [$Q$])
+  }, length: 1.5cm), caption: [_Schéma 1_: Premier trait]),
+  figure(cetz.canvas({
+    import cetz.draw: *
+    line((-0.5, -0.5), (3.5, 3.5), (3.5, -0.5), stroke: none, fill: gray.lighten(70%))
+    draw-table(3, (((stroke: (paint: olive, thickness: 3pt)), ((0, 0), (0, 1))),
+                  ((stroke: (paint: olive, thickness: 3pt)), ((2, 3), (3, 3))),
+                  ((stroke: (paint: black, thickness: 3pt, dash: "dashed")), ((3, 2), (3, 3))),
+                  ((stroke: (paint: black, thickness: 3pt, dash: "dashed")), ((0, 0), (1, 0))),
+                  ..explore(2).map(a => ((stroke: (paint: white)), a.map(b => (b.at(0), b.at(1) + 1))))), e: 0.1)
+    content((-0.32, -0.05), [$O$])
+    content((3.1, 3.32), [$A_n$])
+    content((-0.32, 1 - 0.05), [$P$])
+    content((2.2, 3.32), [$P'$])
+    content((3.3, 2.1), [$Q$])
+    translate((0, 1))
+    draw-table(2, zip-color(explore(2), color.map.rainbow).map(a => ((stroke: (paint: a.at(1), thickness: 3pt)), a.at(0))), e: 0.1, draw-grid: false)
+  }, length: 1.5cm), caption: [_Schéma 2_: Chemins de Dyck de $P$ à $P'$])
+))
+
+
 
 ===
 Soit $k in [|1;n-1|]$. Un tel chemin passe forcément par $M_k (k,k)$, et est de Dyck jusqu'à avoir atteit $M_k$, et strictement au dessus de la diagonale $Delta$ (qui est aussi la diagonale entre $M_k$ et $M_n$) entre $M_k$ et $M_n$, à la manière du b).

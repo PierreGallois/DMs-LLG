@@ -105,6 +105,8 @@
   show math.lt.eq: math.lt.eq.slant
   show math.gt.eq: math.gt.eq.slant
 
+  set figure(numbering: none)
+
   // Code
 
   let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
