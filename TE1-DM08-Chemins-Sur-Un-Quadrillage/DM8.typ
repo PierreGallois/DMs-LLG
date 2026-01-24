@@ -206,14 +206,13 @@ $
   }
 ))
 
-Chemins de Dyck générés automatiquement. 
+(Chemins de Dyck générés automatiquement).
+On trouve $C_1$ = 1, $C_2 = 2$ et $C_3 = 5$.
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale.
 
 De plus, le chemin induit entre $P$ et $P'$, de longueur $2(n-1)$, doit forcément être de Dyck relativement à la diagonale entre $P$ et $P'$ : sinon, il rencontrerait la diagonale entre $O$ et $A_n$. Ainsi, ces chemin sont au nombre de $C_(n-1)$.
-
-TODO : Figure
 
 ===
 Soit $k in [|1;n-1|]$. Un tel chemin passe forcément par $M_k (k,k)$, et est de Dyck jusqu'à avoir atteit $M_k$, et strictement au dessus de la diagonale $Delta$ (qui est aussi la diagonale entre $M_k$ et $M_n$) entre $M_k$ et $M_n$, à la manière du b).
@@ -235,7 +234,8 @@ En appliquant la formule précédente, on obtient :
 $
   C_4 &= C_0 C_3 + C_1 C_2 + C_2 C_1 + C_3 C_0 \
   &= 2(C_0 C_3 + C_1 C_2) \
-  &= #text[TODO]
+  &= 2(5 + 2) \
+  &= 14
 $
 
 == THOMAS
