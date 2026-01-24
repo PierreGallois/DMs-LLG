@@ -304,6 +304,7 @@ La construction précédente entre les chemins franchissants en $A_k$ et les che
 
 Comme tout chemin franchissant doit passer par un unique $A_k$, on en déduit que les chemins franchissants sont en même nombre que les chemins de $O$ à $B$.
 
+#pagebreak()
 ===
 Les chemins joigant $O$ et $B(n+1,n-1)$ sont au nombre de $binom(n+1 + n - 1, n+1)$. Par la question précédente, on déduit que :
 $
@@ -312,7 +313,6 @@ $
 
 D'où $C_n = binom(2n,n) - F_n = binom(2n,n)-binom(2n,n+1)$
 
-#pagebreak()
 ===
 Par l'expression des coefficients binomiaux :
 $
