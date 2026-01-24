@@ -108,37 +108,12 @@
   set figure(numbering: none)
 
   // Code
-
-  let code-theme-path = "vscode_dark_modern_unofficial.tmTheme"
-  show raw: it => {
-    // évite une boucle infinie (oui c'est moche)
-    if it.theme == code-theme-path {
-      return it
-    }
-    if it.text.contains("\n") {
-      block(
-        fill: rgb("#1d2433"),
-        inset: 20pt,
-        radius: 15pt,
-        width: 100%,
-          text(
-            fill: rgb("#a2aabc"),
-            size: 12pt,
-            raw(
-              theme: code-theme-path,
-              block: it.block,
-              lang: it.lang,
-              align: it.align,
-              syntaxes: it.syntaxes,
-              tab-size: it.tab-size,
-              it.text,
-            )
-          )
-      )
-    } else {
-      it
-    }
-  }
+  show raw.where(block: true): block.with(
+    inset: 20pt,
+    radius: 15pt,
+    stroke: 1pt + black,
+    width: 100%,
+  )
 
   body
 }
@@ -211,6 +186,7 @@
   raw(
     code_file,
     lang: lang,
+    block: code_file.contains("\n")
   )
 }
 
