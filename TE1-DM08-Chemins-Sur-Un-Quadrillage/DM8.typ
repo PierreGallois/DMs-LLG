@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm
+#import "./../templates/homework.typ": dm, code-from-file
 #import "@preview/cetz:0.4.2"
 
 #show: dm.with(
@@ -207,7 +207,8 @@ $
   }
 ))
 
-Chemins de Dyck générés automatiquement. 
+(Chemins de Dyck générés automatiquement).
+On trouve $C_1$ = 1, $C_2 = 2$ et $C_3 = 5$.
 
 ===
 Un chemin de Dyck de longueur $2n$ ne rencontrant la diagonale qu'en $O$ et $A_n$ doit forcément passer par $P(0,1)$ (monter à la première étape) et $P'(n-1,n)$ : sinon, le chemin passerait par $Q(n,n-1)$ qui est en dessous de la diagonale. (voir _Schéma 1_ ci-dessous)
@@ -271,10 +272,12 @@ En appliquant la formule précédente, on obtient :
 $
   C_4 &= C_0 C_3 + C_1 C_2 + C_2 C_1 + C_3 C_0 \
   &= 2(C_0 C_3 + C_1 C_2) \
-  &= #text[TODO]
+  &= 2(5 + 2) \
+  &= 14
 $
 
-== THOMAS
+== 
+#code-from-file(folder-name, "catalan.py")
 ==
 ===
 Un chemin entre $O$ et $M_n (n,n)$ est soit toujours au dessus de la diagonale, soit franchit la diagonale en un point. Par disjonction, on obtient :
