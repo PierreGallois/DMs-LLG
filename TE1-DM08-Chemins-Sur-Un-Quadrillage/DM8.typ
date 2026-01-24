@@ -299,7 +299,9 @@ $
 ===
 Tout chemin de $O$ à $B(n+1, n-1)$ franchit la diagonale $Delta$ au moins une fois, au plus tard en passant de $P(n-1,n-1)$ à $Q(n,n-1)$. Montrons que pour tout $k in [|0;n-1|]$, les chemins de $O$ à $M_n$ franchissant pour la première fois en $A_k (k+1,k)$ sont en même nombre que les chemins de $O$ à $B$ passant par $A_k$.
 
-A MIEUX FAIRE
+La construction précédente entre les chemins franchissants en $A_k$ et les chemins de $0$ à $B$ passant par $A_k$ est involutive : inverser le sens des pas après le $2k+1$-ième pas à deux reprises revient à n'avoir rien fait. Ainsi, cette construction est bijective, et le nombre de chemins franchissant en $A_k$ est le même que le nombre de chemins de $O$ à $B$ passant par $A_k$
+
+Comme tout chemin franchissant doit passer par un unique $A_k$, on en déduit que les chemins franchissants sont en même nombre que les chemins de $O$ à $B$.
 
 ===
 Les chemins joigant $O$ et $B(n+1,n-1)$ sont au nombre de $binom(n+1 + n - 1, n+1)$. Par la question précédente, on déduit que :
