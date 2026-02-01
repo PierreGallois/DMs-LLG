@@ -91,3 +91,26 @@ dans la mesure où $alpha$ est ici une racine double, on trouve :
 $u_(n+2) - alpha u_(n+1) = alpha (u_(n+1) - alpha u_n)$.
 
 ===
+Posons, pour tout $n in NN$, $u_n = alpha^n s_n$.
+La relation $(1)$ devient alors, pour tout $n in NN$ :
+$
+  alpha^(n+2) s_(n+2) - alpha alpha^(n+1) s_(n+1) &= alpha (alpha^(n+1) s_(n+1) - alpha alpha^n s_n) \
+  alpha^(n+2) s_(n+2) - alpha^(n+2) s_(n+1) &= alpha^(n+2) s_(n+1) - alpha^(n+2) s_n \
+  s_(n+2) - s_(n+1) &= s_(n+1) - s_n.
+$
+La différence entre deux termes consécutifs de $(s_n)$ demeure constatnte.
+On en déduit que la suite $(s_n)$ est arithmétique ; on note $R$ sa raison.
+
+===
+La suite $(s_n)$ étant arithmétique de raison $R$ et de premier terme $s_0$, alors pour tout $n in NN$,
+$
+  s_n &= s_0 + n R \
+  u_n / alpha^n &= u_0 / alpha^0 + n(s_1 - s_0) \
+  u_n &= alpha^n (u_0 + n (u_1 / alpha - u_0))
+$
+
+Alors, en posant $A = u_0$ et $B = u_1 / alpha - u_0$, on peut écrire :
+$
+  forall n in NN, u_n = alpha^n (A + n B).
+$
+
