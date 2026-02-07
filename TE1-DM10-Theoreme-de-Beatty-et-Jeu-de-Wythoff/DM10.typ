@@ -129,3 +129,63 @@ $
 $
 
 Ce qui termine la preuve du théorème de Beatty.
+
+= Jeu de Wythoff
+==
+===
+Si l'état initial est $(3,4)$, alors le premier joueur peut retirer $2$ au deux piles pour avoir la configuration $(1,2)$, qui est toujours perdante pour le second joueur. En effet, si ce dernier retire tous les pièces d'une pile, alors le premier joueur gagne en terminant la deuxième. Or, le seul moyen pour le deuxième joueur de ne pas terminer une pile est de jouer la configuration $(1,1)$, auquel cas le joueur $1$ gagne en retirant $1$ à chaque pile.
+
+Donc la position $(2,1)$ est toujours perdante pour le 2e joueur, et la position $(3,4)$ toujours gagnante pour le premier.
+
+===
+
+==
+===
+Par définition, $phi$ satisfait $phi^2 = phi + 1$. Ainsi :
+$
+  1/phi + 1/phi^2 = (phi + 1)/phi^2 = 1
+$
+===
+Pour tout $n in NN^*$ :
+$
+  b_n = floor(n phi^2) = floor(n phi + n) = floor(n phi) + n = a_n + n
+$
+
+==
+===
+Par symétrie des piles, on suppose sans perte de généralité que la configuration de Beatty $(u,v)$ est telle que $u = a_p$ et $v = b_p$. On distingue trois cas, selon si l'on retire $k in NN^*$ pièces :
+
+- A la pile de gauche : La nouvelle configuration est $(u', v') =(a_p - k, b_p)$. Si cette configuration est de Beatty, alors comme $u' < v'$, $(u', v') = (a_q, b_q)$ pour un $q in NN^*$ On a alors :
+$
+  q = b_q - a_q = v' - u' = b_p - a_p + k = p+k
+$.
+Donc $q > p$. Pourtant, $a_q < a_p$, ce qui contredit la croissance de la suite $(a_n)$ ($phi, phi^2 > 1$). Donc la nouvelle configuration n'est pas de Beatty.
+
+- A la pile de droite : La nouvelle configuration est $(u', v') = (a_p, b_p - k)$. Si $v > v' >= u'$ alors la nouvelle configuration ne peut être de Beatty : $u' = a_p$ mais $v' < u' + p$. Si $v' < u'$, et que $(u', v')$ est de Beatty alors $u' = b_q$ et $v' = a_q$ pour un entier $q$. En particulier, $b_q = a_p$. Or $"Sp"(phi)$ et $"Sp"(phi^2)$ sont disjoints : c'est donc une contradiction. Donc la nouvelle configuration n'est pas de Beatty.
+
+- Aux deux piles : La nouvelle configuration est $(u', v') = (a_p -k, b_p - k)$. On a alors $u' <= v'$ et $v' - u' = p$. Si $(u', v')$ est de Beatty, alors $(u', v') = (a_p, b_p)$ ce qui est impossible. Donc la nouvelle configuration n'est pas de Beatty.
+
+Ainsi, la configuration suivant une configuration de Beatty n'est jamais de Beatty.
+
+===
+On suppose encore que $u<= v$, et on définit $a_0 = b_0 = 0$.
+
+Supposons que la configuration $(u,v)$ ne soit pas de Beatty. Comme $"Sp"(phi)$ et $"Sp"(phi^2)$ partitionnent $NN^*$, alors $u = a_p$ ou $u = b_p$ pour un entier $p in NN$.#footnote[Pour $p = 0$, on peut toujours atteindre l'état $(0,0)$ On suppose que $p>0$ i.e $u$ et $v$ sont non nuls.]
+
+- Si $u = b_p$, alors $v >= b_p >= a_p$. On peut alors retirer à la pile de droite $v - a_p$ pièces pour atteindre la configuration $(b_p, a_p)$ qui est de Beatty.
+
+- Si $u = a_p$, on distingue deux cas. Si $v > u + p = b_p$, alors on peut retirer à la pile de droite pour atteindre la configuration $(a_p, b_p)$. Si $u <= v < u+p$ (inégalité stricte puisque $(u,v)$ n'est pas de Beatty), alors $0 <= v-u < p$. Par croissance stricte de $(a_n)$, $u= a_p > a_(v-u)$. On retire alors aux deux piles $a_p - a_(v-u)$, ce qui donne :
+$
+  u' = u - a_p + a_(v-u) = a_(v-u) " et " v' &= v - a_p + a_(v-u) \
+  &= (v-u) + a_(v-u) \
+  &= b_(v-u)
+$
+
+On peut donc toujours atteindre une configuration de Beatty depuis une configuration qui ne l'est pas.
+
+===
+Si l'état initial est de Beatty, alors le deuxième joueur peut gagner en forçant le premier joueur à ne jouer seulement sur des états de Beatty. En effet, si l'état sur lequel joue le joueur $1$ est de Beatty, alors le joueur $2$ joue sur un état qui ne l'est pas et peut donc jouer de manière à ce que l'état suivant sur lequel joue le joueur 1 soit de Beatty.
+
+La suite des indices correspondant aux états de Beatty sur lesquels joue le joueur $1$ est strictement décroissante. Par descente infinie, le joueur $1$ doit jouer à un moment sur l'état de Beatty d'indice $0$ i.e sur $(0,0)$, c'est à dire que le joueur $2$ a tiré la dernière pièce.
+
+A l'inverse, si la première configuration n'est pas de Beatty, alors le joueur $1$ peut forcer son adversaire à ne jouer que sur des configurations de Beatty et a donc toujours une stratégie gagnante.
