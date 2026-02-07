@@ -114,3 +114,19 @@ $
   forall n in NN, u_n = alpha^n (A + n B).
 $
 
+===
+hæc quæstio perficienda est
+
+==
+===
+Les solutions complexes $alpha, beta in CC without RR$ de l'équation caractéristique sont deux complexes conjugués.
+On peut donc poser $alpha = r e^(i theta), beta = r e^(-i theta)$ avec $r in RR_+^*, theta in ]0,pi[$.
+
+Les relations coefficients-racines étant toujours valables, la relation (1) peut toujours s'écrire, pour tout $n in NN$,
+$
+  u_(n+2) - alpha u_(n+1) &= beta (u_(n+1) - alpha u_n) \
+  u_(n+2) - r e^(i theta) u_(n+1) &= r e^(-i theta) (u_(n+1) - r e^(i theta) u_n) \
+  u_(n+2) - r e^(i theta) u_(n+1) &= r e^(-i theta) u_(n+1) - r^2 u_n \
+  u_(n+2) &= (r e^(i theta) + r e^(-i theta)) u_(n+1) - r^2 u_n \
+  u_(n+2) &= 2r cos(theta) u_(n+1) - r^2 u_n.
+$
