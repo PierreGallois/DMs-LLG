@@ -58,6 +58,34 @@ On procède par contradiction. Supposons que $beta$ soit rationnel. Alors par le
 ===
 On raisonne à nouveau par contradiction. Supposons que $M(alpha) inter M(beta) != emptyset$. Il existe alors $n,m in NN^*$ tels que $n alpha = m beta$. On a alors par hypothèse :
 $
-  n/m = alpha / beta = 1 - (1+alpha / beta) = 1 - alpha
+  n/m = alpha / beta = (1+alpha / beta) - 1 = alpha - 1
 $
-Donc $alpha = 1 - n/m$ est rationnel, ce qui est une contradiction. Donc $M(alpha)$ et $M(beta)$ sont disjoints.
+Donc $alpha = 1 + n/m$ est rationnel, ce qui est une contradiction. Donc $M(alpha)$ et $M(beta)$ sont disjoints.
+
+On ne peut pas encore en conclure que $"Sp"(alpha)$ et $"Sp"(beta)$ sont disjoints, puisqu'il reste la possibilité d'avoir :
+$
+  n alpha != m beta "mais" floor(n alpha) = floor(m beta)
+$
+
+===
+====
+Par définition de la valeur absolue, on a :
+$
+  k <= n alpha, m beta < k+1
+$
+On en déduit :
+$
+  k/alpha <= n < k/alpha + 1/alpha " et " k / beta <= m < k/beta + 1/beta
+$
+En sommant les inégalités, on obtient :
+$
+  k(1/alpha + 1/beta) <= n+m < (k+1)(1/alpha + 1/beta) " soit "\
+  k <= n+m < k+1
+$
+On en déduit que $n + m = k$.
+
+====
+$k <= (k-n)beta < k+1$
+
+====
+Comme $M(alpha) inter M(beta) != emptyset$, par la contraposée de la question $3)b)$, on a que $alpha in QQ$.
