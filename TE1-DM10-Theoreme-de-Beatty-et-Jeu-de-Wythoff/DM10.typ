@@ -85,7 +85,7 @@ $
 On en déduit que $n + m = k$.
 
 ====
-$k <= (k-n)beta < k+1$
+
 
 ====
 Comme $M(alpha) inter M(beta) != emptyset$, par la contraposée de la question $3)b)$, on a que $alpha in QQ$.
