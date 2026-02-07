@@ -129,3 +129,26 @@ $
 $
 
 Ce qui termine la preuve du théorème de Beatty.
+
+= Jeu de Wythoff
+==
+===
+Si l'état initial est $(3,4)$, alors le premier joueur peut retirer $2$ au deux piles pour avoir la configuration $(1,2)$, qui est toujours perdante pour le second joueur. En effet, si ce dernier retire tous les pions d'une pile, alors le premier joueur gagne en terminant la deuxième. Or, le seul moyen pour le deuxième joueur de ne pas terminer une pile est de jouer la configuration $(1,1)$, auquel cas le joueur $1$ gagne en retirant $1$ à chaque pile.
+
+Donc la position $(2,1)$ est toujours perdante pour le 2e joueur, et la position $(3,4)$ toujours gagnante pour le premier.
+
+===
+
+==
+===
+Par définition, $phi$ satisfait $phi^2 = phi + 1$. Ainsi :
+$
+  1/phi + 1/phi^2 = (phi + 1)/phi^2 = 1
+$
+===
+Pour tout $n in NN^*$ :
+$
+  b_n = floor(n phi^2) = floor(n phi + n) = floor(n phi) + n = a_n + n
+$
+
+==
