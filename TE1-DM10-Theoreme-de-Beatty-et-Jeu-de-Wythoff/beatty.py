@@ -1,4 +1,6 @@
 import math
+from itertools import count
+
 phi = (1 + math.sqrt(5))/2
 a = lambda p: math.floor(p * phi)
 b = lambda p: math.floor(p * phi * phi)
@@ -15,9 +17,7 @@ def coup_gagnant(u,v):
         return (u - 1, v - 1)
     
     # On détermine si u = a(p) ou u = b(p)
-    p = 0
-    while True:
-        p += 1
+    for p in count(start= 1):
         if u == a(p):
             if v > u + p:
                 return (u, b(p))
