@@ -47,6 +47,34 @@ $
 = Ruine de Bob.
 
 ==
+On représente une partie par une suite de gains, de pertes ou rien si la partie s'est terminée. Autrement dit, une partie est une suite $(u_n) in {0, plus.minus 1}^(NN^*)$ représentant les gains algébriques de Bob au cours des parties. Ces suites doivent respecter les conditions suivantes :
+
+- Ni Bob, ni la banque ne peuvent être dans le négatif. Autrement dit, pour tout $n in NN^*$,
+$
+  -b <= sum_(k=0)^n u_k <= c
+$
+
+- On joue jusqu'à la ruine, c'est à dire que s'il existe $n in NN^*$ tel que :
+$
+  sum_(k=0)^n u_k = -b " ou " sum_(k=0)^n u_k = c
+$
+Alors $u_k != 0$ pour tout $k <= n$ et $u_k = 0$ pour tout $k > n$.
+
+
+On note $Omega$ l'univers (infini) des déroulements possibles de partie.
+
+On définit maintenant une tribu $cal(T)$ sur $Omega$ comme étant la tribu générée par les évènements élémentaires suivants : pour tout $n in NN^*$ et tout $n$-uplet $(x_1, dots, x_n) in {plus.minus 1}^n$ :
+$
+  cal(E)((x_1, dots, x_n)) = {(u_n) in {0, plus.minus 1}^(NN^*) | forall i in [|1;n|], u_i = x_i}
+$
+On définit alors la loi de probabilité $PP$ sur $(Omega, cal(T))$ par :
+$
+  PP(cal(E)((x_1, dots, x_n))) = 1/2^n
+$
+Ainsi que les évènements $B_k$ de la manière suivante.
+$
+  Sigma_k = {}
+$
 
 ==
 
