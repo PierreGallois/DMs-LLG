@@ -1,5 +1,4 @@
 import math
-from itertools import count
 
 phi = (1 + math.sqrt(5)) / 2
 a = lambda p: math.floor(p * phi)
