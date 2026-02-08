@@ -1,4 +1,4 @@
-#import "./../templates/homework.typ": dm, sous-partie
+#import "./../templates/homework.typ": dm, code-from-file
 
 #show: dm.with(
   numero: 10,
@@ -137,7 +137,10 @@ Si l'état initial est $(3,4)$, alors le premier joueur peut retirer $2$ au deux
 
 Donc la position $(2,1)$ est toujours perdante pour le 2e joueur, et la position $(3,4)$ toujours gagnante pour le premier.
 
-===
+=== 
+=== Voir la fin
+
+
 
 ==
 ===
@@ -189,3 +192,23 @@ Si l'état initial est de Beatty, alors le deuxième joueur peut gagner en forç
 La suite des indices correspondant aux états de Beatty sur lesquels joue le joueur $1$ est strictement décroissante. Par descente infinie, le joueur $1$ doit jouer à un moment sur l'état de Beatty d'indice $0$ i.e sur $(0,0)$, c'est à dire que le joueur $2$ a tiré la dernière pièce.
 
 A l'inverse, si la première configuration n'est pas de Beatty, alors le joueur $1$ peut forcer son adversaire à ne jouer que sur des configurations de Beatty et a donc toujours une stratégie gagnante.
+
+===
+Le script python suivant implémente la stratégie décrite dans le $3)b)$ pour forcer son adversaire à jouer sur des configurations de Beatty.
+#code-from-file(folder-name, "beatty.py")
+On calcule ainsi que les coups optimaux sur les configurations suivantes sont :
+
+- $(1789,2020)$ : on joue $(373,604)$
+- $(852,1789)$ : on joue $(852,1379)$
+- $(853,1789)$ : on joue $(852,527)$
+
+On déduit aussi les positions clés des questions $1)b)$ et $c)$, qui sont juste les couples de termes des suites $(a_n)$ et $(b_n)$.
+
+#show: align(center,
+  table(
+    columns: 7,
+    [*rang n*], [*1*],[*2*],[*3*],[*4*],[*5*],[*6*],
+    [$a_n$], [$1$],[$3$],[$4$],[$6$],[$8$],[$9$],
+    [$b_n$], [$2$],[$5$],[$7$],[$10$],[$13$],[$15$],
+  )
+)
