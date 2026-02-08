@@ -17,7 +17,9 @@ def coup_gagnant(u, v):
         return (u - 1, v - 1)
     
     # On détermine si u = a(p) ou u = b(p)
-    for p in count(start= 1):
+    p = 0
+    while p <= u: # Condition au cas où une erreur de précision fait que l'algorithme rate
+        p += 1
         if u == a(p):
             if v > u + p:
                 return (u, b(p))
