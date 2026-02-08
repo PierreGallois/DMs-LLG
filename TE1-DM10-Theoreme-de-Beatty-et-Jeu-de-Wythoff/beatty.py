@@ -16,19 +16,12 @@ def coup_gagnant(u,v):
     
     # On détermine si u = a(p) ou u = b(p)
     p = 0
-    cas = 0 # 0 pour pas fini, 1 pour u = a(p), 2 pour u = b(p)
-    while cas == 0:
+    while True:
         p += 1
         if u == a(p):
-            cas = 1
-        elif u  == b(p):
-            cas = 2
-
-    if cas == 2:
-        return (u, a(p))
-
-    if cas == 1:
-        if v > u + p:
-            return (u, b(p))
-        else:
-            return (a(v-u), b(v-u))
+            if v > u + p:
+                return (u, b(p))
+            else:
+                return (a(v-u), b(v-u))
+        elif u == b(p):
+            return (u, a(p))
