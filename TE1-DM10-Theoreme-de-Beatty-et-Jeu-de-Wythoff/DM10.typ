@@ -51,6 +51,7 @@ Donc $a c in M(alpha) inter M(beta)$, qui n'est donc pas vide.
 
 De plus, $a c in NN$. On a donc $a c in "Sp"(alpha) inter "Sp"(beta)$. Ces ensembles ne sont donc pas disjoints et ne peuvent former une partition de $NN^*$. On a donc prouvé que si $alpha$ ou $beta$ est rationnel, alors $"Sp"(alpha)$ et $"Sp"(beta)$ ne peuvent former une partition de $NN^*$, i.e la contraposée de l'implication indirecte du théorème de Beatty.
 
+#pagebreak()
 ==
 ===
 On procède par contradiction. Supposons que $beta$ soit rationnel. Alors par le même raisonnement qu'au $2)a)$, $alpha$ est également rationnel, ce qui est une contradiction. Donc $beta$ est irrationnel.
@@ -97,7 +98,7 @@ D'après la question $3)b)$, $M(alpha)$ et $M(beta)$ sont disjoints. Donc $B_N (
 $
   abs(B_N (alpha) union B_N (beta)) = floor(N/alpha) + floor(N/beta)
 $
-
+#pagebreak()
 Or par hypothèse sur $alpha$ et $beta$, $N/alpha + N/beta = N$ est entier. Par la question $1)b)$, on a alors :
 $
   abs(B_N (alpha) union B_N (beta)) = N/alpha + N/beta - 1 = N-1
@@ -130,6 +131,7 @@ $
 
 Ce qui termine la preuve du théorème de Beatty.
 
+#pagebreak()
 = Jeu de Wythoff
 ==
 ===
@@ -169,7 +171,7 @@ Donc $q > p$. Pourtant, $a_q < a_p$, ce qui contredit la croissance de la suite 
 - Aux deux piles : La nouvelle configuration est $(u', v') = (a_p -k, b_p - k)$. On a alors $u' <= v'$ et $v' - u' = p$. Si $(u', v')$ est de Beatty, alors $(u', v') = (a_p, b_p)$ ce qui est impossible. Donc la nouvelle configuration n'est pas de Beatty.
 
 Ainsi, la configuration suivant une configuration de Beatty n'est jamais de Beatty.
-
+#pagebreak()
 ===
 On suppose encore que $u<= v$, et on définit $a_0 = b_0 = 0$.
 
@@ -193,6 +195,7 @@ La suite des indices correspondant aux états de Beatty sur lesquels joue le jou
 
 A l'inverse, si la première configuration n'est pas de Beatty, alors le joueur $1$ peut forcer son adversaire à ne jouer que sur des configurations de Beatty et a donc toujours une stratégie gagnante.
 
+#pagebreak()
 ===
 Le script python suivant implémente la stratégie décrite dans le $3)b)$ pour forcer son adversaire à jouer sur des configurations de Beatty.
 #code-from-file(folder-name, "beatty.py")
