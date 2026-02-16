@@ -96,17 +96,19 @@ Supposons que $p = q=1/2$.
 
 ===
 
-Pour tout $k >= 1$, la variable $Y_k = X_k + alpha k²$ vérifie $#sym.EE (Y_k) = 1/2 #sym.EE (Y_(k+1)) + 1/2 #sym.EE (Y_(k-1))$ si et seulement si par linéarité de l'espérance :
+Pour tout $k >= 1$, la variable $Y_k = X_k + alpha k²$ vérifie $EE (Y_k) = 1/2 EE (Y_(k+1)) + 1/2 EE (Y_(k-1))$ si et seulement si par linéarité de l'espérance :
 
 $
-#sym.EE (X_k) + alpha k² = 1/2 #sym.EE (X_(k-1)) + 1/2 alpha (k-1)² + 1/2 #sym.EE (X_(k+1)) + 1/2 alpha (k+1)²
+EE (X_k) + alpha k² = 1/2 EE (X_(k-1)) + 1/2 alpha (k-1)² + 1/2 EE (X_(k+1)) + 1/2 alpha (k+1)²
 $
-Or $#sym.EE (X_k) = 1 + q#sym.EE (X_(k-1)) + p#sym.EE (X_(k+1)) = 1 + 1/2 #sym.EE (X_(k-1)) + 1/2 #sym.EE (X_(k+1))$, donc on peut écrire :
+Or $EE (X_k) = 1 + q EE (X_(k-1)) + p EE (X_(k+1)) = 1 + 1/2 EE (X_(k-1)) + 1/2 EE (X_(k+1))$, donc on peut écrire :
 $
   1 + alpha k² = 1/2 alpha (k-1)² + 1/2 alpha (k+1)² <==>  alpha = 1
 $
 
 ===
+
+D'après la partie A - 2), lorsque $p = q = 1/2$, la suite $(EE (X_n))_(n in NN)$ est arithmétique et pour tout $n in NN^*$, 
 
 ==
 
