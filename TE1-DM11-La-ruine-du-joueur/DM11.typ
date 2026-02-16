@@ -182,5 +182,4 @@ $
 $
 Et donc Bob finit ruiné au bout d'un temps looooooong.
 
-
 _Les jeux d'argent et de hasard peuvent être dangereux : pertes d'argent, conflits familiaux, addiction... Retrouvez des conseils sur joueurs-info-service.fr (09 74 75 13 13 - Appel non surtaxé)._
