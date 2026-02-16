@@ -96,6 +96,8 @@ Supposons que $p = q=1/2$.
 
 ===
 
+Soit $alpha in RR$.
+
 Pour tout $k >= 1$, la variable $Y_k = X_k + alpha k²$ vérifie $EE (Y_k) = 1/2 EE (Y_(k+1)) + 1/2 EE (Y_(k-1))$ si et seulement si par linéarité de l'espérance :
 
 $
@@ -118,10 +120,32 @@ $
 $
 
 ==
+Supposons que $p != q$ et posons $x = q/p$.
 
 ===
 
+Soit $beta in RR$.
+
+Pour tout $k >= 1$, la variable $Z_k = X_k + beta k$ vérifie $EE (Z_k) = p EE (Z_(k+1)) + q EE (Z_(k-1))$ si et seulement si, par linéarité de l'espérance :
+
+$
+  EE (X_k) + beta k = p EE (X_(k+1)) + q EE (X_(k-1)) + p beta (K+1) + q beta (k-1)
+$
+
+Or $EE (X_k) = p EE (X_(k+1)) + q EE (X_(k-1))$, d'où :
+
+$
+  EE (X_k) + beta k = EE (X_k) - 1 + beta (p k + q k + p - q)
+$
+Soit, puisque $p k + q k = k(p+q) = k(p + 1 - p) = k$, il vient :
+
+$
+  beta (p - q) = 1 <==> beta = 1 / (p - q) = 1 / (2p -1)
+$
+
 ===
+
+
 
 ===
 
