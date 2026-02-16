@@ -145,8 +145,21 @@ $
 
 ===
 
+D'après la partie A - 3), la suite $(EE (Z_n))_(n in NN)$ vérifie, pour tout $n in NN^*$ : 
 
+$
+  EE (Z_n) = EE (Z_0) +  (EE (Z_(b+C)) - EE (Z_0)) (1 - x^n) / (1 - x^(b+c))
+$
 
+On en déduit :
+$
+EE (Z_n) = beta (b+c)(1 - x^n) / (1 - x^(b+c))
+$ 
+
+Soit :
+$
+  EE (X_b) = 1/(p - q) (x^b - 1) / (x^(b+c) - 1) (b + c) - 1/(p-q) b = 1/(p-q) (((x^b-1)(b+c))/ (x^(b+c) - 1) - b)
+$
 ===
 
 ===
