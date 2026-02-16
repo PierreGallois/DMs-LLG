@@ -108,7 +108,14 @@ $
 
 ===
 
-D'après la partie A - 2), lorsque $p = q = 1/2$, la suite $(EE (X_n))_(n in NN)$ est arithmétique et pour tout $n in NN^*$, 
+D'après la partie A - 2), lorsque $p = q = 1/2$, la suite $(EE (Y_n))_(n in NN)$ est arithmétique et pour tout $b in NN^*$, 
+$
+  EE (Y_b) = EE (Y_0) + b (EE (Y_(b+c)) - EE (Y_0))/(b + c) = EE (X_0) + 0² + b (EE (X_(b+c)) + (b+c)² - EE (X_0) - 0²) / (b + c)
+$
+Soit :
+$
+  EE (X_b) = EE (Y_b) - b² = b(b+c) - b² = b c
+$
 
 ==
 
