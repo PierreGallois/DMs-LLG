@@ -89,10 +89,22 @@ $
 ==
 
 = Temps d'attente de la ruine de Bob.
+J'ai perduuu
 
 ==
+Supposons que $p = q=1/2$.
 
 ===
+
+Pour tout $k >= 1$, la variable $Y_k = X_k + alpha k²$ vérifie $#sym.EE (Y_k) = 1/2 #sym.EE (Y_(k+1)) + 1/2 #sym.EE (Y_(k-1))$ si et seulement si par linéarité de l'espérance :
+
+$
+#sym.EE (X_k) + alpha k² = 1/2 #sym.EE (X_(k-1)) + 1/2 alpha (k-1)² + 1/2 #sym.EE (X_(k+1)) + 1/2 alpha (k+1)²
+$
+Or $#sym.EE (X_k) = 1 + q#sym.EE (X_(k-1)) + p#sym.EE (X_(k+1)) = 1 + 1/2 #sym.EE (X_(k-1)) + 1/2 #sym.EE (X_(k+1))$, donc on peut écrire :
+$
+  1 + alpha k² = 1/2 alpha (k-1)² + 1/2 alpha (k+1)² <==>  alpha = 1
+$
 
 ===
 
