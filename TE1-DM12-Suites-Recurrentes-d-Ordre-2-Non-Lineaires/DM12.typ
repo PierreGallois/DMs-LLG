@@ -57,6 +57,14 @@ $
 
 ===
 
+Pour tout $n in NN$, montrons que $u_n >= 1$ :
+
+D'une part, $u_0 = 1$ et $u_1 = 1$ sont clairement supérieurs ou égaux à 1. D'autre part, pour tout $n in NN$, si $u_n >= 1$ et $u_(n+1) >= 1$. Alors, en utilisant la relation de récurrence, il vient : 
+$
+u_(n+2) = 1/u_n + 1/u_(n+1) >= 1/1 + 1/1 = 2 >= 1
+$
+Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n >= 1$.
+
 ===
 
 ===
