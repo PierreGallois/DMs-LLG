@@ -162,7 +162,7 @@ $
 $
 ===
 
-Lorsque $p -> 1/2$, on a donc $EE (X_b) -> $
+Lorsque $p -> 1/2$, on a donc $EE (X_b) --> $
 
 ===
 
@@ -171,14 +171,14 @@ Et lorsque $b -> +infinity$, on distingue deux cas :
 - Si le jeu est favorable à Bob, soit $p > q$ :
 
 $
-  |x| < 1 ==> EE (X_b) -> 1/(p-q) ((b+c) -b) = c/(p-q)
+  |x| < 1 ==> EE (X_b) --> 1/(p-q) ((b+c) -b) = c/(p-q)
 $
 
 ie Bob gagne et le temps pour gagner dépend seulement de c.
 
 - Sinon, il vient :
 $
-  x > 1 ==> EE (X_b) -> + infinity
+  x > 1 ==> EE (X_b) --> + infinity
 $
 Et donc Bob finit ruiné au bout d'un temps looooooong.
 
