@@ -40,6 +40,11 @@ $
 
 =
 
+Considérons la suite $(u_n)_(n in NN)$ définie par :
+$
+u_0 = 1, u_1 = 1 text("et pour tout") n in NN, u_(n+2) = 1/u_n + 1/u_(n+1)
+$
+
 ==
 
 ===
