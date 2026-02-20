@@ -130,6 +130,11 @@ Ainsi, en posant $delta = 2epsilon$, pour tout $n >= N$, $|sqrt(u_n) - 2| < delt
 
 ===
 
+Pour tout $n in NN$, montrons que $v_n = (v_(n+1) + v_n)/(2(2+v_(n+2)))$ :
+$
+  (v_(n+1) + v_n)/(2(2+v_(n+2))) = (1/2 u_(n+2) - 2)/(2 + sqrt(u_(n+2))) = ((sqrt(u_(n+2))+2)(sqrt(u_(n+2))-2))/(2(2+sqrt(u_(n+2)))) = 1/2 sqrt(u_(n+2)) - 1 = v_(n+2)
+$
+
 ===
 
 ===
