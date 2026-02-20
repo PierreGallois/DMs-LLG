@@ -8,6 +8,77 @@
 )
 
 #let folder-name = "TE1-DM12-Suites-Recurrentes-d-Ordre-2-Non-Lineaires/"
+#let code-from-file(
+    folder-name,
+    file-name,
+    lang:none,
+    hide-calls:true,
+    hide-imports: true,
+  ) = {
+  // Astuce à cause de la gestion des paths relatives de typst :
+  let path = "./../" + folder-name + "/" + file-name
+
+  let code_file = read(path)
+  if lang == none {
+    if path.ends-with(".py") {
+      lang = "python"
+    }
+    if path.ends-with(".typ") {
+      lang = "typst"
+    }
+    if path.ends-with(".hs") {
+      lang = "haskell"
+    }
+  }
+
+  // cache tout le code après le `if __name__ ...` pour permettre l'execution du programme sans que cela soit affiché dans typst
+  if hide-calls {
+    if lang == "python" {
+      code_file = code_file.trim(
+        regex(`if __name__ == "__main__":[\S\s]*`.text),
+        at: end,
+        repeat: false
+      )
+    }
+    if lang == "haskell" {
+      code_file = code_file.trim(
+        regex(`-- Ignore after[\S\s]*`.text),
+        at: end,
+        repeat: false
+      )
+    }
+  }
+
+  if hide-imports {
+    if lang == "typst" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^#import.*`.text),
+        repeat: true
+      )
+    }
+    if lang == "python" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^[from|import].*`.text),
+        repeat: true
+      )
+    }
+    if lang == "haskell" { // TODO en enlève qu'un seul pour une raison inconnue
+      code_file = code_file.trim(
+        regex(`^#!.*`.text), // On enlève le shebang
+        repeat: true
+      )
+    }
+  }
+
+  // enlève les espaces de début et fin
+  code_file = code_file.trim()
+
+  raw(
+    code_file,
+    lang: lang,
+    block: code_file.contains("\n")
+  )
+}
 
 = 
 
@@ -35,9 +106,12 @@ $
 l = sqrt(l) + sqrt(l) = 2sqrt(l) text("d'où") l = 4 text("ou") l=0
 $
 
-Or pour tout $n in NN$, $u_n >= 1$. On en déduit $l = 4$.
+Or pour tout $n in NN$, $u_n >= 1$. On en déduit que la seule limite possible de la suite $u_n$ est $l = 4$.
 
 ===
+Le script python suivant calcule la valeur de $u_n$ suivant la valeur de $n$ fournie. 
+
+#code-from-file(folder-name, "partie_a.py")
 
 ==
 
