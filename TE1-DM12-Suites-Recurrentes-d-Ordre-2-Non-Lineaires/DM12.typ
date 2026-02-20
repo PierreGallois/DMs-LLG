@@ -176,6 +176,12 @@ On en déduit que $P(n+2)$ vraie à son tour, et que pour tout $n in NN$, $|v_n|
 
 ===
 
+Puisque $|alpha| < 1$ et que $mu$ est un réel fixé, alors $lim_(n -> +oo) (mu times alpha^n) = 0$.
+
+De plus, comme pour tout $n in NN$, on a $0 <= |v_n| <= mu times alpha^n$, alors par théorème d'encadrement, $lim_(n -> +oo) v_n = 0$.
+
+Ainsi, par le résultat de la question 2.a, $lim_(n-> +oo) u_n = 4$.
+
 =
 
 Considérons la suite $(u_n)_(n in NN)$ définie par :
