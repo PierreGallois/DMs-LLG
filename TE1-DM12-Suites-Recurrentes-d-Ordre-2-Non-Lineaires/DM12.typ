@@ -261,6 +261,10 @@ De plus, comme pour tout $n in NN$, on a $0 <= |delta_n| <= mu times alpha^n$, a
 
 Ainsi, $lim_(n-> +oo) (u_n - sqrt(2)) = 0$, d'où $lim_(n-> +oo) u_n = sqrt(2)$.
 
+
+
+
+
 $
   text("Fin du DM12 - J'ai perdu.")
 $
