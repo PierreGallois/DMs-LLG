@@ -125,6 +125,9 @@ Ainsi, pour tout $epsilon > 0$, il existe un rang $N in NN$ à partir duquel, po
 $
 |v_n - 0| < epsilon text("soit") |1/2 sqrt(u_n) - 1| < epsilon text("soit") |sqrt(u_n) - 2| < 2epsilon
 $
+
+Ainsi, en posant $delta = 2epsilon$, pour tout $n >= N$, $|sqrt(u_n) - 2| < delta$.  Ainsi, $lim_(n -> +oo) sqrt(u_n) = 2$, d'où $lim_(n -> +oo) u_n = 4$ par continuité de la fonction $x --> x^2$ et car pour tout $n in NN$, $u_n >= 1 > 0$.
+
 ===
 
 ===
