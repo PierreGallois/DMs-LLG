@@ -218,7 +218,11 @@ Le script python suivant calcule la valeur de $u_n$ suivant la valeur de $n$ fou
 
 ==
 
+Considérons la suite $(delta_n)_(n in NN)$ définie pour tout $n in NN$ par $delta_n = u_n - sqrt(2)$.
+
 ===
+
+
 
 ===
 
