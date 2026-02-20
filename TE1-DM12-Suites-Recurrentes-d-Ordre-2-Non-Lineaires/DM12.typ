@@ -115,7 +115,13 @@ Le script python suivant calcule la valeur de $u_n$ suivant la valeur de $n$ fou
 
 ==
 
+Considérons la suite $(v_n)_(n in NN)$ définie pour tout $n in NN$ par $v_n = 1/2 sqrt(u_n) - 1$.
+
 ===
+
+Supposons que $lim_(n -> +oo) v_n = 0$.
+
+Ainsi, pour tout $epsilon > 0$, il existe un rang $N in NN$ à partir duquel, pour tout $n >= N$ :
 
 ===
 
