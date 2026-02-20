@@ -230,13 +230,13 @@ Considérons la suite $(delta_n)_(n in NN)$ définie pour tout $n in NN$ par $de
 
 ===
 
+===
+
 Puisque $|alpha| < 1$ et que $mu$ est un réel fixé, alors $lim_(n -> +oo) (mu times alpha^n) = 0$.
 
 De plus, comme pour tout $n in NN$, on a $0 <= |delta_n| <= mu times alpha^n$, alors par théorème d'encadrement, $lim_(n -> +oo) delta_n = 0$.
 
 Ainsi, $lim_(n-> +oo) (u_n - sqrt(2)) = 0$, d'où $lim_(n-> +oo) u_n = sqrt(2)$.
-
-===
 
 $
   text("Fin du DM12 - J'ai perdu.")
