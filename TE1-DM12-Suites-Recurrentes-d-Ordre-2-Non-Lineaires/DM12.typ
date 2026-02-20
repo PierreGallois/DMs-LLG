@@ -203,6 +203,13 @@ Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n >= 1$.
 
 ===
 
+Supposons que la suite $(u_n)_(n in NN)$ converge vers une limite $l in RR$ lorsque $n$ tend vers $+ infinity$. En utilisant la relation de récurrence, on a :
+$
+l = 1/l + 1/l = 2/l text("d'où") l = sqrt(2) text("ou") l=-sqrt(2)
+$
+
+Or pour tout $n in NN$, $u_n in [1,2]$. On en déduit que la seule limite possible de la suite $u_n$ est $l = sqrt(2)$.
+
 ===
 
 ==
