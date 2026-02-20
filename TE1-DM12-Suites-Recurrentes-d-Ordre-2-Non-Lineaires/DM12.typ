@@ -122,7 +122,9 @@ Considérons la suite $(v_n)_(n in NN)$ définie pour tout $n in NN$ par $v_n = 
 Supposons que $lim_(n -> +oo) v_n = 0$.
 
 Ainsi, pour tout $epsilon > 0$, il existe un rang $N in NN$ à partir duquel, pour tout $n >= N$ :
-
+$
+|v_n - 0| < epsilon text("soit") |1/2 sqrt(u_n) - 1| < epsilon text("soit") |sqrt(u_n) - 2| < 2epsilon
+$
 ===
 
 ===
