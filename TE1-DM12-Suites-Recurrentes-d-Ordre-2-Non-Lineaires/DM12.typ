@@ -159,6 +159,21 @@ Puisque $f(0) = -1/3 <0$ et que $f(1)=1/3 > 0$, alors d'après le TVI il existe 
 
 ===
 
+Posons $mu = max(v_0, v_1) } in RR_+^*$.
+Prouvons que pout tout $n in NN$, l'assertion $P(n)$ : "$|v_n| <= mu times alpha^n$" est vraie par récurrence double.
+
+Initialisation : De manière immédiate, $v_0 <= mu$ et $v_1 <= mu$. Ainsi, $P(0)$ et $P(1)$ vraies.
+
+Hérédité : Soit $n in NN$. Supposons $P(n)$ et $P(n+1)$ vraies.
+
+Puisque $|v_(n+2)| <= 1/3 (|v_n| + |v_(n+1)|)$, il vient :
+
+$
+  |v_(n+2)| <= 1/3 (mu times alpha^n + mu times alpha ^(n+1)) = mu times alpha^n underbrace((1/3 + 1/3 alpha),  = alpha^2) = mu times alpha^n times alpha^2 = mu times alpha^(n+2)
+$
+
+On en déduit que $P(n+2)$ vraie à son tour, et que pour tout $n in NN$, $|v_n| <= mu times alpha^n$.
+
 ===
 
 =
