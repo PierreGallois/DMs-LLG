@@ -160,7 +160,7 @@ Puisque $f(0) = -1/3 <0$ et que $f(1)=1/3 > 0$, alors d'après le TVI il existe 
 ===
 
 Posons $mu = max(v_0, v_1) } in RR_+^*$.
-Prouvons que pout tout $n in NN$, l'assertion $P(n)$ : "$|v_n| <= mu times alpha^n$" est vraie par récurrence double.
+Prouvons que pour tout $n in NN$, l'assertion $P(n)$ : "$|v_n| <= mu times alpha^n$" est vraie par récurrence double.
 
 Initialisation : De manière immédiate, $v_0 <= mu$ et $v_1 <= mu$. Ainsi, $P(0)$ et $P(1)$ vraies.
 
@@ -229,6 +229,25 @@ Considérons la suite $(delta_n)_(n in NN)$ définie pour tout $n in NN$ par $de
 ===
 
 ===
+
+Posons $mu = max(delta_0, delta_1)= 1 } in RR_+^*$.
+Prouvons que pour tout $n in NN$, l'assertion $P(n)$ : "$|delta_n| <= mu times alpha^n$" est vraie par récurrence double.
+
+Initialisation : 
+
+De manière immédiate, $delta_0 <= mu$ et $delta_1 <= mu$. Ainsi, $P(0)$ et $P(1)$ vraies.
+
+De plus, $delta_2 = 2-sqrt(2) <= 1 = mu$, doù $P(2)$ vraie également.
+
+Hérédité : Soit $n in NN^*$. Supposons $P(n)$ et $P(n-1)$ vraies.
+
+Puisque $|delta_(n+2)| <= (2sqrt(2)-1)/2 |delta_n| + 1/2 |delta_(n-1)|$, il vient :
+
+$
+  |delta_(n+2)| <= (2sqrt(2)-1)/2 mu times alpha^n + 1/2 mu times alpha^(n-1) = mu times alpha^(n-1) underbrace(((2sqrt(2)-1)/2 alpha + 1/2)  , = alpha^3)  = mu times alpha^(n+2)
+$
+
+On en déduit que $P(n+2)$ vraie à son tour, et que pour tout $n in NN$, $|delta_n| <= mu times alpha^n$.
 
 ===
 
