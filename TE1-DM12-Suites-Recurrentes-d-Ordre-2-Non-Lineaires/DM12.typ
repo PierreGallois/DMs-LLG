@@ -30,6 +30,13 @@ Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n >= 1$.
 
 ===
 
+Supposons que la suite $(u_n)_(n in NN)$ converge vers une limite $l in RR$ lorsque $n$ tend vers $+ infinity$. En utilisant la relation de récurrence, on a :
+$
+l = sqrt(l) + sqrt(l) = 2sqrt(l) text("d'où") l = 4 text("ou") l=0
+$
+
+Or pour tout $n in NN$, $u_n >= 1$. On en déduit $l = 4$.
+
 ===
 
 ==
