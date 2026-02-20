@@ -212,6 +212,10 @@ Or pour tout $n in NN$, $u_n in [1,2]$. On en déduit que la seule limite possib
 
 ===
 
+Le script python suivant calcule la valeur de $u_n$ suivant la valeur de $n$ fournie. 
+
+#code-from-file(folder-name, "partie_b.py")
+
 ==
 
 ===
