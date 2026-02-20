@@ -80,3 +80,7 @@ Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n >= 1$.
 ===
 
 ===
+
+$
+  text("Fin du DM12 - J'ai perdu.")
+$
