@@ -228,6 +228,10 @@ Considérons la suite $(delta_n)_(n in NN)$ définie pour tout $n in NN$ par $de
 
 ===
 
+Considérons la fonction $f : x mapsto x³ - (2sqrt(2)-1)/2 x -1/2$ continue sur $[0,1]$ car polynomiale.
+
+Puisque $f(0) = -1/2 <0$ et que $f(1)=(3-2sqrt(2))/4 > 0$, alors d'après le TVI il existe un réel $alpha in ]0,1[$ tel que $f(alpha) = 0$, soit tel que $alpha³ = (2sqrt(2)-1)/2 alpha + 1/2$. 
+
 ===
 
 Posons $mu = max(delta_0, delta_1)= 1 } in RR_+^*$.
