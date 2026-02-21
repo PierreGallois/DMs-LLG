@@ -89,3 +89,32 @@ $
   &= integral_0^pi (t^2/(2 pi) - t)(C_n (t) + 1/2)\
   &= 1/2 integral_0^pi (t^2/(2 pi) - t)D_n (t)
 $
+
+= Calcul de $lim_(n -> +oo) u_n$
+
+==
+$f$ est continue par opérations sur $]0;pi]$. De plus, pour tout $t in ]0;pi]$ :
+$
+  f(t) =2 (t/2) / sin(t/2) (1- t/(2pi))
+$
+En remarquant que le facteur du milieu est l'inverse d'un taux d'accroissement, on obtient :
+$
+  lim_(t -> 0) f(t) = 2 = f(0)
+$
+Donc $f$ est bien continue sur $[0;pi]$. D'après le théorème des bornes atteintes, on dispose donc de $M in RR^+$ tel que $|f| <= M$ sur $[0;pi]$.
+
+==
+===
+Pour tout $alpha in ]0;pi[$, on a les inégalités suivantes :
+$
+  abs(integral_0^alpha f(t)sin((2n+1)/2t) d t) &<= integral_0^alpha abs(f(t))abs(sin((2n+1)/2t)) d t #text[par inégalité triangulaire] \
+  &<= integral_0^alpha |f(t)| d t #text[car ] |sin| <= 1 \
+  &<=integral_0^alpha M d t =alpha M #text[car ] |f| <= M 
+$
+
+===
+$f$ est dérivable par opérations sur $]0;pi]$ : comme $alpha > 0$, elle est a fortiori dérivable sur $[alpha; pi]$. De plus, pour tout $t in [alpha; pi]$ :
+$
+  f'(t) = ((1-t/pi)sin(t/2) - 1/2(t - t^2/(2 pi))cos(t/2))/sin(t/2)^2
+$
+Qui est continue par opérations sur $[alpha;pi]$. Encore par le théorème des bornes atteintes, on dispose donc de $M' in RR^+$ tel que $|f'| <= M'$ sur $[alpha;pi]$.
