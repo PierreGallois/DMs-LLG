@@ -240,11 +240,26 @@ Ce qui conclut.
 
 ===
 
+Ainsi, pour tout $n in NN^*$, 
+$
+  |delta_(n+2)| = |delta_n| times |1/u_(n+1) - sqrt(2)|times 1/(2u_n) + |delta_(n-1)| times 1/(2 u_(n-1) u_(n+1))
+$
+
+Et comme $u_n in [1, 2]$, on a également :
+$
+  1/(2 u_(n-1) u_(n+1)) <= 1/2 "et" 1/u_n <= 1/2 "et" 0 <= sqrt(2) - 1/u_(n+1) <= (2sqrt(2) - 2 times 1) /(2 times 2) <= (2sqrt(2) - 1) /4 
+$
+
+On obtient finalement :
+$
+  |delta_(n+2)| <= |delta_(n-1)| 1/2 + (2sqrt(2) - 1)/4 |delta_n|
+$
+
 ===
 
-Considérons la fonction $f : x mapsto x³ - (2sqrt(2)-1)/2 x -1/2$ continue sur $[0,1]$ car polynomiale.
+Considérons la fonction $f : x mapsto x³ - (2sqrt(2)-1)/4 x -1/2$ continue sur $[0,1]$ car polynomiale.
 
-Puisque $f(0) = -1/2 <0$ et que $f(1)=(3-2sqrt(2))/4 > 0$, alors d'après le TVI il existe un réel $alpha in ]0,1[$ tel que $f(alpha) = 0$, soit tel que $alpha³ = (2sqrt(2)-1)/2 alpha + 1/2$. 
+Puisque $f(0) = -1/2 <0$ et que $f(1)=(3-2sqrt(2))/4 > 0$, alors d'après le TVI il existe un réel $alpha in ]0,1[$ tel que $f(alpha) = 0$, soit tel que $alpha³ = (2sqrt(2)-1)/4 alpha + 1/2$. 
 
 ===
 
@@ -259,10 +274,10 @@ De plus, $delta_2 = 2-sqrt(2) <= 1 = mu$, doù $P(2)$ vraie également.
 
 Hérédité : Soit $n in NN^*$. Supposons $P(n)$ et $P(n-1)$ vraies.
 
-Puisque $|delta_(n+2)| <= (2sqrt(2)-1)/2 |delta_n| + 1/2 |delta_(n-1)|$, il vient :
+Puisque $|delta_(n+2)| <= (2sqrt(2)-1)/4 |delta_n| + 1/2 |delta_(n-1)|$, il vient :
 
 $
-  |delta_(n+2)| <= (2sqrt(2)-1)/2 mu times alpha^n + 1/2 mu times alpha^(n-1) = mu times alpha^(n-1) underbrace(((2sqrt(2)-1)/2 alpha + 1/2)  , = alpha^3)  = mu times alpha^(n+2)
+  |delta_(n+2)| <= (2sqrt(2)-1)/4 mu times alpha^n + 1/2 mu times alpha^(n-1) = mu times alpha^(n-1) underbrace(((2sqrt(2)-1)/4 alpha + 1/2)  , = alpha^3)  = mu times alpha^(n+2)
 $
 
 On en déduit que $P(n+2)$ vraie à son tour, et que pour tout $n in NN$, $|delta_n| <= mu times alpha^n$.
