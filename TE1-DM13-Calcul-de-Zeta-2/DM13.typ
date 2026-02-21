@@ -68,3 +68,24 @@ On en conclut donc que :
 $
   integral_0^pi (t^2/(2 pi) - t)cos(n t) d t = -1/n (-1/n) = 1/n^2
 $
+
+Enfin, par linéarité de l'intégrale,
+$
+  u_n &= sum_(k=1)^n 1/k^2 = sum_(k=1)^n integral_0^pi (t^2/(2 pi) - t)cos(k t) d t \
+  &=integral_0^pi (t^2/(2 pi) - t)(sum_(k=1)^n cos(k t)) d t \
+  &= integral_0^pi (t^2 / (2 pi) - t)C_n (t) d t
+$
+
+==
+On calcule en primitivant :
+$
+  1/2 integral_0^pi (t^2/ (2 pi) - t) d t &= 1/2([1/(6 pi)t^3]_0^pi - [1/2t^2]_0^pi)\
+  &= 1/2(pi^2/6 - pi^2 / 2) = -pi^2 / 6
+$
+
+Ainsi, pour tout $n in NN^*$ :
+$
+  u_n - pi^2/6 &= u_n + 1/2integral_0^pi (t^2/(2 pi) - t) d t \
+  &= integral_0^pi (t^2/(2 pi) - t)(C_n (t) + 1/2)\
+  &= 1/2 integral_0^pi (t^2/(2 pi) - t)D_n (t)
+$
