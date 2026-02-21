@@ -84,7 +84,7 @@
 
 Considérons la suite $(u_n)_(n in NN)$ définie par :
 $
-u_0 = 1, u_1 = 1 text("et pour tout") n in NN, u_(n+2) = sqrt(u_n) + sqrt(u_(n+1))
+u_0 = 1, u_1 = 1 "et pour tout" n in NN, u_(n+2) = sqrt(u_n) + sqrt(u_(n+1))
 $
 
 ==
@@ -103,7 +103,7 @@ Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n >= 1$.
 
 Supposons que la suite $(u_n)_(n in NN)$ converge vers une limite $l in RR$ lorsque $n$ tend vers $+ infinity$. En utilisant la relation de récurrence, on a :
 $
-l = sqrt(l) + sqrt(l) = 2sqrt(l) text("d'où") l = 4 text("ou") l=0
+l = sqrt(l) + sqrt(l) = 2sqrt(l) "d'où" l = 4 "ou" l=0
 $
 
 Or pour tout $n in NN$, $u_n >= 1$. On en déduit que la seule limite possible de la suite $u_n$ est $l = 4$.
@@ -123,7 +123,7 @@ Supposons que $lim_(n -> +oo) v_n = 0$.
 
 Ainsi, pour tout $epsilon > 0$, il existe un rang $N in NN$ à partir duquel, pour tout $n >= N$ :
 $
-|v_n - 0| < epsilon text("soit") |1/2 sqrt(u_n) - 1| < epsilon text("soit") |sqrt(u_n) - 2| < 2epsilon
+|v_n - 0| < epsilon "soit" |1/2 sqrt(u_n) - 1| < epsilon "soit" |sqrt(u_n) - 2| < 2epsilon
 $
 
 Ainsi, en posant $delta = 2epsilon$, pour tout $n >= N$, $|sqrt(u_n) - 2| < delta$.  Ainsi, $lim_(n -> +oo) sqrt(u_n) = 2$, d'où $lim_(n -> +oo) u_n = 4$ par continuité de la fonction $x --> x^2$ et car pour tout $n in NN$, $u_n >= 1 > 0$.
@@ -186,7 +186,7 @@ Ainsi, par le résultat de la question 2.a, $lim_(n-> +oo) u_n = 4$.
 
 Considérons la suite $(u_n)_(n in NN)$ définie par :
 $
-u_0 = 1, u_1 = 1 text("et pour tout") n in NN, u_(n+2) = 1/u_n + 1/u_(n+1)
+u_0 = 1, u_1 = 1 "et pour tout" n in NN, u_(n+2) = 1/u_n + 1/u_(n+1)
 $
 
 ==
@@ -205,7 +205,7 @@ Ainsi, par récurrence immédiate, pour tout $n in NN$, $u_n in [1,2]$.
 
 Supposons que la suite $(u_n)_(n in NN)$ converge vers une limite $l in RR$ lorsque $n$ tend vers $+ infinity$. En utilisant la relation de récurrence, on a :
 $
-l = 1/l + 1/l = 2/l text("d'où") l = sqrt(2) text("ou") l=-sqrt(2)
+l = 1/l + 1/l = 2/l "d'où" l = sqrt(2) "ou" l=-sqrt(2)
 $
 
 Or pour tout $n in NN$, $u_n in [1,2]$. On en déduit que la seule limite possible de la suite $u_n$ est $l = sqrt(2)$.
@@ -222,7 +222,21 @@ Considérons la suite $(delta_n)_(n in NN)$ définie pour tout $n in NN$ par $de
 
 ===
 
+Pour tout $n in NN^*$, 
+$
+-(delta_(n+1)/ (sqrt(2)u_(n+1)) + delta_n / (sqrt(2)u_n)) = (sqrt(2) - u_(n+1))/(sqrt(2)u_(n+1)) + (sqrt(2) - u_n)/(sqrt(2)u_n) = (sqrt(2)u_n - u_n u_(n+1) + sqrt(2)u_(n+1) - u_n u_(n+1))/(sqrt(2)u_n u_(n+1)) 
 
+\ = (u_n + u_(n+1) - sqrt(2)u_n u_(n+1))/(u_n u_(n+1)) = (u_n + u_(n+1)) / (u_n u_(n+1)) - sqrt(2) = (1/u_(n+1) + 1/u_n - sqrt(2)) = delta_(n+2)
+$
+
+Et d'autre part,
+$
+  -delta_n/(2u_n) (sqrt(2) - 1/u_(n+1)) + delta_(n-1)/(2 u_(n-1) u_(n+1)) = 1/(sqrt(2)u_(n+1)) underbrace((delta_n/(sqrt(2)u_n) + delta_(n-1)/(sqrt(2)u_(n-1))), = - delta_(n+1)) - delta_n/(sqrt(2)u_n)
+
+  \ = -(delta_(n+1)/(sqrt(2)u_(n+1)) + delta_n/(sqrt(2)u_n)) = delta_(n+2)
+$
+
+Ce qui conclut.
 
 ===
 
@@ -266,5 +280,5 @@ Ainsi, $lim_(n-> +oo) (u_n - sqrt(2)) = 0$, d'où $lim_(n-> +oo) u_n = sqrt(2)$.
 
 
 $
-  text("Fin du DM12 - J'ai perdu.")
+  "Fin du DM12 - J'ai perdu."
 $

@@ -313,5 +313,7 @@ __pycache__/
 output
 .local-prog
 template.pdf
+truc.typ
+truc.pdf
 *.mst
 **/local_lib
