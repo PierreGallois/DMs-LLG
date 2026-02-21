@@ -22,3 +22,23 @@ $
 $
 
 Donc $lim_(n-> +oo) v_n = 2$. Comme $v_n$ converge, alors elle est majorée. $(u_n)$ est donc alors également majorée, et croissante. Donc $(u_n)$ converge par le théorème de la limite monotone.
+
+= Analyse de $(u_n)$
+
+==
+===
+Par définition, pour tout $n in NN^*$, $C_n (0) = sum_(k=1)^n cos(0) = n$. De plus, pour tout $t in ]0;pi]$ :
+
+$
+  C_n (t) &= sum_(k=1)^n Re(e^(i k t)) = Re(sum_(k=1)^n e^(i k t)) \
+&=^(e^(i t) != 1) Re(e^(i t)(e^(i n t) - 1)/(e^(i t) - 1)) \
+&=^#text[Angle moitié] Re(e^(i t)(e^(i n/2 t) dot 2 sin ((n t)/2)) / (e^(i t/2) dot 2sin(t/2))) \
+&= sin((n t)/2)/sin(t/2)Re(e^(i(n+1)/2 t)) \
+&= (sin((n t)/2)cos((n+1)/2t))/(sin(t/2))
+$
+
+===
+Pour tout $n in NN^*$, $C_n$ est une somme finie de fonctions continues sur $[0;pi]$, et est donc continue sur $[0;pi]$.
+
+===
+TODO
