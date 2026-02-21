@@ -42,3 +42,6 @@ Pour tout $n in NN^*$, $C_n$ est une somme finie de fonctions continues sur $[0;
 
 ===
 TODO
+
+===
+Pour tout $n in NN^*$ et $t in [O;pi]$, $D_n (t) = 1 + 2C_n (t)$. Par continuité de $C_n$ et opérations, $D_n$ est également continue sur $[0;pi]$
