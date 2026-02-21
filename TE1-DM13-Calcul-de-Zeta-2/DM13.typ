@@ -63,12 +63,12 @@ Soit $n in NN^*$. Les fonctions $t mapsto t^2/(2 pi) - t$ et $t mapsto C_n (t)$ 
 
 TODO : $d$ droit
 $
-  integral_0^pi (t^2/(2pi) - t)cos(n t) "d"t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) d t \
-  &=^(sin(k pi) = 0) - 1/n integral_0^pi (t/pi - 1)sin(n t) d t
+  integral_0^pi (t^2/(2pi) - t)cos(n t) "d"t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) "d"t \
+  &=^(sin(k pi) = 0) - 1/n integral_0^pi (t/pi - 1)sin(n t) "d"t
 $
 Ainsi que :
 $
-  integral_0^pi (t/pi-1)sin(n t) d t &= [1/n (t/pi - 1)(-cos(n t))]_0^pi - integral_0^pi 1/(n pi) (-cos(n t)) d t \
+  integral_0^pi (t/pi-1)sin(n t) "d"t &= [1/n (t/pi - 1)(-cos(n t))]_0^pi - integral_0^pi 1/(n pi) (-cos(n t)) "d"t \
   &= [1/n (t/pi - 1)(-cos(n t))]_0^pi + [1/(n^2 pi)(-sin(n t))]_0^pi \
 $
 On a :
@@ -78,26 +78,26 @@ $
 $
 On en conclut donc que :
 $
-  integral_0^pi (t^2/(2 pi) - t)cos(n t) d t = -1/n (-1/n) = 1/n^2
+  integral_0^pi (t^2/(2 pi) - t)cos(n t) "d"t = -1/n (-1/n) = 1/n^2
 $
 
 Enfin, par linéarité de l'intégrale,
 $
-  u_n &= sum_(k=1)^n 1/k^2 = sum_(k=1)^n integral_0^pi (t^2/(2 pi) - t)cos(k t) d t \
-  &=integral_0^pi (t^2/(2 pi) - t)(sum_(k=1)^n cos(k t)) d t \
-  &= integral_0^pi (t^2 / (2 pi) - t)C_n (t) d t
+  u_n &= sum_(k=1)^n 1/k^2 = sum_(k=1)^n integral_0^pi (t^2/(2 pi) - t)cos(k t) "d"t \
+  &=integral_0^pi (t^2/(2 pi) - t)(sum_(k=1)^n cos(k t)) "d"t \
+  &= integral_0^pi (t^2 / (2 pi) - t)C_n (t) "d"t
 $
 
 ==
 On calcule en primitivant :
 $
-  1/2 integral_0^pi (t^2/ (2 pi) - t) d t &= 1/2([1/(6 pi)t^3]_0^pi - [1/2t^2]_0^pi)\
+  1/2 integral_0^pi (t^2/ (2 pi) - t) "d"t &= 1/2([1/(6 pi)t^3]_0^pi - [1/2t^2]_0^pi)\
   &= 1/2(pi^2/6 - pi^2 / 2) = -pi^2 / 6
 $
 
 Ainsi, pour tout $n in NN^*$ :
 $
-  u_n - pi^2/6 &= u_n + 1/2integral_0^pi (t^2/(2 pi) - t) d t \
+  u_n - pi^2/6 &= u_n + 1/2integral_0^pi (t^2/(2 pi) - t) "d"t \
   &= integral_0^pi (t^2/(2 pi) - t)(C_n (t) + 1/2)\
   &= 1/2 integral_0^pi (t^2/(2 pi) - t)D_n (t)
 $
@@ -119,9 +119,9 @@ Donc $f$ est bien continue sur $[0;pi]$. D'après le théorème des bornes attei
 ===
 Pour tout $alpha in ]0;pi[$, on a les inégalités suivantes :
 $
-  abs(integral_0^alpha f(t)sin((2n+1)/2t) d t) &<= integral_0^alpha abs(f(t))abs(sin((2n+1)/2t)) d t #text[par inégalité triangulaire] \
-  &<= integral_0^alpha |f(t)| d t #text[car ] |sin| <= 1 \
-  &<=integral_0^alpha M d t =alpha M #text[car ] |f| <= M 
+  abs(integral_0^alpha f(t)sin((2n+1)/2t) "d"t) &<= integral_0^alpha abs(f(t))abs(sin((2n+1)/2t)) "d"t #text[par inégalité triangulaire] \
+  &<= integral_0^alpha |f(t)| "d"t #text[car ] |sin| <= 1 \
+  &<=integral_0^alpha M "d"t =alpha M #text[car ] |f| <= M 
 $
 
 ===
@@ -134,14 +134,14 @@ Qui est continue par opérations sur $[alpha;pi]$. Encore par le théorème des 
 ===
 Comme $f$ est de classe $C^1$, on peut calculer pour tout $n in NN$ par intégration par parties :
 $
-  I_n &= integral_alpha^pi f(t)sin((2n+1)/2t) d t \
-  &= [-2/(2n+1)f(t)cos((2n+1)/2 t)]_alpha^pi - integral_alpha^pi -2/(2n+1)f'(t)cos((2n+1)/2 t) d t \
-  &=^(cos((k+1/2)pi) = 0) 2/(2n + 1)f(alpha)cos((2n+1)/2alpha) + 2/(2n+1)integral_alpha^pi f'(t)cos((2n+1)/2 t) d t 
+  I_n &= integral_alpha^pi f(t)sin((2n+1)/2t) "d"t \
+  &= [-2/(2n+1)f(t)cos((2n+1)/2 t)]_alpha^pi - integral_alpha^pi -2/(2n+1)f'(t)cos((2n+1)/2 t) "d"t \
+  &=^(cos((k+1/2)pi) = 0) 2/(2n + 1)f(alpha)cos((2n+1)/2alpha) + 2/(2n+1)integral_alpha^pi f'(t)cos((2n+1)/2 t) "d"t 
 $
 
 Ainsi, pour tout $n in NN^*$, par l'inégalité triangulaire (sur la somme et l'intégrale):
 $
-  |I_n| &<= abs(2/(2n + 1)f(alpha)cos((2n+1)/2alpha)) + 2/(2n+1)integral_alpha^pi abs(f'(t))abs(cos((2n+1)/2 t)) d t \
+  |I_n| &<= abs(2/(2n + 1)f(alpha)cos((2n+1)/2alpha)) + 2/(2n+1)integral_alpha^pi abs(f'(t))abs(cos((2n+1)/2 t)) "d"t \
   &<= 2/(2n+1)abs(f(alpha)cos((2n+1)/2alpha)) + 2/(2n +1)(pi-alpha)M'
 $
 Comme $alpha$ et $M'$ sont fixés, par le théorème des gendarmes :
@@ -152,12 +152,12 @@ $
 ==
 Pour tout $n in NN^*$ :
 $
-  abs(u_n - pi^2/6) &= abs(1/2integral_0^pi (t^2/(2 pi)-t)D_n (t) d t) \
-  &= 1/2abs(integral_0^pi f(t)sin((2n+1)/2t) d t) "par l'expression du B)1)c"
+  abs(u_n - pi^2/6) &= abs(1/2integral_0^pi (t^2/(2 pi)-t)D_n (t) "d"t) \
+  &= 1/2abs(integral_0^pi f(t)sin((2n+1)/2t) "d"t) "par l'expression du B)1)c"
 $
 Or, pour tout $n in NN^*$ et pour tout choix de $0 < alpha < pi$, par la relation de Chasles et l'inégalité triangulaire :
 $
-  abs(integral_0^pi f(t)sin((2n+1)/2t) d t) &<= abs(integral_0^alpha f(t)sin((2n+1)/2t) d t) + abs(integral_alpha^pi f(t)sin((2n+1)/2t) d t) \
+  abs(integral_0^pi f(t)sin((2n+1)/2t) "d"t) &<= abs(integral_0^alpha f(t)sin((2n+1)/2t) "d"t) + abs(integral_alpha^pi f(t)sin((2n+1)/2t) "d"t) \
   &<= alpha M + abs(I_n)
 $
 Où $M$ ne dépend pas de $alpha$. Ainsi :
