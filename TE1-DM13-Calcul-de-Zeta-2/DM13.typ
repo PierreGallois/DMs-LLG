@@ -38,10 +38,22 @@ $
 $
 
 ===
-Pour tout $n in NN^*$, $C_n$ est une somme finie de fonctions continues sur $[0;pi]$, et est donc continue sur $[0;pi]$.
+Pour tout $n in NN^*, t in [0;pi]$, $C_n$ est une somme finie de fonctions continues sur $[0;pi]$, et est donc continue sur $[0;pi]$.
 
 ===
-TODO
+Pour tout $n in NN^*, t in ]0;pi]$, on calcule avec des indentités trigonométriques :
+$
+  sin((2n+1)/2t) &= sin(n/2t)cos((n+1)/2t) + cos(n/2t)sin((n+1)/2t)\
+  &= sin(t/2)C_n (t) + cos(n/2t)cos(t/2)sin(n/2t) + cos(n/2t)^2sin(t/2) \ 
+  &= sin(t/2)C_n (t) + sin(t/2) + cos(n/2t)cos(t/2)sin(n/2t) - sin(n/2t)^2sin(t/2) \ 
+  &= sin(t/2)C_n (t) + sin(t/2) + sin(n/2 t)[cos(n/2t)cos(t/2) - sin(n/2t)sin(t/2)] \ 
+  &= 2sin(t/2)C_n (t) + sin(t/2)
+$
+
+Ainsi, on obtient :
+$
+  D_n (t) = 2C_n (t) + 1 = sin((2n+1)/2t)/sin(t/2)
+$
 
 ===
 Pour tout $n in NN^*$ et $t in [O;pi]$, $D_n (t) = 1 + 2C_n (t)$. Par continuité de $C_n$ et opérations, $D_n$ est également continue sur $[0;pi]$
