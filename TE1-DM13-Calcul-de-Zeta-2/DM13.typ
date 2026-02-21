@@ -118,3 +118,21 @@ $
   f'(t) = ((1-t/pi)sin(t/2) - 1/2(t - t^2/(2 pi))cos(t/2))/sin(t/2)^2
 $
 Qui est continue par opérations sur $[alpha;pi]$. Encore par le théorème des bornes atteintes, on dispose donc de $M' in RR^+$ tel que $|f'| <= M'$ sur $[alpha;pi]$.
+
+===
+Comme $f$ est de classe $C^1$, on peut calculer pour tout $n in NN$ par intégration par parties :
+$
+  I_n &= integral_alpha^pi f(t)sin((2n+1)/2t) d t \
+  &= [-2/(2n+1)f(t)cos((2n+1)/2 t)]_alpha^pi - integral_alpha^pi -2/(2n+1)f'(t)cos((2n+1)/2 t) d t \
+  &=^(cos((k+1/2)pi) = 0) 2/(2n + 1)f(alpha)cos((2n+1)/2alpha) + 2/(2n+1)integral_alpha^pi f'(t)cos((2n+1)/2 t) d t 
+$
+
+Ainsi, pour tout $n in NN^*$, par l'inégalité triangulaire (sur la somme et l'intégrale):
+$
+  |I_n| &<= abs(2/(2n + 1)f(alpha)cos((2n+1)/2alpha)) + 2/(2n+1)integral_alpha^pi abs(f'(t))abs(cos((2n+1)/2 t)) d t \
+  &<= 2/(2n+1)abs(f(alpha)cos((2n+1)/2alpha)) + 2/(2n +1)(pi-alpha)M'
+$
+Comme $alpha$ et $M'$ sont fixés, par le théorème des gendarmes :
+$
+  lim_(n->+oo)abs(I_n) = 0 "d'où" lim_(n -> +oo) I_n = 0
+$
