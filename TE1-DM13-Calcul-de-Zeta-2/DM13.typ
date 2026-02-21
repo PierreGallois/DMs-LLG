@@ -45,3 +45,26 @@ TODO
 
 ===
 Pour tout $n in NN^*$ et $t in [O;pi]$, $D_n (t) = 1 + 2C_n (t)$. Par continuité de $C_n$ et opérations, $D_n$ est également continue sur $[0;pi]$
+
+==
+Soit $n in NN^*$. Les fonctions $t mapsto t^2/(2 pi) - t$ et $t mapsto C_n (t)$ sont de classe $C^oo$ par opérations ($cos$ est de classe $C^oo$). On peut donc calculer par intégration par parties :
+
+TODO : $d$ droit
+$
+  integral_0^pi (t^2/(2pi) - t)cos(n t) d t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) d t \
+  &=^(sin(k pi) = 0) - 1/n integral_0^pi (t/pi - 1)sin(n t) d t
+$
+Ainsi que :
+$
+  integral_0^pi (t/pi-1)sin(n t) d t &= [1/n (t/pi - 1)(-cos(n t))]_0^pi - integral_0^pi 1/(n pi) (-cos(n t)) d t \
+  &= [1/n (t/pi - 1)(-cos(n t))]_0^pi + [1/(n^2 pi)(-sin(n t))]_0^pi \
+$
+On a :
+$
+  [1/n (t/pi - 1)(-cos(n t))]_0^pi &= (0 - 1/n (-1)(-cos(0))) = -1/n #text[et] \
+  [1/(n^2 pi)(-sin(n t))]_0^pi &=^(sin(k pi) = 0) = 0 
+$
+On en conclut donc que :
+$
+  integral_0^pi (t^2/(2 pi) - t)cos(n t) d t = -1/n (-1/n) = 1/n^2
+$
