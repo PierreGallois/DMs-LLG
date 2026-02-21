@@ -63,7 +63,7 @@ Soit $n in NN^*$. Les fonctions $t mapsto t^2/(2 pi) - t$ et $t mapsto C_n (t)$ 
 
 TODO : $d$ droit
 $
-  integral_0^pi (t^2/(2pi) - t)cos(n t) d t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) d t \
+  integral_0^pi (t^2/(2pi) - t)cos(n t) "d"t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) d t \
   &=^(sin(k pi) = 0) - 1/n integral_0^pi (t/pi - 1)sin(n t) d t
 $
 Ainsi que :
