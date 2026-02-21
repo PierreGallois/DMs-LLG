@@ -136,3 +136,23 @@ Comme $alpha$ et $M'$ sont fixés, par le théorème des gendarmes :
 $
   lim_(n->+oo)abs(I_n) = 0 "d'où" lim_(n -> +oo) I_n = 0
 $
+
+==
+Pour tout $n in NN^*$ :
+$
+  abs(u_n - pi^2/6) &= abs(1/2integral_0^pi (t^2/(2 pi)-t)D_n (t) d t) \
+  &= 1/2abs(integral_0^pi f(t)sin((2n+1)/2t) d t) "par l'expression du B)1)c"
+$
+Or, pour tout $n in NN^*$ et pour tout choix de $0 < alpha < pi$, par la relation de Chasles et l'inégalité triangulaire :
+$
+  abs(integral_0^pi f(t)sin((2n+1)/2t) d t) &<= abs(integral_0^alpha f(t)sin((2n+1)/2t) d t) + abs(integral_alpha^pi f(t)sin((2n+1)/2t) d t) \
+  &<= alpha M + abs(I_n)
+$
+Où $M$ ne dépend pas de $alpha$. Ainsi :
+$
+  abs(u_n - pi^2 / 6) <= 1/2alpha M + 1/2abs(I_n)
+$
+Pour tout $epsilon > 0$, on peut alors choisir $0<alpha<pi$ tel que $1/2 alpha M  < epsilon/2$. Pour ce $alpha$, il existe un rang à partir duquel $abs(I_n) < epsilon /2$ et donc à partir duquel $abs(u_n - pi^2/6) < epsilon$. Ainsi, on obtient enfin :
+$
+  lim_(n->+oo) u_n = pi^2/6
+$
