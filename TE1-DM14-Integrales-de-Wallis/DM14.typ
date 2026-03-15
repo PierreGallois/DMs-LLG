@@ -74,7 +74,7 @@ Soit $p in NN$. On suppose que $W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1)
 
 Montrons que $W_(2p+2) = (2p+2)!/(2^(2p+2)((p+1)!)^2) pi/2 "et" W_(2p+3) = (2^(2p+2)((p+1)!)^2)/(2p+3)!$.
 
-D'après 2b, d'une part,
+D'après 2.b, d'une part,
 $
   W_(2p+2) &= (2p+1)/(2p+2) W_(2p) \
   &= (2p+1)/(2p+2) (2p)!/(2^(2p)(p!)^2) pi/2 \
@@ -97,3 +97,35 @@ On a donc montré par le principe de récurrence que pour tout $p in NN$,
 $
   W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1) = (2^(2p)(p!)^2)/(2p+1)!.
 $
+
+==
+===
+Soit $n in NN$.
+$
+  W_(n+1) - W_(n) &= integral_0^(pi/2) cos^(n+1) (t) "d"t - integral_0^(pi/2) cos^n (t) "d"t \
+  &= integral_0^(pi/2) cos^n (t) (cos(t) - 1) "d"t.
+$
+
+Or, pour tout $t in [0, pi/2]$, $0 <= cos(t) <= 1$ donc $cos^n (t) >= 0$ et $cos(t) - 1 <= 0$.
+
+Ainsi, $cos^n (t) (cos(t) - 1) <= 0$ sur $[0, pi/2]$. Par conséquent $integral_0^(pi/2) cos^n (t) (cos(t) - 1) "d"t <= 0$
+i.e. $W_(n+1) - W_(n) <= 0$.
+
+La suite $(W_n)_(n in NN)$ est donc décroissante.
+
+De plus, pour tous $t in [0, pi/2], n in NN$, on a $cos^n (t) >= 0$.
+
+Donc $integral_0^(pi/2) cos^n (t) "d"t > 0$ i.e. $W_n > 0$. (Inégalité stricte puisque $cos^n (t) > 0$ en au moins un point, par exemple $t = pi/4$.)
+
+
+La suite $(W_n)_(n in NN)$ étant décroissante et minorée, d'après le TLM, elle converge vers $l in RR_+$.
+
+===
+Soit $n in NN$. Par décroissance de la suite $(W_n)_(n in NN)$, on a :
+$
+  W_(n+2) &<= W_(n+1) <= W_n \
+  <==> (n+1)/(n+2) W_n &<= W_(n+1) <= W_n "d'après 2.b" \
+  <==> (n+1)/(n+2) &<= W_(n+1) / W_n <= 1
+$
+
+$limits(lim)_(n-->+infinity) (n+1)/(n+2) = 1$ donc d'après le théorème des gendarmes, $limits(lim)_(n-->+infinity) W_(n+1) / W_n = 1$.
