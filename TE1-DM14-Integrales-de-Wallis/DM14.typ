@@ -52,3 +52,48 @@ $
   (n+2) W_(n+2) &= (n+1) W_n \
   W_(n+2) &= (n+1)/(n+2) W_n.
 $
+
+===
+Montrons par récurrence que, pour tout $p in NN$,
+$
+  W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1) = (2^(2p)(p!)^2)/(2p+1)!.
+$
+
+- _Initialisation._
+Pour $p = 0$ :
+$
+  "d'une part, " W_(2 times 0) = W_0 = pi/2 quad "et" quad
+  (2 times 0)!/(2^(2 times 0)(0!)^2) pi/2 = pi/2 ; \
+  "d'autre part, " W_(2 times 0 + 1) = W_1 = 1 quad "et" quad
+  (2^(2 times 0)(0!)^2)/(2 times 0+1)! = 1.
+$
+On a bien $W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1) = (2^(2p)(p!)^2)/(2p+1)!$ pour $p=0$.
+
+- _Hérédité._
+Soit $p in NN$. On suppose que $W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1) = (2^(2p)(p!)^2)/(2p+1)!$.
+
+Montrons que $W_(2p+2) = (2p+2)!/(2^(2p+2)((p+1)!)^2) pi/2 "et" W_(2p+3) = (2^(2p+2)((p+1)!)^2)/(2p+3)!$.
+
+D'après 2b, d'une part,
+$
+  W_(2p+2) &= (2p+1)/(2p+2) W_(2p) \
+  &= (2p+1)/(2p+2) (2p)!/(2^(2p)(p!)^2) pi/2 \
+  &= (2p+1)!/(2^(2p) (2p+2) (p!)^2) pi/2 \
+  &= (2p+2)!/(2^(2p) (2p+2)^2 (p!)^2) pi/2 \
+  &= (2p+2)!/(2^(2p+2) (p+1)^2 (p!)^2) pi/2 \
+  &= (2p+2)!/(2^(2p+2) ((p+1)!)^2) pi/2.
+$
+
+Et d'autre part,
+$
+  W_(2p+3) &= (2p+2)/(2p+3) W_(2p+1) \
+  &= ((2p+2) 2^(2p)(p!)^2)/((2p+3)(2p+1)!) \
+  &= (2^(2p) (2p+2)^2 (p!)^2)/((2p+3)(2p+2)(2p+1)!) \
+  &= (2^(2p+2) (p+1)^2 (p!)^2)/((2p+3)!) \
+  &= (2^(2p+2) ((p+1)!)^2)/((2p+3)!).
+$
+
+On a donc montré par le principe de récurrence que pour tout $p in NN$,
+$
+  W_(2p) = (2p)!/(2^(2p)(p!)^2) pi/2 "et" W_(2p+1) = (2^(2p)(p!)^2)/(2p+1)!.
+$
