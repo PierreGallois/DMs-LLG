@@ -61,7 +61,6 @@ Pour tout $n in NN^*$ et $t in [O;pi]$, $D_n (t) = 1 + 2C_n (t)$. Par continuit�
 ==
 Soit $n in NN^*$. Les fonctions $t mapsto t^2/(2 pi) - t$ et $t mapsto C_n (t)$ sont de classe $C^oo$ par opérations ($cos$ est de classe $C^oo$). On peut donc calculer par intégration par parties :
 
-TODO : $d$ droit
 $
   integral_0^pi (t^2/(2pi) - t)cos(n t) "d"t &= [1/n (t^2/(2 pi)-t)sin(n t)]_0^pi - integral_0^pi 1/n (t/pi-1)sin(n t) "d"t \
   &=^(sin(k pi) = 0) - 1/n integral_0^pi (t/pi - 1)sin(n t) "d"t
