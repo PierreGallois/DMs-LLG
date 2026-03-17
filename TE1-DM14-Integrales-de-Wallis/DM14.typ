@@ -129,3 +129,28 @@ $
 $
 
 $limits(lim)_(n-->+infinity) (n+1)/(n+2) = 1$ donc d'après le théorème des gendarmes, $limits(lim)_(n-->+infinity) W_(n+1) / W_n = 1$.
+
+===
+On a pour tout $n in NN^*$ :
+$
+  (n+1)W_(n+1)W_n &= (n+1)(n)/(n+1)W_(n-1)W_n \
+  &= n W_(n-1)W_n
+$
+La suite $(n W_(n-1)W_n)_(n in NN^*)$ est donc bien constante, de valeur $W_0W_1 = pi/2$.
+
+===
+Pour tout $n in NN^*$:
+$
+  n/(n+1)W_(n-1) <= W_n <= W_(n-1) " d'où " n/(n+1)pi/2 <= n W_n^2 <= pi/2
+$
+En utilisant le fait que les $W_n$ sont positifs.
+
+Par croissance de $x mapsto sqrt(x)$ et positivité des termes, on obtient :
+$
+  sqrt(n/(n+1)) sqrt(pi/2) <= sqrt(n)W_n <= sqrt(pi/2)
+$
+Par gendarmes, on obtient :
+$
+  lim_(n->+oo)sqrt(n)W_n = sqrt(pi/2)
+$
+En multipliant les équivalents, on a $W_n ~_(n -> +oo) sqrt(pi/(2n))$. Comme $sqrt(pi/(2n)) ->^(n-> +oo) 0$, idem pour $(W_n)$.
