@@ -232,3 +232,19 @@ Et d'autre part :
 $
   1+t^2/n <= e^(t^2/n) "d'où" (1-t^2/n)^(-n) >= e^(-t^2) "et" J_n >= integral_0^sqrt(n) e^(-t^2)"d"t
 $
+
+===
+On pose :
+$
+  cases(
+    u = arcsin(t/sqrt(n)) <==> t = sqrt(n)sin(u),
+    "d"u = 1/sqrt(n)1/(sqrt(1-(t/sqrt(n))^2))"d"t = 1/sqrt(n)1/(cos(u))"d"t <==> "d"t=sqrt(n)cos(u)"d"u
+  )
+$
+Où on utilise la fonction bien définie, positive et $cal(C)^(oo)$, $arcsin :[0;1] -> [0;pi/2]$
+
+On obtient :
+$
+  I_n &= integral_0^(pi/2) sqrt(n)cos(u)(1-(sqrt(n)sin(u))^2/n)^n "d"u \
+  &= sqrt(n)integral_0^(pi/2) cos^(2n+1)(u)"du" = sqrt(n)W_(2n+1)
+$
