@@ -154,3 +154,26 @@ $
   lim_(n->+oo)sqrt(n)W_n = sqrt(pi/2)
 $
 En multipliant les équivalents, on a $W_n ~_(n -> +oo) sqrt(pi/(2n))$. Comme $sqrt(pi/(2n)) ->^(n-> +oo) 0$, idem pour $(W_n)$.
+
+= Produit et formule de Wallis, formule de Stirling
+==
+===
+Démontrons par récurrence que pour tout $n in NN$ :
+$
+  rho_n = 2/pi product_(k=1)^n ((2k)^2)/((2k-1)(2k+1))
+$
+
+#underline[Initialisation :] $rho_0 =  1 / (pi / 2) = 2/pi.$
+
+#underline[Hérédité :] Supposons l'assertion pour $n in NN$. On a alors :
+$
+  rho_(n+1) &= W_(2n+3)/W_(2n+2) = ((2n+2)/(2n+3)W_(2n+1))/((2n+1)/(2n+2)W_(2n)) \
+  &=^"HR" 2/pi product_(k=1)^n ((2k)^2)/((2k-1)(2k+1)) dot (2(n+1))^2/((2n+1)(2n+3)) \
+  &= 2/pi product_(k=1)^(n+1) ((2k)^2)/((2k-1)(2k+1))
+$
+
+===
+Comme $W_n ~_(n->+oo) W_(n+1)$, en particulier, $W_(2n) ~_(n->+oo) W_(2n+1)$. Donc $(rho_n) -> 1$ et on obtient :
+$
+  lim_(n -> +oo) product_(k=1)^n ((2k)^2)/((2k-1)(2k+1)) = pi/2
+$
