@@ -192,3 +192,43 @@ $
   lim_(n->+oo)sqrt(n+1/2)/2^(2n)binom(2n, n) = 1/sqrt(pi)
 $
 Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
+
+== TODO
+
+
+= Calcul de $zeta(2)$ par la méthode de Matsuoka
+= Calcul de l'intégrale de Gauss
+
+==
+===
+Supposons que $b>a$. Alors :
+$
+  F(b) - F(a) =^"Chasles" integral_a^b e^(-t^2)"d"t
+$
+Comme $a < b$ et que $e^(-t^2) > 0$ sur $[a;b]$, on obtient $F(b) - F(a) >0$. $F$ est donc strictement croissante sur $RR^+$.
+
+===
+Pour tout $t >= 1$, $t^2 >= t$. Par décroissance de $x mapsto e^(-x)$ sur $RR^+$, on a $e^(-t^2) <= e^(-t)$ sur $[1;+oo]$.
+
+===
+Pour tout $x >= 1$, on a :
+$
+  F(x) &=^"Chasles" integral_0^1 e^(-t^2)"d"t + integral_1^x e^(-t^2)"d"t \
+  &<= integral_0^1 e^(-t^2)"d"t + integral_1^x e^(-t)"d"t = integral_0^1 e^(-t^2)"d"t - e^(-x) + 1/e \
+  &<=^(e^(-x) >= 0) integral_0^1 e^(-t^2)"d"t + 1/e
+$
+La fonction $F$ est donc strictement croissante et admet une majoration par une constante. Par le TLM, $F$ admet une limite en $+oo$.
+
+==
+===
+Comme la fonction $x mapsto ln(1+x)$ est concave sur $]-1;+oo[$, elle est en dessous de toutes ses tangentes. En $0$, on obtient pour tout $x in ]-1;+oo[$ que $ln(1+x) <= x$. (Par stricte croissante de l'exponentielle, cette inégalité est équivalente à $1+x <= e^x$).
+
+===
+On a d'une part pour tout $0 <= t <= sqrt(n)$ :
+$
+  1-t^2/n <= e^(-t^2/n) "d'où" (1-t^2/n)^n <= e^(-t^2) "et" I_n <= integral_0^sqrt(n)e^(-t^2)"d"t
+$
+Et d'autre part :
+$
+  1+t^2/n <= e^(t^2/n) "d'où" (1-t^2/n)^(-n) >= e^(-t^2) "et" J_n >= integral_0^sqrt(n) e^(-t^2)"d"t
+$
