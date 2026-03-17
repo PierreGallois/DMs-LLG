@@ -177,3 +177,18 @@ Comme $W_n ~_(n->+oo) W_(n+1)$, en particulier, $W_(2n) ~_(n->+oo) W_(2n+1)$. Do
 $
   lim_(n -> +oo) product_(k=1)^n ((2k)^2)/((2k-1)(2k+1)) = pi/2
 $
+
+==
+===
+Avec les formules de la question A)2)c), on a pour tout $n in NN$:
+$
+  1/rho_n &= W_(2n)/W_(2n+1) = pi/2 ((2n)!/(2^(2n)(n!)^2))/((2^(2n)(n!)^2)/(2n+1)!) \
+   &=pi/2 (2n+1)/(2^(4n)) ((2n)!/(n!)^2)^2 \
+   &= pi (2n+1)/(2^(4n+1))binom(2n,n)^2
+$
+===
+Comme $(rho_n) -> 1$, $1/sqrt(pi rho_n) -->^(n-> +oo) 1/sqrt(pi)$. On trouve donc :
+$
+  lim_(n->+oo)sqrt(n+1/2)/2^(2n)binom(2n, n) = 1/sqrt(pi)
+$
+Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
