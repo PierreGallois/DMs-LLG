@@ -236,6 +236,24 @@ $
   &= 2n integral_0^(pi/2)t sin(t)cos^(2n-1)(t)"d"t
 $
 
+===
+Encore en intégrant par parties, on obtient pour tout $n in NN^*$ :
+$
+  W_(2n) = 2n integral_0^(pi/2)underbrace(t,u') underbrace(sin(t)cos^(2n-1)(t), v)"d"t
+$
+La fonction $v$ est dérivable sur $[0;pi/2]$, de dérivée :
+$
+  v'(t) &= cos(t)cos^(2n-1)(t) + sin(t)(2n-1)(-sin(t))cos^(2n-2)(t) \
+  &= cos^(2n)(t) + (2n-1)(cos^2(t)-1)cos^(2n-2)(t) \
+  &=2n cos^(2n)(t) - (2n-1)cos^(2n-2)(t)
+$
+On a donc :
+$
+  W_(2n) &= 2n dot [u(t) v(t)]_0^(pi/2) - (2n)/2integral_0^(pi/2)t^2[2n cos^(2n)(t) - (2n-1)cos^(2n-2)(t)]"d"t \
+  &=^(u(0) = 0)_(v(pi/2) = 0) - 2n^2integral_0^(pi/2)t^2cos^(2n)(t)"d"t + n(2n-1) integral_0^(pi/2)t^2cos^(2n-2)(t) "d"t \
+  &=n(2n-1)M_(2n-2) - 2n^2M_(2n)
+$
+
 = Calcul de l'intégrale de Gauss
 
 ==
