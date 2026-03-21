@@ -248,3 +248,52 @@ $
   I_n &= integral_0^(pi/2) sqrt(n)cos(u)(1-(sqrt(n)sin(u))^2/n)^n "d"u \
   &= sqrt(n)integral_0^(pi/2) cos^(2n+1)(u)"du" = sqrt(n)W_(2n+1)
 $
+
+===
+Similairement, on pose :
+$
+  cases(
+    u = arctan(t/sqrt(n)) <==> t = sqrt(n)tan(u),
+    "d"u = 1/sqrt(n)1/(1+(t/sqrt(n))^2)"d"t = 1/sqrt(n)cos^2(u)"d"t <==> "d"t=sqrt(n)1/(cos^2(u))"d"u
+  )
+$
+Où on utilise la fonction bien définie, positive et $cal(C)^(oo)$, $arctan: [0;1] -> [0;pi/4]$.
+On obtient alors :
+$
+  J_n = integral_0^(pi/4) sqrt(n)1/(cos^2(u))(1+tan(u)^2)^(-n) "d"u
+$
+Comme on a l'identité $1+tan^2(x) = 1/(cos^2(x))$ sur $[0;pi/4]$, on a enfin :
+$
+  J_n = sqrt(n) integral_0^(pi/4) cos^(2n-2)(u)"d"u <=^(cos^(2n-2)>=0) sqrt(n)integral_0^(pi/2)cos^(2n-2)(u)"d"u = sqrt(n)W_(2n-2)
+$
+
+===
+Avec les question précédentes, on obtient l'encadrement pour tout $n in NN^*$ :
+$
+  sqrt(n) W_(2n+1) = I_n <= integral_0^(sqrt(n)) e^(-t^2)"d"t <= J_n <= sqrt(n)W_(2n-2)
+$
+
+Par la question $A)3)d$, d'une part, :
+$
+  lim_(n->+oo)sqrt(2n+1)W_(2n+1) = sqrt(pi/2) = sqrt(2)lim_(n->+oo)sqrt(n)W_(2n+1)
+$
+Où l'on a la dernière égalité car $sqrt(2n+1) ~_(n->+oo) sqrt(2)sqrt(n)$. On a alors :
+$
+  lim_(n->+oo)sqrt(n)W_(2n+1) = sqrt(pi)/2
+$
+De même,
+$
+  lim_(n->+oo)sqrt(2n-2)W_(2n-2) = sqrt(pi/2) = sqrt(2)lim_(n->+oo)sqrt(n)W_(2n-2)
+$
+D'où :
+$
+  lim_(n->+oo)sqrt(n)W_(2n-2) = sqrt(pi)/2
+$
+Par gendarmes, on en déduit que :
+$
+  lim_(n->+oo)integral_(0)^(sqrt(n)) e^(-t^2)"d"t = sqrt(pi)/2
+$
+Comme $sqrt(n) -->^(n->+oo) +oo$, par unicité de la limite dont on a établi l'existence en $1)$, on a enfin :
+$
+  integral_0^(+oo)e^(-t^2) = lim_(n->+oo)integral_0^sqrt(n) e^(-t^2)"d"t  = sqrt(pi)/2
+$
