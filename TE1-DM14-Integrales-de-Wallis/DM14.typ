@@ -197,6 +197,45 @@ Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
 
 
 = Calcul de $zeta(2)$ par la méthode de Matsuoka
+==
+===
+La fonction $sin$ est concave sur $[0;pi/2]$ : sa dérivée seconde est $-sin$ qui est négative sur cet intervalle. Comme une fonction concave et au dessus de toutes ses cordes, pour tout $t in [0;pi/2]$ :
+$
+  0 <= (1 - 0)/(pi/2-0)t <= sin(t) &"soit" 0 <= t <= pi/2sin(t) \
+  &"puis" 0 <= t^2 <= pi^2/4(1-cos^2(t))
+$
+
+Car $x mapsto x^2$ est croissante sur $RR^+$. Par croissance de l'intégrale, on en déduit que pour tout $n in NN$ :
+$
+  0 <= M_(2n) = integral_0^(pi/2) t^2cos^(2n) (t)"d"t <=pi^2/4(W_(2n) - W_(2n+2))
+$
+
+Comme pour tout $n in NN$, $W_(n+2) = (n+1)/(n+2)W_n$, on obtient :
+$
+  W_(2n) - W_(2n+2) = W_(2n)(1 - (2n+1)/(2n+2)) = W_(2n)/(2n+2)
+$
+Ce qui donne l'encadrement attendu.
+
+===
+Comme les termes $W_n$ sont strictement positifs, on a pour tout $n in NN$:
+$
+  0 <= M_(2n)/W_(2n) <= pi^2/4 1/(2n+2)
+$
+Par gendarmes, on en déduit :
+$
+  lim_(n->+oo) M_(2n)/W_(2n) = 0
+$
+
+==
+===
+Soit $n in NN^*$. On peut écrire en intégrant par parties : (les fonctions en présence sont toutes $cal(C)^(oo))$
+
+$
+  W_(2n) &= integral_0^(pi/2) underbrace(1, u') dot underbrace(cos^(2n)(t),v)"d"t \
+  &= [t cos^(2n)(t)]_0^(pi/2) - 2n integral_0^(pi/2)t (-sin(t))cos^(2n-1)(t)"d"t \
+  &= 2n integral_0^(pi/2)t sin(t)cos^(2n-1)(t)"d"t
+$
+
 = Calcul de l'intégrale de Gauss
 
 ==
