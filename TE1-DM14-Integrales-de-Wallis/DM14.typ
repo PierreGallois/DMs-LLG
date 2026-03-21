@@ -254,6 +254,31 @@ $
   &=n(2n-1)M_(2n-2) - 2n^2M_(2n)
 $
 
+En utilisant le fait que $W_(2n) = (2n-1)/(2n)W_(2n-2)$, on a avec l'égalité précédente : ($W_(2n) != 0$)
+$
+  1 &= n(2n-1)M_(2n-2) / ((2n-1)/(2n)W_(2n-2)) - 2n^2M_(2n)/W_(2n) \
+  &= 2n^2 M_(2n-2)/W_(2n-2) - 2n^2 M_(2n)/W_(2n)
+$
+D'où l'égalité :
+$
+  2(M_(2n-2)/W_(2n-2) - M_(2n)/W_(2n)) = 1/(n^2)
+$
+
+===
+Soit $n in NN^*$. On a alors :
+$
+  S_n &= 2sum_(k=1)^n M_(2k-2)/W_(2k-2) - M_(2k)/W_(2k) "d'où par téléscopage" \
+  &=2(M_0/W_0 - M_(2n)/W_(2n)) \
+$
+D'une part, $(M_(2n)/W_(2n)) -->^(n->+oo) 0$. D'autre part, $W_0 = pi/2$ et :
+$
+  M_0 = integral_0^(pi/2)t^2"d"t = 1/3pi^3/8
+$
+Par opérations sur les limites, on obtient enfin :
+$
+  lim_(n->+oo) S_n = zeta(2) &= 2(1/3pi^3/8)/(pi/2) \
+  &= pi^2/6
+$
 = Calcul de l'intégrale de Gauss
 
 ==
