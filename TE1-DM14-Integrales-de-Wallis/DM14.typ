@@ -196,6 +196,41 @@ Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
 == TODO
 
 ===
+La fonction $f$ est dérivable sur $RR_+^*$ par opérations, de dérivée :
+$
+  f'(x) &= "d"/("d"x)(x ln(1+1/x) + 1/2 ln(1+1/x)) \
+  &= ln(1+1/x) + x (-1/x^2)1/(1+1/x) + 1/2 (-1/x^2)1/(1+1/x) \
+  &= ln(1+1/x) - x/(x^2)x/(x+1) - 1/2 1/(x^2)x/(x+1) \
+  &= ln(1+1/x) - 1/(x+1) - 1/2 1/(x(x+1)) \
+  &=^(1/(x(x+1)) = 1/x - 1/(x+1)) ln(1+1/x) - 1/2(1/x+1/(x+1))
+$
+
+Cette fonction est à nouveau dérivable sur $RR_+^*$ et pour tout $x in RR$ :
+$
+  f''(x) &= -1/x^2 1/(1+1/x) - 1/2(-1/x^2 - 1/(x+1)^2) \
+    &= 1/2(1/x^2 + 1/(x+1)^2)-1/x(x+1)
+$
+
+Or, pour tout $x in RR_+^*$, $1/x, 1/(x+1) > 0$ et d'après l'inégalité arithmético-géométrique :
+$
+  1/2(1/(x^2) + 1/(x+1)^2) >= sqrt(1/x^2 1/(x+1)^2) = 1/(x(x+1))
+$
+C'est à dire que $f''$ est positive et donc que sur $RR_+^*$, $f'$ est croissante.
+
+Comme $lim_(x->+oo) f'(x) = 0$ et que $f'$ est croissante, $f'$ est négative sur $RR_+^*$ et $f$ est décroissante.
+Or, $lim_(x->+oo) f(x) = 1$ (par croissances comparées). $f$ est donc nécessairement minorée par $1$ sur $RR_+^*$.
+
+// De plus, comme une fonction convexe est au dessus de toutes ses tangentes, on a pour tout $a in RR_+^*$ l'inégalité :
+// $
+//   forall t in RR_+^*, f(t) &>= f'(a)(t-a) + f(a) \
+//   &>=f'(a)t - a f'(a) + f(a) \
+// $
+// Or :
+// - $lim_(a->+oo)f(a) = 1$ par croissances comparées
+// - $lim_(a->+oo) a f'(a) = 1- 1 - 0 = 0$ par croissances comparées et opérations
+// - $lim_(a->+oo) f'(a) = 0$ par opérations
+
+// Ainsi, pour tout $t in RR_+^*$ fixé, en passant à la limite $a$ dans l'inégalité précédente, on obtient $f(t) >= 1$. Donc $f$ est minorée par $1$#footnote[$y=1$ est la "tangente à l'infini"].
 
 ===
 Pour tout $n in NN^*$ :
