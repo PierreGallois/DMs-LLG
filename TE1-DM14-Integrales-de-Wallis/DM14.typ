@@ -195,6 +195,17 @@ Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
 
 == TODO
 
+===
+
+===
+Pour tout $n in NN^*$ :
+$
+  v_(n+1) - v_n &= ln(u_(n+1)/u_n) = ln((n+1)((n+1)^(n+1/2)/((n+1)!e^(n+1)))/(n^(n+1/2)/(n!e^n))) \
+  &= ln(1/e ((n+1)/n)^(n+1/2)) = (n+1/2)ln(1+1/n) - 1 = f(n) - 1
+$
+
+===
+Pour tout $n in NN^*$, $v_(n+1) - v_n >= 0$. Donc $(v_n)$ est croissante. D'autre part, pour tout $n in NN^*$ :
 
 = Calcul de $zeta(2)$ par la méthode de Matsuoka
 ==
