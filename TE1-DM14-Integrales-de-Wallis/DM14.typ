@@ -193,8 +193,7 @@ $
 $
 Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
 
-== TODO
-
+==
 ===
 La fonction $f$ est dérivable sur $RR_+^*$ par opérations, de dérivée :
 $
@@ -208,14 +207,11 @@ $
 Cette fonction est à nouveau dérivable sur $RR_+^*$ et pour tout $x in RR$ :
 $
   f''(x) &= -1/x^2 1/(1+1/x) - 1/2(-1/x^2 - 1/(x+1)^2) \
-    &= 1/2(1/x^2 + 1/(x+1)^2)-1/x(x+1)
+    &= 1/2(1/x^2 + 1/(x+1)^2)-1/x(x+1) \
+    &= 1/2((1/x)^2 + (1/(x+1)^2) - 2 1/x 1/(x+1)) = 1/2(1/x - 1/(x+1))^2 >= 0
 $
 
-Or, pour tout $x in RR_+^*$, $1/x, 1/(x+1) > 0$ et d'après l'inégalité arithmético-géométrique :
-$
-  1/2(1/(x^2) + 1/(x+1)^2) >= sqrt(1/x^2 1/(x+1)^2) = 1/(x(x+1))
-$
-C'est à dire que $f''$ est positive et donc que sur $RR_+^*$, $f'$ est croissante.
+Donc $f''$ est positive et, sur $RR_+^*$, $f'$ est croissante.
 
 Comme $lim_(x->+oo) f'(x) = 0$ et que $f'$ est croissante, $f'$ est négative sur $RR_+^*$ et $f$ est décroissante.
 Or, $lim_(x->+oo) f(x) = 1$ (par croissances comparées). $f$ est donc nécessairement minorée par $1$ sur $RR_+^*$.
@@ -231,6 +227,17 @@ Or, $lim_(x->+oo) f(x) = 1$ (par croissances comparées). $f$ est donc nécessai
 // - $lim_(a->+oo) f'(a) = 0$ par opérations
 
 // Ainsi, pour tout $t in RR_+^*$ fixé, en passant à la limite $a$ dans l'inégalité précédente, on obtient $f(t) >= 1$. Donc $f$ est minorée par $1$#footnote[$y=1$ est la "tangente à l'infini"].
+
+Similairement, $g$ est dérivable deux fois sur $RR_+^*$ par somme et pour tout $x in RR_+^*$ :
+$
+  g'(x) &= ln(1+1/x) - 1/2(1/x + 1/(x+1)) + 1/12(1/x^2 - 1/(x+1)^2) \
+"et" g''(x) &= 1/2(1/x - 1/(x+1))^2  - 1/6(1/x^3 - 1/(x+1)^3) \
+&= 1/2 1/(x(x+1))^2 - 1/6 (x^3+3x^2+3x+1 - x^3)/(x(x+1))^3 \
+&= 1/6 (3x+3)/(x(x+1))^3 - 1/6 ((x^3+3x^2+3x+1 - x^3)/(x(x+1))^3) \
+&= -1/(6(x(x+1))^3) <= 0
+$
+
+Donc $g'$ est décroissante sur $RR_+^*$. Comme $lim_(x->+oo) g'(x) = 1 - 1 = 0$ par croissances comparées, $g'$ est négative sur $RR_+^*$ et $g$ est croissante sur $RR_+^*$. Enfin, $lim_(x->+oo) g(x) = 1 - 1/12 + 1/12 = 1$, et $g$ est majorée par $1$ sur $RR_+^*$.
 
 ===
 Pour tout $n in NN^*$ :
