@@ -248,6 +248,53 @@ $
 
 ===
 Pour tout $n in NN^*$, $v_(n+1) - v_n >= 0$. Donc $(v_n)$ est croissante. D'autre part, pour tout $n in NN^*$ :
+$
+  g(n) <= 1 "i.e" f(n) <= 1 + 1/(12n) - 1/(12(n+1))
+$
+
+Ainsi, on a pour tout $n >= 2$ :
+$
+  v_n &= v_1 + sum_(k=1)^(n-1) v_(k+1)-v_k = v_1 + sum_(k=1)^(n-1) (f(k)-1) \
+  &<= v_1 + sum_(k=1)^(n-1) 1/(12k) - 1/(12(k+1)) = v_1 + 1/12 - 1/(12n) \
+  &<= v_1 + 1/12
+$
+
+Ainsi, $(v_n)$ est croissante et majorée. Elle admet donc une limite $v in RR$. Par continuité de l'exponentielle :
+$
+  lim_(n->+oo) u_n = lim_(n->+oo) e^(v_n) = e^v:= ell > 0
+$
+
+===
+Comme $(u_n)$ admet une limite non nulle, la limite suivante existe :
+$
+  lim_(n->+oo) u_n^2/(u_(2n)) = ell^2/ell = ell
+$
+Or, pour tout $n in NN^*$ :
+$
+  u_n^2/u_(2n) &= (n^(2n+1))/((n!)^2e^(2n))/((2n)^(2n+1/2)/((2n)!e^(2n)))
+    = (2n)!/(n!)^2 (n^(2n+1))/(sqrt(2)dot 2^(2n) n^(2n+1/2)) \
+    &= 1/sqrt(2) binom(2n, n)sqrt(n)/(2^(2n))
+$
+
+En utilisant la limite du $B)2)b)$, on obtient :
+$
+  ell = lim_(n->+oo) u_n^2/u_(2n) = 1/sqrt(2) 1/sqrt(pi) = 1/sqrt(2pi)
+$
+
+===
+Comme $(u_n) -> ell$ et que $ell != 0$, on a :
+$
+  lim_(n->+oo) u_n/ell = 1
+$
+Pour tout $n in NN^*$ :
+$
+  u_n/ell = sqrt(2pi) n^(n+1/2)/(n!e^n) = 1/(n!) dot sqrt(2pi n) (n/e)^n
+$
+
+On obtient donc enfin l'équivalent de Stirling :
+$
+  lim_(n->+oo)1/(n!) dot sqrt(2pi n)(n/e)^n = 1 "i.e" n! ~_(n->+oo) sqrt(2pi n) (n/e)^n
+$
 
 = Calcul de $zeta(2)$ par la méthode de Matsuoka
 ==
