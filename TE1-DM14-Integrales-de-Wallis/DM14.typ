@@ -112,17 +112,17 @@ $
   &= integral_0^(pi/2) cos^n (t) (cos(t) - 1) dt.
 $
 
-Or, pour tout $t in [0, pi/2]$, $0 <= cos(t) <= 1$ donc $cos^n (t) >= 0$ et $cos(t) - 1 <= 0$.
+- _décroissance_ :
+Pour tout $t in [0, pi/2]$, $0 <= cos(t) <= 1$ donc $cos^n (t) >= 0$ et $cos(t) - 1 <= 0$.
 
 Ainsi, $cos^n (t) (cos(t) - 1) <= 0$ sur $[0, pi/2]$. Par conséquent $integral_0^(pi/2) cos^n (t) (cos(t) - 1) dt <= 0$
 i.e. $W_(n+1) - W_(n) <= 0$.
 
 La suite $(W_n)_(n in NN)$ est donc décroissante.
 
+- _minoration_ :
 De plus, pour tous $t in [0, pi/2], n in NN$, on a $cos^n (t) >= 0$.
-
-Donc $integral_0^(pi/2) cos^n (t) dt > 0$ i.e. $W_n > 0$. (Inégalité stricte puisque $cos^n (t) > 0$ en au moins un point, par exemple $t = pi/4$.)
-
+Par positivité de l'intégrale, $integral_0^(pi/2) cos^n (t) dt >= 0$ i.e. $W_n >= 0$.
 
 La suite $(W_n)_(n in NN)$ étant décroissante et minorée, d'après le TLM, elle converge vers $l in RR_+$.
 
@@ -159,7 +159,7 @@ Par gendarmes, on obtient :
 $
   lim_(n->+oo)sqrt(n)W_n = sqrt(pi/2)
 $
-En multipliant les équivalents, on a $W_n ~_(n -> +oo) sqrt(pi/(2n))$. Comme $sqrt(pi/(2n)) ->^(n-> +oo) 0$, idem pour $(W_n)$.
+En multipliant les équivalents, on a $W_n ~_(n -> +oo) sqrt(pi/(2n))$. Comme $sqrt(pi/(2n)) ->_(n-> +oo) 0$, idem pour $(W_n)$.
 
 = Produit et formule de Wallis, formule de Stirling
 ==
@@ -169,31 +169,31 @@ $
   rho_n = 2/pi product_(k=1)^n ((2k)^2)/((2k-1)(2k+1))
 $
 
-#underline[Initialisation :] $rho_0 =  1 / (pi / 2) = 2/pi.$
+- _Initialisation_ : $rho_0 =  1 / (pi / 2) = 2/pi.$
 
-#underline[Hérédité :] Supposons l'assertion pour $n in NN$. On a alors :
+- _Hérédité_ : Supposons l'assertion pour $n in NN$. On a alors :
 $
   rho_(n+1) &= W_(2n+3)/W_(2n+2) = ((2n+2)/(2n+3)W_(2n+1))/((2n+1)/(2n+2)W_(2n)) \
   &=^"HR" 2/pi product_(k=1)^n ((2k)^2)/((2k-1)(2k+1)) dot (2(n+1))^2/((2n+1)(2n+3)) \
   &= 2/pi product_(k=1)^(n+1) ((2k)^2)/((2k-1)(2k+1))
 $
-
+#pagebreak()
 ===
-Comme $W_n ~_(n->+oo) W_(n+1)$, en particulier, $W_(2n) ~_(n->+oo) W_(2n+1)$. Donc $(rho_n) -> 1$ et on obtient :
+Comme $W_n ~_(n->+oo) W_(n+1)$, en particulier, $W_(2n) ~_(n->+oo) W_(2n+1)$. Donc $(rho_n) ->_(n->+oo) 1$ et on obtient :
 $
   lim_(n -> +oo) product_(k=1)^n ((2k)^2)/((2k-1)(2k+1)) = pi/2
 $
 
 ==
 ===
-Avec les formules de la question A)2)c), on a pour tout $n in NN$:
+Avec les formules de la question A.2.c), on a pour tout $n in NN$:
 $
   1/rho_n &= W_(2n)/W_(2n+1) = pi/2 ((2n)!/(2^(2n)(n!)^2))/((2^(2n)(n!)^2)/(2n+1)!) \
    &=pi/2 (2n+1)/(2^(4n)) ((2n)!/(n!)^2)^2 \
    &= pi (2n+1)/(2^(4n+1))binom(2n,n)^2
 $
 ===
-Comme $(rho_n) -> 1$, $1/sqrt(pi rho_n) -->^(n-> +oo) 1/sqrt(pi)$. On trouve donc :
+Comme $(rho_n) ->_(n-> +oo) 1$ alors $1/sqrt(pi rho_n) -->_(n-> +oo) 1/sqrt(pi)$. On trouve donc :
 $
   lim_(n->+oo)sqrt(n+1/2)/2^(2n)binom(2n, n) = 1/sqrt(pi)
 $
@@ -209,6 +209,7 @@ $
   &= ln(1+1/x) - 1/(x+1) - 1/2 1/(x(x+1)) \
   &=^(1/(x(x+1)) = 1/x - 1/(x+1)) ln(1+1/x) - 1/2(1/x+1/(x+1))
 $
+// Je te crois sur parole
 
 Cette fonction est à nouveau dérivable sur $RR_+^*$ et pour tout $x in RR$ :
 $
@@ -267,8 +268,9 @@ $
 
 Ainsi, $(v_n)$ est croissante et majorée. Elle admet donc une limite $v in RR$. Par continuité de l'exponentielle :
 $
-  lim_(n->+oo) u_n = lim_(n->+oo) e^(v_n) = e^v:= ell > 0
+  lim_(n->+oo) u_n = lim_(n->+oo) e^(v_n) = e^v > 0
 $
+On pose donc $ell = e^v$
 
 ===
 Comme $(u_n)$ admet une limite non nulle, la limite suivante existe :
@@ -282,13 +284,13 @@ $
     &= 1/sqrt(2) binom(2n, n)sqrt(n)/(2^(2n))
 $
 
-En utilisant la limite du $B)2)b)$, on obtient :
+En utilisant la limite du $B.2.b)$, on obtient :
 $
   ell = lim_(n->+oo) u_n^2/u_(2n) = 1/sqrt(2) 1/sqrt(pi) = 1/sqrt(2pi)
 $
 
 ===
-Comme $(u_n) -> ell$ et que $ell != 0$, on a :
+Comme $(u_n) ->_(n->+oo) ell$ et que $ell != 0$, on a :
 $
   lim_(n->+oo) u_n/ell = 1
 $
@@ -305,7 +307,7 @@ $
 = Calcul de $zeta(2)$ par la méthode de Matsuoka
 ==
 ===
-La fonction $sin$ est concave sur $[0;pi/2]$ : sa dérivée seconde est $-sin$ qui est négative sur cet intervalle. Comme une fonction concave et au dessus de toutes ses cordes, pour tout $t in [0;pi/2]$ :
+La fonction $sin$ est concave sur $[0;pi/2]$ : sa dérivée seconde est $-sin$ qui est négative sur cet intervalle. Comme une fonction concave et au dessus de toutes ses cordes, pour tout $t in [0,pi/2]$ :
 $
   0 <= (1 - 0)/(pi/2-0)t <= sin(t) &"soit" 0 <= t <= pi/2sin(t) \
   &"puis" 0 <= t^2 <= pi^2/4(1-cos^2(t))
