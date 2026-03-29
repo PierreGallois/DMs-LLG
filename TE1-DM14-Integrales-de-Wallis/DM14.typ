@@ -7,10 +7,15 @@
   alpha: true
 )
 
+#let dx = $dif x$
+#let dt = $dif t$
+#let du = $dif u$
+
 = Intégrales de Wallis.
+
 On pose, pour tout $n in NN$,
 $
-  W_n = integral_0^(pi/2) cos^n (t) "d"t.
+  W_n = integral_0^(pi/2) cos^n (t) dt.
 $
 
 ==
@@ -20,35 +25,35 @@ On pose
 $
   cases(
     x = pi/2 - t <==> t = pi/2 - x,
-    "d"x = -"d"t <==> "d"t = -"d"x
+    dx = -dt <==> dt = -dx
   )
 $
 
 Par changement de variable, on obtient donc :
 $
-  W_n &= integral_(pi/2 - 0)^(pi/2 - pi/2) cos^n (pi/2 - x) (-"d"x) \
-  &= integral_(pi/2)^(0) - sin^n (x) "d"x \
-  &= integral_(0)^(pi/2) sin^n (x) "d"x.
+  W_n &= integral_(pi/2 - 0)^(pi/2 - pi/2) cos^n (pi/2 - x) (-dx) \
+  &= integral_(pi/2)^(0) - sin^n (x) dx \
+  &= integral_(0)^(pi/2) sin^n (x) dx.
 $
 
 ==
 ===
 Par définition :
 $
-  W_0 = integral_0^(pi/2) (cos(t))^0 "d"t = integral_0^(pi/2) 1 "d"t = pi/2 \
-  W_1 = integral_0^(pi/2) cos(t) "d"t = [sin(t)]_0^(pi/2) = 1
+  W_0 = integral_0^(pi/2) (cos(t))^0 dt = integral_0^(pi/2) 1 dt = pi/2 \
+  W_1 = integral_0^(pi/2) cos(t) dt = [sin(t)]_0^(pi/2) = 1
 $
 
 ===
 Soit $n in NN$.
 $
-  W_(n+2) &= integral_0^(pi/2) cos^(n+2) (t) "d"t \
-  W_(n+2) &= integral_0^(pi/2) cos(t) cos^(n+1) (t) "d"t \
-  W_(n+2) &= [sin(t) cos^(n+1) (t)]_0^(pi/2) - integral_0^(pi/2) -(n+1) sin^2 (t) cos^n (t) "d"t \
+  W_(n+2) &= integral_0^(pi/2) cos^(n+2) (t) dt \
+  W_(n+2) &= integral_0^(pi/2) cos(t) cos^(n+1) (t) dt \
+  W_(n+2) &= [sin(t) cos^(n+1) (t)]_0^(pi/2) - integral_0^(pi/2) -(n+1) sin^2 (t) cos^n (t) dt \
 $
 $
-  W_(n+2) &= (n+1) integral_0^(pi/2) (1 - cos^2 (t)) cos^n (t) "d"t \
-  W_(n+2) &= (n+1) integral_0^(pi/2) cos^n (t) "d"t - (n+1) integral_0^(pi/2) cos^(n+2) (t) "d"t \
+  W_(n+2) &= (n+1) integral_0^(pi/2) (1 - cos^2 (t)) cos^n (t) dt \
+  W_(n+2) &= (n+1) integral_0^(pi/2) cos^n (t) dt - (n+1) integral_0^(pi/2) cos^(n+2) (t) dt \
   W_(n+2) &= (n+1) W_n - (n+1) W_(n+2) \
   (n+2) W_(n+2) &= (n+1) W_n \
   W_(n+2) &= (n+1)/(n+2) W_n.
@@ -103,20 +108,20 @@ $
 ===
 Soit $n in NN$.
 $
-  W_(n+1) - W_(n) &= integral_0^(pi/2) cos^(n+1) (t) "d"t - integral_0^(pi/2) cos^n (t) "d"t \
-  &= integral_0^(pi/2) cos^n (t) (cos(t) - 1) "d"t.
+  W_(n+1) - W_(n) &= integral_0^(pi/2) cos^(n+1) (t) dt - integral_0^(pi/2) cos^n (t) dt \
+  &= integral_0^(pi/2) cos^n (t) (cos(t) - 1) dt.
 $
 
 Or, pour tout $t in [0, pi/2]$, $0 <= cos(t) <= 1$ donc $cos^n (t) >= 0$ et $cos(t) - 1 <= 0$.
 
-Ainsi, $cos^n (t) (cos(t) - 1) <= 0$ sur $[0, pi/2]$. Par conséquent $integral_0^(pi/2) cos^n (t) (cos(t) - 1) "d"t <= 0$
+Ainsi, $cos^n (t) (cos(t) - 1) <= 0$ sur $[0, pi/2]$. Par conséquent $integral_0^(pi/2) cos^n (t) (cos(t) - 1) dt <= 0$
 i.e. $W_(n+1) - W_(n) <= 0$.
 
 La suite $(W_n)_(n in NN)$ est donc décroissante.
 
 De plus, pour tous $t in [0, pi/2], n in NN$, on a $cos^n (t) >= 0$.
 
-Donc $integral_0^(pi/2) cos^n (t) "d"t > 0$ i.e. $W_n > 0$. (Inégalité stricte puisque $cos^n (t) > 0$ en au moins un point, par exemple $t = pi/4$.)
+Donc $integral_0^(pi/2) cos^n (t) dt > 0$ i.e. $W_n > 0$. (Inégalité stricte puisque $cos^n (t) > 0$ en au moins un point, par exemple $t = pi/4$.)
 
 
 La suite $(W_n)_(n in NN)$ étant décroissante et minorée, d'après le TLM, elle converge vers $l in RR_+$.
@@ -198,7 +203,7 @@ Ce qui donne, comme $sqrt(n+1/2) ~_(n->+oo) sqrt(n)$, la limite attendue.
 ===
 La fonction $f$ est dérivable sur $RR_+^*$ par opérations, de dérivée :
 $
-  f'(x) &= "d"/("d"x)(x ln(1+1/x) + 1/2 ln(1+1/x)) \
+  f'(x) &= dif/(dx)(x ln(1+1/x) + 1/2 ln(1+1/x)) \
   &= ln(1+1/x) + x (-1/x^2)1/(1+1/x) + 1/2 (-1/x^2)1/(1+1/x) \
   &= ln(1+1/x) - x/(x^2)x/(x+1) - 1/2 1/(x^2)x/(x+1) \
   &= ln(1+1/x) - 1/(x+1) - 1/2 1/(x(x+1)) \
@@ -308,7 +313,7 @@ $
 
 Car $x mapsto x^2$ est croissante sur $RR^+$. Par croissance de l'intégrale, on en déduit que pour tout $n in NN$ :
 $
-  0 <= M_(2n) = integral_0^(pi/2) t^2cos^(2n) (t)"d"t <=pi^2/4(W_(2n) - W_(2n+2))
+  0 <= M_(2n) = integral_0^(pi/2) t^2cos^(2n) (t)dt <=pi^2/4(W_(2n) - W_(2n+2))
 $
 
 Comme pour tout $n in NN$, $W_(n+2) = (n+1)/(n+2)W_n$, on obtient :
@@ -332,15 +337,15 @@ $
 Soit $n in NN^*$. On peut écrire en intégrant par parties : (les fonctions en présence sont toutes $cal(C)^(oo))$
 
 $
-  W_(2n) &= integral_0^(pi/2) underbrace(1, u') dot underbrace(cos^(2n)(t),v)"d"t \
-  &= [t cos^(2n)(t)]_0^(pi/2) - 2n integral_0^(pi/2)t (-sin(t))cos^(2n-1)(t)"d"t \
-  &= 2n integral_0^(pi/2)t sin(t)cos^(2n-1)(t)"d"t
+  W_(2n) &= integral_0^(pi/2) underbrace(1, u') dot underbrace(cos^(2n)(t),v)dt \
+  &= [t cos^(2n)(t)]_0^(pi/2) - 2n integral_0^(pi/2)t (-sin(t))cos^(2n-1)(t)dt \
+  &= 2n integral_0^(pi/2)t sin(t)cos^(2n-1)(t)dt
 $
 
 ===
 Encore en intégrant par parties, on obtient pour tout $n in NN^*$ :
 $
-  W_(2n) = 2n integral_0^(pi/2)underbrace(t,u') underbrace(sin(t)cos^(2n-1)(t), v)"d"t
+  W_(2n) = 2n integral_0^(pi/2)underbrace(t,u') underbrace(sin(t)cos^(2n-1)(t), v)dt
 $
 La fonction $v$ est dérivable sur $[0;pi/2]$, de dérivée :
 $
@@ -350,8 +355,8 @@ $
 $
 On a donc :
 $
-  W_(2n) &= 2n dot [u(t) v(t)]_0^(pi/2) - (2n)/2integral_0^(pi/2)t^2[2n cos^(2n)(t) - (2n-1)cos^(2n-2)(t)]"d"t \
-  &=^(u(0) = 0)_(v(pi/2) = 0) - 2n^2integral_0^(pi/2)t^2cos^(2n)(t)"d"t + n(2n-1) integral_0^(pi/2)t^2cos^(2n-2)(t) "d"t \
+  W_(2n) &= 2n dot [u(t) v(t)]_0^(pi/2) - (2n)/2integral_0^(pi/2)t^2[2n cos^(2n)(t) - (2n-1)cos^(2n-2)(t)]dt \
+  &=^(u(0) = 0)_(v(pi/2) = 0) - 2n^2integral_0^(pi/2)t^2cos^(2n)(t)dt + n(2n-1) integral_0^(pi/2)t^2cos^(2n-2)(t) dt \
   &=n(2n-1)M_(2n-2) - 2n^2M_(2n)
 $
 
@@ -373,7 +378,7 @@ $
 $
 D'une part, $(M_(2n)/W_(2n)) -->^(n->+oo) 0$. D'autre part, $W_0 = pi/2$ et :
 $
-  M_0 = integral_0^(pi/2)t^2"d"t = 1/3pi^3/8
+  M_0 = integral_0^(pi/2)t^2dt = 1/3pi^3/8
 $
 Par opérations sur les limites, on obtient enfin :
 $
@@ -386,7 +391,7 @@ $
 ===
 Supposons que $b>a$. Alors :
 $
-  F(b) - F(a) =^"Chasles" integral_a^b e^(-t^2)"d"t
+  F(b) - F(a) =^"Chasles" integral_a^b e^(-t^2)dt
 $
 Comme $a < b$ et que $e^(-t^2) > 0$ sur $[a;b]$, on obtient $F(b) - F(a) >0$. $F$ est donc strictement croissante sur $RR^+$.
 
@@ -396,9 +401,9 @@ Pour tout $t >= 1$, $t^2 >= t$. Par décroissance de $x mapsto e^(-x)$ sur $RR^+
 ===
 Pour tout $x >= 1$, on a :
 $
-  F(x) &=^"Chasles" integral_0^1 e^(-t^2)"d"t + integral_1^x e^(-t^2)"d"t \
-  &<= integral_0^1 e^(-t^2)"d"t + integral_1^x e^(-t)"d"t = integral_0^1 e^(-t^2)"d"t - e^(-x) + 1/e \
-  &<=^(e^(-x) >= 0) integral_0^1 e^(-t^2)"d"t + 1/e
+  F(x) &=^"Chasles" integral_0^1 e^(-t^2)dt + integral_1^x e^(-t^2)dt \
+  &<= integral_0^1 e^(-t^2)dt + integral_1^x e^(-t)dt = integral_0^1 e^(-t^2)dt - e^(-x) + 1/e \
+  &<=^(e^(-x) >= 0) integral_0^1 e^(-t^2)dt + 1/e
 $
 La fonction $F$ est donc strictement croissante et admet une majoration par une constante. Par le TLM, $F$ admet une limite en $+oo$.
 
@@ -409,11 +414,11 @@ Comme la fonction $x mapsto ln(1+x)$ est concave sur $]-1;+oo[$, elle est en des
 ===
 On a d'une part pour tout $0 <= t <= sqrt(n)$ :
 $
-  1-t^2/n <= e^(-t^2/n) "d'où" (1-t^2/n)^n <= e^(-t^2) "et" I_n <= integral_0^sqrt(n)e^(-t^2)"d"t
+  1-t^2/n <= e^(-t^2/n) "d'où" (1-t^2/n)^n <= e^(-t^2) "et" I_n <= integral_0^sqrt(n)e^(-t^2)dt
 $
 Et d'autre part :
 $
-  1+t^2/n <= e^(t^2/n) "d'où" (1-t^2/n)^(-n) >= e^(-t^2) "et" J_n >= integral_0^sqrt(n) e^(-t^2)"d"t
+  1+t^2/n <= e^(t^2/n) "d'où" (1-t^2/n)^(-n) >= e^(-t^2) "et" J_n >= integral_0^sqrt(n) e^(-t^2)dt
 $
 
 ===
@@ -421,14 +426,14 @@ On pose :
 $
   cases(
     u = arcsin(t/sqrt(n)) <==> t = sqrt(n)sin(u),
-    "d"u = 1/sqrt(n)1/(sqrt(1-(t/sqrt(n))^2))"d"t = 1/sqrt(n)1/(cos(u))"d"t <==> "d"t=sqrt(n)cos(u)"d"u
+    du = 1/sqrt(n)1/(sqrt(1-(t/sqrt(n))^2))dt = 1/sqrt(n)1/(cos(u))dt <==> dt=sqrt(n)cos(u)du
   )
 $
 Où on utilise la fonction bien définie, positive et $cal(C)^(oo)$, $arcsin :[0;1] -> [0;pi/2]$
 
 On obtient :
 $
-  I_n &= integral_0^(pi/2) sqrt(n)cos(u)(1-(sqrt(n)sin(u))^2/n)^n "d"u \
+  I_n &= integral_0^(pi/2) sqrt(n)cos(u)(1-(sqrt(n)sin(u))^2/n)^n du \
   &= sqrt(n)integral_0^(pi/2) cos^(2n+1)(u)"du" = sqrt(n)W_(2n+1)
 $
 
@@ -437,23 +442,23 @@ Similairement, on pose :
 $
   cases(
     u = arctan(t/sqrt(n)) <==> t = sqrt(n)tan(u),
-    "d"u = 1/sqrt(n)1/(1+(t/sqrt(n))^2)"d"t = 1/sqrt(n)cos^2(u)"d"t <==> "d"t=sqrt(n)1/(cos^2(u))"d"u
+    du = 1/sqrt(n)1/(1+(t/sqrt(n))^2)dt = 1/sqrt(n)cos^2(u)dt <==> dt=sqrt(n)1/(cos^2(u))du
   )
 $
 Où on utilise la fonction bien définie, positive et $cal(C)^(oo)$, $arctan: [0;1] -> [0;pi/4]$.
 On obtient alors :
 $
-  J_n = integral_0^(pi/4) sqrt(n)1/(cos^2(u))(1+tan(u)^2)^(-n) "d"u
+  J_n = integral_0^(pi/4) sqrt(n)1/(cos^2(u))(1+tan(u)^2)^(-n) du
 $
 Comme on a l'identité $1+tan^2(x) = 1/(cos^2(x))$ sur $[0;pi/4]$, on a enfin :
 $
-  J_n = sqrt(n) integral_0^(pi/4) cos^(2n-2)(u)"d"u <=^(cos^(2n-2)>=0) sqrt(n)integral_0^(pi/2)cos^(2n-2)(u)"d"u = sqrt(n)W_(2n-2)
+  J_n = sqrt(n) integral_0^(pi/4) cos^(2n-2)(u)du <=^(cos^(2n-2)>=0) sqrt(n)integral_0^(pi/2)cos^(2n-2)(u)du = sqrt(n)W_(2n-2)
 $
 
 ===
 Avec les question précédentes, on obtient l'encadrement pour tout $n in NN^*$ :
 $
-  sqrt(n) W_(2n+1) = I_n <= integral_0^(sqrt(n)) e^(-t^2)"d"t <= J_n <= sqrt(n)W_(2n-2)
+  sqrt(n) W_(2n+1) = I_n <= integral_0^(sqrt(n)) e^(-t^2)dt <= J_n <= sqrt(n)W_(2n-2)
 $
 
 Par la question $A)3)d$, d'une part, :
@@ -474,9 +479,9 @@ $
 $
 Par gendarmes, on en déduit que :
 $
-  lim_(n->+oo)integral_(0)^(sqrt(n)) e^(-t^2)"d"t = sqrt(pi)/2
+  lim_(n->+oo)integral_(0)^(sqrt(n)) e^(-t^2)dt = sqrt(pi)/2
 $
 Comme $sqrt(n) -->^(n->+oo) +oo$, par unicité de la limite dont on a établi l'existence en $1)$, on a enfin :
 $
-  integral_0^(+oo)e^(-t^2) = lim_(n->+oo)integral_0^sqrt(n) e^(-t^2)"d"t  = sqrt(pi)/2
+  integral_0^(+oo)e^(-t^2) = lim_(n->+oo)integral_0^sqrt(n) e^(-t^2)dt = sqrt(pi)/2
 $
