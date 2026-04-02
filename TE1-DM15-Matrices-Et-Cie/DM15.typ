@@ -124,5 +124,15 @@ $
   (A+B)^2 = mat(1, 0;0, 1) = I_2
 $
 
+===
+Soit $n in NN$ impair. On écrit $n = 2k + 1$. On a alors :
+$
+  A^(n) = (A^(2))^k A = I_2^k A = A " et similairement" B^n = B "et" (A+B)^n = A+B
+$
+Ainsi, pour tout $n$ impair :
+$
+  A^n + B^n = A + B = (A+B)^n
+$
+Ce qui montre que $(A,B,A+B) in GL^3$ est une solution de l'équation $(F_n)$.
 
 = Matrice et probabilité
