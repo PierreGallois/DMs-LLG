@@ -77,4 +77,36 @@ $
 $
 Donc $det(A^(-1)) = 1/det(A) in {plus.minus 1}$ et $A^(-1) in GL$.
 
+==
+Par symétrie, on détermine sans perte de généralité les solutions triangulaires supérieures pour en déduire les triangulaires inférieures. On procède par analyse-synthèse
+
+#underline[Analyse :] Soit $a,b,c in ZZ$ et notons une solution :
+$
+  T = mat(a,b;0,c) " i.e " T^2 = mat(a^2, b(a+c);0,c^2) = I_2
+$
+On en déduit le système :
+$
+  cases(a^2 = c^2 = 1, b(a+c) = 0)
+$
+Si $b = 0$, alors $T$ est de la forme :
+$
+  T = mat(plus.minus 1, 0;0, plus.minus 1)
+$
+Sinon, $a+c = 0$ et $T$ est de la forme :
+$
+  T = mat(a,b;0,-a) "où" a  = plus.minus 1
+$
+
+
+#underline[Synthèse :] Soit $T$ de la première forme. Alors, immédiatement, $T^2 = I_2$ car $T$ est diagonale. Si $T$ est la deuxième forme pour $a = plus.minus 1$ et $b in ZZ$, alors :
+$
+  T^2 = mat(a^2, a b - a b; 0, (-a)^2) = I_2
+$
+
+Par symétrie, les solutions triangulaires de l'équation sont donc enfin :
+$
+  cal(S) = {mat(plus.minus 1, 0 ; 0, plus.minus 1)} union {mat(a,b;0,-a), a = plus.minus 1, b in ZZ} union {mat(a,0;b,-a), a = plus.minus 1, b in ZZ}
+$
+(où les 4 choix de signes sont possibles dans le premier ensemble).
+
 = Matrice et probabilité
