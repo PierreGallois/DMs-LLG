@@ -28,6 +28,7 @@ $
 Le triplet de matrices non nulles $(E_(1,1), E_(2,1), E_(1,1)) in GL^3$ est donc solution de $(F_n)$.
 
 ==
+===
 Notons pour $a,b,c,d,alpha, beta, gamma, delta in ZZ$ :
 $
   A = mat(a,c;b,d) " et " B = mat(alpha, gamma; beta, delta)
@@ -43,6 +44,22 @@ $
   &= a d (alpha delta - beta gamma) - b c (alpha delta - beta gamma) \
   &= det(A)det(B)
 $
-Ce qui donne la résultat attendu
+Ce qui donne la résultat attendu.
+
+===
+Notons pour $a,b,c,d in ZZ$ :
+$
+  A = mat(a,c;b,d)
+$
+On a alors :
+$
+  A^2 = mat(a^2 + b c, a c + c d; b a + b d, b c + d^2)
+$
+Sachant que $tr(A) = a + d$, on obtient :
+$
+  A^2 - tr(A)A &= mat(a^2 + b c - a^2 - a d, c (a + d) - c(a+ d); b(a+ d) - b(a + d), b c + d^2 - d a - d^2) \
+  &= mat(b c - a d, 0;0, b c - a d) = -det(A)I_2 \
+$
+C'est à dire $A^2 - tr(A)A + det(A)I_2 = 0_2$.
 
 = Matrice et probabilité
