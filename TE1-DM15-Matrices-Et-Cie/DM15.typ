@@ -78,6 +78,7 @@ $
 Donc $det(A^(-1)) = 1/det(A) in {plus.minus 1}$ et $A^(-1) in GL$.
 
 ==
+===
 Par symétrie, on détermine sans perte de généralité les solutions triangulaires supérieures pour en déduire les triangulaires inférieures. On procède par analyse-synthèse
 
 #underline[Analyse :] Soit $a,b,c in ZZ$ et notons une solution :
@@ -108,5 +109,20 @@ $
   cal(S) = {mat(plus.minus 1, 0 ; 0, plus.minus 1)} union {mat(a,b;0,-a), a = plus.minus 1, b in ZZ} union {mat(a,0;b,-a), a = plus.minus 1, b in ZZ}
 $
 (où les 4 choix de signes sont possibles dans le premier ensemble).
+
+===
+On pose :
+$
+  A = mat(1,1;0,-1) " et " B = mat(-1, 0; 1, 1)
+$
+On calcule $det(A) = -1 = det(B)$, c'est à dire que $A,B in GL$. D'après la question précédente, $A^2 = B^2 = I_2$. Enfin :
+$
+  A + B = mat(0,1;1,0)
+$
+Remarquons que :
+$
+  (A+B)^2 = mat(1, 0;0, 1) = I_2
+$
+
 
 = Matrice et probabilité
