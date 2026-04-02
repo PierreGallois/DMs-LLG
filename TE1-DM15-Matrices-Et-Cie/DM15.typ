@@ -62,4 +62,19 @@ $
 $
 C'est à dire $A^2 - tr(A)A + det(A)I_2 = 0_2$.
 
+==
+Soit $A,B in GL$. Alors $A B in cal(M)_2(ZZ)$ car les coefficients de $A B$ sont des sommes de produits d'entiers, et $A B in GL$ car :
+$
+  det(A B) = det(A) det(B) in {plus.minus 1}
+$
+D'autre part, soit $A in GL$. Comme $det(A) != 0$, $A$ est inversible dans $cal(M)_2(RR)$ d'inverse :
+$
+  A^(-1) = 1/(det(A))(tr(A)I_2 - A)
+$
+Comme $1/det(A) in ZZ$ car $A in GL$, $tr(A) in ZZ$ et que $cal(M)_2(ZZ)$ est clos par la somme, on a que $A^(-1) in cal(M)_2(ZZ)$. Enfin :
+$
+  det(A A^(-1)) = det(I_2) = 1 = det(A)det(A^(-1))
+$
+Donc $det(A^(-1)) = 1/det(A) in {plus.minus 1}$ et $A^(-1) in GL$.
+
 = Matrice et probabilité
