@@ -246,3 +246,16 @@ Ce qui donne les couples solutions :
 $
   cal(S) = {(4/5, -1/5), (1/5, 1/5)}
 $
+
+==
+===
+D'après la question précédente, $P = M(1/5,1/5)$ satisfait $P^2 = P$.
+Ainsi :
+$
+  Q^2 = I_5^2 +P^2 - 2P = I_5 - P = Q
+$
+Ainsi que :
+$
+  P Q = Q P = P - P^2 = 0_5
+$
+(tout se déduit du fait que $P$ est idempotente).
