@@ -144,5 +144,28 @@ $
 Tous les coefficients de la matrice $tr(M)M$ sont pairs, et comme $det(M) = plus.minus 1$, on a que $det(M)I_2 in cal(E)$. Les coefficients de la diagonale de $M^2$ sont donc impairs (somme d'un pair et d'un impair) et ceux hors de la diagonale sont pairs (égaux à ceux de $tr(M)M$).
 
   Donc $M^2 in cal(E)$ comme attendu.
+  
+===
+Soit $M in GL$. Avec le théorème de Cayley-Hamilton, on exprime :
+$
+  M^3 &= M(tr(M)M - det(M)I_2) \
+  &= tr(M)M^2 - det(M)M \
+  &= tr(M)(tr(M)M - det(M)I_2) - det(M)M \
+  &= (tr(M)^2 - det(M))M - det(M)I_2
+$
+
+Par linéarité de la trace, on en déduit que :
+$
+  tr(M^3) = (tr(M)^2 - det(M))tr(M) - 2det(M)
+$
+
+$2det(M)$ est pair, et comme $det(M)$ est impair, que $tr(M)$ soit pair ou impair, $(tr(M)^2 -det(M))tr(M)$ est pair car l'un des facteurs est pair. Donc $tr(M^3)$ est bien pair.
+
+===
+On raisonne par l'absurde. Supposons que $(A,B,C) in GL^3$ soit une solution de $(F_6)$.
+
+Pour toute matrice $M in GL$, $tr(M^3)$ est pair (par le $5b$). Donc $M^6 in cal(E)$ (par le $5a$). Ainsi, comme $A^6 + B^6 = C^6$, on a une somme de matrices de $cal(E)$ qui est à nouveau dans $cal(E)$. Cependant, la somme de deux matrices de $cal(E)$ a des coefficients diagonaux pairs et ne peut être dans $cal(E)$, ce qui est une contradiction.
+
+Donc $(F_6)$ n'admet pas de solution dans $GL^3$.
 
 = Matrice et probabilité
