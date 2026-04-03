@@ -309,3 +309,16 @@ $
     ((a+4b)^n - (a-b)^n)/5, dots, ((a+4b)^n - (a-b)^n)/5, (a+4b)^n/5 + (4(a-b)^n)/5
   )
 $
+
+==
+===
+D'après l'expression du $2a$, pour tout $n in NN^*$ :
+$
+  M(a,b)^n &= (1 - 4b + 4b)^n P + (1 - 4b - b)^n Q\
+  &= P + (1-5b)^n Q
+$
+
+Or, comme $0 < b <= 1/4$, $-1/4 <= 1-5b < 1$ et $abs(1-5b) < 1$. Comme $(1-5b)^n -->^(n->+oo) 0$, en regardant coefficient par coefficient :
+$
+  L = lim_(n->+oo) M(a,b)^n = P
+$
