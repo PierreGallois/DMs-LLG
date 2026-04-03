@@ -135,4 +135,14 @@ $
 $
 Ce qui montre que $(A,B,A+B) in GL^3$ est une solution de l'équation $(F_n)$.
 
+==
+===
+Soit $M in GL$ telle que $tr(M)$ est pair. On a alors :
+$
+  M^2 = tr(M)M - det(M)I_2
+$
+Tous les coefficients de la matrice $tr(M)M$ sont pairs, et comme $det(M) = plus.minus 1$, on a que $det(M)I_2 in cal(E)$. Les coefficients de la diagonale de $M^2$ sont donc impairs (somme d'un pair et d'un impair) et ceux hors de la diagonale sont pairs (égaux à ceux de $tr(M)M$).
+
+  Donc $M^2 in cal(E)$ comme attendu.
+
 = Matrice et probabilité
