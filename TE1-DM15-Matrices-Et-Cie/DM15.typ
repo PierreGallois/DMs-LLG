@@ -169,3 +169,36 @@ Pour toute matrice $M in GL$, $tr(M^3)$ est pair (par le $5b$). Donc $M^6 in cal
 Donc $(F_6)$ n'admet pas de solution dans $GL^3$.
 
 = Matrice et probabilité
+==
+===
+On calcule, pour tout $a,b in RR$ :
+$
+  M(a,b)^2 = mat(
+    a^2 + 4b^2, 2a b + 3b^2, dots, 2a b + 3b^2;
+    2 a b + 3b^2, dots.down, dots.down, dots.v;
+    dots.v, dots.down, dots.down, 2 a b + 3b^2 ;
+    2 a b + 3b^2, dots, 2 a b + 3b^2, a^2 + 4b^2
+  )
+$
+Soit $a in RR, b in RR^*$. Montrons par analyse-synthèse que $M(a,b)^2$ peut être écrite comme une combinaison linéaire de $M(a,b)$ et $I_5$. 
+
+#underline[Analyse :] Supposons que $M(a,b)^2 = x M(a,b) + y I_5$. Par égalité des coefficients diagonaux, on a l'égalité :
+$
+  a x + y = a^2 + 4b^2
+$
+Et en ajoutant l'égalité des coefficients non diagonaux, on obtient le système :
+
+$
+  cases(
+    a x + y = a^2 + 4b^2,
+    b x = 2a b + 3b^2
+  ) &" i.e" (b != 0)" " cases(
+    a x + y = a^2 + 4b^2,
+    x = 2a + 3b
+  ) \
+  &" d'où" cases(
+    y = b^2 - a^2,
+    x = 2a + 3b
+  )
+$
+#underline[Synthèse :] On calcule effectivement que $M(a,b)^2 = (2a + 3b)M(a,b) + (b^2 -a^2)I_5$.
