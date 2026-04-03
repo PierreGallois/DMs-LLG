@@ -283,3 +283,29 @@ $
 $
   M(a,b) = (a+4b)P + (a-b)Q = 5b P + (a-b)I_5
 $
+
+Ainsi, pour tout $n in NN^*$, comme $P,Q$ commutent :
+$
+  M(a,b)^n = sum_(k=0)^(n)binom(n,k)(a+4b)^k (a-b)^(n-k)P^k Q^(n-k)
+$
+
+Comme $P Q = O_5$, $P^i Q^j = 0_5$ pour tous $i,j >= 1$. On en déduit que :
+$
+  M(a,b)^n &= (a+4b)^n P^n + (a-b)^n Q^n \
+  &= (a+4b)^n P + (a-b)^n Q \
+  &= ((a+4b)^n - (a-b)^n)P + (a-b)^n I_5
+$
+En calculant :
+$
+  1/5((a+4b)^n - (a-b)^n) + (a-b)^n = (a+4b)^n/5 + (4(a-b)^n)/5
+$
+
+On déduit enfin l'expression de $M(a,b)^n$ :
+$
+  M(a,b)^n = mat(
+    (a+4b)^n/5 + (4(a-b)^n)/5, ((a+4b)^n - (a-b)^n)/5, dots, ((a+4b)^n - (a-b)^n)/5;
+    ((a+4b)^n - (a-b)^n)/5, dots.down, dots.down, dots.v;
+    dots.v, dots.down, dots.down, ((a+4b)^n - (a-b)^n)/5;
+    ((a+4b)^n - (a-b)^n)/5, dots, ((a+4b)^n - (a-b)^n)/5, (a+4b)^n/5 + (4(a-b)^n)/5
+  )
+$
