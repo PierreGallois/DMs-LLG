@@ -312,6 +312,7 @@ $
 
 ==
 ===
+===
 D'après l'expression du $2a$, pour tout $n in NN^*$ :
 $
   M(a,b)^n &= (1 - 4b + 4b)^n P + (1 - 4b - b)^n Q\
