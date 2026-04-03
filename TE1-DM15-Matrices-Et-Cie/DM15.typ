@@ -259,3 +259,10 @@ $
   P Q = Q P = P - P^2 = 0_5
 $
 (tout se déduit du fait que $P$ est idempotente).
+
+On en déduit immédiatement que pour tout $k >= 1$ :
+$
+  P^k = P " et " Q^k = Q
+$
+
+===
