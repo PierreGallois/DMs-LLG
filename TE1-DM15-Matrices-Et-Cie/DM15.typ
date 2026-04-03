@@ -266,3 +266,20 @@ $
 $
 
 ===
+On procède par analyse synthèse comme dans le $1a$. Soit $(a,b) in RR times RR^*$.
+
+#underline[Analyse :] Si $M(a,b) = lambda P + mu Q = (lambda -mu) P +mu I_5$, alors en écrivant l'égalité des coefficients diagonaux et non diagonaux :
+$
+  cases(
+    1/5(lambda - mu) + mu = a,
+    1/5(lambda - mu) = b
+  ) <==>
+  cases(
+    mu = a-b,
+    lambda = 5b + (a-b) = a + 4b
+  )
+$
+#underline[Synthèse :] On vérifie facilement que :
+$
+  M(a,b) = (a+4b)P + (a-b)Q = 5b P + (a-b)I_5
+$
