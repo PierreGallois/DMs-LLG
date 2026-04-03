@@ -323,3 +323,35 @@ Or, comme $0 < b <= 1/4$, $-1/4 <= 1-5b < 1$ et $abs(1-5b) < 1$. Comme $(1-5b)^n
 $
   L = lim_(n->+oo) M(a,b)^n = P
 $
+
+==
+===
+Pour tous $k,j in [|0,4|]$, avec $k$ et $j$ distincts, on a :
+$
+  cases(
+    PP_(X_n = j) (X_(n+1) = j) = 1/2,
+    PP_(X_n = j) (X_(n+1) = k) = 1/8
+  )
+$
+
+Ainsi, en posant pour tout $n in NN$ la matrice colonne $V_n$ = $[PP (X_n = j)]_(0 <= j<=4)$, on obtient :
+
+#set math.mat(column-gap: 2em, row-gap: 1em)
+$
+  V_(n+1) = M V_n "avec" M = mat(1/2, 1/8, 1/8, 1/8, 1/8;1/8, 1/2, 1/8, 1/8, 1/8; 1/8, 1/8, 1/2, 1/8, 1/8; 1/8, 1/8, 1/8, 1/2, 1/8;1/8, 1/8, 1/8, 1/8, 1/2) = M(1/2, 1/8)
+$
+
+=== 
+Soit $n in NN$. Il vient par récurrence immédiate que $V_n = M^n V_0$.
+
+Grâce à l'expression générale de $(M(1/2, 1/8))^n$ trouvée précédemment, il vient :
+$
+  cases(PP (X_n = 0) = 1/5 + 4/5 (3/8)^n,
+  PP (X_n = 1) = PP (X_n = 2) = PP (X_n = 3) = PP (X_n = 4)= 1/5 (1 - (3/8)^n)
+  )
+$
+
+Finalement :
+$
+  lim_(n -> +oo) PP (X_n = 0)= ... = lim_(n -> +oo) PP (X_n = 4) = 1/5
+$
