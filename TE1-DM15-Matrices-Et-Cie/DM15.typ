@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm
+#import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
 #show: dm.with(
   numero: 15,
@@ -325,6 +326,24 @@ $
 $
 
 ==
+Représentons dans un premier temps la situation initiale :
+$
+#diagram(
+	node-stroke: .1em,
+	spacing: 4em,
+	node((0,0), `0`, radius: 2em),
+	node((1,0), `1`, radius: 2em),
+  node((1,1), `2`, radius: 2em),
+  node((2,0), `3`, radius: 2em),
+  node((2,1), `4`, radius: 2em),
+	edge((0,0), (2,0), `1/8`, "-|>", bend: -40deg),
+  edge((0,0), (1,0), `1/8`, "-|>", bend: 40deg),
+  edge((0,0), (2,1), `1/8`, "-|>", bend: -70deg),
+  edge((0,0), (1,1), `1/8`, "-|>", bend: -20deg),
+  edge((0,0), (0,0), `1/2`, "--|>", bend: 130deg),
+)
+$
+
 ===
 Pour tous $k,j in [|0,4|]$, avec $k$ et $j$ distincts, on a :
 $
@@ -342,7 +361,11 @@ $
 $
 
 === 
-Soit $n in NN$. Il vient par récurrence immédiate que $V_n = M^n V_0$.
+Soit $n in NN$. 
+Il vient par récurrence immédiate que :
+$
+V_n = M^n V_0 "avec" V_0 = mat(1;0;0;0;0)
+$
 
 Grâce à l'expression générale de $(M(1/2, 1/8))^n$ trouvée précédemment, il vient :
 $
@@ -351,7 +374,7 @@ $
   )
 $
 
-Finalement :
+Finalement, on en déduit que :
 $
   lim_(n -> +oo) PP (X_n = 0)= ... = lim_(n -> +oo) PP (X_n = 4) = 1/5
 $
