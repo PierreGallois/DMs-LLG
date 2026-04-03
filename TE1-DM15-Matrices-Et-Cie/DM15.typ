@@ -197,8 +197,52 @@ $
     x = 2a + 3b
   ) \
   &" d'où" cases(
-    y = b^2 - a^2,
+    y = 4b^2 - 3a b - a^2,
     x = 2a + 3b
   )
 $
-#underline[Synthèse :] On calcule effectivement que $M(a,b)^2 = (2a + 3b)M(a,b) + (b^2 -a^2)I_5$.
+#underline[Synthèse :] On calcule effectivement que $M(a,b)^2 = (2a + 3b)M(a,b) + (4b^2 - 3 a b - a^2)I_5$.
+
+===
+Soit $(a,b) in RR times RR^*$. Alors :
+$
+  M(a,b)^2 = M(a,b) <==> (2a + 3b - 1)M(a,b) + (4b^2 - 3 a b - a^2)I_5 = 0
+$
+
+$M(a,b)$ et $I_5$ sont linéairement indépendantes : en effet, si :
+$
+  lambda M(a,b) + mu I_5 = 0
+$
+Alors, comme $b != 0$, en regardant les coefficients hors de la diagonale, on a $lambda b = 0$ soit $lambda = 0$. Dès lors, on en déduit $mu = 0$.
+
+Ainsi, $M(a,b)^2 = M(a,b)$ si et seulement si :
+$
+  cases(
+    2a + 3b = 1,
+    a^2 + 3 a b= 4b^2
+  ) & <==>
+  cases(
+    2a + 3b = 1,
+    a^2 + a(1-2a) = a - a^2 = 4b^2
+  ) \
+  &<==> cases(
+    b = 1/3(1-2a),
+    a - a^2 = 4/9(1 + 4a^2 - 4a)
+  ) \
+  &<==> cases(
+    b = 1/3(1-2a),
+    25/9a^2 - 25/9a + 4/9 = 0
+  ) \
+  &<==> cases(
+    b = 1/3(1-2a),
+    25a^2 - 25a + 4 = 0
+  )
+$
+Le discriminant de l'équation du second degré est $Delta = 625 - 400 = 225 = 15^2$. $a$ est solution de cette équation si et seulement si :
+$
+  a = (25+15)/50 = 4/5 " ou " a = (25-15)/50 = 1/5
+$
+Ce qui donne les couples solutions :
+$
+  cal(S) = {(4/5, -1/5), (1/5, 1/5)}
+$
