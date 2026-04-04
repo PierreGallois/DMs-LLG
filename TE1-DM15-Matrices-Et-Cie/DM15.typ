@@ -378,3 +378,9 @@ Finalement, on en déduit que :
 $
   lim_(n -> +oo) PP (X_n = 0)= ... = lim_(n -> +oo) PP (X_n = 4) = 1/5
 $
+
+i.e, au bout d'un grand nombre de déplacements, le pion se situe de manière équiprobable sur chacune des 5 cases du damier.
+
+$
+  "Fin du DM15"
+$
