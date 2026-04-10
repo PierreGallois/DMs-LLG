@@ -381,7 +381,6 @@ $
 
 i.e, au bout d'un grand nombre de déplacements, le pion se situe de manière équiprobable sur chacune des 5 cases du damier.
 
-
 $
   "Fin du DM15"
 $
