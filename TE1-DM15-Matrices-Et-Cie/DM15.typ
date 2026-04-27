@@ -353,6 +353,13 @@ $
   )
 $
 
+Soit, plus simplement :
+$
+  forall n in NN, cases(
+    PP (X_(n+1) = X_n) = 1/2,
+    PP (X_n !=X_(n+1)) = 1/8
+  )
+$
 Ainsi, en posant pour tout $n in NN$ la matrice colonne $V_n$ = $[PP (X_n = j)]_(0 <= j<=4)$, on obtient :
 
 #set math.mat(column-gap: 2em, row-gap: 1em)
