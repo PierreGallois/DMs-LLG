@@ -362,5 +362,5 @@ $
 Il existe 3 autres matrices respectant ces conditions, que l'on obtient en changeant de place 1 et 9, et 2 et 4 lors de la contruction.
 
 $
-  "Fin du DM16"
+  "Fin du DM16 = DM4"pi
 $
