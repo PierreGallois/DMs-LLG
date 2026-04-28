@@ -23,25 +23,25 @@ De même, $J in "SMag"_n (RR)$ avec $sigma(J) = n$.
 ==
 Soient $A,B in "SMag"_n (RR)$ et $lambda in RR$.
 
-$
-  forall i in [|1,n|], cases(sum_(j=1)^n a_(i,j) = sigma(A),lambda sum_(j=1)^n b_(i,j) = lambda sigma(B)) "et" forall j in [|1,n|], cases(sum_(i=1)^n a_(i,j) = sigma(A),lambda sum_(i=1)^n b_(i,j) = lambda sigma(B))
-$
+On a, pour tout $i in [|1,n|]$ et tout $j in [|1,n|]$ :
+$ sum_(j=1)^n a_(i,j) = sigma(A), quad sum_(i=1)^n a_(i,j) = sigma(A) $
+$ sum_(j=1)^n b_(i,j) = sigma(B), quad sum_(i=1)^n b_(i,j) = sigma(B) $
 
-D'où, par linéarité de la somme  :
-$
-  cases(forall i in [|1,n|]"," sum_(j=1)^n (a_(i,j) + lambda b_(i,j)) = sigma(A) + lambda sigma(B),forall j in [|1,n|]"," sum_(i=1)^n (a_(i,j) + lambda b_(i,j)) = sigma(A) + lambda sigma(B))
-$
+Par linéarité :
+$ forall i in [|1,n|], quad sum_(j=1)^n (a_(i,j) + lambda b_(i,j)) = sigma(A) + lambda sigma(B) $
+$ forall j in [|1,n|], quad sum_(i=1)^n (a_(i,j) + lambda b_(i,j)) = sigma(A) + lambda sigma(B) $
 
-Soit $(A + lambda B) in "SMag"_n (RR)$ et $sigma(A + lambda B) = sigma(A) + lambda sigma(B).$
+D'où $(A + lambda B) in "SMag"_n (RR)$ et $sigma(A + lambda B) = sigma(A) + lambda sigma(B).$
 
-Par ailleurs, en prenant $B = A$ et $lambda = -2$, il vient que $-A in "SMag"_n (RR)$. On en déduit que $"SMag"_n (RR)$ est stable par addition et par passage à l'opposé. 
+Par ailleurs,on obtient d'une part avec $lambda = 1$ que $(A+B) in "SMag"_n (RR)$, puis en prenant $A = 0_n in "SMag"_n (RR)$ et $lambda = -1$, que $-B in "SMag"_n (RR)$. On en déduit ainsi que $"SMag"_n (RR)$ est stable par addition et par passage à l'opposé. 
 
 ==
-Soit $A in M_n (RR)$.
-$
-  A in "SMag"_n (RR) <==> cases(forall i in [|1,n|]"," sum_(j=1)^n a_(i,j) = sigma(A),forall j in [|1,n|]"," sum_(i=1)^n a_(i,j) = sigma(A))
-\ <==> cases(J A = sigma(A)J, A J = sigma(A) J) <==> J A = A J = lambda J "avec" lambda = sigma(A)
-$
+Soit $A in M_n(R)$.
+
+$ A in "SMag"_n(R)
+<=> (forall i in [|1,n|], quad sum_(j=1)^n a_(i,j) = sigma(A) " et " forall j in [|1,n|], quad sum_(i=1)^n a_(i,j) = sigma(A)) $
+$ <=> (J A = sigma(A) J " et " A J = sigma(A) J) $
+$ <=> J A = A J = sigma(A) J $
 
 ==
 Soient $A,B in "SMag"_n (RR)$.
@@ -133,7 +133,7 @@ Soient $(a, b, c, d, e, f, g, h, i) in RR^9$.
 Analyse :
 $
   A = mat(a, b, c; d, e, f; g, h, i) in "Mag"_3 (RR) inter A_3 (RR)
-  \ ==> cases(sigma(A) = -sigma(A) = 0, a=e=i=0, b=-d=f=-h, g=-c = b) <==> A in {mat(0, m, -m; -m, 0, m; m, -m, 0), m in RR}
+  \ ==> cases(sigma(A^T)=sigma(-A) = -sigma(A) <=> sigma(A) = 0, a=e=i=0, b=-d=f=-h, g=-c = b) <==> A in {mat(0, m, -m; -m, 0, m; m, -m, 0), m in RR}
 $
 
 Et d'autre part :
