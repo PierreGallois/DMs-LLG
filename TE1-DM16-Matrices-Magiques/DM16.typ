@@ -1,4 +1,7 @@
 #import "./../templates/homework.typ": dm
+#import "@preview/lilaq:0.6.0" as lq
+#import "@preview/tiptoe:0.3.1"
+#import "@preview/elembic:1.1.0" as e
 
 #show: dm.with(
   numero: 16,
@@ -179,4 +182,185 @@ $ A = mat(
   (a_(1,n) - a_(n,1))/2, ..., (a_(n-1,n) - a_(n,n-1))/2, 0;
 )
 $
+Et :
+$
+S = mat(
+  a_(1,1), (a_(2,1) + a_(1,2))/2,  ..., (a_(n,1) + a_(1,n))/2;
+  (a_(1,2) + a_(2,1))/2, a_(2,2),  , dots.v;
+  dots.v,   , dots.down, (a_(n,n-1) + a_(n-1,n))/2;
+  (a_(1,n) + a_(n,1))/2, ..., (a_(n-1,n) + a_(n,n-1))/2, a_(n,n);
+)
+$
 
+Ainsi, on a bien $A + S = M$, $A^T = -A$ et $S^T = S$ d'où $A in A_n (RR)$ et $S in S_n (RR)$.
+
+Par ailleurs, cette décomposition est unique car s'il existe des couples $(A_1, S_1)$ et $(A_2, S_2)$ respectant les conditions énoncées, alors comme les diagonales de $A_1$ et de $A_2$ sont égales et nulles ($forall i in [|1,n|], A_1_(i,i) = A_2_(i,i) = 0$), les diagonales de $S_1$ et $S_2$ sont les mêmes ($forall i in [|1,n|], S_1_(i,i) = S_2_(i,i)$) ce qui amène $S_1 = S_2$ et $A_1 = A_2$.
+
+On en déduit que pour toute matrice $M in M_n (RR)$, il existe un unique couple $(A,S) in A_n (RR) times S_n (RR)$ tel que $M = S + A$.
+
+===
+Soit $M in "Mag"_3 (RR)$ de la forme $M = mat(a_(1,1), a_(2,1), a_(3,1); a_(1,2), a_(2,2), a_(3,2); a_(1,3), a_(2,3), a_(3,3))$
+
+En posant $(A,S) in A_n (RR) times S_n (RR)$ tel que $M = S + A$, on obtient :
+$
+  A = mat( 0, (a_(2,1) - a_(1,2))/2, (a_(3,1) - a_(1,3))/2;
+  (a_(1,2) - a_(2,1))/2, 0, (a_(3,2) - a_(2,3))/2;
+  (a_(1,3)-a_(3,1))/2, (a_(2,3)-a_(3,2))/2, 0
+  )
+  "et"
+  S = mat( a_(1,1), (a_(2,1) + a_(1,2))/2, (a_(3,1) + a_(1,3))/2;
+  (a_(1,2) + a_(2,1))/2, a_(2,2), (a_(3,2) + a_(2,3))/2;
+  (a_(1,3) + a_(3,1))/2, (a_(2,3) + a_(3,2))/2, a_(3,3)
+  )
+$
+
+Par conséquent, on remarque que $A$ et $S$ sont également des matrices magiques telles que $sigma(A) = 0$ et $sigma(S) = sigma(M)$.
+
+Toute matrice $M in "Mag"_3 (RR)$ s'écrit donc de manière unique comme la somme d'une matrice magique symétrique et d'une matrice magique antisymétrique.
+
+==
+Soient $J = mat(1,1,1;1,1,1;1,1,1)$, $K=mat(1,-1,0;-1,0,1;0,1,-1)$ et $L=mat(0,1,-1;-1,0,1;1,-1,0)$.
+
+Remarquons dans un premier temps que $K$ est une matrice magique symétrique et que $L$ est une matrice magique antisymétrique, puis que pour tous $beta, gamma in RR$, $(beta K + gamma L)$ est une matrice magique telle que $sigma(beta K + gamma L) = 0$ : le nombre au milieu de la matrice est 0.
+
+Soit $M = mat(a,b,c;d,e,f;g,h,i) in "Mag"_3 (RR)$ avec $a,...,i in RR$.
+
+On peut décomposer $M$ ainsi :
+$
+  M = e J + (a-e)K + (e-c)L
+  \ = alpha J + beta K + gamma L "avec" cases(alpha = e, beta = a-e, gamma=e-c)
+$
+
+Puisque par ailleurs toute matrice de la forme $M = alpha J + beta K + gamma L$ avec $alpha, beta, gamma in RR$ est magique avec $sigma(alpha J + beta K + gamma L) = alpha$, il vient :
+$
+  cases(
+    "Mag"_3 (RR) subset {alpha J + beta K + gamma L | alpha, beta, gamma in RR},
+    {alpha J + beta K + gamma L | alpha, beta, gamma in RR} subset "Mag"_3 (RR)
+  )
+  <==>
+  "Mag"_3 (RR) = {alpha J + beta K + gamma L | alpha, beta, gamma in RR}
+$
+
+==
+===
+Soient $a in NN^*$ et $b,c in RR$.
+
+Posons :
+$
+  A = a J + b K + c L = mat(a+b, a+c-b, a-c; a-b-c, a, a+b+c; a-c, a+b-c, a-b)
+$
+
+Indubitablement :
+$
+  A in "Mag"_3 (NN) 
+  <==> 
+  cases(
+    b","c in ZZ,
+    |b| <= a,
+    |c| <= a,
+    |b+c| <= a,
+    |b-c| <= a
+  )
+  <==> 
+  cases(
+    b","c in ZZ,
+    |b| + |c| <= 3
+  )
+$
+
+L'ensemble des tels points de coordonnées $(b,c)$ forme de manière discrète un losange (ou un assemblement de carrés concentriques). Ici, exemple avec $a=4$ :
+
+#let x_pts = ()
+#let y_pts = ()
+#let a = 4
+
+#for b in range(-a, a+1) {
+  for c in range(-a, a+1) {
+    if calc.abs(b) + calc.abs(c) <= a {
+      x_pts = x_pts + (b,)
+      y_pts = y_pts + (c,)
+    }
+  }
+}
+
+#let schoolbook-style = it => {
+  let filter(value, distance) = value != 0 and distance >= 5pt
+  let axis-args = (position: 0, filter: filter, lim: (-6, 6), subticks: none)
+  
+  show: lq.set-tick(inset: 1.5pt, outset: 1.5pt, pad: 0.4em)
+  show: lq.set-spine(tip: tiptoe.stealth)
+  show: lq.set-grid(stroke: none)
+  
+
+  show: lq.set-diagram(xaxis: axis-args, yaxis: axis-args, width: 60%, height: 20%)
+
+  show: lq.set-label(pad: none, angle: 0deg)
+  show: e.show_(
+    lq.label.with(kind: "y"),
+    it => place(bottom + right, dy: -105% - .0em, dx: -.5em, it)
+  )
+  show: e.show_(
+    lq.label.with(kind: "x"),
+    it => place(left + top, dx: 100% + .0em, dy: .4em, it)
+  )
+  
+  it
+}
+
+#show: schoolbook-style
+$
+#pad(top: 1em, bottom: 0em, left: 1em, right: 1em)[
+  #lq.diagram(
+    xlabel: $b$,
+    ylabel: $c$,
+    lq.plot(
+      x_pts,
+      y_pts,
+      stroke: none,
+      color: purple,
+      mark-size: 0.5em
+    )
+  )
+]
+$
+
+===
+Soient $sigma(A) in NN$ et de la forme $A = (a J + b K + c L) in "Mag"_3 (NN) $ avec $a,b,c in NN$.
+
+Puisque $sigma(A) = 3a$, alors $a = 1/3 sigma(A) in NN <==> sigma(A) = 0 mod 3$.
+
+- Si $sigma(A) != 0 mod 3$, alors il n'existe aucune telle matrice $A in "Mag"_3 (NN)$.
+
+- Si $sigma(A) = 0 mod 3$, puisque pour tout $b in [|-a, a|]$ il existe $2(a-|b|) + 1$ choix pour $c$, alors le nombre $N$ de telles matrices $A in "Mag"_3 (NN)$ est : 
+$
+  N = sum_(b=-a)^a (2(a - |b|) + 1) = (2a +1) - 2a + 4sum_(b=0)^a (a - b)
+  \ = 1 + 4 sum_(b=0)^a a -4sum_(b=0)^a b = 2a(a+1) + 1
+  \ = 2/3 sigma(A) (1/3 sigma(A) + 1) +1
+$
+
+==
+Soit $A$ une matrice magique à coefficients dans $[|1,9|]$ où chacun de ces nombres ne figure qu'une seule fois.
+
+Remarquons dans un premier temps que $sigma(A) >= 9 + 1 + 2 = 12$ (si l'on cherche à minimiser la somme dans une ligne contenant 9) et de même que $sigma(A) <= 1 + 9 + 8 = 18$.
+
+Par ailleurs, puisque chaque nombre entre 1 et 9 est présent dans une ligne et dans une colonne de $A$, alors si $sigma(A) = 12$, on a une ligne (ou une colonne) contenant ${9, 1, 2}$ et une colonne (ou une ligne) cherchant à minimiser sa somme et contenant aussi 9, donc de somme supérieure ou égale à $9 + 3 + 4 = 16$ : contradiction car $sigma(A) = 12 < 16$ et $sigma(A) > 12$.
+
+En opérant de même pour le cas $sigma(A) = 18$, on obtient que $12 < sigma(A) < 18$.
+
+Or, comme $A in "Mag"_3 (NN)$, alors $sigma(A)$ est un multiple de 3, d'où $sigma(A) = 15$.
+
+Ensuite, $a = 1/3 sigma(A) = 5$ donc 5 est au milieu de A.
+
+On complète ensuite $A$ en effectuant quelques hypothèses (placement exact de 9 et de ses voisins) puis en plaçant rigoureusement les autres nombres.
+
+On obtient ainsi :
+
+$
+  A = mat(8,3,4;1,5,9;6,7,2)
+$
+
+Il existe 3 autres matrices respectant ces conditions, que l'on obtient en changeant de place 1 et 9, et 2 et 4 lors de la contruction.
+
+$
+  "Fin du DM16"
+$
