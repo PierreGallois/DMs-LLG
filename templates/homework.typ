@@ -197,7 +197,7 @@
     radius: 7pt,
     stroke: (paint: luma(75), thickness: 1pt, cap: "round", dash: "loosely-dashed"),
     [
-      #set text(size: 14pt)
+      #set text(size: 18pt)
       #content
     ]
   )

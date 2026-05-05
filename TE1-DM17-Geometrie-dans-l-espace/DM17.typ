@@ -3,12 +3,14 @@
 #show: dm.with(
   numero: 17,
   titre: [Géométrie dans l'espace],
-  sections: [Problème],
-  alpha: false
+  sections: [Partie],
+  alpha: true
 )
 
-=
-#sous-partie[Partie A - Existence de tétraèdres non orthocentriques]
+
+#sous-partie[Problème 1]
+
+= Existence de tétraèdres non orthocentriques
 
 ==
 Au sein de ce tétraèdre, les quatres faces sont des triangles rectangles : $A B C$ et $A B D$ sont rectangles en $B$, et $B C D$ et $A C D$ sont rectangles en $D$.
@@ -26,7 +28,7 @@ Indubitablement, il en découle $h_B = (A B), h_C = (A C), "et" h_D = (A D)$.
 
 Comme $h_A$ est une droite passant par $A$, alors on en déduit que les quatres hauteurs sont concourantes en ce même point et que le tétraèdre $A B C D$ est orthocentrique.
 
-#sous-partie[Partie B - Concourance de deux hauteurs]
+= Concourance de deux hauteurs
 Soit $A B C D$ un tétraèdre.
 
 ==
