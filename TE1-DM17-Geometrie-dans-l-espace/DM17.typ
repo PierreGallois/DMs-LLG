@@ -63,6 +63,8 @@ $
 
 Par conséquent, comme $R subset (C D)$, on a $(B R) perp (C D)$ : le point $R$ est le projeté orthogonal de $B$ sur la droite $(C D)$.
 
+On en conclut que $A$ et $B$ ont le même projeté orthogonal $R$ sur la droite $(C D)$.
+
 ===
 Puisque la hauteur $h_A$ est l'unique droite perpendiculaire au plan $(B C D)$ et passant par $A$, alors il s'agit également de l'unique droite perpendiculaire à $(B R)$ passant par $A$. 
 
