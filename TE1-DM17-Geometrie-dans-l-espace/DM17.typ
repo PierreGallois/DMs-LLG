@@ -103,7 +103,15 @@ Ainsi, $(A B) perp (C D), (B C) perp (A D) "et" (C A) perp (B D)$.
 Puisque $(A B) perp (C D)$, alors comme vu précédemment, les hauteurs $h_A$ et $h_B$ sont sécantes en un point $H$. 
 
 ===
-De même, comme $(C D) perp (A B)$, alors $h_C$ et $h_D$ sont sécantes en un point $H'$.
+Comme $h_A$ et $h_B$ sont sécantes en un point $H$, alors elle sont coplanaires et il existe un unique plan $P$ qui les contient toutes deux.
 
-Mais on a aussi $(B C)$
+De plus, $(B C) perp (A D) "et" (C A) perp (B D)$ nous donnent que $h_C$ coupe $h_A$ et $h_B$.
 
+On a ainsi deux options :
+
+  - Soit $h_C$ traverse le plan $P$ à l'endroit où se croisent $h_A$ et $h_B$, c'est-à-dire en $H$.
+  - Soit $h_C$ est entièrement contenue dans le plan $P$, auquel cas on aurait un tétraèdre plat : Absurde.
+
+En appliquant le même raisonnement avec la droite $h_D$, on en déduit que les quatres hauteurs sont concourantes en $H$.
+
+==
