@@ -115,3 +115,30 @@ On a ainsi deux options :
 En appliquant le même raisonnement avec la droite $h_D$, on en déduit que les quatres hauteurs sont concourantes en $H$.
 
 ==
+===
+Au sein du tétraèdre $A B C D$, on a par la relation de Chasles :
+$
+  arrow(A B) dot arrow(C D) + arrow(A C) dot arrow(D B) + arrow(A D) dot arrow(B C) 
+  \ = arrow(A B) dot (arrow(C A) - arrow(D A)) + arrow(A C) dot (arrow(D A) - arrow(B A)) + arrow(A D) dot (arrow(B A) - arrow(C A))
+  \ = 0 "car les termes s'annulent deux à deux."
+$
+
+===
+
+Ainsi, $A B C D$ possède deux paires d'arêtes opposées orthogonales si et seulement si (sans perte de généralité, quitte à renommer les sommets) $arrow(A B) dot arrow(C D) = 0 "et" arrow(A C) dot arrow(D B) = 0$.
+
+Or on dispose de l'égalité $arrow(A B) dot arrow(C D) + arrow(A C) dot arrow(D B) + arrow(A D) dot arrow(B C) = 0$.
+
+On en déduit que :
+$
+  cases(
+    (A B) perp (C D),
+    (A C) perp (D B)
+  )
+  <==> arrow(A B) dot arrow(C D) = arrow(A C) dot arrow(D B) = arrow(A D) dot arrow(B C) = 0
+  \ <==> A B C D "possède trois paires d'arêtes opposées orthogonales"
+  \ <==> h_A, h_B, h_C "et" h_D "concourantes"
+  \ <==> A B C D "orthocentrique"
+$
+
+Un tétraèdre est donc orthocentrique si et seulement si il possède deux paires d'arêtes opposées orthogonales.
