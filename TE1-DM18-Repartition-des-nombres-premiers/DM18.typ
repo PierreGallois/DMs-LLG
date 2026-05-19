@@ -69,4 +69,32 @@ $
 
 ==
 ===
---> binome de newton dans l'intégrale, puis linéarité somme, etc..
+Soient $p,q in NN^*$ tels que $p<q$.
+En remarquant que pour tout $x in [0,1]$ :
+$
+  (1-x)^(q-p) = sum_(j=0)^(q-p) binom(q-p, j) (-1)^(j) x^(j)
+$
+
+En remplaçant dans l'intégrale, on obtient : 
+$
+  I(p,q) = sum_(j=0)^(q-p) binom(q-p, j) (-1)^(j) underbrace(integral_0^1 x^(p-1) x^j d x, = 1/(p+j) )
+  \ = sum_(j=0)^(q-p) (-1)^(j)/(p + j) binom(q-p, j)
+$
+
+===
+Comme $(p+j) in [|p, q|]$ pour tout $j in [|0,q-p|]$, alors $Delta_q = "ppcm"(1,...,p,...,q) in NN$ est divisble par chacune de ces telles quantités $(p+j)$.
+
+Ainsi, puisque $(-1)^j in ZZ "et" binom(q-p, j) in NN$ pour tout $j in [|0,q-p|]$, alors par somme et produit on obtient que $Delta_q I(p,q) in ZZ$.
+
+Or pour tout $x in [0,1]$, $x^(p-1)(1-x)^(q-p) >= 0$, donc $I(p,q) >= 0$ par croissance de l'intégrale.
+
+On en déduit finalement que $Delta_q I(p,q) in NN$.
+
+===
+Par conséquent, comme $I(p,q) = 1/(p binom(q,p))$, alors :
+$
+  Delta_q I(p,q) = Delta_q 1/(p binom(q,p)) in NN quad "i.e" p binom(q,p) "divise" Delta_q.
+$
+
+==
+Soit $n in NN^*$.
