@@ -142,3 +142,26 @@ $
 $
 
 Un tétraèdre est donc orthocentrique si et seulement si il possède deux paires d'arêtes opposées orthogonales.
+
+==
+===
+Au sein du tétraèdre $A B C D$ :
+$
+  A B² + C D² - (A C² + B D²)\ = A B² - A C² + (arrow(A D) - arrow(A C))² - (arrow(A D) - arrow(A B))²
+  \ = -2 arrow(A D) dot arrow(A C) + 2 arrow(A D) dot arrow(A B)
+  \ = 2 arrow(D A) dot arrow(B C)
+$
+
+===
+Ainsi, on en déduit que :
+$
+A B² + C D² = A C² + B D² <==> arrow(D A) dot arrow(B C) = 0 <==> (A D) perp (B C)
+$
+
+Par conséquent, on obtient par permutation au sein des sommets que :
+$
+  A B² + C D² =  A C² + B D² = A D² + B C² \ <==> A B C D "possède deux paires d'arêtes opposées orthogonales" \ <==> A B C D "orthocentrique"
+$
+
+==
+Comme au sein d'un tétraèdre régulier la longueur de chaque arête est la même, alors on obtient l'égalité vue ci-dessus, et le tétraèdre est orthocentrique.
