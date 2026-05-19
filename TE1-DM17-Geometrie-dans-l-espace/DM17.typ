@@ -71,3 +71,39 @@ Puisque la hauteur $h_A$ est l'unique droite perpendiculaire au plan $(B C D)$ e
 Et comme la hauteur issue de $A$ au sein du triangle $A B R$ respecte ces conditions, alors on en déduit qu'il s'agit de $h_A$.
 
 De même, on trouve que la hauteur issue de $B$ au sein du triangle $A B R$ est la droite $h_B$.
+
+Enfin, on en déduit que les hauteurs $h_A$ et $h_B$ sont sécantes en un point $H$ car il s'agit de deux hauteurs d'un même triangle : ce sont deux droite coplanaires et non parallèles.
+
+== 
+
+Si les hauteurs $h_A$ et $h_B$ d'un tétraèdre sont sécantes en un point $H$, alors $(A B)$ est orthogonale à $(C D)$, ce qui implique réciproquement que les hauteurs $h_C$ et $h_D$ sont également sécantes en un point $H'$.
+
+= Concourance des quatre hauteurs
+Soit $A B C D$ un tétraèdre.
+
+==
+Si les hauteurs $h_A, h_B, h_C "et" h_D$ sont concourantes, alors on a d'après la partie précédente : 
+
+$
+  cases(
+    h_A "sécante à" h_B ==> (A B) "orthogonale à" (C D),
+    h_B "sécante à" h_C ==> (B C) "orthogonale à" (A D),
+    h_C "sécante à" h_A ==> (C A) "orthogonale à" (B D),
+  )
+$
+
+On a bien $(A B) perp (C D), (B C) perp (A D) "et" (C A) perp (B D)$.
+
+==
+Supposons que le tétraèdre $A B C D$ possède 3 paires d'arêtes opposées orthogonales.
+
+Ainsi, $(A B) perp (C D), (B C) perp (A D) "et" (C A) perp (B D)$.
+
+===
+Puisque $(A B) perp (C D)$, alors comme vu précédemment, les hauteurs $h_A$ et $h_B$ sont sécantes en un point $H$. 
+
+===
+De même, comme $(C D) perp (A B)$, alors $h_C$ et $h_D$ sont sécantes en un point $H'$.
+
+Mais on a aussi $(B C)$
+
