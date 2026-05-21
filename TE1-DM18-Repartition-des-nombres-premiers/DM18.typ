@@ -98,3 +98,87 @@ $
 
 ==
 Soit $n in NN^*$.
+
+===
+En posant $p = n "et" q = 2n$, on a bien $p,q in NN^* "et" p < q$.
+
+Ainsi, comme pour tout $k in NN^*, Delta_k | Delta_(k+1)$, alors on obtient :
+$
+p binom(q,p) | Delta_(q) <==> n binom(2n, n) | Delta_(2n) ==> n binom(2n, n) | Delta_(2n +1)
+$
+
+De même, en posant $p = n+1 "et" q=2n+1$, il vient :
+$
+  p binom(q,p) | Delta_q <==> (n+1) binom(2n+1, n+1) = (2n+1) binom(2n, n)| Delta_(2n+1)
+$
+
+===
+Comme pour tout $n in NN^*$ on a $(2n +1) + (-2)n = 1$, alors $(2n+1)$ et $n$ sont premiers entre eux.
+
+Ainsi, on en déduit par le théorème de Gauss que :
+$
+  cases(
+    n binom(2n,n) | Delta_(2n+1),
+    (2n+1) binom(2n,n) | Delta_(2n+1)
+  ) ==> n(2n+1)binom(2n,n) | Delta_(2n+1)
+$
+
+===
+Soit $k in [|0,n-1|]$.
+
+$
+  binom(2n, k+1) / binom(2n,k) = (k! dot (2n-k)!)/((k+1)! dot (2n-k-1)!) = (2n-k)/(k+1) > 1 "car" k < n
+$
+ 
+Ainsi, la suite $k --> binom(2n,k)$ est strictement croissante pour $0 <= k <= n$.  
+En particulier, pour tout $k in [|0,n|]$, on a $binom(2n, k) <= binom(2n,n)$.
+
+Par symétrie du binôme, on en déduit que cette inégalité est vraie pour tout $k in [|0,2n|]$.
+
+===
+Il en découle que par somme :
+$
+  binom(2n,0) + binom(2n,1) + dots.h.c + binom(2n,2n) <= (2n+1) times binom(2n,n)
+  \ <==> sum_(k=0)^(2n) binom(2n,k) 1^k 1^(2n-k) = (1 + 1)^(2n) = 4^n <= (2n+1) binom(2n,n)
+$
+
+===
+Ainsi, en multipliant des deux côtés de l'inégalité par $n in NN^*$, il vient :
+$
+  n 2^(2n) <= n(2n+1) binom(2n,n)
+$
+
+Or $underbrace(n(2n+1) binom(2n,n),  > 0) | underbrace(Delta_(2n+1), >0) ==> n(2n+1) binom(2n,n) <= Delta_(2n+1)$ 
+
+Par transitivité on en conclut que :
+$
+  n 2^(2n) <= Delta_(2n+1)
+$
+
+===
+Montrons que $Delta_m >= 2^m$ pour tout $m >= 9$.
+
+
+- Si $m$ est impair, alors posons $m = 2n +1, n in NN^*$.
+
+On sait que $Delta_(2n+1) = Delta_m >= n 2^(2n)$. Or $2^m = 2^(2n+1) = 2 times 2^(2n)$.
+
+Ainsi, pour tout $n >= 4 >= 2$ i.e pour tout entier impair $m >= 9$, on a $Delta_m >= 2^m$.
+
+- Si $m$ est pair, alors posons $m = 2n, n in NN^*$ tel que $n >= 5$.
+
+Par croissance de $m --> Delta_m$, on a $Delta_m >= Delta_(2n -1)$. 
+
+Or $Delta_(2n-1) >= (n-1)2^(2n-2) = 2^(2n) times underbrace((n-1)/4, >= 1) >= 2^(2n) ==> Delta_m >= 2^m$.
+
+Ainsi, pour tout entier $m >= 9$, on a $Delta_m >= 2^m$.
+
+L'inéquation $Delta_n >= 2^n$ d'inconnue $n in NN^*$ admet donc pour solution :
+$
+  S = NN^* without {3, 4, 6}
+$
+
+==
+Soit $n in NN^*$.
+
+===
