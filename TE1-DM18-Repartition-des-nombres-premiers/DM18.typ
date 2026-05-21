@@ -224,3 +224,28 @@ Comme $2^pi(2) = 2 != 2² = 4$, $4^pi(4) = 16 = 2^4$, et $8^pi(8) = 8⁴ = 2^(12
 $
   pi(n) = ln(2) n/ln(n) <==> n = pi = 4.
 $
+
+= Majoration de $pi(n)$ par la méthode de Erdos (1939) 
+
+==
+===
+
+===
+
+===
+
+===
+
+===
+
+==
+
+==
+
+===
+
+===
+
+$
+  "Fin du DM18 = DM"9/2pi
+$
