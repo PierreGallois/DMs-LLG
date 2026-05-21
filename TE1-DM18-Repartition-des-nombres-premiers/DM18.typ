@@ -175,10 +175,52 @@ Ainsi, pour tout entier $m >= 9$, on a $Delta_m >= 2^m$.
 
 L'inéquation $Delta_n >= 2^n$ d'inconnue $n in NN^*$ admet donc pour solution :
 $
-  S = NN^* without {3, 4, 6}
+  S = NN^* without {1,2,3, 4, 6}
 $
 
 ==
 Soit $n in NN^*$.
 
 ===
+Soit $p in P$.
+
+Comme $Delta_n = "ppcm"(1,...,n)$, alors $v_p (Delta_n) = max(v_p (2), ..., v_p (n))$.
+
+Posons $a = v_p (Delta_n)$. Alors, il existe un entier $1 <= k <= n$ tel que $v_p (k) = a$.
+
+Ainsi, $p^a | k$, d'où $p^(v_p (Delta_n)) <= k <= n$.
+
+===
+La décomposition de $Delta_n$ en facteurs premiers est : 
+$
+  Delta_n = product_(p in P) p^(v_p (Delta_n))
+$
+
+Or pour tout $p in P$, on a $p^(v_p (Delta_n)) <= n$.
+
+En multipliant ces inégalités sur tous les nombres premiers $p <= n$, on en déduit :
+$
+  Delta_n <= product_(p <= n) n = n^(pi (n))
+$
+
+==
+Subséquemment, on obtient par transitivité que pour tout entier $n >= 9$ :
+$
+  n^(pi (n)) >= Delta_n >= 2^n > 0
+  \ <==> pi(n) ln(n) >= n ln(2) "par croissance de" x --> ln(x) "sur" RR_+^*
+$
+D'où, finalement :
+$
+  pi(n) >= ln(2) n/ln(n).
+$
+
+Cette égalité est vraie si et seulement si $n$ est une puissance de 2, car on aurait $n^(pi(n)) = 2^n$.
+
+Or, d'après les résultats du 4)f), pour tout $m > 10$, on a $Delta_n > 2^n ==> n^pi(n) > 2^n$.
+
+Il ne reste plus qu'à vérifier les puissance de 2 comprises entre $1$ et $10$. 
+
+Comme $2^pi(2) = 2 != 2² = 4$, $4^pi(4) = 16 = 2^4$, et $8^pi(8) = 8⁴ = 2^(12) > 2^8$, alors :
+$
+  pi(n) = ln(2) n/ln(n) <==> n = pi = 4.
+$
