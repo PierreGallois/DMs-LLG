@@ -11,7 +11,7 @@
   set text(lang: "fr", size: 12pt)
   set par(justify: true, first-line-indent: 1em)
   set page("a4", margin: auto)
-  set page(footer: context {
+/*   set page(footer: context {
     set align(center)
     if counter(page).get().first() == 4 [
       $pi = 4$
@@ -22,8 +22,27 @@
     else {
       counter(page).display()
     }
-  })
+  }) 
   
+  ---> vieux code pas généralisé
+  */
+  
+  set page(footer: context {
+  set align(center)
+
+  let p = counter(page).get().first()
+
+  if p == 4 [
+    $pi = 4$
+  ]
+  else if p == 8 [
+    $2 pi = 8$
+  ]
+  else [
+    $#p = #(p)/4 pi$
+  ]
+})
+
   set page(background: context {
     // Logo classe
     if counter(page).get().first() != 1 {

@@ -229,6 +229,9 @@ $
 
 ==
 ===
+Soient $a,b in NN^*$ tels que $a < b <= 2a$.
+
+
 
 ===
 
