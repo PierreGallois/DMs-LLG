@@ -31,15 +31,26 @@
   set align(center)
 
   let p = counter(page).get().first()
-
-  if p == 4 [
+  if p == 1 [
+    $pi/4 = 1$
+  ]
+  else if p == 2 [
+    $pi/2 = 2$
+  ]
+  else if p == 4 [
     $pi = 4$
+  ]
+  else if p == 6 [
+    $3/2 pi = 6$
   ]
   else if p == 8 [
     $2 pi = 8$
   ]
+  else if p == 10 [
+    $5/2 pi = 4$
+  ]
   else [
-    $#p = #(p)/4 pi$
+    $#(p)/4 pi = #p$
   ]
 })
 
