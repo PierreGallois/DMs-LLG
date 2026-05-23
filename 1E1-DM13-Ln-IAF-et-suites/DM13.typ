@@ -11,7 +11,7 @@
   alpha: false,
 )
 
-#let folder-name = "DM13-Ln-IAF-et-suites/"
+#let folder-name = "1E1-DM13-Ln-IAF-et-suites/"
 #let RPS = $RR_+^*$
 #let NS = $NN^*$
 #let RS = $RR^*$

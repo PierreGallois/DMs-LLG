@@ -1,4 +1,5 @@
 #import "./../templates/homework.typ": dm, sous-partie, code-from-file
+#import "@preview/vartable:0.2.3": tabvar
 
 #show: dm.with(
   numero: 18,
@@ -326,11 +327,52 @@ $
   pi(n) ln(pi(n)) - pi(n) <= n ln(4)
 $
 ==
-
-
-===
+Supposons qu'il existe un entier $n_0 >= 3$ tel que $display(pi(n_0) > e n_0 / ln(n_0))$.
 
 ===
+Soit $f : x mapsto.long x ln(x) - x$ une fonction définie sur $]0, + infinity [$ et dérivable sur ce même intervalle par composition.
+
+Pour tout $x in RR_+ ^*$, comme $f'(x) = ln(x) > 0 <==> x > 1$ et que $f'(1) = 0$, alors on en déduit que $f$ est strictement croissante sur $[1,+infinity[$.
+
+Ainsi, comme pour tout $x in RR_+ ^*$ on a $display(e x/ln(x) > 1)$, il vient par hypothèse puis par stricte croissance de $f$ que : 
+$
+  pi(n_0) > e n_0 / ln(n_0) ==> underbrace(pi(n_0)ln(n_0) - pi(n_0), <= n_0 ln(4)) > e n_0 - e n_0 ln(ln(n_0))/ln(n_0)
+  \ <==> ln(ln(n_0))/ln(n_0) > 1 - ln(4)/e = (e - ln(4))/e
+$ 
+
+===
+Posons maintenant $g : x mapsto.long display(ln(x)/x)$, définie et dérivable par composition sur $[1, + infinity[$.
+
+Pour tout $x >= 1$, $g'(x) = display((1 - ln(x))/(x²))$ d'où :
+
+#align(center)[
+#tabvar(
+  variable: $x$,
+  label: (
+    ([signe de $g'$], "s"),
+    ([variation de $g$],  "v"),
+  ),
+  domain: ($1$, $e$, $+infinity$),
+  contents: (
+    ($+$, ("0", $-$)),
+    ((bottom, $0$), (top, $e^(-1)$), (bottom, $0$)),
+  )
+)
+]
+
+Ainsi, pour tout $x >= 1$, on a $display(ln(x)/x <= 1/e)$.
+
+Par conséquent, $n >= 3 > e ==> ln(n_0) > ln(e) = 1$ d'où :
+$
+  (e - ln(4))/e < ln(ln(n_0))/ln(n_0) < 1/e ==> e - ln(4) < 1
+  \ ==> underbrace(e, approx 2.718) < underbrace(1 + ln(4), approx 2.386)
+$
+
+Ce qui est absurde. Par conséquent, il n'existe aucun tel entier $n_0 >= 3$ respectant la condition initiale $display(pi(n_0) > e n_0 / ln(n_0))$ : 
+$
+  "Pour tout entier" n >= 3, pi(n) <= e n / ln(n). 
+$
+
 
 $
   "Fin du DM18 = DM"9/2pi
