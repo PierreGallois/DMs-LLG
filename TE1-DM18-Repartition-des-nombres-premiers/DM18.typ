@@ -91,7 +91,7 @@ Or pour tout $x in [0,1]$, $x^(p-1)(1-x)^(q-p) >= 0$, donc $I(p,q) >= 0$ par cro
 On en déduit finalement que $Delta_q I(p,q) in NN$.
 
 ===
-Par conséquent, comme $I(p,q) = 1/(p binom(q,p))$, alors :
+Par conséquent, comme $display(I(p,q) = 1/(p binom(q,p)))$, alors :
 $
   Delta_q I(p,q) = Delta_q 1/(p binom(q,p)) in NN quad "i.e" p binom(q,p) "divise" Delta_q.
 $
@@ -130,8 +130,8 @@ $
   binom(2n, k+1) / binom(2n,k) = (k! dot (2n-k)!)/((k+1)! dot (2n-k-1)!) = (2n-k)/(k+1) > 1 "car" k < n
 $
  
-Ainsi, la suite $k --> binom(2n,k)$ est strictement croissante pour $0 <= k <= n$.  
-En particulier, pour tout $k in [|0,n|]$, on a $binom(2n, k) <= binom(2n,n)$.
+Ainsi, la suite $display(k --> binom(2n,k))$ est strictement croissante pour $0 <= k <= n$.  
+En particulier, pour tout $k in [|0,n|]$, on a $display(binom(2n, k) <= binom(2n,n))$.
 
 Par symétrie du binôme, on en déduit que cette inégalité est vraie pour tout $k in [|0,2n|]$.
 
@@ -231,19 +231,102 @@ $
 ===
 Soient $a,b in NN^*$ tels que $a < b <= 2a$.
 
+Pour tout nombre premier $p$ tel que $a < p <= b$, on a :
+$
+  cases(
+    p <= b ==> p divides b!,
+    p > a ==> p divides.not a!,
+    b <= 2a ==> (b - a) <= a ==> p divides.not (b-a)!
+  )
+  ==> p divides b! / (a!(b-a)!) = binom(b,a)
+$
 
+Or, pour tous $p, p' in P$, par définition, $p and p' = 1$.
+
+Ainsi, d'après le théorème de Gauss :
+$
+  product_(p in P \ a < p <= b) p divides binom(b,a)
+$
 
 ===
+Par conséquent, pour tout $m in NN^*$, comme $(m+1) < (2m + 1) < 2 times (m+1) $, alors on peut poser $a = (m+1)$ et $b = (2m+1)$ deux entiers qui respectent les conditions de la question précédente.
+
+On en déduit que :
+$
+  product_(p in P \ a < p <= b) p divides binom(b,a) <==> product_(p in P \ m+1 < p <= 2m+1) p divides binom(2m+1,m+1)
+$
 
 ===
+Soit $m in NN^*$.
+
+$
+  4^m = 2^(2m) = 1/2 (1+1)^(2m+1) = 1/2sum_(k=0)^(2m+1) binom(2m+1, k)
+  \ = underbrace((sum_(k=0)^(m-1) binom(2m+1, k), >0)) + binom(2m+1, m) "par symétrie du binôme"
+$
+
+On a donc bien $4^m >= binom(2m+1, m)$ pour tout $m in NN^*$.
 
 ===
+Or, comme :
+$
+  underbrace((product_(p in P \ m+1 < p <= 2m+1) p), >= 1 > 0) divides underbrace(binom(2m+1,m+1), > 0)
+$
+
+Alors on en déduit une relation d'ordre, puis par transitivité avec l'inégalité ci-dessus :
+$
+product_(p in P \ m+1 < p <= 2m+1) p <= binom(2m+1,m+1) <= 4^m
+$
 
 ===
+Soit $n in NN^*$. Posons l'assertion $P(n)$ : "pour tout $k in [1,2n],  display(product_(p in P \ p <= k) p)<= 4^k$"
+
+Montrons par récurrence que $P(n)$ est vraie pour tout $n in NN^*$.
+
+Initialisation : $n=1$, comme $display(product_(p in P \ p <= 1) p) = 1 <= 4^1$ et $display(product_(p in P \ p <= 2) p) = 2 <= 4^2$, alors $P(1)$ vraie.
+
+Hérédité : Soit $n in NN^*$. Supposons que $P(n)$ vraie.
+
+Pour tout $k in [0,2n]$, on a bien $display(product_(p in P \ p <= k) p)<= 4^k$ par H.R.
+
+De plus, comme $display(product_(p in P \ p <= 2n+1) p) = display(product_(p in P \ p <= n+1) p) times display(product_(p in P \ n+1< p <= 2n+1) p)$, et que par ailleurs :
+$
+  display(product_(p in P \ p <= n+1) p) <= 4^(n+1) "par H.R., et" display(product_(p in P \ n+1 < p <= 2n+1) p) <= 4^n
+$
+
+Alors il vient :
+$
+  display(product_(p in P \ p <= 2n+1) p) <= 4^n 4^(n+1) = 4^(2n+1)
+$
+
+Et puisque $(2n+2) = 2 times underbrace((n+1), > 1)$ n'est pas premier, alors :
+$
+  display(product_(p in P \ p <= 2n+2) p) = display(product_(p in P \ p <= 2n+1) p) <= 4^(2n+1) <= 4^(2n+2)
+$
+Donc $P(n+1)$ vraie aussi et on en déduit que $P(n)$ vraie pour tout $n in NN^*$.
+
+Finalement, pour tout $k in NN^*, display(product_(p in P \ p <= k) p)<= 4^k$.
 
 ==
+Soit $n in NN^*$. Posons $k = pi(n) in NN^*$.
 
+Alors il existe exactement $k$ nombre premiers inférieurs ou égaux à $n$ : $p_1 < p_2 < dots.h.c < p_k$.
+
+Comme $p_i  >= i +1$ pour tout $i >= 1$, alors $p_1 dot p_2 dot dots.h.c dot p_k >= 2 dot 3 dot dots.h.c dot k = (k+1)! > pi(n)!$
+
+Or on sait que : $p_1 dot p_2 dot dots.h.c dot p_k = display(product_(p in P \ p <= n) p) <= 4^n$. 
+
+Ainsi, pour tout $n in NN^*$, $pi(n)! <= 4^n$ par transitivité.
+
+Or d'après l'énoncé, comme $pi(n) in NN^*$, alors $display(pi(n)! > (pi(n)/e)^pi(n))$ donc on a :
+$
+display( (pi(n)/e)^pi(n) < 4^n)
+$
+Puisque tous les membres de cette inégalité sont strictement positifs, alors par croissance de $x --> ln(x) "sur" RR_+^*$ :
+$
+  pi(n) ln(pi(n)) - pi(n) <= n ln(4)
+$
 ==
+
 
 ===
 
