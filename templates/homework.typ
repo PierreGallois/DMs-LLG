@@ -66,6 +66,15 @@
             width: 75pt
           )
         )
+        place(
+          top + right,
+          dx: 13pt,
+          dy: 85pt,
+          image(
+            "logo_classe_gris_1e1.svg",
+            width: 100pt
+          )
+        )
       }
     }
   )
