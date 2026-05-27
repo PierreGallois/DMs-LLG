@@ -19,6 +19,18 @@ Pour tout $n >= 1$, $0$ et $1$ (écrits avec $n$ chiffres) sont égaux à leur c
 En testant avec le programme de la question B2), on trouve que les nombres automorphes de $2$ chiffres sont $00$, $01$, $25$ et $76$.
 
 ==
+Soit $b$ automorphe à deux chiffres. Comme $b^2$ a au plus 4 chiffres, écrivons $b^2 = 10^3A + 10^2B + b$ avec $A,B in [|0;9|]$. Ainsi, pour tout $a in [|0;9|]$ :
+$
+  (100a+b)^2 & = 10^4a = 200a b + b^2 \
+             & = 10^4a + 10^3 A + 100 (2 a b + B) + b
+$
+Ainsi, $100a + b$ est automorphe de $3$ chiffres si et seulement si le dernier chiffre de $2a b + B$ est exactement $a$, c'est à dire que $2a b + B = a mod(10)$. Pour tous $b, B$ :
+$
+  2a b + B equiv a mod(10) <==> a (2b-1) equiv -B mod(10)
+$
+Or, $2b-1$ est toujours impair. De plus, $2b equiv 1 mod(5)$ si et seulement si $b equiv 3 mod(5)$. Or, si $b equiv 3 mod(5)$, le dernier chiffre de $b$ est 3 ou 8 et $b$ ne peut être automorphe. Donc $5 divides.not 2b - 1$. Ainsi, $2b-1$ est premier avec $10$ et la congruence précédente admet une unique solution $a in [|0;9|]$, qui est telle que $100a + b$ est automorphe à $3$ chiffres.
+
+Les deux derniers chiffres d'un nombre automorphe de 3 chiffres forment un nombre automorphe de 2 chiffres, et le premier chiffre d'un nombre automorphe de 3 chiffres peut être déduit de ses deux derniers chiffres par la méthode précédente. Ainsi, il y a exactement $4$ nombres automorphes de $3$ chiffres, produits en appliquant la méthode précédente aux nombre automorphes de $2$ chiffres, qui sont : $000$, $001$, $625$ et $376$.
 
 = Propriétés des nombres automorphes de $n$ chiffres
 ==
