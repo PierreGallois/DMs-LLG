@@ -167,3 +167,57 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
 #show: set align(center)
 #set text(25pt)
 *MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*
+
+= Perspective
+
+#let data = (
+  ("../1E1-DM01-Logique--Triangles-Magiques/DM1.pdf", 7),
+  ("../1E1-DM02-Equations-Fonctionnelles--Nombres-echangeables/DM2.pdf", 4),
+  ("../1E1-DM03-Partie-Entiere--Notion-de-Densite/DM3.pdf", 5),
+  ("../1E1-DM04-Injections,Surjections,Bijections/DM4.pdf", 5),
+  ("../1E1-DM05-Methode-de-Cardan/DM5.pdf", 5),
+  ("../1E1-DM06-Nombres-Heureux/code/heureux.pdf", 1),
+  ("../1E1-DM06-Nombres-Heureux/code/karma.pdf", 1),
+  ("../1E1-DM06-Nombres-Heureux/DM6.pdf", 6),
+  ("../1E1-DM07-Autour-de-Farey/DM7.pdf", 9),
+  ("../1E1-DM07-Autour-de-Farey/figure.pdf", 1),
+  ("../1E1-DM08-DHiver/DM8.pdf", 10),
+  ("../1E1-DM08-DHiver/figures.pdf", 1),
+  ("../1E1-DM08-DHiver/sapin.pdf", 1),
+  ("../1E1-DM09-Fonction-du-Boulanger/DM9.pdf", 7),
+  ("../1E1-DM10-Droites-Tropicales/DM10.pdf", 9),
+  ("../1E1-DM10-Droites-Tropicales/polynomes.pdf", 1),
+  ("../1E1-DM10-Droites-Tropicales/tropiques.pdf", 1),
+  ("../1E1-DM11-Equation-de-Pell-Fermat/DM11.pdf", 4),
+  ("../1E1-DM12-Premiere-fois--stabilite-geometrique/DM12.pdf", 9),
+  ("../1E1-DM13-Ln-IAF-et-suites/DM13.pdf", 8),
+  ("../1E1-DM13-Ln-IAF-et-suites/tabvar_patched.pdf", 1),
+  ("../1E1-DM14-Puissance-d-un-point/DM14.pdf", 6),
+  ("../1E1-DM14-Puissance-d-un-point/vectors.pdf", 1),
+  ("../TE1-DM01-Fonctions-Contractantes-Dilatantes-et-Points-Fixes/DM1.pdf", 7),
+  ("../TE1-DM02-Autour-de-la-continuite/DM2.pdf", 5),
+  ("../TE1-DM03-Theoreme-de-la-corde-universelle/DM3.pdf", 5),
+  ("../TE1-DM04-Methode-de-Newton/DM4.pdf", 5),
+  ("../TE1-DM05-Existence-De-La-Fonction-Exponentielle/DM5.pdf", 3),
+  ("../TE1-DM06-Localisation-de-racines/DM6.pdf", 6),
+  ("../TE1-DM07-Arc-Tangente-Et-Nombres-Complexes/DM7.pdf", 1),
+  ("../TE1-DM08-Chemins-Sur-Un-Quadrillage/DM8.pdf", 5),
+  ("../TE1-DM09-Suites-recurrentes-lineaires-d-ordre-2/DM9.pdf", 3),
+  ("../TE1-DM10-Theoreme-de-Beatty-et-Jeu-de-Wythoff/DM10.pdf", 6),
+  ("../TE1-DM11-La-ruine-du-joueur/DM11.pdf", 4),
+  ("../TE1-DM12-Suites-Recurrentes-d-Ordre-2-Non-Lineaires/DM12.pdf", 5),
+  ("../TE1-DM13-Calcul-de-Zeta-2/DM13.pdf", 5),
+  ("../TE1-DM14-Integrales-de-Wallis/DM14.pdf", 11),
+  ("../TE1-DM15-Matrices-Et-Cie/DM15.pdf", 8),
+  ("../TE1-DM16-Matrices-Magiques/DM16.pdf", 8),
+  ("../TE1-DM17-Geometrie-dans-l-espace/DM17.pdf", 4),
+  ("../TE1-DM18-Repartition-des-nombres-premiers/DM18.pdf", 8)
+)
+
+#grid(
+  
+for (path, nb_pages) in data {
+   for page in array.range(1, nb_pages + 1) {
+     box(image(path, page: page, height: 100pt))
+   }
+})
