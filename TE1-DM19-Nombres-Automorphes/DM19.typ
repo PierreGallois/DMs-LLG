@@ -46,7 +46,7 @@ Ainsi, $10^n a + b$ est automorphe de $n+1$ chiffres si et seulement si le derni
 Le script python suivant applique la méthode précédente pour calculer des nombres automorphes :
 #code-from-file(folder-name, "gen_automorphe.py")
 
-On trouve ainsi les nombres automorphes de $4$ chiffres $0000$, $0001$, $0625$ et $9376$, qui sont tous les nombres automorphes de $4$ chiffres par la question suivante.
+On trouve ainsi les nombres automorphes de $4$ chiffres : $0000$, $0001$, $0625$ et $9376$, qui sont tous les nombres automorphes de $4$ chiffres par la question suivante.
 
 ==
 On procède par récurrence sur $n >= 1$. Les nombres automorphes de $1$ chiffres sont $0,1,5$ et $6$ qui sont au nombre de $4$.
@@ -87,7 +87,7 @@ $
   a^(b^(n+1 - 1)) - 1 & = (a^b^(n-1))^b - 1^b \
                       & =^"Bernoulli" (a^b^(n-1) - 1)(a^(b^n - b^(n-1)) + dots + 1)
 $
-Où la somme de du facteur de droite contient $b$ termes, qui sont tous congrus à $1$ modulo $b$ car $a^k equiv 1 mod(b)$ pour tout $k in NN$. La somme est divisible par $b$. De plus, par l'hypothèse de récurrence, le facteur de gauche est divisible par $b^n$. Ainsi :
+Où la somme de du facteur de droite contient $b$ termes, qui sont tous congrus à $1$ modulo $b$ car $a^k equiv 1 mod(b)$ pour tout $k in NN$. La somme est donc divisible par $b$. De plus, par l'hypothèse de récurrence, le facteur de gauche est divisible par $b^n$. Ainsi :
 $
   a^(b^n) - 1 equiv 0 mod(b^(n+1)) " soit " a^b^n equiv 1 mod(b^(n+1))
 $
@@ -105,9 +105,9 @@ On calcule que $a_3 = 625$ et que $a_3^2 = 390625$ : $a_3$ est donc bien automor
 
 De même, $a_4 = 0625$ qui est automorphe de $4$ chiffres, et $b_4 = 9376$ : on a bien $b_4^2 = 87 909 376$, et $b_4$ est automorphe de $4$ chiffres.
 
-D'après la partie A, il y a $4$ nombres automorphes de $8$ chiffres dont $0$ et $1$. Ainsi, les nombres donnés par la méthode de la question B4) appliquée à $a_4$ et $b_4$ sont automorphes et distincts, et sont donc :
+D'après la partie A, il y a $4$ nombres automorphes de $8$ chiffres dont $0$ et $1$. Les nombres donnés par la méthode de la question B4) appliquée à $a_4$ et $b_4$ sont automorphes et distincts, et sont donc les deux autres nombres automorphes de $8$ chiffres avec :
 $
-  12890625 = a_8 " et " 87108376 = b_8
+  12890625 = a_8 " et " 87109376 = b_8
 $
 (où l'on identifie que $12890625 = a_8$ et pas $b_8$ car une puissance de $5$ se termine toujours par un $5$ modulo $10$).
 
@@ -151,7 +151,7 @@ $
 $
 Qui satisfait donc $x(x-1) equiv 0 mod(10^n)$, c'est à dire que $x$ est automorphe de $n$ chiffres.
 
-*(A5)* Il y a donc $4$ nombres automorphes de $n$ chiffres, et cette méthode s'adapte aux nombres dans n'importe quelle base en écrivant la décomposition primaire de la base ($2^omega(b)$ nombres automorphes de $n$ chiffres en base $b$, avec $omega(b)$ le nombre de facteurs premiers de $b$). "DM20 : Les idempotents de $ZZ slash n ZZ$ ?"
+*(A5)* Il y a donc $4$ nombres automorphes de $n$ chiffres, et cette méthode s'adapte aux nombres dans n'importe quelle base en écrivant la décomposition primaire de la base ($2^omega(b)$ nombres automorphes de $n$ chiffres en base $b$, avec $omega(b)$ le nombre de facteurs premiers de $b$). "DM20 : Les idempotents de $ZZ slash n ZZ$" ?
 
 *(C2)* Par cette méthode, $0$ correspond au couple $(0,0)$, $1$ au couple $(1,1)$. Pour $(1,0)$, si $m$ est l'inverse de $5^n$ modulo $2^n$, alors $x$ est le résidu modulo $10^n$ de $a_n = 5^n m$. Inversement, pour $(0,1)$, $x$ est le résidu de $b_n = 2^n m'$ pour $m'$ l'inverse de $2^n$ modulo $5^n$.
 
@@ -161,9 +161,9 @@ Enfin, on trouve immédiatement que :
 $
   cases(a_n + b_n equiv 1 mod(2^n), a_n + b_n equiv 1 mod(5^n))
 $
-Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n + b_n equiv 1 mod(10^n)$ et que $a_n + b_n = 10^n + 1$
+Dont on déduit par l'unicité dans le théorème des restes chinois que $a_n + b_n equiv 1 mod(10^n)$ et que $a_n + b_n = 10^n + 1$
 
-*(A4)* On peut enfin donner une explication plus rapide de la construction de la partie A. Notons $P(x) = x^2 - x$, de dérivée $P'(x) = 2x - 1$. Alors un nombres automorphe de $n$ chiffres, c'est à dire la donnée d'une racine de $P$ modulo $2^n$ et $5^n$. Comme mentionné, si $x$ est automorphe, $P'(x) equiv.not 0 mod(2^n)$ ou $mod(5^n)$. Ainsi par le lemme de Hensel, on peut obtenir un unique couple de racines de $P$ modulo $2^(n+1)$ et $5^(n+1)$, et donc un unique nombre automorphe de $(n+1)$ chiffres, ce qui prouve le lemme.
+*(A4)* On peut enfin donner une explication plus rapide de la construction de la partie A. Notons $P(x) = x^2 - x$, de dérivée $P'(x) = 2x - 1$. Alors un nombres automorphe de $n$ chiffres, c'est à dire la donnée d'une racine de $P$ modulo $2^n$ et $5^n$. Comme mentionné, si $x$ est automorphe, $P'(x) equiv.not 0 mod(2^n)$ et$mod(5^n)$. Ainsi par le lemme de Hensel, on peut obtenir un unique couple de racines de $P$ modulo $2^(n+1)$ et $5^(n+1)$, et donc un unique nombre automorphe de \ $(n+1)$ chiffres, ce qui prouve le lemme.
 
 #align(center, text(25pt, [*MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*]))
 
@@ -216,7 +216,7 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
   ("../TE1-DM16-Matrices-Magiques/DM16.pdf", 8),
   ("../TE1-DM17-Geometrie-dans-l-espace/DM17.pdf", 4),
   ("../TE1-DM18-Repartition-des-nombres-premiers/DM18.pdf", 8),
-   ("../TE1-DM19-Nombres-Automorphes/DM19.pdf", 5)
+  ("../TE1-DM19-Nombres-Automorphes/DM19.pdf", 5),
 )
 
 #grid(
