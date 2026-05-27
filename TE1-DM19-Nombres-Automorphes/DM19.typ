@@ -36,6 +36,8 @@ $
 $
 Comme $10^n divides a^2 - a$, $10^(2n) divides (a^2 - a)^2$ et on en déduit que $a'$ est bien automorphe de $2n$ chiffres.
 
+Remarquons enfin que les derniers chiffres de $a'$ sont ceux de $a$, puisque $ a' equiv 3a - 2a equiv a mod(10^n) $
+
 = Génération des nombres automorphes de $n$ chiffres
 ==
 ===
@@ -57,3 +59,40 @@ $
 On applique le même argument pour la deuxième partie en utilisant que $6 equiv 1 mod(5)$ et que $2 divides 6$.
 
 ==
+===
+On calcule que $a_3 = 625$ et que $a_3^2 = 390625$ : $a_3$ est donc bien automorphe de $3$ chiffres. Similairement, $b_3 = 376$ et $b_3^2 = 141376$ : $b_3$ est bien automorphe.
+
+De même, $a_4 = 0625$ qui est automorphe de $4$ chiffres, et $b_4 = 9376$ : on a bien $b_4^2 = 87 909 376$, et $b_4$ est automorphe de $4$ chiffres.
+
+D'après la partie A, il y a $4$ nombres automorphes de $8$ chiffres dont $0$ et $1$. Ainsi, les nombres donnés par la méthode de la question B4) appliquée à $a_4$ et $b_4$ sont automorphes et distincts, et sont donc :
+$
+  12890625 = a_8 " et " 87108376 = b_8
+$
+(où l'on identifie que $12890625 = a_8$ et pas $b_8$ car une puissance de $5$ se termine toujours par un $5$ modulo $10$).
+
+===
+$a_n$ et $b_n$ sont automorphes, puisque par définition :
+$
+  a_n^2 equiv (5^2^(n-1))^2 equiv 5^2^(n-1) equiv a mod(10^n)
+$
+Et idem pour $b_n$.
+
+Comme $a_n$ finit toujours par un $5$ et $b_n$ par un nombre pair, $a_n != b_n$. Clairement,\ $a_n, b_n != 0$ car $10^n$ ne peut jamais diviser une puissance de $5$ ou de $6$. Enfin, en regardant encore les derniers chiffres, $a_n, b_n != 1$.
+
+Ainsi, les nombres automorphes de $n$ chiffres sont exactement $0$, $1$, $a_n$ et $b_n$.
+
+===
+Remarquons d'abord que pour tout $n in NN^*$ :
+$
+  a_n b_n equiv 2^5^(n-1)3^5^(n-1)5^(2^(n-1)) equiv 0 mod(10^n)
+$
+Ainsi, on obtient que :
+$
+  (a_n + b_n)^2 equiv a_n^2 + b_n^2 + 2a_n b_n equiv a_n + b_n mod(10^n)
+$
+Ainsi, le résidu de $a_n + b_n$ modulo $10^n$ est un nombre automorphe, c'est à dire $0, 1, a_n$ ou $b_n$. Il est impossible que $a_n + b_n equiv a_n$ ou $b_n mod(10^n)$ car $a_n$ et $b_n$ sont non-nuls modulo $10^n$. De même, le résidu de $10^n - b_n$ se termine par un chiffre pair : il est donc impossible que $a_n equiv -b_n$ c'est-à-dire $a_n + b_n equiv 0 mod(10^n)$. Ainsi, $a_n + b_n equiv 1 mod(10^n)$
+
+Enfin, par définition, $1 < a_n, b_n < 10^n$ d'où le fait que $1 < a_n + b_n < 2 dot 10^(n)$. Le seul nombre congru à $1$ modulo $10^n$ dans cet intervalle est $10^n + 1$. Ainsi, on obtient :
+$
+  a_n + b_n = 10^n + 1
+$
