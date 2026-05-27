@@ -28,9 +28,19 @@ Ainsi, $100a + b$ est automorphe de $3$ chiffres si et seulement si le dernier c
 $
   2a b + B equiv a mod(10) <==> a (2b-1) equiv -B mod(10)
 $
-Or, $2b-1$ est toujours impair. De plus, $2b equiv 1 mod(5)$ si et seulement si $b equiv 3 mod(5)$. Or, si $b equiv 3 mod(5)$, le dernier chiffre de $b$ est 3 ou 8 et $b$ ne peut être automorphe. Donc $5 divides.not 2b - 1$. Ainsi, $2b-1$ est premier avec $10$ et la congruence précédente admet une unique solution $a in [|0;9|]$, qui est telle que $100a + b$ est automorphe à $3$ chiffres.
+Or, $2b-1$ est toujours impair. De plus, $2b equiv 1 mod(5)$ si et seulement si $b equiv 3 mod(5)$. Or, si $b equiv 3 mod(5)$, le dernier chiffre de $b$ est 3 ou 8 et $b$ ne peut être automorphe. Donc $5 divides.not 2b - 1$. Ainsi, $2b-1$ est premier avec $10$, est inversible modulo $10$ et la congruence précédente admet une unique solution $a in [|0;9|]$, qui est telle que $100a + b$ est automorphe à $3$ chiffres.
 
-Les deux derniers chiffres d'un nombre automorphe de 3 chiffres forment un nombre automorphe de 2 chiffres, et le premier chiffre d'un nombre automorphe de 3 chiffres peut être déduit de ses deux derniers chiffres par la méthode précédente. Ainsi, il y a exactement $4$ nombres automorphes de $3$ chiffres, produits en appliquant la méthode précédente aux nombre automorphes de $2$ chiffres, qui sont : $000$, $001$, $625$ et $376$.
+Les deux derniers chiffres d'un nombre automorphe de 3 chiffres forment un nombre automorphe de 2 chiffres, et le premier chiffre d'un nombre automorphe de 3 chiffres peut être déduit de ses deux derniers chiffres par la méthode précédente. Ainsi, il y a exactement $4$ nombres automorphes de $3$ chiffres, produits en appliquant la méthode précédente aux nombres automorphes de $2$ chiffres, qui sont : $000$, $001$, $625$ et $376$.
+
+==
+On montre immédiatement la version générale de la méthode précédente : "Pour tout $b$ automorphe de $n$ chiffres, il existe un unique $a in [|0;9|]$ tel que $10^n a + b$ est automorphe à $n+1$ chiffres."
+
+*Preuve :* Comme $b$ est automorphe de $n$ chiffres, on peut écrire $b^2 = 10^(n+1)A + 10^n B + b$ pour $A in NN$ et $B in [|0;9|]$. Alors pour tout $a in [|0;9|]$ :
+$
+  (10^n a + b)^2 & = 10^(2n)a^2 + 2dot 10^n a b + 10^(n+1)A + 10^n B + b \
+                 & = 10^(2n)a^2 + 10^(n+1)A + 10^n (2 a b + B) + b
+$
+Ainsi, $10^n a + b$ est automorphe de $n+1$ chiffres si et seulement si le dernier chiffre de $2a b + B$ est exactement $a$. Par l'argument précédent, un tel $a in [|0;9|]$ existe et est unique.
 
 = Propriétés des nombres automorphes de $n$ chiffres
 ==
@@ -118,3 +128,5 @@ $
 $
 
 RESTES CHINOIS
+
+HENSEL POUR LA PREMIÈRE PARTIE
