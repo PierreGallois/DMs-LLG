@@ -11,7 +11,8 @@
 #let mod(x) = $space [#x]$
 #let folder-name = "TE1-DM19-Nombres-Automorphes/"
 
-= Dénombrement des nombres automorphes de $n$ chiffres²
+= Dénombrement des nombres automorphes de $n$ chiffres
+
 ==
 Pour tout $n >= 1$, $0$ et $1$ (écrits avec $n$ chiffres) sont égaux à leur carré et donc automorphes de $n$ chiffres.
 
@@ -138,7 +139,7 @@ $
 $
 
 = Annexe : le théorème des restes chinois
-On peut trouver systématiquement et prouver un certain nombre des propriétés précédentes en exploitant le théorème des restes chinois. En effet, pour tout $x in ZZ$ et $n in NN$ :
+On peut trouver systématiquement et prouver un certain nombre des propriétés précédentes en exploitant le théorème des restes chinois (#emoji.heart). En effet, pour tout $x in ZZ$ et $n in NN$ :
 $
   x^2 equiv x mod(10^n) <=> x(x-1) equiv 0 mod(10^n) equiv cases(x(x-1) equiv 0 mod(2^n), x(x-1) equiv 0 mod(5^n))
 $
@@ -150,7 +151,7 @@ $
 $
 Qui satisfait donc $x(x-1) equiv 0 mod(10^n)$, c'est à dire que $x$ est automorphe de $n$ chiffres.
 
-*(A5)* Il y a donc $4$ nombres automorphes de $n$ chiffres, et cette méthode s'adapte aux nombres dans n'importe quelle base en écrivant la décomposition primaire de la base ($2^omega(b)$ nombres automorphes de $n$ chiffres en base $b$, avec $omega(b)$ le nombre de facteurs premiers de $b$).
+*(A5)* Il y a donc $4$ nombres automorphes de $n$ chiffres, et cette méthode s'adapte aux nombres dans n'importe quelle base en écrivant la décomposition primaire de la base ($2^omega(b)$ nombres automorphes de $n$ chiffres en base $b$, avec $omega(b)$ le nombre de facteurs premiers de $b$). "DM20 : Les idempotents de $ZZ slash n ZZ$ ?"
 
 *(C2)* Par cette méthode, $0$ correspond au couple $(0,0)$, $1$ au couple $(1,1)$. Pour $(1,0)$, si $m$ est l'inverse de $5^n$ modulo $2^n$, alors $x$ est le résidu modulo $10^n$ de $a_n = 5^n m$. Inversement, pour $(0,1)$, $x$ est le résidu de $b_n = 2^n m'$ pour $m'$ l'inverse de $2^n$ modulo $5^n$.
 
