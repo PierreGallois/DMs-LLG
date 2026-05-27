@@ -169,6 +169,11 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
 #set text(25pt)
 *MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*
 
+#align(center)[
+  #image("/TE1-DM19-Nombres-Automorphes/pigeon.png", width: 70%)
+]
+
+
 = Perspective
 
 #let data = (
@@ -212,7 +217,8 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
   ("../TE1-DM15-Matrices-Et-Cie/DM15.pdf", 8),
   ("../TE1-DM16-Matrices-Magiques/DM16.pdf", 8),
   ("../TE1-DM17-Geometrie-dans-l-espace/DM17.pdf", 4),
-  ("../TE1-DM18-Repartition-des-nombres-premiers/DM18.pdf", 8)
+  ("../TE1-DM18-Repartition-des-nombres-premiers/DM18.pdf", 8),
+   ("../TE1-DM19-Nombres-Automorphes/DM19.pdf", 11)
 )
 
 #grid(
