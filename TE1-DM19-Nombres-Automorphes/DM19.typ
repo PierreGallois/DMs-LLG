@@ -12,6 +12,13 @@
 #let folder-name = "TE1-DM19-Nombres-Automorphes/"
 
 = Dénombrement des nombres automorphes de $n$ chiffres²
+==
+Pour tout $n >= 1$, $0$ et $1$ (écrits avec $n$ chiffres) sont égaux à leur carré et donc automorphes de $n$ chiffres.
+
+==
+En testant avec le programme de la question B2), on trouve que les nombres automorphes de $2$ chiffres sont $00$, $01$, $25$ et $76$.
+
+==
 
 = Propriétés des nombres automorphes de $n$ chiffres
 ==
@@ -20,7 +27,8 @@ Soit $a in NN$ à $n$ chiffres. Alors $a$ est automorphe (à $n$ chiffres) si et
 Ainsi, $a$ est automorphe si et seulement $a$ est le résidu de $a^2$ modulo $10^n$ i.e $a^2 equiv a mod(10^n)$. ($a$ est son propre résidu car $a < 10^n$)
 
 ==
-TODO
+Le code suivant teste si le nombre $a$ est automorphe à $n$ chiffres.
+#code-from-file(folder-name, "automorphe.py")
 
 ==
 Supposons que $a$ soit automorphe. Par une récurrence immédiate, pour tout $k >= 1$, $a^k equiv a mod(10^n)$. Ainsi, les $n$ derniers chiffres des puissances de $a$ sont ceux de $a$ (encore car $a$ est son propre résidu).
@@ -96,3 +104,5 @@ Enfin, par définition, $1 < a_n, b_n < 10^n$ d'où le fait que $1 < a_n + b_n <
 $
   a_n + b_n = 10^n + 1
 $
+
+RESTES CHINOIS
