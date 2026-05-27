@@ -165,9 +165,7 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
 
 *(A4)* On peut enfin donner une explication plus rapide de la construction de la partie A. Notons $P(x) = x^2 - x$, de dérivée $P'(x) = 2x - 1$. Alors un nombres automorphe de $n$ chiffres, c'est à dire la donnée d'une racine de $P$ modulo $2^n$ et $5^n$. Comme mentionné, si $x$ est automorphe, $P'(x) equiv.not 0 mod(2^n)$ ou $mod(5^n)$. Ainsi par le lemme de Hensel, on peut obtenir un unique couple de racines de $P$ modulo $2^(n+1)$ et $5^(n+1)$, et donc un unique nombre automorphe de $(n+1)$ chiffres, ce qui prouve le lemme.
 
-#show: set align(center)
-#set text(25pt)
-*MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*
+#align(center, text(25pt, [*MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*]))
 
 #align(center)[
   #image("/TE1-DM19-Nombres-Automorphes/pigeon.png", width: 70%)
@@ -218,13 +216,14 @@ Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n +
   ("../TE1-DM16-Matrices-Magiques/DM16.pdf", 8),
   ("../TE1-DM17-Geometrie-dans-l-espace/DM17.pdf", 4),
   ("../TE1-DM18-Repartition-des-nombres-premiers/DM18.pdf", 8),
-   ("../TE1-DM19-Nombres-Automorphes/DM19.pdf", 11)
+   ("../TE1-DM19-Nombres-Automorphes/DM19.pdf", 5)
 )
 
 #grid(
-  
-for (path, nb_pages) in data {
-   for page in array.range(1, nb_pages + 1) {
-     box(image(path, page: page, height: 100pt))
-   }
-})
+
+  for (path, nb_pages) in data {
+    for page in array.range(1, nb_pages + 1) {
+      box(image(path, page: page, height: 100pt))
+    }
+  },
+)
