@@ -30,7 +30,7 @@ $
 $
 Or, $2b-1$ est toujours impair. De plus, $2b equiv 1 mod(5)$ si et seulement si $b equiv 3 mod(5)$. Or, si $b equiv 3 mod(5)$, le dernier chiffre de $b$ est 3 ou 8 et $b$ ne peut être automorphe. Donc $5 divides.not 2b - 1$. Ainsi, $2b-1$ est premier avec $10$, est inversible modulo $10$ et la congruence précédente admet une unique solution $a in [|0;9|]$, qui est telle que $100a + b$ est automorphe à $3$ chiffres.
 
-Les deux derniers chiffres d'un nombre automorphe de 3 chiffres forment un nombre automorphe de 2 chiffres, et le premier chiffre d'un nombre automorphe de 3 chiffres peut être déduit de ses deux derniers chiffres par la méthode précédente. Ainsi, il y a exactement $4$ nombres automorphes de $3$ chiffres, produits en appliquant la méthode précédente aux nombres automorphes de $2$ chiffres, qui sont : $000$, $001$, $625$ et $376$.
+On calcule ainsi (ou avec le script suivant) quatre nombres automorphes de $3$ chiffres : $000$, $001$, $376$ et $625$. Ce sont tous les nombres automorphes de $3$ chiffres par la question 5).
 
 ==
 On montre immédiatement la version générale de la méthode précédente : "Pour tout $b$ automorphe de $n$ chiffres, il existe un unique $a in [|0;9|]$ tel que $10^n a + b$ est automorphe à $n+1$ chiffres."
@@ -41,6 +41,16 @@ $
                  & = 10^(2n)a^2 + 10^(n+1)A + 10^n (2 a b + B) + b
 $
 Ainsi, $10^n a + b$ est automorphe de $n+1$ chiffres si et seulement si le dernier chiffre de $2a b + B$ est exactement $a$. Par l'argument précédent, un tel $a in [|0;9|]$ existe et est unique.
+
+Le script python suivant applique la méthode précédente pour calculer des nombres automorphes :
+#code-from-file(folder-name, "gen_automorphe.py")
+
+On trouve ainsi les nombres automorphes de $4$ chiffres $0000$, $0001$, $0625$ et $9376$, qui sont tous les nombres automorphes de $4$ chiffres par la question suivante.
+
+==
+On procède par récurrence sur $n >= 1$. Les nombres automorphes de $1$ chiffres sont $0,1,5$ et $6$ qui sont au nombre de $4$.
+
+Supposons que pour $n >= 1$ il y ait exactement $4$ nombres automorphes de $n$ chiffres. Les $n$ derniers chiffres d'un nombre automorphe de $n+1$ chiffres forment un nombre automorphe de $n$ chiffres, et à chaque nombre automorphe de $n$ chiffres correspond, par le lemme précédent, à un unique nombre automorphe de $n+1$ chiffres. Ainsi, il y a autant de nombres automorphes à $n$ et à $n+1$ chiffres. Par l'hypothèse de récurrence, il y a exactement $4$ nombres automorphes à $n+1$ chiffres.
 
 = Propriétés des nombres automorphes de $n$ chiffres
 ==
@@ -127,6 +137,33 @@ $
   a_n + b_n = 10^n + 1
 $
 
-RESTES CHINOIS
+= Annexe : le théorème des restes chinois
+On peut trouver systématiquement et prouver un certain nombre des propriétés précédentes en exploitant le théorème des restes chinois. En effet, pour tout $x in ZZ$ et $n in NN$ :
+$
+  x^2 equiv x mod(10^n) <=> x(x-1) equiv 0 mod(10^n) equiv cases(x(x-1) equiv 0 mod(2^n), x(x-1) equiv 0 mod(5^n))
+$
+Pour tout $n >= 1$, comme $x$ et $x-1$ sont premiers entre eux, leurs facteurs premiers sont différents et $2^n divides x(x-1)$ si et seulement si $2^n divides x$ ou $2^n divides x-1$, c'est à dire que $x equiv 0$ ou $1 mod(2^n)$, et idem pour $5^n$. ($ZZ slash p^k ZZ$ n'a pas d'idempotents non triviaux / est local)
 
-HENSEL POUR LA PREMIÈRE PARTIE
+Ainsi, à tout choix de $(a,b) in {0,1}^2$ correspond, par le théorèmes de restes chinois, une unique solution $x in [|0; 10^n-1]$ du système :
+$
+  cases(x equiv a mod(2^n), x equiv b mod(5^n))
+$
+Qui satisfait donc $x(x-1) equiv 0 mod(10^n)$, c'est à dire que $x$ est automorphe de $n$ chiffres.
+
+*(A5)* Il y a donc $4$ nombres automorphes de $n$ chiffres, et cette méthode s'adapte aux nombres dans n'importe quelle base en écrivant la décomposition primaire de la base ($2^omega(b)$ nombres automorphes de $n$ chiffres en base $b$, avec $omega(b)$ le nombre de facteurs premiers de $b$).
+
+*(C2)* Par cette méthode, $0$ correspond au couple $(0,0)$, $1$ au couple $(1,1)$. Pour $(1,0)$, si $m$ est l'inverse de $5^n$ modulo $2^n$, alors $x$ est le résidu modulo $10^n$ de $a_n = 5^n m$. Inversement, pour $(0,1)$, $x$ est le résidu de $b_n = 2^n m'$ pour $m'$ l'inverse de $2^n$ modulo $5^n$.
+
+Ces inverses peuvent être calculés pour chaque $n$, ou l'on peut trouver une formule fermée (somme géométrique) avec le lemme de Hensel.
+
+Enfin, on trouve immédiatement que :
+$
+  cases(a_n + b_n equiv 1 mod(2^n), a_n + b_n equiv 1 mod(5^n))
+$
+Dont on déduit par l'unicité dans le théorèmes des restes chinois que $a_n + b_n equiv 1 mod(10^n)$ et que $a_n + b_n = 10^n + 1$
+
+*(A4)* On peut enfin donner une explication plus rapide de la construction de la partie A. Notons $P(x) = x^2 - x$, de dérivée $P'(x) = 2x - 1$. Alors un nombres automorphe de $n$ chiffres, c'est à dire la donnée d'une racine de $P$ modulo $2^n$ et $5^n$. Comme mentionné, si $x$ est automorphe, $P'(x) equiv.not 0 mod(2^n)$ ou $mod(5^n)$. Ainsi par le lemme de Hensel, on peut obtenir un unique couple de racines de $P$ modulo $2^(n+1)$ et $5^(n+1)$, et donc un unique nombre automorphe de $(n+1)$ chiffres, ce qui prouve le lemme.
+
+#show: set align(center)
+#set text(25pt)
+*MERCI POUR TOUS LES DMS ET CES DEUX ANNÉES #emoji.heart*
