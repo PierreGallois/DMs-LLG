@@ -48,3 +48,12 @@ Où la somme de du facteur de droite contient $b$ termes, qui sont tous congrus 
 $
   a^(b^n) - 1 equiv 0 mod(b^(n+1)) " soit " a^b^n equiv 1 mod(b^(n+1))
 $
+
+===
+D'une part, $5 equiv 1 mod(2)$. Ainsi, pour tout $n in NN^*$, $2^n divides 5^2^(n-1) - 1$. D'autre part, pour tout\ $n in NN^*$, $n <= 2^(n-1)$ : ainsi, $5^n divides 5^2^(n-1)$. Par produit, on obtient que :
+$
+  10^n divides (5^2^(n-1))^2 - 5^2^(n-1) " i.e " (5^2^(n-1))^2 = 5^2^(n-1) mod(10^n)
+$
+On applique le même argument pour la deuxième partie en utilisant que $6 equiv 1 mod(5)$ et que $2 divides 6$.
+
+==
